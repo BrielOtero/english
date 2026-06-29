@@ -45,8 +45,7 @@ Regenerate the clips after editing content with:
 pnpm generate:audio        # creates any missing clips + updates the manifest
 ```
 
-This keeps the app a **pure static site** — no backend, no API keys — so it stays free and trivial to
-self-host.
+All of this runs with **no backend and no API keys**.
 
 ### Sync across devices (optional)
 
@@ -102,35 +101,6 @@ pnpm dev        # http://localhost:5173
 | `pnpm format`         | Format the project with Prettier                         |
 | `pnpm format:check`   | Check formatting without writing (CI-friendly)           |
 | `pnpm generate:audio` | Pre-generate neural-voice audio clips for course content |
-
-## Deploying
-
-The app is a **static site** (`pnpm build` → `dist/`) hosted on **Cloudflare Pages** (free,
-commercial-friendly, _unlimited_ bandwidth — ideal for the audio files) via Cloudflare's
-**Connect to Git** integration: it builds and deploys on every push to `main`, with preview URLs for
-branches/PRs. No deploy secrets in GitHub.
-
-Setup (Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → pick this repo):
-
-- **Build command:** `pnpm build`
-- **Build output directory:** `dist`
-- **Environment variables** (optional — enables cross-device sync): add `VITE_SUPABASE_URL` and
-  `VITE_SUPABASE_ANON_KEY` from Supabase → Project Settings → API.
-
-Node is pinned by `.node-version`, and SPA routing by `public/_redirects`. No backend or rewrite to
-Next.js is needed — the app is fully static and talks to Supabase from the browser. (`vercel.json` is
-also included if you'd ever prefer Vercel.)
-
-## CI/CD
-
-GitHub Actions (`.github/workflows/`):
-
-- **`ci.yml`** — `pnpm lint` + `pnpm build` (type-check) on every pull request.
-- **`generate-audio.yml`** — when spoken content changes (or via manual “Run workflow”), regenerates
-  any missing audio clips and commits them back. Audio is normally generated locally with
-  `pnpm generate:audio`; this is a safety net.
-
-Deployment itself is handled by Cloudflare Pages' Git integration (above).
 
 ## Project structure
 

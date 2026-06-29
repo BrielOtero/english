@@ -4,573 +4,742 @@ import type { GrammarUnit } from '../types';
 export const GRAMMAR: GrammarUnit[] = [
   {
     level: 'A1',
-    title: 'A1 · Primeros pasos en gramática inglesa',
+    title: 'A1 · Everyday Basics',
     blurb:
-      'Las bases del inglés: ser/estar, presentes, pasado, futuro, pronombres, artículos y más, explicado para hispanohablantes.',
+      'The core building blocks of English: be, basic tenses, articles, pronouns, and simple sentences for daily life.',
     lessons: [
       {
         id: 'a1-verb-to-be',
         level: 'A1',
-        title: 'El verbo to be y there is/there are',
+        title: 'The verb to be (am / is / are)',
         summary:
-          "El verbo to be significa 'ser' y 'estar'. Aprende sus formas, negativos y preguntas, y cómo decir 'hay' con there is/there are.",
+          'The verb **to be** is the most important verb in English. Use **am**, **is**, and **are** to describe people and things, and to give your name, age, job, and feelings. English needs the verb in every sentence, even where Spanish leaves it out.',
+        summaryEs:
+          'El verbo **to be** es el verbo más importante del inglés. Usa **am**, **is** y **are** para describir personas y cosas, y para dar tu nombre, edad, trabajo y sentimientos. El inglés necesita el verbo en cada frase, aunque el español a veces lo omita.',
         sections: [
           {
-            heading: 'Formas de to be',
-            body: "El verbo **to be** se traduce como **ser** o **estar**. Cambia según el sujeto: **am** (I), **is** (he/she/it) y **are** (you/we/they). En el habla normal usamos contracciones: **I'm**, **you're**, **he's**.",
+            heading: 'Forms and contractions',
+            body: "Use **I am**, **he/she/it is**, and **we/you/they are**. In speaking and informal writing we use **contractions**: I'm, he's, she's, it's, we're, you're, they're. Both the long and short forms are correct.",
+            bodyEs:
+              "Usa **I am**, **he/she/it is** y **we/you/they are**. Al hablar y en escritura informal usamos **contracciones**: I'm, he's, she's, it's, we're, you're, they're. Tanto la forma larga como la corta son correctas.",
             examples: [
               {
                 en: "I am a teacher. / I'm a teacher.",
                 es: 'Soy profesor.',
-                ipa: '/aɪm ə ˈtiːtʃər/',
               },
               {
-                en: "She is happy. / She's happy.",
-                es: 'Ella está contenta.',
+                en: "She is from Spain. / She's from Spain.",
+                es: 'Ella es de España.',
               },
               {
-                en: "We are at home. / We're at home.",
-                es: 'Estamos en casa.',
+                en: "We are happy. / We're happy.",
+                es: 'Estamos contentos.',
               },
             ],
           },
           {
-            heading: 'Negativos y preguntas',
-            body: "Para el **negativo** añadimos **not** después del verbo: *I am not, she is not (isn't), they are not (aren't)*. Para las **preguntas** ponemos el verbo **antes** del sujeto: *Are you ready? Is he Spanish?*",
+            heading: 'Negatives and questions',
+            body: "For the **negative**, add **not**: I am not, she is not (isn't), they are not (aren't). For **questions**, put the verb first: **Are you ready? Is he here?** Short answers keep the verb: **Yes, I am. / No, she isn't.**",
+            bodyEs:
+              "Para el **negativo**, añade **not**: I am not, she is not (isn't), they are not (aren't). Para las **preguntas**, pon el verbo primero: **Are you ready? Is he here?** Las respuestas cortas mantienen el verbo: **Yes, I am. / No, she isn't.**",
             examples: [
               {
                 en: "I'm not tired.",
                 es: 'No estoy cansado.',
               },
               {
-                en: 'Are you from Spain?',
-                es: '¿Eres de España?',
+                en: 'Are you a student? Yes, I am.',
+                es: '¿Eres estudiante? Sí, lo soy.',
               },
               {
-                en: "He isn't at work today.",
-                es: 'Él no está en el trabajo hoy.',
+                en: "It isn't cold today.",
+                es: 'Hoy no hace frío.',
               },
             ],
           },
           {
-            heading: 'There is / There are (hay)',
-            body: "Para decir **hay** usamos **there is** (singular) y **there are** (plural). No existe la forma 'it has' para esto. En negativo: *there isn't / there aren't*; en pregunta: *Is there...? / Are there...?*",
+            heading: 'Talking about age and feelings',
+            body: 'English uses **be** for age and many states where Spanish uses *tener*: **I am 20** (not *I have 20*). We also use **be** with hungry, thirsty, cold, hot, right, and afraid.',
+            bodyEs:
+              'El inglés usa **be** para la edad y muchos estados donde el español usa *tener*: **I am 20** (no *I have 20*). También usamos **be** con hungry, thirsty, cold, hot, right y afraid.',
             examples: [
               {
-                en: 'There is a book on the table.',
-                es: 'Hay un libro sobre la mesa.',
+                en: "How old are you? I'm thirty.",
+                es: '¿Cuántos años tienes? Tengo treinta.',
               },
               {
-                en: 'There are two cats in the garden.',
-                es: 'Hay dos gatos en el jardín.',
-              },
-              {
-                en: 'Is there a bank near here?',
-                es: '¿Hay un banco cerca de aquí?',
+                en: "I'm hungry and thirsty.",
+                es: 'Tengo hambre y sed.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Conjugación de to be (presente)',
-            columns: ['Sujeto', 'Afirmativo', 'Contracción', 'Negativo'],
+            caption: 'Forms of to be',
+            columns: ['Subject', 'Affirmative', 'Negative', 'Question'],
             rows: [
-              ['I', 'am', "I'm", "I'm not"],
-              ['You / We / They', 'are', "you're / we're / they're", "aren't"],
-              ['He / She / It', 'is', "he's / she's / it's", "isn't"],
+              ['I', "am / I'm", "am not / I'm not", 'Am I?'],
+              ['He/She/It', "is / 's", "is not / isn't", 'Is he?'],
+              ['We/You/They', "are / 're", "are not / aren't", 'Are they?'],
             ],
           },
         ],
         examples: [
           {
-            en: "I'm twenty years old.",
-            es: 'Tengo veinte años.',
+            en: 'My name is Ana.',
+            es: 'Me llamo Ana.',
           },
           {
             en: 'They are my friends.',
-            es: 'Ellos son mis amigos.',
+            es: 'Son mis amigos.',
           },
           {
-            en: 'Is she a doctor?',
-            es: '¿Es ella médica?',
+            en: "He isn't at home.",
+            es: 'Él no está en casa.',
           },
           {
-            en: "There aren't any chairs in the room.",
-            es: 'No hay sillas en la habitación.',
+            en: "Is it expensive? No, it isn't.",
+            es: '¿Es caro? No, no lo es.',
           },
           {
-            en: 'The weather is cold today.',
-            es: 'El tiempo está frío hoy.',
+            en: "We're from Mexico.",
+            es: 'Somos de México.',
           },
           {
-            en: "We're not at school now.",
-            es: 'No estamos en la escuela ahora.',
+            en: "I'm not afraid of dogs.",
+            es: 'No tengo miedo a los perros.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'I have 20 years.',
-            right: 'I am 20 years old.',
-            why: 'La edad se expresa con to be, no con have.',
-            esNote:
-              "En inglés la edad se dice con el verbo 'to be': 'I am 20 years old', no 'I have 20 years'.",
+            wrong: 'I have 25 years.',
+            right: 'I am 25 (years old).',
+            why: 'English uses the verb to be for age, not have.',
+            esNote: "Para la edad se usa 'be', no 'have': I am 25.",
           },
           {
-            wrong: 'Is a problem with the car.',
-            right: 'There is a problem with the car.',
-            why: "Para decir 'hay' se necesita 'there is/there are', no solo el verbo.",
-            esNote: "'Hay' siempre se traduce como 'there is/there are'.",
+            wrong: 'She teacher.',
+            right: 'She is a teacher.',
+            why: 'Every English sentence needs a verb; you cannot drop is.',
+            esNote: "No se puede omitir el verbo: 'She is a teacher'.",
           },
           {
-            wrong: 'There are a book on the table.',
-            right: 'There is a book on the table.',
-            why: "'A book' es singular, así que se usa 'there is'.",
-            esNote: 'Concuerda el verbo con el sustantivo: singular = is, plural = are.',
+            wrong: 'I am agree with you.',
+            right: 'I agree with you.',
+            why: 'Agree is a normal verb, so it does not take be.',
+            esNote: "'Agree' es un verbo: 'I agree', no 'I am agree'.",
           },
         ],
         exercises: [
           {
-            kind: 'mcq',
-            id: 'a1-verb-to-be-ex1',
-            prompt: 'Choose the correct form: She ___ my sister.',
-            options: ['am', 'is', 'are'],
-            answer: 1,
-            explain: "'She' usa 'is'.",
+            kind: 'cloze',
+            id: 'a1-be-ex1',
+            before: 'She ',
+            after: ' a doctor.',
+            answers: ['is', "'s"],
+            hint: 'third person singular',
+            explain: 'With she we use is.',
           },
           {
-            kind: 'cloze',
-            id: 'a1-verb-to-be-ex2',
-            before: 'We ',
-            after: ' students at this school.',
-            answers: ['are', "'re"],
-            explain: "'We' va con 'are'.",
-            hint: 'plural',
+            kind: 'mcq',
+            id: 'a1-be-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: ['They is happy.', 'They are happy.', 'They am happy.', 'They be happy.'],
+            answer: 1,
+            explain: 'With they we use are.',
           },
           {
             kind: 'correct',
-            id: 'a1-verb-to-be-ex3',
-            wrong: 'I have 30 years old.',
-            answers: ['I am 30 years old.', "I'm 30 years old."],
-            explain: 'La edad usa to be.',
+            id: 'a1-be-ex3',
+            wrong: 'I have 30 years.',
+            answers: ['I am 30.', "I'm 30.", 'I am 30 years old.', "I'm 30 years old."],
+            explain: 'Use be for age, not have.',
           },
           {
             kind: 'order',
-            id: 'a1-verb-to-be-ex4',
-            tokens: ['there', 'are', 'three', 'books', 'on', 'the', 'shelf'],
-            answer: 'There are three books on the shelf.',
-            explain: "Plural 'books' = there are.",
+            id: 'a1-be-ex4',
+            tokens: ['Are', 'you', 'from', 'Spain', '?'],
+            answer: 'Are you from Spain?',
+            explain: 'In questions the verb be comes before the subject.',
           },
           {
             kind: 'translate',
-            id: 'a1-verb-to-be-ex5',
-            es: '¿Hay un supermercado cerca de aquí?',
-            answers: ['Is there a supermarket near here?', 'Is there a supermarket nearby?'],
-            explain: "Pregunta con 'Is there...?'.",
-          },
-          {
-            kind: 'dictation',
-            id: 'a1-verb-to-be-ex6',
-            text: "They aren't at home this evening.",
-            explain: "Negativo de 'are' = aren't.",
+            id: 'a1-be-ex5',
+            es: 'No estoy cansado.',
+            answers: ["I'm not tired.", 'I am not tired.'],
+            explain: 'Negative of be: am not.',
           },
           {
             kind: 'mcq',
-            id: 'a1-verb-to-be-ex7',
-            prompt: 'Choose the correct sentence.',
-            options: ['There is two dogs.', 'There are two dogs.', 'It has two dogs.'],
+            id: 'a1-be-ex6',
+            prompt: "Complete: '___ he your brother?'",
+            options: ['Are', 'Is', 'Am', 'Be'],
             answer: 1,
-            explain: "'Two dogs' es plural = there are.",
+            explain: 'With he the question form is Is he...?',
+          },
+          {
+            kind: 'dictation',
+            id: 'a1-be-ex7',
+            text: "We aren't at school today.",
+            explain: "aren't is the contraction of are not.",
+          },
+        ],
+      },
+      {
+        id: 'a1-there-is-there-are',
+        level: 'A1',
+        title: 'There is / There are',
+        summary:
+          'Use **there is** and **there are** to say that something **exists** or is present in a place. Use **there is** with singular nouns and **there are** with plural nouns. This structure is like the Spanish *hay*.',
+        summaryEs:
+          'Usa **there is** y **there are** para decir que algo **existe** o está presente en un lugar. Usa **there is** con sustantivos singulares y **there are** con plurales. Esta estructura equivale al *hay* del español.',
+        sections: [
+          {
+            heading: 'Singular and plural',
+            body: "**There is** (there's) introduces one thing; **There are** introduces more than one. With uncountable nouns like water or money we use **there is**.",
+            bodyEs:
+              "**There is** (there's) introduce una cosa; **There are** introduce más de una. Con sustantivos incontables como water o money usamos **there is**.",
+            examples: [
+              {
+                en: 'There is a book on the table.',
+                es: 'Hay un libro en la mesa.',
+              },
+              {
+                en: 'There are three chairs in the room.',
+                es: 'Hay tres sillas en la habitación.',
+              },
+              {
+                en: 'There is some milk in the fridge.',
+                es: 'Hay algo de leche en la nevera.',
+              },
+            ],
+          },
+          {
+            heading: 'Negatives and questions',
+            body: "Negative: **There isn't / There aren't**. Question: **Is there...? / Are there...?** We often use **any** in questions and negatives with plural or uncountable nouns.",
+            bodyEs:
+              "Negativo: **There isn't / There aren't**. Pregunta: **Is there...? / Are there...?** A menudo usamos **any** en preguntas y negativos con sustantivos plurales o incontables.",
+            examples: [
+              {
+                en: "There isn't a problem.",
+                es: 'No hay ningún problema.',
+              },
+              {
+                en: 'Are there any shops near here?',
+                es: '¿Hay tiendas cerca de aquí?',
+              },
+              {
+                en: "There aren't any eggs.",
+                es: 'No hay huevos.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'There is / There are',
+            columns: ['Form', 'Affirmative', 'Negative', 'Question'],
+            rows: [
+              ['Singular', "There is / There's a cat.", "There isn't a cat.", 'Is there a cat?'],
+              ['Plural', 'There are two cats.', "There aren't any cats.", 'Are there any cats?'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: "There's a supermarket on the corner.",
+            es: 'Hay un supermercado en la esquina.',
+          },
+          {
+            en: 'There are many people here.',
+            es: 'Hay mucha gente aquí.',
+          },
+          {
+            en: 'Is there a bathroom?',
+            es: '¿Hay un baño?',
+          },
+          {
+            en: "There aren't any buses at night.",
+            es: 'No hay autobuses por la noche.',
+          },
+          {
+            en: 'There is a lot of noise.',
+            es: 'Hay mucho ruido.',
+          },
+          {
+            en: 'How many students are there?',
+            es: '¿Cuántos estudiantes hay?',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'It has a book on the table.',
+            right: 'There is a book on the table.',
+            why: 'To express existence (hay), English uses there is/are, not it has.',
+            esNote: "'Hay' se traduce como 'there is/are', no 'it has'.",
+          },
+          {
+            wrong: 'There are a problem.',
+            right: 'There is a problem.',
+            why: 'Use there is with a singular noun.',
+            esNote: "Con singular: 'there is'.",
+          },
+          {
+            wrong: 'There is many cars.',
+            right: 'There are many cars.',
+            why: 'Use there are with plural nouns.',
+            esNote: "Con plural: 'there are'.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'a1-there-ex1',
+            before: 'There ',
+            after: ' two windows in my room.',
+            answers: ['are'],
+            hint: 'plural',
+            explain: 'Two windows is plural, so we use there are.',
+          },
+          {
+            kind: 'mcq',
+            id: 'a1-there-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'There is some apples.',
+              'There are some apples.',
+              'It is some apples.',
+              'There have some apples.',
+            ],
+            answer: 1,
+            explain: 'Apples is plural, so there are.',
+          },
+          {
+            kind: 'correct',
+            id: 'a1-there-ex3',
+            wrong: 'It has a park near my house.',
+            answers: ['There is a park near my house.', "There's a park near my house."],
+            explain: 'Existence is expressed with there is, not it has.',
+          },
+          {
+            kind: 'translate',
+            id: 'a1-there-ex4',
+            es: '¿Hay un hospital cerca?',
+            answers: ['Is there a hospital near here?', 'Is there a hospital nearby?'],
+            explain: 'Question form: Is there...?',
+          },
+          {
+            kind: 'order',
+            id: 'a1-there-ex5',
+            tokens: ['There', "aren't", 'any', 'shops', 'here', '.'],
+            answer: "There aren't any shops here.",
+            explain: "Negative plural uses there aren't any.",
+          },
+          {
+            kind: 'cloze',
+            id: 'a1-there-ex6',
+            before: 'There ',
+            after: ' a lot of milk in the bottle.',
+            answers: ['is', "'s"],
+            hint: 'uncountable',
+            explain: 'Milk is uncountable, so there is.',
+          },
+          {
+            kind: 'dictation',
+            id: 'a1-there-ex7',
+            text: 'There are many people in the street.',
+            explain: 'Plural noun people takes there are.',
           },
         ],
       },
       {
         id: 'a1-present-simple',
         level: 'A1',
-        title: 'Presente simple y adverbios de frecuencia',
+        title: 'Present simple (habits and facts)',
         summary:
-          "Usa el presente simple para hábitos, rutinas y hechos. Aprende la -s de la tercera persona, los negativos con don't/doesn't y los adverbios de frecuencia.",
+          'Use the **present simple** for **habits**, **routines**, and **facts** that are generally true. The main rule is the **-s** ending for he, she, and it. We make negatives and questions with **do** and **does**.',
+        summaryEs:
+          'Usa el **present simple** para **hábitos**, **rutinas** y **hechos** que son generalmente verdaderos. La regla principal es la terminación **-s** para he, she e it. Formamos negativos y preguntas con **do** y **does**.',
         sections: [
           {
-            heading: 'Uso y forma',
-            body: 'El **presente simple** se usa para **hábitos**, **rutinas** y **hechos generales**: *I work, you eat, they live*. Con **he/she/it** se añade **-s** al verbo: *he works, she eats*. Verbos que terminan en -o, -ss, -sh, -ch, -x añaden **-es** (*goes, watches*).',
+            heading: 'The third person -s',
+            body: 'Add **-s** to the verb with **he/she/it**: I work / she works. Add **-es** after o, s, ch, sh, x (go → goes, watch → watches). For verbs ending in consonant + y, change y to **-ies** (study → studies).',
+            bodyEs:
+              'Añade **-s** al verbo con **he/she/it**: I work / she works. Añade **-es** tras o, s, ch, sh, x (go → goes, watch → watches). Para verbos que terminan en consonante + y, cambia y por **-ies** (study → studies).',
             examples: [
               {
-                en: 'I drink coffee every morning.',
-                es: 'Bebo café cada mañana.',
+                en: 'I live in Madrid.',
+                es: 'Vivo en Madrid.',
               },
               {
-                en: 'She works in a hospital.',
-                es: 'Ella trabaja en un hospital.',
+                en: 'He goes to work by bus.',
+                es: 'Él va al trabajo en autobús.',
               },
               {
-                en: 'Water boils at 100 degrees.',
-                es: 'El agua hierve a 100 grados.',
+                en: 'She studies English.',
+                es: 'Ella estudia inglés.',
               },
             ],
           },
           {
-            heading: 'Negativos y preguntas',
-            body: "Usamos el auxiliar **do/does**. Negativo: **don't** (I/you/we/they) y **doesn't** (he/she/it) + verbo base. Preguntas: **Do/Does** + sujeto + verbo base. ¡Ojo! Tras **doesn't** y **does** el verbo NO lleva -s.",
+            heading: 'Negatives and questions with do/does',
+            body: "Use **don't** (do not) and **doesn't** (does not) + the **base verb**. In questions use **Do/Does** + subject + base verb. After does/doesn't, the verb has **no -s**.",
+            bodyEs:
+              "Usa **don't** (do not) y **doesn't** (does not) + el **verbo base**. En preguntas usa **Do/Does** + sujeto + verbo base. Después de does/doesn't, el verbo **no lleva -s**.",
             examples: [
               {
-                en: "I don't like fish.",
-                es: 'No me gusta el pescado.',
+                en: "I don't eat meat.",
+                es: 'No como carne.',
               },
               {
-                en: "He doesn't speak French.",
-                es: 'Él no habla francés.',
+                en: "She doesn't like coffee.",
+                es: 'A ella no le gusta el café.',
               },
               {
-                en: 'Do you live here?',
-                es: '¿Vives aquí?',
+                en: 'Do you speak English?',
+                es: '¿Hablas inglés?',
               },
             ],
           },
           {
-            heading: 'Adverbios de frecuencia',
-            body: 'Los **adverbios de frecuencia** (always, usually, often, sometimes, never) van **antes** del verbo principal, pero **después** del verbo to be: *I always work / She is always late*.',
+            heading: 'Adverbs of frequency',
+            body: 'We often use **always, usually, often, sometimes, never** with the present simple. They go **before the main verb** but **after** the verb be: I usually walk; she is never late.',
+            bodyEs:
+              'A menudo usamos **always, usually, often, sometimes, never** con el present simple. Van **antes del verbo principal** pero **después** del verbo be: I usually walk; she is never late.',
             examples: [
               {
-                en: 'I usually get up at seven.',
-                es: 'Normalmente me levanto a las siete.',
+                en: 'I always have breakfast.',
+                es: 'Siempre desayuno.',
               },
               {
-                en: 'He never eats meat.',
-                es: 'Él nunca come carne.',
-              },
-              {
-                en: 'They are sometimes late.',
-                es: 'A veces llegan tarde.',
+                en: 'He never drinks tea.',
+                es: 'Él nunca bebe té.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Adverbios de frecuencia (de más a menos)',
-            columns: ['Inglés', 'Español', '% aprox.'],
+            caption: 'Present simple of work',
+            columns: ['Subject', 'Affirmative', 'Negative', 'Question'],
             rows: [
-              ['always', 'siempre', '100%'],
-              ['usually', 'normalmente', '80%'],
-              ['often', 'a menudo', '60%'],
-              ['sometimes', 'a veces', '40%'],
-              ['never', 'nunca', '0%'],
+              ['I/You/We/They', 'work', "don't work", 'Do you work?'],
+              ['He/She/It', 'works', "doesn't work", 'Does he work?'],
             ],
           },
         ],
         examples: [
           {
-            en: 'My brother plays football on Saturdays.',
-            es: 'Mi hermano juega al fútbol los sábados.',
+            en: 'Water boils at 100 degrees.',
+            es: 'El agua hierve a 100 grados.',
           },
           {
-            en: "We don't watch TV in the morning.",
-            es: 'No vemos la tele por la mañana.',
+            en: "We don't have classes on Sunday.",
+            es: 'No tenemos clases el domingo.',
           },
           {
-            en: 'Does she like chocolate?',
-            es: '¿Le gusta el chocolate?',
+            en: 'Does she work here?',
+            es: '¿Ella trabaja aquí?',
           },
           {
-            en: "The shop opens at nine o'clock.",
-            es: 'La tienda abre a las nueve.',
+            en: 'My brother plays football.',
+            es: 'Mi hermano juega al fútbol.',
           },
           {
-            en: 'I often go to the gym after work.',
-            es: 'A menudo voy al gimnasio después del trabajo.',
+            en: 'I usually get up at seven.',
+            es: 'Normalmente me levanto a las siete.',
           },
           {
-            en: "He doesn't understand the question.",
-            es: 'Él no entiende la pregunta.',
+            en: "They don't live near the centre.",
+            es: 'Ellos no viven cerca del centro.',
           },
         ],
         pitfalls: [
           {
             wrong: 'She work in a bank.',
             right: 'She works in a bank.',
-            why: 'Con he/she/it el verbo lleva -s.',
-            esNote: 'Recuerda la -s de la tercera persona: he/she/it + verbo + s.',
+            why: 'Add -s to the verb with he, she, it.',
+            esNote: 'Con he/she/it el verbo lleva -s.',
           },
           {
             wrong: "He doesn't works here.",
             right: "He doesn't work here.",
-            why: "Tras 'doesn't' el verbo va en forma base, sin -s.",
-            esNote: "La -s ya está en 'does', no se repite en el verbo.",
+            why: "After doesn't the verb has no -s.",
+            esNote: "Tras 'doesn't', el verbo va sin -s.",
           },
           {
-            wrong: 'I no like coffee.',
-            right: "I don't like coffee.",
-            why: "El negativo necesita el auxiliar don't, no solo 'no'.",
-            esNote: "No se niega con 'no' delante del verbo; se usa don't/doesn't.",
-          },
-          {
-            wrong: 'I go always to bed late.',
-            right: 'I always go to bed late.',
-            why: 'El adverbio de frecuencia va antes del verbo principal.',
-            esNote: 'Coloca always/usually/never antes del verbo, no después.',
+            wrong: 'Do she like tea?',
+            right: 'Does she like tea?',
+            why: 'Use does with he, she, it.',
+            esNote: "Con he/she/it se usa 'does'.",
           },
         ],
         exercises: [
           {
             kind: 'cloze',
-            id: 'a1-present-simple-ex1',
-            before: 'My father ',
-            after: ' (work) in an office.',
-            answers: ['works'],
-            explain: 'Tercera persona = works.',
-            hint: 'he/she/it + -s',
+            id: 'a1-ps-ex1',
+            before: 'He ',
+            after: ' (watch) TV every evening.',
+            answers: ['watches'],
+            hint: 'verb + es',
+            explain: 'watch becomes watches in the third person.',
           },
           {
             kind: 'mcq',
-            id: 'a1-present-simple-ex2',
+            id: 'a1-ps-ex2',
             prompt: 'Choose the correct sentence.',
-            options: ["She don't like tea.", "She doesn't likes tea.", "She doesn't like tea."],
+            options: [
+              "She don't like fish.",
+              "She doesn't likes fish.",
+              "She doesn't like fish.",
+              'She not like fish.',
+            ],
             answer: 2,
-            explain: "doesn't + verbo base.",
+            explain: "doesn't + base verb without -s.",
           },
           {
             kind: 'correct',
-            id: 'a1-present-simple-ex3',
-            wrong: 'He go to school every day.',
-            answers: ['He goes to school every day.'],
-            explain: 'go -> goes en tercera persona.',
+            id: 'a1-ps-ex3',
+            wrong: 'My father work in a hospital.',
+            answers: ['My father works in a hospital.'],
+            explain: 'Third person singular needs works.',
           },
           {
             kind: 'order',
-            id: 'a1-present-simple-ex4',
-            tokens: ['I', 'always', 'have', 'breakfast', 'at', 'eight'],
-            answer: 'I always have breakfast at eight.',
-            explain: 'El adverbio va antes del verbo principal.',
+            id: 'a1-ps-ex4',
+            tokens: ['Do', 'you', 'speak', 'French', '?'],
+            answer: 'Do you speak French?',
+            explain: 'Questions use Do + subject + base verb.',
           },
           {
             kind: 'translate',
-            id: 'a1-present-simple-ex5',
-            es: '¿Hablas inglés?',
-            answers: ['Do you speak English?'],
-            explain: 'Pregunta con Do + sujeto + verbo base.',
-          },
-          {
-            kind: 'dictation',
-            id: 'a1-present-simple-ex6',
-            text: 'We never drink coffee at night.',
-            explain: "never antes del verbo, verbo base con 'we'.",
+            id: 'a1-ps-ex5',
+            es: 'Ella no bebe café.',
+            answers: ["She doesn't drink coffee.", 'She does not drink coffee.'],
+            explain: "Negative third person: doesn't drink.",
           },
           {
             kind: 'mcq',
-            id: 'a1-present-simple-ex7',
-            prompt: "Which adverb means 'a veces'?",
-            options: ['always', 'never', 'sometimes'],
-            answer: 2,
-            explain: 'sometimes = a veces.',
+            id: 'a1-ps-ex6',
+            prompt: "Where does 'always' go? 'I ___ go ___ to bed late.'",
+            options: ['always / —', '— / always', 'go always', 'always go always'],
+            answer: 0,
+            explain: 'Adverbs of frequency go before the main verb: I always go.',
+          },
+          {
+            kind: 'dictation',
+            id: 'a1-ps-ex7',
+            text: 'My sister studies medicine in London.',
+            explain: 'study becomes studies in the third person.',
           },
         ],
       },
       {
         id: 'a1-present-continuous',
         level: 'A1',
-        title: 'Presente continuo (ahora)',
+        title: 'Present continuous (actions now)',
         summary:
-          'El presente continuo describe acciones que ocurren ahora mismo. Se forma con to be + verbo terminado en -ing.',
+          'Use the **present continuous** for actions happening **now** or around the present moment. Form it with **am/is/are + verb-ing**. Compare it with the present simple, which is for habits.',
+        summaryEs:
+          'Usa el **present continuous** para acciones que ocurren **ahora** o alrededor del momento presente. Se forma con **am/is/are + verbo-ing**. Compáralo con el present simple, que es para hábitos.',
         sections: [
           {
-            heading: 'Forma: to be + -ing',
-            body: 'El **presente continuo** describe algo que pasa **ahora** o alrededor de ahora. Se forma con **am/is/are** + verbo con **-ing**: *I am working, she is reading*. Palabras clave: **now**, **at the moment**, **today**.',
+            heading: 'Form: be + verb-ing',
+            body: "Use the correct form of **be** plus the **-ing** form: I'm working, she's reading, they're playing. Spelling: make → making (drop e), run → running (double the consonant).",
+            bodyEs:
+              "Usa la forma correcta de **be** más la forma **-ing**: I'm working, she's reading, they're playing. Ortografía: make → making (quita la e), run → running (dobla la consonante).",
             examples: [
               {
-                en: 'I am studying English now.',
-                es: 'Estoy estudiando inglés ahora.',
+                en: "I'm studying right now.",
+                es: 'Estoy estudiando ahora mismo.',
               },
               {
-                en: 'She is talking on the phone.',
-                es: 'Ella está hablando por teléfono.',
+                en: 'She is cooking dinner.',
+                es: 'Ella está cocinando la cena.',
               },
               {
-                en: 'They are playing in the park.',
-                es: 'Están jugando en el parque.',
+                en: "They're watching a film.",
+                es: 'Están viendo una película.',
               },
             ],
           },
           {
-            heading: 'Reglas de ortografía del -ing',
-            body: "Verbos que terminan en **-e** pierden la e: *make → making*. Verbos cortos con una vocal + consonante **doblan la consonante**: *run → running, sit → sitting*. Negativo y pregunta usan to be: *She isn't sleeping / Are you coming?*",
+            heading: 'Now vs. habits',
+            body: 'Use the **present continuous** for things happening at the moment of speaking, often with **now, right now, at the moment**. Use the **present simple** for habits with always, usually, every day.',
+            bodyEs:
+              'Usa el **present continuous** para cosas que ocurren en el momento de hablar, a menudo con **now, right now, at the moment**. Usa el **present simple** para hábitos con always, usually, every day.',
             examples: [
               {
-                en: 'He is writing an email.',
-                es: 'Él está escribiendo un correo.',
+                en: "I usually walk, but today I'm taking the bus.",
+                es: 'Normalmente camino, pero hoy voy en autobús.',
               },
               {
-                en: "We aren't watching TV right now.",
-                es: 'No estamos viendo la tele ahora mismo.',
-              },
-              {
-                en: 'Are you listening to me?',
-                es: '¿Me estás escuchando?',
-              },
-            ],
-          },
-          {
-            heading: 'Presente simple vs continuo',
-            body: 'Usa el **presente simple** para rutinas (*I work every day*) y el **presente continuo** para algo en este momento (*I am working now*). Algunos verbos de estado (like, want, know) normalmente **no** se usan en continuo.',
-            examples: [
-              {
-                en: "I usually walk to work, but today I'm taking the bus.",
-                es: 'Normalmente voy andando al trabajo, pero hoy tomo el autobús.',
-              },
-              {
-                en: 'She wants a coffee.',
-                es: 'Ella quiere un café.',
+                en: "What are you doing? I'm cooking.",
+                es: '¿Qué estás haciendo? Estoy cocinando.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Reglas del -ing',
-            columns: ['Tipo', 'Regla', 'Ejemplo'],
+            caption: 'Present continuous',
+            columns: ['Subject', 'Affirmative', 'Negative', 'Question'],
             rows: [
-              ['normal', '+ -ing', 'play → playing'],
-              ['termina en -e', 'quita -e + ing', 'write → writing'],
-              ['vocal + consonante', 'dobla consonante', 'run → running'],
+              ['I', "I'm working", "I'm not working", 'Am I working?'],
+              ['He/She/It', "He's working", "He isn't working", 'Is he working?'],
+              ['We/You/They', "We're working", "We aren't working", 'Are we working?'],
             ],
           },
         ],
         examples: [
           {
+            en: "Look! It's raining.",
+            es: '¡Mira! Está lloviendo.',
+          },
+          {
             en: 'The children are sleeping.',
             es: 'Los niños están durmiendo.',
           },
           {
-            en: 'It is raining at the moment.',
-            es: 'Está lloviendo en este momento.',
+            en: "I'm not listening to music now.",
+            es: 'No estoy escuchando música ahora.',
           },
           {
-            en: 'What are you doing?',
-            es: '¿Qué estás haciendo?',
+            en: 'Why are you laughing?',
+            es: '¿Por qué te ríes?',
           },
           {
-            en: "I'm not working today.",
-            es: 'Hoy no estoy trabajando.',
+            en: "He's writing an email.",
+            es: 'Él está escribiendo un correo.',
           },
           {
-            en: 'He is making dinner now.',
-            es: 'Él está haciendo la cena ahora.',
-          },
-          {
-            en: 'We are learning new words.',
-            es: 'Estamos aprendiendo palabras nuevas.',
+            en: "We're learning English.",
+            es: 'Estamos aprendiendo inglés.',
           },
         ],
         pitfalls: [
           {
             wrong: 'I working now.',
-            right: 'I am working now.',
-            why: 'El presente continuo necesita to be antes del -ing.',
-            esNote: "Nunca olvides am/is/are: 'I am working', no 'I working'.",
+            right: "I'm working now.",
+            why: 'You must include the verb be (am/is/are) before -ing.',
+            esNote: "Falta el verbo 'be': I am working.",
           },
           {
-            wrong: 'She is write a letter.',
-            right: 'She is writing a letter.',
-            why: 'El verbo principal debe llevar -ing.',
-            esNote: 'Después de to be, el verbo va en -ing.',
+            wrong: 'She is cook dinner.',
+            right: 'She is cooking dinner.',
+            why: 'After be you need the -ing form, not the base verb.',
+            esNote: "Tras 'be' va el verbo en -ing.",
           },
           {
             wrong: 'I am wanting a coffee.',
             right: 'I want a coffee.',
-            why: "'want' es un verbo de estado y no se usa en continuo.",
-            esNote: 'Verbos como want, like, know no se usan normalmente en -ing.',
+            why: 'State verbs like want, like, know are not normally used in the continuous.',
+            esNote: 'Verbos de estado (want, like, know) no van en continuo.',
           },
         ],
         exercises: [
           {
             kind: 'cloze',
-            id: 'a1-present-continuous-ex1',
-            before: 'Listen! The baby ',
-            after: ' (cry).',
-            answers: ['is crying'],
-            explain: 'is + crying.',
-            hint: 'to be + -ing',
+            id: 'a1-pc-ex1',
+            before: 'They ',
+            after: ' (play) in the garden now.',
+            answers: ['are playing', "'re playing"],
+            hint: 'be + -ing',
+            explain: 'Action now: are playing.',
           },
           {
             kind: 'mcq',
-            id: 'a1-present-continuous-ex2',
-            prompt: "Choose the correct -ing form of 'run'.",
-            options: ['runing', 'running', 'runninng'],
-            answer: 1,
-            explain: 'Se dobla la n: running.',
+            id: 'a1-pc-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'She is read a book.',
+              'She reading a book.',
+              'She is reading a book.',
+              'She reads a book now is.',
+            ],
+            answer: 2,
+            explain: 'be + verb-ing: is reading.',
           },
           {
             kind: 'correct',
-            id: 'a1-present-continuous-ex3',
-            wrong: 'They are play football now.',
-            answers: ['They are playing football now.'],
-            explain: 'play -> playing.',
-          },
-          {
-            kind: 'order',
-            id: 'a1-present-continuous-ex4',
-            tokens: ['what', 'are', 'you', 'doing', 'now'],
-            answer: 'What are you doing now?',
-            explain: 'Pregunta: wh- + are + sujeto + -ing.',
+            id: 'a1-pc-ex3',
+            wrong: 'Look, it raining!',
+            answers: ["Look, it's raining!", 'Look, it is raining!'],
+            explain: 'Add the verb be: it is raining.',
           },
           {
             kind: 'translate',
-            id: 'a1-present-continuous-ex5',
-            es: 'Está lloviendo ahora.',
-            answers: ['It is raining now.', "It's raining now."],
-            explain: 'It + is + raining.',
+            id: 'a1-pc-ex4',
+            es: 'Estoy escribiendo un correo.',
+            answers: ["I'm writing an email.", 'I am writing an email.'],
+            explain: 'write becomes writing (drop the e).',
           },
           {
-            kind: 'dictation',
-            id: 'a1-present-continuous-ex6',
-            text: "I'm not watching TV at the moment.",
-            explain: "Negativo: I'm not + -ing.",
+            kind: 'order',
+            id: 'a1-pc-ex5',
+            tokens: ['What', 'are', 'you', 'doing', '?'],
+            answer: 'What are you doing?',
+            explain: 'Question word + be + subject + -ing.',
           },
           {
             kind: 'mcq',
-            id: 'a1-present-continuous-ex7',
-            prompt: 'Which sentence is correct?',
-            options: ['I am liking this song.', 'I like this song.', 'I am like this song.'],
+            id: 'a1-pc-ex6',
+            prompt: "Choose: 'I usually drive, but today I ___ the train.'",
+            options: ['take', 'am taking', 'takes', 'taking'],
             answer: 1,
-            explain: "'like' no se usa en continuo.",
+            explain: 'Today (now) needs the continuous: am taking.',
+          },
+          {
+            kind: 'dictation',
+            id: 'a1-pc-ex7',
+            text: 'The baby is sleeping at the moment.',
+            explain: 'At the moment signals the present continuous.',
           },
         ],
       },
       {
-        id: 'a1-have-got-can',
+        id: 'a1-have-can-would-like',
         level: 'A1',
-        title: "Have got / have y can / can't",
-        summary: "Expresa posesión con have got o have, y habilidad y permiso con can y can't.",
+        title: 'Have / have got, can, and would like',
+        summary:
+          "Use **have** or **have got** for **possession**, family, and characteristics. Use **can / can't** for **ability** and **permission**, and **would like** to ask for things politely. These are very common in everyday English.",
+        summaryEs:
+          "Usa **have** o **have got** para **posesión**, familia y características. Usa **can / can't** para **habilidad** y **permiso**, y **would like** para pedir cosas con cortesía. Son muy frecuentes en el inglés diario.",
         sections: [
           {
-            heading: 'Have got y have (posesión)',
-            body: "Para hablar de **posesión** usamos **have got** (más común en inglés británico) o **have**. *I have got a car = I have a car*. Negativo: *haven't got / don't have*. Pregunta: *Have you got...? / Do you have...?*",
+            heading: 'Have and have got',
+            body: "Both **have** and **have got** mean *tener*. With have we use do/does for questions and negatives: **Do you have...? I don't have...** With have got we use the verb itself: **Have you got...? I haven't got...**",
+            bodyEs:
+              "Tanto **have** como **have got** significan *tener*. Con have usamos do/does para preguntas y negativos: **Do you have...? I don't have...** Con have got usamos el propio verbo: **Have you got...? I haven't got...**",
             examples: [
               {
-                en: 'I have got two brothers.',
+                en: "I have two brothers. / I've got two brothers.",
                 es: 'Tengo dos hermanos.',
               },
               {
-                en: 'She has got brown eyes.',
-                es: 'Ella tiene los ojos marrones.',
+                en: 'Do you have a car?',
+                es: '¿Tienes coche?',
               },
               {
-                en: 'Do you have a pen?',
-                es: '¿Tienes un bolígrafo?',
+                en: "She hasn't got a pen.",
+                es: 'Ella no tiene bolígrafo.',
               },
             ],
           },
           {
-            heading: "Can y can't (habilidad y permiso)",
-            body: "**Can** expresa **habilidad** ('saber/poder') y **permiso**. Es un verbo modal: va seguido del **verbo base** (sin 'to' y sin -s). Negativo: **can't** (cannot). Pregunta: *Can you swim?*",
+            heading: "Can and can't",
+            body: "**Can** expresses **ability** and **permission**. It is followed by the **base verb** with no to: **I can swim** (not *I can to swim*). The negative is **can't / cannot**. Can is the same for all subjects.",
+            bodyEs:
+              "**Can** expresa **habilidad** y **permiso**. Va seguido del **verbo base** sin to: **I can swim** (no *I can to swim*). El negativo es **can't / cannot**. Can es igual para todos los sujetos.",
             examples: [
               {
-                en: 'I can swim.',
-                es: 'Sé nadar.',
+                en: 'I can speak two languages.',
+                es: 'Puedo hablar dos idiomas.',
               },
               {
-                en: "He can't drive.",
-                es: 'Él no sabe conducir.',
+                en: "She can't drive.",
+                es: 'Ella no sabe conducir.',
               },
               {
                 en: 'Can I open the window?',
@@ -578,644 +747,522 @@ export const GRAMMAR: GrammarUnit[] = [
               },
             ],
           },
+          {
+            heading: 'Would like',
+            body: "**Would like** (I'd like) is a polite way to say *want*. Use it with a **noun** or a **to-infinitive**: I'd like a coffee; I'd like to go home. In questions: **Would you like...?**",
+            bodyEs:
+              "**Would like** (I'd like) es una forma cortés de decir *querer*. Úsalo con un **sustantivo** o un **to-infinitivo**: I'd like a coffee; I'd like to go home. En preguntas: **Would you like...?**",
+            examples: [
+              {
+                en: "I'd like a glass of water.",
+                es: 'Quisiera un vaso de agua.',
+              },
+              {
+                en: 'Would you like to dance?',
+                es: '¿Te gustaría bailar?',
+              },
+            ],
+          },
         ],
         tables: [
           {
-            caption: 'have got y can',
-            columns: ['Forma', 'have got', 'can'],
+            caption: 'can for ability',
+            columns: ['Form', 'Example'],
             rows: [
-              ['Afirmativo', 'I have got / She has got', 'I can / She can'],
-              ['Negativo', "haven't got / hasn't got", "can't (cannot)"],
-              ['Pregunta', 'Have you got...?', 'Can you...?'],
+              ['Affirmative', 'I can cook.'],
+              ['Negative', "I can't cook."],
+              ['Question', 'Can you cook?'],
+              ['Short answer', "Yes, I can. / No, I can't."],
             ],
           },
         ],
         examples: [
           {
-            en: 'We have got a big house.',
-            es: 'Tenemos una casa grande.',
+            en: "He's got blue eyes.",
+            es: 'Él tiene los ojos azules.',
           },
           {
-            en: "I haven't got any money.",
-            es: 'No tengo dinero.',
+            en: "We don't have time.",
+            es: 'No tenemos tiempo.',
           },
           {
             en: 'Can you help me, please?',
             es: '¿Puedes ayudarme, por favor?',
           },
           {
-            en: 'She can speak three languages.',
-            es: 'Ella sabe hablar tres idiomas.',
+            en: "I can't find my keys.",
+            es: 'No encuentro mis llaves.',
           },
           {
-            en: 'Has he got a bike?',
-            es: '¿Tiene él una bicicleta?',
+            en: "I'd like to learn the guitar.",
+            es: 'Me gustaría aprender la guitarra.',
           },
           {
-            en: "I can't come to the party.",
-            es: 'No puedo venir a la fiesta.',
+            en: 'Would you like some tea?',
+            es: '¿Te gustaría un poco de té?',
           },
         ],
         pitfalls: [
           {
             wrong: 'I can to swim.',
             right: 'I can swim.',
-            why: "Después de 'can' el verbo va sin 'to'.",
-            esNote: "Los modales como can no usan 'to' antes del verbo.",
+            why: 'After can we use the base verb with no to.',
+            esNote: "Tras 'can' va el verbo sin 'to'.",
           },
           {
-            wrong: 'She can swims very well.',
-            right: 'She can swim very well.',
-            why: "Tras 'can' el verbo va en forma base, sin -s.",
-            esNote: 'Can no cambia y el verbo siguiente nunca lleva -s.',
+            wrong: 'She cans drive.',
+            right: 'She can drive.',
+            why: 'Can never takes -s; it is the same for all subjects.',
+            esNote: "'Can' nunca lleva -s.",
           },
           {
-            wrong: 'She have got a car.',
-            right: 'She has got a car.',
-            why: "Con he/she/it se usa 'has got'.",
-            esNote: 'Tercera persona: has got, no have got.',
+            wrong: 'I want a coffee, please. (in a polite request)',
+            right: "I'd like a coffee, please.",
+            why: 'Would like is more polite than want for requests.',
+            esNote: "Para pedir con cortesía, usa 'I'd like'.",
           },
         ],
         exercises: [
           {
-            kind: 'mcq',
-            id: 'a1-have-got-can-ex1',
-            prompt: 'Choose: My sister ___ got a new phone.',
-            options: ['have', 'has', 'is'],
-            answer: 1,
-            explain: 'She/he/it = has got.',
-          },
-          {
             kind: 'cloze',
-            id: 'a1-have-got-can-ex2',
+            id: 'a1-have-ex1',
             before: 'I ',
-            after: " play the guitar, but I can't sing.",
+            after: " swim, but I can't dive.",
             answers: ['can'],
-            explain: 'Habilidad afirmativa = can.',
-            hint: 'habilidad',
-          },
-          {
-            kind: 'correct',
-            id: 'a1-have-got-can-ex3',
-            wrong: 'He can to drive a car.',
-            answers: ['He can drive a car.'],
-            explain: "Sin 'to' después de can.",
-          },
-          {
-            kind: 'order',
-            id: 'a1-have-got-can-ex4',
-            tokens: ['have', 'you', 'got', 'any', 'brothers'],
-            answer: 'Have you got any brothers?',
-            explain: 'Pregunta con Have you got...?',
-          },
-          {
-            kind: 'translate',
-            id: 'a1-have-got-can-ex5',
-            es: 'No puedo encontrar mis llaves.',
-            answers: ["I can't find my keys.", 'I cannot find my keys.'],
-            explain: "can't + verbo base.",
-          },
-          {
-            kind: 'dictation',
-            id: 'a1-have-got-can-ex6',
-            text: 'She has got two cats and a dog.',
-            explain: 'has got con tercera persona.',
+            hint: 'ability',
+            explain: 'can expresses ability.',
           },
           {
             kind: 'mcq',
-            id: 'a1-have-got-can-ex7',
-            prompt: 'Which is correct?',
-            options: ['Can you to help me?', 'Can you help me?', 'Can you helping me?'],
-            answer: 1,
-            explain: 'can + verbo base.',
-          },
-        ],
-      },
-      {
-        id: 'a1-would-like-want',
-        level: 'A1',
-        title: 'Would like, want to y like + -ing',
-        summary:
-          'Pide y expresa deseos con would like, di qué quieres hacer con want to + infinitivo, y qué te gusta hacer con like + -ing.',
-        sections: [
-          {
-            heading: 'Would like (me gustaría)',
-            body: "**Would like** significa **me gustaría** y es más educado que 'want'. Se usa para **peticiones** y **ofertas**. Va seguido de un sustantivo o de **to + verbo**: *I'd like a coffee / I'd like to go*. Contracción: **I'd like**.",
-            examples: [
-              {
-                en: "I'd like a glass of water, please.",
-                es: 'Me gustaría un vaso de agua, por favor.',
-              },
-              {
-                en: 'Would you like to come with us?',
-                es: '¿Te gustaría venir con nosotros?',
-              },
-              {
-                en: "She'd like to learn French.",
-                es: 'A ella le gustaría aprender francés.',
-              },
+            id: 'a1-have-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'He can to play tennis.',
+              'He cans play tennis.',
+              'He can play tennis.',
+              'He can plays tennis.',
             ],
+            answer: 2,
+            explain: 'can + base verb, no -s, no to.',
           },
           {
-            heading: 'Want to + infinitivo',
-            body: '**Want** significa **querer**. Para decir qué quieres hacer usamos **want to + verbo base**: *I want to eat*. Recuerda la -s en tercera persona: *he wants to*. Es directo, no se usa para pedir con cortesía.',
-            examples: [
-              {
-                en: 'I want to buy a new car.',
-                es: 'Quiero comprar un coche nuevo.',
-              },
-              {
-                en: 'He wants to be a pilot.',
-                es: 'Él quiere ser piloto.',
-              },
-              {
-                en: 'Do you want to dance?',
-                es: '¿Quieres bailar?',
-              },
-            ],
+            kind: 'correct',
+            id: 'a1-have-ex3',
+            wrong: 'Do you have got a bike?',
+            answers: ['Have you got a bike?', 'Do you have a bike?'],
+            explain:
+              'Use either have got (Have you got...?) or have with do (Do you have...?), not both.',
           },
           {
-            heading: 'Like + -ing (gustar hacer algo)',
-            body: 'Para decir qué actividades **te gustan**, usa **like / love / hate + verbo en -ing**: *I like swimming, she loves cooking*. Para hablar de gustos en general usamos esta estructura.',
-            examples: [
-              {
-                en: 'I like reading books.',
-                es: 'Me gusta leer libros.',
-              },
-              {
-                en: 'They love playing tennis.',
-                es: 'Les encanta jugar al tenis.',
-              },
-              {
-                en: 'He hates getting up early.',
-                es: 'Él odia levantarse temprano.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Estructuras de deseo y gusto',
-            columns: ['Estructura', 'Significado', 'Ejemplo'],
-            rows: [
-              ['would like + to + verbo', 'me gustaría (cortés)', "I'd like to go"],
-              ['want + to + verbo', 'quiero (directo)', 'I want to go'],
-              ['like + verbo-ing', 'me gusta (hábito)', 'I like going'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'Would you like some tea?',
-            es: '¿Te gustaría un poco de té?',
+            kind: 'translate',
+            id: 'a1-have-ex4',
+            es: 'Me gustaría un café.',
+            answers: ["I'd like a coffee.", 'I would like a coffee.'],
+            explain: 'would like for polite requests.',
           },
           {
-            en: "I'd like to book a table for two.",
-            es: 'Me gustaría reservar una mesa para dos.',
+            kind: 'order',
+            id: 'a1-have-ex5',
+            tokens: ['Would', 'you', 'like', 'to', 'come', '?'],
+            answer: 'Would you like to come?',
+            explain: 'would like + to-infinitive.',
           },
-          {
-            en: 'We want to visit London next year.',
-            es: 'Queremos visitar Londres el año que viene.',
-          },
-          {
-            en: 'She likes dancing at parties.',
-            es: 'A ella le gusta bailar en las fiestas.',
-          },
-          {
-            en: 'Do you want to watch a film?',
-            es: '¿Quieres ver una película?',
-          },
-          {
-            en: "I don't like waiting in queues.",
-            es: 'No me gusta esperar en colas.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'I want go home.',
-            right: 'I want to go home.',
-            why: "Después de 'want' se necesita 'to' antes del verbo.",
-            esNote: "want siempre va con 'to': want to + verbo.",
-          },
-          {
-            wrong: 'I would like a coffee, but I like to play more often.',
-            right: "I'd like a coffee. / I like playing tennis.",
-            why: "'would like' = deseo puntual; 'like + -ing' = gusto general.",
-            esNote:
-              "No confundas 'would like' (me gustaría ahora) con 'like' (me gusta en general).",
-          },
-          {
-            wrong: 'She want to sleep.',
-            right: 'She wants to sleep.',
-            why: 'Tercera persona lleva -s: wants.',
-            esNote: 'Recuerda la -s: he/she wants to.',
-          },
-        ],
-        exercises: [
           {
             kind: 'cloze',
-            id: 'a1-would-like-want-ex1',
-            before: 'I want ',
-            after: ' learn how to cook.',
-            answers: ['to'],
-            explain: 'want + to + verbo.',
-            hint: 'una palabra',
-          },
-          {
-            kind: 'mcq',
-            id: 'a1-would-like-want-ex2',
-            prompt: 'Choose: I like ___ in the sea.',
-            options: ['swim', 'to swimming', 'swimming'],
-            answer: 2,
-            explain: 'like + -ing.',
-          },
-          {
-            kind: 'correct',
-            id: 'a1-would-like-want-ex3',
-            wrong: 'Would you like drink something?',
-            answers: ['Would you like to drink something?', 'Would you like a drink?'],
-            explain: 'would like + to + verbo, o + sustantivo.',
-          },
-          {
-            kind: 'order',
-            id: 'a1-would-like-want-ex4',
-            tokens: ['she', 'would', 'like', 'to', 'see', 'the', 'menu'],
-            answer: 'She would like to see the menu.',
-            explain: 'would like to + verbo.',
-          },
-          {
-            kind: 'translate',
-            id: 'a1-would-like-want-ex5',
-            es: 'Me gustaría reservar una habitación.',
-            answers: ["I'd like to book a room.", 'I would like to book a room.'],
-            explain: 'would like to + verbo.',
+            id: 'a1-have-ex6',
+            before: 'She ',
+            after: ' got two children.',
+            answers: ['has', "'s"],
+            hint: 'have got, third person',
+            explain: 'Third person of have got is has got.',
           },
           {
             kind: 'dictation',
-            id: 'a1-would-like-want-ex6',
-            text: 'They want to travel around the world.',
-            explain: 'want to + verbo base.',
-          },
-          {
-            kind: 'mcq',
-            id: 'a1-would-like-want-ex7',
-            prompt: 'Which is the polite way to offer?',
-            options: ['You want a coffee?', 'Would you like a coffee?', 'You like coffee?'],
-            answer: 1,
-            explain: 'would like es más educado.',
+            id: 'a1-have-ex7',
+            text: "I can't find my keys.",
+            explain: "can't is the negative of can.",
           },
         ],
       },
       {
-        id: 'a1-past-be',
+        id: 'a1-past-simple-be',
         level: 'A1',
-        title: 'Pasado del verbo to be (was / were)',
+        title: 'Past simple of be (was / were)',
         summary:
-          'Habla del pasado con was y were, sus negativos y preguntas, y la estructura there was/there were.',
+          'Use **was** and **were** to talk about states and situations in the **past**. Use **was** with I, he, she, it and **were** with you, we, they. This is the past of the verb to be.',
+        summaryEs:
+          'Usa **was** y **were** para hablar de estados y situaciones en el **pasado**. Usa **was** con I, he, she, it y **were** con you, we, they. Es el pasado del verbo to be.',
         sections: [
           {
-            heading: 'Was y were',
-            body: 'El **pasado de to be** tiene dos formas: **was** (I, he, she, it) y **were** (you, we, they). Significa **era**, **estaba** o **fue/estuvo**. Palabras clave: **yesterday**, **last week**, **ago**.',
+            heading: 'Was and were',
+            body: '**I/he/she/it** → **was**; **you/we/they** → **were**. We use them for the past of be: descriptions, locations, age, and feelings in the past.',
+            bodyEs:
+              '**I/he/she/it** → **was**; **you/we/they** → **were**. Los usamos para el pasado de be: descripciones, ubicaciones, edad y sentimientos en el pasado.',
             examples: [
               {
                 en: 'I was at home yesterday.',
                 es: 'Estuve en casa ayer.',
               },
               {
-                en: 'They were happy with the result.',
-                es: 'Estaban contentos con el resultado.',
+                en: 'They were happy.',
+                es: 'Ellos estaban contentos.',
               },
               {
-                en: 'She was a nurse.',
-                es: 'Ella era enfermera.',
+                en: 'It was cold last night.',
+                es: 'Hacía frío anoche.',
               },
             ],
           },
           {
-            heading: 'Negativos, preguntas y there was/were',
-            body: "Negativo: **wasn't** / **weren't**. Pregunta: el verbo va antes del sujeto, *Was she there? Were you tired?* Para decir 'había' usamos **there was** (singular) y **there were** (plural).",
+            heading: 'Negatives and questions',
+            body: "Negative: **wasn't / weren't**. Question: put **was/were** before the subject: **Was she there? Were you tired?** Short answers: Yes, I was. / No, they weren't.",
+            bodyEs:
+              "Negativo: **wasn't / weren't**. Pregunta: pon **was/were** antes del sujeto: **Was she there? Were you tired?** Respuestas cortas: Yes, I was. / No, they weren't.",
             examples: [
               {
-                en: "He wasn't at school.",
-                es: 'Él no estaba en la escuela.',
+                en: "I wasn't at the party.",
+                es: 'No estuve en la fiesta.',
               },
               {
-                en: 'Were you at the party?',
-                es: '¿Estuviste en la fiesta?',
+                en: 'Were you at school?',
+                es: '¿Estabas en la escuela?',
               },
               {
-                en: 'There were many people at the concert.',
-                es: 'Había mucha gente en el concierto.',
+                en: "She wasn't happy.",
+                es: 'Ella no estaba contenta.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'to be en pasado',
-            columns: ['Sujeto', 'Afirmativo', 'Negativo'],
+            caption: 'Past of be',
+            columns: ['Subject', 'Affirmative', 'Negative', 'Question'],
             rows: [
-              ['I / He / She / It', 'was', "wasn't"],
-              ['You / We / They', 'were', "weren't"],
+              ['I/He/She/It', 'was', "wasn't", 'Was I?'],
+              ['You/We/They', 'were', "weren't", 'Were you?'],
             ],
           },
         ],
         examples: [
           {
-            en: 'The film was very interesting.',
-            es: 'La película fue muy interesante.',
+            en: 'My grandparents were farmers.',
+            es: 'Mis abuelos eran granjeros.',
           },
           {
-            en: "We weren't ready for the exam.",
-            es: 'No estábamos preparados para el examen.',
+            en: 'The film was very good.',
+            es: 'La película fue muy buena.',
           },
           {
-            en: 'Was it cold last night?',
-            es: '¿Hacía frío anoche?',
+            en: "We weren't ready.",
+            es: 'No estábamos listos.',
           },
           {
-            en: 'There was a problem with the car.',
-            es: 'Había un problema con el coche.',
+            en: 'Where were you last night?',
+            es: '¿Dónde estabas anoche?',
           },
           {
-            en: 'My parents were teachers.',
-            es: 'Mis padres eran profesores.',
+            en: 'He was born in 1990.',
+            es: 'Él nació en 1990.',
           },
           {
-            en: "I wasn't at work on Monday.",
-            es: 'No estuve en el trabajo el lunes.',
+            en: 'Was it expensive? Yes, it was.',
+            es: '¿Fue caro? Sí, lo fue.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'They was at the cinema.',
-            right: 'They were at the cinema.',
-            why: "they/we/you usan 'were'.",
-            esNote: 'was es singular; were es plural (you, we, they).',
+            wrong: 'They was at home.',
+            right: 'They were at home.',
+            why: 'Use were with they, we, and you.',
+            esNote: "Con they/we/you se usa 'were'.",
           },
           {
             wrong: 'I were tired.',
             right: 'I was tired.',
-            why: "Con 'I' se usa 'was'.",
-            esNote: 'I siempre va con was en pasado.',
+            why: 'Use was with I, he, she, it.',
+            esNote: "Con I/he/she/it se usa 'was'.",
           },
           {
-            wrong: 'There was many people.',
-            right: 'There were many people.',
-            why: "'people' es plural, así que se usa 'were'.",
-            esNote: 'people es plural en inglés: there were many people.',
+            wrong: 'He is born in 1990.',
+            right: 'He was born in 1990.',
+            why: 'Birth is a past event, so use was born.',
+            esNote: "Para nacimiento: 'was/were born'.",
           },
         ],
         exercises: [
           {
-            kind: 'mcq',
-            id: 'a1-past-be-ex1',
-            prompt: 'Choose: We ___ at the beach yesterday.',
-            options: ['was', 'were', 'are'],
-            answer: 1,
-            explain: 'we = were.',
+            kind: 'cloze',
+            id: 'a1-waswere-ex1',
+            before: 'We ',
+            after: ' very tired after the trip.',
+            answers: ['were'],
+            hint: 'we',
+            explain: 'With we we use were.',
           },
           {
-            kind: 'cloze',
-            id: 'a1-past-be-ex2',
-            before: 'She ',
-            after: ' very tired after the trip.',
-            answers: ['was'],
-            explain: 'she = was.',
-            hint: 'singular',
+            kind: 'mcq',
+            id: 'a1-waswere-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'She were a nurse.',
+              'She was a nurse.',
+              'She is were a nurse.',
+              'She were nurse.',
+            ],
+            answer: 1,
+            explain: 'With she we use was.',
           },
           {
             kind: 'correct',
-            id: 'a1-past-be-ex3',
-            wrong: 'They was happy.',
-            answers: ['They were happy.'],
-            explain: 'they = were.',
-          },
-          {
-            kind: 'order',
-            id: 'a1-past-be-ex4',
-            tokens: ['there', 'were', 'two', 'dogs', 'in', 'the', 'garden'],
-            answer: 'There were two dogs in the garden.',
-            explain: 'Plural = there were.',
+            id: 'a1-waswere-ex3',
+            wrong: 'They was at the cinema.',
+            answers: ['They were at the cinema.'],
+            explain: 'they takes were.',
           },
           {
             kind: 'translate',
-            id: 'a1-past-be-ex5',
-            es: '¿Estabas en casa anoche?',
-            answers: ['Were you at home last night?'],
-            explain: 'Were + you + ...?',
+            id: 'a1-waswere-ex4',
+            es: '¿Dónde estabas ayer?',
+            answers: ['Where were you yesterday?'],
+            explain: 'Question with were before the subject.',
+          },
+          {
+            kind: 'order',
+            id: 'a1-waswere-ex5',
+            tokens: ['I', "wasn't", 'at', 'home', '.'],
+            answer: "I wasn't at home.",
+            explain: "Negative of was is wasn't.",
+          },
+          {
+            kind: 'cloze',
+            id: 'a1-waswere-ex6',
+            before: 'It ',
+            after: ' a wonderful day.',
+            answers: ['was'],
+            hint: 'it',
+            explain: 'With it we use was.',
           },
           {
             kind: 'dictation',
-            id: 'a1-past-be-ex6',
-            text: "I wasn't at the meeting this morning.",
-            explain: "wasn't con 'I'.",
-          },
-          {
-            kind: 'mcq',
-            id: 'a1-past-be-ex7',
-            prompt: 'Choose the correct negative.',
-            options: ["He weren't here.", "He wasn't here.", 'He not was here.'],
-            answer: 1,
-            explain: "he = wasn't.",
+            id: 'a1-waswere-ex7',
+            text: 'My parents were born in Spain.',
+            explain: 'were born for plural subject in the past.',
           },
         ],
       },
       {
         id: 'a1-past-simple',
         level: 'A1',
-        title: 'Pasado simple: verbos regulares e irregulares',
+        title: 'Past simple (regular and irregular)',
         summary:
-          'Habla de acciones terminadas en el pasado. Forma regular con -ed, verbos irregulares, y negativos y preguntas con did.',
+          'Use the **past simple** for finished actions in the **past**. Regular verbs add **-ed**; many common verbs are **irregular** and must be learned. Negatives and questions use **did** + base verb.',
+        summaryEs:
+          'Usa el **past simple** para acciones terminadas en el **pasado**. Los verbos regulares añaden **-ed**; muchos verbos comunes son **irregulares** y hay que aprenderlos. Negativos y preguntas usan **did** + verbo base.',
         sections: [
           {
-            heading: 'Verbos regulares (-ed)',
-            body: 'El **pasado simple** describe acciones **terminadas** en el pasado. Los verbos **regulares** añaden **-ed**: *work → worked, play → played*. Si termina en -e, solo se añade -d (*like → liked*). Si termina en consonante + y, cambia a -ied (*study → studied*).',
+            heading: 'Regular verbs: -ed',
+            body: 'Add **-ed** to regular verbs: work → worked, play → played. Verbs ending in e add only **-d** (like → liked). Consonant + y becomes **-ied** (study → studied). The form is the same for all subjects.',
+            bodyEs:
+              'Añade **-ed** a los verbos regulares: work → worked, play → played. Los verbos que terminan en e añaden solo **-d** (like → liked). Consonante + y se convierte en **-ied** (study → studied). La forma es igual para todos los sujetos.',
             examples: [
               {
-                en: 'I worked late yesterday.',
-                es: 'Trabajé hasta tarde ayer.',
+                en: 'I worked all day.',
+                es: 'Trabajé todo el día.',
               },
               {
                 en: 'She studied for the exam.',
                 es: 'Ella estudió para el examen.',
               },
               {
-                en: 'We watched a film last night.',
-                es: 'Vimos una película anoche.',
+                en: 'We watched a film.',
+                es: 'Vimos una película.',
               },
             ],
           },
           {
-            heading: 'Verbos irregulares',
-            body: 'Muchos verbos comunes son **irregulares** y hay que memorizarlos: *go → went, have → had, see → saw, eat → ate, buy → bought*. La forma es la misma para todas las personas.',
+            heading: 'Irregular verbs',
+            body: 'Many frequent verbs have **special past forms**: go → went, have → had, see → saw, eat → ate, make → made, take → took, get → got. You need to memorise these.',
+            bodyEs:
+              'Muchos verbos frecuentes tienen **formas de pasado especiales**: go → went, have → had, see → saw, eat → ate, make → made, take → took, get → got. Hay que memorizarlos.',
             examples: [
               {
-                en: 'He went to Madrid last summer.',
-                es: 'Él fue a Madrid el verano pasado.',
+                en: 'I went to the beach.',
+                es: 'Fui a la playa.',
               },
               {
-                en: 'They had a great time.',
-                es: 'Lo pasaron muy bien.',
+                en: 'He had a great time.',
+                es: 'Él lo pasó muy bien.',
               },
               {
-                en: 'I saw a good film yesterday.',
-                es: 'Vi una buena película ayer.',
+                en: 'We saw a good film.',
+                es: 'Vimos una buena película.',
               },
             ],
           },
           {
-            heading: 'Negativos y preguntas con did',
-            body: "En negativo y pregunta usamos el auxiliar **did** + **verbo base** (¡sin pasado!). Negativo: **didn't + verbo base**. Pregunta: **Did + sujeto + verbo base**. *I didn't go / Did you see it?*",
+            heading: 'Negatives and questions with did',
+            body: "Use **didn't** (did not) + **base verb** for negatives, and **Did** + subject + **base verb** for questions. After did/didn't, never use the past form: **I didn't go** (not *didn't went*).",
+            bodyEs:
+              "Usa **didn't** (did not) + **verbo base** para negativos, y **Did** + sujeto + **verbo base** para preguntas. Después de did/didn't, nunca uses la forma de pasado: **I didn't go** (no *didn't went*).",
             examples: [
               {
-                en: "I didn't go to work yesterday.",
-                es: 'No fui a trabajar ayer.',
+                en: "I didn't see her.",
+                es: 'No la vi.',
               },
               {
-                en: 'Did you eat breakfast?',
-                es: '¿Desayunaste?',
+                en: 'Did you go out?',
+                es: '¿Saliste?',
               },
               {
-                en: "She didn't like the food.",
-                es: 'A ella no le gustó la comida.',
+                en: "She didn't call me.",
+                es: 'Ella no me llamó.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Verbos irregulares frecuentes',
-            columns: ['Infinitivo', 'Pasado', 'Español'],
+            caption: 'Common irregular verbs',
+            columns: ['Base', 'Past', 'Example'],
             rows: [
-              ['go', 'went', 'ir'],
-              ['have', 'had', 'tener'],
-              ['see', 'saw', 'ver'],
-              ['eat', 'ate', 'comer'],
-              ['buy', 'bought', 'comprar'],
-              ['make', 'made', 'hacer'],
+              ['go', 'went', 'I went home.'],
+              ['have', 'had', 'We had lunch.'],
+              ['see', 'saw', 'I saw John.'],
+              ['buy', 'bought', 'She bought a dress.'],
+              ['come', 'came', 'They came late.'],
             ],
           },
         ],
         examples: [
           {
-            en: 'We visited my grandmother on Sunday.',
-            es: 'Visitamos a mi abuela el domingo.',
+            en: 'We arrived at eight.',
+            es: 'Llegamos a las ocho.',
           },
           {
-            en: 'He bought a new laptop last week.',
-            es: 'Él compró un portátil nuevo la semana pasada.',
+            en: 'He bought a new phone.',
+            es: 'Él compró un teléfono nuevo.',
           },
           {
-            en: 'Did they finish the project?',
-            es: '¿Terminaron el proyecto?',
+            en: "I didn't like the food.",
+            es: 'No me gustó la comida.',
           },
           {
-            en: "I didn't understand the lesson.",
-            es: 'No entendí la lección.',
+            en: 'Did they enjoy the party?',
+            es: '¿Disfrutaron de la fiesta?',
           },
           {
-            en: 'She made a cake for the party.',
-            es: 'Ella hizo un pastel para la fiesta.',
+            en: 'She came home early.',
+            es: 'Ella llegó a casa temprano.',
           },
           {
-            en: 'They played football in the rain.',
-            es: 'Jugaron al fútbol bajo la lluvia.',
+            en: "We didn't have time.",
+            es: 'No tuvimos tiempo.',
           },
         ],
         pitfalls: [
           {
-            wrong: "I didn't went home.",
-            right: "I didn't go home.",
-            why: "Tras 'didn't' el verbo va en forma base, no en pasado.",
-            esNote: "El pasado ya está en 'did/didn't'; el verbo vuelve a la base.",
+            wrong: "I didn't went to school.",
+            right: "I didn't go to school.",
+            why: "After didn't use the base verb, not the past form.",
+            esNote: "Tras 'didn't' va el verbo base, no el pasado.",
           },
           {
-            wrong: 'Did you saw the match?',
-            right: 'Did you see the match?',
-            why: "En preguntas con 'did' el verbo va en forma base.",
-            esNote: "Después de 'did', usa el infinitivo: see, no saw.",
+            wrong: 'Did you saw the film?',
+            right: 'Did you see the film?',
+            why: 'After did in questions use the base verb.',
+            esNote: "Tras 'did' en preguntas va el verbo base.",
           },
           {
-            wrong: 'Yesterday I go to the shop.',
-            right: 'Yesterday I went to the shop.',
-            why: "Con 'yesterday' se necesita el pasado: went.",
-            esNote: 'go es irregular: su pasado es went.',
+            wrong: 'She goed home.',
+            right: 'She went home.',
+            why: 'Go is irregular: the past is went, not goed.',
+            esNote: "'Go' es irregular: pasado 'went'.",
           },
         ],
         exercises: [
           {
             kind: 'cloze',
-            id: 'a1-past-simple-ex1',
-            before: 'Last weekend we ',
-            after: ' (go) to the beach.',
+            id: 'a1-past-ex1',
+            before: 'Yesterday I ',
+            after: ' (go) to the gym.',
             answers: ['went'],
-            explain: 'go -> went.',
             hint: 'irregular',
+            explain: 'The past of go is went.',
           },
           {
             kind: 'mcq',
-            id: 'a1-past-simple-ex2',
-            prompt: "Choose the past of 'study'.",
-            options: ['studyed', 'studied', 'studed'],
+            id: 'a1-past-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              "I didn't saw him.",
+              "I didn't see him.",
+              'I not saw him.',
+              "I don't saw him.",
+            ],
             answer: 1,
-            explain: 'consonante + y -> ied.',
+            explain: "didn't + base verb see.",
           },
           {
             kind: 'correct',
-            id: 'a1-past-simple-ex3',
-            wrong: "She didn't liked the film.",
-            answers: ["She didn't like the film."],
-            explain: "didn't + verbo base.",
-          },
-          {
-            kind: 'order',
-            id: 'a1-past-simple-ex4',
-            tokens: ['did', 'you', 'see', 'the', 'news', 'yesterday'],
-            answer: 'Did you see the news yesterday?',
-            explain: 'Did + sujeto + verbo base.',
+            id: 'a1-past-ex3',
+            wrong: 'She studyed English last year.',
+            answers: ['She studied English last year.'],
+            explain: 'Consonant + y changes to -ied: studied.',
           },
           {
             kind: 'translate',
-            id: 'a1-past-simple-ex5',
-            es: 'Compré un coche nuevo la semana pasada.',
-            answers: ['I bought a new car last week.'],
-            explain: 'buy -> bought.',
+            id: 'a1-past-ex4',
+            es: 'Compramos una casa nueva.',
+            answers: ['We bought a new house.'],
+            explain: 'buy is irregular: bought.',
+          },
+          {
+            kind: 'order',
+            id: 'a1-past-ex5',
+            tokens: ['Did', 'you', 'see', 'the', 'match', '?'],
+            answer: 'Did you see the match?',
+            explain: 'Did + subject + base verb.',
+          },
+          {
+            kind: 'cloze',
+            id: 'a1-past-ex6',
+            before: 'We ',
+            after: ' (watch) a film last night.',
+            answers: ['watched'],
+            hint: 'regular -ed',
+            explain: 'Regular verb watch becomes watched.',
           },
           {
             kind: 'dictation',
-            id: 'a1-past-simple-ex6',
-            text: 'They watched a great film last night.',
-            explain: 'watch -> watched (regular).',
-          },
-          {
-            kind: 'mcq',
-            id: 'a1-past-simple-ex7',
-            prompt: 'Which sentence is correct?',
-            options: ["I didn't ate dinner.", "I didn't eat dinner.", 'I not ate dinner.'],
-            answer: 1,
-            explain: "didn't + verbo base.",
+            id: 'a1-past-ex7',
+            text: "They didn't come to the party.",
+            explain: "didn't + base verb come.",
           },
         ],
       },
       {
         id: 'a1-future-will-going-to',
         level: 'A1',
-        title: 'Futuro: will y going to',
+        title: 'Future: will, going to, and imperatives',
         summary:
-          'Habla del futuro con will (decisiones, predicciones, promesas) y be going to (planes e intenciones).',
+          'Talk about the future with **will** for predictions and decisions, and **going to** for plans and intentions. Also learn **imperatives** to give orders, instructions, and advice.',
+        summaryEs:
+          'Habla del futuro con **will** para predicciones y decisiones, y **going to** para planes e intenciones. Aprende también el **imperativo** para dar órdenes, instrucciones y consejos.',
         sections: [
           {
             heading: 'Will',
-            body: "**Will** se usa para **predicciones**, **decisiones del momento**, **promesas** y **ofertas**. Va con el **verbo base** para todas las personas. Contracción: **'ll**. Negativo: **won't**. *I'll help you / It will rain*.",
+            body: "Use **will** (+ base verb) for predictions, promises, and decisions made at the moment of speaking. Will is the same for all subjects. Negative: **won't**. Short form: **I'll, she'll**.",
+            bodyEs:
+              "Usa **will** (+ verbo base) para predicciones, promesas y decisiones tomadas en el momento de hablar. Will es igual para todos los sujetos. Negativo: **won't**. Forma corta: **I'll, she'll**.",
             examples: [
               {
-                en: 'I think it will rain tomorrow.',
-                es: 'Creo que lloverá mañana.',
+                en: 'It will rain tomorrow.',
+                es: 'Lloverá mañana.',
               },
               {
-                en: "I'll call you later.",
-                es: 'Te llamaré más tarde.',
+                en: "I'll help you.",
+                es: 'Te ayudaré.',
               },
               {
                 en: "She won't be late.",
@@ -1224,16 +1271,18 @@ export const GRAMMAR: GrammarUnit[] = [
             ],
           },
           {
-            heading: 'Be going to',
-            body: "**Be going to** se usa para **planes** e **intenciones** que ya has decidido, y para predicciones con evidencia. Forma: **am/is/are + going to + verbo base**. *I'm going to study tonight*.",
+            heading: 'Going to',
+            body: 'Use **be going to + base verb** for **plans** and **intentions** already decided, and for predictions based on what you can see now. Form: am/is/are going to.',
+            bodyEs:
+              'Usa **be going to + verbo base** para **planes** e **intenciones** ya decididos, y para predicciones basadas en lo que ves ahora. Forma: am/is/are going to.',
             examples: [
               {
-                en: 'We are going to visit Italy next month.',
-                es: 'Vamos a visitar Italia el mes que viene.',
+                en: "I'm going to visit my family.",
+                es: 'Voy a visitar a mi familia.',
               },
               {
-                en: "He's going to buy a new phone.",
-                es: 'Él va a comprar un teléfono nuevo.',
+                en: "They're going to buy a house.",
+                es: 'Van a comprar una casa.',
               },
               {
                 en: "Look at the clouds! It's going to rain.",
@@ -1241,172 +1290,19 @@ export const GRAMMAR: GrammarUnit[] = [
               },
             ],
           },
-        ],
-        tables: [
           {
-            caption: 'will vs going to',
-            columns: ['Forma', 'Uso', 'Ejemplo'],
-            rows: [
-              ['will + verbo', 'decisión del momento, predicción, promesa', "I'll help you"],
-              ['going to + verbo', 'plan o intención ya decidida', "I'm going to travel"],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: "I'm going to start a new job next week.",
-            es: 'Voy a empezar un trabajo nuevo la semana que viene.',
-          },
-          {
-            en: 'Maybe they will come to the party.',
-            es: 'Quizás vengan a la fiesta.',
-          },
-          {
-            en: "Don't worry, I'll do it.",
-            es: 'No te preocupes, lo haré yo.',
-          },
-          {
-            en: 'Are you going to study tonight?',
-            es: '¿Vas a estudiar esta noche?',
-          },
-          {
-            en: "The bus won't arrive on time.",
-            es: 'El autobús no llegará a tiempo.',
-          },
-          {
-            en: "We're going to have dinner at eight.",
-            es: 'Vamos a cenar a las ocho.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'I will to call you.',
-            right: 'I will call you.',
-            why: "Después de 'will' no se usa 'to'.",
-            esNote: "will + verbo base, sin 'to'.",
-          },
-          {
-            wrong: 'She wills come tomorrow.',
-            right: 'She will come tomorrow.',
-            why: "'will' no cambia con la tercera persona.",
-            esNote: 'will es igual para todas las personas, sin -s.',
-          },
-          {
-            wrong: "I'm going to study tonight... no, I going to study.",
-            right: "I'm going to study tonight.",
-            why: 'going to necesita am/is/are antes.',
-            esNote: "No olvides el verbo to be: I'm going to, no 'I going to'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'a1-future-will-going-to-ex1',
-            prompt: "The phone is ringing. 'I ___ answer it!'",
-            options: ['am going to', "'ll", 'going to'],
-            answer: 1,
-            explain: "Decisión del momento = will ('ll).",
-          },
-          {
-            kind: 'cloze',
-            id: 'a1-future-will-going-to-ex2',
-            before: 'Next year we are ',
-            after: ' buy a house.',
-            answers: ['going to'],
-            explain: 'Plan = going to.',
-            hint: 'plan',
-          },
-          {
-            kind: 'correct',
-            id: 'a1-future-will-going-to-ex3',
-            wrong: 'I will to help you.',
-            answers: ['I will help you.', "I'll help you."],
-            explain: 'will + verbo base.',
-          },
-          {
-            kind: 'order',
-            id: 'a1-future-will-going-to-ex4',
-            tokens: ['she', 'is', 'going', 'to', 'start', 'a', 'new', 'job'],
-            answer: 'She is going to start a new job.',
-            explain: 'is going to + verbo.',
-          },
-          {
-            kind: 'translate',
-            id: 'a1-future-will-going-to-ex5',
-            es: 'Creo que mañana hará sol.',
-            answers: ['I think it will be sunny tomorrow.', "I think it'll be sunny tomorrow."],
-            explain: 'Predicción = will.',
-          },
-          {
-            kind: 'dictation',
-            id: 'a1-future-will-going-to-ex6',
-            text: 'They are going to travel to Japan in summer.',
-            explain: 'going to para planes.',
-          },
-          {
-            kind: 'mcq',
-            id: 'a1-future-will-going-to-ex7',
-            prompt: 'Choose the negative of will.',
-            options: ["willn't", "won't", "don't will"],
-            answer: 1,
-            explain: "will not = won't.",
-          },
-        ],
-      },
-      {
-        id: 'a1-pronouns-imperatives',
-        level: 'A1',
-        title: 'Pronombres, posesivos e imperativos',
-        summary:
-          'Aprende los pronombres de sujeto y objeto, los adjetivos y pronombres posesivos, y cómo dar órdenes e instrucciones con el imperativo.',
-        sections: [
-          {
-            heading: 'Pronombres de sujeto y objeto',
-            body: 'Los **pronombres de sujeto** (I, you, he, she, it, we, they) hacen la acción. Los **pronombres de objeto** (me, you, him, her, it, us, them) reciben la acción: *She loves him*. En inglés el **sujeto es obligatorio**.',
+            heading: 'Imperatives',
+            body: "The **imperative** uses the **base verb** with no subject to give orders, instructions, or advice: **Open the door. Don't worry.** Add **please** to be polite. The negative is **Don't + verb**.",
+            bodyEs:
+              "El **imperativo** usa el **verbo base** sin sujeto para dar órdenes, instrucciones o consejos: **Open the door. Don't worry.** Añade **please** para ser cortés. El negativo es **Don't + verbo**.",
             examples: [
               {
-                en: 'I saw her at the party.',
-                es: 'La vi en la fiesta.',
+                en: 'Sit down, please.',
+                es: 'Siéntate, por favor.',
               },
               {
-                en: 'They helped us a lot.',
-                es: 'Nos ayudaron mucho.',
-              },
-              {
-                en: 'Can you call me tonight?',
-                es: '¿Puedes llamarme esta noche?',
-              },
-            ],
-          },
-          {
-            heading: 'Posesivos',
-            body: 'Los **adjetivos posesivos** van antes del sustantivo (my, your, his, her, its, our, their): *my car*. Los **pronombres posesivos** van solos (mine, yours, his, hers, ours, theirs): *This car is mine*.',
-            examples: [
-              {
-                en: 'This is my book and that is yours.',
-                es: 'Este es mi libro y aquel es el tuyo.',
-              },
-              {
-                en: 'Her name is Anna.',
-                es: 'Su nombre es Anna.',
-              },
-              {
-                en: 'The house is ours.',
-                es: 'La casa es nuestra.',
-              },
-            ],
-          },
-          {
-            heading: 'Imperativos',
-            body: "El **imperativo** da órdenes, instrucciones y consejos. Se usa el **verbo base** sin sujeto: *Open the door! Sit down*. El negativo es **Don't + verbo**: *Don't run!*",
-            examples: [
-              {
-                en: 'Close the window, please.',
-                es: 'Cierra la ventana, por favor.',
-              },
-              {
-                en: "Don't touch that!",
-                es: '¡No toques eso!',
+                en: "Don't touch that.",
+                es: 'No toques eso.',
               },
               {
                 en: 'Turn left at the corner.',
@@ -1417,8 +1313,191 @@ export const GRAMMAR: GrammarUnit[] = [
         ],
         tables: [
           {
-            caption: 'Pronombres y posesivos',
-            columns: ['Sujeto', 'Objeto', 'Adjetivo posesivo', 'Pronombre posesivo'],
+            caption: 'will vs going to',
+            columns: ['Use', 'Form', 'Example'],
+            rows: [
+              ['Prediction / decision now', 'will + base', "I'll call you later."],
+              ['Plan / intention', 'going to + base', "I'm going to study tonight."],
+              ['Order / instruction', 'base verb', 'Close the window.'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: "I think she'll pass the exam.",
+            es: 'Creo que aprobará el examen.',
+          },
+          {
+            en: "We're going to travel in summer.",
+            es: 'Vamos a viajar en verano.',
+          },
+          {
+            en: "Don't be late!",
+            es: '¡No llegues tarde!',
+          },
+          {
+            en: "I'll have a coffee, please.",
+            es: 'Tomaré un café, por favor.',
+          },
+          {
+            en: 'Be careful!',
+            es: '¡Ten cuidado!',
+          },
+          {
+            en: 'What are you going to do tonight?',
+            es: '¿Qué vas a hacer esta noche?',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'I will to call you.',
+            right: 'I will call you.',
+            why: 'After will use the base verb with no to.',
+            esNote: "Tras 'will' va el verbo sin 'to'.",
+          },
+          {
+            wrong: 'She going to study.',
+            right: 'She is going to study.',
+            why: 'Going to needs the verb be (am/is/are).',
+            esNote: "'Going to' necesita el verbo 'be'.",
+          },
+          {
+            wrong: 'You sit down, please. (as a command)',
+            right: 'Sit down, please.',
+            why: 'Imperatives have no subject; just use the base verb.',
+            esNote: 'El imperativo no lleva sujeto.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'a1-fut-ex1',
+            before: "I'm tired. I think I ",
+            after: ' go to bed.',
+            answers: ['will', "'ll"],
+            hint: 'decision now',
+            explain: 'A decision made now uses will.',
+          },
+          {
+            kind: 'mcq',
+            id: 'a1-fut-ex2',
+            prompt: 'Choose the best sentence for a fixed plan.',
+            options: [
+              'I will visit Rome next week (already booked).',
+              "I'm going to visit Rome next week.",
+              'I visit Rome next week.',
+              'I visiting Rome next week.',
+            ],
+            answer: 1,
+            explain: 'Plans already decided use going to.',
+          },
+          {
+            kind: 'correct',
+            id: 'a1-fut-ex3',
+            wrong: 'They going to move house.',
+            answers: ["They're going to move house.", 'They are going to move house.'],
+            explain: 'going to needs the verb be.',
+          },
+          {
+            kind: 'translate',
+            id: 'a1-fut-ex4',
+            es: 'No te preocupes.',
+            answers: ["Don't worry.", 'Do not worry.'],
+            explain: "Negative imperative: Don't + base verb.",
+          },
+          {
+            kind: 'order',
+            id: 'a1-fut-ex5',
+            tokens: ['What', 'are', 'you', 'going', 'to', 'do', '?'],
+            answer: 'What are you going to do?',
+            explain: 'Question with going to.',
+          },
+          {
+            kind: 'mcq',
+            id: 'a1-fut-ex6',
+            prompt: "Complete: 'Look at those clouds! It ___ rain.'",
+            options: ['will', 'is going to', 'go to', 'going'],
+            answer: 1,
+            explain: 'Prediction from present evidence uses going to.',
+          },
+          {
+            kind: 'dictation',
+            id: 'a1-fut-ex7',
+            text: 'Turn left and then go straight on.',
+            explain: 'Imperatives use the base verb with no subject.',
+          },
+        ],
+      },
+      {
+        id: 'a1-pronouns-possessives',
+        level: 'A1',
+        title: 'Pronouns and possessives',
+        summary:
+          "Learn **subject pronouns** (I, you, he...), **object pronouns** (me, you, him...), **possessive adjectives** (my, your, his...), and **possessive pronouns** (mine, yours...). Also learn the **possessive 's** to show who owns something.",
+        summaryEs:
+          "Aprende los **pronombres sujeto** (I, you, he...), los **pronombres objeto** (me, you, him...), los **adjetivos posesivos** (my, your, his...) y los **pronombres posesivos** (mine, yours...). Aprende también el **posesivo 's** para indicar quién posee algo.",
+        sections: [
+          {
+            heading: 'Subject and object pronouns',
+            body: '**Subject pronouns** (I, you, he, she, it, we, they) come before the verb. **Object pronouns** (me, you, him, her, it, us, them) come after the verb or a preposition.',
+            bodyEs:
+              'Los **pronombres sujeto** (I, you, he, she, it, we, they) van antes del verbo. Los **pronombres objeto** (me, you, him, her, it, us, them) van después del verbo o de una preposición.',
+            examples: [
+              {
+                en: 'She loves him.',
+                es: 'Ella lo quiere.',
+              },
+              {
+                en: 'I can see them.',
+                es: 'Puedo verlos.',
+              },
+              {
+                en: 'Give it to me.',
+                es: 'Dámelo.',
+              },
+            ],
+          },
+          {
+            heading: 'Possessive adjectives and pronouns',
+            body: "**Possessive adjectives** (my, your, his, her, its, our, their) go before a noun. **Possessive pronouns** (mine, yours, his, hers, ours, theirs) replace the noun. Note: **its** (possessive) has no apostrophe; **it's** means it is.",
+            bodyEs:
+              "Los **adjetivos posesivos** (my, your, his, her, its, our, their) van antes de un sustantivo. Los **pronombres posesivos** (mine, yours, his, hers, ours, theirs) reemplazan al sustantivo. Nota: **its** (posesivo) no lleva apóstrofo; **it's** significa it is.",
+            examples: [
+              {
+                en: "This is my book. It's mine.",
+                es: 'Este es mi libro. Es mío.',
+              },
+              {
+                en: 'Is this your pen or hers?',
+                es: '¿Es este tu bolígrafo o el de ella?',
+              },
+              {
+                en: 'Their house is bigger than ours.',
+                es: 'Su casa es más grande que la nuestra.',
+              },
+            ],
+          },
+          {
+            heading: "Possessive 's",
+            body: "To say who owns something, add **'s** to a person or name: **Ana's car, my brother's house**. For plural nouns ending in s, add just an apostrophe: **my parents' house**.",
+            bodyEs:
+              "Para decir quién posee algo, añade **'s** a una persona o nombre: **Ana's car, my brother's house**. Para sustantivos plurales que terminan en s, añade solo un apóstrofo: **my parents' house**.",
+            examples: [
+              {
+                en: "This is Maria's bag.",
+                es: 'Esta es la bolsa de María.',
+              },
+              {
+                en: "The students' books are here.",
+                es: 'Los libros de los estudiantes están aquí.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Pronouns and possessives',
+            columns: ['Subject', 'Object', 'Possessive adj.', 'Possessive pron.'],
             rows: [
               ['I', 'me', 'my', 'mine'],
               ['you', 'you', 'your', 'yours'],
@@ -1431,1038 +1510,365 @@ export const GRAMMAR: GrammarUnit[] = [
         ],
         examples: [
           {
-            en: 'We invited them to dinner.',
-            es: 'Los invitamos a cenar.',
+            en: 'We invited them to our party.',
+            es: 'Los invitamos a nuestra fiesta.',
           },
           {
-            en: 'Is this your phone or mine?',
-            es: '¿Es este tu teléfono o el mío?',
+            en: 'Her name is Sofia.',
+            es: 'Su nombre es Sofía.',
           },
           {
-            en: 'Please give me the keys.',
-            es: 'Por favor, dame las llaves.',
+            en: "That book isn't yours, it's mine.",
+            es: 'Ese libro no es tuyo, es mío.',
           },
           {
-            en: "Don't be late for the meeting.",
-            es: 'No llegues tarde a la reunión.',
+            en: 'Can you help us?',
+            es: '¿Puedes ayudarnos?',
           },
           {
-            en: 'Their house is bigger than ours.',
-            es: 'Su casa es más grande que la nuestra.',
+            en: "This is John's car.",
+            es: 'Este es el coche de John.',
           },
           {
-            en: "Take an umbrella, it's raining.",
-            es: 'Lleva un paraguas, está lloviendo.',
+            en: 'The dog wagged its tail.',
+            es: 'El perro movió la cola.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'Is raining a lot.',
-            right: 'It is raining a lot.',
-            why: "El sujeto 'it' es obligatorio en inglés.",
-            esNote: 'En inglés siempre se pone el sujeto, aunque en español se omita.',
-          },
-          {
-            wrong: 'This is the book of me.',
-            right: 'This is my book. / This book is mine.',
-            why: "La posesión usa my/mine, no 'of me'.",
-            esNote: "No se traduce 'de mí'; usa my (mi) o mine (mío).",
+            wrong: 'The car of my brother is red.',
+            right: "My brother's car is red.",
+            why: "English usually shows possession with 's, not with 'of'.",
+            esNote: "La posesión se hace con 's: 'my brother's car'.",
           },
           {
             wrong: 'She loves he.',
             right: 'She loves him.',
-            why: 'Tras el verbo se usa el pronombre de objeto.',
-            esNote: 'Después del verbo: me, him, her, us, them.',
+            why: 'After a verb use the object pronoun him.',
+            esNote: 'Tras el verbo va el pronombre objeto: him.',
+          },
+          {
+            wrong: "The dog hurt it's leg.",
+            right: 'The dog hurt its leg.',
+            why: "Possessive its has no apostrophe; it's means it is.",
+            esNote: "'Its' posesivo no lleva apóstrofo.",
           },
         ],
         exercises: [
           {
-            kind: 'mcq',
-            id: 'a1-pronouns-imperatives-ex1',
-            prompt: "Choose: I don't know ___. (a él)",
-            options: ['he', 'him', 'his'],
-            answer: 1,
-            explain: 'Objeto = him.',
+            kind: 'cloze',
+            id: 'a1-pron-ex1',
+            before: 'This is ',
+            after: ' house. (de nosotros)',
+            answers: ['our'],
+            hint: 'possessive adjective',
+            explain: 'our is the possessive adjective for we.',
           },
           {
-            kind: 'cloze',
-            id: 'a1-pronouns-imperatives-ex2',
-            before: "That bag isn't mine, it's ",
-            after: '. (de ella)',
-            answers: ['hers'],
-            explain: 'Pronombre posesivo = hers.',
-            hint: 'pronombre posesivo',
+            kind: 'mcq',
+            id: 'a1-pron-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'I saw she yesterday.',
+              'I saw her yesterday.',
+              'I saw hers yesterday.',
+              'I saw their yesterday.',
+            ],
+            answer: 1,
+            explain: 'After the verb use the object pronoun her.',
           },
           {
             kind: 'correct',
-            id: 'a1-pronouns-imperatives-ex3',
-            wrong: 'Please gives me the salt.',
-            answers: ['Please give me the salt.'],
-            explain: 'El imperativo usa el verbo base.',
-          },
-          {
-            kind: 'order',
-            id: 'a1-pronouns-imperatives-ex4',
-            tokens: ["don't", 'open', 'the', 'door'],
-            answer: "Don't open the door.",
-            explain: "Imperativo negativo: Don't + verbo.",
+            id: 'a1-pron-ex3',
+            wrong: 'The house of my parents is big.',
+            answers: ["My parents' house is big."],
+            explain: "Use the possessive 's (here parents') instead of 'of'.",
           },
           {
             kind: 'translate',
-            id: 'a1-pronouns-imperatives-ex5',
-            es: 'Este es mi coche y aquel es el tuyo.',
-            answers: ['This is my car and that is yours.', 'This is my car and that one is yours.'],
-            explain: 'my (adjetivo) + yours (pronombre).',
+            id: 'a1-pron-ex4',
+            es: 'Este libro es mío.',
+            answers: ['This book is mine.'],
+            explain: 'mine is the possessive pronoun for I.',
           },
           {
-            kind: 'dictation',
-            id: 'a1-pronouns-imperatives-ex6',
-            text: 'Turn off your phone, please.',
-            explain: 'Imperativo + adjetivo posesivo your.',
+            kind: 'order',
+            id: 'a1-pron-ex5',
+            tokens: ['Can', 'you', 'give', 'it', 'to', 'me', '?'],
+            answer: 'Can you give it to me?',
+            explain: 'Object pronouns it and me come after the verb/preposition.',
           },
           {
             kind: 'mcq',
-            id: 'a1-pronouns-imperatives-ex7',
-            prompt: 'Which sentence has the correct subject?',
-            options: ['Is cold today.', 'It is cold today.', 'Cold is today.'],
+            id: 'a1-pron-ex6',
+            prompt: "Complete: 'Is this your bag?' 'No, it's ___.'",
+            options: ['her', 'hers', 'she', "her's"],
             answer: 1,
-            explain: "El sujeto 'it' es obligatorio.",
+            explain: 'hers is the possessive pronoun for she.',
+          },
+          {
+            kind: 'dictation',
+            id: 'a1-pron-ex7',
+            text: 'Their car is faster than ours.',
+            explain: 'their (adjective) and ours (pronoun) are possessives.',
           },
         ],
       },
       {
-        id: 'a1-articles-nouns',
+        id: 'a1-articles-quantifiers',
         level: 'A1',
-        title: 'Artículos, demostrativos, plurales y sustantivos contables',
+        title: 'Articles, demonstratives, and some/any',
         summary:
-          'Domina a/an/the y el artículo cero, los demostrativos this/that, los plurales, la posición del adjetivo y los cuantificadores some/any, how much/how many.',
+          'Learn when to use **a/an**, **the**, or **no article**, and the demonstratives **this/that/these/those**. Then learn **countable and uncountable** nouns with **some, any, how much, how many**.',
+        summaryEs:
+          'Aprende cuándo usar **a/an**, **the** o **ningún artículo**, y los demostrativos **this/that/these/those**. Luego aprende los sustantivos **contables e incontables** con **some, any, how much, how many**.',
         sections: [
           {
-            heading: 'Artículos a/an/the y cero',
-            body: 'Usa **a** antes de sonido consonante (*a dog*) y **an** antes de sonido vocálico (*an apple*). **The** es el artículo definido (algo específico). Usamos **artículo cero** (nada) con plurales y sustantivos incontables en sentido general: *I like music, Cats are nice*.',
+            heading: 'a / an / the / zero article',
+            body: 'Use **a/an** with singular countable nouns mentioned for the first time (**a** before a consonant sound, **an** before a vowel sound). Use **the** for something specific or already known. Use **no article** for plurals and uncountables in general statements.',
+            bodyEs:
+              'Usa **a/an** con sustantivos contables singulares mencionados por primera vez (**a** ante sonido consonante, **an** ante sonido vocal). Usa **the** para algo específico o ya conocido. No uses artículo para plurales e incontables en afirmaciones generales.',
             examples: [
               {
-                en: 'I have a brother and an uncle.',
-                es: 'Tengo un hermano y un tío.',
+                en: 'I have a dog and an umbrella.',
+                es: 'Tengo un perro y un paraguas.',
               },
               {
-                en: 'The car outside is mine.',
-                es: 'El coche de fuera es el mío.',
+                en: 'The dog is in the garden.',
+                es: 'El perro está en el jardín.',
               },
               {
-                en: 'Dogs are friendly animals.',
-                es: 'Los perros son animales amistosos.',
+                en: 'I like music.',
+                es: 'Me gusta la música.',
               },
             ],
           },
           {
-            heading: 'Demostrativos, plurales y adjetivos',
-            body: 'Los **demostrativos**: **this/that** (singular), **these/those** (plural). Los **plurales** normalmente añaden **-s** (*book → books*); algunos son irregulares (*child → children, man → men*). El **adjetivo va antes del sustantivo** y **no cambia**: *a big house, two big houses*.',
+            heading: 'Demonstratives',
+            body: 'Use **this** (singular, near) and **these** (plural, near); **that** (singular, far) and **those** (plural, far).',
+            bodyEs:
+              'Usa **this** (singular, cerca) y **these** (plural, cerca); **that** (singular, lejos) y **those** (plural, lejos).',
             examples: [
               {
                 en: 'This book is interesting.',
                 es: 'Este libro es interesante.',
               },
               {
-                en: 'Those shoes are expensive.',
-                es: 'Esos zapatos son caros.',
-              },
-              {
-                en: 'She has three small children.',
-                es: 'Ella tiene tres niños pequeños.',
+                en: 'Those cars are expensive.',
+                es: 'Aquellos coches son caros.',
               },
             ],
           },
           {
-            heading: 'Contables, incontables, some/any, how much/many',
-            body: 'Los sustantivos **contables** se pueden contar (*one apple, two apples*); los **incontables** no (*water, money, rice*). Usa **some** en afirmativo y **any** en negativos y preguntas. Para cantidad pregunta **how many** (contables) o **how much** (incontables).',
+            heading: 'some / any and how much / how many',
+            body: 'Use **some** in affirmatives and **any** in negatives and questions, with plural or uncountable nouns. Ask quantity with **how many** (countable) and **how much** (uncountable).',
+            bodyEs:
+              'Usa **some** en afirmativas y **any** en negativas y preguntas, con sustantivos plurales o incontables. Pregunta la cantidad con **how many** (contables) y **how much** (incontables).',
             examples: [
               {
-                en: 'There is some milk in the fridge.',
-                es: 'Hay algo de leche en la nevera.',
+                en: 'I have some friends here.',
+                es: 'Tengo algunos amigos aquí.',
               },
               {
-                en: "I don't have any money.",
-                es: 'No tengo nada de dinero.',
+                en: "There isn't any sugar.",
+                es: 'No hay azúcar.',
               },
               {
-                en: 'How many apples do you want?',
-                es: '¿Cuántas manzanas quieres?',
+                en: 'How much money do you have?',
+                es: '¿Cuánto dinero tienes?',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Cuantificadores',
-            columns: ['Tipo', 'Afirmativo', 'Negativo/Pregunta', 'Cantidad'],
+            caption: 'Quantifiers',
+            columns: ['Type', 'Affirmative', 'Negative / Question', 'How...?'],
             rows: [
-              ['Contable (plural)', 'some apples', 'any apples', 'how many'],
-              ['Incontable', 'some water', 'any water', 'how much'],
+              ['Countable (plural)', 'some apples', 'any apples', 'How many apples?'],
+              ['Uncountable', 'some water', 'any water', 'How much water?'],
             ],
           },
         ],
         examples: [
           {
-            en: "I'd like an orange and a banana.",
-            es: 'Me gustaría una naranja y un plátano.',
+            en: 'She is a teacher.',
+            es: 'Ella es profesora.',
           },
           {
-            en: 'These photos are beautiful.',
-            es: 'Estas fotos son preciosas.',
+            en: 'Can I have an apple?',
+            es: '¿Puedo tomar una manzana?',
           },
           {
-            en: 'We need some bread and some eggs.',
-            es: 'Necesitamos pan y huevos.',
+            en: 'The sun is bright today.',
+            es: 'El sol brilla hoy.',
           },
           {
-            en: 'How much sugar do you take?',
-            es: '¿Cuánta azúcar tomas?',
+            en: 'Are there any eggs?',
+            es: '¿Hay huevos?',
           },
           {
-            en: "There aren't any chairs in this room.",
-            es: 'No hay sillas en esta sala.',
+            en: "I'd like some water.",
+            es: 'Quisiera un poco de agua.',
           },
           {
-            en: 'He bought two red cars.',
-            es: 'Él compró dos coches rojos.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'She has two cars red.',
-            right: 'She has two red cars.',
-            why: 'El adjetivo va antes del sustantivo.',
-            esNote: "En inglés el adjetivo va delante: 'red cars', no 'cars red'.",
-          },
-          {
-            wrong: 'I have a informations.',
-            right: 'I have some information.',
-            why: "'information' es incontable: sin -s y sin 'a'.",
-            esNote: 'Palabras como information, advice, money no tienen plural.',
-          },
-          {
-            wrong: 'How much books do you have?',
-            right: 'How many books do you have?',
-            why: "'books' es contable: how many.",
-            esNote: 'how many para contables, how much para incontables.',
-          },
-          {
-            wrong: "I don't have some money.",
-            right: "I don't have any money.",
-            why: "En negativo se usa 'any'.",
-            esNote: 'some en afirmativo; any en negativos y preguntas.',
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'a1-articles-nouns-ex1',
-            prompt: 'Choose: I saw ___ elephant at the zoo.',
-            options: ['a', 'an', 'the'],
-            answer: 1,
-            explain: 'elephant empieza por sonido vocálico = an.',
-          },
-          {
-            kind: 'cloze',
-            id: 'a1-articles-nouns-ex2',
-            before: 'Are there ',
-            after: ' eggs in the fridge?',
-            answers: ['any'],
-            explain: 'Pregunta = any.',
-            hint: 'pregunta',
-          },
-          {
-            kind: 'correct',
-            id: 'a1-articles-nouns-ex3',
-            wrong: 'I bought three book yesterday.',
-            answers: ['I bought three books yesterday.'],
-            explain: 'Plural = books.',
-          },
-          {
-            kind: 'order',
-            id: 'a1-articles-nouns-ex4',
-            tokens: ['she', 'has', 'a', 'beautiful', 'white', 'dress'],
-            answer: 'She has a beautiful white dress.',
-            explain: 'Adjetivos antes del sustantivo.',
-          },
-          {
-            kind: 'translate',
-            id: 'a1-articles-nouns-ex5',
-            es: '¿Cuánta agua bebes al día?',
-            answers: ['How much water do you drink a day?', 'How much water do you drink per day?'],
-            explain: 'water es incontable = how much.',
-          },
-          {
-            kind: 'dictation',
-            id: 'a1-articles-nouns-ex6',
-            text: "There is some cheese, but there isn't any milk.",
-            explain: 'some en afirmativo, any en negativo.',
-          },
-          {
-            kind: 'mcq',
-            id: 'a1-articles-nouns-ex7',
-            prompt: "Choose the correct plural of 'child'.",
-            options: ['childs', 'children', 'childes'],
-            answer: 1,
-            explain: 'child es irregular: children.',
-          },
-        ],
-      },
-      {
-        id: 'a1-comparatives-prepositions',
-        level: 'A1',
-        title: 'Comparativos, superlativos, preposiciones y conjunciones',
-        summary:
-          'Compara cosas con -er/more y the -est/most, ubica con preposiciones de lugar y tiempo, y une ideas con and, but y because.',
-        sections: [
-          {
-            heading: 'Comparativos y superlativos',
-            body: 'Adjetivos **cortos**: comparativo **-er** + than (*taller than*), superlativo **the -est** (*the tallest*). Adjetivos **largos**: **more** + adjetivo + than (*more expensive than*), **the most** (*the most expensive*). Irregulares: *good → better → the best; bad → worse → the worst*.',
-            examples: [
-              {
-                en: 'My brother is taller than me.',
-                es: 'Mi hermano es más alto que yo.',
-              },
-              {
-                en: 'This is the most interesting book.',
-                es: 'Este es el libro más interesante.',
-              },
-              {
-                en: 'Today is better than yesterday.',
-                es: 'Hoy es mejor que ayer.',
-              },
-            ],
-          },
-          {
-            heading: 'Preposiciones de lugar y tiempo',
-            body: "**Lugar**: **in** (dentro: in the box), **on** (sobre: on the table), **at** (en un punto: at the door). **Tiempo**: **in** (meses, años: in May), **on** (días: on Monday), **at** (horas: at 5 o'clock).",
-            examples: [
-              {
-                en: 'The keys are on the table.',
-                es: 'Las llaves están sobre la mesa.',
-              },
-              {
-                en: "We meet at three o'clock.",
-                es: 'Nos vemos a las tres.',
-              },
-              {
-                en: 'My birthday is in June.',
-                es: 'Mi cumpleaños es en junio.',
-              },
-            ],
-          },
-          {
-            heading: 'Conjunciones and, but, because',
-            body: "**And** une ideas (y), **but** muestra contraste (pero), **because** da una razón (porque). *I'm tired but happy. I stayed home because it was raining.*",
-            examples: [
-              {
-                en: 'I like tea and coffee.',
-                es: 'Me gusta el té y el café.',
-              },
-              {
-                en: 'She is small but strong.',
-                es: 'Ella es pequeña pero fuerte.',
-              },
-              {
-                en: "We didn't go out because it was cold.",
-                es: 'No salimos porque hacía frío.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Comparativos y superlativos',
-            columns: ['Adjetivo', 'Comparativo', 'Superlativo'],
-            rows: [
-              ['tall (corto)', 'taller than', 'the tallest'],
-              ['big (corto)', 'bigger than', 'the biggest'],
-              ['expensive (largo)', 'more expensive than', 'the most expensive'],
-              ['good (irregular)', 'better than', 'the best'],
-              ['bad (irregular)', 'worse than', 'the worst'],
-            ],
-          },
-          {
-            caption: 'Preposiciones in / on / at',
-            columns: ['Preposición', 'Lugar', 'Tiempo'],
-            rows: [
-              ['in', 'in the room', 'in May, in 2025'],
-              ['on', 'on the wall', 'on Monday'],
-              ['at', 'at the bus stop', "at 6 o'clock"],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'This phone is cheaper than that one.',
-            es: 'Este teléfono es más barato que ese.',
-          },
-          {
-            en: 'Mount Everest is the highest mountain in the world.',
-            es: 'El Everest es la montaña más alta del mundo.',
-          },
-          {
-            en: 'The cat is under the table.',
-            es: 'El gato está debajo de la mesa.',
-          },
-          {
-            en: 'I work from Monday to Friday.',
-            es: 'Trabajo de lunes a viernes.',
-          },
-          {
-            en: 'She was sad because she lost her job.',
-            es: 'Estaba triste porque perdió su trabajo.',
-          },
-          {
-            en: 'He is fast but careful.',
-            es: 'Él es rápido pero cuidadoso.',
+            en: 'How many people are coming?',
+            es: '¿Cuánta gente viene?',
           },
         ],
         pitfalls: [
           {
-            wrong: 'She is more tall than me.',
-            right: 'She is taller than me.',
-            why: "Adjetivos cortos usan -er, no 'more'.",
-            esNote: "Con adjetivos cortos: taller, bigger; no 'more tall'.",
+            wrong: 'She is teacher.',
+            right: 'She is a teacher.',
+            why: 'Use a/an before singular jobs and countable nouns.',
+            esNote: "Antes de profesiones en singular se usa 'a/an'.",
           },
           {
-            wrong: 'I am more big than you.',
-            right: 'I am bigger than you.',
-            why: 'big es corto: bigger (se dobla la g).',
-            esNote: 'Adjetivos cortos terminados en vocal+consonante doblan la consonante.',
+            wrong: 'I have an university degree.',
+            right: 'I have a university degree.',
+            why: "University starts with a 'y' sound, so use a, not an.",
+            esNote: "'University' suena con 'y', así que se usa 'a'.",
           },
           {
-            wrong: 'I see you in Monday at the morning.',
-            right: "I'll see you on Monday in the morning.",
-            why: 'on con días, in con partes del día.',
-            esNote: 'on Monday, in the morning, at night: cada preposición tiene su uso.',
-          },
-          {
-            wrong: 'I stayed home because of it was raining.',
-            right: 'I stayed home because it was raining.',
-            why: "'because' va con una oración; 'because of' va con un sustantivo.",
-            esNote: 'because + sujeto + verbo; because of + sustantivo.',
+            wrong: 'There are any apples on the table.',
+            right: 'There are some apples on the table.',
+            why: 'Use some in affirmative sentences; any is for negatives and questions.',
+            esNote: "En afirmativas usa 'some'; 'any' es para negativas/preguntas.",
           },
         ],
         exercises: [
           {
-            kind: 'mcq',
-            id: 'a1-comparatives-prepositions-ex1',
-            prompt: 'Choose: A train is ___ than a bike.',
-            options: ['fast', 'faster', 'the fastest'],
-            answer: 1,
-            explain: 'Comparativo corto = faster.',
+            kind: 'cloze',
+            id: 'a1-art-ex1',
+            before: 'I have ',
+            after: ' orange and a banana.',
+            answers: ['an'],
+            hint: 'vowel sound',
+            explain: 'Orange begins with a vowel sound, so an.',
           },
           {
-            kind: 'cloze',
-            id: 'a1-comparatives-prepositions-ex2',
-            before: 'The meeting is ',
-            after: " 9 o'clock.",
-            answers: ['at'],
-            explain: 'Horas = at.',
-            hint: 'hora',
+            kind: 'mcq',
+            id: 'a1-art-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'Do you have some sugar?',
+              'Do you have any sugar?',
+              'Do you have a sugar?',
+              'Do you have the any sugar?',
+            ],
+            answer: 1,
+            explain: 'Use any in questions with uncountable nouns.',
           },
           {
             kind: 'correct',
-            id: 'a1-comparatives-prepositions-ex3',
-            wrong: 'This is the more expensive car in the shop.',
-            answers: ['This is the most expensive car in the shop.'],
-            explain: 'Superlativo largo = the most.',
-          },
-          {
-            kind: 'order',
-            id: 'a1-comparatives-prepositions-ex4',
-            tokens: ['I', 'was', 'tired', 'but', 'I', 'finished', 'the', 'work'],
-            answer: 'I was tired but I finished the work.',
-            explain: 'but muestra contraste.',
+            id: 'a1-art-ex3',
+            wrong: 'How much apples do you want?',
+            answers: ['How many apples do you want?'],
+            explain: 'Apples are countable, so how many.',
           },
           {
             kind: 'translate',
-            id: 'a1-comparatives-prepositions-ex5',
-            es: 'No fuimos a la playa porque estaba lloviendo.',
-            answers: ["We didn't go to the beach because it was raining."],
-            explain: 'because da la razón.',
+            id: 'a1-art-ex4',
+            es: 'Estos zapatos son caros.',
+            answers: ['These shoes are expensive.'],
+            explain: 'Plural and near: these.',
           },
           {
-            kind: 'dictation',
-            id: 'a1-comparatives-prepositions-ex6',
-            text: 'The book is on the table next to the lamp.',
-            explain: 'on para superficies.',
+            kind: 'order',
+            id: 'a1-art-ex5',
+            tokens: ['There', "isn't", 'any', 'milk', '.'],
+            answer: "There isn't any milk.",
+            explain: 'any with negative and uncountable noun.',
           },
           {
             kind: 'mcq',
-            id: 'a1-comparatives-prepositions-ex7',
-            prompt: 'Choose the correct preposition: My birthday is ___ December.',
-            options: ['on', 'at', 'in'],
+            id: 'a1-art-ex6',
+            prompt: "Complete: '___ book on the table is mine.' (a specific known book)",
+            options: ['A', 'An', 'The', '—'],
             answer: 2,
-            explain: 'Meses = in.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    level: 'A2',
-    title: 'A2 · Building Real Conversations',
-    blurb:
-      'Connect past, present and future, compare things, and react naturally — the grammar that turns words into conversation.',
-    lessons: [
-      {
-        id: 'a2-present-perfect',
-        level: 'A2',
-        title: 'Present Perfect: experiences and recent news',
-        summary:
-          'Use have/has + past participle to talk about life experiences (ever/never) and recent or unfinished situations (already/yet, for/since).',
-        sections: [
-          {
-            heading: 'Form and basic use',
-            body: 'The **present perfect** is **have/has + past participle**. We use it for experiences in our life without saying exactly when, and for things that started in the past and still matter now. With *he/she/it* use **has**; with everything else use **have**.',
-            examples: [
-              {
-                en: 'I have visited London twice.',
-                es: 'He visitado Londres dos veces.',
-              },
-              {
-                en: 'She has lost her keys.',
-                es: 'Ha perdido las llaves.',
-              },
-            ],
-          },
-          {
-            heading: 'ever, never, already, yet',
-            body: 'Use **ever** in questions about experience and **never** for none. Use **already** for something done sooner than expected, and **yet** at the end of questions and negatives for something expected but not done. Note: **never** is already negative, so the verb stays positive.',
-            examples: [
-              {
-                en: 'Have you ever eaten sushi?',
-                es: '¿Alguna vez has comido sushi?',
-              },
-              {
-                en: 'I have never been to Japan.',
-                es: 'Nunca he estado en Japón.',
-              },
-              {
-                en: 'We have already finished.',
-                es: 'Ya hemos terminado.',
-              },
-              {
-                en: "He hasn't called yet.",
-                es: 'Todavía no ha llamado.',
-              },
-            ],
-          },
-          {
-            heading: 'for and since',
-            body: "Use **for** with a period of time (*for three years*) and **since** with a starting point (*since 2020*). Both answer 'how long' for situations that continue up to now.",
-            examples: [
-              {
-                en: 'I have lived here for ten years.',
-                es: 'He vivido aquí durante diez años.',
-              },
-              {
-                en: 'We have known each other since 2015.',
-                es: 'Nos conocemos desde 2015.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Present perfect forms',
-            columns: ['Subject', 'Auxiliary', 'Example'],
-            rows: [
-              ['I / you / we / they', "have / haven't", 'I have seen it.'],
-              ['he / she / it', "has / hasn't", 'She has gone home.'],
-              ['Question', 'Have/Has + subject', 'Have you finished?'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'Have you ever broken a bone?',
-            es: '¿Alguna vez te has roto un hueso?',
-          },
-          {
-            en: 'They have already left the office.',
-            es: 'Ya se han ido de la oficina.',
-          },
-          {
-            en: "I haven't seen that film yet.",
-            es: 'Todavía no he visto esa película.',
-          },
-          {
-            en: 'She has worked here since March.',
-            es: 'Trabaja aquí desde marzo.',
-          },
-          {
-            en: 'We have had this car for five years.',
-            es: 'Tenemos este coche desde hace cinco años.',
-          },
-          {
-            en: 'He has never tried Thai food.',
-            es: 'Nunca ha probado la comida tailandesa.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'I have visited Paris yesterday.',
-            right: 'I visited Paris yesterday.',
-            why: 'With a finished past time (yesterday, last week), use the past simple, not the present perfect.',
-            esNote: 'Si dices cuándo pasó exactamente, usa pasado simple, no present perfect.',
-          },
-          {
-            wrong: 'I live here since 2010.',
-            right: 'I have lived here since 2010.',
-            why: 'For a situation continuing from the past to now, use the present perfect, not the present simple.',
-            esNote: "El español usa presente ('vivo desde'), pero el inglés usa present perfect.",
-          },
-          {
-            wrong: 'I have lived here since ten years.',
-            right: 'I have lived here for ten years.',
-            why: "Use 'for' with a length of time and 'since' with a starting point.",
-            esNote: "'For' = duración; 'since' = punto de inicio.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'a2-pp-ex1',
-            prompt: 'Choose the correct sentence.',
-            options: [
-              'She has went to the bank.',
-              'She has gone to the bank.',
-              'She have gone to the bank.',
-            ],
-            answer: 1,
-            explain: "Use 'has' (third person) + the past participle 'gone', not 'went'.",
-          },
-          {
-            kind: 'cloze',
-            id: 'a2-pp-ex2',
-            before: 'I have known her',
-            after: 'we were children.',
-            answers: ['since'],
-            hint: 'starting point',
-            explain: "'Since' is used with a point in time (when we were children).",
-          },
-          {
-            kind: 'cloze',
-            id: 'a2-pp-ex3',
-            before: 'Have you finished your homework',
-            after: '?',
-            answers: ['yet'],
-            hint: 'end of a question',
-            explain: "'Yet' goes at the end of questions and negatives.",
-          },
-          {
-            kind: 'correct',
-            id: 'a2-pp-ex4',
-            wrong: 'We have see this movie last night.',
-            answers: ['We saw this movie last night.', 'We watched this movie last night.'],
-            explain: "'Last night' is a finished time, so use the past simple.",
-          },
-          {
-            kind: 'translate',
-            id: 'a2-pp-ex5',
-            es: 'Nunca he estado en China.',
-            answers: ['I have never been to China.', "I've never been to China."],
-            explain: "'Have never been' expresses an experience that has not happened.",
-          },
-          {
-            kind: 'order',
-            id: 'a2-pp-ex6',
-            tokens: ['They', 'have', 'already', 'eaten', 'dinner'],
-            answer: 'They have already eaten dinner.',
-            explain: "'Already' goes between the auxiliary and the participle.",
+            explain: 'Use the for a specific, identified noun.',
           },
           {
             kind: 'dictation',
-            id: 'a2-pp-ex7',
-            text: "I haven't called my parents yet.",
-            explain: "Negative present perfect with 'yet' at the end.",
+            id: 'a1-art-ex7',
+            text: "I'd like some water and a sandwich, please.",
+            explain: 'some with uncountable water, a with countable sandwich.',
           },
         ],
       },
       {
-        id: 'a2-future-forms',
-        level: 'A2',
-        title: 'The Future: will, going to and arrangements',
+        id: 'a1-plurals-adjectives-comparatives',
+        level: 'A1',
+        title: 'Plurals, adjectives, comparatives, and connectors',
         summary:
-          "Choose between 'will' for decisions and predictions, 'going to' for plans and evidence, and the present continuous for fixed arrangements.",
+          'Form **plural** nouns, place **adjectives** correctly, and make **comparatives** and **superlatives**. Also learn key **prepositions of place and time** and the connectors **and, but, because**.',
+        summaryEs:
+          'Forma sustantivos en **plural**, coloca los **adjetivos** correctamente y haz **comparativos** y **superlativos**. Aprende también **preposiciones de lugar y tiempo** clave y los conectores **and, but, because**.',
         sections: [
           {
-            heading: 'will',
-            body: "Use **will + base verb** for instant decisions, offers, promises and predictions based on opinion. The negative is **won't**. It does not change with the subject.",
+            heading: 'Plurals and adjective position',
+            body: 'Most plurals add **-s** (cat → cats); after s, ch, sh, x add **-es** (box → boxes). Some are irregular (man → men, child → children). **Adjectives** go **before the noun** and never change for plural: **a red car, two red cars**.',
+            bodyEs:
+              'La mayoría de los plurales añaden **-s** (cat → cats); tras s, ch, sh, x se añade **-es** (box → boxes). Algunos son irregulares (man → men, child → children). Los **adjetivos** van **antes del sustantivo** y nunca cambian en plural: **a red car, two red cars**.',
             examples: [
               {
-                en: "I'll help you with that.",
-                es: 'Te ayudaré con eso.',
+                en: 'I have three big dogs.',
+                es: 'Tengo tres perros grandes.',
               },
               {
-                en: 'I think it will rain tomorrow.',
-                es: 'Creo que lloverá mañana.',
-              },
-            ],
-          },
-          {
-            heading: 'going to',
-            body: 'Use **be going to + base verb** for plans and intentions you already have, and for predictions based on present evidence you can see.',
-            examples: [
-              {
-                en: 'We are going to buy a house.',
-                es: 'Vamos a comprar una casa.',
+                en: 'There are two children outside.',
+                es: 'Hay dos niños fuera.',
               },
               {
-                en: "Look at those clouds — it's going to rain.",
-                es: 'Mira esas nubes; va a llover.',
+                en: 'She has beautiful eyes.',
+                es: 'Ella tiene unos ojos bonitos.',
               },
             ],
           },
           {
-            heading: 'Present continuous for arrangements',
-            body: 'Use the **present continuous** (am/is/are + -ing) for **fixed arrangements** with a time or place already decided, usually with another person. A future time word makes it clearly future.',
-            examples: [
-              {
-                en: "I'm meeting Sara at six tomorrow.",
-                es: 'Me reúno con Sara a las seis mañana.',
-              },
-              {
-                en: "They're flying to Rome on Friday.",
-                es: 'Vuelan a Roma el viernes.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Which future form?',
-            columns: ['Situation', 'Form', 'Example'],
-            rows: [
-              ['Instant decision / offer', 'will', "I'll get it!"],
-              ['Plan / intention', 'going to', "I'm going to study tonight."],
-              ['Evidence prediction', 'going to', "She's going to fall!"],
-              ['Fixed arrangement', 'present continuous', "We're leaving at 8."],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: "Don't worry, I'll call you later.",
-            es: 'No te preocupes, te llamaré luego.',
-          },
-          {
-            en: "She's going to start a new job next month.",
-            es: 'Va a empezar un trabajo nuevo el mes que viene.',
-          },
-          {
-            en: "We're having dinner with them on Saturday.",
-            es: 'Cenamos con ellos el sábado.',
-          },
-          {
-            en: "I think they'll win the match.",
-            es: 'Creo que ganarán el partido.',
-          },
-          {
-            en: "Be careful, you're going to drop it!",
-            es: 'Ten cuidado, ¡lo vas a tirar!',
-          },
-          {
-            en: "The train leaves at nine, so I'm taking the early one.",
-            es: 'El tren sale a las nueve, así que cojo el temprano.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'I will to call you tomorrow.',
-            right: 'I will call you tomorrow.',
-            why: "After 'will' use the base verb with no 'to'.",
-            esNote: "Después de 'will' no se pone 'to'.",
-          },
-          {
-            wrong: 'Tomorrow I go to the dentist at 5.',
-            right: "Tomorrow I'm going to the dentist at 5.",
-            why: 'For a fixed arrangement, use the present continuous, not the present simple.',
-            esNote: 'Para una cita ya fijada, usa el present continuous.',
-          },
-          {
-            wrong: 'Look! It will rain.',
-            right: "Look! It's going to rain.",
-            why: "With present evidence (clouds you can see), use 'going to', not 'will'.",
-            esNote: "Si hay pruebas visibles ahora, usa 'going to'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'a2-fut-ex1',
-            prompt: 'The phone is ringing. Which is best?',
-            options: ["I'm going to answer it.", "I'll answer it.", 'I answer it.'],
-            answer: 1,
-            explain: "An instant decision made at the moment of speaking uses 'will'.",
-          },
-          {
-            kind: 'cloze',
-            id: 'a2-fut-ex2',
-            before: 'Careful! You',
-            after: 'drop those plates.',
-            answers: ['are going to', "'re going to"],
-            hint: 'prediction from evidence',
-            explain: "Present evidence (you can see it) calls for 'going to'.",
-          },
-          {
-            kind: 'correct',
-            id: 'a2-fut-ex3',
-            wrong: 'We will to travel to Spain in July.',
-            answers: [
-              'We will travel to Spain in July.',
-              "We're going to travel to Spain in July.",
-              'We are going to travel to Spain in July.',
-            ],
-            explain: "No 'to' after 'will'; or use 'going to' for a plan.",
-          },
-          {
-            kind: 'translate',
-            id: 'a2-fut-ex4',
-            es: 'Me reúno con el médico mañana a las diez.',
-            answers: [
-              "I'm meeting the doctor at ten tomorrow.",
-              'I am meeting the doctor at ten tomorrow.',
-              "I'm meeting the doctor tomorrow at ten.",
-            ],
-            explain: 'A fixed arrangement uses the present continuous.',
-          },
-          {
-            kind: 'order',
-            id: 'a2-fut-ex5',
-            tokens: ['She', 'is', 'going', 'to', 'learn', 'French'],
-            answer: 'She is going to learn French.',
-            explain: "'Going to' + base verb expresses an intention.",
-          },
-          {
-            kind: 'mcq',
-            id: 'a2-fut-ex6',
-            prompt: 'Which sentence describes a plan you already decided?',
-            options: [
-              "I'll maybe study tonight.",
-              "I'm going to study tonight.",
-              'I study tonight.',
-            ],
-            answer: 1,
-            explain: "'Going to' shows a decision already made.",
-          },
-          {
-            kind: 'dictation',
-            id: 'a2-fut-ex7',
-            text: "They're flying to New York on Monday.",
-            explain: 'Present continuous for a fixed future arrangement.',
-          },
-        ],
-      },
-      {
-        id: 'a2-past-continuous',
-        level: 'A2',
-        title: 'Past Continuous with when and while',
-        summary:
-          'Describe actions in progress in the past and interrupt them with a shorter action using when and while.',
-        sections: [
-          {
-            heading: 'Form and meaning',
-            body: 'The **past continuous** is **was/were + -ing**. It describes an action that was in progress at a moment in the past. Use **was** with I/he/she/it and **were** with you/we/they.',
-            examples: [
-              {
-                en: 'At 8 p.m. I was watching TV.',
-                es: 'A las 8 de la tarde estaba viendo la tele.',
-              },
-              {
-                en: 'They were sleeping when we arrived.',
-                es: 'Estaban durmiendo cuando llegamos.',
-              },
-            ],
-          },
-          {
-            heading: 'when and while',
-            body: 'A longer background action (past continuous) is often interrupted by a shorter action (**past simple**). Use **while** before the long action and **when** before the short one. Two long actions happening together also use **while**.',
-            examples: [
-              {
-                en: 'While I was cooking, the phone rang.',
-                es: 'Mientras cocinaba, sonó el teléfono.',
-              },
-              {
-                en: 'I was reading when the lights went out.',
-                es: 'Estaba leyendo cuando se fue la luz.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Past continuous vs past simple',
-            columns: ['Tense', 'Use', 'Example'],
-            rows: [
-              ['Past continuous', 'longer / background action', 'I was driving home.'],
-              ['Past simple', 'shorter / interrupting action', '...when I saw the accident.'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'It was raining when I left the house.',
-            es: 'Llovía cuando salí de casa.',
-          },
-          {
-            en: 'While she was studying, her brother was playing.',
-            es: 'Mientras ella estudiaba, su hermano jugaba.',
-          },
-          {
-            en: 'We were having dinner when you called.',
-            es: 'Estábamos cenando cuando llamaste.',
-          },
-          {
-            en: 'What were you doing at midnight?',
-            es: '¿Qué estabas haciendo a medianoche?',
-          },
-          {
-            en: 'He fell while he was running.',
-            es: 'Se cayó mientras corría.',
-          },
-          {
-            en: "I wasn't listening, sorry.",
-            es: 'No estaba escuchando, perdona.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'I was see a film when she arrived.',
-            right: 'I was seeing a film when she arrived.',
-            why: 'The past continuous needs the -ing form after was/were.',
-            esNote: "Después de 'was/were' va el verbo en -ing.",
-          },
-          {
-            wrong: 'When I cooked, the phone was ringing.',
-            right: 'While I was cooking, the phone rang.',
-            why: 'The long background action takes the past continuous; the sudden one takes the past simple.',
-            esNote:
-              'La acción larga va en past continuous; la corta que interrumpe, en past simple.',
-          },
-          {
-            wrong: 'They were arrive at six.',
-            right: 'They arrived at six.',
-            why: 'A single completed action at a clear time is past simple, not past continuous.',
-            esNote: 'Una acción puntual y completa va en pasado simple.',
-          },
-        ],
-        exercises: [
-          {
-            kind: 'cloze',
-            id: 'a2-pc-ex1',
-            before: 'While we',
-            after: '(walk) home, it started to snow.',
-            answers: ['were walking'],
-            explain: 'The long background action takes the past continuous.',
-          },
-          {
-            kind: 'mcq',
-            id: 'a2-pc-ex2',
-            prompt: 'Choose the correct sentence.',
-            options: [
-              'I was reading when she called.',
-              'I read when she was calling.',
-              'I was read when she called.',
-            ],
-            answer: 0,
-            explain: 'Long action (reading) = continuous; interruption (called) = simple.',
-          },
-          {
-            kind: 'correct',
-            id: 'a2-pc-ex3',
-            wrong: 'She was cook dinner when I arrived.',
-            answers: ['She was cooking dinner when I arrived.'],
-            explain: "Use the -ing form after 'was'.",
-          },
-          {
-            kind: 'translate',
-            id: 'a2-pc-ex4',
-            es: '¿Qué estabas haciendo a las diez?',
-            answers: ['What were you doing at ten?', "What were you doing at ten o'clock?"],
-            explain: "Past continuous question with 'were'.",
-          },
-          {
-            kind: 'order',
-            id: 'a2-pc-ex5',
-            tokens: ['The', 'baby', 'was', 'sleeping', 'when', 'we', 'got', 'home'],
-            answer: 'The baby was sleeping when we got home.',
-            explain: 'Background action in continuous, interruption in simple.',
-          },
-          {
-            kind: 'cloze',
-            id: 'a2-pc-ex6',
-            before: 'I was driving home',
-            after: 'I saw the accident.',
-            answers: ['when'],
-            hint: 'before the short action',
-            explain: "'When' introduces the short, interrupting action.",
-          },
-          {
-            kind: 'dictation',
-            id: 'a2-pc-ex7',
-            text: 'While he was working, the power went out.',
-            explain: "'While' + past continuous, then past simple.",
-          },
-        ],
-      },
-      {
-        id: 'a2-comparatives-superlatives',
-        level: 'A2',
-        title: 'Comparatives, Superlatives and as...as',
-        summary:
-          'Compare two things with -er/more...than, find the top with the -est/most, and show equality with (not) as...as.',
-        sections: [
-          {
-            heading: 'Comparatives with than',
-            body: 'For short adjectives add **-er** (*cheaper, bigger*). For long adjectives use **more** (*more expensive*). Add **than** before the second thing. Some are irregular: good→**better**, bad→**worse**.',
+            heading: 'Comparatives and superlatives',
+            body: 'Short adjectives: **-er** (cheaper) for comparatives and **the -est** (the cheapest) for superlatives, with **than** to compare. Long adjectives use **more** and **the most** (more expensive, the most expensive). Irregular: good → better → the best; bad → worse → the worst.',
+            bodyEs:
+              'Adjetivos cortos: **-er** (cheaper) para comparativos y **the -est** (the cheapest) para superlativos, con **than** para comparar. Los adjetivos largos usan **more** y **the most** (more expensive, the most expensive). Irregulares: good → better → the best; bad → worse → the worst.',
             examples: [
               {
                 en: 'This car is cheaper than that one.',
                 es: 'Este coche es más barato que ese.',
               },
               {
-                en: 'She is more careful than her brother.',
-                es: 'Ella es más cuidadosa que su hermano.',
+                en: 'She is the tallest in the class.',
+                es: 'Ella es la más alta de la clase.',
+              },
+              {
+                en: 'English is more useful than Latin.',
+                es: 'El inglés es más útil que el latín.',
               },
             ],
           },
           {
-            heading: 'Superlatives',
-            body: 'For short adjectives add **the ...-est** (*the cheapest*); for long ones use **the most** (*the most expensive*). Irregulars: good→**the best**, bad→**the worst**.',
+            heading: 'Prepositions and connectors',
+            body: 'Place: **in** (countries, rooms), **on** (surfaces), **at** (points). Time: **at** (times), **on** (days), **in** (months, years). Connect ideas with **and** (addition), **but** (contrast), and **because** (reason).',
+            bodyEs:
+              'Lugar: **in** (países, habitaciones), **on** (superficies), **at** (puntos). Tiempo: **at** (horas), **on** (días), **in** (meses, años). Conecta ideas con **and** (adición), **but** (contraste) y **because** (razón).',
             examples: [
               {
-                en: "It's the cheapest phone in the shop.",
-                es: 'Es el teléfono más barato de la tienda.',
+                en: 'The keys are on the table.',
+                es: 'Las llaves están sobre la mesa.',
               },
               {
-                en: 'She is the best student in the class.',
-                es: 'Es la mejor estudiante de la clase.',
-              },
-            ],
-          },
-          {
-            heading: '(not) as ... as',
-            body: 'Use **as + adjective + as** to say two things are equal, and **not as ... as** to say one is less. The adjective stays in its base form.',
-            examples: [
-              {
-                en: 'He is as tall as his father.',
-                es: 'Es tan alto como su padre.',
+                en: 'We meet at 5 on Monday.',
+                es: 'Nos vemos a las 5 el lunes.',
               },
               {
-                en: "Today isn't as cold as yesterday.",
-                es: 'Hoy no hace tanto frío como ayer.',
+                en: "I'm tired because I worked a lot.",
+                es: 'Estoy cansado porque trabajé mucho.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Comparative and superlative forms',
+            caption: 'Comparatives and superlatives',
             columns: ['Adjective', 'Comparative', 'Superlative'],
             rows: [
               ['cheap', 'cheaper', 'the cheapest'],
@@ -2472,121 +1878,837 @@ export const GRAMMAR: GrammarUnit[] = [
               ['bad', 'worse', 'the worst'],
             ],
           },
+          {
+            caption: 'Prepositions of time',
+            columns: ['Preposition', 'Use', 'Example'],
+            rows: [
+              ['at', 'times', "at 7 o'clock"],
+              ['on', 'days/dates', 'on Monday'],
+              ['in', 'months/years', 'in July, in 2020'],
+            ],
+          },
         ],
         examples: [
           {
-            en: 'My new flat is bigger than the old one.',
-            es: 'Mi piso nuevo es más grande que el viejo.',
+            en: 'My city is bigger than yours.',
+            es: 'Mi ciudad es más grande que la tuya.',
           },
           {
-            en: "This is the most interesting book I've read.",
-            es: 'Es el libro más interesante que he leído.',
+            en: 'This is the best restaurant in town.',
+            es: 'Este es el mejor restaurante de la ciudad.',
           },
           {
-            en: 'Trains are faster than buses here.',
-            es: 'Aquí los trenes son más rápidos que los autobuses.',
+            en: 'There are some old books on the shelf.',
+            es: 'Hay algunos libros viejos en el estante.',
           },
           {
-            en: "He's not as fast as he used to be.",
-            es: 'No es tan rápido como antes.',
+            en: "I like coffee but I don't like tea.",
+            es: 'Me gusta el café pero no me gusta el té.',
           },
           {
-            en: 'It was the worst day of my life.',
-            es: 'Fue el peor día de mi vida.',
+            en: 'We were born in 1995.',
+            es: 'Nacimos en 1995.',
           },
           {
-            en: "Your coffee is as good as the café's.",
-            es: 'Tu café es tan bueno como el de la cafetería.',
+            en: "He's happy because he passed the exam.",
+            es: 'Está contento porque aprobó el examen.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'This is more cheap than that.',
-            right: 'This is cheaper than that.',
-            why: "Short adjectives take -er, not 'more'.",
-            esNote: "Adjetivos cortos: -er, no 'more'.",
+            wrong: 'I have three cars red.',
+            right: 'I have three red cars.',
+            why: 'Adjectives go before the noun in English.',
+            esNote: 'El adjetivo va antes del sustantivo.',
           },
           {
             wrong: 'She is more taller than me.',
             right: 'She is taller than me.',
-            why: "Don't use 'more' together with an -er form — choose one.",
-            esNote: "No combines 'more' con la terminación -er.",
+            why: "Don't use more with a short adjective that already takes -er.",
+            esNote: "No uses 'more' con adjetivos cortos que llevan -er.",
           },
           {
-            wrong: "It's the most big city in the country.",
-            right: "It's the biggest city in the country.",
-            why: "Short adjectives form the superlative with -est, not 'most'.",
-            esNote: 'Superlativo de adjetivos cortos: the ...-est.',
+            wrong: "I'm tired because of I worked a lot.",
+            right: "I'm tired because I worked a lot.",
+            why: 'Use because + clause; because of is followed by a noun.',
+            esNote: "'Because' + frase; 'because of' + sustantivo.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'a1-plur-ex1',
+            before: 'There are two ',
+            after: ' in the room. (child)',
+            answers: ['children'],
+            hint: 'irregular plural',
+            explain: 'The plural of child is children.',
+          },
+          {
+            kind: 'mcq',
+            id: 'a1-plur-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'This is more cheap than that.',
+              'This is cheaper than that.',
+              'This is cheapest than that.',
+              'This is more cheaper than that.',
+            ],
+            answer: 1,
+            explain: 'Short adjective: cheaper + than.',
+          },
+          {
+            kind: 'correct',
+            id: 'a1-plur-ex3',
+            wrong: 'She has a dress beautiful.',
+            answers: ['She has a beautiful dress.'],
+            explain: 'The adjective goes before the noun.',
+          },
+          {
+            kind: 'translate',
+            id: 'a1-plur-ex4',
+            es: 'Es el mejor día de mi vida.',
+            answers: ["It's the best day of my life.", 'It is the best day of my life.'],
+            explain: 'Irregular superlative: the best.',
+          },
+          {
+            kind: 'order',
+            id: 'a1-plur-ex5',
+            tokens: ['We', 'meet', 'at', 'six', 'on', 'Friday', '.'],
+            answer: 'We meet at six on Friday.',
+            explain: 'at for time, on for days.',
+          },
+          {
+            kind: 'mcq',
+            id: 'a1-plur-ex6',
+            prompt: "Complete: 'The cat is ___ the table.' (surface)",
+            options: ['in', 'on', 'at', 'to'],
+            answer: 1,
+            explain: 'Use on for surfaces.',
+          },
+          {
+            kind: 'dictation',
+            id: 'a1-plur-ex7',
+            text: 'London is bigger than Madrid but Madrid is sunnier.',
+            explain: 'Comparatives bigger and sunnier joined by but.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    level: 'A2',
+    title: 'A2 · Everyday Grammar',
+    blurb:
+      'Build real fluency: talk about experiences, plans, the past, comparisons, rules and conditions.',
+    lessons: [
+      {
+        id: 'a2-present-perfect',
+        level: 'A2',
+        title: 'Present Perfect: experiences and recent news',
+        summary:
+          'Use the **present perfect** (have/has + past participle) to talk about life experiences and recent actions when the exact time is not important. Common partners are **ever/never**, **already/yet**, and **for/since**.',
+        summaryEs:
+          'Usa el **present perfect** (have/has + participio pasado) para hablar de experiencias de la vida y de acciones recientes cuando el momento exacto no importa. Suele acompañarse de **ever/never**, **already/yet** y **for/since**.',
+        sections: [
+          {
+            heading: 'Form and basic use',
+            body: 'Build the present perfect with **have/has + past participle** (worked, gone, seen). Use it for an experience at an unspecified time (**I have visited Rome**) or for a past action with a result now (**She has lost her keys**). Do not say the exact past time with it.',
+            bodyEs:
+              'Forma el present perfect con **have/has + participio pasado** (worked, gone, seen). Úsalo para una experiencia en un momento no especificado (**I have visited Rome**) o para una acción pasada con resultado ahora (**She has lost her keys**). No digas el momento pasado exacto con él.',
+            examples: [
+              {
+                en: 'I have eaten sushi many times.',
+                es: 'He comido sushi muchas veces.',
+              },
+              {
+                en: 'He has broken his phone.',
+                es: 'Ha roto su teléfono.',
+              },
+            ],
+          },
+          {
+            heading: 'ever, never, already, yet',
+            body: "Use **ever** in questions (**Have you ever flown?**) and **never** for no experience (**I have never flown**). Use **already** for something done sooner than expected (**I have already finished**), and **yet** in negatives and questions for something expected but not done (**They haven't arrived yet**).",
+            bodyEs:
+              "Usa **ever** en preguntas (**Have you ever flown?**) y **never** para ninguna experiencia (**I have never flown**). Usa **already** para algo hecho antes de lo esperado (**I have already finished**), y **yet** en negativas y preguntas para algo esperado pero no hecho (**They haven't arrived yet**).",
+            examples: [
+              {
+                en: 'Have you ever met a famous person?',
+                es: '¿Alguna vez has conocido a una persona famosa?',
+              },
+              {
+                en: "We haven't decided yet.",
+                es: 'Todavía no hemos decidido.',
+              },
+            ],
+          },
+          {
+            heading: 'for and since',
+            body: 'Use **for** with a length of time (**for two years**, **for ten minutes**) and **since** with a starting point (**since 2020**, **since Monday**). Both describe a situation that started in the past and continues now.',
+            bodyEs:
+              'Usa **for** con una duración (**for two years**, **for ten minutes**) y **since** con un punto de inicio (**since 2020**, **since Monday**). Ambos describen una situación que empezó en el pasado y continúa ahora.',
+            examples: [
+              {
+                en: 'I have lived here for five years.',
+                es: 'He vivido aquí durante cinco años.',
+              },
+              {
+                en: 'She has known him since 2019.',
+                es: 'Lo conoce desde 2019.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'for vs since',
+            columns: ['Word', 'Used with', 'Example'],
+            rows: [
+              ['for', 'a period of time', 'for three days'],
+              ['since', 'a point in time', 'since Friday'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'Have you ever been to Japan?',
+            es: '¿Alguna vez has estado en Japón?',
+          },
+          {
+            en: 'I have never tried snowboarding.',
+            es: 'Nunca he probado el snowboard.',
+          },
+          {
+            en: 'The film has already started.',
+            es: 'La película ya ha empezado.',
+          },
+          {
+            en: "We haven't eaten yet.",
+            es: 'Todavía no hemos comido.',
+          },
+          {
+            en: 'They have been married for ten years.',
+            es: 'Llevan casados diez años.',
+          },
+          {
+            en: 'I have worked here since March.',
+            es: 'He trabajado aquí desde marzo.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'I have seen her yesterday.',
+            right: 'I saw her yesterday.',
+            why: "Do not use the present perfect with a finished time word like 'yesterday'. Use the past simple instead.",
+            esNote:
+              "Con 'yesterday', 'last week', etc. usa el pasado simple, no el present perfect.",
+          },
+          {
+            wrong: 'I live here since 2020.',
+            right: 'I have lived here since 2020.',
+            why: 'For a situation that started in the past and continues, English uses the present perfect, not the present simple.',
+            esNote:
+              "El español usa presente ('vivo aquí desde 2020'); el inglés usa present perfect.",
+          },
+          {
+            wrong: 'I have lived here since five years.',
+            right: 'I have lived here for five years.',
+            why: "Use 'for' with a length of time, and 'since' only with a starting point.",
+            esNote: "'desde hace cinco años' = 'for five years', no 'since'.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'a2-pp-ex1',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'I have visited Paris last year.',
+              'I have visited Paris twice.',
+              'I have visit Paris twice.',
+            ],
+            answer: 1,
+            explain: "No exact past time with present perfect, and the participle is 'visited'.",
+          },
+          {
+            kind: 'cloze',
+            id: 'a2-pp-ex2',
+            before: 'We have lived in this city',
+            after: 'ten years.',
+            answers: ['for'],
+            hint: 'length of time',
+            explain: "Use 'for' with a duration like 'ten years'.",
+          },
+          {
+            kind: 'cloze',
+            id: 'a2-pp-ex3',
+            before: 'She has worked here',
+            after: 'January.',
+            answers: ['since'],
+            hint: 'starting point',
+            explain: "Use 'since' with a point in time like 'January'.",
+          },
+          {
+            kind: 'correct',
+            id: 'a2-pp-ex4',
+            wrong: 'Have you ever eat octopus?',
+            answers: ['Have you ever eaten octopus?'],
+            explain: "After 'have', use the past participle 'eaten'.",
+          },
+          {
+            kind: 'order',
+            id: 'a2-pp-ex5',
+            tokens: ['They', "haven't", 'finished', 'yet'],
+            answer: "They haven't finished yet.",
+            explain: "'yet' goes at the end of a negative sentence.",
+          },
+          {
+            kind: 'translate',
+            id: 'a2-pp-ex6',
+            es: 'Ya he comprado los billetes.',
+            answers: ['I have already bought the tickets.', "I've already bought the tickets."],
+            explain: "'Ya' = 'already', placed before the past participle.",
+          },
+          {
+            kind: 'dictation',
+            id: 'a2-pp-ex7',
+            text: 'I have never been to South America.',
+            explain: "Listen for 'have never been', the present perfect of experience.",
+          },
+        ],
+      },
+      {
+        id: 'a2-future-forms',
+        level: 'A2',
+        title: 'Talking about the future: will, going to, present continuous',
+        summary:
+          'Use **going to** for plans and predictions from evidence, **will** for decisions made now, offers and predictions from opinion, and the **present continuous** for fixed arrangements with a time and place.',
+        summaryEs:
+          'Usa **going to** para planes y predicciones basadas en evidencia, **will** para decisiones del momento, ofrecimientos y predicciones de opinión, y el **present continuous** para citas fijas con hora y lugar.',
+        sections: [
+          {
+            heading: 'going to for plans and evidence',
+            body: "Use **be going to + verb** for intentions decided before now (**I'm going to study law**) and for predictions based on what you can see (**Look at those clouds — it's going to rain**).",
+            bodyEs:
+              "Usa **be going to + verbo** para intenciones decididas antes de ahora (**I'm going to study law**) y para predicciones basadas en lo que ves (**Look at those clouds — it's going to rain**).",
+            examples: [
+              {
+                en: "We're going to move to Madrid.",
+                es: 'Vamos a mudarnos a Madrid.',
+              },
+              {
+                en: "She's going to have a baby.",
+                es: 'Va a tener un bebé.',
+              },
+            ],
+          },
+          {
+            heading: 'will for instant decisions and offers',
+            body: "Use **will + verb** for a decision made at the moment of speaking (**I'll help you**), for offers and promises, and for predictions you think or believe (**I think it will be fine**). The short form is **'ll**, and the negative is **won't**.",
+            bodyEs:
+              "Usa **will + verbo** para una decisión tomada en el momento de hablar (**I'll help you**), para ofrecimientos y promesas, y para predicciones de opinión (**I think it will be fine**). La forma corta es **'ll** y la negativa **won't**.",
+            examples: [
+              {
+                en: "The phone is ringing — I'll get it.",
+                es: 'Suena el teléfono, ya lo cojo yo.',
+              },
+              {
+                en: 'I think she will win.',
+                es: 'Creo que ella ganará.',
+              },
+            ],
+          },
+          {
+            heading: 'Present continuous for arrangements',
+            body: "Use the **present continuous** (be + -ing) for fixed future arrangements, usually with another person and a clear time (**I'm meeting Ana at six**). It feels personal and confirmed, like an appointment in your calendar.",
+            bodyEs:
+              "Usa el **present continuous** (be + -ing) para citas futuras fijas, normalmente con otra persona y una hora clara (**I'm meeting Ana at six**). Suena personal y confirmado, como una cita en tu agenda.",
+            examples: [
+              {
+                en: "We're flying to Rome on Friday.",
+                es: 'Volamos a Roma el viernes.',
+              },
+              {
+                en: "I'm seeing the doctor tomorrow.",
+                es: 'Tengo cita con el médico mañana.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Which future form?',
+            columns: ['Situation', 'Form', 'Example'],
+            rows: [
+              ['Plan / intention', 'going to', "I'm going to call her."],
+              ['Decision now / offer', 'will', "I'll call her."],
+              ['Fixed arrangement', 'present continuous', "I'm calling her at five."],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: "It's going to be a long day.",
+            es: 'Va a ser un día largo.',
+          },
+          {
+            en: "Don't worry, I'll do it.",
+            es: 'No te preocupes, lo hago yo.',
+          },
+          {
+            en: "They're getting married in July.",
+            es: 'Se casan en julio.',
+          },
+          {
+            en: "I'm going to learn to drive this year.",
+            es: 'Voy a aprender a conducir este año.',
+          },
+          {
+            en: 'Maybe it will snow tonight.',
+            es: 'Quizás nieve esta noche.',
+          },
+          {
+            en: "We're having dinner with them on Saturday.",
+            es: 'Cenamos con ellos el sábado.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'I will buy a new car next year. I already chose the model.',
+            right: "I'm going to buy a new car next year. I already chose the model.",
+            why: "For a plan decided before now, use 'going to', not 'will'.",
+            esNote: "Si ya lo tienes planeado, usa 'going to', no 'will'.",
+          },
+          {
+            wrong: 'Wait, I am going to help you with that bag right now.',
+            right: "Wait, I'll help you with that bag right now.",
+            why: "An offer or decision made at the moment of speaking uses 'will', not 'going to'.",
+            esNote: "Para ofrecerte en el momento, 'I'll help you'.",
+          },
+          {
+            wrong: 'I meet Ana tomorrow at six.',
+            right: "I'm meeting Ana tomorrow at six.",
+            why: 'For a fixed personal arrangement, use the present continuous, not the present simple.',
+            esNote: 'Para citas concretas usa present continuous, no presente simple.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'a2-fut-ex1',
+            prompt: 'The phone is ringing. Which is best?',
+            options: ["I'm going to answer it.", "I'll answer it.", 'I answer it.'],
+            answer: 1,
+            explain: "An instant decision uses 'will'.",
+          },
+          {
+            kind: 'mcq',
+            id: 'a2-fut-ex2',
+            prompt: 'Choose the best future form: a fixed arrangement with a friend at 8.',
+            options: ["I'll meet Sam at 8.", 'I meet Sam at 8.', "I'm meeting Sam at 8."],
+            answer: 2,
+            explain: 'Fixed personal arrangements use the present continuous.',
+          },
+          {
+            kind: 'cloze',
+            id: 'a2-fut-ex3',
+            before: 'Look at that sky! It',
+            after: 'rain.',
+            answers: ['is going to', "'s going to"],
+            hint: 'prediction from evidence',
+            explain: "Evidence you can see (clouds) means 'going to'.",
+          },
+          {
+            kind: 'correct',
+            id: 'a2-fut-ex4',
+            wrong: 'We will travel to Japan in spring; we booked the flights last week.',
+            answers: [
+              "We're going to travel to Japan in spring; we booked the flights last week.",
+              'We are going to travel to Japan in spring; we booked the flights last week.',
+            ],
+            explain: "A plan already decided uses 'going to'.",
+          },
+          {
+            kind: 'order',
+            id: 'a2-fut-ex5',
+            tokens: ['I', 'think', 'she', 'will', 'like', 'it'],
+            answer: 'I think she will like it.',
+            explain: "Opinion-based predictions use 'will'.",
+          },
+          {
+            kind: 'translate',
+            id: 'a2-fut-ex6',
+            es: 'Voy a empezar un curso nuevo.',
+            answers: ["I'm going to start a new course.", 'I am going to start a new course.'],
+            explain: "'Voy a' for an intention = 'going to'.",
+          },
+          {
+            kind: 'dictation',
+            id: 'a2-fut-ex7',
+            text: "We're flying to London on Monday morning.",
+            explain: 'Present continuous for a fixed travel arrangement.',
+          },
+        ],
+      },
+      {
+        id: 'a2-past-continuous',
+        level: 'A2',
+        title: 'Past continuous, when/while, and used to',
+        summary:
+          'Use the **past continuous** (was/were + -ing) for an action in progress in the past, often interrupted by a **past simple** action with **when/while**. Use **used to** for past habits and states that are no longer true.',
+        summaryEs:
+          'Usa el **past continuous** (was/were + -ing) para una acción en progreso en el pasado, a menudo interrumpida por una acción en **past simple** con **when/while**. Usa **used to** para hábitos y estados pasados que ya no son ciertos.',
+        sections: [
+          {
+            heading: 'Past continuous for actions in progress',
+            body: 'Form it with **was/were + verb-ing**. It describes an action happening at a moment in the past (**At 8 p.m. I was cooking**). It sets the scene or background of a story.',
+            bodyEs:
+              'Fórmalo con **was/were + verbo-ing**. Describe una acción que ocurría en un momento del pasado (**At 8 p.m. I was cooking**). Pone el escenario o el fondo de una historia.',
+            examples: [
+              {
+                en: 'They were sleeping at midnight.',
+                es: 'Estaban durmiendo a medianoche.',
+              },
+              {
+                en: 'It was raining when we left.',
+                es: 'Estaba lloviendo cuando salimos.',
+              },
+            ],
+          },
+          {
+            heading: 'when and while',
+            body: 'Use the **past continuous** for the longer background action and the **past simple** for the shorter action that interrupts it. **While** usually goes with the long action (-ing), and **when** usually goes with the short one. (**While I was reading, the phone rang.**)',
+            bodyEs:
+              'Usa el **past continuous** para la acción de fondo más larga y el **past simple** para la acción corta que la interrumpe. **While** suele ir con la acción larga (-ing) y **when** con la corta. (**While I was reading, the phone rang.**)',
+            examples: [
+              {
+                en: 'When she arrived, I was cooking.',
+                es: 'Cuando ella llegó, yo estaba cocinando.',
+              },
+              {
+                en: 'While he was driving, he saw an accident.',
+                es: 'Mientras conducía, vio un accidente.',
+              },
+            ],
+          },
+          {
+            heading: 'used to for past habits',
+            body: "Use **used to + base verb** for habits or states that were true in the past but not now (**I used to play tennis**). The negative is **didn't use to** and the question is **Did you use to...?** (no 'd' after 'did').",
+            bodyEs:
+              "Usa **used to + verbo base** para hábitos o estados que eran ciertos en el pasado pero no ahora (**I used to play tennis**). La negativa es **didn't use to** y la pregunta **Did you use to...?** (sin 'd' tras 'did').",
+            examples: [
+              {
+                en: 'We used to live by the sea.',
+                es: 'Antes vivíamos junto al mar.',
+              },
+              {
+                en: "She didn't use to like coffee.",
+                es: 'Antes no le gustaba el café.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Past continuous forms',
+            columns: ['Subject', 'Auxiliary', 'Example'],
+            rows: [
+              ['I / he / she / it', 'was', 'I was working'],
+              ['you / we / they', 'were', 'They were working'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'I was watching TV when you called.',
+            es: 'Estaba viendo la tele cuando llamaste.',
+          },
+          {
+            en: 'While we were waiting, it started to snow.',
+            es: 'Mientras esperábamos, empezó a nevar.',
+          },
+          {
+            en: 'What were you doing at ten?',
+            es: '¿Qué estabas haciendo a las diez?',
+          },
+          {
+            en: 'They used to be neighbours.',
+            es: 'Antes eran vecinos.',
+          },
+          {
+            en: 'Did you use to walk to school?',
+            es: '¿Antes ibas andando al colegio?',
+          },
+          {
+            en: "He wasn't listening to the teacher.",
+            es: 'No estaba escuchando al profesor.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'When she called, I cooked dinner.',
+            right: 'When she called, I was cooking dinner.',
+            why: 'The background action in progress needs the past continuous, not the past simple.',
+            esNote: 'La acción que estaba ocurriendo va en past continuous.',
+          },
+          {
+            wrong: 'I was use to play football.',
+            right: 'I used to play football.',
+            why: "'Used to' is not a continuous form; do not add 'was/were' or '-ing'.",
+            esNote: "'used to' no lleva 'was' ni '-ing'.",
+          },
+          {
+            wrong: 'Did you used to smoke?',
+            right: 'Did you use to smoke?',
+            why: "After 'did', the verb is the base form 'use to', without the final 'd'.",
+            esNote: "Tras 'did' se quita la 'd': 'use to'.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'a2-pc-ex1',
+            before: 'While I',
+            after: 'lunch, the doorbell rang.',
+            answers: ['was making', 'was cooking', 'was having'],
+            hint: 'action in progress',
+            explain: 'The long background action takes the past continuous.',
+          },
+          {
+            kind: 'mcq',
+            id: 'a2-pc-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'When the lights went out, we watched a film.',
+              'When the lights went out, we were watching a film.',
+              'When the lights were going out, we watched a film.',
+            ],
+            answer: 1,
+            explain: 'The short action interrupts the longer one in progress.',
+          },
+          {
+            kind: 'correct',
+            id: 'a2-pc-ex3',
+            wrong: 'I use to live in Paris ten years ago.',
+            answers: ['I used to live in Paris ten years ago.'],
+            explain: "In the positive, it is 'used to' with a 'd'.",
+          },
+          {
+            kind: 'order',
+            id: 'a2-pc-ex4',
+            tokens: ['What', 'were', 'you', 'doing', 'at', 'noon?'],
+            answer: 'What were you doing at noon?',
+            explain: 'Question word + were + subject + -ing.',
+          },
+          {
+            kind: 'translate',
+            id: 'a2-pc-ex5',
+            es: 'Antes jugábamos juntos.',
+            answers: ['We used to play together.', 'We used to play together every day.'],
+            explain: "Past habit = 'used to' + base verb.",
+          },
+          {
+            kind: 'translate',
+            id: 'a2-pc-ex6',
+            es: 'Estaba lloviendo cuando salimos.',
+            answers: ['It was raining when we left.', 'It was raining when we went out.'],
+            explain: 'Action in progress = past continuous; interruption = past simple.',
+          },
+          {
+            kind: 'dictation',
+            id: 'a2-pc-ex7',
+            text: 'She was reading when the phone rang.',
+            explain: 'Past continuous interrupted by past simple.',
+          },
+        ],
+      },
+      {
+        id: 'a2-comparatives-superlatives',
+        level: 'A2',
+        title: 'Comparatives, superlatives and (not) as...as',
+        summary:
+          'Use **comparatives + than** to compare two things, **superlatives with the** for the top of a group, and **(not) as...as** to say things are equal or unequal.',
+        summaryEs:
+          'Usa **comparativos + than** para comparar dos cosas, **superlativos con the** para lo máximo de un grupo, y **(not) as...as** para decir que las cosas son iguales o desiguales.',
+        sections: [
+          {
+            heading: 'Comparatives with than',
+            body: 'Add **-er** to short adjectives (**cheaper**, **bigger**) and use **more** before longer ones (**more expensive**). Follow the comparison with **than**. Irregular: **good → better**, **bad → worse**, **far → further**.',
+            bodyEs:
+              'Añade **-er** a los adjetivos cortos (**cheaper**, **bigger**) y usa **more** antes de los largos (**more expensive**). Sigue la comparación con **than**. Irregulares: **good → better**, **bad → worse**, **far → further**.',
+            examples: [
+              {
+                en: 'This bag is cheaper than that one.',
+                es: 'Este bolso es más barato que ese.',
+              },
+              {
+                en: 'Today is more interesting than yesterday.',
+                es: 'Hoy es más interesante que ayer.',
+              },
+            ],
+          },
+          {
+            heading: 'Superlatives with the',
+            body: 'Use **the + -est** for short adjectives (**the cheapest**) and **the most** for longer ones (**the most expensive**). Irregular: **the best**, **the worst**. Use them for one thing at the top of a group.',
+            bodyEs:
+              'Usa **the + -est** para adjetivos cortos (**the cheapest**) y **the most** para los largos (**the most expensive**). Irregulares: **the best**, **the worst**. Úsalos para lo que está en la cima de un grupo.',
+            examples: [
+              {
+                en: "It's the biggest city in Spain.",
+                es: 'Es la ciudad más grande de España.',
+              },
+              {
+                en: 'She is the best player on the team.',
+                es: 'Es la mejor jugadora del equipo.',
+              },
+            ],
+          },
+          {
+            heading: '(not) as...as',
+            body: "Use **as + adjective + as** to say two things are equal (**Tom is as tall as Sam**). Use **not as...as** to say one is less (**This film isn't as good as the book**).",
+            bodyEs:
+              "Usa **as + adjetivo + as** para decir que dos cosas son iguales (**Tom is as tall as Sam**). Usa **not as...as** para decir que una es menos (**This film isn't as good as the book**).",
+            examples: [
+              {
+                en: 'My phone is as fast as yours.',
+                es: 'Mi teléfono es tan rápido como el tuyo.',
+              },
+              {
+                en: "It isn't as cold as last week.",
+                es: 'No hace tanto frío como la semana pasada.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Forms by adjective length',
+            columns: ['Adjective', 'Comparative', 'Superlative'],
+            rows: [
+              ['cheap (short)', 'cheaper', 'the cheapest'],
+              ['big (one vowel)', 'bigger', 'the biggest'],
+              ['expensive (long)', 'more expensive', 'the most expensive'],
+              ['good (irregular)', 'better', 'the best'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'Winter is colder than autumn.',
+            es: 'El invierno es más frío que el otoño.',
+          },
+          {
+            en: 'This is the most beautiful beach here.',
+            es: 'Esta es la playa más bonita de aquí.',
+          },
+          {
+            en: 'He runs faster than me.',
+            es: 'Corre más rápido que yo.',
+          },
+          {
+            en: "My car isn't as new as yours.",
+            es: 'Mi coche no es tan nuevo como el tuyo.',
+          },
+          {
+            en: 'That was the worst day of my life.',
+            es: 'Ese fue el peor día de mi vida.',
+          },
+          {
+            en: 'She is as clever as her brother.',
+            es: 'Es tan lista como su hermano.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'This phone is more cheap than that one.',
+            right: 'This phone is cheaper than that one.',
+            why: "Short adjectives take '-er', not 'more'.",
+            esNote: "Adjetivos cortos: '-er', no 'more'.",
+          },
+          {
+            wrong: "It's the most big city.",
+            right: "It's the biggest city.",
+            why: "Short adjectives form the superlative with '-est', not 'most'.",
+            esNote: "Cortos: 'the biggest', no 'the most big'.",
+          },
+          {
+            wrong: 'She is more tall than me.',
+            right: 'She is taller than me.',
+            why: "Use the '-er' form for one-syllable adjectives like 'tall'.",
+            esNote: "'tall' es corto: 'taller than'.",
           },
         ],
         exercises: [
           {
             kind: 'cloze',
             id: 'a2-cs-ex1',
-            before: 'Mount Everest is the',
-            after: '(high) mountain in the world.',
-            answers: ['highest'],
-            explain: 'Short adjective superlative: high → the highest.',
+            before: 'A train is',
+            after: 'than a bus. (fast)',
+            answers: ['faster'],
+            hint: 'short adjective + -er',
+            explain: "'fast' is short, so add '-er': faster.",
+          },
+          {
+            kind: 'cloze',
+            id: 'a2-cs-ex2',
+            before: 'It is the',
+            after: 'restaurant in town. (expensive)',
+            answers: ['most expensive'],
+            hint: 'long adjective superlative',
+            explain: "'expensive' is long, so use 'the most expensive'.",
           },
           {
             kind: 'mcq',
-            id: 'a2-cs-ex2',
-            prompt: 'Choose the correct comparative.',
-            options: ['more good', 'gooder', 'better'],
-            answer: 2,
-            explain: "'Good' is irregular: the comparative is 'better'.",
+            id: 'a2-cs-ex3',
+            prompt: 'Choose the correct sentence.',
+            options: ['He is gooder than me.', 'He is better than me.', 'He is more good than me.'],
+            answer: 1,
+            explain: "'good' is irregular: 'better'.",
           },
           {
             kind: 'correct',
-            id: 'a2-cs-ex3',
-            wrong: 'This exercise is more easy than the last one.',
-            answers: ['This exercise is easier than the last one.'],
-            explain: "'Easy' is short, so use 'easier', not 'more easy'.",
-          },
-          {
-            kind: 'translate',
             id: 'a2-cs-ex4',
-            es: 'Hoy no hace tanto calor como ayer.',
-            answers: [
-              "Today isn't as hot as yesterday.",
-              'Today is not as hot as yesterday.',
-              "It isn't as hot today as yesterday.",
-            ],
-            explain: "'Not as ... as' shows one thing is less than another.",
+            wrong: "This book isn't as interesting than the other one.",
+            answers: ["This book isn't as interesting as the other one."],
+            explain: "The structure is 'as ... as', not 'as ... than'.",
           },
           {
             kind: 'order',
             id: 'a2-cs-ex5',
-            tokens: ['She', 'is', 'as', 'tall', 'as', 'her', 'sister'],
-            answer: 'She is as tall as her sister.',
-            explain: "'as + adjective + as' shows equality.",
+            tokens: ['It', 'is', 'the', 'best', 'film', 'of', 'the', 'year'],
+            answer: 'It is the best film of the year.',
+            explain: 'Superlative: the + best + noun.',
           },
           {
-            kind: 'cloze',
+            kind: 'translate',
             id: 'a2-cs-ex6',
-            before: 'This restaurant is more expensive',
-            after: 'the other one.',
-            answers: ['than'],
-            explain: "Comparatives are followed by 'than'.",
+            es: 'Mi hermana es más alta que yo.',
+            answers: ['My sister is taller than me.', 'My sister is taller than I am.'],
+            explain: "'tall' is short, so 'taller than'.",
           },
           {
             kind: 'dictation',
             id: 'a2-cs-ex7',
-            text: 'It was the most beautiful place I have ever seen.',
-            explain: "Superlative with 'the most' for a long adjective.",
+            text: 'This is the cheapest hotel in the city.',
+            explain: "Superlative 'the cheapest' with '-est'.",
           },
         ],
       },
       {
         id: 'a2-adverbs-of-manner',
         level: 'A2',
-        title: 'Adverbs of Manner and Word Order',
+        title: 'Adverbs of manner and word order',
         summary:
-          'Form adverbs from adjectives, describe how actions happen, and place them correctly in the sentence.',
+          '**Adverbs of manner** say how we do something (usually adjective + **-ly**) and normally go **after the verb or object**. Watch the irregular adverbs **well**, **fast** and **hard**.',
+        summaryEs:
+          'Los **adverbios de modo** dicen cómo hacemos algo (normalmente adjetivo + **-ly**) y suelen ir **después del verbo o del objeto**. Cuidado con los irregulares **well**, **fast** y **hard**.',
         sections: [
           {
-            heading: 'Forming adverbs',
-            body: 'Most **adverbs of manner** come from an adjective + **-ly** (*quick → quickly*). Adjectives ending in -y change to **-ily** (*easy → easily*). Some are irregular: good→**well**, fast→**fast**, hard→**hard**.',
+            heading: 'Forming adverbs of manner',
+            body: 'Make most adverbs by adding **-ly** to the adjective: **quick → quickly**, **careful → carefully**. Adjectives ending in **-y** change to **-ily** (**happy → happily**). Some are irregular: **good → well**, and **fast** and **hard** do not change.',
+            bodyEs:
+              'Forma la mayoría de adverbios añadiendo **-ly** al adjetivo: **quick → quickly**, **careful → carefully**. Los terminados en **-y** cambian a **-ily** (**happy → happily**). Algunos son irregulares: **good → well**, y **fast** y **hard** no cambian.',
             examples: [
               {
                 en: 'She speaks English fluently.',
@@ -2600,29 +2722,33 @@ export const GRAMMAR: GrammarUnit[] = [
           },
           {
             heading: 'Adjective or adverb?',
-            body: "An **adjective** describes a noun (*a careful driver*). An **adverb** describes a verb — how the action is done (*he drives carefully*). 'Good' is the adjective; 'well' is the adverb.",
+            body: "An **adjective** describes a noun (**a quick car**), while an **adverb** describes a verb (**it moves quickly**). Use **well** as the adverb of 'good': **a good cook** but **she cooks well**.",
+            bodyEs:
+              "Un **adjetivo** describe un sustantivo (**a quick car**), mientras que un **adverbio** describe un verbo (**it moves quickly**). Usa **well** como adverbio de 'good': **a good cook** pero **she cooks well**.",
             examples: [
               {
-                en: 'She is a good singer. She sings well.',
-                es: 'Es una buena cantante. Canta bien.',
+                en: 'He is a good singer.',
+                es: 'Es un buen cantante.',
               },
               {
-                en: 'It was a quiet room. They talked quietly.',
-                es: 'Era una sala silenciosa. Hablaban en voz baja.',
+                en: 'He sings well.',
+                es: 'Canta bien.',
               },
             ],
           },
           {
-            heading: 'Position',
-            body: 'Adverbs of manner usually go **after the verb** or **after the object**, not between the verb and the object. So we say *I speak English well*, not *I speak well English*.',
+            heading: 'Position in the sentence',
+            body: 'Adverbs of manner normally come **after the verb**, or **after the object** if there is one (**She opened the door quietly**). Do not put the adverb between the verb and its object.',
+            bodyEs:
+              'Los adverbios de modo van normalmente **después del verbo**, o **después del objeto** si lo hay (**She opened the door quietly**). No pongas el adverbio entre el verbo y su objeto.',
             examples: [
-              {
-                en: 'He opened the door slowly.',
-                es: 'Abrió la puerta despacio.',
-              },
               {
                 en: 'They finished the test quickly.',
                 es: 'Terminaron el examen rápidamente.',
+              },
+              {
+                en: 'Please read the email carefully.',
+                es: 'Por favor, lee el correo con atención.',
               },
             ],
           },
@@ -2630,153 +2756,150 @@ export const GRAMMAR: GrammarUnit[] = [
         tables: [
           {
             caption: 'Adjective to adverb',
-            columns: ['Adjective', 'Adverb', 'Note'],
+            columns: ['Adjective', 'Adverb'],
             rows: [
-              ['quick', 'quickly', '+ -ly'],
-              ['easy', 'easily', 'y → ily'],
-              ['good', 'well', 'irregular'],
-              ['fast', 'fast', 'no change'],
-              ['hard', 'hard', 'no change'],
+              ['quick', 'quickly'],
+              ['easy', 'easily'],
+              ['good', 'well'],
+              ['fast', 'fast'],
+              ['hard', 'hard'],
             ],
           },
         ],
         examples: [
           {
-            en: 'Please speak slowly.',
-            es: 'Por favor, habla despacio.',
+            en: 'She answered the question correctly.',
+            es: 'Respondió la pregunta correctamente.',
           },
           {
-            en: 'She answered the questions easily.',
-            es: 'Respondió las preguntas con facilidad.',
+            en: 'The children played happily.',
+            es: 'Los niños jugaron felizmente.',
           },
           {
             en: 'He works hard every day.',
             es: 'Trabaja duro todos los días.',
           },
           {
-            en: 'The children played happily in the garden.',
-            es: 'Los niños jugaban felizmente en el jardín.',
+            en: 'Can you speak more slowly?',
+            es: '¿Puedes hablar más despacio?',
           },
           {
-            en: 'I can swim well now.',
-            es: 'Ahora sé nadar bien.',
+            en: 'I know the city well.',
+            es: 'Conozco bien la ciudad.',
           },
           {
-            en: 'They waited patiently for the bus.',
-            es: 'Esperaron el autobús con paciencia.',
+            en: 'They run very fast.',
+            es: 'Corren muy rápido.',
           },
         ],
         pitfalls: [
           {
             wrong: 'She sings very good.',
             right: 'She sings very well.',
-            why: "To describe a verb you need the adverb 'well', not the adjective 'good'.",
-            esNote: "Para describir el verbo usa 'well', no 'good'.",
+            why: "After a verb, use the adverb 'well', not the adjective 'good'.",
+            esNote: "Tras un verbo usa 'well', no 'good'.",
           },
           {
-            wrong: 'He speaks fluently English.',
-            right: 'He speaks English fluently.',
-            why: "Don't put the adverb between the verb and its object; put it after the object.",
-            esNote: 'El adverbio va después del objeto, no entre el verbo y el objeto.',
+            wrong: 'He speaks fastly.',
+            right: 'He speaks fast.',
+            why: "'fast' is already an adverb; do not add '-ly'.",
+            esNote: "'fast' no lleva '-ly'.",
           },
           {
-            wrong: 'Drive careful!',
-            right: 'Drive carefully!',
-            why: "An adverb (carefully) is needed to modify the verb 'drive'.",
-            esNote: 'El verbo necesita un adverbio (-ly), no un adjetivo.',
+            wrong: 'She opened quietly the door.',
+            right: 'She opened the door quietly.',
+            why: 'Do not place the adverb between the verb and its object.',
+            esNote: 'No separes el verbo de su objeto con el adverbio.',
           },
         ],
         exercises: [
           {
             kind: 'cloze',
             id: 'a2-adv-ex1',
-            before: 'He plays the guitar very',
-            after: '.',
-            answers: ['well'],
-            hint: "irregular adverb of 'good'",
-            explain: "The adverb of 'good' is 'well'.",
+            before: 'He finished his homework',
+            after: '. (quick)',
+            answers: ['quickly'],
+            hint: 'adjective + -ly',
+            explain: "The adverb of 'quick' is 'quickly'.",
           },
           {
             kind: 'mcq',
             id: 'a2-adv-ex2',
-            prompt: 'Which sentence is correct?',
-            options: [
-              'She speaks slowly Spanish.',
-              'She speaks Spanish slowly.',
-              'She slowly speaks Spanish well slowly.',
-            ],
+            prompt: 'Choose the correct sentence.',
+            options: ['She dances good.', 'She dances well.', 'She dances goodly.'],
             answer: 1,
-            explain: "The adverb goes after the object 'Spanish'.",
+            explain: "The adverb of 'good' is 'well'.",
           },
           {
             kind: 'correct',
             id: 'a2-adv-ex3',
-            wrong: 'They worked very hardly today.',
-            answers: ['They worked very hard today.'],
-            explain: "The adverb of 'hard' is 'hard'; 'hardly' means 'almost not'.",
-          },
-          {
-            kind: 'translate',
-            id: 'a2-adv-ex4',
-            es: 'Conduce con cuidado.',
-            answers: ['He drives carefully.', 'She drives carefully.', 'Drive carefully.'],
-            explain: "'Carefully' is the adverb describing how he drives.",
+            wrong: 'They speak very slow.',
+            answers: ['They speak very slowly.'],
+            explain: "After a verb, use the adverb 'slowly'.",
           },
           {
             kind: 'order',
-            id: 'a2-adv-ex5',
-            tokens: ['She', 'answered', 'the', 'question', 'easily'],
-            answer: 'She answered the question easily.',
-            explain: 'The adverb of manner comes after the object.',
+            id: 'a2-adv-ex4',
+            tokens: ['She', 'read', 'the', 'letter', 'carefully'],
+            answer: 'She read the letter carefully.',
+            explain: "The adverb goes after the object 'the letter'.",
           },
           {
-            kind: 'cloze',
+            kind: 'translate',
+            id: 'a2-adv-ex5',
+            es: 'Conduce con cuidado.',
+            answers: ['He drives carefully.', 'She drives carefully.', 'Drive carefully.'],
+            explain: "'con cuidado' = the adverb 'carefully'.",
+          },
+          {
+            kind: 'translate',
             id: 'a2-adv-ex6',
-            before: 'The team played',
-            after: '(bad) and lost the game.',
-            answers: ['badly'],
-            explain: "The adverb of 'bad' is 'badly'.",
+            es: 'Trabajan duro.',
+            answers: ['They work hard.'],
+            explain: "'hard' is the adverb here, with no '-ly'.",
           },
           {
             kind: 'dictation',
             id: 'a2-adv-ex7',
-            text: 'Please listen carefully to the instructions.',
-            explain: "Adverb of manner 'carefully' after the verb phrase.",
+            text: 'Please close the door quietly.',
+            explain: "Adverb 'quietly' after the object.",
           },
         ],
       },
       {
         id: 'a2-modals',
         level: 'A2',
-        title: 'Modals: should, have to, must and might',
+        title: 'Modals: should, have to, must, might',
         summary:
-          'Give advice with should, talk about obligation with have to/must, and express possibility with might.',
+          "Use **should** for advice, **must/have to** for obligation, **mustn't** for prohibition, **don't have to** for no obligation, and **might** for possibility. Modals are followed by the **base verb**.",
+        summaryEs:
+          "Usa **should** para consejo, **must/have to** para obligación, **mustn't** para prohibición, **don't have to** para falta de obligación, y **might** para posibilidad. Los modales van seguidos del **verbo base**.",
         sections: [
           {
             heading: 'should for advice',
-            body: "Use **should + base verb** to give advice or an opinion. The negative is **shouldn't**. It is the same for all subjects.",
+            body: "Use **should + base verb** to give advice or an opinion (**You should rest**). The negative **shouldn't** means it is not a good idea (**You shouldn't smoke**).",
+            bodyEs:
+              "Usa **should + verbo base** para dar un consejo u opinión (**You should rest**). La negativa **shouldn't** significa que no es buena idea (**You shouldn't smoke**).",
             examples: [
               {
-                en: 'You should see a doctor.',
-                es: 'Deberías ver a un médico.',
+                en: 'You should drink more water.',
+                es: 'Deberías beber más agua.',
               },
               {
-                en: "You shouldn't eat so much sugar.",
-                es: 'No deberías comer tanto azúcar.',
+                en: "We shouldn't be late.",
+                es: 'No deberíamos llegar tarde.',
               },
             ],
           },
           {
-            heading: 'have to and must for obligation',
-            body: "Use **have to** / **has to** for rules and obligations, and **must** for strong personal obligation. The negative **don't have to** means it is *not necessary*, while **mustn't** means it is *prohibited* — these are very different.",
+            heading: 'must, have to, and their negatives',
+            body: "Use **must** and **have to** for strong obligation (**I must go**, **I have to work**). But the negatives are different: **mustn't** = prohibition (don't do it), while **don't have to** = no obligation (it isn't necessary).",
+            bodyEs:
+              "Usa **must** y **have to** para obligación fuerte (**I must go**, **I have to work**). Pero las negativas son distintas: **mustn't** = prohibición (no lo hagas), mientras que **don't have to** = sin obligación (no es necesario).",
             examples: [
               {
-                en: 'I have to wear a uniform at work.',
-                es: 'Tengo que llevar uniforme en el trabajo.',
-              },
-              {
-                en: "You mustn't smoke here.",
-                es: 'No debes fumar aquí.',
+                en: "You mustn't park here.",
+                es: 'No debes aparcar aquí.',
               },
               {
                 en: "You don't have to come if you're tired.",
@@ -2786,182 +2909,188 @@ export const GRAMMAR: GrammarUnit[] = [
           },
           {
             heading: 'might for possibility',
-            body: 'Use **might + base verb** to say something is possible but not certain. The negative is **might not**.',
+            body: "Use **might + base verb** to say something is possible but not certain (**It might rain**). It is similar to 'maybe'. The negative is **might not**.",
+            bodyEs:
+              "Usa **might + verbo base** para decir que algo es posible pero no seguro (**It might rain**). Es parecido a 'maybe'. La negativa es **might not**.",
             examples: [
               {
-                en: 'It might rain later.',
-                es: 'Puede que llueva luego.',
+                en: 'I might go to the party.',
+                es: 'Puede que vaya a la fiesta.',
               },
               {
-                en: 'She might not come to the party.',
-                es: 'Puede que no venga a la fiesta.',
+                en: 'She might not come.',
+                es: 'Puede que ella no venga.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Meaning of the modals',
-            columns: ['Modal', 'Meaning', 'Example'],
+            caption: 'Negative meanings',
+            columns: ['Form', 'Meaning'],
             rows: [
-              ['should', 'advice', 'You should rest.'],
-              ['have to / must', 'obligation', 'I must finish this.'],
-              ["don't have to", 'not necessary', "You don't have to pay."],
-              ["mustn't", 'prohibited', "You mustn't park here."],
-              ['might', 'possibility', 'We might go out.'],
+              ["mustn't", "prohibition (don't do it)"],
+              ["don't have to", 'no obligation (not necessary)'],
+              ["shouldn't", 'bad idea / advice not to'],
+              ['might not', 'possibly not'],
             ],
           },
         ],
         examples: [
           {
-            en: 'You should drink more water.',
-            es: 'Deberías beber más agua.',
+            en: 'You should see a doctor.',
+            es: 'Deberías ver a un médico.',
           },
           {
-            en: 'Children must wear a seatbelt.',
-            es: 'Los niños deben llevar cinturón.',
+            en: 'I have to finish this today.',
+            es: 'Tengo que terminar esto hoy.',
           },
           {
-            en: 'I have to get up early tomorrow.',
-            es: 'Tengo que levantarme temprano mañana.',
+            en: 'Visitors must show their ID.',
+            es: 'Los visitantes deben mostrar su identificación.',
           },
           {
-            en: "You don't have to finish it today.",
-            es: 'No tienes que terminarlo hoy.',
+            en: "You don't have to pay; it's free.",
+            es: 'No tienes que pagar; es gratis.',
           },
           {
-            en: 'We might go to the beach this weekend.',
-            es: 'Puede que vayamos a la playa este fin de semana.',
+            en: 'We might travel next summer.',
+            es: 'Puede que viajemos el próximo verano.',
           },
           {
-            en: "You mustn't touch that machine.",
-            es: 'No debes tocar esa máquina.',
+            en: "You mustn't use your phone here.",
+            es: 'No debes usar el móvil aquí.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'You should to study more.',
-            right: 'You should study more.',
-            why: "After a modal like 'should' use the base verb with no 'to'.",
-            esNote: "Tras 'should', 'must', 'might' no se usa 'to'.",
+            wrong: 'You should to rest.',
+            right: 'You should rest.',
+            why: "After a modal like 'should', use the base verb without 'to'.",
+            esNote: "Tras 'should' no se pone 'to'.",
           },
           {
-            wrong: "You don't have to smoke in here (meaning: it's forbidden).",
-            right: "You mustn't smoke in here.",
-            why: "'Don't have to' means not necessary; 'mustn't' means prohibited.",
-            esNote: "'Don't have to' = no es necesario; 'mustn't' = está prohibido.",
+            wrong: "You mustn't pay; it's free.",
+            right: "You don't have to pay; it's free.",
+            why: "'mustn't' means it is forbidden; for 'not necessary' use 'don't have to'.",
+            esNote: "'no es necesario' = 'don't have to', no 'mustn't'.",
           },
           {
-            wrong: 'She musts work on Sunday.',
-            right: 'She has to work on Sunday.',
-            why: "Modals don't take -s, and 'must' has no third-person form; use 'has to' here.",
-            esNote: "Los modales no llevan -s; usa 'has to' en tercera persona.",
+            wrong: 'It maybe rains tomorrow.',
+            right: 'It might rain tomorrow.',
+            why: "'might' is a modal followed by the base verb; 'maybe' is a separate adverb.",
+            esNote: "Con 'might' usa el verbo base: 'might rain'.",
           },
         ],
         exercises: [
           {
             kind: 'mcq',
             id: 'a2-mod-ex1',
-            prompt: "Your friend is sick. What's the best advice?",
-            options: [
-              'You might stay in bed.',
-              'You should stay in bed.',
-              "You mustn't stay in bed.",
-            ],
+            prompt: 'This is free. You ___ pay.',
+            options: ["mustn't", "don't have to", 'should'],
             answer: 1,
-            explain: "'Should' is used for advice.",
+            explain: "No obligation = 'don't have to'.",
           },
           {
             kind: 'cloze',
             id: 'a2-mod-ex2',
-            before: "It's a secret. You",
-            after: 'tell anyone! (prohibition)',
-            answers: ["mustn't", 'must not'],
-            explain: "Prohibition is expressed with 'mustn't'.",
+            before: 'You look tired. You',
+            after: 'go to bed early.',
+            answers: ['should'],
+            hint: 'advice',
+            explain: "Advice uses 'should'.",
+          },
+          {
+            kind: 'mcq',
+            id: 'a2-mod-ex3',
+            prompt: 'Danger! You ___ touch that wire.',
+            options: ["don't have to", "mustn't", 'might not'],
+            answer: 1,
+            explain: "Prohibition = 'mustn't'.",
           },
           {
             kind: 'correct',
-            id: 'a2-mod-ex3',
-            wrong: 'You should to call her tonight.',
-            answers: ['You should call her tonight.'],
+            id: 'a2-mod-ex4',
+            wrong: 'She should to study more.',
+            answers: ['She should study more.'],
             explain: "No 'to' after 'should'.",
           },
           {
-            kind: 'translate',
-            id: 'a2-mod-ex4',
-            es: 'Puede que llueva esta tarde.',
-            answers: ['It might rain this afternoon.', 'It may rain this afternoon.'],
-            explain: "'Might' expresses possibility.",
-          },
-          {
-            kind: 'cloze',
-            id: 'a2-mod-ex5',
-            before: "It's Saturday, so I",
-            after: 'go to work. (not necessary)',
-            answers: ["don't have to"],
-            explain: "'Don't have to' = it is not necessary.",
-          },
-          {
             kind: 'order',
+            id: 'a2-mod-ex5',
+            tokens: ['I', 'might', 'go', 'to', 'the', 'gym', 'later'],
+            answer: 'I might go to the gym later.',
+            explain: "'might' + base verb for possibility.",
+          },
+          {
+            kind: 'translate',
             id: 'a2-mod-ex6',
-            tokens: ['You', 'should', 'see', 'a', 'dentist'],
-            answer: 'You should see a dentist.',
-            explain: "'Should' + base verb for advice.",
+            es: 'Tengo que trabajar mañana.',
+            answers: ['I have to work tomorrow.', 'I must work tomorrow.'],
+            explain: "Obligation = 'have to' / 'must' + base verb.",
           },
           {
             kind: 'dictation',
             id: 'a2-mod-ex7',
-            text: 'I have to leave early today.',
-            explain: "'Have to' expresses obligation.",
+            text: "You shouldn't drink so much coffee.",
+            explain: "'shouldn't' for advice not to do something.",
           },
         ],
       },
       {
         id: 'a2-conditionals',
         level: 'A2',
-        title: 'Zero and First Conditional',
+        title: 'Zero and first conditional',
         summary:
-          'Talk about facts that are always true (zero) and likely future results (first conditional) using if.',
+          'Use the **zero conditional** (if + present, present) for facts and general truths, and the **first conditional** (if + present, will + verb) for likely future results.',
+        summaryEs:
+          'Usa el **zero conditional** (if + presente, presente) para hechos y verdades generales, y el **first conditional** (if + presente, will + verbo) para resultados futuros probables.',
         sections: [
           {
-            heading: 'Zero conditional',
-            body: 'Use the **zero conditional** for things that are always true: **If + present simple, present simple**. You can replace *if* with **when** because the result is automatic.',
+            heading: 'Zero conditional: facts',
+            body: 'Use **if + present simple, present simple** for things that are always true (**If you heat ice, it melts**). You can replace **if** with **when** because the result always happens.',
+            bodyEs:
+              'Usa **if + presente simple, presente simple** para cosas siempre ciertas (**If you heat ice, it melts**). Puedes cambiar **if** por **when** porque el resultado siempre ocurre.',
             examples: [
               {
-                en: 'If you heat ice, it melts.',
-                es: 'Si calientas el hielo, se derrite.',
+                en: 'If you mix blue and yellow, you get green.',
+                es: 'Si mezclas azul y amarillo, obtienes verde.',
               },
               {
-                en: 'When it rains, the ground gets wet.',
-                es: 'Cuando llueve, el suelo se moja.',
+                en: "Plants die if they don't get water.",
+                es: 'Las plantas mueren si no reciben agua.',
               },
             ],
           },
           {
-            heading: 'First conditional',
-            body: "Use the **first conditional** for a likely future situation and its result: **If + present simple, will + base verb**. The 'if' part stays in the present — never use 'will' after 'if' here.",
+            heading: 'First conditional: likely future',
+            body: "Use **if + present simple, will + base verb** for a real possible result in the future (**If it rains, we will stay home**). Use the **present simple** after 'if', never 'will'.",
+            bodyEs:
+              "Usa **if + presente simple, will + verbo base** para un resultado real posible en el futuro (**If it rains, we will stay home**). Usa el **presente simple** tras 'if', nunca 'will'.",
             examples: [
               {
-                en: "If it rains, we'll stay home.",
-                es: 'Si llueve, nos quedaremos en casa.',
+                en: 'If you study, you will pass.',
+                es: 'Si estudias, aprobarás.',
               },
               {
-                en: "She'll pass if she studies.",
-                es: 'Aprobará si estudia.',
+                en: "We will be late if we don't hurry.",
+                es: 'Llegaremos tarde si no nos damos prisa.',
               },
             ],
           },
           {
             heading: 'Word order and commas',
-            body: "You can start with either clause. When the **if-clause** comes first, use a **comma**; when it comes second, no comma is needed. You can also use **unless** to mean 'if not'.",
+            body: "The **if-clause** can come first or second. When 'if' comes first, use a **comma** (**If you call me, I'll answer**). When it comes second, no comma is needed (**I'll answer if you call me**).",
+            bodyEs:
+              "La **oración con if** puede ir primero o segundo. Cuando 'if' va primero, usa una **coma** (**If you call me, I'll answer**). Cuando va segundo, no hace falta coma (**I'll answer if you call me**).",
             examples: [
               {
-                en: "We'll be late unless we hurry.",
-                es: 'Llegaremos tarde a menos que nos demos prisa.',
+                en: "If you're hungry, I'll cook something.",
+                es: 'Si tienes hambre, cocino algo.',
               },
               {
-                en: "If you call me, I'll answer.",
-                es: 'Si me llamas, contestaré.',
+                en: "I'll cook something if you're hungry.",
+                es: 'Cocino algo si tienes hambre.',
               },
             ],
           },
@@ -2971,282 +3100,293 @@ export const GRAMMAR: GrammarUnit[] = [
             caption: 'Conditional structures',
             columns: ['Type', 'If-clause', 'Main clause'],
             rows: [
-              ['Zero', 'If/When + present', 'present simple'],
-              ['First', 'If + present', 'will + base verb'],
+              ['Zero', 'if + present', 'present'],
+              ['First', 'if + present', 'will + base verb'],
             ],
           },
         ],
         examples: [
           {
-            en: 'If you mix blue and yellow, you get green.',
-            es: 'Si mezclas azul y amarillo, obtienes verde.',
+            en: 'If you press this button, the machine starts.',
+            es: 'Si pulsas este botón, la máquina arranca.',
+          },
+          {
+            en: "If I have time, I'll call you.",
+            es: 'Si tengo tiempo, te llamaré.',
+          },
+          {
+            en: 'Water boils if you heat it to 100°C.',
+            es: 'El agua hierve si la calientas a 100 °C.',
+          },
+          {
+            en: "She won't come if she's busy.",
+            es: 'No vendrá si está ocupada.',
           },
           {
             en: "If we leave now, we'll catch the train.",
             es: 'Si salimos ahora, cogeremos el tren.',
           },
           {
-            en: "I'll help you if you ask me.",
-            es: 'Te ayudaré si me lo pides.',
-          },
-          {
-            en: 'When you press this button, the machine starts.',
-            es: 'Cuando aprietas este botón, la máquina arranca.',
-          },
-          {
-            en: "Unless you hurry, you'll miss the bus.",
-            es: 'A menos que te des prisa, perderás el autobús.',
-          },
-          {
-            en: "If she doesn't call, I'll be worried.",
-            es: 'Si no llama, estaré preocupado.',
+            en: 'What will you do if it rains?',
+            es: '¿Qué harás si llueve?',
           },
         ],
         pitfalls: [
           {
             wrong: 'If it will rain, we will stay home.',
             right: 'If it rains, we will stay home.',
-            why: "Use the present simple after 'if', not 'will'.",
-            esNote: "Después de 'if' va presente, no 'will'.",
+            why: "After 'if', use the present simple, not 'will'.",
+            esNote: "Tras 'if' nunca va 'will'; usa el presente.",
           },
           {
-            wrong: 'If you will heat water, it boils.',
-            right: 'If you heat water, it boils.',
-            why: 'For a general truth, both verbs are present simple.',
-            esNote: 'En el zero conditional ambos verbos van en presente.',
+            wrong: 'If you will heat ice, it melts.',
+            right: 'If you heat ice, it melts.',
+            why: 'Zero conditional uses the present simple in both parts.',
+            esNote: 'El zero conditional usa presente en las dos partes.',
           },
           {
-            wrong: 'We will catch the train if we will leave now.',
-            right: 'We will catch the train if we leave now.',
-            why: "Only the result clause uses 'will'; the if-clause stays present.",
-            esNote: "Solo la parte del resultado lleva 'will'.",
+            wrong: "I'll help you, if you ask me.",
+            right: "I'll help you if you ask me.",
+            why: "When the if-clause comes second, do not add a comma before 'if'.",
+            esNote: "Si 'if' va al final, no se pone coma antes.",
           },
         ],
         exercises: [
           {
             kind: 'cloze',
             id: 'a2-cond-ex1',
-            before: 'If you',
-            after: '(study), you will pass the exam.',
-            answers: ['study'],
-            explain: "After 'if' use the present simple in the first conditional.",
+            before: 'If you heat water, it',
+            after: '. (boil)',
+            answers: ['boils'],
+            hint: 'general truth',
+            explain: 'Zero conditional: present simple in both clauses.',
+          },
+          {
+            kind: 'cloze',
+            id: 'a2-cond-ex2',
+            before: 'If it rains tomorrow, we',
+            after: 'at home.',
+            answers: ['will stay', "'ll stay"],
+            hint: 'future result',
+            explain: "First conditional: 'will' + base verb in the result.",
           },
           {
             kind: 'mcq',
-            id: 'a2-cond-ex2',
-            prompt: 'Choose the correct first conditional.',
+            id: 'a2-cond-ex3',
+            prompt: 'Choose the correct sentence.',
             options: [
-              'If it will rain, we cancel.',
-              "If it rains, we'll cancel.",
-              'If it rains, we cancel will.',
+              "If you will call, I'll answer.",
+              "If you call, I'll answer.",
+              'If you call, I answer will.',
             ],
             answer: 1,
-            explain: "Present after 'if', 'will' in the result.",
+            explain: "Present simple after 'if', 'will' in the main clause.",
           },
           {
             kind: 'correct',
-            id: 'a2-cond-ex3',
-            wrong: 'If she will come, I will be happy.',
-            answers: ['If she comes, I will be happy.', "If she comes, I'll be happy."],
-            explain: "No 'will' in the if-clause.",
-          },
-          {
-            kind: 'translate',
             id: 'a2-cond-ex4',
-            es: 'Si llueve, nos quedaremos en casa.',
-            answers: [
-              "If it rains, we'll stay home.",
-              'If it rains, we will stay home.',
-              "If it rains, we'll stay at home.",
-            ],
-            explain: 'First conditional: present + will.',
+            wrong: 'If she will study, she will pass the exam.',
+            answers: ['If she studies, she will pass the exam.'],
+            explain: "Use the present simple after 'if'.",
           },
           {
             kind: 'order',
             id: 'a2-cond-ex5',
-            tokens: ['If', 'you', 'heat', 'ice', 'it', 'melts'],
-            answer: 'If you heat ice, it melts.',
-            explain: 'Zero conditional: present + present.',
+            tokens: ['If', 'we', 'leave', 'now,', "we'll", 'catch', 'the', 'bus'],
+            answer: "If we leave now, we'll catch the bus.",
+            explain: 'If + present, will + base verb.',
           },
           {
-            kind: 'cloze',
+            kind: 'translate',
             id: 'a2-cond-ex6',
-            before: "We'll miss the bus",
-            after: 'we hurry.',
-            answers: ['unless'],
-            hint: '= if ... not',
-            explain: "'Unless' means 'if not'.",
+            es: 'Si estudias, aprobarás.',
+            answers: ['If you study, you will pass.', "If you study, you'll pass."],
+            explain: "First conditional with 'will' for the future result.",
           },
           {
             kind: 'dictation',
             id: 'a2-cond-ex7',
-            text: "If you call me later, I'll explain everything.",
-            explain: 'First conditional with the if-clause first.',
+            text: 'If you mix red and white, you get pink.',
+            explain: 'Zero conditional: present in both clauses.',
           },
         ],
       },
       {
         id: 'a2-gerunds-infinitives',
         level: 'A2',
-        title: 'Gerunds and Infinitives',
+        title: 'Gerunds and infinitives',
         summary:
-          'Decide when to use the -ing form and when to use to + verb after verbs, prepositions and to express purpose.',
+          "Some verbs are followed by the **-ing** form (gerund), others by **to + verb** (infinitive). Use the **gerund** after prepositions and certain verbs like 'enjoy', and the **infinitive** after verbs like 'want' and 'decide'.",
+        summaryEs:
+          "Algunos verbos van seguidos de la forma **-ing** (gerundio), otros de **to + verbo** (infinitivo). Usa el **gerundio** tras preposiciones y ciertos verbos como 'enjoy', y el **infinitivo** tras verbos como 'want' y 'decide'.",
         sections: [
           {
-            heading: 'Gerund (-ing)',
-            body: 'Use the **gerund** (verb + -ing) after certain verbs like *enjoy, like, love, hate, finish, stop, mind*, and always after a **preposition**. It can also be the subject of a sentence.',
+            heading: 'Verbs + gerund',
+            body: 'After verbs like **enjoy, like, love, hate, finish, mind, suggest** and **avoid**, use the **-ing** form (**I enjoy reading**). Also use the gerund as the subject of a sentence (**Swimming is healthy**).',
+            bodyEs:
+              'Tras verbos como **enjoy, like, love, hate, finish, mind, suggest** y **avoid**, usa la forma **-ing** (**I enjoy reading**). También usa el gerundio como sujeto (**Swimming is healthy**).',
             examples: [
               {
-                en: 'I enjoy swimming.',
-                es: 'Disfruto nadando.',
+                en: 'She loves cooking.',
+                es: 'Le encanta cocinar.',
               },
+              {
+                en: 'We finished painting the room.',
+                es: 'Terminamos de pintar la habitación.',
+              },
+            ],
+          },
+          {
+            heading: 'Verbs + infinitive',
+            body: 'After verbs like **want, need, decide, hope, would like, promise** and **plan**, use **to + base verb** (**I want to travel**). Also use the infinitive to express purpose (**I went out to buy bread**).',
+            bodyEs:
+              'Tras verbos como **want, need, decide, hope, would like, promise** y **plan**, usa **to + verbo base** (**I want to travel**). También usa el infinitivo para expresar finalidad (**I went out to buy bread**).',
+            examples: [
+              {
+                en: 'They decided to stay.',
+                es: 'Decidieron quedarse.',
+              },
+              {
+                en: 'I need to call my boss.',
+                es: 'Necesito llamar a mi jefe.',
+              },
+            ],
+          },
+          {
+            heading: 'Gerund after prepositions',
+            body: "Always use the **-ing** form after a preposition (**good at swimming**, **interested in learning**, **before leaving**). Never use 'to + verb' directly after a preposition.",
+            bodyEs:
+              "Usa siempre la forma **-ing** tras una preposición (**good at swimming**, **interested in learning**, **before leaving**). Nunca uses 'to + verbo' justo después de una preposición.",
+            examples: [
               {
                 en: "She's good at drawing.",
                 es: 'Se le da bien dibujar.',
               },
-            ],
-          },
-          {
-            heading: 'Infinitive (to + verb)',
-            body: 'Use the **infinitive with to** after verbs like *want, need, decide, hope, would like, learn*. Also use it to express **purpose** (to say *why*).',
-            examples: [
               {
-                en: 'I want to learn English.',
-                es: 'Quiero aprender inglés.',
-              },
-              {
-                en: 'She went out to buy milk.',
-                es: 'Salió a comprar leche.',
-              },
-            ],
-          },
-          {
-            heading: "After 'to' as a preposition",
-            body: "Be careful: in **look forward to** and **be used to**, the word 'to' is a preposition, so it is followed by **-ing**, not the base verb.",
-            examples: [
-              {
-                en: "I'm looking forward to seeing you.",
-                es: 'Tengo ganas de verte.',
-              },
-              {
-                en: "He's used to working at night.",
-                es: 'Está acostumbrado a trabajar de noche.',
+                en: 'Think before speaking.',
+                es: 'Piensa antes de hablar.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Common verbs and their pattern',
-            columns: ['Pattern', 'Verbs', 'Example'],
+            caption: 'Common patterns',
+            columns: ['Followed by -ing', 'Followed by to + verb'],
             rows: [
-              ['+ -ing', 'enjoy, finish, mind, stop, avoid', 'I finished cooking.'],
-              ['+ to + verb', 'want, need, decide, hope, learn', 'I want to go.'],
-              ['after preposition', 'good at, interested in, before', 'before leaving'],
+              ['enjoy, finish, avoid', 'want, need, decide'],
+              ['like, love, hate', 'hope, plan, would like'],
+              ['after prepositions', 'to show purpose'],
             ],
           },
         ],
         examples: [
           {
-            en: 'They decided to move to the city.',
-            es: 'Decidieron mudarse a la ciudad.',
+            en: 'I enjoy listening to music.',
+            es: 'Disfruto escuchando música.',
           },
           {
-            en: "I don't mind waiting.",
-            es: 'No me importa esperar.',
+            en: 'He wants to learn Italian.',
+            es: 'Quiere aprender italiano.',
           },
           {
-            en: "We're interested in learning Italian.",
-            es: 'Nos interesa aprender italiano.',
+            en: "We're thinking about moving house.",
+            es: 'Estamos pensando en mudarnos.',
           },
           {
-            en: 'He stopped smoking last year.',
-            es: 'Dejó de fumar el año pasado.',
+            en: 'She decided to change jobs.',
+            es: 'Decidió cambiar de trabajo.',
           },
           {
-            en: 'I need to call the bank.',
-            es: 'Necesito llamar al banco.',
+            en: 'Reading helps you relax.',
+            es: 'Leer te ayuda a relajarte.',
           },
           {
-            en: 'Reading before bed helps me sleep.',
-            es: 'Leer antes de dormir me ayuda a dormir.',
+            en: "They're interested in joining the club.",
+            es: 'Están interesados en unirse al club.',
           },
         ],
         pitfalls: [
           {
             wrong: 'I enjoy to read.',
             right: 'I enjoy reading.',
-            why: "'Enjoy' is always followed by the -ing form.",
-            esNote: "'Enjoy', 'finish', 'mind' van siempre con -ing.",
+            why: "'enjoy' is always followed by the -ing form, not the infinitive.",
+            esNote: "Tras 'enjoy' siempre va '-ing'.",
           },
           {
-            wrong: "I'm interested in learn English.",
-            right: "I'm interested in learning English.",
-            why: 'After a preposition (in) use the -ing form.',
-            esNote: 'Tras una preposición se usa el verbo en -ing.',
+            wrong: 'I want learning English.',
+            right: 'I want to learn English.',
+            why: "'want' is followed by 'to + base verb', not the -ing form.",
+            esNote: "Tras 'want' va 'to + verbo'.",
           },
           {
-            wrong: 'She went to the shop for buy bread.',
-            right: 'She went to the shop to buy bread.',
-            why: "To express purpose use 'to + verb', not 'for + verb'.",
-            esNote: "Para expresar finalidad usa 'to + verbo', no 'for'.",
+            wrong: "She's good at to cook.",
+            right: "She's good at cooking.",
+            why: "After a preposition like 'at', use the -ing form.",
+            esNote: "Tras preposición siempre '-ing'.",
           },
         ],
         exercises: [
           {
             kind: 'cloze',
             id: 'a2-gi-ex1',
-            before: "I'm thinking about",
-            after: '(change) jobs.',
-            answers: ['changing'],
-            explain: "After the preposition 'about' use the -ing form.",
+            before: 'I enjoy',
+            after: 'to new places. (travel)',
+            answers: ['travelling', 'traveling'],
+            hint: "after 'enjoy'",
+            explain: "'enjoy' takes the -ing form.",
+          },
+          {
+            kind: 'cloze',
+            id: 'a2-gi-ex2',
+            before: 'She wants',
+            after: 'a doctor. (become)',
+            answers: ['to become'],
+            hint: "after 'want'",
+            explain: "'want' takes 'to + base verb'.",
           },
           {
             kind: 'mcq',
-            id: 'a2-gi-ex2',
+            id: 'a2-gi-ex3',
             prompt: 'Choose the correct sentence.',
-            options: ['I want going home.', 'I want to go home.', 'I want go home.'],
+            options: [
+              "He's interested in learn French.",
+              "He's interested in learning French.",
+              "He's interested in to learn French.",
+            ],
             answer: 1,
-            explain: "'Want' is followed by 'to + verb'.",
+            explain: "After the preposition 'in', use the -ing form.",
           },
           {
             kind: 'correct',
-            id: 'a2-gi-ex3',
-            wrong: 'She finished to clean the kitchen.',
-            answers: ['She finished cleaning the kitchen.'],
-            explain: "'Finish' takes the -ing form.",
-          },
-          {
-            kind: 'translate',
             id: 'a2-gi-ex4',
-            es: 'Disfruto cocinando para mis amigos.',
-            answers: [
-              'I enjoy cooking for my friends.',
-              'I enjoy cooking for my friends very much.',
-            ],
-            explain: "'Enjoy' + -ing.",
+            wrong: 'They decided buying a new car.',
+            answers: ['They decided to buy a new car.'],
+            explain: "'decide' takes the infinitive 'to buy'.",
           },
           {
             kind: 'order',
             id: 'a2-gi-ex5',
-            tokens: ['He', 'went', 'out', 'to', 'buy', 'a', 'newspaper'],
-            answer: 'He went out to buy a newspaper.',
-            explain: "Infinitive of purpose: 'to buy' = in order to buy.",
+            tokens: ['We', 'finished', 'cleaning', 'the', 'kitchen'],
+            answer: 'We finished cleaning the kitchen.',
+            explain: "'finish' takes the -ing form.",
           },
           {
-            kind: 'cloze',
+            kind: 'translate',
             id: 'a2-gi-ex6',
-            before: "We're looking forward to",
-            after: '(meet) you.',
-            answers: ['meeting'],
-            hint: "'to' here is a preposition",
-            explain: "'Look forward to' is followed by -ing.",
+            es: 'Necesito hablar contigo.',
+            answers: [
+              'I need to talk to you.',
+              'I need to speak to you.',
+              'I need to speak with you.',
+            ],
+            explain: "'need' takes 'to + base verb'.",
           },
           {
             kind: 'dictation',
             id: 'a2-gi-ex7',
-            text: 'I need to finish writing this report.',
-            explain: "'Need to' + verb, then 'finish' + -ing.",
+            text: 'She hopes to study abroad next year.',
+            explain: "'hope' is followed by the infinitive 'to study'.",
           },
         ],
       },
@@ -3255,25 +3395,31 @@ export const GRAMMAR: GrammarUnit[] = [
         level: 'A2',
         title: 'Quantifiers: much, many, a few, a little, enough',
         summary:
-          'Talk about quantity with countable and uncountable nouns and say if you have enough.',
+          'Use **many/a few** with countable nouns and **much/a little** with uncountable nouns. Use **enough** for the right amount, and choose forms by whether the noun is countable.',
+        summaryEs:
+          'Usa **many/a few** con sustantivos contables y **much/a little** con incontables. Usa **enough** para la cantidad suficiente, y elige la forma según si el sustantivo es contable.',
         sections: [
           {
-            heading: 'much and many',
-            body: 'Use **many** with countable plural nouns (*many books*) and **much** with uncountable nouns (*much time*). They are most common in questions and negatives. In positive sentences we often prefer **a lot of**.',
+            heading: 'much vs many',
+            body: "Use **many** with **countable** plural nouns (**many books**) and **much** with **uncountable** nouns (**much time**). 'Much' and 'many' are most common in questions and negatives; in positives we often use **a lot of** (**a lot of friends**).",
+            bodyEs:
+              "Usa **many** con sustantivos **contables** en plural (**many books**) y **much** con **incontables** (**much time**). 'Much' y 'many' son más comunes en preguntas y negativas; en afirmativas solemos usar **a lot of** (**a lot of friends**).",
             examples: [
               {
-                en: 'How many people came?',
-                es: '¿Cuánta gente vino?',
+                en: 'How many people are coming?',
+                es: '¿Cuántas personas vienen?',
               },
               {
-                en: "I don't have much money.",
-                es: 'No tengo mucho dinero.',
+                en: "We don't have much money.",
+                es: 'No tenemos mucho dinero.',
               },
             ],
           },
           {
-            heading: 'a few and a little',
-            body: "Use **a few** with countable nouns (*a few friends*) and **a little** with uncountable nouns (*a little sugar*). Both mean 'a small amount'.",
+            heading: 'a few vs a little',
+            body: 'Use **a few** with countable nouns (**a few apples**) and **a little** with uncountable nouns (**a little milk**). Both mean a small but sufficient amount.',
+            bodyEs:
+              'Usa **a few** con sustantivos contables (**a few apples**) y **a little** con incontables (**a little milk**). Ambos significan una cantidad pequeña pero suficiente.',
             examples: [
               {
                 en: 'I have a few questions.',
@@ -3287,15 +3433,17 @@ export const GRAMMAR: GrammarUnit[] = [
           },
           {
             heading: 'enough',
-            body: "Use **enough** to mean 'the right amount'. It goes **before a noun** (*enough chairs*) but **after an adjective or adverb** (*big enough*).",
+            body: 'Use **enough** before a noun (**enough chairs**) but **after** an adjective or adverb (**old enough**, **fast enough**). It means the necessary amount.',
+            bodyEs:
+              'Usa **enough** antes de un sustantivo (**enough chairs**) pero **después** de un adjetivo o adverbio (**old enough**, **fast enough**). Significa la cantidad necesaria.',
             examples: [
               {
-                en: "We don't have enough chairs.",
-                es: 'No tenemos suficientes sillas.',
+                en: "There aren't enough seats.",
+                es: 'No hay suficientes asientos.',
               },
               {
-                en: "This box isn't big enough.",
-                es: 'Esta caja no es lo bastante grande.',
+                en: "He isn't tall enough.",
+                es: 'No es lo bastante alto.',
               },
             ],
           },
@@ -3303,425 +3451,458 @@ export const GRAMMAR: GrammarUnit[] = [
         tables: [
           {
             caption: 'Countable vs uncountable',
-            columns: ['Meaning', 'Countable', 'Uncountable'],
+            columns: ['Quantifier', 'Countable', 'Uncountable'],
             rows: [
-              ['a large amount', 'many', 'much'],
-              ['a small amount', 'a few', 'a little'],
-              ['the right amount', 'enough', 'enough'],
+              ['how much / how many', 'many', 'much'],
+              ['small amount', 'a few', 'a little'],
             ],
           },
         ],
         examples: [
           {
-            en: "There aren't many seats left.",
-            es: 'No quedan muchos asientos.',
+            en: 'How much sugar do you want?',
+            es: '¿Cuánta azúcar quieres?',
           },
           {
-            en: 'How much water do you drink?',
-            es: '¿Cuánta agua bebes?',
+            en: 'There are too many cars in the city.',
+            es: 'Hay demasiados coches en la ciudad.',
           },
           {
-            en: 'She speaks a little French.',
-            es: 'Habla un poco de francés.',
+            en: 'I only need a little help.',
+            es: 'Solo necesito un poco de ayuda.',
           },
           {
-            en: 'We invited a few friends.',
-            es: 'Invitamos a unos pocos amigos.',
+            en: 'We have a few days off.',
+            es: 'Tenemos unos días libres.',
           },
           {
-            en: 'Is there enough food for everyone?',
-            es: '¿Hay suficiente comida para todos?',
+            en: 'Is there enough bread for everyone?',
+            es: '¿Hay suficiente pan para todos?',
           },
           {
-            en: "You're not old enough to drive.",
-            es: 'No tienes edad suficiente para conducir.',
+            en: "She's experienced enough for the job.",
+            es: 'Tiene suficiente experiencia para el trabajo.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'How much books do you have?',
-            right: 'How many books do you have?',
-            why: "'Books' is countable, so use 'many', not 'much'.",
-            esNote: "Con nombres contables usa 'many'; con incontables, 'much'.",
+            wrong: 'How much friends do you have?',
+            right: 'How many friends do you have?',
+            why: "'friends' is countable, so use 'many', not 'much'.",
+            esNote: "Contables: 'many'; incontables: 'much'.",
           },
           {
-            wrong: 'I have a little friends here.',
-            right: 'I have a few friends here.',
-            why: "'Friends' is countable, so use 'a few', not 'a little'.",
-            esNote: "'A few' = contables; 'a little' = incontables.",
+            wrong: 'I have a little books.',
+            right: 'I have a few books.',
+            why: "'books' is countable, so use 'a few', not 'a little'.",
+            esNote: "Contables: 'a few'; incontables: 'a little'.",
           },
           {
-            wrong: "The room isn't enough big.",
-            right: "The room isn't big enough.",
-            why: "'Enough' comes after an adjective.",
-            esNote: "Con adjetivos, 'enough' va detrás: 'big enough'.",
+            wrong: "He isn't enough old to drive.",
+            right: "He isn't old enough to drive.",
+            why: "'enough' goes after an adjective, not before it.",
+            esNote: "Tras adjetivo: 'old enough', no 'enough old'.",
           },
         ],
         exercises: [
           {
-            kind: 'cloze',
+            kind: 'mcq',
             id: 'a2-q-ex1',
-            before: 'How',
-            after: 'sugar do you want in your coffee?',
-            answers: ['much'],
-            explain: "'Sugar' is uncountable, so use 'much'.",
+            prompt: 'How ___ water do you drink a day?',
+            options: ['many', 'much', 'few'],
+            answer: 1,
+            explain: "'water' is uncountable, so use 'much'.",
           },
           {
-            kind: 'mcq',
+            kind: 'cloze',
             id: 'a2-q-ex2',
-            prompt: "Choose the correct word: 'I only need ___ help.'",
-            options: ['a few', 'many', 'a little'],
-            answer: 2,
-            explain: "'Help' is uncountable, so use 'a little'.",
+            before: 'There are only',
+            after: 'eggs left, just three.',
+            answers: ['a few'],
+            hint: 'small amount, countable',
+            explain: "'eggs' is countable, so 'a few'.",
+          },
+          {
+            kind: 'cloze',
+            id: 'a2-q-ex3',
+            before: "She isn't experienced",
+            after: 'for this job.',
+            answers: ['enough'],
+            hint: 'after the adjective',
+            explain: "'enough' comes after the adjective.",
           },
           {
             kind: 'correct',
-            id: 'a2-q-ex3',
-            wrong: "We don't have many time.",
-            answers: ["We don't have much time.", "We don't have a lot of time."],
-            explain: "'Time' is uncountable, so use 'much'.",
-          },
-          {
-            kind: 'translate',
             id: 'a2-q-ex4',
-            es: 'No hay suficientes sillas.',
-            answers: ["There aren't enough chairs.", 'There are not enough chairs.'],
-            explain: "'Enough' before a noun.",
+            wrong: "We don't have many time.",
+            answers: ["We don't have much time."],
+            explain: "'time' is uncountable, so use 'much'.",
           },
           {
             kind: 'order',
             id: 'a2-q-ex5',
-            tokens: ['This', 'coffee', "isn't", 'hot', 'enough'],
-            answer: "This coffee isn't hot enough.",
-            explain: "'Enough' goes after the adjective 'hot'.",
+            tokens: ['There', "aren't", 'enough', 'chairs', 'for', 'everyone'],
+            answer: "There aren't enough chairs for everyone.",
+            explain: "'enough' goes before the noun 'chairs'.",
           },
           {
-            kind: 'cloze',
+            kind: 'translate',
             id: 'a2-q-ex6',
-            before: 'I have',
-            after: '(a small number of) emails to answer.',
-            answers: ['a few'],
-            explain: "'Emails' is countable, so use 'a few'.",
+            es: 'Añade un poco de leche.',
+            answers: ['Add a little milk.'],
+            explain: "'milk' is uncountable, so 'a little'.",
           },
           {
             kind: 'dictation',
             id: 'a2-q-ex7',
-            text: "There isn't much milk left in the fridge.",
-            explain: "'Much' with the uncountable noun 'milk'.",
+            text: 'There are too many people here today.',
+            explain: "'people' is countable, so 'many'.",
           },
         ],
       },
       {
-        id: 'a2-used-to',
+        id: 'a2-pronouns',
         level: 'A2',
-        title: 'used to for Past Habits',
+        title: 'Indefinite and reflexive pronouns',
         summary:
-          'Describe past habits and states that are no longer true with used to, and ask and deny correctly.',
+          'Use **someone/anyone/no one**, **something/anything/nothing** and **somewhere/anywhere** for unknown people, things and places. Use **reflexive pronouns** (myself, yourself...) when the subject and object are the same.',
+        summaryEs:
+          'Usa **someone/anyone/no one**, **something/anything/nothing** y **somewhere/anywhere** para personas, cosas y lugares desconocidos. Usa los **pronombres reflexivos** (myself, yourself...) cuando el sujeto y el objeto son el mismo.',
         sections: [
           {
-            heading: 'Affirmative',
-            body: 'Use **used to + base verb** for things that happened regularly in the past but not now, and for past states that have changed. It is the same for all subjects.',
+            heading: 'some-, any-, no-',
+            body: "Use **some-** words in positive sentences (**someone called**), **any-** words in questions and negatives (**Is anyone there?**, **I don't know anything**), and **no-** words for a negative meaning with a positive verb (**Nobody came**).",
+            bodyEs:
+              "Usa palabras con **some-** en frases afirmativas (**someone called**), con **any-** en preguntas y negativas (**Is anyone there?**, **I don't know anything**), y con **no-** para significado negativo con verbo afirmativo (**Nobody came**).",
             examples: [
               {
-                en: 'I used to play football every weekend.',
-                es: 'Antes jugaba al fútbol todos los fines de semana.',
+                en: 'Someone is knocking at the door.',
+                es: 'Alguien está llamando a la puerta.',
               },
               {
-                en: 'She used to live in Madrid.',
-                es: 'Antes vivía en Madrid.',
+                en: "I didn't see anything strange.",
+                es: 'No vi nada extraño.',
               },
             ],
           },
           {
-            heading: 'Negative and questions',
-            body: "In negatives and questions, use **did** and drop the -d: **didn't use to** and **Did you use to ...?** The main verb stays in the base form.",
+            heading: 'Reflexive pronouns',
+            body: "Use **myself, yourself, himself, herself, itself, ourselves, yourselves, themselves** when the action returns to the subject (**I hurt myself**). Use **by + reflexive** to mean 'alone' (**She lives by herself**).",
+            bodyEs:
+              "Usa **myself, yourself, himself, herself, itself, ourselves, yourselves, themselves** cuando la acción vuelve al sujeto (**I hurt myself**). Usa **by + reflexivo** para decir 'solo' (**She lives by herself**).",
             examples: [
               {
-                en: "I didn't use to like coffee.",
-                es: 'Antes no me gustaba el café.',
+                en: 'He taught himself to play guitar.',
+                es: 'Aprendió a tocar la guitarra por sí mismo.',
               },
               {
-                en: 'Did you use to have long hair?',
-                es: '¿Antes tenías el pelo largo?',
+                en: 'We enjoyed ourselves at the party.',
+                es: 'Nos lo pasamos bien en la fiesta.',
+              },
+            ],
+          },
+          {
+            heading: 'These words take a singular verb',
+            body: "Indefinite pronouns like **everyone, someone, nobody** and **everything** take a **singular verb** (**Everyone is here**). Do not add an extra negative with 'no-' words.",
+            bodyEs:
+              "Los pronombres indefinidos como **everyone, someone, nobody** y **everything** llevan **verbo en singular** (**Everyone is here**). No añadas otra negación con las palabras 'no-'.",
+            examples: [
+              {
+                en: 'Everybody knows the answer.',
+                es: 'Todo el mundo sabe la respuesta.',
+              },
+              {
+                en: 'Nobody was at home.',
+                es: 'No había nadie en casa.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'used to forms',
-            columns: ['Form', 'Structure', 'Example'],
+            caption: 'Indefinite pronouns',
+            columns: ['', 'People', 'Things', 'Places'],
             rows: [
-              ['Affirmative', 'used to + verb', 'I used to smoke.'],
-              ['Negative', "didn't use to + verb", "I didn't use to smoke."],
-              ['Question', 'Did + subject + use to + verb', 'Did you use to smoke?'],
+              ['some-', 'someone', 'something', 'somewhere'],
+              ['any-', 'anyone', 'anything', 'anywhere'],
+              ['no-', 'no one', 'nothing', 'nowhere'],
             ],
           },
         ],
         examples: [
           {
-            en: 'We used to go to the beach every summer.',
-            es: 'Antes íbamos a la playa todos los veranos.',
+            en: 'Is there anything to eat?',
+            es: '¿Hay algo de comer?',
           },
           {
-            en: 'He used to be very shy.',
-            es: 'Antes era muy tímido.',
+            en: 'I want to go somewhere quiet.',
+            es: 'Quiero ir a algún sitio tranquilo.',
           },
           {
-            en: "I didn't use to eat vegetables as a child.",
-            es: 'De niño no comía verduras.',
+            en: 'Nobody understands this rule.',
+            es: 'Nadie entiende esta regla.',
           },
           {
-            en: 'Did they use to live near you?',
-            es: '¿Antes vivían cerca de ti?',
+            en: 'Did you make this yourself?',
+            es: '¿Hiciste esto tú mismo?',
           },
           {
-            en: 'This building used to be a school.',
-            es: 'Este edificio antes era una escuela.',
+            en: 'The cat washed itself.',
+            es: 'El gato se lavó solo.',
           },
           {
-            en: "She didn't use to drink tea, but now she loves it.",
-            es: 'Antes no tomaba té, pero ahora le encanta.',
+            en: 'Everyone needs a break.',
+            es: 'Todos necesitan un descanso.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'I use to play tennis when I was young.',
-            right: 'I used to play tennis when I was young.',
-            why: "In the affirmative the form is 'used to' with -d.",
-            esNote: "En afirmativo es 'used to' con -d.",
+            wrong: "I don't know nothing.",
+            right: "I don't know anything.",
+            why: "English does not use a double negative; with 'don't', use 'anything'.",
+            esNote: "El inglés no usa doble negación: 'don't ... anything'.",
           },
           {
-            wrong: "I didn't used to like it.",
-            right: "I didn't use to like it.",
-            why: "After 'did/didn't' drop the -d: 'use to'.",
-            esNote: "Con 'did' se quita la -d: 'use to'.",
+            wrong: 'Everyone are happy.',
+            right: 'Everyone is happy.',
+            why: "'Everyone' takes a singular verb.",
+            esNote: "'Everyone' lleva verbo en singular: 'is'.",
           },
           {
-            wrong: 'I am used to play football.',
-            right: 'I used to play football.',
-            why: "For a past habit use 'used to', not 'be used to' (which means 'be accustomed to').",
-            esNote: "'Used to' = hábito pasado; 'be used to' = estar acostumbrado.",
+            wrong: 'She did it by her.',
+            right: 'She did it by herself.',
+            why: "To mean 'alone/by oneself', use the reflexive pronoun 'herself'.",
+            esNote: "'por sí misma' = 'by herself'.",
           },
         ],
         exercises: [
           {
-            kind: 'cloze',
-            id: 'a2-ut-ex1',
-            before: 'When I was a child, I',
-            after: '(have) a dog.',
-            answers: ['used to have'],
-            explain: "Past habit/state: 'used to have'.",
+            kind: 'mcq',
+            id: 'a2-pr-ex1',
+            prompt: 'Is there ___ in the box?',
+            options: ['something', 'anything', 'nothing'],
+            answer: 1,
+            explain: "In a question, use 'anything'.",
           },
           {
-            kind: 'mcq',
-            id: 'a2-ut-ex2',
-            prompt: 'Choose the correct negative.',
-            options: ["I didn't used to smoke.", "I didn't use to smoke.", "I usedn't smoke."],
-            answer: 1,
-            explain: "After 'didn't' use 'use to' without -d.",
+            kind: 'cloze',
+            id: 'a2-pr-ex2',
+            before: 'He cut',
+            after: 'while cooking.',
+            answers: ['himself'],
+            hint: 'subject = object',
+            explain: "The action returns to 'he', so 'himself'.",
           },
           {
             kind: 'correct',
-            id: 'a2-ut-ex3',
-            wrong: 'She use to live in Paris.',
-            answers: ['She used to live in Paris.'],
-            explain: "The affirmative needs 'used to' with -d.",
+            id: 'a2-pr-ex3',
+            wrong: "Nobody don't like Mondays.",
+            answers: ['Nobody likes Mondays.'],
+            explain: "'Nobody' is already negative and takes a singular verb.",
           },
           {
-            kind: 'translate',
-            id: 'a2-ut-ex4',
-            es: 'Antes íbamos a la playa todos los veranos.',
-            answers: [
-              'We used to go to the beach every summer.',
-              'We used to go to the beach every summer when we were young.',
-            ],
-            explain: "'Used to' for a repeated past habit.",
+            kind: 'mcq',
+            id: 'a2-pr-ex4',
+            prompt: '___ called you this morning. (a person, positive)',
+            options: ['Anyone', 'Someone', 'Nothing'],
+            answer: 1,
+            explain: "Positive sentence about a person uses 'someone'.",
           },
           {
             kind: 'order',
-            id: 'a2-ut-ex5',
-            tokens: ['Did', 'you', 'use', 'to', 'play', 'an', 'instrument'],
-            answer: 'Did you use to play an instrument?',
-            explain: 'Question form: Did + subject + use to + verb.',
+            id: 'a2-pr-ex5',
+            tokens: ['We', 'enjoyed', 'ourselves', 'at', 'the', 'concert'],
+            answer: 'We enjoyed ourselves at the concert.',
+            explain: "Reflexive 'ourselves' matches the subject 'we'.",
           },
           {
-            kind: 'cloze',
-            id: 'a2-ut-ex6',
-            before: 'This shop',
-            after: '(be) a cinema years ago.',
-            answers: ['used to be'],
-            explain: 'Past state that has changed.',
+            kind: 'translate',
+            id: 'a2-pr-ex6',
+            es: 'No hay nadie en la oficina.',
+            answers: [
+              'There is no one in the office.',
+              "There isn't anyone in the office.",
+              "There's no one in the office.",
+            ],
+            explain: "Use 'no one' with a positive verb, or 'anyone' with a negative one.",
           },
           {
             kind: 'dictation',
-            id: 'a2-ut-ex7',
-            text: "I didn't use to like vegetables, but now I do.",
-            explain: "Negative 'didn't use to' for a changed past state.",
+            id: 'a2-pr-ex7',
+            text: 'She taught herself to paint.',
+            explain: "Reflexive 'herself' for an action done alone.",
           },
         ],
       },
       {
-        id: 'a2-so-neither-tags',
+        id: 'a2-questions-and-agreeing',
         level: 'A2',
-        title: 'Agreeing (so/neither) and Question Tags',
+        title: 'Question tags, subject questions and so/neither',
         summary:
-          'React to others with so/neither + auxiliary, and check information with question tags and subject questions.',
+          "Use **question tags** to check information (**..., isn't it?**), **subject questions** without 'do' when the question word is the subject (**Who called?**), and **so/neither + auxiliary** to agree.",
+        summaryEs:
+          "Usa las **question tags** para confirmar información (**..., isn't it?**), las **preguntas de sujeto** sin 'do' cuando la palabra interrogativa es el sujeto (**Who called?**), y **so/neither + auxiliar** para mostrar acuerdo.",
         sections: [
           {
-            heading: 'so and neither',
-            body: 'To agree with a **positive** statement use **So + auxiliary + subject** (*So do I*). To agree with a **negative** statement use **Neither + auxiliary + subject** (*Neither do I*). Choose the auxiliary that matches the verb tense.',
-            examples: [
-              {
-                en: '"I love pizza." "So do I."',
-                es: '—Me encanta la pizza. —A mí también.',
-              },
-              {
-                en: '"I can\'t swim." "Neither can I."',
-                es: '—No sé nadar. —Yo tampoco.',
-              },
-            ],
-          },
-          {
             heading: 'Question tags',
-            body: 'A **question tag** is a short question at the end of a sentence to check or confirm. A **positive** sentence takes a **negative** tag, and a negative sentence takes a positive tag. Repeat the same auxiliary.',
+            body: "Add a short **tag** to confirm something. A positive sentence takes a negative tag, and a negative sentence takes a positive tag (**You're tired, aren't you?** / **She isn't here, is she?**). Use the same auxiliary as the main verb.",
+            bodyEs:
+              "Añade una **tag** corta para confirmar algo. Una frase afirmativa lleva tag negativa, y una negativa lleva tag afirmativa (**You're tired, aren't you?** / **She isn't here, is she?**). Usa el mismo auxiliar que el verbo principal.",
             examples: [
               {
-                en: "You're Spanish, aren't you?",
-                es: 'Eres español, ¿verdad?',
+                en: "It's cold today, isn't it?",
+                es: 'Hace frío hoy, ¿verdad?',
               },
               {
-                en: "She doesn't drive, does she?",
-                es: 'Ella no conduce, ¿verdad?',
+                en: "You don't smoke, do you?",
+                es: 'No fumas, ¿no?',
               },
             ],
           },
           {
             heading: 'Subject questions',
-            body: "When **who** or **what** is the subject of the question, do **not** use 'do/does/did'. The word order stays like a statement: *Who broke the window?* not *Who did break...*.",
+            body: "When the question word (**who, what, which**) is the **subject**, do not use 'do/does/did'. Keep normal word order (**Who broke the window?**, **What happened?**). Use 'do' only when asking about the object (**Who did you see?**).",
+            bodyEs:
+              "Cuando la palabra interrogativa (**who, what, which**) es el **sujeto**, no uses 'do/does/did'. Mantén el orden normal (**Who broke the window?**, **What happened?**). Usa 'do' solo al preguntar por el objeto (**Who did you see?**).",
             examples: [
               {
-                en: 'Who made this cake?',
-                es: '¿Quién hizo este pastel?',
+                en: 'Who lives here?',
+                es: '¿Quién vive aquí?',
               },
               {
-                en: 'What happened?',
-                es: '¿Qué pasó?',
+                en: 'What makes you happy?',
+                es: '¿Qué te hace feliz?',
+              },
+            ],
+          },
+          {
+            heading: 'so and neither for agreeing',
+            body: "Use **So + auxiliary + subject** to agree with a positive statement (**I'm tired. — So am I.**), and **Neither + auxiliary + subject** to agree with a negative one (**I don't drink. — Neither do I.**). Note the inverted word order.",
+            bodyEs:
+              "Usa **So + auxiliar + sujeto** para coincidir con una frase afirmativa (**I'm tired. — So am I.**), y **Neither + auxiliar + sujeto** para una negativa (**I don't drink. — Neither do I.**). Fíjate en el orden invertido.",
+            examples: [
+              {
+                en: 'I love pizza. — So do I.',
+                es: 'Me encanta la pizza. — A mí también.',
+              },
+              {
+                en: "She can't swim. — Neither can I.",
+                es: 'Ella no sabe nadar. — Yo tampoco.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'so / neither responses',
-            columns: ['Statement', 'Agree (same)', 'Auxiliary'],
+            caption: 'Agreeing with so / neither',
+            columns: ['Statement', 'Agreement'],
             rows: [
-              ['I am tired.', 'So am I.', 'be'],
-              ['I like tea.', 'So do I.', 'do'],
-              ["I can't cook.", 'Neither can I.', 'can'],
-              ["I didn't go.", 'Neither did I.', 'did'],
+              ['I am hungry.', 'So am I.'],
+              ['I like tea.', 'So do I.'],
+              ["I can't drive.", 'Neither can I.'],
+              ["I don't smoke.", 'Neither do I.'],
             ],
           },
         ],
         examples: [
           {
-            en: '"I\'m hungry." "So am I."',
-            es: '—Tengo hambre. —Yo también.',
+            en: "You can swim, can't you?",
+            es: 'Sabes nadar, ¿verdad?',
           },
           {
-            en: '"I don\'t like horror films." "Neither do I."',
-            es: '—No me gustan las películas de terror. —A mí tampoco.',
+            en: "They didn't call, did they?",
+            es: 'No llamaron, ¿no?',
           },
           {
-            en: "It's a lovely day, isn't it?",
-            es: 'Hace un día precioso, ¿verdad?',
+            en: 'Who wrote this email?',
+            es: '¿Quién escribió este correo?',
           },
           {
-            en: "You didn't call her, did you?",
-            es: 'No la llamaste, ¿verdad?',
+            en: 'What happened last night?',
+            es: '¿Qué pasó anoche?',
           },
           {
-            en: 'Who told you that?',
-            es: '¿Quién te dijo eso?',
+            en: "I'm hungry. — So am I.",
+            es: 'Tengo hambre. — Yo también.',
           },
           {
-            en: 'What woke you up last night?',
-            es: '¿Qué te despertó anoche?',
+            en: "I don't like horror films. — Neither do I.",
+            es: 'No me gustan las películas de terror. — A mí tampoco.',
           },
         ],
         pitfalls: [
           {
-            wrong: '"I like coffee." "So I do."',
-            right: '"I like coffee." "So do I."',
-            why: "In 'so/neither' answers the auxiliary comes before the subject: So do I.",
-            esNote: "El orden es 'So + auxiliar + sujeto': So do I.",
-          },
-          {
             wrong: "You are tired, isn't it?",
             right: "You are tired, aren't you?",
-            why: "The tag must repeat the subject and auxiliary of the sentence, not use 'isn't it'.",
-            esNote:
-              "La coletilla repite el sujeto y el auxiliar, no es siempre '¿verdad?' = 'isn't it'.",
+            why: 'The tag must match the subject and auxiliary of the sentence.',
+            esNote: "La tag usa el mismo auxiliar y sujeto: 'aren't you?'.",
           },
           {
             wrong: 'Who did break the window?',
             right: 'Who broke the window?',
-            why: "When 'who' is the subject, don't use 'did'; the verb is already in the past.",
+            why: "When 'who' is the subject, do not use 'did'; use the past simple directly.",
             esNote: "Si 'who' es el sujeto, no se usa 'did'.",
+          },
+          {
+            wrong: 'I like coffee. — So I do.',
+            right: 'I like coffee. — So do I.',
+            why: "After 'so', invert: auxiliary before the subject.",
+            esNote: "Tras 'so' se invierte: 'So do I'.",
           },
         ],
         exercises: [
           {
+            kind: 'cloze',
+            id: 'a2-qa-ex1',
+            before: "It's a beautiful day,",
+            after: '?',
+            answers: ["isn't it"],
+            hint: 'positive sentence, negative tag',
+            explain: "Positive statement 'It's' takes the negative tag 'isn't it'.",
+          },
+          {
             kind: 'mcq',
-            id: 'a2-sn-ex1',
-            prompt: '"I don\'t eat meat." Agree:',
-            options: ['So do I.', 'Neither do I.', 'Neither I do.'],
+            id: 'a2-qa-ex2',
+            prompt: 'Choose the correct subject question.',
+            options: ['Who did make this cake?', 'Who made this cake?', 'Who make this cake?'],
             answer: 1,
-            explain: "Agreeing with a negative uses 'Neither + auxiliary + subject'.",
+            explain: "'Who' is the subject, so no 'did' and use the past simple.",
           },
           {
             kind: 'cloze',
-            id: 'a2-sn-ex2',
-            before: 'You live in Madrid,',
-            after: '?',
-            answers: ["don't you"],
-            hint: 'positive sentence → negative tag',
-            explain: 'A positive sentence takes a negative tag with the same auxiliary.',
+            id: 'a2-qa-ex3',
+            before: "A: I can't cook. B:",
+            after: 'can I.',
+            answers: ['Neither'],
+            hint: 'agreeing with a negative',
+            explain: "Agree with a negative using 'Neither can I'.",
           },
           {
             kind: 'correct',
-            id: 'a2-sn-ex3',
-            wrong: 'Who did win the match?',
-            answers: ['Who won the match?'],
-            explain: "'Who' is the subject, so no 'did' and the verb is in the past.",
-          },
-          {
-            kind: 'translate',
-            id: 'a2-sn-ex4',
-            es: '—Estoy cansado. —Yo también.',
-            answers: ['"I\'m tired." "So am I."', "I'm tired. So am I.", 'So am I.'],
-            explain: "Agreeing with a positive 'be' statement: So am I.",
+            id: 'a2-qa-ex4',
+            wrong: "She works here, doesn't she works?",
+            answers: ["She works here, doesn't she?"],
+            explain: "The tag is just auxiliary + subject: 'doesn't she?'.",
           },
           {
             kind: 'order',
-            id: 'a2-sn-ex5',
-            tokens: ['She', "can't", 'drive', ',', 'can', 'she', '?'],
-            answer: "She can't drive, can she?",
-            explain: 'Negative sentence takes a positive tag: can she?',
+            id: 'a2-qa-ex5',
+            tokens: ['So', 'do', 'I'],
+            answer: 'So do I.',
+            explain: 'Agree with a positive statement: So + auxiliary + subject.',
           },
           {
-            kind: 'cloze',
-            id: 'a2-sn-ex6',
-            before: '"I can\'t sleep." "',
-            after: 'can I."',
-            answers: ['Neither', 'Nor'],
-            explain: 'Agreeing with a negative: Neither can I.',
+            kind: 'translate',
+            id: 'a2-qa-ex6',
+            es: '¿Quién te llamó anoche?',
+            answers: ['Who called you last night?'],
+            explain: "'who' is the subject here, so use no 'did' and the past simple 'called'.",
           },
           {
             kind: 'dictation',
-            id: 'a2-sn-ex7',
-            text: "It's cold today, isn't it?",
-            explain: 'Positive sentence with a negative question tag.',
+            id: 'a2-qa-ex7',
+            text: "You haven't met him before, have you?",
+            explain: "Negative sentence takes a positive tag 'have you?'.",
           },
         ],
       },
@@ -3729,710 +3910,593 @@ export const GRAMMAR: GrammarUnit[] = [
   },
   {
     level: 'B1',
-    title: 'B1 · Intermediate',
+    title: 'B1 · Grammar in Action',
     blurb:
-      'Connect past, present and future: perfect tenses, conditionals, reported speech, the passive, and the structures that make your English flow.',
+      'Connect tenses, conditions and reported speech to talk about real life with confidence.',
     lessons: [
       {
         id: 'b1-present-perfect-continuous',
         level: 'B1',
-        title: 'Present perfect continuous (and vs past simple)',
+        title: 'Present Perfect Continuous & Past Simple',
         summary:
-          'Use have/has been + -ing to focus on the duration of an activity that started in the past and is still relevant now. Contrast it with the past simple for finished moments.',
+          'Use the **present perfect continuous** (have/has been + -ing) to focus on the duration of an activity that started in the past and continues now or has just stopped. Compare it with the **past simple**, which describes finished actions at a finished time.',
+        summaryEs:
+          'Usa el **presente perfecto continuo** (have/has been + -ing) para destacar la duración de una actividad que empezó en el pasado y continúa ahora o acaba de terminar. Compáralo con el **pasado simple**, que describe acciones terminadas en un momento terminado.',
         sections: [
           {
-            heading: 'Form and core meaning',
-            body: 'Make it with **have/has + been + verb-ing**. It focuses on the **activity and its duration**, often with **for** (a period) or **since** (a starting point). The action usually continues now or has just stopped, with a present result.',
+            heading: 'Form and main use',
+            body: 'Build it with **have/has + been + verb-ing**. We use it to emphasise how long an action has been happening, often with **for** and **since**. The action may continue now or may have just finished with a visible result.',
+            bodyEs:
+              'Se forma con **have/has + been + verbo-ing**. Lo usamos para enfatizar cuánto tiempo lleva ocurriendo una acción, a menudo con **for** y **since**. La acción puede continuar ahora o acabar de terminar dejando un resultado visible.',
             examples: [
               {
                 en: 'I have been studying English for three years.',
                 es: 'Llevo tres años estudiando inglés.',
               },
               {
-                en: 'She has been working since 8 a.m.',
-                es: 'Ha estado trabajando desde las 8 de la mañana.',
-              },
-              {
-                en: 'It has been raining all day.',
-                es: 'Ha estado lloviendo todo el día.',
+                en: "She's tired because she has been running.",
+                es: 'Está cansada porque ha estado corriendo.',
               },
             ],
           },
           {
-            heading: 'Continuous vs simple perfect',
-            body: "Use the **continuous** to stress how long or that the action repeated; use the **simple present perfect** to stress a finished result or a quantity. Compare 'I've been reading' (activity) with 'I've read three books' (result).",
+            heading: 'Continuous vs Past Simple',
+            body: 'Use the **present perfect continuous** when the time is unfinished or connected to now. Use the **past simple** for an action completed at a specific finished moment (yesterday, in 2010, last week).',
+            bodyEs:
+              'Usa el **presente perfecto continuo** cuando el tiempo no ha terminado o está conectado con el ahora. Usa el **pasado simple** para una acción completada en un momento terminado concreto (yesterday, in 2010, last week).',
             examples: [
               {
-                en: "I've been painting the kitchen. (that's why I'm dirty)",
-                es: 'He estado pintando la cocina.',
+                en: 'We have been waiting for an hour. (still waiting)',
+                es: 'Llevamos una hora esperando. (todavía esperando)',
               },
               {
-                en: "I've painted the kitchen. (it's finished)",
-                es: 'He pintado la cocina.',
+                en: 'We waited for an hour and then left. (finished)',
+                es: 'Esperamos una hora y luego nos fuimos. (terminado)',
               },
             ],
           },
           {
-            heading: 'Versus the past simple',
-            body: "The present perfect continuous links to **now**; the **past simple** is for a finished time that has no connection to the present (yesterday, last year, at 6 o'clock). If you say **when** exactly, use the past simple.",
+            heading: 'Stative verbs',
+            body: 'Verbs of state such as **know, be, like, have (possess)** are not normally used in continuous forms. Use the **present perfect simple** instead.',
+            bodyEs:
+              'Los verbos de estado como **know, be, like, have (poseer)** no se usan normalmente en formas continuas. Usa el **presente perfecto simple** en su lugar.',
             examples: [
               {
-                en: 'He has been living here since 2020.',
-                es: 'Vive aquí desde 2020.',
+                en: 'I have known her since 2015.',
+                es: 'La conozco desde 2015.',
               },
               {
-                en: 'He lived in Paris in 2018.',
-                es: 'Vivió en París en 2018.',
+                en: 'He has had that car for years.',
+                es: 'Tiene ese coche desde hace años.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Present perfect continuous forms',
-            columns: ['Subject', 'Affirmative', 'Negative', 'Question'],
+            caption: 'for vs since',
+            columns: ['Word', 'Use', 'Example'],
             rows: [
-              [
-                'I / you / we / they',
-                'have been working',
-                "haven't been working",
-                'Have you been working?',
-              ],
-              ['he / she / it', 'has been working', "hasn't been working", 'Has she been working?'],
+              ['for', 'a period of time', 'for two hours, for a week'],
+              ['since', 'a starting point', 'since Monday, since 2020'],
             ],
           },
         ],
         examples: [
           {
-            en: 'How long have you been waiting?',
-            es: '¿Cuánto tiempo llevas esperando?',
+            en: 'How long have you been learning to drive?',
+            es: '¿Cuánto tiempo llevas aprendiendo a conducir?',
           },
           {
-            en: "My eyes hurt because I've been looking at the screen all day.",
-            es: 'Me duelen los ojos porque he estado mirando la pantalla todo el día.',
+            en: 'My eyes hurt because I have been reading all day.',
+            es: 'Me duelen los ojos porque he estado leyendo todo el día.',
           },
           {
-            en: "We've been trying to call you since this morning.",
-            es: 'Llevamos intentando llamarte desde esta mañana.',
+            en: 'They have been living here since March.',
+            es: 'Viven aquí desde marzo.',
           },
           {
-            en: "She's tired because she's been running.",
-            es: 'Está cansada porque ha estado corriendo.',
+            en: 'I called you twice last night.',
+            es: 'Te llamé dos veces anoche.',
           },
           {
-            en: 'They got married in 2015 and have been together ever since.',
-            es: 'Se casaron en 2015 y han estado juntos desde entonces.',
+            en: 'It has been raining, so the streets are wet.',
+            es: 'Ha estado lloviendo, así que las calles están mojadas.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'I am studying English for three years.',
+            wrong: 'I am studying English since three years.',
             right: 'I have been studying English for three years.',
-            why: 'For an action that started in the past and continues now, English uses the **present perfect**, not the present.',
-            esNote:
-              "El español usa 'llevo + gerundio' o el presente; el inglés exige 'have been + -ing'.",
+            why: "Spanish uses the present tense for duration, but English needs a perfect form plus 'for' with a period.",
+            esNote: "No uses el presente simple para la duración; usa 'have been + -ing'.",
           },
           {
-            wrong: 'I have been knowing her for years.',
-            right: 'I have known her for years.',
-            why: '**Stative verbs** (know, like, be, have=possess) are not normally used in continuous forms.',
-            esNote: 'Verbos de estado (know, love, want) no van en forma continua.',
+            wrong: 'I have been knowing him for years.',
+            right: 'I have known him for years.',
+            why: "Stative verbs like 'know' are not used in continuous forms.",
+            esNote: 'Los verbos de estado no van en continuo.',
           },
           {
-            wrong: "I've been to the gym yesterday.",
-            right: 'I went to the gym yesterday.',
-            why: 'With a finished past time word like **yesterday**, use the past simple, not a perfect form.',
-            esNote: "Con 'yesterday', 'last week', etc., va el pasado simple.",
+            wrong: 'I have seen her yesterday.',
+            right: 'I saw her yesterday.',
+            why: "A finished time word like 'yesterday' requires the past simple, not a perfect form.",
+            esNote: "Con 'yesterday' usa pasado simple.",
           },
         ],
         exercises: [
           {
-            kind: 'mcq',
-            id: 'b1-ppc-1',
-            prompt: 'Choose the best option: "My hands are dirty because I ___ the car."',
-            options: ['wash', 'have been washing', 'washed', 'am washing'],
-            answer: 1,
-            explain:
-              'A present result (dirty hands) from a recent activity uses the **present perfect continuous**.',
+            kind: 'cloze',
+            id: 'b1-ppc-ex1',
+            before: 'She is exhausted because she',
+            after: 'all morning. (clean)',
+            answers: ['has been cleaning', "'s been cleaning"],
+            hint: 'present perfect continuous',
+            explain: 'The action explains a present result, so use have/has been + -ing.',
           },
           {
-            kind: 'cloze',
-            id: 'b1-ppc-2',
-            before: 'We have been living here',
-            after: '2019.',
-            answers: ['since'],
-            hint: 'a starting point',
-            explain:
-              '**Since** marks the point when something started; **for** marks a length of time.',
+            kind: 'mcq',
+            id: 'b1-ppc-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'I have finished the book last night.',
+              'I finished the book last night.',
+              'I have been finishing the book last night.',
+            ],
+            answer: 1,
+            explain: "'Last night' is a finished time, so use the past simple.",
           },
           {
             kind: 'correct',
-            id: 'b1-ppc-3',
-            wrong: 'She is working here since five years.',
+            id: 'b1-ppc-ex3',
+            wrong: "We are waiting for the bus since 8 o'clock.",
             answers: [
-              'She has been working here for five years.',
-              "She's been working here for five years.",
+              "We have been waiting for the bus since 8 o'clock.",
+              "We've been waiting for the bus since 8 o'clock.",
             ],
-            explain:
-              "Started in the past + continues now = present perfect continuous; '5 years' is a period, so **for**.",
-          },
-          {
-            kind: 'order',
-            id: 'b1-ppc-4',
-            tokens: ['How', 'long', 'have', 'you', 'been', 'learning', 'English', '?'],
-            answer: 'How long have you been learning English ?',
-            explain: 'Question word order: **How long + have + subject + been + -ing**.',
+            explain: 'Duration up to now uses present perfect continuous, not the present.',
           },
           {
             kind: 'translate',
-            id: 'b1-ppc-5',
-            es: 'Llevo dos horas esperando el autobús.',
+            id: 'b1-ppc-ex4',
+            es: 'Llevan dos horas jugando al fútbol.',
             answers: [
-              'I have been waiting for the bus for two hours.',
-              "I've been waiting for the bus for two hours.",
+              'They have been playing football for two hours.',
+              "They've been playing football for two hours.",
+              'They have been playing soccer for two hours.',
             ],
-            explain: "'Llevo + gerundio' → present perfect continuous with **for**.",
+            explain: "'Llevar + gerundio' maps to have been + -ing with 'for'.",
+          },
+          {
+            kind: 'order',
+            id: 'b1-ppc-ex5',
+            tokens: ['How', 'long', 'have', 'you', 'been', 'working', 'here?'],
+            answer: 'How long have you been working here?',
+            explain: 'Question word + have + subject + been + -ing.',
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-ppc-ex6',
+            before: 'I',
+            after: 'her since we were children. (know)',
+            answers: ['have known', "'ve known"],
+            hint: 'stative verb',
+            explain: "'Know' is stative, so use the present perfect simple.",
           },
           {
             kind: 'dictation',
-            id: 'b1-ppc-6',
-            text: "It's been raining since I woke up this morning.",
-            explain: "Note the contraction 'It's been' = It has been.",
+            id: 'b1-ppc-ex7',
+            text: 'It has been snowing all night, so the roads are dangerous.',
+            explain: 'Present perfect continuous showing a present result.',
           },
         ],
       },
       {
-        id: 'b1-past-perfect',
+        id: 'b1-past-perfect-used-to',
         level: 'B1',
-        title: 'Past perfect: the past before the past',
+        title: 'Past Perfect & Used to / Would',
         summary:
-          'Use had + past participle to show that one past action happened before another past action. It puts events in the right order.',
+          'Use the **past perfect** (had + past participle) for an action that happened before another past action. Use **used to** and **would** for past habits, and **be used to** for things that are familiar now.',
+        summaryEs:
+          'Usa el **pasado perfecto** (had + participio pasado) para una acción que ocurrió antes de otra acción pasada. Usa **used to** y **would** para hábitos del pasado, y **be used to** para cosas que ahora resultan familiares.',
         sections: [
           {
-            heading: 'Form and use',
-            body: 'Make it with **had + past participle** for every subject. It describes an action **completed before another point in the past**. The later action is usually in the **past simple**.',
+            heading: 'Past perfect: the earlier past',
+            body: 'Form it with **had + past participle**. It shows which of two past events happened first. The later event is usually in the **past simple**.',
+            bodyEs:
+              'Se forma con **had + participio pasado**. Muestra cuál de dos eventos pasados ocurrió primero. El evento posterior suele ir en **pasado simple**.',
             examples: [
               {
                 en: 'When I arrived, the train had already left.',
                 es: 'Cuando llegué, el tren ya se había ido.',
               },
               {
-                en: 'She had finished dinner before he called.',
-                es: 'Ella había terminado de cenar antes de que él llamara.',
+                en: 'She had never seen the sea before that trip.',
+                es: 'Nunca había visto el mar antes de ese viaje.',
               },
             ],
           },
           {
-            heading: 'With time linkers',
-            body: 'Common with **before, after, already, just, by the time, when**. Words like **already, just, never, yet** often go between had and the participle.',
+            heading: 'Used to and would for past habits',
+            body: "**Used to + infinitive** describes past habits or states that are no longer true. **Would + infinitive** also describes repeated past actions, but not states. We don't use 'would' for past states like 'live' or 'have'.",
+            bodyEs:
+              "**Used to + infinitivo** describe hábitos o estados del pasado que ya no son ciertos. **Would + infinitivo** también describe acciones repetidas del pasado, pero no estados. No usamos 'would' para estados pasados como 'live' o 'have'.",
             examples: [
               {
-                en: 'By the time we got there, the film had started.',
-                es: 'Para cuando llegamos, la película había empezado.',
+                en: 'I used to play tennis every weekend.',
+                es: 'Solía jugar al tenis todos los fines de semana.',
               },
               {
-                en: 'I had never seen snow before that trip.',
-                es: 'Nunca había visto la nieve antes de aquel viaje.',
+                en: 'On Sundays we would visit my grandmother.',
+                es: 'Los domingos visitábamos a mi abuela.',
               },
             ],
           },
           {
-            heading: 'Past perfect continuous',
-            body: 'Use **had been + -ing** to stress the **duration** of an activity up to a past moment. It often explains a past result.',
+            heading: 'Be used to: being familiar with',
+            body: "**Be used to + noun / -ing** means something is normal or familiar now. Don't confuse it with **used to**, which is about the past. **Get used to** means becoming familiar with something.",
+            bodyEs:
+              '**Be used to + sustantivo / -ing** significa que algo es normal o familiar ahora. No lo confundas con **used to**, que habla del pasado. **Get used to** significa acostumbrarse a algo.',
             examples: [
               {
-                en: 'He was tired because he had been working all night.',
-                es: 'Estaba cansado porque había estado trabajando toda la noche.',
-              },
-              {
-                en: 'They had been driving for hours when the car broke down.',
-                es: 'Llevaban horas conduciendo cuando el coche se averió.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Past perfect',
-            columns: ['Form', 'Example', 'Use'],
-            rows: [
-              ['had + past participle', 'had gone, had seen', 'earlier past action'],
-              ["had not (hadn't) + p.p.", "hadn't eaten", 'negative'],
-              ['had + subject + p.p.?', 'Had you met before?', 'question'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'The house was empty; everyone had gone home.',
-            es: 'La casa estaba vacía; todos se habían ido a casa.',
-          },
-          {
-            en: 'I realised I had forgotten my keys.',
-            es: 'Me di cuenta de que había olvidado las llaves.',
-          },
-          {
-            en: 'After she had read the email, she called me.',
-            es: 'Después de que leyó el correo, me llamó.',
-          },
-          {
-            en: "We couldn't get in because we had lost the tickets.",
-            es: 'No pudimos entrar porque habíamos perdido las entradas.',
-          },
-          {
-            en: 'By 2010 he had already published three novels.',
-            es: 'Para 2010 ya había publicado tres novelas.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'When I arrived, the train already left.',
-            right: 'When I arrived, the train had already left.',
-            why: 'To mark the action that happened **first**, use the past perfect (**had + p.p.**), not the past simple.',
-            esNote: "El 'pluscuamperfecto' español ('se había ido') equivale al past perfect.",
-          },
-          {
-            wrong: 'I had ate before the meeting.',
-            right: 'I had eaten before the meeting.',
-            why: 'The past perfect uses the **past participle** (eaten), not the past simple (ate).',
-            esNote: 'Usa el participio (eaten, gone, seen), no el pasado simple.',
-          },
-          {
-            wrong: 'After I had finished, I had gone home.',
-            right: 'After I had finished, I went home.',
-            why: 'Only the **earlier** action needs the past perfect; the later one is past simple.',
-            esNote: 'No pongas todo en past perfect: solo la acción anterior.',
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'b1-pp-1',
-            prompt: 'Choose the best option: "She ___ when we arrived at the party."',
-            options: [
-              'already left',
-              'had already left',
-              'has already left',
-              'was leaving already',
-            ],
-            answer: 1,
-            explain: 'Leaving happened before arriving, so use the **past perfect**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b1-pp-2',
-            before: 'By the time the police came, the thief',
-            after: '(escape).',
-            answers: ['had escaped'],
-            hint: 'had + past participle',
-            explain: 'An action finished before another past point → past perfect.',
-          },
-          {
-            kind: 'correct',
-            id: 'b1-pp-3',
-            wrong: "I didn't recognise her because she changed a lot.",
-            answers: [
-              "I didn't recognise her because she had changed a lot.",
-              "I didn't recognize her because she had changed a lot.",
-            ],
-            explain: 'The change happened before the moment of not recognising → past perfect.',
-          },
-          {
-            kind: 'order',
-            id: 'b1-pp-4',
-            tokens: ['He', 'was', 'tired', 'because', 'he', 'had', 'been', 'running'],
-            answer: 'He was tired because he had been running',
-            explain: 'Past perfect continuous explains a past result: **had been + -ing**.',
-          },
-          {
-            kind: 'translate',
-            id: 'b1-pp-5',
-            es: 'Cuando llegué, la reunión ya había terminado.',
-            answers: [
-              'When I arrived, the meeting had already finished.',
-              'When I arrived, the meeting had already ended.',
-              'When I got there, the meeting had already finished.',
-            ],
-            explain: 'El pluscuamperfecto español → past perfect inglés.',
-          },
-          {
-            kind: 'dictation',
-            id: 'b1-pp-6',
-            text: 'We had never been to Japan before last summer.',
-            explain: "'never' sits between 'had' and the participle 'been'.",
-          },
-        ],
-      },
-      {
-        id: 'b1-used-to',
-        level: 'B1',
-        title: 'Used to, would and be used to',
-        summary:
-          "Three look-alike structures: 'used to' for past habits, 'would' for repeated past actions, and 'be used to' for being accustomed to something.",
-        sections: [
-          {
-            heading: 'used to + infinitive',
-            body: "**Used to + base verb** describes **past habits or states that are no longer true**. The negative and question drop the -d: **didn't use to / Did you use to...?**",
-            examples: [
-              {
-                en: 'I used to smoke, but I stopped.',
-                es: 'Antes fumaba, pero lo dejé.',
-              },
-              {
-                en: 'There used to be a cinema here.',
-                es: 'Antes había un cine aquí.',
-              },
-              {
-                en: 'Did you use to play sports?',
-                es: '¿Antes practicabas deportes?',
-              },
-            ],
-          },
-          {
-            heading: 'would for repeated past actions',
-            body: "**Would + base verb** also describes **repeated past actions**, like a storytelling style. Important: **would does NOT work with states** (have, be, like). Use 'used to' for states.",
-            examples: [
-              {
-                en: 'Every summer we would visit our grandparents.',
-                es: 'Cada verano visitábamos a nuestros abuelos.',
-              },
-              {
-                en: 'He used to be shy. (NOT He would be shy.)',
-                es: 'Antes era tímido.',
-              },
-            ],
-          },
-          {
-            heading: 'be/get used to + -ing',
-            body: "**Be used to + noun / -ing** means 'be accustomed to' something. **Get used to** means becoming accustomed. Here 'to' is a **preposition**, so a verb after it takes **-ing**.",
-            examples: [
-              {
-                en: "I'm used to getting up early.",
+                en: 'I am used to getting up early.',
                 es: 'Estoy acostumbrado a levantarme temprano.',
               },
               {
-                en: "She can't get used to the cold weather.",
-                es: 'No consigue acostumbrarse al frío.',
+                en: 'She is getting used to her new job.',
+                es: 'Se está acostumbrando a su nuevo trabajo.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Three structures compared',
-            columns: ['Structure', 'Meaning', 'Followed by', 'Example'],
+            caption: 'used to vs be used to',
+            columns: ['Structure', 'Meaning', 'Example'],
             rows: [
-              ['used to', 'past habit/state (not now)', 'base verb', 'I used to live there'],
-              ['would', 'repeated past action', 'base verb', 'We would walk to school'],
-              ['be used to', 'be accustomed to', 'noun / -ing', "I'm used to driving"],
+              ['used to + infinitive', 'past habit (not now)', 'I used to smoke.'],
+              ['be used to + -ing/noun', 'familiar now', "I'm used to the noise."],
+              ['get used to + -ing/noun', 'becoming familiar', "I'm getting used to it."],
             ],
           },
         ],
         examples: [
           {
-            en: 'We used to go to the beach every weekend.',
-            es: 'Antes íbamos a la playa cada fin de semana.',
+            en: 'They had finished dinner before we got there.',
+            es: 'Habían terminado de cenar antes de que llegáramos.',
           },
           {
-            en: "I didn't use to like coffee, but now I love it.",
-            es: 'Antes no me gustaba el café, pero ahora me encanta.',
+            en: 'He realised he had forgotten his keys.',
+            es: 'Se dio cuenta de que había olvidado las llaves.',
           },
           {
-            en: 'When I was a child, my dad would read me stories.',
-            es: 'Cuando era niño, mi padre me leía cuentos.',
+            en: 'There used to be a cinema on this street.',
+            es: 'Solía haber un cine en esta calle.',
           },
           {
-            en: 'Are you used to working from home?',
-            es: '¿Estás acostumbrado a trabajar desde casa?',
+            en: "We didn't use to have a car.",
+            es: 'No solíamos tener coche.',
           },
           {
-            en: 'It took me a while to get used to the new system.',
-            es: 'Me costó un tiempo acostumbrarme al nuevo sistema.',
+            en: "I'm not used to driving on the left.",
+            es: 'No estoy acostumbrado a conducir por la izquierda.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'I use to go to the gym last year.',
-            right: 'I used to go to the gym.',
-            why: "The affirmative form is **used to** (with -d), and it can't be combined with a specific finished time the way the past simple is.",
-            esNote:
-              "En afirmativo es 'used to'; sin -d solo en negativas/preguntas (didn't use to).",
+            wrong: 'When I arrived the party already finished.',
+            right: 'When I arrived the party had already finished.',
+            why: 'The earlier of two past actions needs the past perfect.',
+            esNote: "La acción anterior necesita 'had + participio'.",
           },
           {
             wrong: 'I am used to get up early.',
             right: 'I am used to getting up early.',
-            why: "After **be used to**, 'to' is a preposition, so the verb must be **-ing**.",
-            esNote: "'Be used to' + gerundio (-ing), no infinitivo.",
+            why: "After 'be used to' the verb takes the -ing form, because 'to' is a preposition here.",
+            esNote: "Tras 'be used to' va verbo en -ing.",
           },
           {
-            wrong: 'He would be tall when he was young.',
-            right: 'He used to be tall when he was young.',
-            why: "**would** cannot describe past **states**; use 'used to' with be, have, like, know.",
-            esNote: "'Would' solo para acciones repetidas, no para estados.",
+            wrong: 'I would live in Madrid when I was young.',
+            right: 'I used to live in Madrid when I was young.',
+            why: "'Would' is not used for past states like living somewhere; use 'used to'.",
+            esNote: "Para estados pasados usa 'used to', no 'would'.",
           },
         ],
         exercises: [
           {
-            kind: 'mcq',
-            id: 'b1-ut-1',
-            prompt: 'Choose the correct option: "I\'m not ___ such spicy food."',
-            options: ['used to eat', 'used to eating', 'use to eat', 'used eat'],
-            answer: 1,
-            explain: "**be used to + -ing** = be accustomed to: 'used to eating'.",
+            kind: 'cloze',
+            id: 'b1-pp-ex1',
+            before: 'By the time we got home, the film',
+            after: '. (start)',
+            answers: ['had started', "'d started"],
+            hint: 'earlier past action',
+            explain: 'The film started before we got home, so use the past perfect.',
           },
           {
-            kind: 'cloze',
-            id: 'b1-ut-2',
-            before: 'There',
-            after: 'be a bakery on this corner, but it closed.',
-            answers: ['used to'],
-            hint: 'past state, no longer true',
-            explain: 'Past state that has changed → **used to + base verb**.',
+            kind: 'mcq',
+            id: 'b1-pp-ex2',
+            prompt: 'Which sentence is correct?',
+            options: [
+              'I used to live near the beach.',
+              'I am used to live near the beach.',
+              'I would live near the beach as a state.',
+            ],
+            answer: 0,
+            explain: "'Used to + infinitive' describes a past state that is no longer true.",
           },
           {
             kind: 'correct',
-            id: 'b1-ut-3',
-            wrong: 'Did you used to live in Madrid?',
-            answers: ['Did you use to live in Madrid?'],
-            explain: 'In questions and negatives the -d is dropped: **use to**.',
-          },
-          {
-            kind: 'order',
-            id: 'b1-ut-4',
-            tokens: ['Every', 'winter', 'we', 'would', 'go', 'skiing'],
-            answer: 'Every winter we would go skiing',
-            explain: '**would + base verb** for a repeated past action.',
+            id: 'b1-pp-ex3',
+            wrong: "She still isn't used to work at night.",
+            answers: [
+              "She still isn't used to working at night.",
+              "She still isn't used to work at nights.",
+            ],
+            explain: "After 'be used to' use the -ing form of the verb.",
           },
           {
             kind: 'translate',
-            id: 'b1-ut-5',
-            es: 'Todavía no me acostumbro a conducir por la izquierda.',
+            id: 'b1-pp-ex4',
+            es: 'Cuando llegué, ellos ya habían comido.',
             answers: [
-              "I'm still not used to driving on the left.",
-              'I am still not used to driving on the left.',
-              "I still can't get used to driving on the left.",
+              'When I arrived, they had already eaten.',
+              'When I arrived they had already eaten.',
             ],
-            explain: "'Acostumbrarse a + verbo' → be/get used to + -ing.",
+            explain: 'Use the past perfect for the action that happened first.',
+          },
+          {
+            kind: 'order',
+            id: 'b1-pp-ex5',
+            tokens: ['We', 'used', 'to', 'go', 'camping', 'every', 'summer.'],
+            answer: 'We used to go camping every summer.',
+            explain: "'Used to + infinitive' for a repeated past habit.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-pp-ex6',
+            before: 'It took me a while, but now I',
+            after: 'to the cold weather. (get used)',
+            answers: ['have got used', "'ve got used", 'got used'],
+            hint: 'becoming familiar',
+            explain: "'Get used to' expresses becoming familiar with something.",
           },
           {
             kind: 'dictation',
-            id: 'b1-ut-6',
-            text: "I didn't use to enjoy reading, but now I read every day.",
-            explain: "Negative form: didn't use to (no -d).",
+            id: 'b1-pp-ex7',
+            text: 'He had never flown in a plane before that day.',
+            explain: 'Past perfect for experience before a past point.',
           },
         ],
       },
       {
-        id: 'b1-future-continuous',
+        id: 'b1-future-continuous-predictions',
         level: 'B1',
-        title: 'Future forms: will, going to and future continuous',
+        title: 'Future Continuous & Predictions',
         summary:
-          'Choose between will and going to for predictions and plans, and use will be + -ing for actions in progress at a future time.',
+          'Use the **future continuous** (will be + -ing) for an action in progress at a future moment. Make **predictions** with will, going to, may, might and could depending on how sure you are.',
+        summaryEs:
+          'Usa el **futuro continuo** (will be + -ing) para una acción en progreso en un momento futuro. Haz **predicciones** con will, going to, may, might y could según el grado de seguridad.',
         sections: [
           {
-            heading: 'will vs going to',
-            body: 'Use **will** for instant decisions, offers, promises and predictions based on opinion. Use **be going to** for **plans/intentions** and predictions based on **present evidence**.',
-            examples: [
-              {
-                en: 'I think it will rain tomorrow.',
-                es: 'Creo que mañana lloverá.',
-              },
-              {
-                en: "Look at those clouds — it's going to rain.",
-                es: 'Mira esas nubes; va a llover.',
-              },
-              {
-                en: "We're going to move house next year.",
-                es: 'Vamos a mudarnos el año que viene.',
-              },
-            ],
-          },
-          {
             heading: 'Future continuous',
-            body: 'Use **will be + -ing** for an action that **will be in progress** at a specific future moment, or for a polite, neutral prediction about arrangements.',
+            body: 'Form it with **will be + verb-ing**. It describes an action that will be in progress at a particular time in the future. It can also describe future events expected to happen as part of a routine.',
+            bodyEs:
+              'Se forma con **will be + verbo-ing**. Describe una acción que estará en progreso en un momento concreto del futuro. También describe eventos futuros esperados como parte de una rutina.',
             examples: [
               {
-                en: "This time tomorrow I'll be flying to Rome.",
+                en: 'This time tomorrow I will be flying to Rome.',
                 es: 'Mañana a esta hora estaré volando a Roma.',
               },
               {
-                en: "Don't call at 8 — we'll be having dinner.",
+                en: "Don't call at 8; we'll be having dinner.",
                 es: 'No llames a las 8; estaremos cenando.',
               },
             ],
           },
           {
-            heading: 'Softening predictions',
-            body: "Make predictions more or less certain with adverbs: **definitely, probably, might, may, could**. Note position: 'will probably' but 'probably won't'.",
+            heading: 'Predictions: will vs going to',
+            body: "Use **will** for predictions based on opinion or belief (often with 'I think', 'probably'). Use **going to** for predictions based on present evidence you can see.",
+            bodyEs:
+              "Usa **will** para predicciones basadas en opinión o creencia (a menudo con 'I think', 'probably'). Usa **going to** para predicciones basadas en evidencia presente que puedes ver.",
             examples: [
               {
-                en: "She'll probably be late.",
-                es: 'Probablemente llegará tarde.',
+                en: 'I think it will rain later.',
+                es: 'Creo que lloverá más tarde.',
               },
               {
-                en: "They probably won't come.",
-                es: 'Probablemente no vendrán.',
+                en: "Look at those clouds! It's going to rain.",
+                es: '¡Mira esas nubes! Va a llover.',
+              },
+            ],
+          },
+          {
+            heading: 'Degrees of certainty',
+            body: "To show you are less sure, use **may, might or could**. These mean 'perhaps'. Add **probably** with 'will' for likely predictions and **definitely** for very sure ones.",
+            bodyEs:
+              "Para mostrar menos seguridad, usa **may, might o could**. Significan 'quizás'. Añade **probably** con 'will' para predicciones probables y **definitely** para las muy seguras.",
+            examples: [
+              {
+                en: 'They might arrive late.',
+                es: 'Puede que lleguen tarde.',
+              },
+              {
+                en: "She'll probably win the prize.",
+                es: 'Probablemente gane el premio.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Choosing a future form',
-            columns: ['Form', 'Use', 'Example'],
+            caption: 'How sure are you?',
+            columns: ['Certainty', 'Form', 'Example'],
             rows: [
-              ['will + base', 'decision now / opinion prediction', "I'll help you"],
-              ['going to + base', 'plan / evidence prediction', "I'm going to study law"],
-              ['will be + -ing', 'in progress at a future time', "I'll be working at 9"],
+              ['very sure', 'will definitely', 'It will definitely work.'],
+              ['likely', 'will probably', "He'll probably come."],
+              ['possible', 'may / might / could', 'It might snow.'],
             ],
           },
         ],
         examples: [
           {
-            en: "The phone's ringing — I'll get it.",
-            es: 'Suena el teléfono; ya contesto yo.',
+            en: 'At 10 a.m. we will be sitting the exam.',
+            es: 'A las 10 de la mañana estaremos haciendo el examen.',
           },
           {
-            en: "By next week, I'll be lying on a beach.",
-            es: 'Para la semana que viene, estaré tumbado en una playa.',
+            en: 'By next year, prices will have risen.',
+            es: 'Para el próximo año, los precios habrán subido.',
           },
           {
-            en: "We're going to start a new project in May.",
-            es: 'Vamos a empezar un nuevo proyecto en mayo.',
+            en: "I'm sure you will pass your test.",
+            es: 'Estoy seguro de que aprobarás tu examen.',
           },
           {
-            en: "I'm sure you'll do well in the exam.",
-            es: 'Seguro que te irá bien en el examen.',
+            en: "Be careful, you're going to drop it!",
+            es: '¡Ten cuidado, se te va a caer!',
           },
           {
-            en: 'Will you be using the car tonight?',
-            es: '¿Vas a usar el coche esta noche?',
+            en: "We might go to the beach if it's sunny.",
+            es: 'Puede que vayamos a la playa si hace sol.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'Tomorrow I go to the dentist.',
-            right: "Tomorrow I'm going to the dentist. / I'm going to go to the dentist.",
-            why: 'For future plans English uses **going to** or the **present continuous**, not the present simple.',
-            esNote:
-              "El español usa el presente para planes; el inglés prefiere 'going to' o present continuous.",
+            wrong: 'Look! The glass is falling, it will break.',
+            right: "Look! The glass is falling, it's going to break.",
+            why: "With clear present evidence, use 'going to', not 'will'.",
+            esNote: "Con evidencia visible usa 'going to'.",
           },
           {
-            wrong: 'I will to call you later.',
-            right: 'I will call you later.',
-            why: "After **will**, use the bare infinitive — no 'to'.",
-            esNote: "Tras 'will' va el verbo sin 'to'.",
+            wrong: 'Tomorrow at five I will work.',
+            right: 'Tomorrow at five I will be working.',
+            why: 'For an action in progress at a future time, use the future continuous.',
+            esNote: "Para algo en progreso en el futuro usa 'will be + -ing'.",
           },
           {
-            wrong: 'Look! The bus will leave!',
-            right: 'Look! The bus is going to leave!',
-            why: "For a prediction based on **present evidence**, use 'going to', not 'will'.",
-            esNote: "Con evidencia presente, usa 'going to'.",
+            wrong: 'It maybe rains tomorrow.',
+            right: 'It may rain tomorrow.',
+            why: "'May/might' are modal verbs followed by a bare infinitive; 'maybe' is a separate adverb.",
+            esNote: "'May/might' + infinitivo sin 'to'; 'maybe' es otra palabra.",
           },
         ],
         exercises: [
           {
-            kind: 'mcq',
-            id: 'b1-fc-1',
-            prompt: 'Choose the best option: "This time next year, we ___ in our new house."',
-            options: ['will live', 'are living', 'will be living', 'live'],
-            answer: 2,
-            explain: 'An action in progress at a future moment → **will be + -ing**.',
+            kind: 'cloze',
+            id: 'b1-fc-ex1',
+            before: 'This time next week, I',
+            after: 'on a beach in Spain. (relax)',
+            answers: ['will be relaxing', "'ll be relaxing"],
+            hint: 'future continuous',
+            explain: 'An action in progress at a future moment uses will be + -ing.',
           },
           {
-            kind: 'cloze',
-            id: 'b1-fc-2',
-            before: 'That bag looks heavy. I',
-            after: 'help you with it.',
-            answers: ["'ll", 'will'],
-            hint: 'an instant offer',
-            explain: 'A spontaneous offer/decision uses **will**.',
+            kind: 'mcq',
+            id: 'b1-fc-ex2',
+            prompt: 'The sky is grey and windy. Which is best?',
+            options: [
+              'I think it will be sunny.',
+              "It's going to rain.",
+              'It might be a nice day.',
+            ],
+            answer: 1,
+            explain: "Present evidence (grey sky) calls for 'going to'.",
           },
           {
             kind: 'correct',
-            id: 'b1-fc-3',
-            wrong: "Don't phone at six because we will have dinner.",
-            answers: [
-              "Don't phone at six because we'll be having dinner.",
-              "Don't phone at six because we will be having dinner.",
-            ],
-            explain: 'Action in progress at a future time → future continuous (will be + -ing).',
-          },
-          {
-            kind: 'order',
-            id: 'b1-fc-4',
-            tokens: ['She', 'is', 'going', 'to', 'start', 'university', 'in', 'September'],
-            answer: 'She is going to start university in September',
-            explain: 'A planned intention → **be going to + base verb**.',
+            id: 'b1-fc-ex3',
+            wrong: 'Maybe they will to come later.',
+            answers: ['Maybe they will come later.', 'They might come later.'],
+            explain: "After 'will' use the bare infinitive without 'to'.",
           },
           {
             kind: 'translate',
-            id: 'b1-fc-5',
-            es: 'Mañana a esta hora estaré conduciendo a la costa.',
+            id: 'b1-fc-ex4',
+            es: 'Puede que llueva esta tarde.',
             answers: [
-              "This time tomorrow I'll be driving to the coast.",
-              'This time tomorrow I will be driving to the coast.',
+              'It might rain this afternoon.',
+              'It may rain this afternoon.',
+              'It could rain this afternoon.',
             ],
-            explain: 'Acción en curso en un momento futuro → will be + -ing.',
+            explain: "'Puede que' expresses possibility with may/might/could.",
+          },
+          {
+            kind: 'order',
+            id: 'b1-fc-ex5',
+            tokens: ["Don't", 'phone', 'at', 'nine;', "we'll", 'be', 'watching', 'the', 'match.'],
+            answer: "Don't phone at nine; we'll be watching the match.",
+            explain: 'Future continuous for an action in progress at a set time.',
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-fc-ex6',
+            before: "She'll",
+            after: 'win because she has trained so hard. (probable)',
+            answers: ['probably'],
+            hint: 'adverb of likelihood',
+            explain: "'Probably' goes after 'will' to show a likely prediction.",
           },
           {
             kind: 'dictation',
-            id: 'b1-fc-6',
-            text: "I think they'll probably win the match.",
-            explain: "'will probably' — adverb after will in affirmatives.",
+            id: 'b1-fc-ex7',
+            text: 'By this time tomorrow we will be driving to the mountains.',
+            explain: 'Future continuous with a future time reference.',
           },
         ],
       },
       {
         id: 'b1-conditionals-wish',
         level: 'B1',
-        title: 'Second and third conditionals, and wish',
+        title: 'Second & Third Conditionals & Wish',
         summary:
-          "Talk about unreal present situations (2nd conditional), unreal past situations (3rd conditional), and regrets or desires with 'wish'.",
+          'Use the **second conditional** for unreal or unlikely present situations and the **third conditional** for unreal past situations. Use **wish** to talk about things you would like to be different.',
+        summaryEs:
+          'Usa el **segundo condicional** para situaciones presentes irreales o poco probables y el **tercer condicional** para situaciones pasadas irreales. Usa **wish** para hablar de cosas que te gustaría que fueran diferentes.',
         sections: [
           {
             heading: 'Second conditional',
-            body: "Use **If + past simple, ... would + base verb** for **imaginary or unlikely present/future** situations. With 'be', formal English uses **were** for all subjects.",
+            body: "Structure: **If + past simple, would + infinitive**. It describes imaginary or unlikely present/future situations. After 'if', we often use **were** for all persons.",
+            bodyEs:
+              "Estructura: **If + pasado simple, would + infinitivo**. Describe situaciones presentes/futuras imaginarias o poco probables. Tras 'if', solemos usar **were** para todas las personas.",
             examples: [
               {
-                en: 'If I had more time, I would learn the guitar.',
-                es: 'Si tuviera más tiempo, aprendería la guitarra.',
+                en: 'If I had more time, I would learn the piano.',
+                es: 'Si tuviera más tiempo, aprendería piano.',
               },
               {
-                en: "If I were you, I'd accept the offer.",
-                es: 'Yo que tú, aceptaría la oferta.',
+                en: 'If I were you, I would apologise.',
+                es: 'Si yo fuera tú, me disculparía.',
               },
             ],
           },
           {
             heading: 'Third conditional',
-            body: 'Use **If + past perfect, ... would have + past participle** for **unreal situations in the past** — things that did not happen and their imagined results.',
+            body: 'Structure: **If + past perfect, would have + past participle**. It describes imaginary situations in the past and their imagined results. The situation did not really happen.',
+            bodyEs:
+              'Estructura: **If + pasado perfecto, would have + participio pasado**. Describe situaciones imaginarias en el pasado y sus resultados imaginados. La situación no ocurrió realmente.',
             examples: [
               {
                 en: 'If I had studied, I would have passed.',
                 es: 'Si hubiera estudiado, habría aprobado.',
               },
               {
-                en: "If we hadn't missed the train, we wouldn't have been late.",
-                es: 'Si no hubiéramos perdido el tren, no habríamos llegado tarde.',
+                en: "She wouldn't have missed the train if she had left earlier.",
+                es: 'No habría perdido el tren si hubiera salido antes.',
               },
             ],
           },
           {
-            heading: 'wish / if only',
-            body: "Use **wish + past simple** for a different **present**; **wish + past perfect** for a regret about the **past**; **wish + would** to complain about an annoying habit. 'If only' works the same way, but stronger.",
+            heading: 'Wish',
+            body: 'Use **wish + past simple** to regret a present situation, and **wish + past perfect** to regret the past. Use **wish + would** to complain about annoying behaviour you want to change.',
+            bodyEs:
+              'Usa **wish + pasado simple** para lamentar una situación presente, y **wish + pasado perfecto** para lamentar el pasado. Usa **wish + would** para quejarte de un comportamiento molesto que quieres cambiar.',
             examples: [
               {
                 en: 'I wish I had a bigger flat.',
                 es: 'Ojalá tuviera un piso más grande.',
               },
               {
-                en: 'I wish I had studied medicine.',
-                es: 'Ojalá hubiera estudiado medicina.',
-              },
-              {
-                en: "I wish you wouldn't interrupt me.",
-                es: 'Ojalá no me interrumpieras.',
+                en: "I wish you wouldn't shout.",
+                es: 'Ojalá no gritaras.',
               },
             ],
           },
@@ -4440,309 +4504,1876 @@ export const GRAMMAR: GrammarUnit[] = [
         tables: [
           {
             caption: 'Conditional types',
-            columns: ['Type', 'If-clause', 'Main clause', 'Use'],
+            columns: ['Type', 'If-clause', 'Main clause'],
             rows: [
-              ['2nd', 'past simple', 'would + base', 'unreal present/future'],
-              ['3rd', 'past perfect', 'would have + p.p.', 'unreal past'],
-              ['wish (present)', 'wish + past simple', '—', 'different present'],
-              ['wish (past)', 'wish + past perfect', '—', 'past regret'],
+              ['Second', 'past simple', 'would + infinitive'],
+              ['Third', 'past perfect', 'would have + past participle'],
             ],
           },
         ],
         examples: [
           {
-            en: "If I won the lottery, I'd travel the world.",
-            es: 'Si ganara la lotería, viajaría por el mundo.',
+            en: "If it weren't so expensive, I would buy it.",
+            es: 'Si no fuera tan caro, lo compraría.',
           },
           {
-            en: 'What would you do if you lost your job?',
-            es: '¿Qué harías si perdieras tu trabajo?',
+            en: 'What would you do if you won the lottery?',
+            es: '¿Qué harías si ganaras la lotería?',
           },
           {
-            en: 'If she had asked me, I would have helped her.',
-            es: 'Si me hubiera pedido ayuda, la habría ayudado.',
+            en: 'If they had warned us, we would have stayed home.',
+            es: 'Si nos hubieran avisado, nos habríamos quedado en casa.',
           },
           {
-            en: 'I wish I could speak Japanese.',
-            es: 'Ojalá pudiera hablar japonés.',
+            en: 'I wish I could speak French.',
+            es: 'Ojalá pudiera hablar francés.',
           },
           {
-            en: "If only I hadn't said that.",
-            es: 'Ojalá no hubiera dicho eso.',
+            en: "He wishes he hadn't sold his car.",
+            es: 'Ojalá no hubiera vendido su coche.',
           },
         ],
         pitfalls: [
           {
             wrong: 'If I would have time, I would help you.',
             right: 'If I had time, I would help you.',
-            why: "**'would' does not go in the if-clause** of a conditional; use the past simple there.",
-            esNote: "No pongas 'would' en la oración con 'if'; va el pasado.",
+            why: "Do not use 'would' in the if-clause of a conditional; use a past tense.",
+            esNote: "No pongas 'would' en la cláusula con 'if'.",
           },
           {
-            wrong: 'If I would have known, I would have come.',
-            right: 'If I had known, I would have come.',
-            why: "Third conditional if-clause needs the **past perfect** (had known), not 'would have'.",
-            esNote: "En la condición va 'had + participio', no 'would have'.",
+            wrong: 'If I would have studied, I would have passed.',
+            right: 'If I had studied, I would have passed.',
+            why: "The third conditional uses 'had + past participle' in the if-clause, not 'would have'.",
+            esNote: "En el if-clause del tercer condicional va 'had + participio'.",
           },
           {
             wrong: 'I wish I have more money.',
             right: 'I wish I had more money.',
-            why: 'After **wish** for a present desire, use the **past simple**, not the present.',
-            esNote: "'Wish' para el presente va con pasado simple.",
+            why: "'Wish' about a present situation is followed by the past simple.",
+            esNote: "'Wish' sobre el presente lleva pasado simple.",
           },
         ],
         exercises: [
           {
-            kind: 'mcq',
-            id: 'b1-cw-1',
-            prompt: 'Choose the correct option: "If I ___ rich, I would buy a boat."',
-            options: ['am', 'were', 'would be', 'had been'],
-            answer: 1,
-            explain:
-              "Second conditional if-clause uses the past simple; with 'be' we use **were**.",
+            kind: 'cloze',
+            id: 'b1-cond-ex1',
+            before: 'If I',
+            after: 'rich, I would travel the world. (be)',
+            answers: ['were', 'was'],
+            hint: 'second conditional',
+            explain: "Second conditional uses the past simple (were) after 'if'.",
           },
           {
-            kind: 'cloze',
-            id: 'b1-cw-2',
-            before: 'If you had told me earlier, I',
-            after: '(come) to the meeting.',
-            answers: ['would have come', "'d have come"],
-            hint: 'third conditional result',
-            explain: 'Unreal past result → **would have + past participle**.',
+            kind: 'mcq',
+            id: 'b1-cond-ex2',
+            prompt: 'Complete: If she had left earlier, she ___ the bus.',
+            options: ['would catch', 'would have caught', 'catches'],
+            answer: 1,
+            explain: "Third conditional result uses 'would have + past participle'.",
           },
           {
             kind: 'correct',
-            id: 'b1-cw-3',
-            wrong: 'I wish I would be taller.',
-            answers: ['I wish I were taller.', 'I wish I was taller.'],
-            explain: "wish about a present state → past simple (were/was), not 'would be'.",
-          },
-          {
-            kind: 'order',
-            id: 'b1-cw-4',
-            tokens: ['If', 'I', 'had', 'studied', 'more', 'I', 'would', 'have', 'passed'],
-            answer: 'If I had studied more I would have passed',
-            explain: 'Third conditional: if + past perfect, would have + p.p.',
+            id: 'b1-cond-ex3',
+            wrong: 'If I would know the answer, I would tell you.',
+            answers: [
+              'If I knew the answer, I would tell you.',
+              'If I knew the answer I would tell you.',
+            ],
+            explain: "Use the past simple, not 'would', in the if-clause.",
           },
           {
             kind: 'translate',
-            id: 'b1-cw-5',
-            es: 'Si tuviera más tiempo, viajaría más.',
-            answers: [
-              'If I had more time, I would travel more.',
-              "If I had more time, I'd travel more.",
-            ],
-            explain: 'Condicional irreal de presente: if + pasado, would + base.',
+            id: 'b1-cond-ex4',
+            es: 'Ojalá hubiera estudiado más.',
+            answers: ['I wish I had studied more.', 'I wish I had studied harder.'],
+            explain: "'Wish' + past perfect expresses regret about the past.",
+          },
+          {
+            kind: 'order',
+            id: 'b1-cond-ex5',
+            tokens: ['What', 'would', 'you', 'do', 'if', 'you', 'lost', 'your', 'job?'],
+            answer: 'What would you do if you lost your job?',
+            explain: 'Second conditional question: would + subject + ... if + past simple.',
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-cond-ex6',
+            before: 'We would have arrived on time if the train',
+            after: 'late. (not be)',
+            answers: ["hadn't been", 'had not been'],
+            hint: 'third conditional if-clause',
+            explain: 'The if-clause of the third conditional uses the past perfect.',
           },
           {
             kind: 'dictation',
-            id: 'b1-cw-6',
-            text: 'I wish I had learned to play an instrument.',
-            explain: 'wish + past perfect expresses a past regret.',
+            id: 'b1-cond-ex7',
+            text: "I wish you wouldn't leave your shoes in the hallway.",
+            explain: "'Wish + would' to complain about annoying behaviour.",
           },
         ],
       },
       {
         id: 'b1-reported-speech',
         level: 'B1',
-        title: 'Reported speech: statements and questions',
+        title: 'Reported Speech',
         summary:
-          'Report what people said using backshift of tenses, changes of pronouns and time words, and the difference between say and tell.',
+          'Use **reported speech** to tell what someone said without their exact words. Tenses usually shift back one step (**backshift**), and pronouns, places and times change. Choose carefully between **say** and **tell**.',
+        summaryEs:
+          'Usa el **estilo indirecto** para contar lo que alguien dijo sin sus palabras exactas. Los tiempos normalmente retroceden un paso (**backshift**), y cambian los pronombres, lugares y tiempos. Elige con cuidado entre **say** y **tell**.',
         sections: [
           {
             heading: 'Backshift of tenses',
-            body: 'When the reporting verb is past (said, told), the tense usually moves **one step back**: present → past, past → past perfect, will → would, can → could. Pronouns and time/place words also change (now → then, here → there, tomorrow → the next day).',
+            body: 'When the reporting verb is in the past, the verb usually moves **one tense back**: present simple becomes past simple, present continuous becomes past continuous, will becomes would, and so on.',
+            bodyEs:
+              'Cuando el verbo introductorio está en pasado, el verbo suele retroceder **un tiempo**: presente simple pasa a pasado simple, presente continuo a pasado continuo, will a would, etc.',
             examples: [
               {
-                en: '"I am tired." → He said he was tired.',
-                es: '«Estoy cansado.» → Dijo que estaba cansado.',
+                en: '"I am tired." → She said she was tired.',
+                es: '"Estoy cansada." → Dijo que estaba cansada.',
               },
               {
-                en: '"I\'ll call you." → She said she would call me.',
-                es: '«Te llamaré.» → Dijo que me llamaría.',
-              },
-            ],
-          },
-          {
-            heading: 'say vs tell',
-            body: '**tell** needs a **person object**: tell someone something. **say** does not take a person directly; if you mention the listener, use **say to someone**.',
-            examples: [
-              {
-                en: 'He told me he was busy.',
-                es: 'Me dijo que estaba ocupado.',
-              },
-              {
-                en: 'He said (that) he was busy.',
-                es: 'Dijo que estaba ocupado.',
+                en: '"I will call you." → He said he would call me.',
+                es: '"Te llamaré." → Dijo que me llamaría.',
               },
             ],
           },
           {
             heading: 'Reported questions',
-            body: 'Reported questions use **statement word order** (no inversion, no auxiliary do/does/did, no question mark). Use **if/whether** for yes/no questions and the **question word** for wh-questions.',
+            body: "In reported questions there is **no inversion and no auxiliary 'do'**, and word order is like a statement. Use **if/whether** for yes/no questions and keep the question word for wh-questions.",
+            bodyEs:
+              "En las preguntas indirectas no hay **inversión ni auxiliar 'do'**, y el orden es como en una afirmación. Usa **if/whether** para preguntas de sí/no y mantén la palabra interrogativa en las wh-questions.",
             examples: [
               {
                 en: '"Where do you live?" → She asked where I lived.',
-                es: '«¿Dónde vives?» → Me preguntó dónde vivía.',
+                es: '"¿Dónde vives?" → Me preguntó dónde vivía.',
               },
               {
                 en: '"Are you ready?" → He asked if I was ready.',
-                es: '«¿Estás listo?» → Preguntó si estaba listo.',
+                es: '"¿Estás listo?" → Me preguntó si estaba listo.',
+              },
+            ],
+          },
+          {
+            heading: 'Say vs tell',
+            body: "**Tell** needs a person object (tell someone something). **Say** does not take a personal object directly; we say 'say to someone'. Also change time and place words: now→then, today→that day, here→there.",
+            bodyEs:
+              "**Tell** necesita un objeto de persona (tell someone something). **Say** no lleva un objeto personal directo; decimos 'say to someone'. Cambia también palabras de tiempo y lugar: now→then, today→that day, here→there.",
+            examples: [
+              {
+                en: 'She told me she was leaving.',
+                es: 'Me dijo que se marchaba.',
+              },
+              {
+                en: 'She said (that) she was leaving.',
+                es: 'Dijo que se marchaba.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Tense backshift',
-            columns: ['Direct speech', 'Reported speech'],
+            caption: 'Common changes',
+            columns: ['Direct', 'Reported'],
             rows: [
-              ['present simple (work)', 'past simple (worked)'],
-              ['present continuous (am working)', 'past continuous (was working)'],
-              ['past simple (worked)', 'past perfect (had worked)'],
-              ['will / can / may', 'would / could / might'],
+              ['am/is/are', 'was/were'],
+              ['will', 'would'],
+              ['can', 'could'],
+              ['today', 'that day'],
+              ['tomorrow', 'the next day'],
             ],
           },
         ],
         examples: [
           {
-            en: 'She said she had already seen the film.',
-            es: 'Dijo que ya había visto la película.',
+            en: 'He said he had finished his homework.',
+            es: 'Dijo que había terminado los deberes.',
           },
           {
-            en: 'They told us they were leaving the next day.',
-            es: 'Nos dijeron que se iban al día siguiente.',
+            en: 'They told us they were moving abroad.',
+            es: 'Nos dijeron que se mudaban al extranjero.',
           },
           {
-            en: 'I asked him what time the shop opened.',
-            es: 'Le pregunté a qué hora abría la tienda.',
+            en: 'She asked me what time it was.',
+            es: 'Me preguntó qué hora era.',
           },
           {
-            en: 'He asked me whether I could help.',
-            es: 'Me preguntó si podía ayudar.',
+            en: 'I asked whether they wanted coffee.',
+            es: 'Pregunté si querían café.',
           },
           {
-            en: 'My boss told me not to be late.',
-            es: 'Mi jefe me dijo que no llegara tarde.',
+            en: 'He told me to wait outside.',
+            es: 'Me dijo que esperara fuera.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'He said me that he was tired.',
-            right: 'He told me that he was tired. / He said that he was tired.',
-            why: '**say** is not followed directly by a person; **tell** is.',
-            esNote: "'Tell + persona' (told me); 'say' sin persona directa.",
+            wrong: 'She said me that she was busy.',
+            right: 'She told me that she was busy.',
+            why: "Use 'tell' with a person object; 'say' does not take a personal object directly.",
+            esNote: "Con objeto de persona usa 'tell', no 'say'.",
           },
           {
-            wrong: 'She asked me where do I live.',
-            right: 'She asked me where I lived.',
-            why: "Reported questions use **statement word order** with no auxiliary 'do'.",
-            esNote: "En preguntas indirectas no se invierte ni se usa 'do'.",
+            wrong: 'He asked me where did I live.',
+            right: 'He asked me where I lived.',
+            why: "Reported questions use statement word order with no auxiliary 'do' and no inversion.",
+            esNote: "En preguntas indirectas no hay inversión ni 'do'.",
           },
           {
-            wrong: 'He told that he was busy.',
-            right: 'He said that he was busy. / He told me that he was busy.',
-            why: "**tell** must have a person object; without one, use 'say'.",
-            esNote: "'Tell' siempre lleva a alguien; si no, usa 'say'.",
+            wrong: 'She said that she will come tomorrow.',
+            right: 'She said that she would come the next day.',
+            why: "After a past reporting verb, 'will' becomes 'would' and 'tomorrow' becomes 'the next day'.",
+            esNote: 'Tras pasado: will→would y tomorrow→the next day.',
           },
         ],
         exercises: [
           {
-            kind: 'mcq',
-            id: 'b1-rs-1',
-            prompt: 'Choose the correct option: "She ___ me that she was leaving."',
-            options: ['said', 'told', 'asked', 'spoke'],
-            answer: 1,
-            explain: 'With a person object (me) use **told**.',
+            kind: 'cloze',
+            id: 'b1-rs-ex1',
+            before: '"I am hungry." She said she',
+            after: 'hungry.',
+            answers: ['was'],
+            hint: 'backshift',
+            explain: "Present 'am' shifts back to 'was'.",
           },
           {
-            kind: 'cloze',
-            id: 'b1-rs-2',
-            before: 'Direct: "I am studying." Reported: He said he',
-            after: 'studying.',
-            answers: ['was'],
-            hint: "backshift of 'am'",
-            explain: "Present continuous 'am studying' backshifts to 'was studying'.",
+            kind: 'mcq',
+            id: 'b1-rs-ex2',
+            prompt: 'Choose the correct reported question.',
+            options: [
+              'He asked where was the station.',
+              'He asked where the station was.',
+              'He asked where did the station was.',
+            ],
+            answer: 1,
+            explain: 'Statement word order with no inversion.',
           },
           {
             kind: 'correct',
-            id: 'b1-rs-3',
-            wrong: 'He asked me where did I work.',
-            answers: ['He asked me where I worked.', 'He asked where I worked.'],
-            explain: "Reported question = statement order, no 'did', and backshift work → worked.",
-          },
-          {
-            kind: 'order',
-            id: 'b1-rs-4',
-            tokens: ['She', 'asked', 'if', 'I', 'could', 'speak', 'French'],
-            answer: 'She asked if I could speak French',
-            explain: 'Yes/no reported question uses **if** + statement order.',
+            id: 'b1-rs-ex3',
+            wrong: 'She said me that the shop was closed.',
+            answers: [
+              'She told me that the shop was closed.',
+              'She told me the shop was closed.',
+              'She said that the shop was closed.',
+            ],
+            explain: "'Tell' takes a person object; 'say' does not.",
           },
           {
             kind: 'translate',
-            id: 'b1-rs-5',
-            es: 'Me dijo que llegaría tarde.',
+            id: 'b1-rs-ex4',
+            es: 'Me preguntó si quería ir.',
             answers: [
-              'He told me he would be late.',
-              'She told me she would be late.',
-              'He told me that he would be late.',
+              'She asked if I wanted to go.',
+              'He asked if I wanted to go.',
+              'She asked whether I wanted to go.',
+              'He asked whether I wanted to go.',
             ],
-            explain: "'Decir a alguien' → tell + person; 'llegaré' → would arrive/be.",
+            explain: "Reported yes/no question uses 'if/whether'.",
+          },
+          {
+            kind: 'order',
+            id: 'b1-rs-ex5',
+            tokens: ['They', 'told', 'us', 'they', 'would', 'arrive', 'late.'],
+            answer: 'They told us they would arrive late.',
+            explain: "'Tell + person', and 'will' becomes 'would'.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-rs-ex6',
+            before: '"Open the door." He told me',
+            after: 'the door.',
+            answers: ['to open'],
+            hint: 'reported command',
+            explain: "Reported commands use 'tell someone to + infinitive'.",
           },
           {
             kind: 'dictation',
-            id: 'b1-rs-6',
-            text: 'They told us they had finished the project.',
-            explain: "past simple 'finished' backshifts to past perfect 'had finished'.",
+            id: 'b1-rs-ex7',
+            text: 'She asked me what time the meeting would start.',
+            explain: "Reported wh-question with backshift of 'will' to 'would'.",
           },
         ],
       },
       {
         id: 'b1-passive-voice',
         level: 'B1',
-        title: 'The passive voice (simple tenses)',
+        title: 'Passive Voice',
         summary:
-          "Use be + past participle to focus on the action or the receiver rather than who does it. Add 'by' only when the doer matters.",
+          'Use the **passive voice** when the action is more important than who does it. Form it with the verb **be + past participle**. Add **by** to mention the agent only when it matters.',
+        summaryEs:
+          'Usa la **voz pasiva** cuando la acción es más importante que quién la hace. Se forma con el verbo **be + participio pasado**. Añade **by** para mencionar al agente solo cuando importa.',
         sections: [
           {
-            heading: 'Form and purpose',
-            body: 'Make the passive with **be (in the right tense) + past participle**. Use it when the **doer is unknown, obvious or unimportant**, or to keep the focus on the result. The object of the active sentence becomes the subject.',
+            heading: 'Form across simple tenses',
+            body: 'Keep the same tense in **be** and add the **past participle**: present simple (is made), past simple (was made), present perfect (has been made), future (will be made).',
+            bodyEs:
+              'Mantén el mismo tiempo en **be** y añade el **participio pasado**: presente simple (is made), pasado simple (was made), presente perfecto (has been made), futuro (will be made).',
             examples: [
               {
-                en: 'The bridge was built in 1890.',
-                es: 'El puente fue construido en 1890.',
+                en: 'The bridge was built in 1920.',
+                es: 'El puente fue construido en 1920.',
               },
               {
-                en: 'English is spoken all over the world.',
-                es: 'El inglés se habla en todo el mundo.',
+                en: 'These cars are made in Japan.',
+                es: 'Estos coches se fabrican en Japón.',
               },
             ],
           },
           {
-            heading: 'Across tenses',
-            body: 'Only **be** changes tense; the **past participle stays the same**. Present: is/are done. Past: was/were done. Present perfect: has/have been done. Future: will be done. Modal: can/must be done.',
+            heading: 'When to use the passive',
+            body: 'Use the passive when the **doer is unknown, obvious or unimportant**, or to sound more formal and objective. Mention the agent with **by** only when it adds information.',
+            bodyEs:
+              'Usa la pasiva cuando el **agente es desconocido, obvio o poco importante**, o para sonar más formal y objetivo. Menciona al agente con **by** solo cuando aporta información.',
             examples: [
               {
-                en: 'The report has been sent.',
-                es: 'El informe ha sido enviado.',
+                en: 'My wallet was stolen yesterday.',
+                es: 'Me robaron la cartera ayer.',
               },
               {
-                en: 'The work must be finished by Friday.',
-                es: 'El trabajo debe estar terminado para el viernes.',
+                en: 'The novel was written by a Spanish author.',
+                es: 'La novela fue escrita por un autor español.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Active to passive',
+            columns: ['Tense', 'Active', 'Passive'],
+            rows: [
+              ['present', 'They clean it.', 'It is cleaned.'],
+              ['past', 'They cleaned it.', 'It was cleaned.'],
+              ['present perfect', 'They have cleaned it.', 'It has been cleaned.'],
+              ['future', 'They will clean it.', 'It will be cleaned.'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'English is spoken all over the world.',
+            es: 'El inglés se habla en todo el mundo.',
+          },
+          {
+            en: 'The results will be announced tomorrow.',
+            es: 'Los resultados se anunciarán mañana.',
+          },
+          {
+            en: 'The room has been cleaned already.',
+            es: 'La habitación ya ha sido limpiada.',
+          },
+          {
+            en: 'The letters were sent last week.',
+            es: 'Las cartas se enviaron la semana pasada.',
+          },
+          {
+            en: 'This dish is served with rice.',
+            es: 'Este plato se sirve con arroz.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'The house was build in 1990.',
+            right: 'The house was built in 1990.',
+            why: 'The passive needs the past participle, not the base form.',
+            esNote: 'La pasiva lleva participio, no el infinitivo.',
+          },
+          {
+            wrong: 'My car stole last night.',
+            right: 'My car was stolen last night.',
+            why: "A passive subject that receives the action needs 'be + past participle'.",
+            esNote: "Falta el verbo 'be': 'was stolen'.",
+          },
+          {
+            wrong: 'The report is wrote by the manager.',
+            right: 'The report is written by the manager.',
+            why: "'Write' has the irregular past participle 'written'.",
+            esNote: "El participio de 'write' es 'written'.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'b1-pas-ex1',
+            before: 'The Mona Lisa',
+            after: 'by Leonardo da Vinci. (paint)',
+            answers: ['was painted'],
+            hint: 'past simple passive',
+            explain: 'Past passive: was/were + past participle.',
+          },
+          {
+            kind: 'mcq',
+            id: 'b1-pas-ex2',
+            prompt: 'Choose the present perfect passive.',
+            options: [
+              'The tickets have sold.',
+              'The tickets have been sold.',
+              'The tickets are sold by yesterday.',
+            ],
+            answer: 1,
+            explain: 'Present perfect passive: have/has been + past participle.',
+          },
+          {
+            kind: 'correct',
+            id: 'b1-pas-ex3',
+            wrong: 'These phones are make in China.',
+            answers: ['These phones are made in China.', 'These phones are manufactured in China.'],
+            explain: "Use the past participle 'made' in the passive.",
+          },
+          {
+            kind: 'translate',
+            id: 'b1-pas-ex4',
+            es: 'Los resultados se publicarán mañana.',
+            answers: [
+              'The results will be published tomorrow.',
+              'The results will be released tomorrow.',
+            ],
+            explain: 'Future passive: will be + past participle.',
+          },
+          {
+            kind: 'order',
+            id: 'b1-pas-ex5',
+            tokens: ['The', 'windows', 'are', 'cleaned', 'every', 'week.'],
+            answer: 'The windows are cleaned every week.',
+            explain: 'Present simple passive: are + past participle.',
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-pas-ex6',
+            before: 'The thief',
+            after: 'by the police last night. (catch)',
+            answers: ['was caught'],
+            hint: 'past passive, irregular verb',
+            explain: "Past passive of 'catch' is 'was caught'.",
+          },
+          {
+            kind: 'dictation',
+            id: 'b1-pas-ex7',
+            text: 'The new library will be opened next month.',
+            explain: "Future passive with 'will be + past participle'.",
+          },
+        ],
+      },
+      {
+        id: 'b1-relative-clauses',
+        level: 'B1',
+        title: 'Relative Clauses',
+        summary:
+          'Use **relative clauses** to give more information about a noun. **Defining** clauses identify which one we mean; **non-defining** clauses add extra information between commas.',
+        summaryEs:
+          'Usa las **oraciones de relativo** para dar más información sobre un sustantivo. Las **especificativas** identifican de cuál hablamos; las **explicativas** añaden información extra entre comas.',
+        sections: [
+          {
+            heading: 'Relative pronouns',
+            body: 'Use **who** for people, **which** for things, **that** for both (in defining clauses), **whose** for possession, and **where** for places. **When** refers to times.',
+            bodyEs:
+              'Usa **who** para personas, **which** para cosas, **that** para ambos (en especificativas), **whose** para posesión y **where** para lugares. **When** se refiere a momentos.',
+            examples: [
+              {
+                en: 'The man who lives next door is a doctor.',
+                es: 'El hombre que vive al lado es médico.',
+              },
+              {
+                en: "That's the town where I grew up.",
+                es: 'Ese es el pueblo donde crecí.',
               },
             ],
           },
           {
-            heading: "The agent with 'by'",
-            body: 'Mention the doer with **by + agent** only when it adds useful information. Often we leave it out.',
+            heading: 'Defining clauses',
+            body: 'A **defining** relative clause is essential: it tells us exactly which person or thing we mean, with **no commas**. You can use **that** instead of who/which, and the relative pronoun can be omitted when it is the object.',
+            bodyEs:
+              'Una oración de relativo **especificativa** es esencial: nos dice exactamente de qué persona o cosa hablamos, **sin comas**. Puedes usar **that** en lugar de who/which, y el pronombre relativo puede omitirse cuando es objeto.',
             examples: [
               {
-                en: 'Romeo and Juliet was written by Shakespeare.',
-                es: 'Romeo y Julieta fue escrita por Shakespeare.',
+                en: 'The book (that) I bought was cheap.',
+                es: 'El libro que compré era barato.',
               },
               {
-                en: 'My car was stolen last night.',
-                es: 'Anoche me robaron el coche.',
+                en: "She's the teacher who helped me.",
+                es: 'Es la profesora que me ayudó.',
+              },
+            ],
+          },
+          {
+            heading: 'Non-defining clauses',
+            body: 'A **non-defining** clause adds extra, non-essential information, always between **commas**. Do not use **that** here, and never omit the pronoun.',
+            bodyEs:
+              'Una oración **explicativa** añade información extra, no esencial, siempre entre **comas**. Aquí no se usa **that**, y nunca se omite el pronombre.',
+            examples: [
+              {
+                en: 'My brother, who lives in Paris, is a chef.',
+                es: 'Mi hermano, que vive en París, es chef.',
+              },
+              {
+                en: 'The hotel, which was very old, had no lift.',
+                es: 'El hotel, que era muy viejo, no tenía ascensor.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Defining vs non-defining',
+            columns: ['Feature', 'Defining', 'Non-defining'],
+            rows: [
+              ['commas', 'no', 'yes'],
+              ['that allowed', 'yes', 'no'],
+              ['omit pronoun (object)', 'yes', 'no'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'This is the phone that I told you about.',
+            es: 'Este es el teléfono del que te hablé.',
+          },
+          {
+            en: 'People who exercise tend to feel better.',
+            es: 'Las personas que hacen ejercicio suelen sentirse mejor.',
+          },
+          {
+            en: 'Mr Smith, whose car was stolen, called the police.',
+            es: 'El Sr. Smith, cuyo coche fue robado, llamó a la policía.',
+          },
+          {
+            en: 'The day when we met was rainy.',
+            es: 'El día en que nos conocimos llovía.',
+          },
+          {
+            en: 'Paris, which is the capital of France, is beautiful.',
+            es: 'París, que es la capital de Francia, es preciosa.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'The woman which lives upstairs is friendly.',
+            right: 'The woman who lives upstairs is friendly.',
+            why: "Use 'who' (or 'that') for people, not 'which'.",
+            esNote: "Para personas usa 'who', no 'which'.",
+          },
+          {
+            wrong: 'My mother, that is a nurse, works nights.',
+            right: 'My mother, who is a nurse, works nights.',
+            why: "In non-defining clauses you cannot use 'that'; use who/which.",
+            esNote: "En explicativas no se usa 'that'.",
+          },
+          {
+            wrong: 'The house where I live in is small.',
+            right: 'The house where I live is small.',
+            why: "'Where' already means 'in which', so do not add 'in' at the end.",
+            esNote: "'Where' ya incluye 'in', no repitas la preposición.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'b1-rel-ex1',
+            before: "That's the girl",
+            after: 'won the competition. (relative pronoun)',
+            answers: ['who', 'that'],
+            hint: 'person, subject',
+            explain: "Use 'who' or 'that' for people in a defining clause.",
+          },
+          {
+            kind: 'mcq',
+            id: 'b1-rel-ex2',
+            prompt: 'Choose the correct non-defining clause.',
+            options: [
+              'My car, that is red, is fast.',
+              'My car, which is red, is fast.',
+              'My car which is red is fast.',
+            ],
+            answer: 1,
+            explain: "Non-defining clauses use 'which' with commas, not 'that'.",
+          },
+          {
+            kind: 'correct',
+            id: 'b1-rel-ex3',
+            wrong: 'The film what I watched was boring.',
+            answers: [
+              'The film that I watched was boring.',
+              'The film which I watched was boring.',
+              'The film I watched was boring.',
+            ],
+            explain: "'What' is not a relative pronoun here; use that/which or omit it.",
+          },
+          {
+            kind: 'translate',
+            id: 'b1-rel-ex4',
+            es: 'Esta es la casa donde nací.',
+            answers: ['This is the house where I was born.', 'This is the house I was born in.'],
+            explain: "'Where' refers to a place in a relative clause.",
+          },
+          {
+            kind: 'order',
+            id: 'b1-rel-ex5',
+            tokens: ['The', 'man', 'whose', 'dog', 'barks', 'lives', 'next', 'door.'],
+            answer: 'The man whose dog barks lives next door.',
+            explain: "'Whose' shows possession in a relative clause.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-rel-ex6',
+            before: 'Venice,',
+            after: 'is full of canals, is in Italy.',
+            answers: ['which'],
+            hint: 'non-defining, thing',
+            explain: "Non-defining clause about a thing uses 'which'.",
+          },
+          {
+            kind: 'dictation',
+            id: 'b1-rel-ex7',
+            text: 'The restaurant where we had dinner was fully booked.',
+            explain: "Defining relative clause with 'where' for a place.",
+          },
+        ],
+      },
+      {
+        id: 'b1-modals-deduction',
+        level: 'B1',
+        title: 'Modals of Deduction',
+        summary:
+          "Use **modals of deduction** to say how certain you are about something. **Must** shows you are sure it is true, **can't** that it is impossible, and **might/may/could** that it is possible.",
+        summaryEs:
+          "Usa los **modales de deducción** para decir cómo de seguro estás de algo. **Must** muestra que estás seguro de que es verdad, **can't** que es imposible, y **might/may/could** que es posible.",
+        sections: [
+          {
+            heading: 'Present deduction',
+            body: "Use **must + infinitive** when you are sure something is true, **can't + infinitive** when you are sure it is false, and **might/may/could + infinitive** when it is possible.",
+            bodyEs:
+              "Usa **must + infinitivo** cuando estás seguro de que algo es verdad, **can't + infinitivo** cuando estás seguro de que es falso, y **might/may/could + infinitivo** cuando es posible.",
+            examples: [
+              {
+                en: 'She must be tired after that long flight.',
+                es: 'Debe de estar cansada tras ese vuelo tan largo.',
+              },
+              {
+                en: "That can't be John; he's in Spain.",
+                es: 'Ese no puede ser John; está en España.',
+              },
+            ],
+          },
+          {
+            heading: 'Past deduction',
+            body: "For the past, use **must have + past participle** (sure it happened), **can't have + past participle** (sure it didn't), and **might/may/could have + past participle** (possible).",
+            bodyEs:
+              "Para el pasado, usa **must have + participio pasado** (seguro que ocurrió), **can't have + participio pasado** (seguro que no), y **might/may/could have + participio pasado** (posible).",
+            examples: [
+              {
+                en: 'He must have left already; his coat is gone.',
+                es: 'Debe de haberse ido ya; su abrigo no está.',
+              },
+              {
+                en: 'They might have missed the train.',
+                es: 'Puede que hayan perdido el tren.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Certainty with modals',
+            columns: ['Meaning', 'Present', 'Past'],
+            rows: [
+              ['sure - yes', 'must be', 'must have been'],
+              ['possible', 'might/may/could be', 'might/may/could have been'],
+              ['sure - no', "can't be", "can't have been"],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'You must be joking!',
+            es: '¡Debes de estar bromeando!',
+          },
+          {
+            en: 'The lights are off; they must be asleep.',
+            es: 'Las luces están apagadas; deben de estar dormidos.',
+          },
+          {
+            en: "She can't be at home; her car isn't here.",
+            es: 'No puede estar en casa; su coche no está aquí.',
+          },
+          {
+            en: 'It might be raining outside.',
+            es: 'Puede que esté lloviendo fuera.',
+          },
+          {
+            en: 'Someone must have taken my umbrella.',
+            es: 'Alguien debe de haberse llevado mi paraguas.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'He must to be at work.',
+            right: 'He must be at work.',
+            why: "Modal verbs are followed by a bare infinitive without 'to'.",
+            esNote: "Tras un modal va el infinitivo sin 'to'.",
+          },
+          {
+            wrong: "She mustn't be the manager; she's too young.",
+            right: "She can't be the manager; she's too young.",
+            why: "For a confident negative deduction use 'can't', not 'mustn't' (which means prohibition).",
+            esNote: "Para deducción negativa segura usa 'can't', no 'mustn't'.",
+          },
+          {
+            wrong: 'They must left early.',
+            right: 'They must have left early.',
+            why: "Past deduction needs 'have + past participle' after the modal.",
+            esNote: "Para el pasado: 'must have + participio'.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'b1-mod-ex1',
+            before: 'The ground is wet. It',
+            after: 'have rained last night. (sure - yes)',
+            answers: ['must'],
+            hint: 'certain positive deduction',
+            explain: "Strong certainty about the past uses 'must have'.",
+          },
+          {
+            kind: 'mcq',
+            id: 'b1-mod-ex2',
+            prompt: 'He never answers. He ___ be very busy.',
+            options: ["can't", 'must', "mustn't"],
+            answer: 1,
+            explain: "'Must' expresses a confident positive deduction.",
+          },
+          {
+            kind: 'correct',
+            id: 'b1-mod-ex3',
+            wrong: "That can't to be true.",
+            answers: ["That can't be true.", 'That cannot be true.'],
+            explain: "After a modal use the bare infinitive without 'to'.",
+          },
+          {
+            kind: 'translate',
+            id: 'b1-mod-ex4',
+            es: 'Puede que se haya olvidado.',
+            answers: [
+              'He might have forgotten.',
+              'She might have forgotten.',
+              'He may have forgotten.',
+              'She may have forgotten.',
+              'He could have forgotten.',
+              'She could have forgotten.',
+            ],
+            explain: 'Possibility in the past uses might/may/could have + past participle.',
+          },
+          {
+            kind: 'order',
+            id: 'b1-mod-ex5',
+            tokens: ['She', "can't", 'be', 'hungry;', 'she', 'just', 'ate.'],
+            answer: "She can't be hungry; she just ate.",
+            explain: "'Can't' shows a confident negative deduction.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-mod-ex6',
+            before: "I'm not sure where she is. She",
+            after: 'be at the gym. (possible)',
+            answers: ['might', 'may', 'could'],
+            hint: 'possibility',
+            explain: 'Possibility is expressed with might/may/could.',
+          },
+          {
+            kind: 'dictation',
+            id: 'b1-mod-ex7',
+            text: 'You must have been very proud of your team.',
+            explain: "Past deduction with 'must have been'.",
+          },
+        ],
+      },
+      {
+        id: 'b1-connectors',
+        level: 'B1',
+        title: 'Connectors of Contrast & Purpose',
+        summary:
+          'Use **connectors** to link ideas. **Although, though** and **even though** join contrasting clauses; **however** links sentences; **despite/in spite of** take a noun or -ing; and **in order to / so that** show purpose.',
+        summaryEs:
+          'Usa los **conectores** para enlazar ideas. **Although, though** y **even though** unen cláusulas contrastantes; **however** une oraciones; **despite/in spite of** llevan sustantivo o -ing; e **in order to / so that** expresan propósito.',
+        sections: [
+          {
+            heading: 'Contrast with clauses',
+            body: "**Although / even though / though** are followed by a **subject + verb**. They introduce a surprising contrast. 'Even though' is stronger than 'although'.",
+            bodyEs:
+              "**Although / even though / though** van seguidos de **sujeto + verbo**. Introducen un contraste sorprendente. 'Even though' es más fuerte que 'although'.",
+            examples: [
+              {
+                en: 'Although it was cold, we went out.',
+                es: 'Aunque hacía frío, salimos.',
+              },
+              {
+                en: "He passed even though he hadn't studied.",
+                es: 'Aprobó aunque no había estudiado.',
+              },
+            ],
+          },
+          {
+            heading: 'Despite, in spite of, however',
+            body: '**Despite** and **in spite of** are followed by a **noun or -ing**, not a full clause. **However** connects two sentences and is followed by a comma.',
+            bodyEs:
+              '**Despite** y **in spite of** van seguidos de un **sustantivo o -ing**, no de una cláusula completa. **However** conecta dos oraciones y va seguido de coma.',
+            examples: [
+              {
+                en: 'Despite the rain, we enjoyed the trip.',
+                es: 'A pesar de la lluvia, disfrutamos del viaje.',
+              },
+              {
+                en: 'The plan was risky. However, it worked.',
+                es: 'El plan era arriesgado. Sin embargo, funcionó.',
+              },
+            ],
+          },
+          {
+            heading: 'Purpose',
+            body: 'Use **in order to / to + infinitive** to express purpose with the same subject. Use **so that + clause** when the subject changes or a modal is needed.',
+            bodyEs:
+              'Usa **in order to / to + infinitivo** para expresar propósito con el mismo sujeto. Usa **so that + cláusula** cuando cambia el sujeto o se necesita un modal.',
+            examples: [
+              {
+                en: 'I went home early in order to rest.',
+                es: 'Me fui a casa temprano para descansar.',
+              },
+              {
+                en: 'I spoke slowly so that everyone could understand.',
+                es: 'Hablé despacio para que todos pudieran entender.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'What follows each connector',
+            columns: ['Connector', 'Followed by', 'Example'],
+            rows: [
+              ['although / even though', 'subject + verb', 'although it rained'],
+              ['despite / in spite of', 'noun or -ing', 'despite the rain'],
+              ['however', 'comma + sentence', 'However, we stayed.'],
+              ['in order to', 'infinitive', 'in order to win'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'Even though she was nervous, she gave a great talk.',
+            es: 'Aunque estaba nerviosa, dio una gran charla.',
+          },
+          {
+            en: 'In spite of being tired, he finished the race.',
+            es: 'A pesar de estar cansado, terminó la carrera.',
+          },
+          {
+            en: 'The food was great. However, it was expensive.',
+            es: 'La comida estaba buenísima. Sin embargo, era cara.',
+          },
+          {
+            en: 'She studies hard in order to get a scholarship.',
+            es: 'Estudia mucho para conseguir una beca.',
+          },
+          {
+            en: "We left early so that we wouldn't miss the flight.",
+            es: 'Salimos temprano para no perder el vuelo.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'Despite it was raining, we went out.',
+            right: 'Despite the rain, we went out.',
+            why: "'Despite' is followed by a noun or -ing, not a subject + verb.",
+            esNote: "'Despite' lleva sustantivo o -ing, no sujeto + verbo.",
+          },
+          {
+            wrong: 'Although of the traffic, we arrived on time.',
+            right: 'Despite the traffic, we arrived on time.',
+            why: "'Although' needs a clause; use 'despite/in spite of' before a noun.",
+            esNote: "Antes de un sustantivo usa 'despite', no 'although of'.",
+          },
+          {
+            wrong: 'I called her for to invite her.',
+            right: 'I called her to invite her.',
+            why: "Purpose with the same subject uses 'to + infinitive', never 'for to'.",
+            esNote: "El propósito se expresa con 'to + infinitivo', no 'for to'.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'b1-con-ex1',
+            before: '',
+            after: 'the bad weather, the match continued. (noun-linker)',
+            answers: ['Despite', 'In spite of'],
+            hint: 'before a noun',
+            explain: "Use 'despite' or 'in spite of' before a noun phrase.",
+          },
+          {
+            kind: 'mcq',
+            id: 'b1-con-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'Although tired, but he kept working.',
+              'Although he was tired, he kept working.',
+              'Despite he was tired, he kept working.',
+            ],
+            answer: 1,
+            explain: "'Although' is followed by a subject + verb and needs no 'but'.",
+          },
+          {
+            kind: 'correct',
+            id: 'b1-con-ex3',
+            wrong: 'In spite of it was late, we kept talking.',
+            answers: [
+              'In spite of the late hour, we kept talking.',
+              'Although it was late, we kept talking.',
+              'In spite of it being late, we kept talking.',
+            ],
+            explain: "'In spite of' takes a noun or -ing, not a clause.",
+          },
+          {
+            kind: 'translate',
+            id: 'b1-con-ex4',
+            es: 'Estudio mucho para aprobar el examen.',
+            answers: ['I study hard to pass the exam.', 'I study hard in order to pass the exam.'],
+            explain: "Purpose with the same subject uses 'to / in order to + infinitive'.",
+          },
+          {
+            kind: 'order',
+            id: 'b1-con-ex5',
+            tokens: [
+              'We',
+              'spoke',
+              'quietly',
+              'so',
+              'that',
+              'the',
+              'baby',
+              "wouldn't",
+              'wake',
+              'up.',
+            ],
+            answer: "We spoke quietly so that the baby wouldn't wake up.",
+            explain: "'So that + clause' shows purpose with a change of subject.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-con-ex6',
+            before: 'The hotel was lovely.',
+            after: ', it was far from the centre.',
+            answers: ['However'],
+            hint: 'contrast between two sentences',
+            explain: "'However' links two sentences and is followed by a comma.",
+          },
+          {
+            kind: 'dictation',
+            id: 'b1-con-ex7',
+            text: 'Even though we left late, we still arrived on time.',
+            explain: "'Even though + clause' for strong contrast.",
+          },
+        ],
+      },
+      {
+        id: 'b1-adjectives-gerunds-prepositions',
+        level: 'B1',
+        title: '-ed/-ing Adjectives, Gerunds & Prepositions',
+        summary:
+          'Choose **-ed** adjectives for feelings and **-ing** adjectives for the cause. Learn which verbs take a **gerund** or **infinitive**, including verbs that change meaning, and the **dependent prepositions** that go with common words.',
+        summaryEs:
+          'Elige adjetivos en **-ed** para sentimientos y en **-ing** para la causa. Aprende qué verbos llevan **gerundio** o **infinitivo**, incluidos los que cambian de significado, y las **preposiciones dependientes** que acompañan a palabras comunes.',
+        sections: [
+          {
+            heading: '-ed vs -ing adjectives',
+            body: 'Use **-ed adjectives** (bored, tired, interested) to describe how a person feels. Use **-ing adjectives** (boring, tiring, interesting) to describe the thing that causes the feeling.',
+            bodyEs:
+              'Usa los **adjetivos en -ed** (bored, tired, interested) para describir cómo se siente una persona. Usa los **adjetivos en -ing** (boring, tiring, interesting) para describir la cosa que causa el sentimiento.',
+            examples: [
+              {
+                en: "I'm bored. This film is boring.",
+                es: 'Estoy aburrido. Esta película es aburrida.',
+              },
+              {
+                en: 'She was surprised by the surprising result.',
+                es: 'Estaba sorprendida por el sorprendente resultado.',
+              },
+            ],
+          },
+          {
+            heading: 'Gerunds and infinitives',
+            body: 'Some verbs take the **gerund** (enjoy, finish, avoid) and others the **infinitive** (want, decide, hope). After **prepositions** always use the **-ing form**.',
+            bodyEs:
+              'Algunos verbos llevan **gerundio** (enjoy, finish, avoid) y otros **infinitivo** (want, decide, hope). Tras las **preposiciones** se usa siempre la **forma -ing**.',
+            examples: [
+              {
+                en: 'I enjoy cooking but I want to travel more.',
+                es: 'Disfruto cocinando pero quiero viajar más.',
+              },
+              {
+                en: "She's good at drawing.",
+                es: 'Se le da bien dibujar.',
+              },
+            ],
+          },
+          {
+            heading: 'Verbs that change meaning',
+            body: 'Some verbs change meaning. **Remember/forget/stop** + gerund refers to the past; + infinitive refers to a duty or next step. **Try + -ing** means experiment; **try + to** means make an effort.',
+            bodyEs:
+              'Algunos verbos cambian de significado. **Remember/forget/stop** + gerundio se refiere al pasado; + infinitivo a una obligación o paso siguiente. **Try + -ing** significa experimentar; **try + to** significa esforzarse.',
+            examples: [
+              {
+                en: 'I stopped smoking. / I stopped to smoke.',
+                es: 'Dejé de fumar. / Me detuve para fumar.',
+              },
+              {
+                en: 'Remember to lock the door.',
+                es: 'Acuérdate de cerrar la puerta con llave.',
+              },
+            ],
+          },
+          {
+            heading: 'Dependent prepositions',
+            body: 'Many adjectives and verbs are followed by a fixed **preposition**: interested **in**, good **at**, afraid **of**, depend **on**, listen **to**, wait **for**. Learn them as whole phrases.',
+            bodyEs:
+              'Muchos adjetivos y verbos van seguidos de una **preposición** fija: interested **in**, good **at**, afraid **of**, depend **on**, listen **to**, wait **for**. Apréndelos como frases completas.',
+            examples: [
+              {
+                en: "I'm interested in history.",
+                es: 'Me interesa la historia.',
+              },
+              {
+                en: 'It depends on the weather.',
+                es: 'Depende del tiempo.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Common dependent prepositions',
+            columns: ['Word', 'Preposition', 'Example'],
+            rows: [
+              ['interested', 'in', 'interested in art'],
+              ['good', 'at', 'good at maths'],
+              ['afraid', 'of', 'afraid of dogs'],
+              ['depend', 'on', 'depend on you'],
+              ['worried', 'about', 'worried about money'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'The lesson was confusing, so we were confused.',
+            es: 'La lección era confusa, así que estábamos confundidos.',
+          },
+          {
+            en: 'He avoided answering the question.',
+            es: 'Evitó responder a la pregunta.',
+          },
+          {
+            en: 'We decided to stay one more night.',
+            es: 'Decidimos quedarnos una noche más.',
+          },
+          {
+            en: 'Thank you for helping me.',
+            es: 'Gracias por ayudarme.',
+          },
+          {
+            en: "She's afraid of flying.",
+            es: 'Tiene miedo de volar.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'I am very boring in this class.',
+            right: 'I am very bored in this class.',
+            why: "Use the -ed adjective for the feeling; 'boring' describes the cause.",
+            esNote: "Para el sentimiento usa '-ed' (bored), no '-ing'.",
+          },
+          {
+            wrong: 'She is good in cooking.',
+            right: 'She is good at cooking.',
+            why: "The fixed preposition after 'good' is 'at', not 'in'.",
+            esNote: "Es 'good at', no 'good in'.",
+          },
+          {
+            wrong: "I'm interested in learn languages.",
+            right: "I'm interested in learning languages.",
+            why: 'After a preposition use the -ing form, not the infinitive.',
+            esNote: 'Tras preposición va el verbo en -ing.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'b1-adj-ex1',
+            before: 'The trip was long and we were all',
+            after: '. (tire)',
+            answers: ['tired'],
+            hint: 'feeling',
+            explain: 'Use the -ed adjective for how people feel.',
+          },
+          {
+            kind: 'mcq',
+            id: 'b1-adj-ex2',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              "I'm good in playing chess.",
+              "I'm good at playing chess.",
+              "I'm good for playing chess.",
+            ],
+            answer: 1,
+            explain: "'Good at + -ing' is the fixed structure.",
+          },
+          {
+            kind: 'correct',
+            id: 'b1-adj-ex3',
+            wrong: 'The documentary was very interested.',
+            answers: [
+              'The documentary was very interesting.',
+              'The documentary was really interesting.',
+            ],
+            explain: 'The thing that causes interest takes the -ing adjective.',
+          },
+          {
+            kind: 'translate',
+            id: 'b1-adj-ex4',
+            es: 'Gracias por venir.',
+            answers: ['Thank you for coming.', 'Thanks for coming.'],
+            explain: "After the preposition 'for', use the -ing form.",
+          },
+          {
+            kind: 'order',
+            id: 'b1-adj-ex5',
+            tokens: ["Don't", 'forget', 'to', 'call', 'your', 'mother.'],
+            answer: "Don't forget to call your mother.",
+            explain: "'Forget to + infinitive' refers to a duty in the future.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-adj-ex6',
+            before: "She's really interested",
+            after: 'learning to paint.',
+            answers: ['in'],
+            hint: 'dependent preposition',
+            explain: "'Interested in' is the fixed combination, followed by -ing.",
+          },
+          {
+            kind: 'dictation',
+            id: 'b1-adj-ex7',
+            text: 'I stopped drinking coffee because it made me nervous.',
+            explain: "'Stop + -ing' means to quit a past habit.",
+          },
+        ],
+      },
+      {
+        id: 'b1-indirect-questions-determiners',
+        level: 'B1',
+        title: 'Indirect Questions & Determiners',
+        summary:
+          'Use **indirect questions** to sound more polite, with statement word order. Use **determiners** like another, the other, both, either and neither to talk precisely about quantity and choice.',
+        summaryEs:
+          'Usa las **preguntas indirectas** para sonar más educado, con orden de afirmación. Usa **determinantes** como another, the other, both, either y neither para hablar con precisión sobre cantidad y elección.',
+        sections: [
+          {
+            heading: 'Indirect questions',
+            body: "Begin with a polite phrase like **Could you tell me...** or **Do you know...**. After it, use **statement word order** with no auxiliary 'do' and no inversion. Use **if/whether** for yes/no questions.",
+            bodyEs:
+              "Empieza con una frase educada como **Could you tell me...** o **Do you know...**. Después, usa el **orden de afirmación** sin auxiliar 'do' ni inversión. Usa **if/whether** para preguntas de sí/no.",
+            examples: [
+              {
+                en: 'Could you tell me where the station is?',
+                es: '¿Podría decirme dónde está la estación?',
+              },
+              {
+                en: 'Do you know if the shop is open?',
+                es: '¿Sabe si la tienda está abierta?',
+              },
+            ],
+          },
+          {
+            heading: 'another / the other / others',
+            body: "**Another** means 'one more' or 'a different one' (singular). **The other** means the specific remaining one. **Others / the others** are plural. Use **the other** when only two options remain.",
+            bodyEs:
+              "**Another** significa 'uno más' o 'uno diferente' (singular). **The other** significa el restante concreto. **Others / the others** son plurales. Usa **the other** cuando solo quedan dos opciones.",
+            examples: [
+              {
+                en: 'Would you like another coffee?',
+                es: '¿Quieres otro café?',
+              },
+              {
+                en: "One shoe is here; where's the other one?",
+                es: 'Un zapato está aquí; ¿dónde está el otro?',
+              },
+            ],
+          },
+          {
+            heading: 'both / either / neither',
+            body: '**Both** means the two together (+ plural verb). **Either** means one or the other (+ singular). **Neither** means not one and not the other (+ singular, already negative).',
+            bodyEs:
+              '**Both** significa los dos juntos (+ verbo plural). **Either** significa uno u otro (+ singular). **Neither** significa ni uno ni otro (+ singular, ya negativo).',
+            examples: [
+              {
+                en: 'Both restaurants are good.',
+                es: 'Ambos restaurantes son buenos.',
+              },
+              {
+                en: 'Neither answer is correct.',
+                es: 'Ninguna de las dos respuestas es correcta.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Choice determiners',
+            columns: ['Word', 'Meaning', 'Verb'],
+            rows: [
+              ['both', 'the two', 'plural'],
+              ['either', 'one or the other', 'singular'],
+              ['neither', 'not one, not the other', 'singular'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'Can you tell me what time it is?',
+            es: '¿Puede decirme qué hora es?',
+          },
+          {
+            en: "I don't know where she lives.",
+            es: 'No sé dónde vive.',
+          },
+          {
+            en: "I'll have another slice of cake.",
+            es: 'Tomaré otra porción de pastel.',
+          },
+          {
+            en: 'Some people walked; others took the bus.',
+            es: 'Algunos caminaron; otros tomaron el autobús.',
+          },
+          {
+            en: 'Either day works for me.',
+            es: 'Cualquiera de los dos días me viene bien.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'Could you tell me where is the bank?',
+            right: 'Could you tell me where the bank is?',
+            why: 'Indirect questions use statement word order, so the verb does not come before the subject.',
+            esNote: "En preguntas indirectas no se invierte: 'where the bank is'.",
+          },
+          {
+            wrong: 'I want other coffee.',
+            right: 'I want another coffee.',
+            why: "'Another' (one word) is used with singular countable nouns to mean 'one more'.",
+            esNote: "'Another' es una sola palabra con sustantivo singular.",
+          },
+          {
+            wrong: 'Neither restaurants are open.',
+            right: 'Neither restaurant is open.',
+            why: "'Neither' takes a singular noun and a singular verb.",
+            esNote: "'Neither' lleva sustantivo y verbo en singular.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'b1-iqd-ex1',
+            before: 'Do you know what time the film',
+            after: '? (start)',
+            answers: ['starts'],
+            hint: 'statement word order',
+            explain: "Indirect question keeps statement order: subject + verb, no 'does'.",
+          },
+          {
+            kind: 'mcq',
+            id: 'b1-iqd-ex2',
+            prompt: 'Choose the correct indirect question.',
+            options: [
+              'Can you tell me where does she work?',
+              'Can you tell me where she works?',
+              'Can you tell me where works she?',
+            ],
+            answer: 1,
+            explain: "Use statement word order with no auxiliary 'do'.",
+          },
+          {
+            kind: 'correct',
+            id: 'b1-iqd-ex3',
+            wrong: 'Both of the answer is wrong.',
+            answers: ['Both answers are wrong.', 'Both of the answers are wrong.'],
+            explain: "'Both' takes a plural noun and a plural verb.",
+          },
+          {
+            kind: 'translate',
+            id: 'b1-iqd-ex4',
+            es: '¿Sabes si está abierto?',
+            answers: [
+              'Do you know if it is open?',
+              "Do you know if it's open?",
+              'Do you know whether it is open?',
+            ],
+            explain: "Indirect yes/no question uses 'if/whether' with statement order.",
+          },
+          {
+            kind: 'order',
+            id: 'b1-iqd-ex5',
+            tokens: ["I'd", 'like', 'another', 'cup', 'of', 'tea,', 'please.'],
+            answer: "I'd like another cup of tea, please.",
+            explain: "'Another + singular noun' means one more.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b1-iqd-ex6',
+            before: 'I tried two shirts, but',
+            after: 'one fitted me. (not one and not the other)',
+            answers: ['neither'],
+            hint: 'negative of two',
+            explain: "'Neither' means not one and not the other.",
+          },
+          {
+            kind: 'dictation',
+            id: 'b1-iqd-ex7',
+            text: 'Could you tell me whether this train goes to the airport?',
+            explain: "Polite indirect question with 'whether' and statement order.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    level: 'B2',
+    title: 'B2 · Grammar in Depth',
+    blurb: 'Master the advanced structures that make English sound natural, precise and fluent.',
+    lessons: [
+      {
+        id: 'b2-narrative-tenses',
+        level: 'B2',
+        title: 'Narrative Tenses',
+        summary:
+          'Narrative tenses let you tell stories clearly by showing which actions happened first, which were in progress, and which form the background. Use the past simple for the main completed events, the past continuous for actions already in progress, the past perfect for earlier events, and the past perfect continuous to stress the duration of an earlier activity.',
+        summaryEs:
+          'Los tiempos narrativos te permiten contar historias con claridad mostrando qué acciones ocurrieron primero, cuáles estaban en curso y cuáles son el fondo. Usa el pasado simple para los eventos principales ya terminados, el pasado continuo para acciones que ya estaban en curso, el pasado perfecto para eventos anteriores y el pasado perfecto continuo para resaltar la duración de una actividad anterior.',
+        sections: [
+          {
+            heading: 'Main events and the background',
+            body: 'Use the **past simple** for completed actions that move the story forward, one after another. Use the **past continuous** (was/were + -ing) for a longer action already in progress when a shorter action interrupted it, or to set the scene. The interrupting action goes in the **past simple**.',
+            bodyEs:
+              'Usa el **pasado simple** para acciones terminadas que hacen avanzar la historia, una tras otra. Usa el **pasado continuo** (was/were + -ing) para una acción más larga que ya estaba en curso cuando una acción más breve la interrumpió, o para ambientar la escena. La acción que interrumpe va en **pasado simple**.',
+            examples: [
+              {
+                en: 'I was walking home when it started to rain.',
+                es: 'Iba caminando a casa cuando empezó a llover.',
+              },
+              {
+                en: 'The sun was shining and the birds were singing.',
+                es: 'El sol brillaba y los pájaros cantaban.',
+              },
+            ],
+          },
+          {
+            heading: 'Going further back: past perfect',
+            body: "To refer to something that happened **before** another past moment, use the **past perfect** (had + past participle). It makes the order of events clear even when you mention them out of sequence. Compare: 'When I arrived, the film started' (I saw it begin) vs 'When I arrived, the film had started' (it began earlier).",
+            bodyEs:
+              "Para referirte a algo que ocurrió **antes** de otro momento pasado, usa el **pasado perfecto** (had + participio). Deja claro el orden de los eventos aunque los menciones sin seguir la secuencia. Compara: 'When I arrived, the film started' (lo vi empezar) frente a 'When I arrived, the film had started' (había empezado antes).",
+            examples: [
+              {
+                en: 'She had already left when I called.',
+                es: 'Ya se había ido cuando llamé.',
+              },
+              {
+                en: "We couldn't get in because we had forgotten the keys.",
+                es: 'No pudimos entrar porque habíamos olvidado las llaves.',
+              },
+            ],
+          },
+          {
+            heading: 'Past perfect continuous',
+            body: "Use the **past perfect continuous** (had been + -ing) to emphasise the **duration** of an activity that continued up to a point in the past, often to explain a visible result. 'My eyes were red because I had been crying.' It focuses on the ongoing process rather than the completed result.",
+            bodyEs:
+              "Usa el **pasado perfecto continuo** (had been + -ing) para resaltar la **duración** de una actividad que continuó hasta un punto en el pasado, a menudo para explicar un resultado visible. 'My eyes were red because I had been crying.' Se centra en el proceso en curso más que en el resultado terminado.",
+            examples: [
+              {
+                en: 'The ground was wet because it had been raining all night.',
+                es: 'El suelo estaba mojado porque había estado lloviendo toda la noche.',
+              },
+              {
+                en: 'He was tired because he had been working since dawn.',
+                es: 'Estaba cansado porque había estado trabajando desde el amanecer.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'The four narrative tenses',
+            columns: ['Tense', 'Form', 'Use'],
+            rows: [
+              ['Past simple', 'worked / went', 'Main completed events'],
+              ['Past continuous', 'was/were working', 'Action in progress, background'],
+              ['Past perfect', 'had worked', 'Earlier completed event'],
+              ['Past perfect continuous', 'had been working', 'Duration of earlier activity'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'When the alarm went off, everyone was sleeping.',
+            es: 'Cuando sonó la alarma, todos estaban durmiendo.',
+          },
+          {
+            en: 'By the time the police arrived, the thief had escaped.',
+            es: 'Para cuando llegó la policía, el ladrón había escapado.',
+          },
+          {
+            en: 'She was exhausted because she had been studying for hours.',
+            es: 'Estaba agotada porque había estado estudiando durante horas.',
+          },
+          {
+            en: 'I recognised him at once: I had met him before.',
+            es: 'Lo reconocí enseguida: lo había conocido antes.',
+          },
+          {
+            en: 'While we were having dinner, the lights suddenly went out.',
+            es: 'Mientras cenábamos, las luces se apagaron de repente.',
+          },
+          {
+            en: 'They had been driving for six hours before they stopped to rest.',
+            es: 'Habían estado conduciendo seis horas antes de parar a descansar.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'When I arrived, she left.',
+            right: 'When I arrived, she had left.',
+            why: 'If she left before you arrived, the earlier action needs the past perfect to show the sequence.',
+            esNote: "Usa 'had + participio' para lo que pasó antes.",
+          },
+          {
+            wrong: 'I was knowing the answer immediately.',
+            right: 'I knew the answer immediately.',
+            why: "Stative verbs like 'know', 'understand' and 'believe' are not normally used in continuous forms.",
+            esNote: 'Verbos de estado no van en continuo.',
+          },
+          {
+            wrong: 'The street was wet because it had rained all night.',
+            right: 'The street was wet because it had been raining all night.',
+            why: 'To stress the long duration that caused the result, the past perfect continuous is more natural here.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'b2-nt-1',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'When I got home, my brother already cooked dinner.',
+              'When I got home, my brother had already cooked dinner.',
+              'When I got home, my brother has already cooked dinner.',
+            ],
+            answer: 1,
+            explain:
+              "The cooking happened before getting home, so use the past perfect 'had cooked'.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b2-nt-2',
+            before: 'She was tired because she ',
+            after: ' all day.',
+            answers: ['had been working', "'d been working"],
+            explain:
+              'The past perfect continuous stresses the duration of the activity that caused her tiredness.',
+          },
+          {
+            kind: 'correct',
+            id: 'b2-nt-3',
+            wrong: 'While I cooked, the phone was ringing.',
+            answers: [
+              'While I was cooking, the phone rang.',
+              'While I was cooking, the phone was ringing.',
+            ],
+            explain:
+              'The longer background action takes the past continuous; the sudden interruption usually takes the past simple.',
+          },
+          {
+            kind: 'order',
+            id: 'b2-nt-4',
+            tokens: ['the', 'train', 'had', 'left', 'when', 'we', 'arrived'],
+            answer: 'The train had left when we arrived.',
+            explain: 'The earlier event (the train leaving) uses the past perfect.',
+          },
+          {
+            kind: 'translate',
+            id: 'b2-nt-5',
+            es: 'Estaba lloviendo cuando salí de casa.',
+            answers: ['It was raining when I left home.', 'It was raining when I left the house.'],
+            explain:
+              'Background action in progress = past continuous; the short completed action = past simple.',
+          },
+          {
+            kind: 'dictation',
+            id: 'b2-nt-6',
+            text: 'By midnight they had been talking for three hours.',
+            explain:
+              "Note the past perfect continuous 'had been talking' to express duration up to a past point.",
+          },
+        ],
+      },
+      {
+        id: 'b2-future-perfect-and-future-in-the-past',
+        level: 'B2',
+        title: 'Future Perfect & Future in the Past',
+        summary:
+          "Use the future perfect to talk about something that will be completed before a point in the future, and the future continuous for actions in progress at a future moment. 'Future in the past' describes what was expected to happen seen from an earlier viewpoint, usually with 'would' or 'was/were going to'.",
+        summaryEs:
+          "Usa el futuro perfecto para hablar de algo que estará terminado antes de un punto en el futuro, y el futuro continuo para acciones en curso en un momento futuro. El 'futuro en el pasado' describe lo que se esperaba que ocurriera visto desde un punto anterior, normalmente con 'would' o 'was/were going to'.",
+        sections: [
+          {
+            heading: 'Future perfect and future continuous',
+            body: "The **future perfect** (will have + past participle) views an action as **completed before** a future time, often with 'by' or 'by the time'. The **future continuous** (will be + -ing) describes an action **in progress** at a future moment. 'By 2030 I will have finished my degree' vs 'This time tomorrow I will be flying to Madrid.'",
+            bodyEs:
+              "El **futuro perfecto** (will have + participio) ve una acción como **terminada antes** de un momento futuro, a menudo con 'by' o 'by the time'. El **futuro continuo** (will be + -ing) describe una acción **en curso** en un momento futuro. 'By 2030 I will have finished my degree' frente a 'This time tomorrow I will be flying to Madrid.'",
+            examples: [
+              {
+                en: 'By next week I will have read the whole report.',
+                es: 'Para la semana que viene habré leído todo el informe.',
+              },
+              {
+                en: "Don't call at eight; we'll be having dinner.",
+                es: 'No llames a las ocho; estaremos cenando.',
+              },
+            ],
+          },
+          {
+            heading: 'Future in the past',
+            body: "When you describe the future **from a past viewpoint** (what someone expected or planned), use **was/were going to** or **would**. 'I knew she would arrive late.' 'We were going to call you, but we forgot.' These often express plans or predictions that may or may not have happened.",
+            bodyEs:
+              "Cuando describes el futuro **desde un punto de vista pasado** (lo que alguien esperaba o planeaba), usa **was/were going to** o **would**. 'I knew she would arrive late.' 'We were going to call you, but we forgot.' A menudo expresan planes o predicciones que pueden o no haberse cumplido.",
+            examples: [
+              {
+                en: 'He said he would help us the next day.',
+                es: 'Dijo que nos ayudaría al día siguiente.',
+              },
+              {
+                en: 'They were going to move to Canada, but plans changed.',
+                es: 'Iban a mudarse a Canadá, pero los planes cambiaron.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Forms at a glance',
+            columns: ['Meaning', 'Form', 'Example'],
+            rows: [
+              ['Completed before future point', 'will have + p.p.', 'will have left'],
+              ['In progress at future point', 'will be + -ing', 'will be working'],
+              ['Future seen from the past', 'was/were going to', 'was going to call'],
+              ['Future seen from the past', 'would + verb', 'would arrive'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'By the time you read this, I will have left the country.',
+            es: 'Para cuando leas esto, habré salido del país.',
+          },
+          {
+            en: 'In ten years she will have become a doctor.',
+            es: 'Dentro de diez años se habrá convertido en médica.',
+          },
+          {
+            en: 'At noon tomorrow we will be travelling through the mountains.',
+            es: 'Mañana al mediodía estaremos viajando por las montañas.',
+          },
+          {
+            en: 'I was sure the plan would work.',
+            es: 'Estaba seguro de que el plan funcionaría.',
+          },
+          {
+            en: 'We were going to buy the house, but it sold first.',
+            es: 'Íbamos a comprar la casa, pero se vendió antes.',
+          },
+          {
+            en: 'By Friday they will have been married for ten years.',
+            es: 'Para el viernes llevarán diez años casados.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'By next year I will finish my studies.',
+            right: 'By next year I will have finished my studies.',
+            why: "With 'by + future time' meaning 'before then', English needs the future perfect, not the simple future.",
+            esNote: "'By' + tiempo futuro pide 'will have + participio'.",
+          },
+          {
+            wrong: 'She said she will call me.',
+            right: 'She said she would call me.',
+            why: "Reporting a past statement shifts 'will' to 'would' (future in the past).",
+          },
+          {
+            wrong: 'This time tomorrow I will fly to Rome.',
+            right: 'This time tomorrow I will be flying to Rome.',
+            why: 'An action in progress at a precise future moment takes the future continuous.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'b2-fp-1',
+            prompt: "Choose the best option: 'By 2035, scientists ___ a cure.'",
+            options: ['will find', 'will have found', 'are finding'],
+            answer: 1,
+            explain:
+              "'By 2035' signals completion before a future point, so use the future perfect.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b2-fp-2',
+            before: "Don't phone at nine; we ",
+            after: ' the match.',
+            answers: ['will be watching', "'ll be watching"],
+            explain: 'An action in progress at a future time takes the future continuous.',
+          },
+          {
+            kind: 'correct',
+            id: 'b2-fp-3',
+            wrong: 'He promised he will pay me back.',
+            answers: ['He promised he would pay me back.'],
+            explain: "After a past reporting verb, 'will' becomes 'would' (future in the past).",
+          },
+          {
+            kind: 'order',
+            id: 'b2-fp-4',
+            tokens: ['we', 'were', 'going', 'to', 'leave', 'but', 'it', 'snowed'],
+            answer: 'We were going to leave but it snowed.',
+            explain:
+              "'Was/were going to' expresses an intention seen from the past that did not happen.",
+          },
+          {
+            kind: 'translate',
+            id: 'b2-fp-5',
+            es: 'Para junio habremos terminado el proyecto.',
+            answers: [
+              'By June we will have finished the project.',
+              "By June we'll have finished the project.",
+            ],
+            explain: "'Para + tiempo futuro' con sentido de terminado = future perfect.",
+          },
+          {
+            kind: 'dictation',
+            id: 'b2-fp-6',
+            text: 'This time next week I will be lying on a beach.',
+            explain: 'Future continuous for an action in progress at a specific future moment.',
+          },
+        ],
+      },
+      {
+        id: 'b2-mixed-conditionals-and-alternatives',
+        level: 'B2',
+        title: 'Mixed Conditionals & Alternatives to If',
+        summary:
+          "Mixed conditionals combine two different time frames: a past condition with a present result, or a present condition with a past result. You can also replace 'if' with words like unless, provided that, as long as, in case, suppose and otherwise to add precise meaning.",
+        summaryEs:
+          "Los condicionales mixtos combinan dos marcos temporales distintos: una condición pasada con un resultado presente, o una condición presente con un resultado pasado. También puedes sustituir 'if' por palabras como unless, provided that, as long as, in case, suppose y otherwise para añadir matices precisos.",
+        sections: [
+          {
+            heading: 'Mixing time frames',
+            body: "A **mixed conditional** links a past condition to a present result, or a present condition to a past result. Past condition → present result: 'If I had studied medicine, I would be a doctor now.' Present condition → past result: 'If I were more careful, I wouldn't have lost my keys.' Choose the tense in each clause according to its own time.",
+            bodyEs:
+              "Un **condicional mixto** une una condición pasada con un resultado presente, o una condición presente con un resultado pasado. Condición pasada → resultado presente: 'If I had studied medicine, I would be a doctor now.' Condición presente → resultado pasado: 'If I were more careful, I wouldn't have lost my keys.' Elige el tiempo de cada cláusula según su propio momento.",
+            examples: [
+              {
+                en: 'If I had saved money, I would be on holiday now.',
+                es: 'Si hubiera ahorrado dinero, ahora estaría de vacaciones.',
+              },
+              {
+                en: "If she weren't so shy, she would have spoken up.",
+                es: 'Si no fuera tan tímida, habría hablado.',
+              },
+            ],
+          },
+          {
+            heading: "Alternatives to 'if'",
+            body: "Several connectors refine conditional meaning. **Unless** = if not. **Provided/providing that** and **as long as** = only if this condition is met. **In case** = as a precaution. **Otherwise** = if not, the result will be bad. **Suppose/supposing** introduces a hypothesis. 'You can borrow it as long as you return it.' 'Take an umbrella in case it rains.'",
+            bodyEs:
+              "Varios conectores precisan el sentido condicional. **Unless** = si no. **Provided/providing that** y **as long as** = solo si se cumple esta condición. **In case** = por precaución. **Otherwise** = si no, el resultado será malo. **Suppose/supposing** introduce una hipótesis. 'You can borrow it as long as you return it.' 'Take an umbrella in case it rains.'",
+            examples: [
+              {
+                en: "We'll go for a walk unless it rains.",
+                es: 'Iremos a pasear a menos que llueva.',
+              },
+              {
+                en: 'Bring a map in case we get lost.',
+                es: 'Trae un mapa por si nos perdemos.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Mixed conditional patterns',
+            columns: ['Type', 'If-clause', 'Result clause'],
+            rows: [
+              ['Past → present', 'If + past perfect', 'would + base verb (now)'],
+              ['Present → past', 'If + past simple', 'would have + past participle'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: "If we hadn't missed the train, we would be home by now.",
+            es: 'Si no hubiéramos perdido el tren, ya estaríamos en casa.',
+          },
+          {
+            en: 'If he spoke English, he would have got the job.',
+            es: 'Si hablara inglés, habría conseguido el trabajo.',
+          },
+          {
+            en: "You won't pass unless you work harder.",
+            es: 'No aprobarás a menos que te esfuerces más.',
+          },
+          {
+            en: "I'll lend you the car provided that you drive carefully.",
+            es: 'Te prestaré el coche siempre que conduzcas con cuidado.',
+          },
+          {
+            en: "Leave now; otherwise you'll be late.",
+            es: 'Vete ya; de lo contrario llegarás tarde.',
+          },
+          {
+            en: 'Suppose you won the lottery, what would you do?',
+            es: 'Supongamos que ganaras la lotería, ¿qué harías?',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'If I would have known, I would tell you.',
+            right: 'If I had known, I would have told you.',
+            why: "The if-clause never uses 'would have'; it uses the past perfect. Spanish 'hubiera' can lead to this error.",
+            esNote: "La cláusula con 'if' nunca lleva 'would'.",
+          },
+          {
+            wrong: "Unless you don't hurry, we'll miss it.",
+            right: "Unless you hurry, we'll miss it.",
+            why: "'Unless' already means 'if not', so adding another negative reverses the meaning.",
+            esNote: "'Unless' ya es 'si no'; no añadas otra negación.",
+          },
+          {
+            wrong: 'Take cash in case you will need it.',
+            right: 'Take cash in case you need it.',
+            why: "After 'in case' we use a present tense, not 'will', for a future precaution.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'b2-mc-1',
+            prompt: "Complete: 'If I had taken that job, I ___ in London now.'",
+            options: ['would live', 'would have lived', 'will live'],
+            answer: 0,
+            explain:
+              "Past condition with a present result needs 'would + base verb' for the present outcome.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b2-mc-2',
+            before: "We'll be fine as long as we ",
+            after: ' calm.',
+            answers: ['stay', 'keep'],
+            explain: "'As long as' is followed by a present tense in a real conditional.",
+          },
+          {
+            kind: 'correct',
+            id: 'b2-mc-3',
+            wrong: 'If she would be taller, she would have become a model.',
+            answers: [
+              'If she were taller, she would have become a model.',
+              'If she was taller, she would have become a model.',
+            ],
+            explain:
+              "Present condition (her height) uses the past simple; the if-clause never takes 'would'.",
+          },
+          {
+            kind: 'order',
+            id: 'b2-mc-4',
+            tokens: ['bring', 'an', 'umbrella', 'in', 'case', 'it', 'rains'],
+            answer: 'Bring an umbrella in case it rains.',
+            explain: "'In case' + present tense expresses a precaution against a possible event.",
+          },
+          {
+            kind: 'translate',
+            id: 'b2-mc-5',
+            es: 'Si hubiera dormido más, no estaría tan cansado ahora.',
+            answers: [
+              "If I had slept more, I wouldn't be so tired now.",
+              'If I had slept more, I would not be so tired now.',
+            ],
+            explain: 'Past condition with present result = mixed conditional.',
+          },
+          {
+            kind: 'dictation',
+            id: 'b2-mc-6',
+            text: "You can't enter unless you have a ticket.",
+            explain: "'Unless' = 'if not'; no extra negative is needed.",
+          },
+        ],
+      },
+      {
+        id: 'b2-passive-voice',
+        level: 'B2',
+        title: 'The Passive in Depth',
+        summary:
+          "The passive shifts focus from the doer to the action or the receiver, and works in every tense with be + past participle. B2 also covers the causative (have/get something done) for services arranged by someone else, and passive reporting structures such as 'It is said that...' and 'He is believed to...'.",
+        summaryEs:
+          "La pasiva traslada el foco del agente a la acción o al receptor, y funciona en todos los tiempos con be + participio. En B2 también se trata el causativo (have/get something done) para servicios que otra persona realiza, y las estructuras de reporte pasivo como 'It is said that...' y 'He is believed to...'.",
+        sections: [
+          {
+            heading: 'The passive in all tenses',
+            body: "Form the passive with the correct tense of **be + past participle**. Use it when the doer is unknown, obvious or unimportant, or to keep focus on the receiver. Add the agent with **by** only if it matters. 'The bridge was built in 1890.' 'The results will be announced tomorrow.' 'My car is being repaired.'",
+            bodyEs:
+              "Forma la pasiva con el tiempo correcto de **be + participio**. Úsala cuando el agente es desconocido, evidente o poco importante, o para mantener el foco en el receptor. Añade el agente con **by** solo si importa. 'The bridge was built in 1890.' 'The results will be announced tomorrow.' 'My car is being repaired.'",
+            examples: [
+              {
+                en: 'The documents have been signed already.',
+                es: 'Los documentos ya han sido firmados.',
+              },
+              {
+                en: 'A new policy is being discussed.',
+                es: 'Se está discutiendo una nueva política.',
+              },
+            ],
+          },
+          {
+            heading: 'Causative: have/get something done',
+            body: "Use **have/get + object + past participle** when you arrange for someone else to do a service for you. 'I had my hair cut' (a hairdresser did it). 'Get' is slightly more informal. It can also describe something unpleasant that happens to you: 'They had their flat burgled.'",
+            bodyEs:
+              "Usa **have/get + objeto + participio** cuando organizas que otra persona haga un servicio para ti. 'I had my hair cut' (lo hizo un peluquero). 'Get' es algo más informal. También puede describir algo desagradable que te ocurre: 'They had their flat burgled.'",
+            examples: [
+              {
+                en: "We're having the kitchen painted next week.",
+                es: 'Nos van a pintar la cocina la semana que viene.',
+              },
+              {
+                en: 'She got her phone repaired yesterday.',
+                es: 'Ayer le arreglaron el teléfono.',
+              },
+            ],
+          },
+          {
+            heading: 'Passive reporting structures',
+            body: "To report opinions or beliefs impersonally, use **It is said/believed/thought that + clause** or **subject + is said/believed + to + infinitive**. 'It is said that he is very rich' = 'He is said to be very rich.' For earlier actions, use the perfect infinitive: 'She is thought to have left the country.'",
+            bodyEs:
+              "Para reportar opiniones o creencias de forma impersonal, usa **It is said/believed/thought that + oración** o **sujeto + is said/believed + to + infinitivo**. 'It is said that he is very rich' = 'He is said to be very rich.' Para acciones anteriores, usa el infinitivo perfecto: 'She is thought to have left the country.'",
+            examples: [
+              {
+                en: 'The minister is believed to be resigning.',
+                es: 'Se cree que el ministro va a dimitir.',
+              },
+              {
+                en: 'The painting is thought to have been stolen.',
+                es: 'Se cree que el cuadro fue robado.',
               },
             ],
           },
@@ -4752,1429 +6383,174 @@ export const GRAMMAR: GrammarUnit[] = [
             caption: 'Passive across tenses',
             columns: ['Tense', 'Active', 'Passive'],
             rows: [
-              ['present simple', 'They make it', 'It is made'],
-              ['past simple', 'They made it', 'It was made'],
-              ['present perfect', 'They have made it', 'It has been made'],
-              ['future / modal', 'They will make it', 'It will be made'],
+              ['Present simple', 'They make it', 'It is made'],
+              ['Present continuous', 'They are making it', 'It is being made'],
+              ['Past simple', 'They made it', 'It was made'],
+              ['Present perfect', 'They have made it', 'It has been made'],
+              ['Future', 'They will make it', 'It will be made'],
+              ['Modal', 'They must make it', 'It must be made'],
             ],
           },
         ],
         examples: [
           {
-            en: 'The results will be announced tomorrow.',
-            es: 'Los resultados se anunciarán mañana.',
+            en: 'English is spoken all over the world.',
+            es: 'El inglés se habla en todo el mundo.',
           },
           {
-            en: 'This museum is visited by thousands of people.',
-            es: 'Este museo es visitado por miles de personas.',
+            en: 'The road is being resurfaced this month.',
+            es: 'Están reasfaltando la carretera este mes.',
           },
           {
-            en: 'Our flight was cancelled because of the storm.',
-            es: 'Nuestro vuelo fue cancelado por la tormenta.',
+            en: 'I need to have my eyes tested.',
+            es: 'Necesito que me revisen la vista.',
           },
           {
-            en: 'The documents have been signed.',
-            es: 'Los documentos han sido firmados.',
+            en: 'He had his wallet stolen on the train.',
+            es: 'Le robaron la cartera en el tren.',
           },
           {
-            en: 'Mistakes were made.',
-            es: 'Se cometieron errores.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'The house was build in 1990.',
-            right: 'The house was built in 1990.',
-            why: 'The passive needs the **past participle** (built), not the base form.',
-            esNote: 'Usa el participio (built, made, sent), no el infinitivo.',
+            en: 'It is said that the company is in trouble.',
+            es: 'Se dice que la empresa está en apuros.',
           },
           {
-            wrong: 'The window broke by the boys.',
-            right: 'The window was broken by the boys.',
-            why: 'A passive sentence must include the verb **be** (was) before the participle.',
-            esNote: "Falta el verbo 'be': was broken.",
-          },
-          {
-            wrong: 'English speaks in many countries.',
-            right: 'English is spoken in many countries.',
-            why: 'The subject (English) receives the action, so the verb must be passive: **is spoken**.',
-            esNote: "El español usa 'se habla'; en inglés es pasiva: is spoken.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'b1-pv-1',
-            prompt: 'Choose the correct option: "The letters ___ yesterday."',
-            options: ['were sent', 'were send', 'are sent', 'have sent'],
-            answer: 0,
-            explain: 'Past passive = **was/were + past participle** (were sent).',
-          },
-          {
-            kind: 'cloze',
-            id: 'b1-pv-2',
-            before: 'This song',
-            after: '(write) by a famous singer.',
-            answers: ['was written'],
-            hint: 'past passive',
-            explain: 'be (was) + past participle (written).',
-          },
-          {
-            kind: 'correct',
-            id: 'b1-pv-3',
-            wrong: 'The cake was eat by the children.',
-            answers: ['The cake was eaten by the children.'],
-            explain: "Use the past participle 'eaten', not 'eat'.",
-          },
-          {
-            kind: 'order',
-            id: 'b1-pv-4',
-            tokens: ['The', 'report', 'must', 'be', 'finished', 'by', 'Monday'],
-            answer: 'The report must be finished by Monday',
-            explain: 'Modal passive: modal + **be + past participle**.',
-          },
-          {
-            kind: 'translate',
-            id: 'b1-pv-5',
-            es: 'El inglés se habla en muchos países.',
-            answers: [
-              'English is spoken in many countries.',
-              'English is spoken in a lot of countries.',
-            ],
-            explain: "'Se habla' impersonal → present passive 'is spoken'.",
-          },
-          {
-            kind: 'dictation',
-            id: 'b1-pv-6',
-            text: 'The new bridge has been opened to traffic.',
-            explain: 'Present perfect passive: has been + past participle.',
-          },
-        ],
-      },
-      {
-        id: 'b1-relative-clauses',
-        level: 'B1',
-        title: 'Relative clauses: defining and non-defining',
-        summary:
-          "Add information about people, things and places with who, which, that, whose and where. Learn when commas and 'that' are allowed.",
-        sections: [
-          {
-            heading: 'Defining relative clauses',
-            body: 'A **defining** clause gives **essential** information that identifies the noun. Use **who** for people, **which** for things, **that** for either, **whose** for possession, **where** for places. No commas.',
-            examples: [
-              {
-                en: 'The man who fixed my car is very kind.',
-                es: 'El hombre que arregló mi coche es muy amable.',
-              },
-              {
-                en: 'This is the book that everyone is talking about.',
-                es: 'Este es el libro del que todos hablan.',
-              },
-            ],
-          },
-          {
-            heading: 'Omitting the pronoun',
-            body: 'In a defining clause you can **omit who/which/that when it is the object** of the clause. You cannot omit it when it is the subject.',
-            examples: [
-              {
-                en: 'The film (that) we watched was great.',
-                es: 'La película que vimos fue genial.',
-              },
-              {
-                en: 'The woman who called you is here. (subject — keep it)',
-                es: 'La mujer que te llamó está aquí.',
-              },
-            ],
-          },
-          {
-            heading: 'Non-defining relative clauses',
-            body: "A **non-defining** clause adds **extra, non-essential** information, set off by **commas**. Here you **cannot use 'that'** and **cannot omit** the pronoun.",
-            examples: [
-              {
-                en: 'My brother, who lives in Rome, is a chef.',
-                es: 'Mi hermano, que vive en Roma, es chef.',
-              },
-              {
-                en: 'The Prado, which is in Madrid, is famous.',
-                es: 'El Prado, que está en Madrid, es famoso.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Relative pronouns',
-            columns: ['Pronoun', 'Refers to', 'Example'],
-            rows: [
-              ['who', 'people', 'the girl who sings'],
-              ['which', 'things/animals', 'the car which broke down'],
-              ['that', 'people/things (defining only)', 'the keys that I lost'],
-              ['whose', 'possession', 'the man whose dog barked'],
-              ['where', 'places', 'the town where I grew up'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: "That's the restaurant where we had dinner.",
-            es: 'Ese es el restaurante donde cenamos.',
-          },
-          {
-            en: 'I have a friend whose father is a pilot.',
-            es: 'Tengo un amigo cuyo padre es piloto.',
-          },
-          {
-            en: 'The phone (which) I bought last week is broken.',
-            es: 'El teléfono que compré la semana pasada está roto.',
-          },
-          {
-            en: 'Paris, which I visited last year, is beautiful.',
-            es: 'París, que visité el año pasado, es preciosa.',
-          },
-          {
-            en: 'People who exercise regularly tend to sleep better.',
-            es: 'Las personas que hacen ejercicio con regularidad suelen dormir mejor.',
+            en: 'The suspect is believed to have fled abroad.',
+            es: 'Se cree que el sospechoso ha huido al extranjero.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'The man which lives next door is a doctor.',
-            right: 'The man who lives next door is a doctor.',
-            why: "Use **who** (or that) for people, not 'which'.",
-            esNote: "'Which' es para cosas; para personas usa 'who'.",
+            wrong: 'My house was build in 1950.',
+            right: 'My house was built in 1950.',
+            why: "The passive needs the past participle ('built'), not the base form.",
+            esNote: 'Pasiva = be + participio pasado.',
           },
           {
-            wrong: 'My mother, that is a teacher, loves her job.',
-            right: 'My mother, who is a teacher, loves her job.',
-            why: "In **non-defining** clauses (with commas) you cannot use 'that'.",
-            esNote: "Con comas (no defining) no se usa 'that'.",
+            wrong: 'I cut my hair yesterday at the salon.',
+            right: 'I had my hair cut yesterday at the salon.',
+            why: "If a hairdresser did it, use the causative; 'I cut my hair' means you did it yourself.",
+            esNote: 'Servicio de otra persona: have/get + objeto + participio.',
           },
           {
-            wrong: 'The house where I grew up in is for sale.',
-            right:
-              'The house where I grew up is for sale. / The house (which) I grew up in is for sale.',
-            why: "**where** already means 'in which', so don't add an extra preposition.",
-            esNote: "'Where' ya incluye 'in which'; no repitas la preposición.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'b1-rc-1',
-            prompt: 'Choose the correct option: "That\'s the woman ___ car was stolen."',
-            options: ['who', 'which', 'whose', 'where'],
-            answer: 2,
-            explain: '**whose** shows possession (her car).',
-          },
-          {
-            kind: 'cloze',
-            id: 'b1-rc-2',
-            before: 'This is the village',
-            after: 'my grandparents were born.',
-            answers: ['where'],
-            hint: 'a place',
-            explain: 'Use **where** for places (= in which).',
-          },
-          {
-            kind: 'correct',
-            id: 'b1-rc-3',
-            wrong: 'London, that is the capital of England, is huge.',
-            answers: ['London, which is the capital of England, is huge.'],
-            explain: "Non-defining clause → use 'which', not 'that'.",
-          },
-          {
-            kind: 'order',
-            id: 'b1-rc-4',
-            tokens: ['The', 'book', 'that', 'I', 'read', 'was', 'boring'],
-            answer: 'The book that I read was boring',
-            explain: "Defining clause with 'that' as object (could also be omitted).",
-          },
-          {
-            kind: 'translate',
-            id: 'b1-rc-5',
-            es: 'El hombre que vive al lado es médico.',
-            answers: [
-              'The man who lives next door is a doctor.',
-              'The man that lives next door is a doctor.',
-            ],
-            explain: 'Persona + cláusula esencial → who/that.',
-          },
-          {
-            kind: 'dictation',
-            id: 'b1-rc-6',
-            text: 'My sister, who lives in Canada, is visiting next month.',
-            explain: "Non-defining clause set off by commas with 'who'.",
-          },
-        ],
-      },
-      {
-        id: 'b1-modals-deduction',
-        level: 'B1',
-        title: "Modals of deduction: must, can't, might",
-        summary:
-          "Express how certain you are about a situation using must (sure it's true), can't (sure it's false), and might/may/could (possible).",
-        sections: [
-          {
-            heading: 'Present deduction',
-            body: "Use **must + base verb** when you are **almost certain something is true**, **can't + base verb** when you are **certain it is false**, and **might/may/could** when something is **possible**. The opposite of 'must be' is **can't be**, not 'mustn't be'.",
-            examples: [
-              {
-                en: 'She must be at home; her car is here.',
-                es: 'Debe de estar en casa; su coche está aquí.',
-              },
-              {
-                en: "He can't be hungry; he just ate.",
-                es: 'No puede tener hambre; acaba de comer.',
-              },
-              {
-                en: 'They might be on holiday.',
-                es: 'Puede que estén de vacaciones.',
-              },
-            ],
-          },
-          {
-            heading: 'Past deduction',
-            body: "For deductions about the **past**, use **must/can't/might + have + past participle**.",
-            examples: [
-              {
-                en: 'She must have left early.',
-                es: 'Debe de haberse ido temprano.',
-              },
-              {
-                en: "He can't have seen us.",
-                es: 'No puede habernos visto.',
-              },
-              {
-                en: 'They might have missed the bus.',
-                es: 'Puede que hayan perdido el autobús.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Certainty scale',
-            columns: ['Modal', 'Certainty', 'Present', 'Past'],
-            rows: [
-              ['must', "sure it's true", 'must be tired', 'must have been tired'],
-              ['might / may / could', 'possible', 'might be true', 'might have been true'],
-              ["can't", "sure it's false", "can't be true", "can't have been true"],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'The lights are off, so they must be asleep.',
-            es: 'Las luces están apagadas, así que deben de estar dormidos.',
-          },
-          {
-            en: "You can't be serious!",
-            es: '¡No puedes hablar en serio!',
-          },
-          {
-            en: 'It might rain later, so take an umbrella.',
-            es: 'Puede que llueva luego, así que lleva paraguas.',
-          },
-          {
-            en: "Someone's knocking — it could be the postman.",
-            es: 'Alguien llama; podría ser el cartero.',
-          },
-          {
-            en: "She didn't answer; she must have been busy.",
-            es: 'No contestó; debía de estar ocupada.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: "He mustn't be at home; the lights are off.",
-            right: "He can't be at home; the lights are off.",
-            why: "To say you are sure something is **not** true, use **can't**, not 'mustn't'.",
-            esNote: "El contrario de 'must be' (deducción) es 'can't be', no 'mustn't'.",
-          },
-          {
-            wrong: 'She must to be tired.',
-            right: 'She must be tired.',
-            why: "After a modal verb, use the **bare infinitive** — no 'to'.",
-            esNote: "Tras un modal va el verbo sin 'to'.",
-          },
-          {
-            wrong: "They must have lost the game, but I'm not sure.",
-            right: "They might have lost the game, but I'm not sure.",
-            why: "**must** shows certainty; for a guess you're unsure of, use **might/may/could**.",
-            esNote: "'Must' es seguridad; para una posibilidad usa 'might'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'b1-md-1',
-            prompt: 'Choose the best option: "You\'ve worked all day. You ___ exhausted."',
-            options: ["can't be", 'must be', 'might not be', "mustn't be"],
-            answer: 1,
-            explain: 'Strong logical certainty (true) → **must be**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b1-md-2',
-            before: "He's not answering. He",
-            after: "be sleeping. (= sure he isn't)",
-            answers: ["can't"],
-            hint: "certain it's false",
-            explain: "Certain something is NOT true → **can't**.",
-          },
-          {
-            kind: 'correct',
-            id: 'b1-md-3',
-            wrong: "She mustn't be French; she has a strong English accent.",
-            answers: ["She can't be French; she has a strong English accent."],
-            explain: "Sure it's false → can't be (not 'mustn't be').",
-          },
-          {
-            kind: 'order',
-            id: 'b1-md-4',
-            tokens: ['They', 'must', 'have', 'left', 'already'],
-            answer: 'They must have left already',
-            explain: 'Past deduction: must + have + past participle.',
-          },
-          {
-            kind: 'translate',
-            id: 'b1-md-5',
-            es: 'Puede que esté en una reunión.',
-            answers: [
-              'He might be in a meeting.',
-              'She might be in a meeting.',
-              'He may be in a meeting.',
-              'He could be in a meeting.',
-            ],
-            explain: "'Puede que' → might/may/could + base verb.",
-          },
-          {
-            kind: 'dictation',
-            id: 'b1-md-6',
-            text: "You can't have finished already; it's only been ten minutes.",
-            explain: "Past deduction (sure it's false): can't have + past participle.",
-          },
-        ],
-      },
-      {
-        id: 'b1-connectors',
-        level: 'B1',
-        title: 'Connectors: contrast and purpose',
-        summary:
-          'Join ideas smoothly with although, though, however, despite/in spite of for contrast, and to/in order to/so that for purpose.',
-        sections: [
-          {
-            heading: 'Contrast: although vs despite',
-            body: '**Although / even though / though** are followed by a **subject + verb** (a clause). **Despite / in spite of** are followed by a **noun or -ing**. They mean the same but the grammar differs.',
-            examples: [
-              {
-                en: 'Although it was raining, we went out.',
-                es: 'Aunque llovía, salimos.',
-              },
-              {
-                en: 'Despite the rain, we went out.',
-                es: 'A pesar de la lluvia, salimos.',
-              },
-              {
-                en: 'In spite of being tired, she kept working.',
-                es: 'A pesar de estar cansada, siguió trabajando.',
-              },
-            ],
-          },
-          {
-            heading: 'However and contrast adverbs',
-            body: '**However** connects two sentences and is usually followed by a **comma**. It shows contrast between separate ideas. Compare with **but**, which joins clauses within one sentence.',
-            examples: [
-              {
-                en: 'The plan was risky. However, it worked.',
-                es: 'El plan era arriesgado. Sin embargo, funcionó.',
-              },
-              {
-                en: "It's expensive, but it's worth it.",
-                es: 'Es caro, pero merece la pena.',
-              },
-            ],
-          },
-          {
-            heading: 'Purpose: to / in order to / so that',
-            body: "Express purpose ('para') with **to + base verb** or the more formal **in order to / so as to**. Use **so that + clause** when there is a different subject or a modal (can/could/would).",
-            examples: [
-              {
-                en: 'I went to the bank to pay a bill.',
-                es: 'Fui al banco para pagar una factura.',
-              },
-              {
-                en: 'She spoke slowly so that everyone could understand.',
-                es: 'Habló despacio para que todos pudieran entender.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Linking words',
-            columns: ['Connector', 'Followed by', 'Function'],
-            rows: [
-              ['although / even though', 'subject + verb', 'contrast'],
-              ['despite / in spite of', 'noun / -ing', 'contrast'],
-              ['however', 'comma + sentence', 'contrast'],
-              ['to / in order to', 'base verb', 'purpose'],
-              ['so that', 'subject + modal', 'purpose'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'Even though he studied hard, he failed the exam.',
-            es: 'Aunque estudió mucho, suspendió el examen.',
-          },
-          {
-            en: 'Despite having little money, they travelled a lot.',
-            es: 'A pesar de tener poco dinero, viajaron mucho.',
-          },
-          {
-            en: 'We left early in order to avoid the traffic.',
-            es: 'Salimos temprano para evitar el tráfico.',
-          },
-          {
-            en: 'The hotel was lovely. However, it was very noisy.',
-            es: 'El hotel era encantador. Sin embargo, era muy ruidoso.',
-          },
-          {
-            en: "I'm saving money so that I can buy a car.",
-            es: 'Estoy ahorrando para poder comprar un coche.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'Despite it was raining, we went out.',
-            right: 'Despite the rain, we went out. / Although it was raining, we went out.',
-            why: '**Despite** is followed by a noun or -ing, not a subject + verb clause.',
-            esNote: "'Despite' + sustantivo/-ing; 'although' + sujeto + verbo.",
-          },
-          {
-            wrong: 'I went to the shop for buy bread.',
-            right: 'I went to the shop to buy bread.',
-            why: "Purpose ('para') uses **to + base verb**, not 'for + verb'.",
-            esNote: "'Para + infinitivo' → 'to + verbo', no 'for'.",
-          },
-          {
-            wrong: 'Although, it was late, we stayed.',
-            right: 'Although it was late, we stayed.',
-            why: "**Although** is not followed by a comma; it introduces a clause directly. ('However' takes the comma.)",
-            esNote: "'Although' no lleva coma inmediata; 'however' sí.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'b1-cn-1',
-            prompt: 'Choose the correct option: "___ the bad weather, the match continued."',
-            options: ['Although', 'Despite', 'However', 'But'],
-            answer: 1,
-            explain: "Before a noun phrase ('the bad weather') use **Despite**.",
-          },
-          {
-            kind: 'cloze',
-            id: 'b1-cn-2',
-            before: "I'm learning English",
-            after: 'get a better job.',
-            answers: ['to', 'in order to', 'so as to'],
-            hint: 'purpose (para)',
-            explain: 'Purpose with a base verb → **to / in order to**.',
-          },
-          {
-            kind: 'correct',
-            id: 'b1-cn-3',
-            wrong: 'Despite of the rain, we went for a walk.',
-            answers: [
-              'Despite the rain, we went for a walk.',
-              'In spite of the rain, we went for a walk.',
-            ],
-            explain: "It's 'despite' (no 'of') OR 'in spite of'.",
-          },
-          {
-            kind: 'order',
-            id: 'b1-cn-4',
-            tokens: ['Although', 'she', 'was', 'ill', 'she', 'went', 'to', 'work'],
-            answer: 'Although she was ill she went to work',
-            explain: 'Although + subject + verb introduces a contrast clause.',
-          },
-          {
-            kind: 'translate',
-            id: 'b1-cn-5',
-            es: 'A pesar de estar cansado, terminó el trabajo.',
-            answers: [
-              'Despite being tired, he finished the work.',
-              'In spite of being tired, he finished the work.',
-              'Despite being tired, she finished the work.',
-            ],
-            explain: "'A pesar de + infinitivo' → despite/in spite of + -ing.",
-          },
-          {
-            kind: 'dictation',
-            id: 'b1-cn-6',
-            text: 'The food was excellent. However, the service was slow.',
-            explain: "'However' begins a new sentence and is followed by a comma.",
-          },
-        ],
-      },
-      {
-        id: 'b1-gerunds-infinitives',
-        level: 'B1',
-        title: 'Gerunds, infinitives and dependent prepositions',
-        summary:
-          'Decide between -ing and to + verb after other verbs, after prepositions, and in cases where the meaning changes. Plus common verb/adjective + preposition combinations.',
-        sections: [
-          {
-            heading: 'Verb + gerund or infinitive',
-            body: 'Some verbs are followed by **-ing** (enjoy, finish, avoid, mind, suggest), others by **to + infinitive** (want, decide, hope, promise, agree). After **prepositions** always use **-ing**.',
-            examples: [
-              {
-                en: 'I enjoy cooking but I want to learn more.',
-                es: 'Disfruto cocinando pero quiero aprender más.',
-              },
-              {
-                en: "She's thinking about changing jobs.",
-                es: 'Está pensando en cambiar de trabajo.',
-              },
-            ],
-          },
-          {
-            heading: 'Meaning changes',
-            body: 'A few verbs change meaning. **stop + -ing** = quit an activity; **stop + to** = pause in order to. **remember/forget + -ing** = a memory; **+ to** = a task/duty. **try + -ing** = experiment; **+ to** = make an effort.',
-            examples: [
-              {
-                en: 'He stopped smoking. (he quit)',
-                es: 'Dejó de fumar.',
-              },
-              {
-                en: 'He stopped to smoke. (he paused to have a cigarette)',
-                es: 'Se detuvo para fumar.',
-              },
-              {
-                en: 'Remember to lock the door. (a task)',
-                es: 'Acuérdate de cerrar la puerta.',
-              },
-            ],
-          },
-          {
-            heading: 'Dependent prepositions',
-            body: 'Many adjectives and verbs go with a **fixed preposition**: good at, interested in, afraid of, worried about, depend on, rely on, succeed in. Learn them as chunks; the verb after them is **-ing**.',
-            examples: [
-              {
-                en: "She's good at solving problems.",
-                es: 'Se le da bien resolver problemas.',
-              },
-              {
-                en: "I'm interested in learning Italian.",
-                es: 'Me interesa aprender italiano.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Common patterns',
-            columns: ['Pattern', 'Examples', 'Followed by'],
-            rows: [
-              ['verb + -ing', 'enjoy, avoid, finish, suggest', 'cooking'],
-              ['verb + to', 'want, decide, hope, agree', 'to go'],
-              ['preposition + -ing', 'good at, before, instead of', 'doing'],
-              ['adjective + preposition', 'afraid of, interested in, proud of', '+ noun / -ing'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'Would you mind opening the window?',
-            es: '¿Te importaría abrir la ventana?',
-          },
-          {
-            en: 'They decided to move to the countryside.',
-            es: 'Decidieron mudarse al campo.',
-          },
-          {
-            en: "I'm worried about failing the exam.",
-            es: 'Me preocupa suspender el examen.',
-          },
-          {
-            en: "He's afraid of flying.",
-            es: 'Tiene miedo a volar.',
-          },
-          {
-            en: "We can't afford to buy a new car.",
-            es: 'No podemos permitirnos comprar un coche nuevo.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: "I'm interested in to learn languages.",
-            right: "I'm interested in learning languages.",
-            why: "After a **preposition** (in), the verb takes **-ing**, never 'to + infinitive'.",
-            esNote: 'Tras preposición siempre va -ing, no infinitivo.',
-          },
-          {
-            wrong: 'I enjoy to read in the evenings.',
-            right: 'I enjoy reading in the evenings.',
-            why: '**enjoy** is always followed by **-ing**, not the infinitive.',
-            esNote: "'Enjoy', 'finish', 'avoid' van con -ing.",
-          },
-          {
-            wrong: "She's good in cooking.",
-            right: "She's good at cooking.",
-            why: "The fixed combination is **good at**, not 'good in'.",
-            esNote: "Es 'good at' (bueno en/para), no 'good in'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'b1-gi-1',
-            prompt: 'Choose the correct option: "They agreed ___ us with the project."',
-            options: ['helping', 'to help', 'help', 'helped'],
-            answer: 1,
-            explain: '**agree** is followed by the **to-infinitive**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b1-gi-2',
-            before: 'On the way home, he stopped',
-            after: '(buy) some milk.',
-            answers: ['to buy'],
-            hint: 'he paused in order to...',
-            explain: 'stop + to = pause in order to do something.',
-          },
-          {
-            kind: 'correct',
-            id: 'b1-gi-3',
-            wrong: "I'm thinking about to start a business.",
-            answers: ["I'm thinking about starting a business."],
-            explain: "After the preposition 'about', use -ing (starting).",
-          },
-          {
-            kind: 'order',
-            id: 'b1-gi-4',
-            tokens: ['She', 'is', 'afraid', 'of', 'making', 'mistakes'],
-            answer: 'She is afraid of making mistakes',
-            explain: 'afraid of + -ing (preposition + gerund).',
-          },
-          {
-            kind: 'translate',
-            id: 'b1-gi-5',
-            es: 'Me interesa aprender a programar.',
-            answers: [
-              "I'm interested in learning to code.",
-              'I am interested in learning to code.',
-              "I'm interested in learning to program.",
-            ],
-            explain: "'interested in' + -ing; luego 'learn to + base verb'.",
-          },
-          {
-            kind: 'dictation',
-            id: 'b1-gi-6',
-            text: "Don't forget to call me when you arrive.",
-            explain: 'forget + to = a future task you must not forget.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    level: 'B2',
-    title: 'B2 · Upper-Intermediate',
-    blurb:
-      'Tell stories in the past, handle complex passives and reported speech, speculate about the past, and add emphasis and nuance like a confident speaker.',
-    lessons: [
-      {
-        id: 'b2-narrative-tenses',
-        level: 'B2',
-        title: 'Narrative tenses (past perfect continuous)',
-        summary:
-          'Combine past simple, past continuous, past perfect and past perfect continuous to tell stories and make the order and duration of past events clear.',
-        sections: [
-          {
-            heading: 'The four narrative tenses',
-            body: 'Use **past simple** for the main events, **past continuous** for the background action in progress, **past perfect** for an earlier completed event, and **past perfect continuous** for an action that had been going on up to a point in the past.',
-            examples: [
-              {
-                en: 'We were walking home when it started to rain.',
-                es: 'Íbamos caminando a casa cuando empezó a llover.',
-              },
-              {
-                en: 'By the time we arrived, the film had already started.',
-                es: 'Para cuando llegamos, la película ya había empezado.',
-              },
-              {
-                en: 'She was tired because she had been working all day.',
-                es: 'Estaba cansada porque había estado trabajando todo el día.',
-              },
-            ],
-          },
-          {
-            heading: 'Past perfect continuous: duration before a past moment',
-            body: 'Form it with **had been + -ing**. It stresses how long an activity lasted before another past event, and often explains a result. Compare it with the past perfect, which focuses on completion rather than duration.',
-            examples: [
-              {
-                en: 'They had been driving for six hours when the car broke down.',
-                es: 'Llevaban seis horas conduciendo cuando el coche se averió.',
-              },
-              {
-                en: 'His eyes were red; he had been crying.',
-                es: 'Tenía los ojos rojos; había estado llorando.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Narrative tenses at a glance',
-            columns: ['Tense', 'Form', 'Use'],
-            rows: [
-              ['Past simple', 'worked', 'main completed events'],
-              ['Past continuous', 'was working', 'background / interrupted action'],
-              ['Past perfect', 'had worked', 'earlier completed event'],
-              ['Past perfect continuous', 'had been working', 'duration up to a past point'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'When I got to the station, the train had just left.',
-            es: 'Cuando llegué a la estación, el tren acababa de salir.',
-          },
-          {
-            en: 'The ground was wet because it had been raining all night.',
-            es: 'El suelo estaba mojado porque había estado lloviendo toda la noche.',
-          },
-          {
-            en: 'While she was cooking, the guests were arriving.',
-            es: 'Mientras ella cocinaba, los invitados iban llegando.',
-          },
-          {
-            en: 'He had been studying English for years before he moved to London.',
-            es: 'Llevaba años estudiando inglés antes de mudarse a Londres.',
-          },
-          {
-            en: 'I realised I had left my keys at home.',
-            es: 'Me di cuenta de que me había dejado las llaves en casa.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'When I arrived, the meeting already started.',
-            right: 'When I arrived, the meeting had already started.',
-            why: 'Use the **past perfect** for the event that happened before the main past event.',
-            esNote:
-              "El español usa el pluscuamperfecto ('ya había empezado'); no lo omitas en inglés.",
-          },
-          {
-            wrong: 'I was knowing the answer.',
-            right: 'I knew the answer.',
-            why: 'Stative verbs like **know** are not normally used in continuous forms.',
-            esNote: 'Verbos de estado (know, like, want) no van en forma continua.',
-          },
-          {
-            wrong: 'She had been finished her work.',
-            right: 'She had finished her work.',
-            why: 'Past perfect continuous needs **been + -ing**, not been + past participle.',
-            esNote: "La forma continua es 'had been working', no 'had been finished'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'b2-nt-1',
-            prompt: 'Choose the best option: "They were exhausted because they ___ all morning."',
-            options: ['had walked', 'had been walking', 'were walking', 'walked'],
-            answer: 1,
-            explain:
-              'The **past perfect continuous** stresses the duration that caused the result (exhaustion).',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-nt-2',
-            before: 'By the time the police arrived, the thief ',
-            after: ' (escape).',
-            answers: ['had escaped'],
-            explain: 'An event completed before another past event takes the **past perfect**.',
-            hint: 'past perfect',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-nt-3',
-            before: 'I was tired because I ',
-            after: ' for hours.',
-            answers: ['had been studying', 'had been working', 'had been driving'],
-            explain: 'Use **had been + -ing** to show a long activity before the past moment.',
-          },
-          {
-            kind: 'correct',
-            id: 'b2-nt-4',
-            wrong: 'When we got there, the concert already finished.',
-            answers: ['When we got there, the concert had already finished.'],
-            explain: 'The concert finished before we arrived, so use the **past perfect**.',
-          },
-          {
-            kind: 'order',
-            id: 'b2-nt-5',
-            tokens: ['She', 'had', 'been', 'waiting', 'for', 'an', 'hour', 'when', 'he', 'called'],
-            answer: 'She had been waiting for an hour when he called',
-            explain: 'Past perfect continuous (duration) + past simple (interrupting event).',
-          },
-          {
-            kind: 'translate',
-            id: 'b2-nt-6',
-            es: 'Íbamos caminando a casa cuando empezó a llover.',
-            answers: [
-              'We were walking home when it started to rain.',
-              'We were walking home when it began to rain.',
-            ],
-            explain: 'Past continuous (background) interrupted by past simple.',
-          },
-          {
-            kind: 'dictation',
-            id: 'b2-nt-7',
-            text: 'The ground was wet because it had been raining all night.',
-            explain: "Listen for the contracted 'had been' and the -ing ending.",
-          },
-        ],
-      },
-      {
-        id: 'b2-future-perfect-future-in-past',
-        level: 'B2',
-        title: 'Future perfect & future in the past',
-        summary:
-          'Talk about actions that will be finished by a future time, and describe the future as seen from a point in the past.',
-        sections: [
-          {
-            heading: 'Future perfect: finished before a future time',
-            body: 'Use **will have + past participle** to say something will be complete before a deadline in the future. It often appears with **by** (by then, by 2030, by the time...). The continuous form **will have been + -ing** stresses duration.',
-            examples: [
-              {
-                en: 'By next June, I will have finished my degree.',
-                es: 'Para el próximo junio, habré terminado mi carrera.',
-              },
-              {
-                en: "By 8 o'clock, they will have been travelling for ten hours.",
-                es: 'Para las ocho, llevarán diez horas viajando.',
-              },
-            ],
-          },
-          {
-            heading: 'Future in the past',
-            body: 'To describe what was still future from an earlier viewpoint, use **was/were going to**, **would**, or **was/were about to**. This is common in reported speech and storytelling.',
-            examples: [
-              {
-                en: 'She said she would call me later.',
-                es: 'Dijo que me llamaría más tarde.',
-              },
-              {
-                en: 'We were going to leave, but the storm started.',
-                es: 'Íbamos a salir, pero empezó la tormenta.',
-              },
-              {
-                en: 'I was about to phone you when you knocked.',
-                es: 'Estaba a punto de llamarte cuando llamaste a la puerta.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Forms',
-            columns: ['Meaning', 'Form', 'Example'],
-            rows: [
-              ['Finished before future point', 'will have + p.p.', 'will have left'],
-              ['Duration up to future point', 'will have been + -ing', 'will have been working'],
-              [
-                'Future seen from the past',
-                'was going to / would / was about to',
-                'was going to leave',
-              ],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: "Don't call at nine; the show will have ended by then.",
-            es: 'No llames a las nueve; el programa ya habrá terminado para entonces.',
-          },
-          {
-            en: 'In August we will have been living here for ten years.',
-            es: 'En agosto llevaremos diez años viviendo aquí.',
-          },
-          {
-            en: 'He promised he would help us move.',
-            es: 'Prometió que nos ayudaría a mudarnos.',
-          },
-          {
-            en: 'They were about to sign the contract when the lawyer called.',
-            es: 'Estaban a punto de firmar el contrato cuando llamó el abogado.',
-          },
-          {
-            en: 'By the time you read this, I will have left the country.',
-            es: 'Para cuando leas esto, ya habré salido del país.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'By next year I will finish the project.',
-            right: 'By next year I will have finished the project.',
-            why: 'With **by + future time** for a completed action, use the **future perfect**.',
-            esNote: "'Para el año que viene habré terminado' = future perfect, no future simple.",
-          },
-          {
-            wrong: 'She said she will call me.',
-            right: 'She said she would call me.',
-            why: 'After a past reporting verb, **will** shifts to **would** (future in the past).',
-            esNote: "Tras un verbo en pasado, 'will' pasa a 'would'.",
-          },
-          {
-            wrong: 'We were going to leaving early.',
-            right: 'We were going to leave early.',
-            why: '**Be going to** is followed by the bare infinitive, not -ing.',
-            esNote: "'going to' + infinitivo sin 'to'-ing: going to leave.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'b2-fp-1',
-            prompt: 'Choose the best option: "By the time we get home, the kids ___ asleep."',
-            options: ['will fall', 'will have fallen', 'fall', 'would fall'],
-            answer: 1,
-            explain:
-              'The action will be complete before a future point, so use the **future perfect**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-fp-2',
-            before: "In two years' time, I ",
-            after: ' (work) here for a decade.',
-            answers: ['will have been working', "'ll have been working"],
-            explain: 'Duration up to a future point uses the **future perfect continuous**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-fp-3',
-            before: 'He told me he ',
-            after: ' arrive before noon.',
-            answers: ['would'],
-            explain: 'Future in the past after a past reporting verb uses **would**.',
-          },
-          {
-            kind: 'correct',
-            id: 'b2-fp-4',
-            wrong: 'By Friday I will receive your answer, I hope.',
-            answers: [
-              'By Friday I will have received your answer, I hope.',
-              "By Friday I'll have received your answer, I hope.",
-            ],
-            explain: 'Completion before a future deadline needs **will have + past participle**.',
-          },
-          {
-            kind: 'order',
-            id: 'b2-fp-5',
-            tokens: ['We', 'were', 'about', 'to', 'leave', 'when', 'the', 'phone', 'rang'],
-            answer: 'We were about to leave when the phone rang',
-            explain: "'Be about to' = on the point of doing something (future in the past).",
-          },
-          {
-            kind: 'translate',
-            id: 'b2-fp-6',
-            es: 'Para el próximo junio, habré terminado mi carrera.',
-            answers: [
-              'By next June, I will have finished my degree.',
-              "By next June, I'll have finished my degree.",
-            ],
-            explain: 'By + future time + future perfect.',
-          },
-          {
-            kind: 'dictation',
-            id: 'b2-fp-7',
-            text: 'By the time you read this, I will have left the country.',
-            explain: "Notice the future perfect 'will have left'.",
-          },
-        ],
-      },
-      {
-        id: 'b2-mixed-conditionals',
-        level: 'B2',
-        title: 'Mixed conditionals & alternatives to if',
-        summary:
-          "Mix time references in conditional sentences and use alternatives to 'if' such as unless, provided that, as long as, and inverted conditionals.",
-        sections: [
-          {
-            heading: 'Mixed conditionals',
-            body: 'Mix the times when the condition and result belong to different moments. **Past condition → present result**: if + past perfect, would + infinitive. **Present condition → past result**: if + past simple, would have + past participle.',
-            examples: [
-              {
-                en: 'If I had studied medicine, I would be a doctor now.',
-                es: 'Si hubiera estudiado medicina, ahora sería médico.',
-              },
-              {
-                en: "If she weren't so shy, she would have asked for a raise.",
-                es: 'Si no fuera tan tímida, habría pedido un aumento.',
-              },
-            ],
-          },
-          {
-            heading: "Alternatives to 'if'",
-            body: 'Use **unless** (= if not), **provided/providing that**, **as long as**, **on condition that**, **suppose/supposing**, and **in case**. In formal English you can also invert: **Had I known...**, **Were I you...**, **Should you need...**.',
-            examples: [
-              {
-                en: 'You can borrow it as long as you return it tomorrow.',
-                es: 'Puedes tomarlo prestado siempre que lo devuelvas mañana.',
-              },
-              {
-                en: "Unless you hurry, you'll miss the bus.",
-                es: 'A menos que te des prisa, perderás el autobús.',
-              },
-              {
-                en: 'Had I known you were coming, I would have cooked.',
-                es: 'Si hubiera sabido que venías, habría cocinado.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Mixed conditional patterns',
-            columns: ['Condition (if-clause)', 'Result (main clause)', 'Time mix'],
-            rows: [
-              ['if + past perfect', 'would + infinitive', 'past → present'],
-              ['if + past simple', 'would have + p.p.', 'present → past'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: "If he had saved money, he wouldn't be in debt today.",
-            es: 'Si hubiera ahorrado dinero, no estaría endeudado hoy.',
-          },
-          {
-            en: 'If I were more organised, I would have finished on time.',
-            es: 'Si fuera más organizado, habría terminado a tiempo.',
-          },
-          {
-            en: 'Take an umbrella in case it rains.',
-            es: 'Lleva un paraguas por si llueve.',
-          },
-          {
-            en: "You'll pass provided that you revise.",
-            es: 'Aprobarás siempre que repases.',
-          },
-          {
-            en: 'Should you have any questions, contact us.',
-            es: 'Si tuviera alguna pregunta, contáctenos.',
-          },
-          {
-            en: "Were I you, I'd accept the offer.",
-            es: 'Yo que tú, aceptaría la oferta.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'If I would have known, I would have come.',
-            right: 'If I had known, I would have come.',
-            why: "Don't use **would** in the if-clause; use the **past perfect**.",
-            esNote: "Error muy común: 'would have' no va en la cláusula con 'if'.",
-          },
-          {
-            wrong: "Unless you don't study, you'll fail.",
-            right: "Unless you study, you'll fail.",
-            why: "**Unless** already means 'if not', so don't add another negative.",
-            esNote: "'Unless' ya es 'si no'; no añadas otra negación.",
-          },
-          {
-            wrong: 'If I had studied, I will be a doctor now.',
-            right: 'If I had studied, I would be a doctor now.',
-            why: "A present hypothetical result takes **would + infinitive**, not 'will'.",
-            esNote: "Resultado presente hipotético: 'would be', no 'will be'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'b2-mc-1',
-            prompt: 'Choose the best option: "If I had taken the job, I ___ in Berlin now."',
-            options: ['would live', 'will live', 'would have lived', 'lived'],
-            answer: 0,
-            explain: 'Past condition, present result = **would + infinitive** (mixed conditional).',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-mc-2',
-            before: "If she weren't afraid of flying, she ",
-            after: ' us in Japan last year.',
-            answers: ['would have visited', 'would have joined'],
-            explain: 'Present condition, past result = **would have + past participle**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-mc-3',
-            before: '',
-            after: ' I known earlier, I would have helped.',
-            answers: ['Had'],
-            explain: "Inverted conditional: **Had + subject + past participle** replaces 'if'.",
-          },
-          {
-            kind: 'correct',
-            id: 'b2-mc-4',
-            wrong: 'If I would have more time, I would learn the piano.',
-            answers: ['If I had more time, I would learn the piano.'],
-            explain: "The if-clause uses the **past simple**, never 'would have'.",
-          },
-          {
-            kind: 'order',
-            id: 'b2-mc-5',
-            tokens: ['You', 'can', 'stay', 'as', 'long', 'as', 'you', 'stay', 'quiet'],
-            answer: 'You can stay as long as you stay quiet',
-            explain: "'As long as' introduces a condition (= only if).",
-          },
-          {
-            kind: 'translate',
-            id: 'b2-mc-6',
-            es: 'Si hubiera estudiado medicina, ahora sería médico.',
-            answers: [
-              'If I had studied medicine, I would be a doctor now.',
-              "If I had studied medicine, I'd be a doctor now.",
-            ],
-            explain: 'Past condition → present result.',
-          },
-          {
-            kind: 'dictation',
-            id: 'b2-mc-7',
-            text: "Unless you hurry, you'll miss the last train.",
-            explain: "'Unless' = if not.",
-          },
-        ],
-      },
-      {
-        id: 'b2-passive-voice',
-        level: 'B2',
-        title: 'The passive: all tenses, causative & reporting',
-        summary:
-          'Form the passive in every tense, use causative have/get something done, and report opinions impersonally with passive reporting structures.',
-        sections: [
-          {
-            heading: 'Passive across the tenses',
-            body: 'Form the passive with the right tense of **be + past participle**. Use it when the action matters more than the doer, or when the doer is unknown or obvious. Add **by + agent** only when it gives useful information.',
-            examples: [
-              {
-                en: 'The bridge is being repaired this week.',
-                es: 'El puente se está reparando esta semana.',
-              },
-              {
-                en: 'The documents had been signed before the meeting.',
-                es: 'Los documentos se habían firmado antes de la reunión.',
-              },
-              {
-                en: 'The results will be announced tomorrow.',
-                es: 'Los resultados se anunciarán mañana.',
-              },
-            ],
-          },
-          {
-            heading: 'Causative: have/get something done',
-            body: 'Use **have/get + object + past participle** to say someone else does a service for you. **Get** is more informal than **have**.',
-            examples: [
-              {
-                en: 'I had my hair cut yesterday.',
-                es: 'Ayer me corté el pelo (me lo cortaron).',
-              },
-              {
-                en: "We're getting the kitchen painted.",
-                es: 'Estamos haciendo que nos pinten la cocina.',
-              },
-            ],
-          },
-          {
-            heading: 'Passive reporting',
-            body: 'To report beliefs impersonally, use **It is said that...** or **subject + be + said/believed/thought + to-infinitive**. Use a perfect infinitive (**to have + p.p.**) for earlier actions.',
-            examples: [
-              {
-                en: 'It is believed that the painting is genuine.',
-                es: 'Se cree que el cuadro es auténtico.',
-              },
-              {
-                en: 'He is thought to have left the country.',
-                es: 'Se cree que ha salido del país.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Passive forms by tense',
-            columns: ['Tense', 'Passive form', 'Example'],
-            rows: [
-              ['Present simple', 'am/is/are + p.p.', 'is made'],
-              ['Present continuous', 'am/is/are being + p.p.', 'is being made'],
-              ['Past simple', 'was/were + p.p.', 'was made'],
-              ['Present perfect', 'has/have been + p.p.', 'has been made'],
-              ['Past perfect', 'had been + p.p.', 'had been made'],
-              ['Future / modal', 'will/can be + p.p.', 'will be made'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'This house was built in 1920.',
-            es: 'Esta casa se construyó en 1920.',
-          },
-          {
-            en: 'The road is being widened at the moment.',
-            es: 'La carretera se está ensanchando ahora mismo.',
-          },
-          {
-            en: 'I need to get my car serviced.',
-            es: 'Necesito que me revisen el coche.',
-          },
-          {
-            en: 'The suspect is said to be dangerous.',
-            es: 'Se dice que el sospechoso es peligroso.',
-          },
-          {
-            en: 'Nothing can be done now.',
-            es: 'Ahora no se puede hacer nada.',
-          },
-          {
-            en: 'She had her passport stolen at the airport.',
-            es: 'Le robaron el pasaporte en el aeropuerto.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'My car was stolen by someone yesterday.',
-            right: 'My car was stolen yesterday.',
-            why: 'Omit **by + agent** when the doer is unknown or unimportant.',
-            esNote: "No añadas 'by someone' si el agente es desconocido o irrelevante.",
-          },
-          {
-            wrong: 'I cut my hair yesterday (at the salon).',
-            right: 'I had my hair cut yesterday.',
-            why: 'If a professional does it for you, use the **causative** have something done.',
-            esNote: "'Me corté el pelo' en peluquería = 'I had my hair cut', no 'I cut my hair'.",
-          },
-          {
-            wrong: 'It is said the company to be in trouble.',
-            right: 'The company is said to be in trouble.',
-            why: 'In the personal pattern the subject comes first: **subject + be said + to-infinitive**.',
-            esNote: 'Estructura: sujeto + is said + to + infinitivo.',
+            wrong: 'It is said he is to be very rich.',
+            right: 'He is said to be very rich.',
+            why: "In the personal reporting pattern, the subject comes first, then 'is said to + infinitive'.",
           },
         ],
         exercises: [
           {
             kind: 'mcq',
             id: 'b2-pv-1',
-            prompt: 'Choose the passive: "The new stadium ___ right now."',
-            options: ['is built', 'is being built', 'has built', 'builds'],
+            prompt: "Choose the passive form: 'They are repairing the road.'",
+            options: [
+              'The road is repaired.',
+              'The road is being repaired.',
+              'The road has repaired.',
+            ],
             answer: 1,
-            explain: 'Present continuous passive = **is being + past participle**.',
+            explain: 'Present continuous passive = is/are being + past participle.',
           },
           {
             kind: 'cloze',
             id: 'b2-pv-2',
             before: 'We are going to ',
-            after: ' (have / the windows / clean) next week.',
-            answers: ['have the windows cleaned', 'get the windows cleaned'],
-            explain: 'Causative: have/get + object + past participle.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-pv-3',
-            before: 'The thief is believed ',
-            after: ' through the window.',
-            answers: ['to have escaped', 'to have climbed', 'to have entered'],
-            explain: 'Passive reporting with a **perfect infinitive** for an earlier action.',
+            after: ' our car serviced before the trip.',
+            answers: ['have', 'get'],
+            explain:
+              "The causative uses 'have/get + object + past participle' for a service done by someone else.",
           },
           {
             kind: 'correct',
-            id: 'b2-pv-4',
-            wrong: 'Yesterday I repaired my watch at the shop.',
+            id: 'b2-pv-3',
+            wrong: 'It is said that he has stolen the money, he is said to steal it.',
             answers: [
-              'Yesterday I had my watch repaired at the shop.',
-              'Yesterday I got my watch repaired at the shop.',
+              'He is said to have stolen the money.',
+              'It is said that he has stolen the money.',
             ],
-            explain: 'Someone else did the repair, so use the **causative**.',
+            explain:
+              "For an earlier action in the personal pattern, use the perfect infinitive 'to have stolen'.",
           },
           {
             kind: 'order',
-            id: 'b2-pv-5',
-            tokens: ['The', 'results', 'will', 'be', 'announced', 'next', 'Monday'],
-            answer: 'The results will be announced next Monday',
+            id: 'b2-pv-4',
+            tokens: ['the', 'results', 'will', 'be', 'announced', 'tomorrow'],
+            answer: 'The results will be announced tomorrow.',
             explain: 'Future passive = will be + past participle.',
           },
           {
             kind: 'translate',
-            id: 'b2-pv-6',
-            es: 'Se cree que el cuadro es auténtico.',
+            id: 'b2-pv-5',
+            es: 'Nos están construyendo una casa nueva.',
             answers: [
-              'It is believed that the painting is genuine.',
-              'The painting is believed to be genuine.',
+              'We are having a new house built.',
+              "We're having a new house built.",
+              'We are getting a new house built.',
             ],
-            explain: 'Two correct passive reporting structures.',
+            explain: 'Service arranged for us = causative have/get something done.',
           },
           {
             kind: 'dictation',
-            id: 'b2-pv-7',
-            text: 'The bridge is being repaired this week.',
-            explain: 'Present continuous passive.',
+            id: 'b2-pv-6',
+            text: 'The ancient city is believed to have been destroyed by an earthquake.',
+            explain:
+              "Passive reporting with a passive perfect infinitive 'to have been destroyed'.",
           },
         ],
       },
       {
         id: 'b2-reported-speech',
         level: 'B2',
-        title: 'Reported speech: commands, requests & reporting verbs',
+        title: 'Reported Speech & Reporting Verbs',
         summary:
-          "Report statements, questions, commands and requests, and use specific reporting verbs with the right patterns instead of always saying 'said'.",
+          "Reported speech retells what someone said, usually shifting tenses one step back and changing pronouns and time words. Commands and requests use 'tell/ask + object + to-infinitive', while reporting verbs like suggest, offer, admit, deny and warn each follow their own grammatical pattern.",
+        summaryEs:
+          "El estilo indirecto cuenta lo que alguien dijo, normalmente desplazando los tiempos un paso atrás y cambiando pronombres y expresiones de tiempo. Las órdenes y peticiones usan 'tell/ask + objeto + to-infinitivo', mientras que verbos de reporte como suggest, offer, admit, deny y warn siguen cada uno su propio patrón gramatical.",
         sections: [
           {
             heading: 'Backshift and changes',
-            body: 'After a past reporting verb, shift tenses back one step (present → past, will → would, can → could). Also change pronouns and time/place words (**now → then, today → that day, here → there, tomorrow → the next day**).',
+            body: "After a past reporting verb, tenses usually **shift back**: present → past, past → past perfect, will → would, can → could. Pronouns and time/place words also change: 'now' → 'then', 'tomorrow' → 'the next day', 'this' → 'that'. 'I am tired now' → 'She said she was tired then.'",
+            bodyEs:
+              "Tras un verbo de reporte en pasado, los tiempos suelen **retroceder**: presente → pasado, pasado → pasado perfecto, will → would, can → could. Los pronombres y las palabras de tiempo/lugar también cambian: 'now' → 'then', 'tomorrow' → 'the next day', 'this' → 'that'. 'I am tired now' → 'She said she was tired then.'",
             examples: [
               {
-                en: '"I\'m tired," she said. → She said she was tired.',
-                es: '—Estoy cansada —dijo. → Dijo que estaba cansada.',
+                en: 'He said he would call me the next day.',
+                es: 'Dijo que me llamaría al día siguiente.',
               },
               {
-                en: 'He said he would arrive the next day.',
-                es: 'Dijo que llegaría al día siguiente.',
+                en: 'She told me she had already eaten.',
+                es: 'Me dijo que ya había comido.',
               },
             ],
           },
           {
-            heading: 'Commands, requests and questions',
-            body: 'Report commands and requests with **tell/ask + object + (not) to + infinitive**. Report questions with **ask + if/whether** (yes/no) or the **question word**, using normal word order (no inversion, no do/does/did).',
+            heading: 'Commands and requests',
+            body: "Report orders, advice and requests with **tell/ask/advise/warn + object + (not) to + infinitive**. 'Sit down' → 'She told me to sit down.' 'Please don't go' → 'He asked me not to go.' The negative is formed with **not to**.",
+            bodyEs:
+              "Reporta órdenes, consejos y peticiones con **tell/ask/advise/warn + objeto + (not) to + infinitivo**. 'Sit down' → 'She told me to sit down.' 'Please don't go' → 'He asked me not to go.' El negativo se forma con **not to**.",
             examples: [
               {
-                en: 'She told me to wait outside.',
-                es: 'Me dijo que esperara fuera.',
+                en: 'The teacher told us to be quiet.',
+                es: 'La profesora nos dijo que nos calláramos.',
               },
               {
-                en: 'He asked me not to be late.',
-                es: 'Me pidió que no llegara tarde.',
-              },
-              {
-                en: 'They asked where I lived.',
-                es: 'Me preguntaron dónde vivía.',
+                en: 'They asked me not to tell anyone.',
+                es: 'Me pidieron que no se lo dijera a nadie.',
               },
             ],
           },
           {
-            heading: 'Specific reporting verbs',
-            body: 'Use precise verbs with their own patterns: **suggest doing**, **offer to do**, **promise to do**, **admit doing**, **accuse someone of doing**, **apologise for doing**, **warn someone not to do**, **remind someone to do**.',
+            heading: 'Reporting verbs and their patterns',
+            body: "Many verbs summarise a speech act with their own structure. **suggest/recommend + -ing** or **+ that-clause**; **offer/promise/agree/refuse + to-infinitive**; **admit/deny + -ing**; **accuse someone of + -ing**; **blame someone for + -ing**; **apologise for + -ing**; **insist on + -ing**. 'He admitted breaking the window.' 'She offered to help.'",
+            bodyEs:
+              "Muchos verbos resumen un acto de habla con su propia estructura. **suggest/recommend + -ing** o **+ that-clause**; **offer/promise/agree/refuse + to-infinitivo**; **admit/deny + -ing**; **accuse someone of + -ing**; **blame someone for + -ing**; **apologise for + -ing**; **insist on + -ing**. 'He admitted breaking the window.' 'She offered to help.'",
             examples: [
               {
-                en: 'He offered to help us.',
-                es: 'Se ofreció a ayudarnos.',
+                en: 'She suggested going to the cinema.',
+                es: 'Sugirió ir al cine.',
               },
               {
-                en: 'She accused him of lying.',
-                es: 'Lo acusó de mentir.',
+                en: 'He denied taking the money.',
+                es: 'Negó haber cogido el dinero.',
               },
             ],
           },
@@ -6184,168 +6560,174 @@ export const GRAMMAR: GrammarUnit[] = [
             caption: 'Reporting verb patterns',
             columns: ['Pattern', 'Verbs', 'Example'],
             rows: [
-              ['verb + to-inf', 'offer, promise, refuse, agree', 'promised to call'],
-              ['verb + obj + to-inf', 'tell, ask, remind, warn, advise', 'asked me to wait'],
-              ['verb + -ing', 'suggest, admit, deny, recommend', 'denied stealing it'],
-              ['verb + obj + of + -ing', 'accuse, suspect', 'accused him of cheating'],
+              ['verb + to-infinitive', 'offer, promise, agree, refuse', 'She refused to pay.'],
+              ['verb + object + to-infinitive', 'tell, ask, advise, warn', 'He told me to wait.'],
+              ['verb + -ing', 'suggest, admit, deny, recommend', 'I admit being wrong.'],
+              [
+                'verb + prep + -ing',
+                'apologise for, insist on, accuse of',
+                'He apologised for being late.',
+              ],
             ],
           },
         ],
         examples: [
           {
-            en: 'She said she had already seen that film.',
-            es: 'Dijo que ya había visto esa película.',
+            en: 'She said she had seen the film before.',
+            es: 'Dijo que ya había visto la película.',
           },
           {
-            en: 'The teacher told us to open our books.',
-            es: 'El profesor nos dijo que abriéramos los libros.',
-          },
-          {
-            en: 'He asked whether I wanted a coffee.',
-            es: 'Me preguntó si quería un café.',
+            en: 'He asked me where I lived.',
+            es: 'Me preguntó dónde vivía.',
           },
           {
             en: 'They warned us not to swim there.',
             es: 'Nos advirtieron que no nadáramos allí.',
           },
           {
-            en: 'I reminded her to lock the door.',
-            es: 'Le recordé que cerrara la puerta con llave.',
+            en: 'I apologised for being late.',
+            es: 'Me disculpé por llegar tarde.',
           },
           {
-            en: 'He admitted breaking the window.',
-            es: 'Admitió haber roto la ventana.',
+            en: 'She accused him of lying.',
+            es: 'Lo acusó de mentir.',
+          },
+          {
+            en: 'He promised to pay me back soon.',
+            es: 'Prometió devolverme el dinero pronto.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'He asked me where do I live.',
-            right: 'He asked me where I lived.',
-            why: "Reported questions use **statement word order** and no auxiliary 'do'.",
-            esNote: "En preguntas indirectas no se invierte ni se usa 'do/does/did'.",
+            wrong: 'He said me that he was tired.',
+            right: 'He told me that he was tired.',
+            why: "'Say' is not followed by a personal object; use 'tell + object' or 'say (without object)'.",
+            esNote: "'Tell me', pero 'say to me'; nunca 'say me'.",
           },
           {
-            wrong: 'She said me that she was busy.',
-            right: 'She told me that she was busy. / She said she was busy.',
-            why: '**Say** has no personal object; **tell** needs one (tell someone).',
-            esNote: "'say' no lleva objeto de persona; 'tell' sí: tell me.",
+            wrong: 'She suggested me to go.',
+            right: 'She suggested going. / She suggested that I go.',
+            why: "'Suggest' is not followed by 'object + to-infinitive'; use '-ing' or a that-clause.",
+            esNote: "'Suggest' no lleva 'to + infinitivo' con objeto.",
           },
           {
-            wrong: 'He suggested me to go.',
-            right: 'He suggested going. / He suggested that I go.',
-            why: '**Suggest** is not followed by object + to-infinitive.',
-            esNote: "'suggest' + -ing o 'suggest that...', nunca 'suggest someone to do'.",
+            wrong: 'He asked me what time was it.',
+            right: 'He asked me what time it was.',
+            why: 'Reported questions use statement word order, not the question word order with inversion.',
           },
         ],
         exercises: [
           {
             kind: 'mcq',
             id: 'b2-rs-1',
-            prompt: 'Report it: "Don\'t touch that," she said. → She ___ that.',
+            prompt: "Report this: 'I will help you,' she said.",
             options: [
-              'said me not to touch',
-              'told me not to touch',
-              'told me to not touch',
-              'said not touching',
+              'She said she will help me.',
+              'She said she would help me.',
+              'She said she helps me.',
             ],
             answer: 1,
-            explain: 'Commands: **tell + object + not + to-infinitive**.',
+            explain: "After a past reporting verb, 'will' shifts back to 'would'.",
           },
           {
             kind: 'cloze',
             id: 'b2-rs-2',
-            before: 'He asked me ',
-            after: ' I had finished the report.',
-            answers: ['if', 'whether'],
-            explain: 'Yes/no questions are reported with **if** or **whether**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-rs-3',
-            before: 'She apologised ',
-            after: ' late.',
-            answers: ['for being', 'for arriving'],
-            explain: '**Apologise for + -ing**.',
+            before: 'He admitted ',
+            after: ' the vase.',
+            answers: ['breaking', 'having broken'],
+            explain: "'Admit' is followed by the -ing form, not a to-infinitive.",
           },
           {
             kind: 'correct',
-            id: 'b2-rs-4',
-            wrong: 'They asked me what time was it.',
-            answers: ['They asked me what time it was.'],
-            explain: 'Reported questions keep **statement word order**.',
+            id: 'b2-rs-3',
+            wrong: 'The teacher said us to open our books.',
+            answers: [
+              'The teacher told us to open our books.',
+              'The teacher asked us to open our books.',
+            ],
+            explain:
+              "Commands use 'tell/ask + object + to-infinitive'; 'say' cannot take a personal object this way.",
           },
           {
             kind: 'order',
-            id: 'b2-rs-5',
-            tokens: ['He', 'promised', 'to', 'pay', 'me', 'back', 'the', 'next', 'day'],
-            answer: 'He promised to pay me back the next day',
-            explain: "'Promise + to-infinitive'; 'tomorrow' becomes 'the next day'.",
+            id: 'b2-rs-4',
+            tokens: ['she', 'asked', 'me', 'not', 'to', 'be', 'late'],
+            answer: 'She asked me not to be late.',
+            explain: "Negative requests use 'not to + infinitive'.",
           },
           {
             kind: 'translate',
-            id: 'b2-rs-6',
-            es: 'Me dijo que esperara fuera.',
-            answers: ['She told me to wait outside.', 'He told me to wait outside.'],
-            explain: 'Reported command: tell + object + to-infinitive.',
+            id: 'b2-rs-5',
+            es: 'Sugirió que esperáramos hasta mañana.',
+            answers: [
+              'She suggested waiting until tomorrow.',
+              'She suggested that we wait until tomorrow.',
+              'He suggested waiting until tomorrow.',
+            ],
+            explain: "'Suggest' takes -ing or a that-clause, never 'object + to-infinitive'.",
           },
           {
             kind: 'dictation',
-            id: 'b2-rs-7',
-            text: 'She said she had already seen that film.',
-            explain: 'Backshift: present perfect becomes past perfect.',
+            id: 'b2-rs-6',
+            text: 'He apologised for not answering my email.',
+            explain: "'Apologise for + -ing'; the negative is 'for not + -ing'.",
           },
         ],
       },
       {
-        id: 'b2-past-modals-deduction',
+        id: 'b2-past-modals-of-deduction',
         level: 'B2',
-        title: "Past modals: deduction, needn't have & didn't need to",
+        title: 'Past Modals: Deduction & Regret',
         summary:
-          "Speculate about the past with must have, can't have and might have, and distinguish needn't have done from didn't need to do.",
+          "Past modals let you make deductions and judgements about the past. Use 'must have' for near certainty, 'can't/couldn't have' for impossibility, and 'might/may/could have' for possibility. 'Should have' expresses criticism or regret, while 'needn't have' and 'didn't need to' describe unnecessary actions in different ways.",
+        summaryEs:
+          "Los modales en pasado permiten hacer deducciones y juicios sobre el pasado. Usa 'must have' para casi certeza, 'can't/couldn't have' para imposibilidad y 'might/may/could have' para posibilidad. 'Should have' expresa crítica o arrepentimiento, mientras que 'needn't have' y 'didn't need to' describen acciones innecesarias de formas distintas.",
         sections: [
           {
             heading: 'Deduction about the past',
-            body: "Use **must have + p.p.** for a confident positive conclusion, **can't/couldn't have + p.p.** for a confident negative one, and **might/may/could have + p.p.** for a possibility.",
+            body: "Use **modal + have + past participle** to deduce what was true in the past. **Must have** = I'm almost certain it happened. **Can't/couldn't have** = I'm certain it didn't happen. **Might/may/could have** = it's possible. 'The ground is wet; it must have rained.' 'He can't have finished already.'",
+            bodyEs:
+              "Usa **modal + have + participio** para deducir qué era cierto en el pasado. **Must have** = casi seguro que ocurrió. **Can't/couldn't have** = seguro que no ocurrió. **Might/may/could have** = es posible. 'The ground is wet; it must have rained.' 'He can't have finished already.'",
             examples: [
               {
-                en: 'The ground is wet; it must have rained.',
-                es: 'El suelo está mojado; debe de haber llovido.',
+                en: 'She must have left early; her car is gone.',
+                es: 'Debe de haberse ido temprano; su coche no está.',
               },
               {
-                en: "She can't have heard you; she had headphones on.",
-                es: 'No puede haberte oído; llevaba auriculares.',
-              },
-              {
-                en: 'He might have missed the train.',
-                es: 'Puede que haya perdido el tren.',
+                en: "They can't have heard the news yet.",
+                es: 'No pueden haberse enterado de la noticia todavía.',
               },
             ],
           },
           {
             heading: 'Criticism and regret: should have',
-            body: "Use **should/ought to have + p.p.** to criticise or express regret about a past action, and **shouldn't have + p.p.** for something that was a mistake to do.",
+            body: "Use **should have / shouldn't have + past participle** to say that the right thing was not done, expressing criticism or regret. 'You should have told me' (but you didn't). 'I shouldn't have eaten so much' (but I did). It always looks back at a past action that differs from what was ideal.",
+            bodyEs:
+              "Usa **should have / shouldn't have + participio** para decir que no se hizo lo correcto, expresando crítica o arrepentimiento. 'You should have told me' (pero no lo hiciste). 'I shouldn't have eaten so much' (pero lo hice). Siempre mira hacia atrás a una acción pasada distinta de lo ideal.",
             examples: [
               {
-                en: 'You should have told me earlier.',
-                es: 'Deberías habérmelo dicho antes.',
+                en: 'You should have asked for help.',
+                es: 'Deberías haber pedido ayuda.',
               },
               {
-                en: "I shouldn't have eaten so much.",
-                es: 'No debería haber comido tanto.',
+                en: "I shouldn't have shouted at him.",
+                es: 'No debería haberle gritado.',
               },
             ],
           },
           {
             heading: "needn't have vs didn't need to",
-            body: "**Needn't have done** = you did it, but it was unnecessary. **Didn't need to do** usually = it wasn't necessary, so (often) you didn't do it.",
+            body: "**Needn't have + past participle** = you did something that turned out to be unnecessary. **Didn't need to + base verb** = it wasn't necessary, and usually you didn't do it. 'I needn't have cooked' (I cooked, but it was a waste). 'I didn't need to cook' (so I didn't bother).",
+            bodyEs:
+              "**Needn't have + participio** = hiciste algo que resultó innecesario. **Didn't need to + verbo base** = no era necesario, y normalmente no lo hiciste. 'I needn't have cooked' (cociné, pero fue en vano). 'I didn't need to cook' (así que no me molesté).",
             examples: [
               {
-                en: "You needn't have cooked — we'd already eaten.",
-                es: 'No hacía falta que cocinaras: ya habíamos comido (pero cocinaste).',
+                en: "You needn't have bought milk; we already had some.",
+                es: 'No hacía falta que compraras leche; ya teníamos.',
               },
               {
-                en: "I didn't need to buy milk; there was plenty.",
-                es: 'No necesitaba comprar leche; había de sobra (y no compré).',
+                en: "I didn't need to wake up early, so I slept in.",
+                es: 'No tenía que levantarme temprano, así que dormí hasta tarde.',
               },
             ],
           },
@@ -6353,169 +6735,166 @@ export const GRAMMAR: GrammarUnit[] = [
         tables: [
           {
             caption: 'Past modal meanings',
-            columns: ['Form', 'Meaning'],
+            columns: ['Modal', 'Meaning', 'Example'],
             rows: [
-              ['must have + p.p.', 'certain it happened'],
-              ["can't / couldn't have + p.p.", "certain it didn't happen"],
-              ['might / may / could have + p.p.', 'possible'],
-              ["should(n't) have + p.p.", 'criticism / regret'],
-              ["needn't have + p.p.", 'did it, but unnecessary'],
+              ['must have + p.p.', 'near certainty it happened', 'She must have known.'],
+              ["can't/couldn't have + p.p.", "certainty it didn't happen", "He can't have lied."],
+              ['might/may/could have + p.p.', 'possibility', 'They may have left.'],
+              ['should have + p.p.', 'criticism / regret', 'I should have called.'],
+              ["needn't have + p.p.", 'did it, but unnecessary', "You needn't have paid."],
             ],
           },
         ],
         examples: [
           {
-            en: 'They must have left already; the lights are off.',
-            es: 'Ya deben de haberse ido; las luces están apagadas.',
+            en: 'The lights are off; they must have gone to bed.',
+            es: 'Las luces están apagadas; deben de haberse acostado.',
           },
           {
-            en: "You can't have finished the whole book in one night!",
-            es: '¡No puedes haber terminado el libro entero en una noche!',
+            en: "You couldn't have seen her; she was abroad.",
+            es: 'No pudiste haberla visto; estaba en el extranjero.',
+          },
+          {
+            en: 'He might have missed the bus.',
+            es: 'Puede que haya perdido el autobús.',
           },
           {
             en: 'We should have booked a table.',
             es: 'Deberíamos haber reservado mesa.',
           },
           {
-            en: 'She might have forgotten the meeting.',
-            es: 'Puede que se haya olvidado de la reunión.',
+            en: "You needn't have worried; everything was fine.",
+            es: 'No tenías por qué preocuparte; todo salió bien.',
           },
           {
-            en: "You needn't have waited for me.",
-            es: 'No hacía falta que me esperaras.',
-          },
-          {
-            en: "I didn't need to bring an umbrella in the end.",
-            es: 'Al final no necesitaba traer paraguas.',
+            en: "She didn't need to bring anything, so she came empty-handed.",
+            es: 'No tenía que traer nada, así que vino con las manos vacías.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'He must left already.',
-            right: 'He must have left already.',
-            why: 'Past deduction needs **have + past participle** after the modal.',
-            esNote: "Deducción en pasado: modal + 'have' + participio.",
+            wrong: 'He must left early.',
+            right: 'He must have left early.',
+            why: "Deduction about the past needs 'have + past participle' after the modal.",
+            esNote: "'Must have + participio' para deducir el pasado.",
           },
           {
-            wrong: 'She must not have heard me. (to mean impossibility)',
-            right: "She can't have heard me.",
-            why: "For a confident negative deduction, use **can't/couldn't have**, not 'must not have'.",
-            esNote: "Para negar con seguridad usa 'can't have', no 'mustn't have'.",
+            wrong: 'I should have went to the doctor.',
+            right: 'I should have gone to the doctor.',
+            why: "Use the past participle 'gone', not the past simple 'went', after 'should have'.",
+            esNote: "Tras 'should have', participio pasado.",
           },
           {
-            wrong: "You didn't need to have helped me, but thanks.",
-            right: "You needn't have helped me, but thanks.",
-            why: "If the action was done but unnecessary, use **needn't have + p.p.**",
-            esNote: "'needn't have' = lo hiciste sin necesidad; 'didn't need to' = no hacía falta.",
+            wrong: "You didn't need to buy bread, but you did.",
+            right: "You needn't have bought bread.",
+            why: "If the action was actually done but unnecessary, use 'needn't have + past participle'.",
           },
         ],
         exercises: [
           {
             kind: 'mcq',
             id: 'b2-pm-1',
-            prompt: 'Choose the best option: "The streets are wet. It ___ during the night."',
-            options: ['must rain', 'must have rained', "can't have rained", 'should rain'],
+            prompt: 'The window is broken. Someone ___ it.',
+            options: ['must break', 'must have broken', 'should break'],
             answer: 1,
-            explain: 'A confident past conclusion uses **must have + past participle**.',
+            explain: "A confident deduction about the past uses 'must have + past participle'.",
           },
           {
             kind: 'cloze',
             id: 'b2-pm-2',
-            before: 'He failed the exam. He ',
-            after: ' harder.',
-            answers: ['should have studied', 'ought to have studied'],
-            explain: 'Regret/criticism about the past = **should have + past participle**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-pm-3',
-            before: 'You ',
-            after: ' bought tickets — entry was free!',
-            answers: ["needn't have", "needn't have", "didn't need to"],
-            explain:
-              "An unnecessary action that was nonetheless done = **needn't have + p.p.** (didn't need to is also accepted by many speakers).",
+            before: "I'm so full. I ",
+            after: ' eaten that last slice.',
+            answers: ["shouldn't have", 'should not have'],
+            explain: "Regret about a past action uses 'shouldn't have + past participle'.",
           },
           {
             kind: 'correct',
-            id: 'b2-pm-4',
-            wrong: "She can't finished it so fast.",
-            answers: ["She can't have finished it so fast."],
-            explain: "Negative past deduction = **can't have + past participle**.",
+            id: 'b2-pm-3',
+            wrong: "She can't be at the party last night; she was ill.",
+            answers: [
+              "She can't have been at the party last night; she was ill.",
+              "She couldn't have been at the party last night; she was ill.",
+            ],
+            explain: "Past impossibility needs 'can't/couldn't have + past participle'.",
           },
           {
             kind: 'order',
-            id: 'b2-pm-5',
-            tokens: ['They', 'might', 'have', 'taken', 'the', 'wrong', 'turning'],
-            answer: 'They might have taken the wrong turning',
-            explain: 'Past possibility = might have + past participle.',
+            id: 'b2-pm-4',
+            tokens: ['you', "needn't", 'have', 'waited', 'for', 'me'],
+            answer: "You needn't have waited for me.",
+            explain: "'Needn't have + p.p.' = the waiting was done but was unnecessary.",
           },
           {
             kind: 'translate',
-            id: 'b2-pm-6',
-            es: 'Deberías habérmelo dicho antes.',
+            id: 'b2-pm-5',
+            es: 'Puede que se hayan perdido.',
             answers: [
-              'You should have told me earlier.',
-              'You should have told me before.',
-              'You ought to have told me earlier.',
+              'They might have got lost.',
+              'They may have got lost.',
+              'They could have got lost.',
+              'They might have gotten lost.',
             ],
-            explain: 'Regret/criticism with should have + past participle.',
+            explain: 'Past possibility uses might/may/could have + past participle.',
           },
           {
             kind: 'dictation',
-            id: 'b2-pm-7',
-            text: "You needn't have waited for me.",
-            explain: "needn't have = it was done but unnecessary.",
+            id: 'b2-pm-6',
+            text: 'You should have told me you were coming.',
+            explain: "'Should have + past participle' expresses criticism of a past omission.",
           },
         ],
       },
       {
-        id: 'b2-relative-participle-clauses',
+        id: 'b2-relative-and-participle-clauses',
         level: 'B2',
-        title: 'Reduced relative & participle clauses',
+        title: 'Reduced Relative & Participle Clauses',
         summary:
-          'Make sentences more economical by reducing relative clauses to participle clauses and using -ing/-ed clauses to combine information.',
+          'Relative clauses can often be shortened into participle clauses to sound more concise and formal. A present participle (-ing) replaces an active relative clause, a past participle replaces a passive one, and participle clauses can also link two actions or show cause and time relationships.',
+        summaryEs:
+          'Las oraciones de relativo a menudo pueden acortarse en cláusulas de participio para sonar más concisas y formales. Un participio presente (-ing) sustituye una relativa activa, un participio pasado sustituye una pasiva, y las cláusulas de participio también pueden enlazar dos acciones o mostrar relaciones de causa y tiempo.',
         sections: [
           {
             heading: 'Reducing relative clauses',
-            body: "When a relative clause has an active meaning, reduce it to a **present participle (-ing)**. When it has a passive meaning, reduce it to a **past participle (-ed/-en)**. Drop the relative pronoun and the verb 'be'.",
+            body: "When a relative clause has an **active** meaning, replace 'who/which/that + verb' with the **present participle (-ing)**: 'the man who is waiting' → 'the man waiting'. When it has a **passive** meaning, use the **past participle**: 'the letter that was sent' → 'the letter sent'. This makes writing tighter and is common in formal English.",
+            bodyEs:
+              "Cuando una oración de relativo tiene sentido **activo**, sustituye 'who/which/that + verbo' por el **participio presente (-ing)**: 'the man who is waiting' → 'the man waiting'. Cuando tiene sentido **pasivo**, usa el **participio pasado**: 'the letter that was sent' → 'the letter sent'. Esto compacta la escritura y es común en inglés formal.",
             examples: [
               {
-                en: 'The man who is talking to Sue is my boss. → The man talking to Sue is my boss.',
-                es: 'El hombre que habla con Sue es mi jefe.',
+                en: 'The people living next door are friendly.',
+                es: 'Las personas que viven al lado son simpáticas.',
               },
               {
-                en: 'The books that were left on the table are mine. → The books left on the table are mine.',
-                es: 'Los libros dejados sobre la mesa son míos.',
+                en: 'The car parked outside is mine.',
+                es: 'El coche aparcado fuera es mío.',
               },
             ],
           },
           {
-            heading: 'Participle clauses for time and reason',
-            body: 'Participle clauses can replace clauses of **time** or **reason** when both clauses share the same subject. Use a **present participle** for an active/same-time action, a **perfect participle (having + p.p.)** for an earlier action, and a **past participle** for a passive meaning.',
+            heading: 'Participle clauses for time and cause',
+            body: "Participle clauses can connect ideas without a conjunction. A **present participle** shows an action happening at the same time or a reason: 'Feeling tired, she went to bed' (= because she felt tired). 'Opening the door, he saw the mess' (= when/as he opened it). A **perfect participle** (having + p.p.) shows an earlier completed action: 'Having finished, they left.'",
+            bodyEs:
+              "Las cláusulas de participio pueden conectar ideas sin conjunción. Un **participio presente** muestra una acción simultánea o una razón: 'Feeling tired, she went to bed' (= porque estaba cansada). 'Opening the door, he saw the mess' (= cuando abrió la puerta). Un **participio perfecto** (having + p.p.) muestra una acción anterior ya terminada: 'Having finished, they left.'",
             examples: [
               {
-                en: 'Feeling tired, she went to bed early.',
-                es: 'Sintiéndose cansada, se fue pronto a la cama.',
+                en: 'Not knowing the way, we asked for directions.',
+                es: 'Como no conocíamos el camino, pedimos indicaciones.',
               },
               {
-                en: 'Having finished the report, he left the office.',
-                es: 'Habiendo terminado el informe, salió de la oficina.',
-              },
-              {
-                en: 'Built in 1850, the house needs repairs.',
-                es: 'Construida en 1850, la casa necesita reparaciones.',
+                en: 'Having read the report, she made her decision.',
+                es: 'Tras leer el informe, tomó su decisión.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Reducing relative clauses',
-            columns: ['Full clause', 'Reduced form', 'Meaning'],
+            caption: 'Full vs reduced clauses',
+            columns: ['Full relative clause', 'Reduced clause'],
             rows: [
-              ['who is waiting', 'waiting', 'active'],
-              ['which was made', 'made', 'passive'],
-              ['who have finished', 'having finished', 'earlier active'],
+              ['the woman who is speaking', 'the woman speaking'],
+              ['the books that were left on the table', 'the books left on the table'],
+              ['the train which departs at six', 'the train departing at six'],
+              ['a house that was built in 1900', 'a house built in 1900'],
             ],
           },
         ],
@@ -6525,157 +6904,152 @@ export const GRAMMAR: GrammarUnit[] = [
             es: 'Cualquiera que quiera una entrada debe hacer cola aquí.',
           },
           {
-            en: 'The car parked outside belongs to my neighbour.',
-            es: 'El coche aparcado fuera es de mi vecino.',
+            en: 'The money stolen from the bank was never found.',
+            es: 'El dinero robado del banco nunca se encontró.',
           },
           {
-            en: 'Not knowing the way, we asked a local.',
-            es: 'Como no sabíamos el camino, le preguntamos a un lugareño.',
+            en: 'Walking along the beach, I found a shell.',
+            es: 'Caminando por la playa, encontré una concha.',
           },
           {
-            en: 'Written in plain English, the guide is easy to follow.',
-            es: 'Escrita en inglés sencillo, la guía es fácil de seguir.',
+            en: 'Built in the 1920s, the theatre is now a museum.',
+            es: 'Construido en los años veinte, el teatro es ahora un museo.',
           },
           {
-            en: 'Having lived abroad, she speaks four languages.',
-            es: 'Como ha vivido en el extranjero, habla cuatro idiomas.',
+            en: 'Having missed the bus, he had to walk.',
+            es: 'Tras perder el autobús, tuvo que ir caminando.',
+          },
+          {
+            en: 'There were dozens of people waiting outside.',
+            es: 'Había docenas de personas esperando fuera.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'The people waited outside were angry.',
-            right: 'The people waiting outside were angry.',
-            why: 'An active meaning needs the **present participle (-ing)**, not the past participle.',
-            esNote: "Significado activo: 'waiting' (que esperaban), no 'waited'.",
+            wrong: 'The man speaked to me was a stranger.',
+            right: 'The man speaking to me was a stranger.',
+            why: "An active reduced clause uses the present participle '-ing', not a past form.",
+            esNote: 'Relativa activa reducida: participio en -ing.',
           },
           {
-            wrong: 'Stolen the money, he ran away.',
-            right: 'Having stolen the money, he ran away.',
-            why: 'For an earlier completed action use the **perfect participle (having + p.p.)**.',
-            esNote: "Acción anterior: 'having + participio'.",
+            wrong: 'The documents sending yesterday arrived today.',
+            right: 'The documents sent yesterday arrived today.',
+            why: "A passive meaning ('that were sent') requires the past participle, not -ing.",
+            esNote: 'Sentido pasivo: participio pasado.',
           },
           {
             wrong: 'Walking down the street, a dog bit me.',
             right: 'Walking down the street, I was bitten by a dog.',
-            why: 'The participle and the main clause must share the **same subject** (a dangling participle is wrong).',
-            esNote: 'El sujeto del participio y el de la oración principal deben coincidir.',
+            why: "The subject of the participle must match the main clause; otherwise the participle 'dangles' illogically.",
           },
         ],
         exercises: [
           {
             kind: 'mcq',
             id: 'b2-rc-1',
-            prompt: 'Reduce: "The woman who is sitting next to me is a doctor."',
+            prompt: "Reduce: 'The girl who is playing the piano is my sister.'",
             options: [
-              'The woman sat next to me',
-              'The woman sitting next to me',
-              'The woman seated next to me being',
-              'The woman who sitting next to me',
+              'The girl played the piano is my sister.',
+              'The girl playing the piano is my sister.',
+              'The girl play the piano is my sister.',
             ],
             answer: 1,
-            explain: 'Active meaning reduces to the **present participle**: sitting.',
+            explain: "An active relative clause reduces to the present participle 'playing'.",
           },
           {
             kind: 'cloze',
             id: 'b2-rc-2',
             before: 'The bridge ',
-            after: ' last year is already cracking.',
+            after: ' in 1850 still stands today.',
             answers: ['built', 'constructed'],
-            explain: 'Passive meaning reduces to the **past participle**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-rc-3',
-            before: '',
-            after: ' finished her degree, she started job-hunting.',
-            answers: ['Having'],
-            explain: 'An earlier action uses the **perfect participle**: Having + p.p.',
+            explain: "A passive meaning ('that was built') reduces to the past participle.",
           },
           {
             kind: 'correct',
-            id: 'b2-rc-4',
-            wrong: 'The letters wrote in 1900 are valuable.',
-            answers: ['The letters written in 1900 are valuable.'],
-            explain: "Passive meaning needs the **past participle** 'written'.",
+            id: 'b2-rc-3',
+            wrong: 'Having ate breakfast, we set off.',
+            answers: ['Having eaten breakfast, we set off.', 'Having had breakfast, we set off.'],
+            explain: "The perfect participle uses 'having + past participle' ('eaten', not 'ate').",
           },
           {
             kind: 'order',
-            id: 'b2-rc-5',
-            tokens: ['Not', 'knowing', 'what', 'to', 'say', 'he', 'stayed', 'silent'],
-            answer: 'Not knowing what to say he stayed silent',
-            explain: 'Negative participle clause of reason: Not knowing...',
+            id: 'b2-rc-4',
+            tokens: ['not', 'feeling', 'well', 'she', 'stayed', 'home'],
+            answer: 'Not feeling well, she stayed home.',
+            explain:
+              'A present participle clause can express a reason; the negative goes before it.',
           },
           {
             kind: 'translate',
-            id: 'b2-rc-6',
-            es: 'El coche aparcado fuera es de mi vecino.',
+            id: 'b2-rc-5',
+            es: 'Las personas invitadas a la boda eran cien.',
             answers: [
-              'The car parked outside belongs to my neighbour.',
-              'The car parked outside belongs to my neighbor.',
+              'The people invited to the wedding were a hundred.',
+              'There were a hundred people invited to the wedding.',
             ],
-            explain: 'Reduced relative clause with a past participle.',
+            explain: "Passive reduced clause uses the past participle 'invited'.",
           },
           {
             kind: 'dictation',
-            id: 'b2-rc-7',
-            text: 'Having finished the report, he left the office.',
-            explain: 'Perfect participle for an earlier action.',
+            id: 'b2-rc-6',
+            text: 'The students taking the exam must arrive early.',
+            explain: "Active reduced relative clause: 'who are taking' becomes 'taking'.",
           },
         ],
       },
       {
-        id: 'b2-causative-sense-verbs',
+        id: 'b2-causatives-and-sense-verbs',
         level: 'B2',
-        title: 'make / let / have / get & verbs of perception',
+        title: 'Make, Let, Have, Get & Sense Verbs',
         summary:
-          'Master the patterns after make, let, have, get and help, and the difference between bare infinitive and -ing after verbs of perception.',
+          'These verbs control whether the following verb takes a to-infinitive, a bare infinitive or an -ing form. Make and let take a bare infinitive, get takes a to-infinitive, have takes a bare infinitive, and sense verbs like see and hear take a bare infinitive for the whole action or -ing for an action in progress.',
+        summaryEs:
+          "Estos verbos determinan si el verbo siguiente lleva to-infinitivo, infinitivo sin 'to' o forma -ing. Make y let llevan infinitivo sin 'to', get lleva to-infinitivo, have lleva infinitivo sin 'to', y los verbos de percepción como see y hear llevan infinitivo sin 'to' para la acción completa o -ing para una acción en curso.",
         sections: [
           {
-            heading: 'make, let, have, get, help',
-            body: "Use **make/let/have + object + bare infinitive** (without 'to'). Use **get + object + to-infinitive**. **Help** allows both: help someone (to) do. In the passive, 'make' takes the to-infinitive: was made to wait.",
+            heading: 'make, let, have, get + object',
+            body: "**Make + object + bare infinitive** = force ('They made me wait'). **Let + object + bare infinitive** = allow ('She let me go'). **Have + object + bare infinitive** = arrange/instruct ('I'll have him call you'). **Get + object + to-infinitive** = persuade ('I got him to help'). Note that 'make' takes 'to' in the passive: 'I was made to wait.'",
+            bodyEs:
+              "**Make + objeto + infinitivo sin 'to'** = obligar ('They made me wait'). **Let + objeto + infinitivo sin 'to'** = permitir ('She let me go'). **Have + objeto + infinitivo sin 'to'** = disponer/instruir ('I'll have him call you'). **Get + objeto + to-infinitivo** = persuadir ('I got him to help'). Ojo: 'make' lleva 'to' en pasiva: 'I was made to wait.'",
             examples: [
               {
-                en: 'My parents made me apologise.',
-                es: 'Mis padres me hicieron disculparme.',
+                en: 'My parents let me stay out late.',
+                es: 'Mis padres me dejaron quedarme fuera hasta tarde.',
               },
               {
-                en: 'She let the children stay up late.',
-                es: 'Dejó que los niños se quedaran despiertos hasta tarde.',
-              },
-              {
-                en: 'I got him to lend me the car.',
-                es: 'Conseguí que me prestara el coche.',
+                en: 'I finally got my brother to apologise.',
+                es: 'Por fin conseguí que mi hermano se disculpara.',
               },
             ],
           },
           {
-            heading: 'Verbs of perception',
-            body: 'After **see, hear, watch, feel, notice** use the **bare infinitive** for a complete action and the **-ing form** for an action in progress.',
+            heading: 'Sense verbs: see, hear, watch, feel',
+            body: "After **see, hear, watch, feel, notice + object**, use the **bare infinitive** for a complete action you witnessed from start to finish, and the **-ing form** for an action in progress that you saw part of. 'I saw him cross the road' (whole action) vs 'I saw him crossing the road' (in the middle of it).",
+            bodyEs:
+              "Tras **see, hear, watch, feel, notice + objeto**, usa el **infinitivo sin 'to'** para una acción completa que presenciaste de principio a fin, y la **forma -ing** para una acción en curso de la que viste una parte. 'I saw him cross the road' (acción completa) frente a 'I saw him crossing the road' (en mitad de ella).",
             examples: [
               {
-                en: 'I saw her leave the building. (complete)',
-                es: 'La vi salir del edificio (acción completa).',
+                en: 'I heard someone shout my name.',
+                es: 'Oí a alguien gritar mi nombre.',
               },
               {
-                en: 'I saw her leaving the building. (in progress)',
-                es: 'La vi saliendo del edificio (en progreso).',
-              },
-              {
-                en: 'We heard someone shouting.',
-                es: 'Oímos a alguien gritando.',
+                en: 'We watched the sun setting over the sea.',
+                es: 'Vimos ponerse el sol sobre el mar.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Verb patterns',
+            caption: 'Which form follows?',
             columns: ['Verb', 'Pattern', 'Example'],
             rows: [
-              ['make / let / have', '+ obj + bare infinitive', 'made me wait'],
-              ['get', '+ obj + to-infinitive', 'got me to wait'],
-              ['help', '+ obj + (to) infinitive', 'helped me (to) move'],
-              ['see/hear/watch', '+ obj + bare inf. / -ing', 'saw it happen / happening'],
+              ['make', '+ object + bare inf.', 'made me leave'],
+              ['let', '+ object + bare inf.', 'let me go'],
+              ['have', '+ object + bare inf.', 'had her wait'],
+              ['get', '+ object + to-inf.', 'got him to sign'],
+              ['see/hear (whole)', '+ object + bare inf.', 'saw it fall'],
+              ['see/hear (in progress)', '+ object + -ing', 'saw it falling'],
             ],
           },
         ],
@@ -6685,3541 +7059,427 @@ export const GRAMMAR: GrammarUnit[] = [
             es: 'La película me hizo llorar.',
           },
           {
-            en: "They wouldn't let us in without a ticket.",
-            es: 'No nos dejaron entrar sin entrada.',
+            en: "Don't let the children play near the road.",
+            es: 'No dejes que los niños jueguen cerca de la carretera.',
           },
           {
-            en: "I couldn't get the engine to start.",
-            es: 'No conseguí que el motor arrancara.',
+            en: "I'll get someone to fix the printer.",
+            es: 'Haré que alguien arregle la impresora.',
           },
           {
-            en: 'She helped me carry the boxes.',
-            es: 'Me ayudó a llevar las cajas.',
+            en: 'She had her assistant book the flights.',
+            es: 'Hizo que su asistente reservara los vuelos.',
           },
           {
-            en: 'I felt the floor shake.',
-            es: 'Sentí temblar el suelo.',
+            en: 'I felt the floor shake during the earthquake.',
+            es: 'Sentí temblar el suelo durante el terremoto.',
           },
           {
-            en: 'He was made to repeat the year.',
-            es: 'Le hicieron repetir el curso.',
+            en: 'We noticed him watching us.',
+            es: 'Nos dimos cuenta de que nos observaba.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'My boss made me to work late.',
-            right: 'My boss made me work late.',
-            why: "**Make/let/have** take the **bare infinitive** (no 'to').",
-            esNote: "Tras make/let/have, infinitivo sin 'to': made me work.",
+            wrong: 'She made me to clean the room.',
+            right: 'She made me clean the room.',
+            why: "'Make + object' is followed by the bare infinitive (no 'to') in the active voice.",
+            esNote: "'Make' activo: sin 'to'.",
           },
           {
-            wrong: 'I got him fix my laptop.',
-            right: 'I got him to fix my laptop.',
-            why: '**Get** takes the **to-infinitive**, unlike make/have.',
-            esNote: "'get' sí lleva 'to': got him to fix.",
+            wrong: 'I got him clean the car.',
+            right: 'I got him to clean the car.',
+            why: "Unlike make/let/have, 'get + object' takes the to-infinitive.",
+            esNote: "'Get' sí lleva 'to'.",
           },
           {
-            wrong: 'I saw him to cross the road.',
-            right: 'I saw him cross the road.',
-            why: 'Verbs of perception take the **bare infinitive** or **-ing**, never the to-infinitive.',
-            esNote: "Tras see/hear: 'cross' o 'crossing', nunca 'to cross'.",
+            wrong: 'I heard him to sing.',
+            right: 'I heard him sing. / I heard him singing.',
+            why: 'Sense verbs take the bare infinitive or -ing, never the to-infinitive.',
           },
         ],
         exercises: [
           {
             kind: 'mcq',
             id: 'b2-cs-1',
-            prompt:
-              'Choose the best option: "The teacher made the students ___ their phones away."',
-            options: ['to put', 'putting', 'put', 'puts'],
-            answer: 2,
-            explain: '**Make + object + bare infinitive**.',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'My boss made me to work late.',
+              'My boss made me work late.',
+              'My boss made me working late.',
+            ],
+            answer: 1,
+            explain: "'Make + object' takes the bare infinitive in the active voice.",
           },
           {
             kind: 'cloze',
             id: 'b2-cs-2',
-            before: 'I finally got my brother ',
-            after: ' me with the move.',
-            answers: ['to help'],
-            explain: '**Get + object + to-infinitive**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-cs-3',
-            before: 'We heard the rain ',
-            after: ' on the roof all night.',
-            answers: ['falling', 'beating', 'drumming'],
-            explain: '**-ing** after a perception verb shows an action in progress/continuous.',
+            before: "I couldn't get the engine ",
+            after: ' in the cold.',
+            answers: ['to start'],
+            explain: "'Get + object' is followed by the to-infinitive.",
           },
           {
             kind: 'correct',
-            id: 'b2-cs-4',
-            wrong: "They didn't let me to pay for the meal.",
-            answers: ["They didn't let me pay for the meal."],
-            explain: '**Let** takes the bare infinitive.',
+            id: 'b2-cs-3',
+            wrong: 'They let me to use their car.',
+            answers: ['They let me use their car.'],
+            explain: "'Let + object' takes the bare infinitive, with no 'to'.",
           },
           {
             kind: 'order',
-            id: 'b2-cs-5',
-            tokens: ['I', 'saw', 'her', 'leave', 'the', 'building', 'at', 'noon'],
-            answer: 'I saw her leave the building at noon',
-            explain: 'Perception verb + bare infinitive = a complete action witnessed.',
+            id: 'b2-cs-4',
+            tokens: ['we', 'watched', 'the', 'children', 'playing', 'in', 'the', 'park'],
+            answer: 'We watched the children playing in the park.',
+            explain: 'The -ing form shows an action in progress that we observed.',
           },
           {
             kind: 'translate',
-            id: 'b2-cs-6',
-            es: 'La película me hizo llorar.',
-            answers: ['The film made me cry.', 'The movie made me cry.'],
-            explain: 'make + object + bare infinitive.',
+            id: 'b2-cs-5',
+            es: 'Oí cerrarse la puerta de golpe.',
+            answers: ['I heard the door slam.', 'I heard the door slam shut.'],
+            explain: 'A complete witnessed action after a sense verb takes the bare infinitive.',
           },
           {
             kind: 'dictation',
-            id: 'b2-cs-7',
-            text: 'She let the children stay up late.',
-            explain: 'let + object + bare infinitive.',
+            id: 'b2-cs-6',
+            text: 'I finally got my sister to lend me her bike.',
+            explain: "'Get + object + to-infinitive' means to persuade someone to do something.",
           },
         ],
       },
       {
-        id: 'b2-emphasis-cleft-comparatives',
+        id: 'b2-emphasis-and-cleft-sentences',
         level: 'B2',
-        title: 'Emphasis, cleft sentences & comparatives',
+        title: 'Emphasis: do/did & Cleft Sentences',
         summary:
-          "Add emphasis with auxiliary do/did and cleft sentences, and refine comparisons with modifiers and parallel 'the more... the more' structures.",
+          "English adds emphasis without changing word order by using auxiliary 'do/does/did' before the main verb, or by restructuring a sentence into a cleft with 'It was... that...' or 'What... is...'. These structures highlight exactly the part of the message you want to stress.",
+        summaryEs:
+          "El inglés añade énfasis sin cambiar el orden de palabras usando el auxiliar 'do/does/did' antes del verbo principal, o reestructurando la oración en una construcción enfática con 'It was... that...' o 'What... is...'. Estas estructuras resaltan justo la parte del mensaje que quieres enfatizar.",
         sections: [
           {
-            heading: 'Emphasis with do/did',
-            body: 'In positive statements, add **do/does/did** before the base verb to emphasise or contradict. Stress the auxiliary in speech.',
+            heading: 'Emphatic do/does/did',
+            body: "In affirmative sentences you can add **do/does/did** before the base verb to insist on something, often to contradict or reassure. 'I do like it!' 'She does care.' 'We did warn you.' The stress falls on the auxiliary, and the main verb stays in its base form even after 'did'.",
+            bodyEs:
+              "En oraciones afirmativas puedes añadir **do/does/did** antes del verbo base para insistir en algo, a menudo para contradecir o tranquilizar. 'I do like it!' 'She does care.' 'We did warn you.' El acento recae en el auxiliar, y el verbo principal se mantiene en forma base incluso tras 'did'.",
             examples: [
               {
-                en: "I do like it, I'm just tired.",
-                es: 'Sí que me gusta, solo estoy cansado.',
+                en: 'I do understand your point.',
+                es: 'Sí que entiendo tu punto.',
               },
               {
-                en: 'She did warn you about this.',
-                es: 'Sí te avisó de esto.',
+                en: 'He did apologise, eventually.',
+                es: 'Al final sí que se disculpó.',
               },
             ],
           },
           {
             heading: 'Cleft sentences',
-            body: 'Split a sentence to focus on one part. Use **It + be + focus + that/who...** or **What... is/was...** to highlight information.',
+            body: "**Cleft sentences** split one idea into two clauses to focus on a particular element. With **It-clefts** you highlight a noun, time or place: 'It was John who broke it' (not someone else). With **What-clefts** you highlight an action or thing: 'What I need is a holiday.' These are common in both speech and writing to direct attention.",
+            bodyEs:
+              "Las **oraciones enfáticas escindidas** dividen una idea en dos cláusulas para enfocar un elemento concreto. Con **It-clefts** resaltas un sustantivo, tiempo o lugar: 'It was John who broke it' (no otra persona). Con **What-clefts** resaltas una acción o cosa: 'What I need is a holiday.' Son comunes al hablar y escribir para dirigir la atención.",
             examples: [
               {
-                en: 'It was Maria who solved the problem.',
-                es: 'Fue María quien resolvió el problema.',
+                en: 'It was in Paris that we first met.',
+                es: 'Fue en París donde nos conocimos.',
               },
               {
-                en: 'What I need is a holiday.',
-                es: 'Lo que necesito son unas vacaciones.',
-              },
-            ],
-          },
-          {
-            heading: "Comparatives: modifiers & 'the... the...'",
-            body: 'Soften or strengthen comparatives with modifiers like **much, far, a lot, slightly, a bit, even**. Use **the + comparative... the + comparative** to show two things changing together.',
-            examples: [
-              {
-                en: 'This route is much faster.',
-                es: 'Esta ruta es mucho más rápida.',
-              },
-              {
-                en: 'The more you practise, the better you get.',
-                es: 'Cuanto más practicas, mejor te vuelves.',
+                en: 'What surprised me was his honesty.',
+                es: 'Lo que me sorprendió fue su sinceridad.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Comparative modifiers',
-            columns: ['Strength', 'Modifiers', 'Example'],
+            caption: 'Ways to emphasise',
+            columns: ['Structure', 'Neutral', 'Emphatic'],
             rows: [
-              ['Big difference', 'much, far, a lot, even', 'far cheaper'],
-              ['Small difference', 'slightly, a bit, a little', 'a bit colder'],
-              ['No difference', '(not) any, no', 'no better'],
+              ['do/did', 'I told you.', 'I did tell you.'],
+              ['It-cleft', 'Maria called.', 'It was Maria who called.'],
+              ['What-cleft', 'I want peace.', 'What I want is peace.'],
             ],
           },
         ],
         examples: [
           {
-            en: 'I did send the email — check your spam folder.',
-            es: 'Sí que envié el correo: mira la carpeta de spam.',
+            en: "I did lock the door, I'm sure.",
+            es: 'Sí que cerré la puerta con llave, estoy seguro.',
           },
           {
-            en: 'It was in 2010 that they got married.',
-            es: 'Fue en 2010 cuando se casaron.',
+            en: 'She does work hard, you know.',
+            es: 'Ella sí que trabaja duro, ¿sabes?',
           },
           {
-            en: 'What surprised me was his calm reaction.',
-            es: 'Lo que me sorprendió fue su reacción tranquila.',
+            en: 'It was the noise that woke me up.',
+            es: 'Fue el ruido lo que me despertó.',
           },
           {
-            en: 'Your new phone is far better than the old one.',
-            es: 'Tu teléfono nuevo es mucho mejor que el antiguo.',
+            en: 'It is teamwork that makes the difference.',
+            es: 'Es el trabajo en equipo lo que marca la diferencia.',
           },
           {
-            en: 'The harder he tried, the worse it got.',
-            es: 'Cuanto más lo intentaba, peor iba.',
+            en: 'What I really enjoy is hiking.',
+            es: 'Lo que de verdad disfruto es hacer senderismo.',
           },
           {
-            en: "The sooner we leave, the sooner we'll arrive.",
-            es: 'Cuanto antes salgamos, antes llegaremos.',
+            en: 'What we need now is a plan.',
+            es: 'Lo que necesitamos ahora es un plan.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'I do liked it.',
-            right: 'I did like it.',
-            why: 'After emphatic **do/does/did**, use the **base form** of the verb.',
-            esNote: "Tras 'did' enfático, el verbo va en forma base: 'did like'.",
+            wrong: 'I did told you about it.',
+            right: 'I did tell you about it.',
+            why: "After emphatic 'did', the main verb stays in its base form.",
+            esNote: "Tras 'did' enfático, verbo en forma base.",
           },
           {
-            wrong: 'More you practise, more you learn.',
-            right: 'The more you practise, the more you learn.',
-            why: 'This structure needs **the** before each comparative.',
-            esNote: "Lleva 'the' delante de cada comparativo: 'the more... the more...'.",
+            wrong: 'It was John who he broke the window.',
+            right: 'It was John who broke the window.',
+            why: 'In an it-cleft, do not repeat the subject with an extra pronoun after the relative.',
           },
           {
-            wrong: 'This car is very faster than mine.',
-            right: 'This car is much faster than mine.',
-            why: "Use **much/far/a lot** (not 'very') to intensify a comparative.",
-            esNote: "Para reforzar comparativos usa 'much/far', no 'very'.",
+            wrong: 'What I need is to relaxing.',
+            right: 'What I need is to relax.',
+            why: "After 'What... is', use a noun, a to-infinitive or a base verb, but keep the structure consistent.",
           },
         ],
         exercises: [
           {
             kind: 'mcq',
-            id: 'b2-ec-1',
-            prompt: 'Choose the cleft sentence focusing on the person: "___ broke the window."',
-            options: ['It was Tom who', 'Tom who it was', 'What Tom is', 'There was Tom that'],
-            answer: 0,
-            explain: 'Cleft for a person: **It + was + person + who...**',
+            id: 'b2-em-1',
+            prompt: "Add emphasis: 'I locked the door.'",
+            options: ['I did locked the door.', 'I did lock the door.', 'I do locked the door.'],
+            answer: 1,
+            explain: "Emphatic 'did' is followed by the base form 'lock'.",
           },
           {
             kind: 'cloze',
-            id: 'b2-ec-2',
-            before: "I'm not lying — I ",
-            after: ' see him there.',
-            answers: ['did'],
-            explain: 'Emphatic **did** + base form to contradict a doubt.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-ec-3',
-            before: 'The more I read about it, ',
-            after: ' I understand.',
-            answers: ['the more'],
-            explain: 'Parallel structure: **the + comparative... the + comparative**.',
+            id: 'b2-em-2',
+            before: 'It was her smile ',
+            after: ' I remembered most.',
+            answers: ['that', 'which'],
+            explain:
+              "An it-cleft uses 'that' (or sometimes 'which') to introduce the second clause.",
           },
           {
             kind: 'correct',
-            id: 'b2-ec-4',
-            wrong: 'What I want is to find a more good job.',
-            answers: ['What I want is to find a better job.'],
-            explain: "'Good' has the irregular comparative **better**, not 'more good'.",
+            id: 'b2-em-3',
+            wrong: 'What I want is to travelling around Asia.',
+            answers: [
+              'What I want is to travel around Asia.',
+              'What I want is to travel round Asia.',
+            ],
+            explain: "A what-cleft here needs a to-infinitive: 'to travel', not 'to travelling'.",
           },
           {
             kind: 'order',
-            id: 'b2-ec-5',
-            tokens: ['What', 'I', 'need', 'is', 'a', 'long', 'holiday'],
-            answer: 'What I need is a long holiday',
-            explain: "Cleft sentence with 'What...is...' for emphasis.",
+            id: 'b2-em-4',
+            tokens: ['it', 'was', 'yesterday', 'that', 'she', 'arrived'],
+            answer: 'It was yesterday that she arrived.',
+            explain: "The it-cleft highlights the time element 'yesterday'.",
           },
           {
             kind: 'translate',
-            id: 'b2-ec-6',
-            es: 'Cuanto más practicas, mejor te vuelves.',
-            answers: [
-              'The more you practise, the better you get.',
-              'The more you practice, the better you get.',
-            ],
-            explain: "'the more... the better...' parallel comparative.",
+            id: 'b2-em-5',
+            es: 'Lo que necesito es más tiempo.',
+            answers: ['What I need is more time.', 'What I need is more time.'],
+            explain: "A what-cleft focuses attention on 'more time'.",
           },
           {
             kind: 'dictation',
-            id: 'b2-ec-7',
-            text: 'It was Maria who solved the problem.',
-            explain: 'Cleft sentence emphasising the subject.',
+            id: 'b2-em-6',
+            text: 'He does seem to know what he is talking about.',
+            explain: "Emphatic 'does' with the base verb 'seem' adds insistence.",
           },
         ],
       },
       {
-        id: 'b2-quantifiers-subjunctive-markers',
+        id: 'b2-comparatives-and-quantifiers',
         level: 'B2',
-        title: 'Quantifiers, the subjunctive & formal markers',
+        title: 'Comparatives, Modifiers & Quantifiers',
         summary:
-          'Tell little/few from a little/a few, use the subjunctive after suggest and recommend, and connect ideas with formal discourse markers.',
+          "B2 comparison includes parallel structures like 'the more... the more...', modifiers that soften or strengthen comparatives (a bit, far, much, slightly), and the precise difference between little/few (almost none, negative) and a little/a few (some, positive).",
+        summaryEs:
+          "La comparación en B2 incluye estructuras paralelas como 'the more... the more...', modificadores que suavizan o intensifican los comparativos (a bit, far, much, slightly), y la diferencia exacta entre little/few (casi nada, negativo) y a little/a few (algo, positivo).",
         sections: [
           {
-            heading: 'little / few vs a little / a few',
-            body: "**A little** (uncountable) and **a few** (countable) have a positive sense (= some, enough). **Little** and **few** have a negative sense (= almost none, not enough). Use **quite a few** to mean 'a fairly large number'.",
+            heading: 'Parallel comparatives and modifiers',
+            body: "Use **the + comparative... the + comparative** to show that two things change together: 'The more you practise, the better you get.' Modify comparatives to show degree: **much/far/a lot** + comparative = a big difference ('far cheaper'); **a bit/a little/slightly** + comparative = a small difference ('slightly bigger'). With repetition, 'bigger and bigger' shows continuous change.",
+            bodyEs:
+              "Usa **the + comparativo... the + comparativo** para mostrar que dos cosas cambian juntas: 'The more you practise, the better you get.' Modifica los comparativos para indicar el grado: **much/far/a lot** + comparativo = gran diferencia ('far cheaper'); **a bit/a little/slightly** + comparativo = pequeña diferencia ('slightly bigger'). Con repetición, 'bigger and bigger' muestra un cambio continuo.",
             examples: [
               {
-                en: "We have a little time, so let's relax.",
-                es: 'Tenemos algo de tiempo, así que relajémonos.',
+                en: 'The harder I try, the worse it gets.',
+                es: 'Cuanto más lo intento, peor se pone.',
               },
               {
-                en: "There's little hope of finding it now.",
-                es: 'Hay pocas esperanzas de encontrarlo ahora.',
-              },
-              {
-                en: 'Quite a few people came to the talk.',
-                es: 'Bastante gente vino a la charla.',
+                en: 'This phone is far more expensive than that one.',
+                es: 'Este teléfono es mucho más caro que aquel.',
               },
             ],
           },
           {
-            heading: 'The subjunctive after suggest/recommend',
-            body: 'After verbs like **suggest, recommend, insist, demand, request** and after expressions like **It is essential that**, use the **base form** of the verb for all persons (the subjunctive). British English also allows **should + base form**.',
+            heading: 'little/few vs a little/a few',
+            body: "**Few** (countable) and **little** (uncountable) have a **negative** sense, meaning 'almost none': 'I have little time' (not enough). **A few** and **a little** have a **positive** sense, meaning 'some': 'I have a little time' (enough). Use **few/a few** with plural countable nouns and **little/a little** with uncountable nouns.",
+            bodyEs:
+              "**Few** (contable) y **little** (incontable) tienen un sentido **negativo**, 'casi nada': 'I have little time' (no suficiente). **A few** y **a little** tienen un sentido **positivo**, 'algo': 'I have a little time' (suficiente). Usa **few/a few** con sustantivos contables en plural y **little/a little** con incontables.",
             examples: [
               {
-                en: 'I suggest that he take a break.',
-                es: 'Sugiero que se tome un descanso.',
+                en: 'Few people came, so the room felt empty.',
+                es: 'Vino poca gente, así que la sala parecía vacía.',
               },
               {
-                en: 'They insisted that she be present.',
-                es: 'Insistieron en que ella estuviera presente.',
+                en: 'A few friends helped me move, luckily.',
+                es: 'Por suerte, algunos amigos me ayudaron a mudarme.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Quantifiers: countable vs uncountable',
+            columns: ['Meaning', 'Countable', 'Uncountable'],
+            rows: [
+              ['almost none (negative)', 'few', 'little'],
+              ['some (positive)', 'a few', 'a little'],
+              ['example', 'few/a few books', 'little/a little water'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: "The sooner we leave, the earlier we'll arrive.",
+            es: 'Cuanto antes salgamos, antes llegaremos.',
+          },
+          {
+            en: "It's getting colder and colder.",
+            es: 'Cada vez hace más frío.',
+          },
+          {
+            en: 'She is much taller than her brother.',
+            es: 'Ella es mucho más alta que su hermano.',
+          },
+          {
+            en: 'We have very little money left.',
+            es: 'Nos queda muy poco dinero.',
+          },
+          {
+            en: 'There are only a few seats available.',
+            es: 'Solo quedan unos pocos asientos disponibles.',
+          },
+          {
+            en: 'Could I have a little more sugar, please?',
+            es: '¿Me podrías dar un poco más de azúcar, por favor?',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'The more it gets late, the more I worry.',
+            right: 'The later it gets, the more I worry.',
+            why: "In 'the + comparative' structures, the comparative adjective/adverb goes directly after 'the'.",
+            esNote: "'The' + comparativo directamente: 'the later'.",
+          },
+          {
+            wrong: 'I have a few money for the trip.',
+            right: 'I have a little money for the trip.',
+            why: "'Money' is uncountable, so it takes 'little/a little', not 'few/a few'.",
+            esNote: "'Money' es incontable: a little, no a few.",
+          },
+          {
+            wrong: 'He is more taller than me.',
+            right: 'He is much taller than me.',
+            why: "'Taller' is already comparative; do not add 'more'. Use modifiers like 'much' instead.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'b2-cq-1',
+            prompt: "Complete: '___ you eat, the more weight you gain.'",
+            options: ['The most', 'The more', 'More'],
+            answer: 1,
+            explain: "Parallel comparatives use 'the + comparative... the + comparative'.",
+          },
+          {
+            kind: 'cloze',
+            id: 'b2-cq-2',
+            before: 'Hurry up! We have very ',
+            after: ' time left.',
+            answers: ['little'],
+            explain: "'Time' is uncountable and the sense is negative, so use 'little'.",
+          },
+          {
+            kind: 'correct',
+            id: 'b2-cq-3',
+            wrong: 'Only few of my friends came, but luckily they did.',
+            answers: [
+              'A few of my friends came, but luckily they did.',
+              'Only a few of my friends came, but luckily they did.',
+            ],
+            explain: "The positive sense ('some came, luckily') requires 'a few', not 'few'.",
+          },
+          {
+            kind: 'order',
+            id: 'b2-cq-4',
+            tokens: ['this', 'car', 'is', 'far', 'more', 'reliable', 'than', 'mine'],
+            answer: 'This car is far more reliable than mine.',
+            explain: "'Far' is a strong modifier of the comparative 'more reliable'.",
+          },
+          {
+            kind: 'translate',
+            id: 'b2-cq-5',
+            es: 'Cuanto más estudias, más aprendes.',
+            answers: ['The more you study, the more you learn.'],
+            explain: "Parallel comparative structure with 'the more... the more'.",
+          },
+          {
+            kind: 'dictation',
+            id: 'b2-cq-6',
+            text: 'There were only a few people at the meeting.',
+            explain: "'A few' with a plural countable noun expresses a small but positive number.",
+          },
+        ],
+      },
+      {
+        id: 'b2-subjunctive-and-discourse-markers',
+        level: 'B2',
+        title: 'Subjunctive & Formal Discourse Markers',
+        summary:
+          "After verbs of suggestion and demand like suggest, recommend, insist and demand, formal English uses the base form of the verb (the subjunctive), as in 'I suggest that he be informed'. Formal discourse markers such as however, nevertheless, therefore and furthermore organise ideas and signal logical relationships in writing.",
+        summaryEs:
+          "Tras verbos de sugerencia y exigencia como suggest, recommend, insist y demand, el inglés formal usa la forma base del verbo (el subjuntivo), como en 'I suggest that he be informed'. Los marcadores del discurso formales como however, nevertheless, therefore y furthermore organizan las ideas y señalan relaciones lógicas en la escritura.",
+        sections: [
+          {
+            heading: 'The subjunctive after suggest/recommend',
+            body: "After verbs and adjectives expressing demand, advice or importance (**suggest, recommend, insist, demand, request; it is essential/important that**), formal English uses the **base form** of the verb for every subject, with no -s and no 'to'. 'The doctor recommends that she rest.' 'It is vital that he be present.' In less formal English, 'should' is often added: 'recommends that she should rest.'",
+            bodyEs:
+              "Tras verbos y adjetivos que expresan exigencia, consejo o importancia (**suggest, recommend, insist, demand, request; it is essential/important that**), el inglés formal usa la **forma base** del verbo para todos los sujetos, sin -s y sin 'to'. 'The doctor recommends that she rest.' 'It is vital that he be present.' En inglés menos formal se suele añadir 'should': 'recommends that she should rest.'",
+            examples: [
+              {
+                en: 'I suggest that he apply for the job.',
+                es: 'Sugiero que solicite el puesto.',
               },
               {
-                en: 'It is essential that everyone arrive on time.',
-                es: 'Es esencial que todos lleguen a tiempo.',
+                en: 'They demanded that the rule be changed.',
+                es: 'Exigieron que se cambiara la norma.',
               },
             ],
           },
           {
             heading: 'Formal discourse markers',
-            body: 'Link ideas formally with **however, nevertheless, moreover, furthermore, therefore, consequently, in addition, on the other hand, whereas**. These usually start a sentence and are followed by a comma.',
+            body: "Discourse markers link ideas and guide the reader. **However/nevertheless** = contrast. **Therefore/consequently/thus** = result. **Moreover/furthermore/in addition** = adding information. **Nonetheless** = despite that. They usually start a sentence and are followed by a comma. 'The plan is costly. Nevertheless, it is necessary.'",
+            bodyEs:
+              "Los marcadores del discurso enlazan ideas y guían al lector. **However/nevertheless** = contraste. **Therefore/consequently/thus** = resultado. **Moreover/furthermore/in addition** = añadir información. **Nonetheless** = a pesar de eso. Suelen iniciar una oración y van seguidos de una coma. 'The plan is costly. Nevertheless, it is necessary.'",
             examples: [
               {
-                en: 'The plan is expensive; nevertheless, it is necessary.',
-                es: 'El plan es caro; no obstante, es necesario.',
+                en: 'The results were poor. Therefore, we changed our approach.',
+                es: 'Los resultados fueron malos. Por tanto, cambiamos de enfoque.',
               },
               {
-                en: 'Sales rose, whereas costs stayed the same.',
-                es: 'Las ventas subieron, mientras que los costes se mantuvieron.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Quantifiers',
-            columns: ['Quantifier', 'Noun type', 'Sense'],
-            rows: [
-              ['a little', 'uncountable', 'some (positive)'],
-              ['little', 'uncountable', 'almost none (negative)'],
-              ['a few', 'countable', 'some (positive)'],
-              ['few', 'countable', 'almost none (negative)'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'Few students passed the exam this year.',
-            es: 'Pocos estudiantes aprobaron el examen este año.',
-          },
-          {
-            en: 'Add a little salt to the sauce.',
-            es: 'Añade un poco de sal a la salsa.',
-          },
-          {
-            en: 'The doctor recommended that he stop smoking.',
-            es: 'El médico recomendó que dejara de fumar.',
-          },
-          {
-            en: 'We need more staff; therefore, we are hiring.',
-            es: 'Necesitamos más personal; por tanto, estamos contratando.',
-          },
-          {
-            en: 'Moreover, the report ignores the main issue.',
-            es: 'Además, el informe ignora la cuestión principal.',
-          },
-          {
-            en: 'I have a few ideas we could try.',
-            es: 'Tengo algunas ideas que podríamos probar.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'I have a few money left.',
-            right: 'I have a little money left.',
-            why: "**Money** is uncountable, so use **a little**, not 'a few'.",
-            esNote: "'a few' va con contables; 'a little' con incontables (money).",
-          },
-          {
-            wrong: 'I recommend that he takes a rest.',
-            right: 'I recommend that he take a rest.',
-            why: 'The subjunctive uses the **base form** (take) for all persons, with no -s.',
-            esNote: "Subjuntivo: 'he take' (sin -s) tras recommend/suggest.",
-          },
-          {
-            wrong: 'He was tired, however he kept working.',
-            right: 'He was tired; however, he kept working.',
-            why: "**However** is not a conjunction like 'but'; separate the clauses and add a comma.",
-            esNote: "'however' no une dos oraciones como 'but'; usa punto y coma o punto.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'b2-qs-1',
-            prompt:
-              'Choose the best option: "Hurry up — we have ___ time before the train leaves."',
-            options: ['a few', 'few', 'little', 'a little'],
-            answer: 3,
-            explain: "Uncountable + positive 'some' = **a little time**.",
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-qs-2',
-            before: 'Sadly, ',
-            after: ' people understood the warning, so many got lost.',
-            answers: ['few'],
-            explain: 'Negative sense (almost none) with a countable noun = **few**.',
-          },
-          {
-            kind: 'cloze',
-            id: 'b2-qs-3',
-            before: 'The committee demanded that the report ',
-            after: ' rewritten.',
-            answers: ['be'],
-            explain: "Subjunctive after **demand**: base form 'be'.",
-          },
-          {
-            kind: 'correct',
-            id: 'b2-qs-4',
-            wrong: 'I suggest that she comes earlier next time.',
-            answers: ['I suggest that she come earlier next time.'],
-            explain: "Subjunctive: **come** (base form, no -s) after 'suggest'.",
-          },
-          {
-            kind: 'order',
-            id: 'b2-qs-5',
-            tokens: [
-              'The',
-              'results',
-              'were',
-              'poor',
-              'nevertheless',
-              'the',
-              'team',
-              'stayed',
-              'positive',
-            ],
-            answer: 'The results were poor nevertheless the team stayed positive',
-            explain: "'Nevertheless' introduces a contrasting idea in formal style.",
-          },
-          {
-            kind: 'translate',
-            id: 'b2-qs-6',
-            es: 'El médico recomendó que dejara de fumar.',
-            answers: [
-              'The doctor recommended that he stop smoking.',
-              'The doctor recommended that he should stop smoking.',
-            ],
-            explain: "Subjunctive (or 'should + base form' in British English) after 'recommend'.",
-          },
-          {
-            kind: 'dictation',
-            id: 'b2-qs-7',
-            text: 'Quite a few people came to the talk.',
-            explain: "'Quite a few' = a fairly large number.",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    level: 'C1',
-    title: 'C1 · Advanced Structures',
-    blurb:
-      'Cleft sentences, inversion, the subjunctive, past modals and the polished syntax of advanced English.',
-    lessons: [
-      {
-        id: 'c1-cleft-sentences',
-        level: 'C1',
-        title: 'Cleft sentences (it-clefts & wh-clefts)',
-        summary:
-          'Clefts split one idea into two clauses so you can spotlight a particular piece of information for emphasis or contrast.',
-        sections: [
-          {
-            heading: 'It-clefts: It + be + focus + that/who',
-            body: 'An **it-cleft** takes a normal sentence and puts one element in the spotlight: It is/was + the focused part + that/who + the rest. You can focus a subject, object, or adverbial. Use **who** for people (optional) and **that** for everything else.',
-            examples: [
-              {
-                en: 'It was Ana who solved the problem, not me.',
-                es: 'Fue Ana quien resolvió el problema, no yo.',
-              },
-              {
-                en: 'It was in 2019 that the company finally turned a profit.',
-                es: 'Fue en 2019 cuando la empresa por fin tuvo beneficios.',
-              },
-              {
-                en: "It's your attitude that worries me.",
-                es: 'Es tu actitud lo que me preocupa.',
-              },
-            ],
-          },
-          {
-            heading: 'Wh-clefts (pseudo-clefts): What... is...',
-            body: 'A **wh-cleft** usually starts with **what** and is completed by **be**: What I need is a holiday. The new information goes after **be**. Use these to introduce, summarise, or dramatise a point. With actions, use a **do**-construction: What he did was (to) resign.',
-            examples: [
-              {
-                en: 'What I really want is a straight answer.',
-                es: 'Lo que de verdad quiero es una respuesta clara.',
-              },
-              {
-                en: 'What surprised everyone was how calm she stayed.',
-                es: 'Lo que sorprendió a todos fue lo tranquila que se mantuvo.',
-              },
-              {
-                en: 'What he did was delete the entire file.',
-                es: 'Lo que hizo fue borrar el archivo entero.',
-              },
-            ],
-          },
-          {
-            heading: 'Other cleft patterns: The thing / All / The reason',
-            body: "You can build clefts around nouns like **the thing**, **the reason**, **the place**, or with **all** (meaning 'the only thing'). These add variety and a slightly more conversational feel.",
-            examples: [
-              {
-                en: 'The reason I called is that I need your advice.',
-                es: 'La razón por la que llamé es que necesito tu consejo.',
-              },
-              {
-                en: "All I'm asking for is a little patience.",
-                es: 'Lo único que pido es un poco de paciencia.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'From neutral to cleft',
-            columns: ['Neutral sentence', 'It-cleft', 'Wh-cleft'],
-            rows: [
-              [
-                'Ana broke the window.',
-                'It was Ana who broke the window.',
-                'The person who broke the window was Ana.',
-              ],
-              [
-                'I admire his honesty.',
-                "It's his honesty that I admire.",
-                'What I admire is his honesty.',
-              ],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: "It wasn't the price that bothered me; it was the rudeness.",
-            es: 'No fue el precio lo que me molestó; fue la mala educación.',
-          },
-          {
-            en: 'What matters now is staying focused.',
-            es: 'Lo que importa ahora es mantener la concentración.',
-          },
-          {
-            en: 'It was only later that I realised my mistake.',
-            es: 'Fue solo más tarde cuando me di cuenta de mi error.',
-          },
-          {
-            en: 'The thing I love about Madrid is the energy at night.',
-            es: 'Lo que me encanta de Madrid es la energía por la noche.',
-          },
-          {
-            en: "All she said was that she'd be late.",
-            es: 'Lo único que dijo fue que llegaría tarde.',
-          },
-          {
-            en: "It's you who has to decide, not your parents.",
-            es: 'Eres tú quien tiene que decidir, no tus padres.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'Is the rudeness that bothered me.',
-            right: 'It was the rudeness that bothered me.',
-            why: 'An it-cleft must begin with the dummy subject **it** plus a form of **be**.',
-            esNote:
-              "El español omite el sujeto ('Fue la mala educación...'), pero en inglés necesitas 'It'.",
-          },
-          {
-            wrong: 'What I want is to have a holiday is rest.',
-            right: 'What I want is rest.',
-            why: "Don't double the verb **be**. The wh-clause is the subject, and one **is** links it to the focus.",
-            esNote: "No repitas el verbo 'be'; un solo 'is' une la cláusula con el foco.",
-          },
-          {
-            wrong: 'It was me who broke it... It was I who broke it.',
-            right: "It was I/me who broke it (both used; 'me' is normal in speech).",
-            why: "After 'It was', object pronouns (me, him) are standard in everyday English; the subject form sounds very formal.",
-            esNote: "En el habla normal se dice 'It was me who...'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-cleft-1',
-            prompt:
-              "Choose the correct it-cleft to focus 'on Monday' in 'The strike began on Monday.'",
-            options: [
-              'It was on Monday that the strike began.',
-              'It was on Monday what the strike began.',
-              'Was on Monday that the strike began.',
-              'It was on Monday who began the strike.',
-            ],
-            answer: 0,
-            explain:
-              "Use 'It + was + adverbial + that'. Use 'that' (not 'what'/'who') for a time phrase.",
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-cleft-2',
-            before: "I don't need money.",
-            after: 'I need is your trust.',
-            answers: ['What'],
-            hint: "wh-cleft opener for 'the thing that'",
-            explain: 'A wh-cleft about a thing begins with **What**.',
-          },
-          {
-            kind: 'correct',
-            id: 'c1-cleft-3',
-            wrong: 'Is John who always pays for dinner.',
-            answers: [
-              'It is John who always pays for dinner.',
-              "It's John who always pays for dinner.",
-            ],
-            explain: 'Add the dummy subject **It** before the verb be.',
-          },
-          {
-            kind: 'order',
-            id: 'c1-cleft-4',
-            tokens: ['What', 'she', 'did', 'was', 'ignore', 'the', 'warning'],
-            answer: 'What she did was ignore the warning',
-            explain: 'Action wh-cleft: What + subject + did + was + bare/infinitive verb.',
-          },
-          {
-            kind: 'translate',
-            id: 'c1-cleft-5',
-            es: 'Lo que me sorprendió fue su silencio.',
-            answers: [
-              'What surprised me was his silence.',
-              'What surprised me was her silence.',
-              'What surprised me was their silence.',
-            ],
-            explain: "Spanish 'Lo que' maps to the wh-cleft 'What... was...'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-cleft-6',
-            es: 'Fue tu hermano quien me lo contó.',
-            answers: [
-              'It was your brother who told me.',
-              'It was your brother that told me.',
-              'It was your brother who told me about it.',
-            ],
-            explain: "It-cleft focusing the subject: 'It was + person + who'.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-cleft-7',
-            text: "It wasn't what he said but the way he said it that hurt.",
-            explain: "Notice the contrastive it-cleft built around 'not X but Y'.",
-          },
-        ],
-      },
-      {
-        id: 'c1-inversion-negative-adverbials',
-        level: 'C1',
-        title: 'Inversion after negative adverbials',
-        summary:
-          'When a sentence opens with a negative or restrictive adverbial, the subject and (auxiliary) verb swap places, just as in a question.',
-        sections: [
-          {
-            heading: 'The trigger and the swap',
-            body: 'Fronting a **negative or limiting adverbial** forces **subject–auxiliary inversion**. Common triggers: never, rarely, seldom, hardly, scarcely, no sooner, not only, not until, little, only then, only after, under no circumstances, at no time. If there is no auxiliary, add **do/does/did**.',
-            examples: [
-              {
-                en: 'Never have I seen such chaos.',
-                es: 'Nunca he visto semejante caos.',
-              },
-              {
-                en: 'Rarely does he arrive on time.',
-                es: 'Rara vez llega a tiempo.',
-              },
-              {
-                en: 'Under no circumstances should you sign this.',
-                es: 'Bajo ninguna circunstancia deberías firmar esto.',
-              },
-            ],
-          },
-          {
-            heading: 'Two-part patterns: hardly... when / no sooner... than / not only... but also',
-            body: 'Several triggers introduce a **two-clause** structure. Memorise the pairings: **Hardly/Scarcely... when**, **No sooner... than**, **Not only... but (also)**. The inversion happens in the first clause.',
-            examples: [
-              {
-                en: 'Hardly had we sat down when the phone rang.',
-                es: 'Apenas nos habíamos sentado cuando sonó el teléfono.',
-              },
-              {
-                en: 'No sooner had she left than it started to rain.',
-                es: 'Nada más irse, empezó a llover.',
-              },
-              {
-                en: 'Not only did he lie, but he also blamed me.',
-                es: 'No solo mintió, sino que además me culpó.',
-              },
-            ],
-          },
-          {
-            heading: 'Only + time/condition',
-            body: "Phrases with **only** (only then, only later, only when, only after, only by) trigger inversion in the **main** clause, not in the 'only' clause itself.",
-            examples: [
-              {
-                en: 'Only after the meeting did I understand the plan.',
-                es: 'Solo después de la reunión entendí el plan.',
-              },
-              {
-                en: 'Only by working together can we finish on time.',
-                es: 'Solo trabajando juntos podemos terminar a tiempo.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Inversion at a glance',
-            columns: ['Trigger', 'Normal order', 'Inverted (correct)'],
-            rows: [
-              ['Never', 'I have never met him.', 'Never have I met him.'],
-              ['Seldom', 'She seldom complains.', 'Seldom does she complain.'],
-              [
-                'Not until',
-                'I knew the truth not until then.',
-                'Not until then did I know the truth.',
-              ],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'Little did they know that the worst was yet to come.',
-            es: 'Poco sabían que lo peor estaba aún por llegar.',
-          },
-          {
-            en: 'Seldom have I been so disappointed.',
-            es: 'Pocas veces he estado tan decepcionado.',
-          },
-          {
-            en: 'Not until I read the contract did I notice the clause.',
-            es: 'Hasta que no leí el contrato no me fijé en la cláusula.',
-          },
-          {
-            en: 'At no time was the public in danger.',
-            es: 'En ningún momento el público estuvo en peligro.',
-          },
-          {
-            en: 'Only then did she realise how tired she was.',
-            es: 'Solo entonces se dio cuenta de lo cansada que estaba.',
-          },
-          {
-            en: "Not only is it expensive, but it's also unreliable.",
-            es: 'No solo es caro, sino que además no es fiable.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'Never I have seen such a thing.',
-            right: 'Never have I seen such a thing.',
-            why: 'After a fronted negative adverbial you must **invert** the subject and auxiliary.',
-            esNote:
-              "No basta con poner 'Never' delante; hay que mover el auxiliar antes del sujeto, como en una pregunta.",
-          },
-          {
-            wrong: 'No sooner I had arrived when it started.',
-            right: 'No sooner had I arrived than it started.',
-            why: "Invert (had I) and use the partner word **than**, not 'when', with 'no sooner'.",
-            esNote: "'No sooner' va con 'than'; 'hardly/scarcely' van con 'when'.",
-          },
-          {
-            wrong: 'Rarely he goes out.',
-            right: 'Rarely does he go out.',
-            why: 'With no existing auxiliary, supply **do/does/did** to carry the inversion.',
-            esNote: "Si no hay auxiliar, añade 'do/does/did' para hacer la inversión.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-inv-1',
-            prompt: "Complete: 'Not only ___ the report late, but it was also full of errors.'",
-            options: ['was', 'it was', 'did', 'had'],
-            answer: 0,
-            explain: "Invert subject and 'be': Not only WAS the report late...",
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-inv-2',
-            before: 'Seldom',
-            after: 'we see such dedication from a newcomer.',
-            answers: ['do'],
-            hint: 'add an auxiliary for the inversion (present)',
-            explain: 'No existing auxiliary, so add **do**: Seldom do we see...',
-          },
-          {
-            kind: 'correct',
-            id: 'c1-inv-3',
-            wrong: 'Hardly I had closed the door when the bell rang.',
-            answers: [
-              'Hardly had I closed the door when the bell rang.',
-              'Scarcely had I closed the door when the bell rang.',
-            ],
-            explain: "Invert the auxiliary: 'Hardly had I closed...', paired with 'when'.",
-          },
-          {
-            kind: 'order',
-            id: 'c1-inv-4',
-            tokens: ['Only', 'then', 'did', 'I', 'understand', 'the', 'joke'],
-            answer: 'Only then did I understand the joke',
-            explain: "'Only then' triggers inversion with the added auxiliary 'did'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-inv-5',
-            es: 'Nunca había estado tan asustado.',
-            answers: [
-              'Never had I been so frightened.',
-              'Never had I been so scared.',
-              'Never had I been so afraid.',
-            ],
-            explain: "Fronted 'Never' + inverted past perfect 'had I been'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-inv-6',
-            es: 'Bajo ninguna circunstancia debes contarle esto.',
-            answers: [
-              'Under no circumstances must you tell him this.',
-              'Under no circumstances should you tell him this.',
-              'Under no circumstances must you tell her this.',
-            ],
-            explain: "'Under no circumstances' + inverted modal + subject.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-inv-7',
-            text: 'Little did we realise how much our lives were about to change.',
-            explain:
-              "'Little did we realise' is a fixed inverted expression meaning 'we had no idea'.",
-          },
-        ],
-      },
-      {
-        id: 'c1-inversion-conditionals',
-        level: 'C1',
-        title: 'Inversion in conditionals (had I known, were I, should you)',
-        summary:
-          "Formal English can drop 'if' and invert the verb instead, especially with had, were, and should.",
-        sections: [
-          {
-            heading: 'Three inverted patterns',
-            body: "To sound formal or literary, omit **if** and invert: **Had** + subject (3rd conditional), **Were** + subject (2nd conditional / hypothetical), **Should** + subject (open/future condition, like a polite 'if it happens'). The meaning is identical to the 'if' version.",
-            examples: [
-              {
-                en: 'Had I known, I would have helped. (= If I had known)',
-                es: 'De haberlo sabido, habría ayudado.',
-              },
-              {
-                en: "Were I in your position, I'd resign. (= If I were)",
-                es: 'Si yo estuviera en tu lugar, dimitiría.',
-              },
-              {
-                en: 'Should you need anything, just call. (= If you should need)',
-                es: 'Si necesitaras algo, solo llama.',
-              },
-            ],
-          },
-          {
-            heading: 'Were I to + infinitive',
-            body: "For a more remote or tentative hypothesis, use **Were + subject + to + infinitive**. This is the inverted form of 'If I were to...'. It is common in formal writing and diplomacy.",
-            examples: [
-              {
-                en: 'Were the deal to collapse, thousands would lose their jobs.',
-                es: 'Si el acuerdo se viniera abajo, miles perderían su empleo.',
-              },
-              {
-                en: 'Were we to accept, what would we gain?',
-                es: 'Si aceptáramos, ¿qué ganaríamos?',
-              },
-            ],
-          },
-          {
-            heading: "Negatives keep 'not' after the subject",
-            body: 'In inverted conditionals the negative **not** stays after the subject; you do not contract it onto the auxiliary. So: **Had it not been for...**, **Were it not for...**, **Should you not wish...**',
-            examples: [
-              {
-                en: 'Had it not been for your help, I would have failed.',
-                es: 'De no haber sido por tu ayuda, habría fracasado.',
-              },
-              {
-                en: "Were it not for the rain, we'd be at the beach.",
-                es: 'Si no fuera por la lluvia, estaríamos en la playa.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'If-clause to inversion',
-            columns: ["With 'if'", "Inverted (no 'if')"],
-            rows: [
-              ['If I had known', 'Had I known'],
-              ['If she were here', 'Were she here'],
-              ['If you should change your mind', 'Should you change your mind'],
-              ['If it had not been for him', 'Had it not been for him'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'Had they listened, the crisis could have been avoided.',
-            es: 'De haber escuchado, la crisis se podría haber evitado.',
-          },
-          {
-            en: "Should anyone ask, tell them I've left.",
-            es: 'Si alguien pregunta, diles que me he ido.',
-          },
-          {
-            en: "Were I you, I wouldn't sign that.",
-            es: 'Yo que tú, no firmaría eso.',
-          },
-          {
-            en: 'Were the company to relocate, many staff would resign.',
-            es: 'Si la empresa se trasladara, muchos empleados dimitirían.',
-          },
-          {
-            en: 'Had it not been for the alarm, the fire would have spread.',
-            es: 'De no haber sido por la alarma, el fuego se habría propagado.',
-          },
-          {
-            en: 'Should you require assistance, our team is available.',
-            es: 'Si necesitara asistencia, nuestro equipo está disponible.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'If had I known, I would have come.',
-            right: 'Had I known, I would have come.',
-            why: "Inversion **replaces** 'if'. Never use both 'if' and the inversion together.",
-            esNote: "La inversión sustituye a 'if'; no se ponen los dos.",
-          },
-          {
-            wrong: 'Would I known, I would have helped.',
-            right: 'Had I known, I would have helped.',
-            why: "The 3rd-conditional inversion uses **Had** (the past perfect auxiliary), not 'would'.",
-            esNote: "La inversión del tercer condicional empieza con 'Had', no con 'Would'.",
-          },
-          {
-            wrong: "Hadn't it been for you, I'd have failed.",
-            right: "Had it not been for you, I'd have failed.",
-            why: 'In formal inversion the negative is written in full as **not** after the subject, not contracted.',
-            esNote: "En la inversión formal no se contrae: 'Had it not been for...'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-invcond-1',
-            prompt: "Rewrite without 'if': 'If I had seen the sign, I would have stopped.'",
-            options: [
-              'Had I seen the sign, I would have stopped.',
-              'If had I seen the sign, I would have stopped.',
-              'Would I have seen the sign, I had stopped.',
-              'Did I see the sign, I would have stopped.',
-            ],
-            answer: 0,
-            explain: "Drop 'if' and invert: 'Had I seen...'.",
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-invcond-2',
-            before: '',
-            after: 'you change your mind, the offer still stands.',
-            answers: ['Should'],
-            hint: 'inverted open conditional (= if you should)',
-            explain: "'Should you change your mind' = 'If you change your mind' (formal).",
-          },
-          {
-            kind: 'correct',
-            id: 'c1-invcond-3',
-            wrong: 'If were I rich, I would travel the world.',
-            answers: [
-              'Were I rich, I would travel the world.',
-              "Were I rich, I'd travel the world.",
-            ],
-            explain: "Inversion replaces 'if': 'Were I rich...'.",
-          },
-          {
-            kind: 'order',
-            id: 'c1-invcond-4',
-            tokens: ['Had', 'it', 'not', 'been', 'for', 'her', 'we', 'would', 'have', 'lost'],
-            answer: 'Had it not been for her we would have lost',
-            explain: "Formal negative inversion: 'Had it not been for...'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-invcond-5',
-            es: 'Si la empresa cerrara, perderíamos todo.',
-            answers: [
-              'Were the company to close, we would lose everything.',
-              "Were the company to close, we'd lose everything.",
-              'Should the company close, we would lose everything.',
-            ],
-            explain: "Use 'Were + subject + to + infinitive' for a remote hypothesis.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-invcond-6',
-            es: 'De haberlo sabido, te habría avisado.',
-            answers: [
-              'Had I known, I would have warned you.',
-              "Had I known, I'd have warned you.",
-              'Had I known, I would have told you.',
-            ],
-            explain: "'De haberlo sabido' maps to the inverted third conditional 'Had I known'.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-invcond-7',
-            text: 'Should you have any questions, please do not hesitate to contact us.',
-            explain: "A standard formal-letter formula using inverted 'Should you...'.",
-          },
-        ],
-      },
-      {
-        id: 'c1-mixed-reduced-conditionals',
-        level: 'C1',
-        title: 'Mixed and reduced conditionals',
-        summary:
-          'Real situations rarely fit one neat conditional, so you mix time frames and trim clauses for nuance and flow.',
-        sections: [
-          {
-            heading: 'Mixed conditionals: past condition, present result',
-            body: "A **mixed conditional** combines a past 'if' clause with a present result (or vice versa). Type 1: **If + past perfect, ... would + base** (past cause → present effect). Type 2: **If + past simple, ... would have + participle** (present/general cause → past effect).",
-            examples: [
-              {
-                en: 'If I had studied medicine, I would be a doctor now.',
-                es: 'Si hubiera estudiado medicina, ahora sería médico.',
-              },
-              {
-                en: "If she weren't so shy, she would have spoken up.",
-                es: 'Si no fuera tan tímida, habría hablado.',
-              },
-            ],
-          },
-          {
-            heading: "Alternatives to 'if': unless, provided, as long as, supposing",
-            body: 'Vary your conditionals with connectors: **unless** (= if not), **provided/providing (that)** and **as long as** (= only if this condition holds), **supposing/suppose** (hypothesis), **otherwise** (= if not, the result).',
-            examples: [
-              {
-                en: "You'll pass provided you revise consistently.",
-                es: 'Aprobarás siempre que repases de forma constante.',
-              },
-              {
-                en: "I won't go unless you come with me.",
-                es: 'No iré a menos que vengas conmigo.',
-              },
-              {
-                en: "Hurry up, otherwise we'll miss the train.",
-                es: 'Date prisa, si no perderemos el tren.',
-              },
-            ],
-          },
-          {
-            heading: 'Reduced and implied conditionals',
-            body: "You can **reduce** a conditional by leaving the condition implicit: with **if so / if not**, with **but for** (= if it weren't for), or by simply implying it ('A real professional would never do that' = if they were a real professional).",
-            examples: [
-              {
-                en: 'But for your support, I would have given up.',
-                es: 'Si no fuera por tu apoyo, habría abandonado.',
-              },
-              {
-                en: 'Is it raining? If so, take an umbrella.',
-                es: '¿Está lloviendo? Si es así, lleva paraguas.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Mixed conditional types',
-            columns: ['Cause (time)', 'Result (time)', 'Pattern', 'Example'],
-            rows: [
-              [
-                'Past',
-                'Present',
-                'If + past perfect → would + base',
-                "If I'd saved money, I'd be free now.",
-              ],
-              [
-                'Present',
-                'Past',
-                'If + past simple → would have + participle',
-                "If I were braver, I'd have asked her.",
-              ],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: "If we had left earlier, we wouldn't be stuck in traffic now.",
-            es: 'Si hubiéramos salido antes, ahora no estaríamos atascados.',
-          },
-          {
-            en: "If he were more careful, he wouldn't have crashed the car.",
-            es: 'Si fuera más cuidadoso, no habría chocado el coche.',
-          },
-          {
-            en: "As long as you're honest, people will trust you.",
-            es: 'Mientras seas honesto, la gente confiará en ti.',
-          },
-          {
-            en: 'But for the weather, the trip would have been perfect.',
-            es: 'Si no fuera por el tiempo, el viaje habría sido perfecto.',
-          },
-          {
-            en: "Take the early flight; otherwise you'll be late.",
-            es: 'Coge el vuelo temprano; si no, llegarás tarde.',
-          },
-          {
-            en: 'Supposing you won the lottery, what would you do first?',
-            es: 'Suponiendo que ganaras la lotería, ¿qué harías primero?',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'If I would have known, I would be there now.',
-            right: 'If I had known, I would be there now.',
-            why: "Use the **past perfect** in the if-clause, never 'would have'.",
-            esNote:
-              "El error de poner 'would' en la cláusula 'if' es muy común; usa el past perfect.",
-          },
-          {
-            wrong: "Unless you don't pay, they'll cut the service.",
-            right: "Unless you pay, they'll cut the service.",
-            why: "**Unless** already means 'if not', so a second negative reverses the meaning.",
-            esNote: "'Unless' = 'si no'; no añadas otra negación ('don't').",
-          },
-          {
-            wrong: 'If I had more time, I would have learned the piano when I was young.',
-            right: 'If I had more time, I would learn the piano.',
-            why: "Keep the time frames coherent: a present condition ('had more time') pairs with a present/future result, not a past one, unless you genuinely intend a mixed reading.",
-            esNote: 'Mantén coherentes los tiempos: condición presente con resultado presente.',
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-mix-1',
-            prompt:
-              "Choose the natural mixed conditional: 'If she ___ the warning, she wouldn't be in hospital now.'",
-            options: ['had heeded', 'would heed', 'heeds', 'has heeded'],
-            answer: 0,
-            explain:
-              "Past cause (past perfect) → present result (wouldn't be): a mixed conditional.",
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-mix-2',
-            before: "I'll lend you the car",
-            after: 'you fill it up afterwards.',
-            answers: ['provided', 'as long as', 'providing', 'provided that'],
-            hint: '= only on the condition that',
-            explain: "'provided / as long as' introduce a condition that must be met.",
-          },
-          {
-            kind: 'correct',
-            id: 'c1-mix-3',
-            wrong: 'If I would have studied harder, I would have a better job now.',
-            answers: [
-              'If I had studied harder, I would have a better job now.',
-              "If I'd studied harder, I would have a better job now.",
-            ],
-            explain: "Past perfect in the if-clause; present result 'would have' (= now).",
-          },
-          {
-            kind: 'order',
-            id: 'c1-mix-4',
-            tokens: ['But', 'for', 'your', 'advice', 'I', 'would', 'have', 'failed'],
-            answer: 'But for your advice I would have failed',
-            explain: "'But for + noun' = 'If it hadn't been for', a reduced conditional.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-mix-5',
-            es: 'Si hablara francés, habría conseguido ese trabajo.',
-            answers: [
-              'If I spoke French, I would have got that job.',
-              'If I spoke French, I would have gotten that job.',
-              'If I could speak French, I would have got that job.',
-            ],
-            explain: 'Present ability/condition → past result: a mixed conditional.',
-          },
-          {
-            kind: 'translate',
-            id: 'c1-mix-6',
-            es: 'No te ayudaré a menos que me lo pidas.',
-            answers: [
-              "I won't help you unless you ask me.",
-              "I won't help you unless you ask.",
-              "I won't help you unless you ask me to.",
-            ],
-            explain: "'Unless' = 'a menos que / si no'; no extra negative.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-mix-7',
-            text: "If we hadn't taken that wrong turn, we would already be home by now.",
-            explain: 'Past condition, present result — a classic mixed conditional.',
-          },
-        ],
-      },
-      {
-        id: 'c1-subjunctive',
-        level: 'C1',
-        title: 'The subjunctive (mandative, were-subjunctive, fixed phrases)',
-        summary:
-          "English keeps a quiet subjunctive: the bare base form after certain verbs of demand, and 'were' in hypotheticals.",
-        sections: [
-          {
-            heading: 'Mandative subjunctive: the base form',
-            body: "After verbs and adjectives of **demand, suggestion, recommendation, or necessity**, use the **base form** of the verb in the that-clause, with no -s and no 'to': suggest, recommend, insist, demand, request, propose, require; it is essential/vital/important/crucial that. The base form stays the same for all subjects, including the negative (that he not go).",
-            examples: [
-              {
-                en: 'The board insists that he resign immediately.',
-                es: 'La junta insiste en que dimita de inmediato.',
-              },
-              {
-                en: 'It is essential that every member be informed.',
-                es: 'Es esencial que todos los miembros estén informados.',
-              },
-              {
-                en: 'I recommend that she not sign anything yet.',
-                es: 'Recomiendo que no firme nada todavía.',
-              },
-            ],
-          },
-          {
-            heading: 'Were-subjunctive in hypotheticals',
-            body: "Use **were** (not 'was') for all subjects after **if**, **wish**, **if only**, **as if/as though**, and **suppose** when the situation is unreal or hypothetical. 'If I were you' is fixed.",
-            examples: [
-              {
-                en: "If I were you, I'd take the offer.",
-                es: 'Yo que tú, aceptaría la oferta.',
-              },
-              {
-                en: 'I wish it were that simple.',
-                es: 'Ojalá fuera así de sencillo.',
-              },
-              {
-                en: 'He talks as if he were the boss.',
-                es: 'Habla como si fuera el jefe.',
-              },
-            ],
-          },
-          {
-            heading: 'Fixed subjunctive expressions',
-            body: 'A number of set phrases freeze the old subjunctive: **be that as it may**, **come what may**, **so be it**, **far be it from me to...**, **God save the King**, **suffice it to say**, **long live...**. Learn them as whole chunks.',
-            examples: [
-              {
-                en: 'Be that as it may, the rules still apply.',
-                es: 'Sea como sea, las reglas siguen aplicándose.',
-              },
-              {
-                en: 'Suffice it to say, we were not impressed.',
-                es: 'Baste decir que no nos impresionó.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Indicative vs mandative subjunctive',
-            columns: ['Ordinary (indicative)', 'After demand/suggestion (subjunctive)'],
-            rows: [
-              ['She arrives on time.', 'We ask that she arrive on time.'],
-              ['He is present.', 'It is vital that he be present.'],
-              ["They don't leave.", 'I insist that they not leave.'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'The doctor recommended that he stay in bed for a week.',
-            es: 'El médico recomendó que se quedara en cama una semana.',
-          },
-          {
-            en: 'It is crucial that the report be finished by Friday.',
-            es: 'Es crucial que el informe esté terminado para el viernes.',
-          },
-          {
-            en: 'I wish I were taller.',
-            es: 'Ojalá fuera más alto.',
-          },
-          {
-            en: 'She demanded that the money be returned.',
-            es: 'Exigió que se devolviera el dinero.',
-          },
-          {
-            en: "Come what may, we'll face it together.",
-            es: 'Pase lo que pase, lo afrontaremos juntos.',
-          },
-          {
-            en: 'Far be it from me to criticise, but this is wrong.',
-            es: 'Lejos de mí criticar, pero esto está mal.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'I suggest that he goes to the doctor.',
-            right: 'I suggest that he go to the doctor.',
-            why: 'The mandative subjunctive uses the **base form** (go), with no third-person -s.',
-            esNote:
-              "En inglés formal no se pone la -s: 'that he go'. (En estilo informal británico 'should go' también se acepta.)",
-          },
-          {
-            wrong: 'It is important that everyone is on time.',
-            right: 'It is important that everyone be on time.',
-            why: "After 'it is important/essential that', use the base form **be**.",
-            esNote: "Tras 'it is important/essential that' usa la forma base 'be'.",
-          },
-          {
-            wrong: 'If I was rich, I would help you.',
-            right: 'If I were rich, I would help you.',
-            why: "In a clearly hypothetical 'if', formal/standard English uses **were** for all persons.",
-            esNote: "Para hipótesis usa 'were' con todos los sujetos: 'If I were...'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-subj-1',
-            prompt: "Choose the correct form: 'The committee demanded that the chairman ___.'",
-            options: ['resign', 'resigns', 'resigned', 'to resign'],
-            answer: 0,
-            explain: "Mandative subjunctive after 'demand that': base form 'resign'.",
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-subj-2',
-            before: 'It is essential that every passenger',
-            after: 'wearing a seatbelt.',
-            answers: ['be'],
-            hint: "base form of 'be'",
-            explain: "After 'it is essential that', use the base form **be**.",
-          },
-          {
-            kind: 'correct',
-            id: 'c1-subj-3',
-            wrong: 'I wish I was there with you now.',
-            answers: [
-              'I wish I were there with you now.',
-              'I wish I were there with you right now.',
-            ],
-            explain: "Use the were-subjunctive after 'wish' for hypotheticals.",
-          },
-          {
-            kind: 'order',
-            id: 'c1-subj-4',
-            tokens: ['We', 'recommend', 'that', 'she', 'not', 'travel', 'alone'],
-            answer: 'We recommend that she not travel alone',
-            explain: "Negative mandative subjunctive: 'that she not travel' (no 'doesn't').",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-subj-5',
-            es: 'El profesor insistió en que entregáramos los trabajos a tiempo.',
-            answers: [
-              'The teacher insisted that we hand in the assignments on time.',
-              'The teacher insisted that we submit the assignments on time.',
-              'The teacher insisted that we hand in our assignments on time.',
-            ],
-            explain: "After 'insisted that', the base form 'hand in / submit'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-subj-6',
-            es: 'Habla como si lo supiera todo.',
-            answers: [
-              'He talks as if he knew everything.',
-              'She talks as if she knew everything.',
-              'He speaks as if he knew everything.',
-            ],
-            explain: "'As if' + past/subjunctive for an unreal comparison.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-subj-7',
-            text: 'Be that as it may, I still believe we should try.',
-            explain: "'Be that as it may' is a fixed subjunctive phrase meaning 'even so'.",
-          },
-        ],
-      },
-      {
-        id: 'c1-past-modals',
-        level: 'C1',
-        title: 'Advanced past modals: speculation, criticism, regret',
-        summary:
-          'Modal + have + past participle lets you deduce, second-guess, and regret things that are already over.',
-        sections: [
-          {
-            heading: 'Speculation and deduction about the past',
-            body: "Use **must have** (certain it happened), **can't/couldn't have** (certain it didn't), and **may/might/could have** (possible) + past participle to reason about the past.",
-            examples: [
-              {
-                en: "She's not answering; she must have gone to bed.",
-                es: 'No contesta; debe de haberse acostado.',
-              },
-              {
-                en: "He can't have finished already — he only just started.",
-                es: 'No puede haber terminado ya; acaba de empezar.',
-              },
-              {
-                en: 'They might have missed the turning.',
-                es: 'Puede que se hayan saltado el desvío.',
-              },
-            ],
-          },
-          {
-            heading: 'Criticism and unrealised obligation',
-            body: "**Should have / ought to have + participle** criticises a past action or expresses what was the right thing to do but didn't happen. **Shouldn't have** criticises something that was done. **Could have** can also reproach a missed opportunity.",
-            examples: [
-              {
-                en: 'You should have told me earlier.',
-                es: 'Deberías habérmelo dicho antes.',
-              },
-              {
-                en: "He shouldn't have spoken to her like that.",
-                es: 'No debería haberle hablado así.',
-              },
-              {
-                en: 'You could have at least apologised.',
-                es: 'Por lo menos podrías haberte disculpado.',
-              },
-            ],
-          },
-          {
-            heading: "Regret and willingness: would have / needn't have",
-            body: "**Would have + participle** expresses what you'd have done (often with regret or in unreal results). **Needn't have + participle** = you did something that turned out to be unnecessary; contrast with **didn't need to** (you knew it was unnecessary, so maybe didn't do it).",
-            examples: [
-              {
-                en: 'I would have called, but I lost your number.',
-                es: 'Te habría llamado, pero perdí tu número.',
-              },
-              {
-                en: "You needn't have cooked — we'd already eaten.",
-                es: 'No hacía falta que cocinaras; ya habíamos comido.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Meaning of each past modal',
-            columns: ['Form', 'Meaning', 'Example'],
-            rows: [
-              ['must have + pp', 'logical certainty (yes)', 'He must have left.'],
-              ["can't/couldn't have + pp", 'logical certainty (no)', "She can't have known."],
-              ['might/may/could have + pp', 'possibility', 'They may have forgotten.'],
-              ['should have + pp', 'criticism / regret', 'You should have asked.'],
-              ["needn't have + pp", 'unnecessary, but done', "I needn't have worried."],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'The ground is wet; it must have rained overnight.',
-            es: 'El suelo está mojado; debe de haber llovido por la noche.',
-          },
-          {
-            en: 'You could have warned me about the traffic!',
-            es: '¡Podrías haberme avisado del tráfico!',
-          },
-          {
-            en: "I shouldn't have eaten so much.",
-            es: 'No debería haber comido tanto.',
-          },
-          {
-            en: 'She might not have seen your message.',
-            es: 'Puede que no haya visto tu mensaje.',
-          },
-          {
-            en: "We needn't have rushed; the train was delayed anyway.",
-            es: 'No hacía falta que corriéramos; el tren venía con retraso de todos modos.',
-          },
-          {
-            en: "He can't have meant it; he was joking.",
-            es: 'No pudo haberlo dicho en serio; estaba bromeando.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'She must has left.',
-            right: 'She must have left.',
-            why: "After a modal use the base **have**, never 'has/had'.",
-            esNote: "Tras un modal siempre 'have' en su forma base.",
-          },
-          {
-            wrong: 'You must have not seen it.',
-            right: "You can't have seen it. / You must not have seen it.",
-            why: "For a negative deduction about the past, the natural form is **can't/couldn't have**; 'must have not' is awkward.",
-            esNote: "Para deducción negativa usa 'can't/couldn't have + participio'.",
-          },
-          {
-            wrong: "I didn't need to bring an umbrella, but I brought one and it didn't rain.",
-            right: "I needn't have brought an umbrella (it didn't rain).",
-            why: "Use **needn't have + pp** when you did something that proved unnecessary.",
-            esNote:
-              "'needn't have' = lo hiciste pero no hacía falta; 'didn't need to' = no hacía falta y quizá no lo hiciste.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-pmod-1',
-            prompt: "Best fit: 'The lights are off and the car's gone — they ___ home.'",
-            options: ['must have gone', 'should have gone', "can't have gone", "needn't have gone"],
-            answer: 0,
-            explain: "Strong evidence → logical certainty: 'must have gone'.",
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-pmod-2',
-            before: 'You',
-            after: 'told me the meeting was cancelled — I waited an hour!',
-            answers: ['should have', 'could have', "should've", "could've"],
-            hint: 'criticism of a past failure',
-            explain: "'should/could have told me' criticises the missed action.",
-          },
-          {
-            kind: 'correct',
-            id: 'c1-pmod-3',
-            wrong: 'He must has forgotten our meeting.',
-            answers: ['He must have forgotten our meeting.', "He must've forgotten our meeting."],
-            explain: "Modal + base 'have' + participle.",
-          },
-          {
-            kind: 'order',
-            id: 'c1-pmod-4',
-            tokens: ['You', "needn't", 'have', 'paid', 'for', 'everything'],
-            answer: "You needn't have paid for everything",
-            explain: "'needn't have + participle' = it was unnecessary, but you did it.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-pmod-5',
-            es: 'No puede haber sido él; estaba conmigo.',
-            answers: [
-              "It can't have been him; he was with me.",
-              "It couldn't have been him; he was with me.",
-              "It can't have been him; he was with me the whole time.",
-            ],
-            explain: "Negative deduction about the past: 'can't/couldn't have been'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-pmod-6',
-            es: 'Deberías haber pedido ayuda.',
-            answers: [
-              'You should have asked for help.',
-              'You ought to have asked for help.',
-              "You should've asked for help.",
-            ],
-            explain: "'should/ought to have + participle' for past criticism/regret.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-pmod-7',
-            text: "I might have left my keys at the office, but I'm not sure.",
-            explain: "'might have + participle' expresses uncertain past possibility.",
-          },
-        ],
-      },
-      {
-        id: 'c1-passive-reporting',
-        level: 'C1',
-        title: 'The full passive range & advanced reporting',
-        summary:
-          'Beyond the basic passive: passive infinitives, get-passives, causatives, and distancing report structures.',
-        sections: [
-          {
-            heading: 'The full passive toolkit',
-            body: 'Master passives across tenses and forms: **passive infinitive** (to be done), **passive -ing** (being done), **perfect passive** (have been done), and the **get-passive** for sudden or unwanted events. The **causative** have/get something done shows you arranged an action.',
-            examples: [
-              {
-                en: 'The documents need to be signed today.',
-                es: 'Los documentos hay que firmarlos hoy.',
-              },
-              {
-                en: 'She hates being interrupted.',
-                es: 'Odia que la interrumpan.',
-              },
-              {
-                en: 'Our car got towed last night.',
-                es: 'Anoche se llevaron nuestro coche con la grúa.',
-              },
-              {
-                en: "I'm having the kitchen repainted.",
-                es: 'Me están repintando la cocina.',
-              },
-            ],
-          },
-          {
-            heading: 'Impersonal passive reporting (distancing)',
-            body: 'To report rumours or general belief impersonally, use **It is said/believed/thought/reported/claimed that...** or the personal version **Subject + is said/believed + to-infinitive**. Use a **perfect infinitive** (to have done) for an earlier action.',
-            examples: [
-              {
-                en: 'It is believed that the suspect has fled the country.',
-                es: 'Se cree que el sospechoso ha huido del país.',
-              },
-              {
-                en: 'The minister is said to be considering resignation.',
-                es: 'Se dice que el ministro está considerando dimitir.',
-              },
-              {
-                en: 'He is thought to have left around midnight.',
-                es: 'Se cree que se marchó hacia medianoche.',
-              },
-            ],
-          },
-          {
-            heading: 'Advanced reporting verbs and patterns',
-            body: "Go beyond 'say' and 'tell'. Many reporting verbs take specific patterns: **advise/urge/remind sb to do**, **admit/deny + -ing**, **insist/recommend (that)...**, **accuse sb of + -ing**, **blame sb for + -ing**, **congratulate sb on + -ing**. Choosing the right verb adds nuance (claim, allege, point out, concede, deny).",
-            examples: [
-              {
-                en: 'He denied taking the money.',
-                es: 'Negó haber cogido el dinero.',
-              },
-              {
-                en: 'They accused her of leaking the report.',
-                es: 'La acusaron de filtrar el informe.',
-              },
-              {
-                en: 'She urged us to reconsider.',
-                es: 'Nos instó a reconsiderarlo.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Impersonal vs personal report',
-            columns: ['Active belief', 'It-passive', 'Personal passive'],
-            rows: [
-              ['People say he is rich.', 'It is said that he is rich.', 'He is said to be rich.'],
-              [
-                'They believe she stole it.',
-                'It is believed that she stole it.',
-                'She is believed to have stolen it.',
-              ],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'The bridge is expected to be completed by 2027.',
-            es: 'Se espera que el puente esté terminado para 2027.',
-          },
-          {
-            en: 'Mistakes were made, but no one took responsibility.',
-            es: 'Se cometieron errores, pero nadie asumió la responsabilidad.',
-          },
-          {
-            en: 'I need to get my passport renewed before the trip.',
-            es: 'Tengo que renovar el pasaporte antes del viaje.',
-          },
-          {
-            en: 'The CEO is alleged to have misled investors.',
-            es: 'Se alega que el director engañó a los inversores.',
-          },
-          {
-            en: 'He admitted having lied about his qualifications.',
-            es: 'Admitió haber mentido sobre su titulación.',
-          },
-          {
-            en: 'Being told off in public was humiliating.',
-            es: 'Que me regañaran en público fue humillante.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'It is said he to be very wealthy.',
-            right: 'He is said to be very wealthy. / It is said that he is very wealthy.',
-            why: "Pick one structure: 'It is said THAT + clause' or 'He is said TO be...'. Don't blend them.",
-            esNote: "'Se dice que...' tiene dos traducciones; no las mezcles.",
-          },
-          {
-            wrong: 'He denied to take the money.',
-            right: 'He denied taking the money.',
-            why: '**deny** is followed by **-ing**, not a to-infinitive.',
-            esNote:
-              'Varios verbos de reporte (deny, admit, suggest) van con -ing, no con infinitivo.',
-          },
-          {
-            wrong: 'I painted my house last week (meaning I hired someone).',
-            right: 'I had my house painted last week.',
-            why: 'Use the **causative have/get + object + past participle** when someone else does the work for you.',
-            esNote: "Para 'me pintaron la casa' usa el causativo 'have/get + objeto + participio'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-pass-1',
-            prompt: "Rewrite personally: 'It is thought that the painting is a fake.'",
-            options: [
-              'The painting is thought to be a fake.',
-              'The painting is thought being a fake.',
-              'The painting thinks to be a fake.',
-              'It is thought the painting to be a fake.',
-            ],
-            answer: 0,
-            explain: 'Personal passive report: subject + is thought + to-infinitive.',
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-pass-2',
-            before: "We're going to",
-            after: 'the roof repaired before winter.',
-            answers: ['have', 'get'],
-            hint: 'causative verb',
-            explain: "Causative 'have/get + object + past participle' (the roof repaired).",
-          },
-          {
-            kind: 'correct',
-            id: 'c1-pass-3',
-            wrong: 'She admitted to steal the documents.',
-            answers: [
-              'She admitted stealing the documents.',
-              'She admitted to stealing the documents.',
-              'She admitted having stolen the documents.',
-            ],
-            explain: "'admit' takes -ing ('admit stealing' or 'admit to stealing').",
-          },
-          {
-            kind: 'order',
-            id: 'c1-pass-4',
-            tokens: ['The', 'minister', 'is', 'believed', 'to', 'have', 'resigned'],
-            answer: 'The minister is believed to have resigned',
-            explain: "Personal report with perfect infinitive: 'is believed to have resigned'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-pass-5',
-            es: 'Se dice que la empresa está en crisis.',
-            answers: [
-              'The company is said to be in crisis.',
-              'It is said that the company is in crisis.',
-              'The company is said to be in a crisis.',
-            ],
-            explain: "Two valid report structures for 'Se dice que...'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-pass-6',
-            es: 'Lo acusaron de robar la información.',
-            answers: [
-              'They accused him of stealing the information.',
-              'He was accused of stealing the information.',
-              'They accused him of leaking the information.',
-            ],
-            explain: "'accuse sb of + -ing'.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-pass-7',
-            text: 'The new policy is expected to be announced sometime next week.',
-            explain: "Passive infinitive after 'expected to be' for a future arrangement.",
-          },
-        ],
-      },
-      {
-        id: 'c1-nominalisation',
-        level: 'C1',
-        title: 'Nominalisation & complex noun phrases',
-        summary:
-          'Academic and formal English packs information into nouns, building dense noun phrases instead of long verb-heavy clauses.',
-        sections: [
-          {
-            heading: 'Turning verbs and adjectives into nouns',
-            body: '**Nominalisation** turns an action or quality into a noun: decide → the decision, fail → the failure, grow → the growth, happy → happiness. This makes writing more abstract, concise, and impersonal — a hallmark of formal registers.',
-            examples: [
-              {
-                en: "The committee decided quickly. → The committee's quick decision...",
-                es: 'El comité decidió rápido. → La rápida decisión del comité...',
-              },
-              {
-                en: 'Prices rose sharply. → The sharp rise in prices...',
-                es: 'Los precios subieron mucho. → La fuerte subida de los precios...',
-              },
-            ],
-          },
-          {
-            heading: 'Building complex noun phrases',
-            body: 'A complex noun phrase can carry **pre-modifiers** (adjectives, nouns) and **post-modifiers** (prepositional phrases, relative or participle clauses) around a head noun. Order matters: determiner + adjectives + noun-modifier + HEAD + post-modifiers.',
-            examples: [
-              {
-                en: 'a growing concern about online privacy',
-                es: 'una preocupación creciente por la privacidad en internet',
-              },
-              {
-                en: "the government's long-awaited decision to cut taxes",
-                es: 'la tan esperada decisión del gobierno de bajar los impuestos',
-              },
-            ],
-          },
-          {
-            heading: 'Why nominalise? Register and cohesion',
-            body: "Nominalisation lets you **refer back** to a whole idea ('This decision...', 'Such an increase...') and link sentences smoothly. Overuse, however, makes prose heavy and vague, so balance it with clear verbs.",
-            examples: [
-              {
-                en: 'Unemployment rose. This increase alarmed economists.',
-                es: 'El desempleo subió. Este aumento alarmó a los economistas.',
-              },
-              {
-                en: 'Their refusal to cooperate surprised no one.',
-                es: 'Su negativa a cooperar no sorprendió a nadie.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Common nominalisations',
-            columns: ['Verb / Adjective', 'Noun'],
-            rows: [
-              ['analyse', 'analysis'],
-              ['argue', 'argument'],
-              ['expand', 'expansion'],
-              ['able', 'ability'],
-              ['respond', 'response'],
-              ['explain', 'explanation'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'The failure of the negotiations led to a strike.',
-            es: 'El fracaso de las negociaciones provocó una huelga.',
-          },
-          {
-            en: 'There has been a significant improvement in air quality.',
-            es: 'Ha habido una mejora significativa en la calidad del aire.',
-          },
-          {
-            en: 'The discovery of the vaccine changed everything.',
-            es: 'El descubrimiento de la vacuna lo cambió todo.',
-          },
-          {
-            en: 'His sudden departure from the company raised questions.',
-            es: 'Su repentina salida de la empresa suscitó preguntas.',
-          },
-          {
-            en: 'A widely held belief among scientists is now being challenged.',
-            es: 'Una creencia muy extendida entre los científicos se está cuestionando ahora.',
-          },
-          {
-            en: 'The implementation of the new rules has caused confusion.',
-            es: 'La aplicación de las nuevas normas ha causado confusión.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'The decide of the board was final.',
-            right: 'The decision of the board was final.',
-            why: 'You must use the **noun form** (decision), not the verb, as the head of a noun phrase.',
-            esNote: "Necesitas el sustantivo ('decision'), no el verbo ('decide').",
-          },
-          {
-            wrong: 'the privacy online a growing concern',
-            right: 'a growing concern about online privacy',
-            why: 'Pre-modifiers go before the head noun and post-modifying phrases (about...) go after it, in a fixed order.',
-            esNote: 'El español pospone muchos adjetivos; el inglés los antepone al sustantivo.',
-          },
-          {
-            wrong: 'There was a big rise of unemployment.',
-            right: 'There was a big rise in unemployment.',
-            why: 'Use the correct dependent preposition: a rise/increase/fall **in** something.',
-            esNote: "'rise/increase IN', no 'of'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-nom-1',
-            prompt: "Choose the nominalised version of 'The team performed badly.'",
-            options: [
-              "The team's poor performance",
-              'The team performed bad',
-              "The bad of the team's performing",
-              'The team is performance bad',
-            ],
-            answer: 0,
-            explain: "Verb + adverb → noun phrase: 'the team's poor performance'.",
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-nom-2',
-            before: 'There has been a sharp increase',
-            after: 'house prices this year.',
-            answers: ['in'],
-            hint: "preposition after 'increase'",
-            explain: "'increase / rise / fall IN' something.",
-          },
-          {
-            kind: 'correct',
-            id: 'c1-nom-3',
-            wrong: 'The analyse of the data took two weeks.',
-            answers: [
-              'The analysis of the data took two weeks.',
-              'Analysis of the data took two weeks.',
-            ],
-            explain: "Use the noun 'analysis', not the verb 'analyse'.",
-          },
-          {
-            kind: 'order',
-            id: 'c1-nom-4',
-            tokens: ['a', 'growing', 'demand', 'for', 'renewable', 'energy'],
-            answer: 'a growing demand for renewable energy',
-            explain: 'Pre-modifier (growing) before the head, post-modifier (for...) after.',
-          },
-          {
-            kind: 'translate',
-            id: 'c1-nom-5',
-            es: 'El fracaso del proyecto decepcionó a los inversores.',
-            answers: [
-              'The failure of the project disappointed the investors.',
-              "The project's failure disappointed the investors.",
-              'The failure of the project disappointed investors.',
-            ],
-            explain: "Nominalised subject 'the failure of the project'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-nom-6',
-            es: 'Su negativa a disculparse empeoró la situación.',
-            answers: [
-              'His refusal to apologise made the situation worse.',
-              'Her refusal to apologise made the situation worse.',
-              'His refusal to apologise worsened the situation.',
-            ],
-            explain: "'refusal to + infinitive' nominalises 'refuse to'.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-nom-7',
-            text: "The government's reluctance to act has drawn widespread criticism.",
-            explain: "Two nominalisations: 'reluctance to act' and 'criticism'.",
-          },
-        ],
-      },
-      {
-        id: 'c1-participle-clauses',
-        level: 'C1',
-        title: 'Participle clauses (negative, absolute, concessive)',
-        summary:
-          'Participle clauses compress two clauses into one, adding economy and a polished, written feel.',
-        sections: [
-          {
-            heading: 'Present and perfect participle clauses',
-            body: 'A **participle clause** replaces a clause with the same subject. Use the **-ing** participle for actions happening at the same time or for a reason/result, and the **perfect participle (having + pp)** for an earlier action. The subject of both clauses must match.',
-            examples: [
-              {
-                en: 'Feeling tired, she went to bed early.',
-                es: 'Sintiéndose cansada, se acostó temprano.',
-              },
-              {
-                en: 'Having finished the report, he left the office.',
-                es: 'Habiendo terminado el informe, salió de la oficina.',
-              },
-              {
-                en: 'Opening the door, I noticed a strange smell.',
-                es: 'Al abrir la puerta, noté un olor extraño.',
-              },
-            ],
-          },
-          {
-            heading: 'Negative, passive and conjunctioned participles',
-            body: 'Make a participle clause **negative** with **not** before it (Not knowing what to say, ...). Use the **past participle** alone for a passive meaning (Built in 1850, the house...). You can keep a conjunction for clarity: **when/while/before/after + -ing**, **though/although + -ed** for a **concessive** sense.',
-            examples: [
-              {
-                en: 'Not wanting to disturb anyone, she crept out.',
-                es: 'Para no molestar a nadie, se escabulló.',
-              },
-              {
-                en: 'Built on a cliff, the hotel has stunning views.',
-                es: 'Construido sobre un acantilado, el hotel tiene vistas impresionantes.',
-              },
-              {
-                en: 'Though exhausted, they kept walking.',
-                es: 'Aunque agotados, siguieron caminando.',
-              },
-            ],
-          },
-          {
-            heading: 'Absolute clauses (with their own subject)',
-            body: "An **absolute clause** has its **own subject**, different from the main clause, often with **with**: 'The meeting over, we went home'; 'With the kids asleep, we relaxed.' These add background detail compactly.",
-            examples: [
-              {
-                en: 'The work finished, they celebrated.',
-                es: 'Terminado el trabajo, celebraron.',
-              },
-              {
-                en: 'With night falling, we set up camp.',
-                es: 'Al caer la noche, montamos el campamento.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Which participle?',
-            columns: ['Meaning', 'Form', 'Example'],
-            rows: [
-              ['same time / reason', '-ing', 'Living abroad, she learned fast.'],
-              ['earlier action', 'having + pp', 'Having eaten, we left.'],
-              ['passive', 'past participle', 'Damaged in the storm, it was unsafe.'],
-              ['negative', 'not + participle', 'Not having a key, I waited.'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'Walking home, I bumped into an old friend.',
-            es: 'Mientras volvía a casa, me encontré con un viejo amigo.',
-          },
-          {
-            en: 'Having lived in London for years, she knows it well.',
-            es: 'Habiendo vivido en Londres durante años, lo conoce bien.',
-          },
-          {
-            en: 'Written in haste, the letter contained several errors.',
-            es: 'Escrita con prisas, la carta contenía varios errores.',
-          },
-          {
-            en: 'Not having heard from them, we assumed the worst.',
-            es: 'Al no tener noticias suyas, supusimos lo peor.',
-          },
-          {
-            en: 'The speech finished, the audience applauded warmly.',
-            es: 'Terminado el discurso, el público aplaudió con calor.',
-          },
-          {
-            en: 'Although warned, he ignored the danger.',
-            es: 'Aunque le avisaron, ignoró el peligro.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'Walking down the street, a dog bit me.',
-            right: 'Walking down the street, I was bitten by a dog.',
-            why: "A **dangling participle**: the participle's subject must match the main subject. As written, the dog is walking.",
-            esNote: 'El sujeto del gerundio debe coincidir con el del verbo principal.',
-          },
-          {
-            wrong: 'Having finished, the report was emailed.',
-            right: 'Having finished the report, she emailed it.',
-            why: "'Having finished' needs a human subject who did the finishing; a report cannot finish itself.",
-            esNote: 'El participio perfecto necesita un sujeto humano que realice la acción.',
-          },
-          {
-            wrong: 'No knowing the answer, I stayed quiet.',
-            right: 'Not knowing the answer, I stayed quiet.',
-            why: 'Negate a participle clause with **not**, placed before the participle.',
-            esNote: "La negación es 'not + participio', no 'no'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-part-1',
-            prompt: "Combine: 'She had already seen the film. She didn't want to go again.' → ___",
-            options: [
-              "Having already seen the film, she didn't want to go again.",
-              "Having already saw the film, she didn't want to go again.",
-              "Seeing already the film, she didn't want to go again.",
-              "Been seen the film, she didn't want to go again.",
-            ],
-            answer: 0,
-            explain: "Earlier action → perfect participle 'Having + past participle (seen)'.",
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-part-2',
-            before: '',
-            after: 'in 1889, the tower is now a global icon.',
-            answers: ['Built', 'Completed', 'Constructed'],
-            hint: 'passive participle (past participle)',
-            explain: "Passive meaning → bare past participle 'Built in 1889'.",
-          },
-          {
-            kind: 'correct',
-            id: 'c1-part-3',
-            wrong: 'Driving to work, the engine suddenly stopped.',
-            answers: [
-              'While I was driving to work, the engine suddenly stopped.',
-              'As I was driving to work, the engine suddenly stopped.',
-              'Driving to work, I felt the engine suddenly stop.',
-            ],
-            explain:
-              "Avoid the dangling participle: the engine wasn't driving. Restore the real subject.",
-          },
-          {
-            kind: 'order',
-            id: 'c1-part-4',
-            tokens: ['Not', 'knowing', 'the', 'city', 'we', 'got', 'lost'],
-            answer: 'Not knowing the city we got lost',
-            explain: "Negative participle clause: 'Not + -ing'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-part-5',
-            es: 'Habiendo terminado los deberes, salió a jugar.',
-            answers: [
-              'Having finished his homework, he went out to play.',
-              'Having finished her homework, she went out to play.',
-              'Having done his homework, he went out to play.',
-            ],
-            explain: 'Perfect participle for the earlier action.',
-          },
-          {
-            kind: 'translate',
-            id: 'c1-part-6',
-            es: 'Aunque herido, siguió jugando.',
-            answers: [
-              'Although injured, he kept playing.',
-              'Though injured, he kept playing.',
-              'Although injured, he continued playing.',
-            ],
-            explain: "Concessive participle clause: 'Although/Though + past participle'.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-part-7',
-            text: 'With the deadline approaching, the team worked through the night.',
-            explain: "An absolute clause with 'with' supplying background detail.",
-          },
-        ],
-      },
-      {
-        id: 'c1-relative-quantifiers-ellipsis',
-        level: 'C1',
-        title: 'Relatives with quantifiers, ellipsis & substitution',
-        summary:
-          "Tie clauses together elegantly with 'most of whom' relatives, and trim repetition with ellipsis and 'so/not'.",
-        sections: [
-          {
-            heading: 'Quantifier + of + whom / which',
-            body: 'In formal non-defining relative clauses you can place a **quantifier before of whom/of which**: all of whom, most of which, several of whom, none of which, the majority of whom, both of which. Use **whom** for people, **which** for things.',
-            examples: [
-              {
-                en: 'She has three brothers, all of whom are doctors.',
-                es: 'Tiene tres hermanos, todos los cuales son médicos.',
-              },
-              {
-                en: 'He made several claims, none of which were true.',
-                es: 'Hizo varias afirmaciones, ninguna de las cuales era cierta.',
-              },
-              {
-                en: 'They sell dozens of products, many of which are eco-friendly.',
-                es: 'Venden docenas de productos, muchos de los cuales son ecológicos.',
-              },
-            ],
-          },
-          {
-            heading: 'Ellipsis: leaving out repeated words',
-            body: "**Ellipsis** omits words the listener can recover. After auxiliaries, drop the repeated verb phrase ('I haven't finished, but she has.'). In coordinated clauses, drop a repeated subject or verb ('He bought the tickets and [he] paid for dinner.').",
-            examples: [
-              {
-                en: "I'd help if I could (help).",
-                es: 'Te ayudaría si pudiera.',
-              },
-              {
-                en: "Some people like it; others don't (like it).",
-                es: 'A algunos les gusta; a otros no.',
-              },
-            ],
-          },
-          {
-            heading: 'Substitution with so, not, one and do',
-            body: "Replace a whole clause with **so** (positive) or **not** (negative) after verbs like think, hope, expect, suppose, believe, guess, be afraid: 'I think so', 'I hope not'. Use **one/ones** to replace a countable noun, and **do/does/did** to replace a verb phrase.",
-            examples: [
-              {
-                en: '"Will it rain?" "I hope not."',
-                es: '—¿Lloverá? —Espero que no.',
-              },
-              {
-                en: '"Are we late?" "I\'m afraid so."',
-                es: '—¿Llegamos tarde? —Me temo que sí.',
-              },
-              {
-                en: 'I prefer the red one to the blue one.',
-                es: 'Prefiero el rojo al azul.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Substitution after reporting verbs',
-            columns: ['Positive (so)', 'Negative', 'Verb'],
-            rows: [
-              ['I think so.', "I don't think so.", 'think (negative on the verb)'],
-              ['I hope so.', 'I hope not.', "hope (negative with 'not')"],
-              ["I'm afraid so.", "I'm afraid not.", "be afraid (negative with 'not')"],
-              ['I expect so.', "I expect not. / I don't expect so.", 'expect (both)'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'I interviewed ten candidates, two of whom were outstanding.',
-            es: 'Entrevisté a diez candidatos, dos de los cuales eran excelentes.',
-          },
-          {
-            en: 'We visited three museums, each of which was unique.',
-            es: 'Visitamos tres museos, cada uno de los cuales era único.',
-          },
-          {
-            en: '"Has the meeting been cancelled?" "I believe so."',
-            es: '—¿Se ha cancelado la reunión? —Creo que sí.',
-          },
-          {
-            en: "He said he'd call, but he didn't.",
-            es: 'Dijo que llamaría, pero no lo hizo.',
-          },
-          {
-            en: 'This phone is better than my old one.',
-            es: 'Este teléfono es mejor que el viejo.',
-          },
-          {
-            en: "I don't think so, to be honest.",
-            es: 'No lo creo, sinceramente.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'She has many friends, most of them are foreign.',
-            right: 'She has many friends, most of whom are foreign.',
-            why: "In a relative clause use **of whom/of which**, not 'of them/of it'.",
-            esNote:
-              "'most of whom' = 'la mayoría de los cuales'; 'of them' rompe la cláusula relativa.",
-          },
-          {
-            wrong: 'I think yes. / I hope yes.',
-            right: 'I think so. / I hope so.',
-            why: "English substitutes a clause with **so**, never 'yes', after these verbs.",
-            esNote: "'Creo que sí' = 'I think so', no 'I think yes'.",
-          },
-          {
-            wrong: 'I want the blue.',
-            right: 'I want the blue one.',
-            why: 'When a noun is omitted after an adjective, English needs the pro-form **one/ones**.',
-            esNote: "El español puede decir 'el azul'; el inglés necesita 'the blue one'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-rel-1',
-            prompt:
-              "Choose the correct relative: 'The report had ten sections, ___ dealt with safety.'",
-            options: ['three of which', 'three of them', 'three of who', 'three which'],
-            answer: 0,
-            explain: 'Quantifier + of which (things) in a non-defining relative clause.',
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-rel-2',
-            before: '"Do you think they\'ll win?" "I',
-            after: 'so."',
-            answers: ['hope', 'think', 'expect', 'suppose', 'guess', 'believe'],
-            hint: 'verb + so',
-            explain: "Substitution: verb of opinion/hope + 'so'.",
-          },
-          {
-            kind: 'correct',
-            id: 'c1-rel-3',
-            wrong: 'I have two cars, both of them are electric.',
-            answers: [
-              'I have two cars, both of which are electric.',
-              'I have two cars, both of which are electric ones.',
-            ],
-            explain: "Use 'both of which' inside the relative clause, not 'both of them'.",
-          },
-          {
-            kind: 'order',
-            id: 'c1-rel-4',
-            tokens: ['She', 'invited', 'fifty', 'guests', 'most', 'of', 'whom', 'came'],
-            answer: 'She invited fifty guests most of whom came',
-            explain: "'most of whom' links the second clause to 'guests' (people).",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-rel-5',
-            es: '—¿Va a llover? —Espero que no.',
-            answers: [
-              '"Is it going to rain?" "I hope not."',
-              'Is it going to rain? I hope not.',
-              '"Will it rain?" "I hope not."',
-            ],
-            explain: "Negative substitution after 'hope' uses 'not'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-rel-6',
-            es: 'Tengo dos ofertas de trabajo, ninguna de las cuales me convence.',
-            answers: [
-              'I have two job offers, neither of which convinces me.',
-              'I have two job offers, neither of which appeals to me.',
-              'I have two job offers, none of which convinces me.',
-            ],
-            explain: "'neither/none of which' for things in a relative clause.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-rel-7',
-            text: "He promised to help, but in the end he didn't.",
-            explain: "Ellipsis after 'didn't' — the verb phrase 'help' is left understood.",
-          },
-        ],
-      },
-      {
-        id: 'c1-hedging-linkers',
-        level: 'C1',
-        title: 'Hedging, stance adverbials & advanced linkers',
-        summary:
-          'Sound measured and academic: soften claims, signal your viewpoint, and connect ideas with precise discourse markers.',
-        sections: [
-          {
-            heading: 'Hedging: softening your claims',
-            body: '**Hedging** makes statements cautious and credible. Use modals (**may, might, could, would, can**), approximators (**tend to, seem to, appear to, generally, to some extent**), and frames (**it could be argued that, there is some evidence that**). This avoids sweeping overstatement.',
-            examples: [
-              {
-                en: 'This may suggest that the policy is failing.',
-                es: 'Esto podría indicar que la política está fracasando.',
-              },
-              {
-                en: 'The results tend to support the hypothesis.',
-                es: 'Los resultados tienden a respaldar la hipótesis.',
-              },
-              {
-                en: 'It could be argued that the law is outdated.',
-                es: 'Podría argumentarse que la ley está anticuada.',
-              },
-            ],
-          },
-          {
-            heading: 'Stance adverbials: showing your attitude',
-            body: '**Stance (comment) adverbials** flag your viewpoint at the start of a sentence: **admittedly, arguably, presumably, evidently, apparently, understandably, frankly, ideally, inevitably, regrettably**. They comment on the whole statement that follows.',
-            examples: [
-              {
-                en: "Admittedly, I hadn't read the whole document.",
-                es: 'Hay que reconocer que no había leído todo el documento.',
-              },
-              {
-                en: 'Arguably, this is her best novel yet.',
-                es: 'Podría decirse que es su mejor novela hasta ahora.',
-              },
-              {
-                en: "Presumably, they'll announce the results tomorrow.",
-                es: 'Es de suponer que anunciarán los resultados mañana.',
-              },
-            ],
-          },
-          {
-            heading: 'Advanced linkers: and yet, whereas, in that',
-            body: 'Refine the relationships between ideas: **and yet** (surprising contrast), **whereas / while** (direct comparison/contrast), **in that** (= in the sense that, giving the respect in which something is true), **insofar as**, **albeit** (= although, + phrase), **notwithstanding** (= despite).',
-            examples: [
-              {
-                en: 'He earns very little, and yet he seems content.',
-                es: 'Gana muy poco y, sin embargo, parece contento.',
-              },
-              {
-                en: 'Some prefer cities, whereas others love the countryside.',
-                es: 'Algunos prefieren las ciudades, mientras que otros adoran el campo.',
-              },
-              {
-                en: 'The plan is risky in that it relies on one supplier.',
-                es: 'El plan es arriesgado en el sentido de que depende de un solo proveedor.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Linkers and their function',
-            columns: ['Linker', 'Function', 'Rough Spanish'],
-            rows: [
-              ['and yet', 'surprising contrast', 'y sin embargo'],
-              ['whereas', 'direct contrast', 'mientras que'],
-              ['in that', 'specifying respect', 'en el sentido de que'],
-              ['albeit', 'concession (+ phrase)', 'aunque'],
-              ['notwithstanding', 'despite', 'a pesar de'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'Arguably, the reform did more harm than good.',
-            es: 'Podría argumentarse que la reforma hizo más mal que bien.',
-          },
-          {
-            en: 'The evidence is, admittedly, far from conclusive.',
-            es: 'Las pruebas, hay que admitirlo, distan de ser concluyentes.',
-          },
-          {
-            en: 'It seems likely that prices will continue to rise.',
-            es: 'Parece probable que los precios sigan subiendo.',
-          },
-          {
-            en: 'She accepted the role, albeit reluctantly.',
-            es: 'Aceptó el puesto, aunque a regañadientes.',
-          },
-          {
-            en: 'The north is industrial, whereas the south is largely rural.',
-            es: 'El norte es industrial, mientras que el sur es mayormente rural.',
-          },
-          {
-            en: 'His theory is useful in that it explains the anomaly.',
-            es: 'Su teoría es útil en el sentido de que explica la anomalía.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'Obviously this is the best solution and there is no doubt.',
-            right: 'Arguably, this could be the best solution.',
-            why: "Academic writing prefers **hedged** claims; absolute statements ('obviously', 'no doubt') sound unsupported.",
-            esNote: 'Modera las afirmaciones; evita expresiones tajantes en estilo formal.',
-          },
-          {
-            wrong: 'He is poor, yet however he is happy.',
-            right: 'He is poor, and yet he is happy.',
-            why: "Don't stack contrast markers ('yet' + 'however'); choose one. 'and yet' is a fixed pair.",
-            esNote: 'No acumules conectores de contraste; usa solo uno.',
-          },
-          {
-            wrong: "I like tea, whereas I don't like coffee, whereas it's bitter.",
-            right: "I like tea, whereas I don't like coffee, because it's bitter.",
-            why: "**Whereas** marks contrast between two clauses, not a reason; use 'because' for cause.",
-            esNote: "'whereas' = 'mientras que' (contraste), no 'porque'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c1-hedge-1',
-            prompt:
-              "Choose the best hedged version: 'Social media ___ harmful to teenagers' mental health.'",
-            options: ['may be', 'is definitely', 'is absolutely', 'must be totally'],
-            answer: 0,
-            explain: "'may be' hedges the claim, which suits cautious academic writing.",
-          },
-          {
-            kind: 'cloze',
-            id: 'c1-hedge-2',
-            before: 'She has a degree in physics,',
-            after: 'her brother studied law.',
-            answers: ['whereas', 'while'],
-            hint: 'direct contrast linker',
-            explain: "'whereas / while' draws a contrast between the two siblings.",
-          },
-          {
-            kind: 'correct',
-            id: 'c1-hedge-3',
-            wrong: 'Admittedly is true that I made a mistake.',
-            answers: [
-              'Admittedly, I made a mistake.',
-              'Admittedly, it is true that I made a mistake.',
-              "Admittedly, it's true that I made a mistake.",
-            ],
-            explain:
-              "'Admittedly' is a sentence adverbial; it doesn't take a dummy subject by itself.",
-          },
-          {
-            kind: 'order',
-            id: 'c1-hedge-4',
-            tokens: ['The', 'design', 'is', 'clever', 'in', 'that', 'it', 'saves', 'space'],
-            answer: 'The design is clever in that it saves space',
-            explain: "'in that' introduces the respect in which the design is clever.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-hedge-5',
-            es: 'Podría argumentarse que el sistema es injusto.',
-            answers: [
-              'It could be argued that the system is unfair.',
-              'It could be argued that the system is unjust.',
-              'One could argue that the system is unfair.',
-            ],
-            explain: "'It could be argued that' is a standard hedging frame.",
-          },
-          {
-            kind: 'translate',
-            id: 'c1-hedge-6',
-            es: 'Gana mucho dinero y, sin embargo, nunca está satisfecho.',
-            answers: [
-              'He earns a lot of money, and yet he is never satisfied.',
-              "He makes a lot of money, and yet he's never satisfied.",
-              'She earns a lot of money, and yet she is never satisfied.',
-            ],
-            explain: "'and yet' signals the surprising contrast.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c1-hedge-7',
-            text: 'Presumably, the committee will reach a decision by the end of the month.',
-            explain: "'Presumably' is a stance adverbial expressing reasonable assumption.",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    level: 'C2',
-    title: 'C2 · Mastery',
-    blurb:
-      'Stylistic inversion, distance clefts, nuanced modality and register control for full rhetorical command of English.',
-    lessons: [
-      {
-        id: 'c2-tense-aspect-register',
-        level: 'C2',
-        title: 'Tense and aspect with subtle register',
-        summary:
-          'At C2 the choice between past and present perfect, simple and continuous, is driven by viewpoint and register rather than by rules — and the past forms carry tentativeness and distance.',
-        sections: [
-          {
-            heading: 'Aspect encodes viewpoint, not just time',
-            body: "Native-like control means choosing **continuous** for an action seen as ongoing, framing or temporary, and **simple** for a complete or characterising event. The continuous can soften a statement (**I'm hoping** is gentler than **I hope**) or signal that something is provisional and may change.",
-            examples: [
-              {
-                en: "I'm hoping you might reconsider.",
-                es: 'Espero (con cautela) que puedas reconsiderarlo.',
-              },
-              {
-                en: "I was wondering whether you'd be free on Thursday.",
-                es: 'Me preguntaba si estarías libre el jueves.',
-              },
-              {
-                en: "You'll have been travelling for twelve hours by the time you land.",
-                es: 'Habrás estado viajando doce horas para cuando aterrices.',
-              },
-            ],
-          },
-          {
-            heading: 'Distancing through backshift',
-            body: "Shifting a verb **one step into the past** creates politeness and hypothetical distance without referring to past time. **Did you want** the bill? is more tentative than **Do you want**; **I'd thought** we agreed signals diplomatic surprise.",
-            examples: [
-              {
-                en: 'Did you want to leave a message?',
-                es: '¿Quería dejar un mensaje? (más cortés)',
-              },
-              {
-                en: "I'd imagined the meeting would start at nine.",
-                es: 'Me había imaginado que la reunión empezaría a las nueve.',
-              },
-            ],
-          },
-          {
-            heading: 'Perfect aspect for relevance and résumé',
-            body: 'The **present perfect** ties a past event to now (results, experience, news), while the **past simple** files it in finished time. In formal abstracts and CVs, the perfect builds a record: **The committee has reviewed...**; narrative reportage prefers the simple for immediacy.',
-            examples: [
-              {
-                en: 'The board has approved the merger.',
-                es: 'La junta ha aprobado la fusión.',
-              },
-              {
-                en: 'Shares fell sharply after the announcement.',
-                es: 'Las acciones cayeron bruscamente tras el anuncio.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Pragmatic effect of marked tense/aspect choices',
-            columns: ['Form', 'Literal time', 'Added meaning'],
-            rows: [
-              ['I was wondering...', 'past continuous', 'tentative request, polite'],
-              ["I'm loving this", 'present continuous', 'temporary, emphatic stance'],
-              ['Did you need anything?', 'past simple', 'softened offer'],
-              ["I'd been meaning to ask", 'past perfect cont.', 'delayed intention, apologetic'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'I was thinking we might push the deadline back a little.',
-            es: 'Estaba pensando que quizás podríamos posponer un poco la fecha límite.',
-          },
-          {
-            en: "By next month I'll have been working here for a decade.",
-            es: 'Para el mes que viene llevaré una década trabajando aquí.',
-          },
-          {
-            en: "Honestly, I'm not seeing the problem you describe.",
-            es: 'Sinceramente, no veo el problema que describes.',
-          },
-          {
-            en: 'We had been led to believe the funding was secure.',
-            es: 'Nos habían hecho creer que la financiación estaba asegurada.',
-          },
-          {
-            en: 'Critics have long argued that the policy was flawed.',
-            es: 'Los críticos han sostenido desde hace tiempo que la política era defectuosa.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'I am wondering if you can help me, please.',
-            right: 'I was wondering if you could help me, please.',
-            why: 'The **past continuous + could** creates the polite distance English uses for requests.',
-            esNote:
-              'El presente suena demasiado directo; el inglés retrocede el tiempo para ser cortés.',
-          },
-          {
-            wrong: 'I have seen that film yesterday.',
-            right: 'I saw that film yesterday.',
-            why: 'A finished-time adverb like **yesterday** forces the past simple, never the present perfect.',
-            esNote:
-              'Con un tiempo terminado (ayer) no se usa el present perfect, a diferencia del español coloquial.',
-          },
-          {
-            wrong: 'When I will arrive, I will call you.',
-            right: "When I arrive, I'll call you.",
-            why: 'After **when/as soon as** in future contexts, use the present, not will.',
-            esNote: "Como en español: 'Cuando llegue', no 'cuando llegaré'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c2-ta-1',
-            prompt: 'Which is the most diplomatically tentative way to make the request?',
-            options: [
-              'I want a word with you.',
-              'I was wondering if I might have a word.',
-              'I wonder you have a word.',
-              'Do you want I have a word?',
-            ],
-            answer: 1,
-            explain: 'Past continuous + might creates the softened, polite register.',
-          },
-          {
-            kind: 'cloze',
-            id: 'c2-ta-2',
-            before: 'By the end of this year, she ',
-            after: ' for the company for twenty years.',
-            answers: ['will have been working', 'will have worked'],
-            explain:
-              'Future perfect (continuous preferred for duration) projects a span up to a future point.',
-            hint: 'future perfect',
-          },
-          {
-            kind: 'correct',
-            id: 'c2-ta-3',
-            wrong: 'The committee already discussed the proposal last week.',
-            answers: [
-              'The committee discussed the proposal last week.',
-              'The committee already discussed the proposal last week — wait, that should be past simple.',
-            ],
-            explain:
-              "With 'last week' (finished time) use the past simple, not the present perfect; here 'already' wrongly pulls toward the perfect.",
-          },
-          {
-            kind: 'translate',
-            id: 'c2-ta-4',
-            es: 'Me preguntaba si estarías libre mañana.',
-            answers: [
-              "I was wondering if you'd be free tomorrow.",
-              'I was wondering whether you would be free tomorrow.',
-              'I was wondering if you were free tomorrow.',
-            ],
-            explain: 'Past continuous opener gives polite distance.',
-          },
-          {
-            kind: 'order',
-            id: 'c2-ta-5',
-            tokens: ['We', 'had', 'been', 'led', 'to', 'believe', 'otherwise'],
-            answer: 'We had been led to believe otherwise',
-            explain: 'Past perfect passive expresses a prior, now-contradicted belief.',
-          },
-          {
-            kind: 'dictation',
-            id: 'c2-ta-6',
-            text: 'Critics have long maintained that the reform was rushed.',
-            explain:
-              'Present perfect (have long maintained) for an ongoing stance; past simple (was rushed) for the finished event.',
-          },
-        ],
-      },
-      {
-        id: 'c2-stylistic-inversion',
-        level: 'C2',
-        title: 'Stylistic inversion: so, such, and fronted complements',
-        summary:
-          "Beyond negative adverbials, C2 writers invert after fronted 'so + adjective' and 'such', and front complements for dramatic, literary effect.",
-        sections: [
-          {
-            heading: 'So + adjective/adverb ... that',
-            body: 'Front **so + adjective** and invert the auxiliary for heightened drama: *So intense was the heat that the road buckled.* The pattern moves the result clause to the spotlight and feels markedly literary.',
-            examples: [
-              {
-                en: 'So intense was the heat that the tarmac began to melt.',
-                es: 'Tan intenso era el calor que el asfalto empezó a derretirse.',
-              },
-              {
-                en: 'So convincing was her argument that no one objected.',
-                es: 'Tan convincente era su argumento que nadie objetó.',
-              },
-            ],
-          },
-          {
-            heading: 'Such + noun ... that',
-            body: 'Front **such (a) + noun phrase** for the same effect: *Such was his influence that ministers sought his counsel.* Note **such** governs a noun, **so** an adjective or adverb.',
-            examples: [
-              {
-                en: 'Such was the outcry that the law was repealed.',
-                es: 'Tal fue la indignación que la ley fue derogada.',
-              },
-              {
-                en: 'Such a storm did it become that flights were grounded.',
-                es: 'Tal tormenta se volvió que se cancelaron los vuelos.',
-              },
-            ],
-          },
-          {
-            heading: 'Fronting complements and adverbials',
-            body: 'Place a **complement or prepositional phrase first** and invert for cohesion and emphasis: *Gone are the days when...*; *Among the guests was a former president.* This keeps long or new information at the end, where English prefers its weight.',
-            examples: [
-              {
-                en: 'Gone are the days when a handshake sealed a deal.',
-                es: 'Atrás quedaron los días en que un apretón de manos cerraba un trato.',
-              },
-              {
-                en: 'Among the casualties were three senior officers.',
-                es: 'Entre las bajas había tres oficiales de alto rango.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'So vs such in fronted inversion',
-            columns: ['Trigger', 'Governs', 'Example'],
-            rows: [
-              ['So + adjective/adverb', 'adjective or adverb', 'So great was the demand that...'],
-              ['Such + (a) + noun', 'noun phrase', 'Such was the demand that...'],
-              [
-                'Fronted -ed/-ing complement',
-                'participle',
-                'Gone are the days... / Standing at the door was...',
-              ],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'So rarely does he speak that everyone listens when he does.',
-            es: 'Tan raramente habla que todos escuchan cuando lo hace.',
-          },
-          {
-            en: 'Such was the silence that you could hear the clock ticking.',
-            es: 'Tal era el silencio que se oía el tictac del reloj.',
-          },
-          {
-            en: 'So bewildering were the instructions that we gave up.',
-            es: 'Tan desconcertantes eran las instrucciones que nos rendimos.',
-          },
-          {
-            en: 'Seldom has a film divided audiences so sharply.',
-            es: 'Pocas veces una película ha dividido al público tan marcadamente.',
-          },
-          {
-            en: 'At the heart of the scandal lay a single forged document.',
-            es: 'En el corazón del escándalo había un único documento falsificado.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'So intense the heat was that the road buckled.',
-            right: 'So intense was the heat that the road buckled.',
-            why: 'After fronted **so + adjective** you must invert: was the heat, not the heat was.',
-            esNote:
-              "Hay que invertir el verbo y el sujeto, no basta con anteponer 'so + adjetivo'.",
-          },
-          {
-            wrong: 'Such was big the storm that flights stopped.',
-            right:
-              'Such was the storm that flights stopped. / So big was the storm that flights stopped.',
-            why: "**Such** takes a noun directly; don't insert an adjective. Use **so** if you want the adjective.",
-            esNote: "'Such' va con sustantivo; 'so' va con adjetivo. No se mezclan.",
-          },
-          {
-            wrong: 'Gone is the days of cheap travel.',
-            right: 'Gone are the days of cheap travel.',
-            why: 'The verb agrees with the postponed plural subject **days**.',
-            esNote: 'El verbo concuerda con el sujeto pospuesto, que aquí es plural.',
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c2-si-1',
-            prompt: 'Choose the correct fronted inversion.',
-            options: [
-              'So loud the music was that we left.',
-              'So loud was the music that we left.',
-              'Such loud was the music that we left.',
-              'So was loud the music that we left.',
-            ],
-            answer: 1,
-            explain: 'So + adjective fronted → invert auxiliary and subject: was the music.',
-          },
-          {
-            kind: 'cloze',
-            id: 'c2-si-2',
-            before: 'Such ',
-            after: ' his reputation that clients waited months for an appointment.',
-            answers: ['was'],
-            explain:
-              "Such + (noun phrase = his reputation) ... that; the verb 'was' inverts before the subject.",
-          },
-          {
-            kind: 'order',
-            id: 'c2-si-3',
-            tokens: ['So', 'fierce', 'was', 'the', 'competition', 'that', 'many', 'withdrew'],
-            answer: 'So fierce was the competition that many withdrew',
-            explain: 'So + adjective + inverted was + subject + that-clause.',
-          },
-          {
-            kind: 'correct',
-            id: 'c2-si-4',
-            wrong: 'Gone is the days when letters arrived by post.',
-            answers: ['Gone are the days when letters arrived by post.'],
-            explain: "Subject 'days' is plural, so the verb must be 'are'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c2-si-5',
-            es: 'Tan convincente era su argumento que nadie se atrevió a discrepar.',
-            answers: [
-              'So convincing was her argument that no one dared to disagree.',
-              'So convincing was his argument that nobody dared to disagree.',
-            ],
-            explain: 'So + adjective inversion plus a result clause.',
-          },
-          {
-            kind: 'dictation',
-            id: 'c2-si-6',
-            text: 'Among the survivors was a child who had hidden in the cellar.',
-            explain: 'Fronted prepositional phrase triggers inversion: was a child.',
-          },
-        ],
-      },
-      {
-        id: 'c2-clefts-distance',
-        level: 'C2',
-        title: 'The full range of cleft and distance-cleft sentences',
-        summary:
-          "Clefts split a sentence to spotlight one element; distance clefts like 'It wasn't until...' delay and dramatise the key information.",
-        sections: [
-          {
-            heading: 'It-clefts for any element',
-            body: '**It + be + X + that/who...** can foreground a subject, object, time or place: *It was in 1989 that the wall fell.* The remainder becomes presupposed background, sharpening contrast and correction.',
-            examples: [
-              {
-                en: 'It was the manager, not the staff, who made the decision.',
-                es: 'Fue el gerente, no el personal, quien tomó la decisión.',
-              },
-              {
-                en: 'It was only later that I understood her warning.',
-                es: 'Fue solo más tarde cuando entendí su advertencia.',
-              },
-            ],
-          },
-          {
-            heading: "Distance clefts: it wasn't until / it was not until",
-            body: "**It wasn't until + time/event + that...** withholds the main clause to build suspense and stress how late something happened. It often pairs with inversion in very formal style: *Not until dawn did the rescuers arrive.*",
-            examples: [
-              {
-                en: "It wasn't until I read the report that the scale became clear.",
-                es: 'No fue hasta que leí el informe que la magnitud quedó clara.',
-              },
-              {
-                en: 'Not until much later did she grasp the consequences.',
-                es: 'No fue hasta mucho después cuando comprendió las consecuencias.',
-              },
-            ],
-          },
-          {
-            heading: 'Wh-clefts and reversed wh-clefts',
-            body: '**What... is/was...** fronts an idea (*What we need is time*); the **reversed** form puts the highlighted phrase first (*Time is what we need*). The **all-cleft** (*All I did was ask*) minimises or excuses an action.',
-            examples: [
-              {
-                en: 'What surprised everyone was how calmly she responded.',
-                es: 'Lo que sorprendió a todos fue la calma con que respondió.',
-              },
-              {
-                en: 'All he wanted was a straight answer.',
-                es: 'Todo lo que quería era una respuesta clara.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Cleft types and their rhetorical job',
-            columns: ['Type', 'Pattern', 'Effect'],
-            rows: [
-              ['It-cleft', 'It + be + X + that/who', 'highlight/correct one element'],
-              ['Distance cleft', "It wasn't until... that", 'delay + stress lateness'],
-              ['Wh-cleft', 'What... is/was...', 'foreground a whole idea'],
-              ['Reversed wh-cleft', 'X is what...', 'end-focus on the clause'],
-              ['All-cleft', 'All (that)... is/was', 'minimise / restrict'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'It was her silence, more than her words, that unsettled me.',
-            es: 'Fue su silencio, más que sus palabras, lo que me inquietó.',
-          },
-          {
-            en: "It wasn't until the lights went out that we realised the danger.",
-            es: 'No fue hasta que se apagaron las luces que nos dimos cuenta del peligro.',
-          },
-          {
-            en: 'What the plan lacks is any sense of priority.',
-            es: 'Lo que al plan le falta es cualquier sentido de prioridad.',
-          },
-          {
-            en: 'All that remains is to sign the contract.',
-            es: 'Todo lo que queda es firmar el contrato.',
-          },
-          {
-            en: 'A safer city is what the campaign promised.',
-            es: 'Una ciudad más segura es lo que prometió la campaña.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: "It was not until I didn't see it that I believed.",
-            right: 'It was not until I saw it that I believed.',
-            why: "**Not until** already carries the negation; don't add a second negative in the clause.",
-            esNote:
-              "El español 'no fue hasta que no lo vi' duplica la negación; en inglés solo se niega una vez.",
-          },
-          {
-            wrong: 'What I need is to study more, that is my problem.',
-            right: 'What I need is to study more.',
-            why: "The wh-cleft is self-contained; the tag 'that is my problem' is redundant.",
-            esNote:
-              "La estructura 'What... is...' ya enfatiza; no necesita una coletilla explicativa.",
-          },
-          {
-            wrong: 'It was the music what I liked most.',
-            right: 'It was the music that I liked most.',
-            why: "In it-clefts use **that/who**, never 'what'.",
-            esNote: "En las cleft con 'it', el relativo es 'that' o 'who', nunca 'what'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c2-cl-1',
-            prompt:
-              "Complete the distance cleft: '___ the final whistle that the fans realised they had won.'",
-            options: ['It was until', "It wasn't until", 'It was not when', "Until it wasn't"],
-            answer: 1,
-            explain: "It wasn't until + event + that... stresses how late the realisation came.",
-          },
-          {
-            kind: 'cloze',
-            id: 'c2-cl-2',
-            before: 'What the report fails to mention ',
-            after: ' the cost to local communities.',
-            answers: ['is'],
-            explain:
-              "Wh-cleft 'What... is...' takes a singular linking verb agreeing with the clause.",
-          },
-          {
-            kind: 'order',
-            id: 'c2-cl-3',
-            tokens: ['All', 'we', 'asked', 'for', 'was', 'a', 'little', 'honesty'],
-            answer: 'All we asked for was a little honesty',
-            explain: 'All-cleft minimises the request: All (that) we asked for was...',
-          },
-          {
-            kind: 'correct',
-            id: 'c2-cl-4',
-            wrong: 'It was the weather what ruined the trip.',
-            answers: ['It was the weather that ruined the trip.'],
-            explain: "It-clefts use 'that', not 'what'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c2-cl-5',
-            es: 'No fue hasta medianoche cuando finalmente se pusieron de acuerdo.',
-            answers: [
-              "It wasn't until midnight that they finally agreed.",
-              'It was not until midnight that they finally agreed.',
-            ],
-            explain: 'Distance cleft delaying the main clause.',
-          },
-          {
-            kind: 'dictation',
-            id: 'c2-cl-6',
-            text: 'What struck me most was how little had actually changed.',
-            explain: 'Wh-cleft foregrounding an observation.',
-          },
-        ],
-      },
-      {
-        id: 'c2-conditionals-advanced',
-        level: 'C2',
-        title: 'The full range of conditionals: inverted, mixed and counterfactual',
-        summary:
-          'Master inverted conditionals (Had I known), mixed time references, and counterfactuals with were to, but for, and otherwise.',
-        sections: [
-          {
-            heading: "Inversion instead of 'if'",
-            body: 'In formal English, drop **if** and invert: **Had I known** (= if I had known), **Were she here** (= if she were here), **Should you need** (= if you should need). This is crisp and characteristic of careful prose and speeches.',
-            examples: [
-              {
-                en: "Had we anticipated the demand, we'd have ordered more.",
-                es: 'Si hubiéramos previsto la demanda, habríamos pedido más.',
-              },
-              {
-                en: 'Should you require assistance, do not hesitate to call.',
-                es: 'Si necesitara ayuda, no dude en llamar.',
-              },
-            ],
-          },
-          {
-            heading: 'Mixed conditionals',
-            body: "Pair a past condition with a present result, or vice versa: *If I had taken that job (past), I'd be in London now (present).* The clauses can reference **different times**, which is essential for nuanced hypothetical reasoning.",
-            examples: [
-              {
-                en: "If she had studied medicine, she'd be a doctor today.",
-                es: 'Si hubiera estudiado medicina, hoy sería médica.',
-              },
-              {
-                en: "If I weren't so tired, I would have joined you last night.",
-                es: 'Si no estuviera tan cansado, me habría unido anoche.',
-              },
-            ],
-          },
-          {
-            heading: 'Were to, but for, otherwise',
-            body: "**Were to** marks a remote or hypothetical future (*Were the deal to collapse...*). **But for** = if it weren't for (*But for your help, we'd have failed*). **Otherwise** carries an implied condition (*I had a map; otherwise I'd have got lost*).",
-            examples: [
-              {
-                en: 'Were the government to fall, fresh elections would follow.',
-                es: 'Si el gobierno cayera, seguirían nuevas elecciones.',
-              },
-              {
-                en: "But for a moment's hesitation, he would have won.",
-                es: 'De no ser por un instante de vacilación, habría ganado.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Inverted conditional equivalences',
-            columns: ['With if', 'Inverted form', 'Time/meaning'],
-            rows: [
-              ['If I had known', 'Had I known', 'past unreal'],
-              ['If she were here', 'Were she here', 'present unreal'],
-              ['If it were to fail', 'Were it to fail', 'remote future'],
-              ['If you should need', 'Should you need', 'tentative future'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'Had it not been for the storm, the launch would have gone ahead.',
-            es: 'De no haber sido por la tormenta, el lanzamiento habría seguido adelante.',
-          },
-          {
-            en: 'Were I in your position, I would seek legal advice.',
-            es: 'Si yo estuviera en tu posición, buscaría asesoría legal.',
-          },
-          {
-            en: 'If they had invested earlier, the company would still exist.',
-            es: 'Si hubieran invertido antes, la empresa todavía existiría.',
-          },
-          {
-            en: 'But for a stroke of luck, the whole project would have collapsed.',
-            es: 'De no ser por un golpe de suerte, todo el proyecto se habría hundido.',
-          },
-          {
-            en: "Should anything change, I'll let you know at once.",
-            es: 'Si algo cambiara, te avisaré de inmediato.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'If I would have known, I would have helped.',
-            right: 'If I had known, I would have helped. / Had I known, I would have helped.',
-            why: "The if-clause of a third conditional uses the **past perfect**, never 'would have'.",
-            esNote:
-              "El condicional 'would' no va en la cláusula con 'if'; ahí va el pluscuamperfecto.",
-          },
-          {
-            wrong: "Had I would known, I'd have come.",
-            right: "Had I known, I'd have come.",
-            why: "Inversion replaces 'if'; don't keep an extra auxiliary like 'would'.",
-            esNote: "La inversión 'Had I known' ya sustituye a 'if'; no se añade otro auxiliar.",
-          },
-          {
-            wrong: 'If she would be here, everything would be easier.',
-            right: 'If she were here, everything would be easier.',
-            why: "Present unreal conditions use the **past subjunctive 'were'**, not 'would be'.",
-            esNote: "En condicionales irreales del presente se usa 'were', no 'would be'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c2-co-1',
-            prompt:
-              "Rewrite without 'if': 'If we had left earlier, we would have caught the train.'",
-            options: [
-              'Had we left earlier, we would have caught the train.',
-              'Would we have left earlier, we caught the train.',
-              'Had we would leave earlier, we caught the train.',
-              'If had we left earlier, we would catch the train.',
-            ],
-            answer: 0,
-            explain: "Drop 'if' and invert: Had we left...",
-          },
-          {
-            kind: 'cloze',
-            id: 'c2-co-2',
-            before: 'If I had accepted that offer, I ',
-            after: ' in Berlin right now.',
-            answers: ['would be', "'d be"],
-            explain: 'Mixed conditional: past condition, present result → would be.',
-          },
-          {
-            kind: 'order',
-            id: 'c2-co-3',
-            tokens: ['Were', 'the', 'talks', 'to', 'fail', 'markets', 'would', 'tumble'],
-            answer: 'Were the talks to fail markets would tumble',
-            explain: "Remote future hypothetical with 'were to' and inversion.",
-          },
-          {
-            kind: 'correct',
-            id: 'c2-co-4',
-            wrong: 'If I would have more time, I would travel more.',
-            answers: [
-              'If I had more time, I would travel more.',
-              'Had I more time, I would travel more.',
-            ],
-            explain: "Second conditional if-clause uses the past simple, not 'would have'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c2-co-5',
-            es: 'De no ser por tu ayuda, habríamos fracasado.',
-            answers: [
-              'But for your help, we would have failed.',
-              "If it weren't for your help, we would have failed.",
-              'Had it not been for your help, we would have failed.',
-            ],
-            explain: 'But for / had it not been for express the counterfactual cause.',
-          },
-          {
-            kind: 'dictation',
-            id: 'c2-co-6',
-            text: 'Should you change your mind, the offer still stands.',
-            explain: "Inverted tentative conditional with 'should'.",
-          },
-        ],
-      },
-      {
-        id: 'c2-nominalisation-lexical-density',
-        level: 'C2',
-        title: 'Complex nominalisation and lexical density',
-        summary:
-          'Academic and formal English packs meaning into noun phrases, turning verbs and adjectives into nouns to compress information and sound objective.',
-        sections: [
-          {
-            heading: 'Turning processes into things',
-            body: "**Nominalisation** converts a verb or adjective into a noun: *decide → decision*, *fail → failure*, *able → ability*. This lets you treat a process as a topic and stack modifiers: *the government's repeated failure to act* instead of *the government repeatedly failed to act*.",
-            examples: [
-              {
-                en: "The committee's reluctance to intervene drew criticism.",
-                es: 'La reticencia del comité a intervenir suscitó críticas.',
-              },
-              {
-                en: 'Implementation of the policy proved difficult.',
-                es: 'La aplicación de la política resultó difícil.',
-              },
-            ],
-          },
-          {
-            heading: 'Lexical density and packing the noun phrase',
-            body: 'Formal writing raises **lexical density** by loading content words into long noun phrases: *a marked reduction in urban air pollution levels*. Premodifiers (adjectives, nouns) and postmodifiers (of-phrases, relative clauses) compress what speech would spread over several clauses.',
-            examples: [
-              {
-                en: 'a sustained, evidence-based reduction in hospital readmission rates',
-                es: 'una reducción sostenida y basada en evidencia de las tasas de reingreso hospitalario',
-              },
-              {
-                en: 'the long-term economic impact of the proposed reforms',
-                es: 'el impacto económico a largo plazo de las reformas propuestas',
-              },
-            ],
-          },
-          {
-            heading: 'Why and when to use it',
-            body: 'Nominalisation creates **objectivity and cohesion**: a process named in one sentence becomes the subject of the next (*The economy contracted. This contraction...*). But over-nominalising buries the agent and obscures meaning, so balance it with verbs in plainer prose.',
-            examples: [
-              {
-                en: 'Prices rose sharply. This increase alarmed consumers.',
-                es: 'Los precios subieron bruscamente. Este aumento alarmó a los consumidores.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Common verb/adjective to noun conversions',
-            columns: ['Verb/Adjective', 'Nominalisation'],
-            rows: [
-              ['analyse', 'analysis'],
-              ['fail', 'failure'],
-              ['able', 'ability'],
-              ['reduce', 'reduction'],
-              ['assume', 'assumption'],
-              ['recur', 'recurrence'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'The widespread adoption of remote work transformed city centres.',
-            es: 'La adopción generalizada del trabajo remoto transformó los centros urbanos.',
-          },
-          {
-            en: 'Resistance to the merger came chiefly from shareholders.',
-            es: 'La resistencia a la fusión provino principalmente de los accionistas.',
-          },
-          {
-            en: 'Their refusal to compromise prolonged the dispute.',
-            es: 'Su negativa a ceder prolongó la disputa.',
-          },
-          {
-            en: 'A thorough investigation of the causes is under way.',
-            es: 'Una investigación exhaustiva de las causas está en curso.',
-          },
-          {
-            en: 'The sudden withdrawal of funding jeopardised the research.',
-            es: 'La retirada repentina de financiación puso en peligro la investigación.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'The fail of the plan surprised us.',
-            right: 'The failure of the plan surprised us.',
-            why: "Use the correct nominal form **failure**, not the bare verb 'fail'.",
-            esNote: "Cada verbo tiene su forma nominal propia; 'fail' no funciona como sustantivo.",
-          },
-          {
-            wrong: "The govern's decision was final.",
-            right: "The government's decision was final.",
-            why: "Choose the established noun **government**, not an invented form from the verb 'govern'.",
-            esNote:
-              'No todos los verbos se nominalizan de forma regular; hay que saber el sustantivo correcto.',
-          },
-          {
-            wrong: 'An analyse of the data shows a trend.',
-            right: 'An analysis of the data shows a trend.',
-            why: "The noun is **analysis**; 'analyse' is the verb.",
-            esNote: "'Analyse' es el verbo; el sustantivo es 'analysis'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c2-nom-1',
-            prompt:
-              "Choose the best nominalised version of 'The company decided quickly, and this helped.'",
-            options: [
-              "The company's quick decision helped.",
-              'The company decision quick helped.',
-              'That the company decided quick helped.',
-              'The quickly decide of the company helped.',
-            ],
-            answer: 0,
-            explain:
-              'decided → decision, quickly → quick (adjective), packed into a noun phrase subject.',
-          },
-          {
-            kind: 'cloze',
-            id: 'c2-nom-2',
-            before: "The government's repeated ",
-            after: ' to act angered the public.',
-            answers: ['failure'],
-            explain: "Nominalise 'fail' → 'failure' to head the noun phrase.",
-          },
-          {
-            kind: 'order',
-            id: 'c2-nom-3',
-            tokens: ['The', 'implementation', 'of', 'the', 'reforms', 'was', 'delayed'],
-            answer: 'The implementation of the reforms was delayed',
-            explain: "Nominalisation 'implementation' as subject with an of-phrase postmodifier.",
-          },
-          {
-            kind: 'correct',
-            id: 'c2-nom-4',
-            wrong: 'The analyse of the results took weeks.',
-            answers: ['The analysis of the results took weeks.'],
-            explain: "The noun form is 'analysis'.",
-          },
-          {
-            kind: 'translate',
-            id: 'c2-nom-5',
-            es: 'Su negativa a negociar prolongó el conflicto.',
-            answers: [
-              'Their refusal to negotiate prolonged the conflict.',
-              'His refusal to negotiate prolonged the conflict.',
-              'Her refusal to negotiate prolonged the conflict.',
-            ],
-            explain: 'negarse → refusal, a nominalised subject.',
-          },
-          {
-            kind: 'dictation',
-            id: 'c2-nom-6',
-            text: 'A marked reduction in emissions followed the introduction of the tax.',
-            explain:
-              'Two nominalisations (reduction, introduction) packed into a dense formal sentence.',
-          },
-        ],
-      },
-      {
-        id: 'c2-impersonal-distancing-passive',
-        level: 'C2',
-        title: 'Impersonal and distancing passive structures',
-        summary:
-          'Formal English distances the writer from claims using it-passives, reporting passives, and the get-passive — a key tool for objectivity and hedging.',
-        sections: [
-          {
-            heading: 'Reporting passives: it is said / he is believed to',
-            body: "To attribute a claim without naming a source, use **It is said/believed/thought that...** or the personal **Subject + is said/believed + to-infinitive**: *He is believed to have fled the country.* This signals distance — you report the claim, you don't endorse it.",
-            examples: [
-              {
-                en: 'It is widely believed that the policy backfired.',
-                es: 'Se cree ampliamente que la política fue contraproducente.',
-              },
-              {
-                en: 'The minister is alleged to have misled parliament.',
-                es: 'Se alega que el ministro engañó al parlamento.',
-              },
-            ],
-          },
-          {
-            heading: 'Agentless passive for objectivity',
-            body: 'Dropping the agent foregrounds the action and sounds impersonal and scientific: *Mistakes were made.* It is invaluable when the agent is unknown, obvious, or diplomatically best left unstated — a classic device for **avoiding blame**.',
-            examples: [
-              {
-                en: 'The samples were analysed under controlled conditions.',
-                es: 'Las muestras se analizaron en condiciones controladas.',
-              },
-              {
-                en: 'Errors were made, and lessons have been learned.',
-                es: 'Se cometieron errores y se han aprendido lecciones.',
-              },
-            ],
-          },
-          {
-            heading: 'The get-passive and have something done',
-            body: 'The **get-passive** is informal and often implies an event affecting the subject, frequently adverse: *She got promoted; they got caught.* **Have/get something done** expresses arranging a service: *We had the contract reviewed.*',
-            examples: [
-              {
-                en: 'He got fired for leaking the report.',
-                es: 'Lo despidieron por filtrar el informe.',
-              },
-              {
-                en: 'We had the figures independently audited.',
-                es: 'Hicimos que las cifras fueran auditadas de forma independiente.',
-              },
-            ],
-          },
-        ],
-        tables: [
-          {
-            caption: 'Distancing report structures',
-            columns: ['Pattern', 'Example', 'Register/effect'],
-            rows: [
-              ['It is said that...', 'It is said that he resigned.', 'neutral, impersonal'],
-              ['S is said to + inf.', 'He is said to be wealthy.', 'formal, personal subject'],
-              ['S is said to have + pp', 'She is said to have left.', 'past, distanced'],
-              ['get + past participle', 'They got arrested.', 'informal, often adverse'],
-            ],
-          },
-        ],
-        examples: [
-          {
-            en: 'The suspect is thought to be hiding abroad.',
-            es: 'Se cree que el sospechoso se esconde en el extranjero.',
-          },
-          {
-            en: 'It has been suggested that the data were manipulated.',
-            es: 'Se ha sugerido que los datos fueron manipulados.',
-          },
-          {
-            en: 'The bridge is reported to have been weakened by flooding.',
-            es: 'Se informa que el puente fue debilitado por las inundaciones.',
-          },
-          {
-            en: 'Several decisions were taken behind closed doors.',
-            es: 'Varias decisiones se tomaron a puerta cerrada.',
-          },
-          {
-            en: 'She got caught up in a scandal she had nothing to do with.',
-            es: 'Se vio envuelta en un escándalo con el que no tenía nada que ver.',
-          },
-        ],
-        pitfalls: [
-          {
-            wrong: 'It is said he to have left the country.',
-            right: 'He is said to have left the country. / It is said that he left the country.',
-            why: "Either use **It is said that + clause** or **Subject + is said to + infinitive**; don't merge them.",
-            esNote:
-              "El español 'se dice que' admite una sola estructura; en inglés hay dos patrones distintos que no se mezclan.",
-          },
-          {
-            wrong: 'The report was wrote by the committee.',
-            right: 'The report was written by the committee.',
-            why: "Use the **past participle 'written'**, not the past simple 'wrote'.",
-            esNote: "El participio de 'write' es 'written', no 'wrote'.",
-          },
-          {
-            wrong: 'We had reviewed the contract by a lawyer.',
-            right: 'We had the contract reviewed by a lawyer.',
-            why: 'Causative order is **have + object + past participle**.',
-            esNote:
-              "La estructura causativa es 'have + objeto + participio', no 'have + participio + objeto'.",
-          },
-        ],
-        exercises: [
-          {
-            kind: 'mcq',
-            id: 'c2-ip-1',
-            prompt: 'Choose the correct distancing structure.',
-            options: [
-              'He is believed to have escaped.',
-              'He is believed escape.',
-              'It is believed he to escape.',
-              'He believes to have escaped.',
-            ],
-            answer: 0,
-            explain: 'Subject + is believed + to have + past participle.',
-          },
-          {
-            kind: 'cloze',
-            id: 'c2-ip-2',
-            before: 'It ',
-            after: ' that the negotiations have collapsed.',
-            answers: ['is reported', 'is said', 'is believed', 'is thought', 'is understood'],
-            explain: 'It + is + reporting verb (passive) + that-clause.',
-          },
-          {
-            kind: 'order',
-            id: 'c2-ip-3',
-            tokens: ['The', 'minister', 'is', 'alleged', 'to', 'have', 'accepted', 'bribes'],
-            answer: 'The minister is alleged to have accepted bribes',
-            explain: 'Personal reporting passive with perfect infinitive.',
-          },
-          {
-            kind: 'correct',
-            id: 'c2-ip-4',
-            wrong: 'They had repaired the roof by professionals last week.',
-            answers: ['They had the roof repaired by professionals last week.'],
-            explain: 'Causative: have + object (the roof) + past participle (repaired).',
-          },
-          {
-            kind: 'translate',
-            id: 'c2-ip-5',
-            es: 'Se cree que el director dimitirá pronto.',
-            answers: [
-              'The director is believed to be about to resign.',
-              'It is believed that the director will resign soon.',
-              'The director is thought to be resigning soon.',
-            ],
-            explain: "Either it-passive or personal passive can render 'se cree que'.",
-          },
-          {
-            kind: 'dictation',
-            id: 'c2-ip-6',
-            text: 'Mistakes were made, but no one was prepared to take responsibility.',
-            explain: 'Agentless passive used to soften the assignment of blame.',
-          },
-        ],
-      },
-      {
-        id: 'c2-discourse-ellipsis-word-order',
-        level: 'C2',
-        title: 'Discourse markers, ellipsis and marked word order',
-        summary:
-          'Sophisticated cohesion: precise discourse markers, leaving out recoverable words (ellipsis), and fronting elements for emphasis and flow.',
-        sections: [
-          {
-            heading: 'Discourse markers for fine-grained logic',
-            body: "Beyond 'but' and 'so', deploy markers that signal exact relations: **concession** (admittedly, granted, that said), **reformulation** (in other words, that is to say), **addition with contrast** (then again), **summary** (all in all, in short). They guide the reader through your argument.",
-            examples: [
-              {
-                en: 'The plan is bold; that said, it carries real risks.',
-                es: 'El plan es audaz; dicho esto, conlleva riesgos reales.',
-              },
-              {
-                en: 'All in all, the experiment was a qualified success.',
-                es: 'En definitiva, el experimento fue un éxito relativo.',
-              },
-            ],
-          },
-          {
-            heading: 'Ellipsis: leaving out the recoverable',
-            body: 'Omit words the reader can reconstruct to avoid repetition. **Verb-phrase ellipsis** (*She can swim and so can I*), **gapping** (*Tom ordered tea; Sara, coffee*), and reduced clauses (*If (it is) possible, call me*) tighten prose and sound idiomatic.',
-            examples: [
-              {
-                en: 'Some praised the design; others, the price.',
-                es: 'Algunos elogiaron el diseño; otros, el precio.',
-              },
-              {
-                en: "I'd help if I could, but I can't.",
-                es: 'Ayudaría si pudiera, pero no puedo.',
-              },
-            ],
-          },
-          {
-            heading: 'Marked word order: fronting and end-focus',
-            body: 'Move an element to the **front** for emphasis or to link back to prior text (*That much I understand*), and keep heavy or new information at the **end** (the end-weight principle). Fronting an object or adverbial creates contrast and rhythm.',
-            examples: [
-              {
-                en: 'His arrogance I could forgive; his dishonesty I could not.',
-                es: 'Su arrogancia podía perdonarla; su deshonestidad, no.',
-              },
-              {
-                en: 'Into the room burst a breathless messenger.',
-                es: 'En la sala irrumpió un mensajero sin aliento.',
+                en: 'It was raining. However, the match continued.',
+                es: 'Llovía. Sin embargo, el partido continuó.',
               },
             ],
           },
@@ -10229,581 +7489,4135 @@ export const GRAMMAR: GrammarUnit[] = [
             caption: 'Discourse markers by function',
             columns: ['Function', 'Markers'],
             rows: [
-              ['Concession', 'admittedly, granted, that said, even so'],
-              ['Reformulation', 'in other words, that is to say, namely'],
-              ['Contrast/afterthought', 'then again, on the other hand'],
-              ['Summary', 'all in all, in short, on balance'],
+              ['Contrast', 'however, nevertheless, nonetheless'],
+              ['Result', 'therefore, consequently, thus'],
+              ['Adding', 'moreover, furthermore, in addition'],
+              ['Example/clarify', 'for instance, namely, in other words'],
             ],
           },
         ],
         examples: [
           {
-            en: 'Granted, the costs are high; the benefits, however, are greater still.',
-            es: 'Es cierto que los costos son altos; los beneficios, sin embargo, lo son aún más.',
+            en: 'The board insists that the report be submitted by Friday.',
+            es: 'La junta insiste en que el informe se entregue antes del viernes.',
           },
           {
-            en: "She wanted to apologise but didn't know how to.",
-            es: 'Quería disculparse pero no sabía cómo.',
+            en: 'It is essential that every member sign the form.',
+            es: 'Es esencial que cada miembro firme el formulario.',
           },
           {
-            en: 'What he lacks in experience he makes up for in enthusiasm.',
-            es: 'Lo que le falta de experiencia lo compensa con entusiasmo.',
+            en: 'Sales fell sharply. Consequently, several stores closed.',
+            es: 'Las ventas cayeron bruscamente. En consecuencia, varias tiendas cerraron.',
           },
           {
-            en: 'Down came the rain, and with it our hopes of a picnic.',
-            es: 'Cayó la lluvia, y con ella nuestras esperanzas de un picnic.',
+            en: 'The hotel was expensive. Moreover, the service was poor.',
+            es: 'El hotel era caro. Además, el servicio era malo.',
           },
           {
-            en: 'In short, the strategy needs a complete rethink.',
-            es: 'En resumen, la estrategia necesita un replanteamiento total.',
+            en: 'She recommended that we book in advance.',
+            es: 'Recomendó que reserváramos con antelación.',
+          },
+          {
+            en: 'The evidence is weak; nonetheless, the case will proceed.',
+            es: 'Las pruebas son débiles; no obstante, el caso seguirá adelante.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'She can swim and I can too swim.',
-            right: 'She can swim and so can I. / She can swim and I can too.',
-            why: "Use **ellipsis** ('so can I' / 'I can too') instead of repeating the verb.",
-            esNote: "El inglés elide el verbo repetido; no se repite 'swim'.",
+            wrong: 'I suggest that he applies for the job.',
+            right: 'I suggest that he apply for the job.',
+            why: "In the subjunctive after 'suggest', the verb stays in its base form without -s.",
+            esNote: "Subjuntivo: forma base, sin -s, aunque el sujeto sea 'he'.",
           },
           {
-            wrong: 'In other words is the plan too expensive.',
-            right: 'In other words, the plan is too expensive.',
-            why: 'A discourse marker is set off by a **comma** and followed by a normal clause, not a question order.',
-            esNote: 'El conector va seguido de coma y de una oración normal, sin inversión.',
+            wrong: 'It is important that she is on time.',
+            right: 'It is important that she be on time.',
+            why: "After 'it is important/essential that', formal English uses the base form 'be'.",
+            esNote: "Tras 'important that', usa 'be'.",
           },
           {
-            wrong: 'His honesty I admire it greatly.',
-            right: 'His honesty I admire greatly.',
-            why: "When you front the object, **don't leave a resumptive pronoun** ('it') in its old place.",
-            esNote:
-              "Al anteponer el objeto en inglés no se deja un pronombre 'it' repetido, a diferencia del español ('lo admiro').",
+            wrong: 'However the rain, the match continued.',
+            right: 'However, the match continued despite the rain.',
+            why: "'However' is a sentence connector, not a preposition; use 'despite/in spite of' before a noun.",
           },
         ],
         exercises: [
           {
             kind: 'mcq',
-            id: 'c2-de-1',
-            prompt: "Choose the natural elliptical reply to 'Who wants coffee?'",
-            options: ['I want coffee do.', 'I do.', 'I want do.', 'Do I want.'],
+            id: 'b2-sd-1',
+            prompt: 'Choose the formal (subjunctive) option.',
+            options: [
+              'The judge ordered that he pays a fine.',
+              'The judge ordered that he pay a fine.',
+              'The judge ordered that he paying a fine.',
+            ],
             answer: 1,
-            explain: "Verb-phrase ellipsis: 'I do' stands in for 'I want coffee'.",
+            explain: "After 'ordered that', the subjunctive uses the base form 'pay' with no -s.",
           },
           {
             kind: 'cloze',
-            id: 'c2-de-2',
-            before: 'The proposal is risky. That ',
-            after: ', it may be our only option.',
-            answers: ['said'],
-            explain: "'That said' is a concessive discourse marker meaning 'even so'.",
-          },
-          {
-            kind: 'order',
-            id: 'c2-de-3',
-            tokens: ['Into', 'the', 'hall', 'marched', 'the', 'soldiers'],
-            answer: 'Into the hall marched the soldiers',
-            explain:
-              'Fronted adverbial of place triggers subject-verb inversion with a motion verb.',
+            id: 'b2-sd-2',
+            before: 'The results were disappointing. ',
+            after: ', we decided to try again.',
+            answers: ['Therefore', 'Consequently', 'Thus'],
+            explain: 'A result marker links the cause and the decision.',
           },
           {
             kind: 'correct',
-            id: 'c2-de-4',
-            wrong: 'He plays the guitar and she plays the guitar too.',
+            id: 'b2-sd-3',
+            wrong: 'It is essential that everyone arrives on time.',
             answers: [
-              'He plays the guitar and so does she.',
-              'He plays the guitar and she does too.',
+              'It is essential that everyone arrive on time.',
+              'It is essential that everyone should arrive on time.',
             ],
-            explain:
-              "Use ellipsis with 'so does she' / 'she does too' to avoid repeating the verb phrase.",
+            explain: "The formal subjunctive uses the base form 'arrive' (or adds 'should').",
+          },
+          {
+            kind: 'order',
+            id: 'b2-sd-4',
+            tokens: ['I', 'recommend', 'that', 'she', 'see', 'a', 'specialist'],
+            answer: 'I recommend that she see a specialist.',
+            explain: "Subjunctive after 'recommend that': base form 'see', no -s.",
           },
           {
             kind: 'translate',
-            id: 'c2-de-5',
-            es: 'En resumen, necesitamos replantear toda la estrategia.',
+            id: 'b2-sd-5',
+            es: 'El informe era breve. Sin embargo, era muy claro.',
             answers: [
-              'In short, we need to rethink the whole strategy.',
-              'All in all, we need to rethink the entire strategy.',
+              'The report was short. However, it was very clear.',
+              'The report was brief. However, it was very clear.',
             ],
-            explain: 'Summary discourse marker plus the main clause.',
+            explain: "'However' marks contrast and is followed by a comma.",
           },
           {
             kind: 'dictation',
-            id: 'c2-de-6',
-            text: 'Some came for the music; others, simply for the company.',
-            explain: "Gapping: the second clause omits the repeated verb 'came'.",
+            id: 'b2-sd-6',
+            text: 'The committee insists that the deadline be respected.',
+            explain: "Subjunctive 'be' after 'insists that' in formal English.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    level: 'C1',
+    title: 'C1 · Advanced Structures',
+    blurb:
+      'Master the emphatic, inverted and elliptical structures that make advanced English sound natural and precise.',
+    lessons: [
+      {
+        id: 'c1-cleft-sentences',
+        level: 'C1',
+        title: 'Cleft Sentences',
+        summary:
+          'Cleft sentences split one idea into two clauses to **emphasise** a particular element. **It-clefts** (It was John who paid) highlight a noun or phrase, while **wh-clefts** (What I need is time) foreground an action or thing. They are essential for focus, contrast and correcting assumptions.',
+        summaryEs:
+          'Las oraciones hendidas dividen una idea en dos cláusulas para **enfatizar** un elemento concreto. Las **it-clefts** (It was John who paid) destacan un sustantivo o frase, mientras que las **wh-clefts** (What I need is time) ponen en primer plano una acción o cosa. Son esenciales para el foco, el contraste y para corregir suposiciones.',
+        sections: [
+          {
+            heading: 'It-clefts for focus and contrast',
+            body: "An **it-cleft** has the frame **It + be + focus + relative clause**. We move the most important information into the focus slot: *It was her honesty that impressed me*. Use **who/that** for people and **that/which** for things. It-clefts are especially common when **correcting** a false assumption: *It wasn't me who broke it*. The verb *be* agrees with *it* (singular) regardless of the focus, but it can shift tense: *It will be Maria who decides*.",
+            bodyEs:
+              "Una **it-cleft** tiene la estructura **It + be + foco + cláusula de relativo**. Movemos la información más importante al hueco del foco: *It was her honesty that impressed me*. Usa **who/that** para personas y **that/which** para cosas. Las it-clefts son muy comunes para **corregir** una suposición falsa: *It wasn't me who broke it*. El verbo *be* concuerda con *it* (singular) sin importar el foco, pero puede cambiar de tiempo: *It will be Maria who decides*.",
+            examples: [
+              {
+                en: 'It was in 2010 that the company collapsed.',
+                es: 'Fue en 2010 cuando la empresa quebró.',
+              },
+              {
+                en: "It's the noise that I can't stand, not the work.",
+                es: 'Es el ruido lo que no soporto, no el trabajo.',
+              },
+            ],
+          },
+          {
+            heading: 'Wh-clefts (pseudo-clefts)',
+            body: 'A **wh-cleft** usually begins with **what** and uses the frame **What + clause + be + focus**: *What surprised me was his calm*. They foreground actions especially well: *What we should do is wait*. You can also start with the focus for end-weight (a **reversed wh-cleft**): *His calm was what surprised me*. Other openers include **All (that)**, **The thing that**, **The reason why**: *All I want is a coffee*; *The reason I called is to apologise*.',
+            bodyEs:
+              'Una **wh-cleft** suele empezar con **what** y usa la estructura **What + cláusula + be + foco**: *What surprised me was his calm*. Ponen en primer plano las acciones especialmente bien: *What we should do is wait*. También puedes empezar por el foco para dar peso al final (**wh-cleft invertida**): *His calm was what surprised me*. Otros inicios incluyen **All (that)**, **The thing that**, **The reason why**: *All I want is a coffee*; *The reason I called is to apologise*.',
+            examples: [
+              {
+                en: 'What I need right now is a clear plan.',
+                es: 'Lo que necesito ahora mismo es un plan claro.',
+              },
+              {
+                en: 'All she did was apologise.',
+                es: 'Lo único que hizo fue disculparse.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Cleft frames at a glance',
+            columns: ['Type', 'Frame', 'Example'],
+            rows: [
+              ['It-cleft', 'It + be + focus + who/that…', 'It was Ana who called.'],
+              ['Wh-cleft', 'What + clause + be + focus', 'What he wants is respect.'],
+              ['Reversed wh-cleft', 'Focus + be + what + clause', 'Respect is what he wants.'],
+              ['All-cleft', 'All (that) + clause + be + focus', 'All I did was ask.'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'It was the manager, not the staff, who made the decision.',
+            es: 'Fue el gerente, no el personal, quien tomó la decisión.',
+          },
+          {
+            en: 'What bothers me is that nobody warned us.',
+            es: 'Lo que me molesta es que nadie nos avisó.',
+          },
+          {
+            en: "It's only now that I understand what she meant.",
+            es: 'Es solo ahora cuando entiendo lo que quería decir.',
+          },
+          {
+            en: "The reason we're late is that the train was cancelled.",
+            es: 'La razón por la que llegamos tarde es que cancelaron el tren.',
+          },
+          {
+            en: 'All they need is a little more time.',
+            es: 'Lo único que necesitan es un poco más de tiempo.',
+          },
+          {
+            en: "A good night's sleep was what cured him.",
+            es: 'Una buena noche de sueño fue lo que lo curó.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'The what I need is time.',
+            right: 'What I need is time.',
+            why: "A **wh-cleft** with *what* takes no article; *what* already means 'the thing that'.",
+            esNote: "No pongas *the* delante de *what*: *what* ya significa 'lo que'.",
+          },
+          {
+            wrong: "Is the noise that I can't stand.",
+            right: "It's the noise that I can't stand.",
+            why: 'English it-clefts need the dummy subject **it**; English does not allow a subjectless verb here.',
+            esNote:
+              'En inglés siempre hace falta el sujeto *it*; no se puede omitir como en español.',
+          },
+          {
+            wrong: 'It was me who broke the window who.',
+            right: 'It was me who broke the window.',
+            why: 'Use a single relative pronoun (**who/that**); do not double it.',
+            esNote: 'Usa un solo pronombre relativo, no lo repitas.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-cleft-ex1',
+            prompt: 'Choose the correct it-cleft.',
+            options: [
+              'It was John who paid the bill.',
+              'Was John who paid the bill.',
+              'It John who paid the bill.',
+              'It was John that paid the bill who.',
+            ],
+            answer: 0,
+            explain:
+              "An it-cleft needs *It + be + focus + who/that*: 'It was John who paid the bill.'",
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-cleft-ex2',
+            before: '',
+            after: 'I need is a bit of peace and quiet.',
+            answers: ['What'],
+            explain: "A wh-cleft starts with *What*, meaning 'the thing that'.",
+          },
+          {
+            kind: 'correct',
+            id: 'c1-cleft-ex3',
+            wrong: 'The what surprised me was his honesty.',
+            answers: ['What surprised me was his honesty.'],
+            explain: "Drop *the*: *what* already includes 'the thing that'.",
+          },
+          {
+            kind: 'order',
+            id: 'c1-cleft-ex4',
+            tokens: ['It', 'was', 'her', 'support', 'that', 'kept', 'me', 'going'],
+            answer: 'It was her support that kept me going.',
+            explain: 'It-cleft frame: It + was + focus (her support) + that + clause.',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-cleft-ex5',
+            es: 'Lo único que hizo fue disculparse.',
+            answers: [
+              'All she did was apologise.',
+              'All she did was apologize.',
+              'All that she did was apologise.',
+            ],
+            explain: 'An all-cleft: *All (that) she did was + bare infinitive*.',
+          },
+          {
+            kind: 'mcq',
+            id: 'c1-cleft-ex6',
+            prompt: 'Which sentence emphasises the time, not the person?',
+            options: [
+              'It was at midnight that they arrived.',
+              'It was them who arrived at midnight.',
+              'What arrived at midnight was them.',
+              'All they did was arrive.',
+            ],
+            answer: 0,
+            explain: 'Placing the time phrase in the focus slot emphasises *when* it happened.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-cleft-ex7',
+            text: 'What really matters is how you respond to failure.',
+            explain: "A wh-cleft foregrounding the action: 'What really matters is…'.",
+          },
+        ],
+      },
+      {
+        id: 'c1-inversion-negative-adverbials',
+        level: 'C1',
+        title: 'Inversion After Negative Adverbials',
+        summary:
+          'When a **negative or restrictive adverbial** is fronted for emphasis (*Never, Not only, Hardly, Little, Only then, No sooner*), the subject and auxiliary **invert** as in a question: *Never have I seen such a mess*. This formal device adds dramatic emphasis in writing and speeches.',
+        summaryEs:
+          'Cuando un **adverbial negativo o restrictivo** se antepone para enfatizar (*Never, Not only, Hardly, Little, Only then, No sooner*), el sujeto y el auxiliar se **invierten** como en una pregunta: *Never have I seen such a mess*. Este recurso formal añade énfasis dramático en la escritura y en los discursos.',
+        sections: [
+          {
+            heading: 'The inversion mechanism',
+            body: "After a fronted negative adverbial, use **question word order**: auxiliary + subject + main verb. If there is no auxiliary, add **do/does/did**: *Rarely does he complain*. With perfect or modal verbs, just move the existing auxiliary: *Never had we imagined…*. The negative meaning is what triggers the inversion, not a literal 'no'. Common triggers include **never, rarely, seldom, hardly, scarcely, little, nowhere, at no time, under no circumstances, only later, not until**.",
+            bodyEs:
+              "Tras un adverbial negativo antepuesto, usa el **orden de pregunta**: auxiliar + sujeto + verbo principal. Si no hay auxiliar, añade **do/does/did**: *Rarely does he complain*. Con verbos perfectos o modales, solo mueve el auxiliar existente: *Never had we imagined…*. Lo que provoca la inversión es el significado negativo, no un 'no' literal. Disparadores comunes: **never, rarely, seldom, hardly, scarcely, little, nowhere, at no time, under no circumstances, only later, not until**.",
+            examples: [
+              {
+                en: 'Under no circumstances should you sign this.',
+                es: 'Bajo ninguna circunstancia deberías firmar esto.',
+              },
+              {
+                en: 'Rarely have I felt so welcome.',
+                es: 'Rara vez me he sentido tan bienvenido.',
+              },
+            ],
+          },
+          {
+            heading: 'Not only, no sooner and hardly… when',
+            body: 'Some adverbials introduce **two-part** structures. **Not only … but also**: *Not only did she win, but she also broke the record*. **No sooner … than** and **Hardly/Scarcely … when** describe one event quickly followed by another, usually with the **past perfect** in the first clause: *No sooner had we sat down than the phone rang*; *Hardly had I closed my eyes when the alarm went off*. **Little** is special: it conveys ignorance — *Little did they know what awaited them*.',
+            bodyEs:
+              'Algunos adverbiales introducen estructuras de **dos partes**. **Not only … but also**: *Not only did she win, but she also broke the record*. **No sooner … than** y **Hardly/Scarcely … when** describen un evento seguido rápidamente por otro, normalmente con el **past perfect** en la primera cláusula: *No sooner had we sat down than the phone rang*; *Hardly had I closed my eyes when the alarm went off*. **Little** es especial: transmite ignorancia — *Little did they know what awaited them*.',
+            examples: [
+              {
+                en: 'Not only is it cheaper, but it also lasts longer.',
+                es: 'No solo es más barato, sino que también dura más.',
+              },
+              {
+                en: 'No sooner had he arrived than he was asked to leave.',
+                es: 'Apenas había llegado cuando le pidieron que se fuera.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Negative adverbial pairings',
+            columns: ['Adverbial', 'Pattern', 'Example'],
+            rows: [
+              [
+                'Not only',
+                'Not only + aux + S … but also',
+                'Not only did he lie, but he also denied it.',
+              ],
+              [
+                'No sooner',
+                'No sooner + had + S … than',
+                'No sooner had it stopped than it rained again.',
+              ],
+              ['Hardly / Scarcely', 'Hardly + had + S … when', 'Hardly had we left when it began.'],
+              ['Little', 'Little + did + S + know', 'Little did she realise the truth.'],
+              ['Only then / Only after', 'Only … + aux + S', 'Only then did I understand.'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'Never before had the city seen such crowds.',
+            es: 'Nunca antes había visto la ciudad semejantes multitudes.',
+          },
+          {
+            en: 'Seldom do we get a chance like this.',
+            es: 'Rara vez tenemos una oportunidad como esta.',
+          },
+          {
+            en: 'Only after the meeting did the truth come out.',
+            es: 'Solo después de la reunión salió la verdad a la luz.',
+          },
+          {
+            en: 'At no time did the staff act improperly.',
+            es: 'En ningún momento actuó el personal de forma inapropiada.',
+          },
+          {
+            en: 'Not until I read the report did I grasp the scale of the problem.',
+            es: 'Hasta que no leí el informe no comprendí la magnitud del problema.',
+          },
+          {
+            en: 'Little did we know that the worst was yet to come.',
+            es: 'Poco sabíamos que lo peor estaba aún por llegar.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'Never I have seen such a thing.',
+            right: 'Never have I seen such a thing.',
+            why: 'After a fronted negative adverbial you must **invert** subject and auxiliary, like a question.',
+            esNote: 'Hay que invertir sujeto y auxiliar: *have I*, no *I have*.',
+          },
+          {
+            wrong: 'Rarely he complains about anything.',
+            right: 'Rarely does he complain about anything.',
+            why: 'With no existing auxiliary, insert **does/did** to form the inversion.',
+            esNote: 'Si no hay auxiliar, añade *do/does/did* antes del sujeto.',
+          },
+          {
+            wrong: 'No sooner we had arrived when it started.',
+            right: 'No sooner had we arrived than it started.',
+            why: '*No sooner* inverts (had we) and pairs with **than**, not *when*.',
+            esNote: '*No sooner* se invierte y se empareja con *than*, no con *when*.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-inv1-ex1',
+            prompt: 'Choose the grammatical sentence.',
+            options: [
+              'Never have I been so embarrassed.',
+              'Never I have been so embarrassed.',
+              'Never I was so embarrassed.',
+              'Never been I so embarrassed.',
+            ],
+            answer: 0,
+            explain: 'Fronted *Never* triggers inversion: auxiliary *have* before subject *I*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-inv1-ex2',
+            before: 'Rarely ',
+            after: ' she miss a deadline.',
+            answers: ['does'],
+            explain:
+              'No auxiliary present, so insert *does* for the inversion (present, third person).',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-inv1-ex3',
+            wrong: 'Not only he forgot my name, but he also ignored me.',
+            answers: ['Not only did he forget my name, but he also ignored me.'],
+            explain: '*Not only* fronted needs inversion: *did he forget*.',
+          },
+          {
+            kind: 'order',
+            id: 'c1-inv1-ex4',
+            tokens: [
+              'No',
+              'sooner',
+              'had',
+              'we',
+              'sat',
+              'down',
+              'than',
+              'the',
+              'lights',
+              'went',
+              'out',
+            ],
+            answer: 'No sooner had we sat down than the lights went out.',
+            explain: '*No sooner had + S + past participle … than + clause*.',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-inv1-ex5',
+            es: 'Bajo ninguna circunstancia deberías abrir esa puerta.',
+            answers: ['Under no circumstances should you open that door.'],
+            explain: '*Under no circumstances* fronts and inverts: *should you open*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-inv1-ex6',
+            before: 'Little ',
+            after: ' they know what was about to happen.',
+            answers: ['did'],
+            explain: '*Little did + S + know* is the fixed inverted expression for unawareness.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-inv1-ex7',
+            text: 'Only then did she realise how much she had missed home.',
+            explain: '*Only then* fronted forces inversion: *did she realise*.',
+          },
+        ],
+      },
+      {
+        id: 'c1-inversion-conditionals',
+        level: 'C1',
+        title: 'Inversion in Conditionals',
+        summary:
+          'Formal English can **drop *if*** and invert the subject and auxiliary instead: *Had I known* (= if I had known), *Were I to* (= if I were to), *Should you* (= if you should). This raises the register and is common in writing, business and polite offers.',
+        summaryEs:
+          'El inglés formal puede **omitir *if*** e invertir el sujeto y el auxiliar: *Had I known* (= if I had known), *Were I to* (= if I were to), *Should you* (= if you should). Esto eleva el registro y es común en la escritura, los negocios y los ofrecimientos corteses.',
+        sections: [
+          {
+            heading: 'The three inversion patterns',
+            body: "Three conditional types allow **if-deletion with inversion**. Third conditional: *If I had known* → **Had I known**. Second conditional with *were to*: *If we were to fail* → **Were we to fail**. First/zero with *should* for a remote possibility: *If you should need help* → **Should you need help**. Only **had, were and should** can do this — never *did, was* or modals like *would*. In the negative, do **not** contract: write *Had it not been for…*, never *Hadn't it been for*.",
+            bodyEs:
+              "Tres tipos de condicional permiten la **omisión de *if* con inversión**. Tercer condicional: *If I had known* → **Had I known**. Segundo condicional con *were to*: *If we were to fail* → **Were we to fail**. Primer/cero con *should* para una posibilidad remota: *If you should need help* → **Should you need help**. Solo **had, were y should** pueden hacerlo, nunca *did, was* ni modales como *would*. En negativo, **no** contraigas: escribe *Had it not been for…*, nunca *Hadn't it been for*.",
+            examples: [
+              {
+                en: "Had I known you were coming, I'd have baked a cake.",
+                es: 'Si hubiera sabido que venías, habría hecho un pastel.',
+              },
+              {
+                en: 'Should you have any questions, please contact us.',
+                es: 'Si tuviera alguna pregunta, póngase en contacto con nosotros.',
+              },
+            ],
+          },
+          {
+            heading: "Register and 'Had it not been for'",
+            body: "These structures are **more formal** than *if*-clauses and add elegance to written English. A very common fixed pattern is **Had it not been for + noun** (= if it hadn't been for): *Had it not been for your help, we'd have failed*. **Were it not for** works in the present/unreal: *Were it not for the rain, we'd be outside*. **Should** softens requests in correspondence: *Should you wish to cancel, simply reply to this email*. Note that *Were I to…* often projects a hypothetical future: *Were I to resign, who would replace me?*",
+            bodyEs:
+              "Estas estructuras son **más formales** que las cláusulas con *if* y dan elegancia al inglés escrito. Un patrón fijo muy común es **Had it not been for + sustantivo** (= if it hadn't been for): *Had it not been for your help, we'd have failed*. **Were it not for** funciona en presente/irreal: *Were it not for the rain, we'd be outside*. **Should** suaviza peticiones en la correspondencia: *Should you wish to cancel, simply reply to this email*. Nota que *Were I to…* suele proyectar un futuro hipotético: *Were I to resign, who would replace me?*",
+            examples: [
+              {
+                en: "Were it not for the traffic, we'd already be there.",
+                es: 'Si no fuera por el tráfico, ya estaríamos allí.',
+              },
+              {
+                en: 'Had it not been for the alarm, the fire would have spread.',
+                es: 'De no haber sido por la alarma, el incendio se habría propagado.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'If-clause vs inverted form',
+            columns: ['With if', 'Inverted', 'Use'],
+            rows: [
+              ['If I had known', 'Had I known', 'Past/3rd conditional'],
+              ['If we were to lose', 'Were we to lose', 'Hypothetical future'],
+              ['If you should need', 'Should you need', 'Remote possibility / polite'],
+              ['If it had not been for', 'Had it not been for', 'Decisive past factor'],
+              ['If it were not for', 'Were it not for', 'Decisive present factor'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: "Were I to accept the offer, I'd have to relocate.",
+            es: 'Si aceptara la oferta, tendría que mudarme.',
+          },
+          {
+            en: 'Should anything go wrong, call this number.',
+            es: 'Si algo saliera mal, llama a este número.',
+          },
+          {
+            en: 'Had she trained harder, she might have won.',
+            es: 'Si hubiera entrenado más, podría haber ganado.',
+          },
+          {
+            en: 'Were it not for his patience, the class would be chaos.',
+            es: 'Si no fuera por su paciencia, la clase sería un caos.',
+          },
+          {
+            en: "Had it not been for the delay, we'd have caught the flight.",
+            es: 'De no haber sido por el retraso, habríamos cogido el vuelo.',
+          },
+          {
+            en: 'Should you change your mind, the door is always open.',
+            es: 'Si cambiaras de opinión, la puerta siempre está abierta.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'If had I known, I would have come.',
+            right: 'Had I known, I would have come.',
+            why: 'When you invert, you **delete *if***; you cannot keep both.',
+            esNote: 'Al invertir se elimina *if*; no se pueden usar los dos a la vez.',
+          },
+          {
+            wrong: "Hadn't it been for you, I'd have failed.",
+            right: "Had it not been for you, I'd have failed.",
+            why: 'In inverted conditionals the negative is **not contracted**; place *not* after the subject.',
+            esNote: 'En condicionales invertidos no se contrae: *Had it not been for…*.',
+          },
+          {
+            wrong: 'Would you need anything, just ask.',
+            right: 'Should you need anything, just ask.',
+            why: 'Only **had, were and should** invert; *would* cannot front a conditional.',
+            esNote: 'Solo *had, were, should* pueden invertirse; *would* no.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-inv2-ex1',
+            prompt: "Rewrite 'If I had seen it, I'd have told you' with inversion.",
+            options: [
+              "Had I seen it, I'd have told you.",
+              "If had I seen it, I'd have told you.",
+              "Did I see it, I'd have told you.",
+              "Have I seen it, I'd have told you.",
+            ],
+            answer: 0,
+            explain: 'Third conditional inverts with *Had + subject*, deleting *if*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-inv2-ex2',
+            before: '',
+            after: ' you need any help, please let me know.',
+            answers: ['Should'],
+            explain: '*Should you need…* = if you should need (polite, remote possibility).',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-inv2-ex3',
+            wrong: "Hadn't it been for the map, we'd have got lost.",
+            answers: [
+              "Had it not been for the map, we'd have got lost.",
+              'Had it not been for the map, we would have got lost.',
+              "Had it not been for the map, we'd have gotten lost.",
+            ],
+            explain:
+              'Do not contract the negative in inverted conditionals: *Had it not been for*.',
+          },
+          {
+            kind: 'order',
+            id: 'c1-inv2-ex4',
+            tokens: [
+              'Were',
+              'I',
+              'to',
+              'win',
+              'the',
+              'lottery',
+              'I',
+              'would',
+              'travel',
+              'the',
+              'world',
+            ],
+            answer: 'Were I to win the lottery, I would travel the world.',
+            explain:
+              '*Were + subject + to + infinitive* is the inverted hypothetical-future conditional.',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-inv2-ex5',
+            es: 'Si no fuera por tu apoyo, ya me habría rendido.',
+            answers: [
+              'Were it not for your support, I would have given up already.',
+              "Were it not for your support, I'd have given up already.",
+            ],
+            explain: '*Were it not for + noun* expresses a decisive present factor.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-inv2-ex6',
+            before: '',
+            after: ' I known about the meeting, I would have attended.',
+            answers: ['Had'],
+            explain: 'Inverted third conditional: *Had I known…*.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-inv2-ex7',
+            text: 'Should you require further assistance, do not hesitate to contact us.',
+            explain: 'Formal *Should you require…* replaces *if you should require…*.',
+          },
+        ],
+      },
+      {
+        id: 'c1-mixed-reduced-conditionals',
+        level: 'C1',
+        title: 'Mixed and Reduced Conditionals',
+        summary:
+          "**Mixed conditionals** combine times across the two clauses — a past condition with a present result (*If I had studied, I'd be a doctor now*), or a present condition with a past result. **Reduced conditionals** compress the clause using *if so, if not, if necessary, unless* and other shortcuts.",
+        summaryEs:
+          "Los **condicionales mixtos** combinan tiempos entre las dos cláusulas: una condición pasada con un resultado presente (*If I had studied, I'd be a doctor now*), o una condición presente con un resultado pasado. Los **condicionales reducidos** comprimen la cláusula usando *if so, if not, if necessary, unless* y otros atajos.",
+        sections: [
+          {
+            heading: 'Mixed conditionals: crossing time zones',
+            body: "A **mixed conditional** uses one clause from one time frame and the result from another. The most common is **past condition → present result**: *If I had taken that job, I would be living in Tokyo now* (the past affects the present). The reverse, **present condition → past result**, links a permanent truth to a past outcome: *If I were more organised, I wouldn't have missed the deadline*. Choose tenses by **logic**, not by a fixed formula: ask 'when is the condition?' and 'when is the result?' separately.",
+            bodyEs:
+              "Un **condicional mixto** usa una cláusula de un marco temporal y el resultado de otro. El más común es **condición pasada → resultado presente**: *If I had taken that job, I would be living in Tokyo now* (el pasado afecta al presente). El inverso, **condición presente → resultado pasado**, vincula una verdad permanente con un resultado pasado: *If I were more organised, I wouldn't have missed the deadline*. Elige los tiempos por **lógica**, no por una fórmula fija: pregúntate '¿cuándo es la condición?' y '¿cuándo es el resultado?' por separado.",
+            examples: [
+              {
+                en: "If she had married him, she'd be unhappy today.",
+                es: 'Si se hubiera casado con él, hoy sería infeliz.',
+              },
+              {
+                en: "If he weren't so stubborn, he would have apologised by now.",
+                es: 'Si no fuera tan terco, ya se habría disculpado.',
+              },
+            ],
+          },
+          {
+            heading: 'Reduced and elliptical conditionals',
+            body: "We often **shorten** conditionals to avoid repetition. **If so / If not** stand in for a whole clause: *Are you free? If so, let's meet*. **If necessary, if possible, if anything, if in doubt** are fixed reduced phrases: *Call me if necessary*. **Unless** = if not, but only for the single decisive exception: *I'll go unless it rains*. **Even if** concedes; **provided/providing (that)** and **as long as** add a strict condition: *You can stay as long as you're quiet*. **Otherwise** packs an unstated condition: *Hurry — otherwise we'll miss it*.",
+            bodyEs:
+              "A menudo **acortamos** los condicionales para evitar repetición. **If so / If not** sustituyen a toda una cláusula: *Are you free? If so, let's meet*. **If necessary, if possible, if anything, if in doubt** son frases reducidas fijas: *Call me if necessary*. **Unless** = if not, pero solo para la única excepción decisiva: *I'll go unless it rains*. **Even if** concede; **provided/providing (that)** y **as long as** añaden una condición estricta: *You can stay as long as you're quiet*. **Otherwise** encierra una condición no expresada: *Hurry — otherwise we'll miss it*.",
+            examples: [
+              {
+                en: "We may need to delay — if so, I'll email everyone.",
+                es: 'Puede que tengamos que aplazarlo; si es así, enviaré un correo a todos.',
+              },
+              {
+                en: "I'll lend you the car as long as you fill it up.",
+                es: 'Te presto el coche siempre que lo llenes de gasolina.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Mixed conditional combinations',
+            columns: ['If-clause time', 'Result time', 'Example'],
+            rows: [
+              [
+                'Past (had + p.p.)',
+                'Present (would + base)',
+                "If I'd saved more, I'd be rich now.",
+              ],
+              [
+                'Present (past simple)',
+                'Past (would have + p.p.)',
+                "If I knew French, I'd have helped.",
+              ],
+              [
+                'Past (had + p.p.)',
+                'Future (would + base)',
+                "If you'd left earlier, you'd be there tomorrow.",
+              ],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: "If we hadn't missed the train, we'd be home by now.",
+            es: 'Si no hubiéramos perdido el tren, ya estaríamos en casa.',
+          },
+          {
+            en: "If I were taller, I'd have become a model.",
+            es: 'Si fuera más alto, me habría hecho modelo.',
+          },
+          {
+            en: "Take an umbrella; otherwise you'll get soaked.",
+            es: 'Lleva un paraguas; si no, te empaparás.',
+          },
+          {
+            en: "I'll sign the contract, provided the terms don't change.",
+            es: 'Firmaré el contrato, siempre que las condiciones no cambien.',
+          },
+          {
+            en: "Do you want the long version? If not, I'll be brief.",
+            es: '¿Quieres la versión larga? Si no, seré breve.',
+          },
+          {
+            en: "Unless you tell me otherwise, I'll book for eight.",
+            es: 'A menos que me digas lo contrario, reservaré para las ocho.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'If I would have studied, I would be a doctor now.',
+            right: 'If I had studied, I would be a doctor now.',
+            why: 'The if-clause of a (mixed) conditional uses **had + past participle**, never *would have*.',
+            esNote: 'Nunca uses *would have* en la cláusula con *if*; usa *had + participio*.',
+          },
+          {
+            wrong: "Unless you don't hurry, we'll be late.",
+            right: "Unless you hurry, we'll be late.",
+            why: "**Unless** already means 'if not', so a second negative is wrong.",
+            esNote: "*Unless* ya significa 'si no'; no añadas otra negación.",
+          },
+          {
+            wrong: "If I were more careful, I wouldn't make that mistake yesterday.",
+            right: "If I were more careful, I wouldn't have made that mistake yesterday.",
+            why: 'A past result needs **would have + past participle**, even with a present condition.',
+            esNote: 'Para un resultado pasado usa *would have + participio*.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-mix-ex1',
+            prompt: "Complete: 'If I had accepted the offer, I ___ in London now.'",
+            options: ['would be living', 'would have lived', 'will live', 'had lived'],
+            answer: 0,
+            explain: 'Past condition, present result = *would be living* (mixed conditional).',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-mix-ex2',
+            before: "If she weren't so shy, she ",
+            after: ' us about the problem yesterday.',
+            answers: ['would have told', "would've told"],
+            explain: 'Present condition, past result needs *would have + past participle*.',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-mix-ex3',
+            wrong: 'If I would have known, I would be there now.',
+            answers: [
+              'If I had known, I would be there now.',
+              'Had I known, I would be there now.',
+            ],
+            explain: 'The if-clause takes *had known*, not *would have known*.',
+          },
+          {
+            kind: 'order',
+            id: 'c1-mix-ex4',
+            tokens: ['If', 'we', "hadn't", 'argued', 'we', 'would', 'still', 'be', 'friends'],
+            answer: "If we hadn't argued, we would still be friends.",
+            explain: 'Past cause, present result: a classic mixed conditional.',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-mix-ex5',
+            es: 'A menos que llueva, jugaremos al fútbol.',
+            answers: [
+              "Unless it rains, we'll play football.",
+              'Unless it rains, we will play football.',
+              "We'll play football unless it rains.",
+            ],
+            explain: '*Unless* = if not; no extra negative needed.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-mix-ex6',
+            before: 'Are you coming tonight? If ',
+            after: ", I'll save you a seat.",
+            answers: ['so'],
+            explain: '*If so* substitutes for the whole positive clause.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-mix-ex7',
+            text: "If he had listened to my advice, he wouldn't be in this mess now.",
+            explain:
+              "Mixed conditional: past condition (*had listened*) with present result (*wouldn't be*).",
+          },
+        ],
+      },
+      {
+        id: 'c1-subjunctive',
+        level: 'C1',
+        title: 'The Subjunctive',
+        summary:
+          'English keeps a small but important **subjunctive**. The **mandative subjunctive** uses the bare base verb after verbs and adjectives of demand and suggestion (*I insist that he be present*). The **were-subjunctive** appears in unreal clauses (*if I were you*), and there are many **fixed expressions** (*so be it, God save the Queen*).',
+        summaryEs:
+          'El inglés conserva un **subjuntivo** pequeño pero importante. El **subjuntivo mandativo** usa el verbo base sin conjugar tras verbos y adjetivos de exigencia y sugerencia (*I insist that he be present*). El **subjuntivo *were*** aparece en cláusulas irreales (*if I were you*), y hay muchas **expresiones fijas** (*so be it, God save the Queen*).',
+        sections: [
+          {
+            heading: 'The mandative subjunctive',
+            body: 'After verbs of **demanding, suggesting, requesting and recommending** (*demand, insist, suggest, recommend, require, propose, ask, request*), the *that*-clause uses the **base form** of the verb for all persons: *They demand that he resign* (not *resigns*). It does not change for negatives or tense: *We recommend that she not travel*; *I suggested that he be informed*. The same applies after adjectives like **essential, vital, important, crucial, necessary, advisable**: *It is essential that everyone arrive on time*. In British English *should + base* is a common alternative: *I insist that he should be present*.',
+            bodyEs:
+              'Tras verbos de **exigencia, sugerencia, petición y recomendación** (*demand, insist, suggest, recommend, require, propose, ask, request*), la cláusula con *that* usa la **forma base** del verbo para todas las personas: *They demand that he resign* (no *resigns*). No cambia con negativos ni tiempos: *We recommend that she not travel*; *I suggested that he be informed*. Lo mismo aplica tras adjetivos como **essential, vital, important, crucial, necessary, advisable**: *It is essential that everyone arrive on time*. En inglés británico *should + base* es una alternativa común: *I insist that he should be present*.',
+            examples: [
+              {
+                en: 'The board recommends that the policy be reviewed.',
+                es: 'La junta recomienda que se revise la política.',
+              },
+              {
+                en: 'It is vital that he understand the risks.',
+                es: 'Es vital que entienda los riesgos.',
+              },
+            ],
+          },
+          {
+            heading: 'Were-subjunctive and fixed expressions',
+            body: 'In hypothetical and unreal clauses, formal English uses **were** for all persons: *If I were you*; *She acts as if she were the boss*; *I wish it were Friday*; *Suppose he were to refuse*. Using *was* here is acceptable in speech but **were** is preferred in careful writing. The subjunctive also survives in **frozen expressions**: *Be that as it may, So be it, Come what may, God bless you, Heaven forbid, Suffice it to say, Far be it from me, Long live the king*. These are learned as wholes, not built from rules.',
+            bodyEs:
+              'En cláusulas hipotéticas e irreales, el inglés formal usa **were** para todas las personas: *If I were you*; *She acts as if she were the boss*; *I wish it were Friday*; *Suppose he were to refuse*. Usar *was* aquí es aceptable en el habla, pero **were** es preferible en la escritura cuidada. El subjuntivo también sobrevive en **expresiones fijas**: *Be that as it may, So be it, Come what may, God bless you, Heaven forbid, Suffice it to say, Far be it from me, Long live the king*. Estas se aprenden como bloques, no se construyen con reglas.',
+            examples: [
+              {
+                en: 'If I were in charge, things would be different.',
+                es: 'Si yo estuviera al mando, las cosas serían diferentes.',
+              },
+              {
+                en: 'Be that as it may, we must move forward.',
+                es: 'Sea como sea, debemos seguir adelante.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Triggers of the mandative subjunctive',
+            columns: ['Category', 'Examples', 'Pattern'],
+            rows: [
+              [
+                'Verbs',
+                'demand, insist, suggest, recommend, require, propose',
+                'verb + that + S + base',
+              ],
+              [
+                'Adjectives',
+                'essential, vital, crucial, important, advisable',
+                'It is + adj + that + S + base',
+              ],
+              [
+                'Nouns',
+                'demand, requirement, suggestion, recommendation',
+                'noun + that + S + base',
+              ],
+              ['Negative', 'not + base (no auxiliary)', '…that he not attend'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'I insist that she be told immediately.',
+            es: 'Insisto en que se le diga de inmediato.',
+          },
+          {
+            en: 'It is essential that every member sign the form.',
+            es: 'Es esencial que cada miembro firme el formulario.',
+          },
+          {
+            en: 'The judge ordered that the defendant remain in custody.',
+            es: 'El juez ordenó que el acusado permaneciera bajo custodia.',
+          },
+          {
+            en: 'We request that you not smoke on the premises.',
+            es: 'Le rogamos que no fume en las instalaciones.',
+          },
+          {
+            en: "If I were you, I'd think twice.",
+            es: 'Si yo fuera tú, lo pensaría dos veces.',
+          },
+          {
+            en: "Come what may, I'll support you.",
+            es: 'Pase lo que pase, te apoyaré.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'I insist that he comes to the meeting.',
+            right: 'I insist that he come to the meeting.',
+            why: 'The mandative subjunctive uses the **base form** (*come*), with no third-person -s.',
+            esNote: 'Usa la forma base del verbo; no añadas -s aunque sea tercera persona.',
+          },
+          {
+            wrong: 'It is essential that everyone is present.',
+            right: 'It is essential that everyone be present.',
+            why: 'After *essential that…*, use the base form **be**, not the conjugated *is*.',
+            esNote: 'Tras *essential that*, usa *be*, no *is*.',
+          },
+          {
+            wrong: "She recommended that he doesn't go.",
+            right: 'She recommended that he not go.',
+            why: 'The negative subjunctive is **not + base verb**, without *do/does*.',
+            esNote: 'El negativo es *not + verbo base*, sin *do/does*.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-subj-ex1',
+            prompt: 'Choose the correct sentence.',
+            options: [
+              'The doctor recommends that he rest for a week.',
+              'The doctor recommends that he rests for a week.',
+              'The doctor recommends that he resting for a week.',
+              'The doctor recommends that he is resting for a week.',
+            ],
+            answer: 0,
+            explain: 'Mandative subjunctive: base form *rest*, no -s.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-subj-ex2',
+            before: 'It is vital that every passenger ',
+            after: ' a seatbelt.',
+            answers: ['wear'],
+            explain: 'After *vital that*, use the base form *wear*.',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-subj-ex3',
+            wrong: "I suggest that she doesn't tell anyone.",
+            answers: ['I suggest that she not tell anyone.'],
+            explain: 'Negative subjunctive: *not tell*, without *does*.',
+          },
+          {
+            kind: 'order',
+            id: 'c1-subj-ex4',
+            tokens: ['The', 'committee', 'demanded', 'that', 'the', 'report', 'be', 'published'],
+            answer: 'The committee demanded that the report be published.',
+            explain: 'Passive subjunctive: *be + past participle* after *demanded that*.',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-subj-ex5',
+            es: 'Si yo fuera tú, aceptaría la oferta.',
+            answers: [
+              'If I were you, I would accept the offer.',
+              "If I were you, I'd accept the offer.",
+            ],
+            explain: 'Were-subjunctive in the unreal clause: *If I were you*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-subj-ex6',
+            before: 'Be that as it ',
+            after: ', we still need a decision.',
+            answers: ['may'],
+            explain: 'Fixed subjunctive expression: *Be that as it may*.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-subj-ex7',
+            text: 'The regulations require that each application be submitted in writing.',
+            explain: 'Mandative subjunctive in the passive: *be submitted*.',
+          },
+        ],
+      },
+      {
+        id: 'c1-advanced-past-modals',
+        level: 'C1',
+        title: 'Advanced Past Modals',
+        summary:
+          "**Modal + have + past participle** lets us look back and **speculate** (*must have, might have, can't have*), **criticise** (*should have, ought to have*) and express **regret** (*could have, needn't have*). Mastering the nuances distinguishes confident deduction from gentle reproach.",
+        summaryEs:
+          "**Modal + have + participio** nos permite mirar atrás y **especular** (*must have, might have, can't have*), **criticar** (*should have, ought to have*) y expresar **arrepentimiento** (*could have, needn't have*). Dominar los matices distingue la deducción segura del leve reproche.",
+        sections: [
+          {
+            heading: 'Speculation and deduction about the past',
+            body: "To deduce what happened, use **must have** (certain it's true: *She must have left already*), **can't have / couldn't have** (certain it's false: *He can't have known*), and **might/may/could have** (possible: *They might have missed the bus*). Note the key contrast for Spanish speakers: the opposite of *must have* is **can't have**, not *mustn't have*. **Could have** also expresses unrealised possibility — *That could have gone much worse* — so context decides whether it means deduction or a near-miss.",
+            bodyEs:
+              "Para deducir qué pasó, usa **must have** (seguro que es verdad: *She must have left already*), **can't have / couldn't have** (seguro que es falso: *He can't have known*), y **might/may/could have** (posible: *They might have missed the bus*). Nota el contraste clave para hispanohablantes: el opuesto de *must have* es **can't have**, no *mustn't have*. **Could have** también expresa una posibilidad no realizada — *That could have gone much worse* — así que el contexto decide si significa deducción o algo que estuvo cerca de pasar.",
+            examples: [
+              {
+                en: 'The lights are off — they must have gone to bed.',
+                es: 'Las luces están apagadas; deben de haberse acostado.',
+              },
+              {
+                en: "You can't have finished already!",
+                es: '¡No puedes haber terminado ya!',
+              },
+            ],
+          },
+          {
+            heading: 'Criticism and regret',
+            body: "**Should have / ought to have + past participle** criticise a past action or express regret: *You should have told me* (you didn't, and that was wrong). The negative *shouldn't have* marks a mistaken action: *I shouldn't have eaten so much*. **Could have** voices a missed opportunity or reproach: *You could have warned us!*. **Needn't have + past participle** means an action was done but was **unnecessary** (*You needn't have paid — it was free*), which contrasts sharply with **didn't need to**, which often implies the action was *not* done (*I didn't need to pay, so I didn't*).",
+            bodyEs:
+              "**Should have / ought to have + participio** critican una acción pasada o expresan arrepentimiento: *You should have told me* (no lo hiciste, y estuvo mal). El negativo *shouldn't have* marca una acción equivocada: *I shouldn't have eaten so much*. **Could have** expresa una oportunidad perdida o un reproche: *You could have warned us!*. **Needn't have + participio** significa que una acción se hizo pero era **innecesaria** (*You needn't have paid — it was free*), lo que contrasta marcadamente con **didn't need to**, que suele implicar que la acción *no* se hizo (*I didn't need to pay, so I didn't*).",
+            examples: [
+              {
+                en: "I should have booked earlier; now it's full.",
+                es: 'Debería haber reservado antes; ahora está lleno.',
+              },
+              {
+                en: "You needn't have cooked — we already ate.",
+                es: 'No hacía falta que cocinaras; ya comimos.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Past modal meanings',
+            columns: ['Form', 'Meaning', 'Example'],
+            rows: [
+              ['must have + p.p.', 'Certain (positive deduction)', 'She must have forgotten.'],
+              ["can't / couldn't have", 'Certain (negative deduction)', "He can't have lied."],
+              ['might/may/could have', 'Possibility', 'They may have left.'],
+              ['should/ought to have', 'Criticism / regret', 'You should have called.'],
+              ["needn't have + p.p.", 'Done but unnecessary', "You needn't have waited."],
+              ["didn't need to", 'Often: not done (unnecessary)', "I didn't need to wait."],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'The road is wet; it must have rained overnight.',
+            es: 'La carretera está mojada; debe de haber llovido por la noche.',
+          },
+          {
+            en: "She couldn't have seen us — she was facing the other way.",
+            es: 'No pudo habernos visto; estaba mirando hacia el otro lado.',
+          },
+          {
+            en: "We might have won if we'd played better.",
+            es: 'Podríamos haber ganado si hubiéramos jugado mejor.',
+          },
+          {
+            en: 'You ought to have asked permission first.',
+            es: 'Deberías haber pedido permiso primero.',
+          },
+          {
+            en: "I needn't have brought my umbrella after all.",
+            es: 'Al final no hacía falta que trajera el paraguas.',
+          },
+          {
+            en: 'He could have been seriously hurt.',
+            es: 'Podría haberse hecho mucho daño.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: "He mustn't have heard me.",
+            right: "He can't have heard me.",
+            why: "For negative deduction use **can't/couldn't have**; *mustn't have* is not used for deduction.",
+            esNote: "Para deducción negativa usa *can't have*, no *mustn't have*.",
+          },
+          {
+            wrong: 'You should have to tell me.',
+            right: 'You should have told me.',
+            why: 'The structure is **should have + past participle**, not *should have to*.',
+            esNote: 'Es *should have + participio*; no metas *to*.',
+          },
+          {
+            wrong: 'I should of called you.',
+            right: 'I should have called you.',
+            why: "*Of* is a mishearing of the contraction *'ve*; always write **have**.",
+            esNote: 'Escribe *should have*, nunca *should of*.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-mod-ex1',
+            prompt: "Best completes: 'The food is untouched. She ___ hungry.'",
+            options: [
+              "can't have been",
+              "mustn't have been",
+              "shouldn't have been",
+              "needn't have been",
+            ],
+            answer: 0,
+            explain: "Negative deduction about the past uses *can't have been*.",
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-mod-ex2',
+            before: "It's freezing in here — someone ",
+            after: ' the window open.',
+            answers: ['must have left', "must've left"],
+            explain: 'Positive deduction: *must have left*.',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-mod-ex3',
+            wrong: 'You should of warned me about the traffic.',
+            answers: [
+              'You should have warned me about the traffic.',
+              "You should've warned me about the traffic.",
+            ],
+            explain: 'Write *should have*, never *should of*.',
+          },
+          {
+            kind: 'mcq',
+            id: 'c1-mod-ex4',
+            prompt: "Which means 'you waited, but it wasn't necessary'?",
+            options: [
+              "You needn't have waited.",
+              "You didn't need to wait.",
+              "You shouldn't wait.",
+              "You mustn't have waited.",
+            ],
+            answer: 0,
+            explain: "*Needn't have + p.p.* = the action was done but unnecessary.",
+          },
+          {
+            kind: 'translate',
+            id: 'c1-mod-ex5',
+            es: 'Deberías haberme llamado anoche.',
+            answers: [
+              'You should have called me last night.',
+              "You should've called me last night.",
+              'You ought to have called me last night.',
+            ],
+            explain: 'Criticism/regret: *should/ought to have + past participle*.',
+          },
+          {
+            kind: 'order',
+            id: 'c1-mod-ex6',
+            tokens: ['They', 'might', 'have', 'taken', 'the', 'wrong', 'turning'],
+            answer: 'They might have taken the wrong turning.',
+            explain: 'Possibility about the past: *might have + past participle*.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-mod-ex7',
+            text: "He can't have finished the whole report in an hour.",
+            explain: "Negative deduction: *can't have finished*.",
+          },
+        ],
+      },
+      {
+        id: 'c1-passive-reporting',
+        level: 'C1',
+        title: 'The Full Passive Range and Advanced Reporting',
+        summary:
+          'C1 passives go beyond *be + past participle*: **get-passives**, **passive infinitives and -ing forms**, **causative have/get**, and impersonal **reporting structures** (*It is said that…*, *He is believed to be…*). These let writers stay objective, manage focus and report claims with appropriate distance.',
+        summaryEs:
+          'Las pasivas de C1 van más allá de *be + participio*: **get-passives**, **infinitivos y formas en -ing pasivos**, **causativo have/get**, y **estructuras de información** impersonales (*It is said that…*, *He is believed to be…*). Permiten al escritor mantenerse objetivo, gestionar el foco y reportar afirmaciones con la distancia adecuada.',
+        sections: [
+          {
+            heading: 'Extending the passive',
+            body: "Beyond the basic passive, learn: **get-passive** for events and changes, often unplanned (*He got fired*; *The window got broken*); **passive infinitive** *(to) be done* (*She expects to be promoted*; *There's nothing to be done*); **passive -ing** *being done* (*I hate being interrupted*; *After being warned, he left*); **modal passives** (*It must be finished today*); and **perfect passives** (*The bridge has been repaired*). The **causative** *have/get something done* reports an action done for you by someone else: *I had my car serviced*; *We're getting the kitchen painted*.",
+            bodyEs:
+              "Más allá de la pasiva básica, aprende: **get-passive** para eventos y cambios, a menudo no planeados (*He got fired*; *The window got broken*); **infinitivo pasivo** *(to) be done* (*She expects to be promoted*; *There's nothing to be done*); **-ing pasivo** *being done* (*I hate being interrupted*; *After being warned, he left*); **pasivas modales** (*It must be finished today*); y **pasivas perfectas** (*The bridge has been repaired*). El **causativo** *have/get something done* informa de una acción hecha por otra persona para ti: *I had my car serviced*; *We're getting the kitchen painted*.",
+            examples: [
+              {
+                en: "I'm having the documents translated this week.",
+                es: 'Estoy haciendo traducir los documentos esta semana.',
+              },
+              {
+                en: 'Nobody likes being told what to do.',
+                es: 'A nadie le gusta que le digan lo que tiene que hacer.',
+              },
+            ],
+          },
+          {
+            heading: 'Impersonal reporting structures',
+            body: 'To report opinions or rumours impersonally, English uses two patterns. **It + passive reporting verb + that-clause**: *It is said that the company is failing*; *It was reported that talks had collapsed*. **Subject + passive reporting verb + to-infinitive**: *The company is said to be failing*; *He is believed to have left the country*. Common verbs: *say, believe, think, report, know, expect, allege, consider, understand*. Use a **perfect infinitive** (*to have done*) when the reported event is earlier than the reporting: *She is thought to have made a fortune*.',
+            bodyEs:
+              'Para reportar opiniones o rumores de forma impersonal, el inglés usa dos patrones. **It + verbo pasivo de información + cláusula con that**: *It is said that the company is failing*; *It was reported that talks had collapsed*. **Sujeto + verbo pasivo de información + infinitivo con to**: *The company is said to be failing*; *He is believed to have left the country*. Verbos comunes: *say, believe, think, report, know, expect, allege, consider, understand*. Usa un **infinitivo perfecto** (*to have done*) cuando el evento reportado es anterior al momento de informar: *She is thought to have made a fortune*.',
+            examples: [
+              {
+                en: 'It is believed that no one survived the crash.',
+                es: 'Se cree que nadie sobrevivió al accidente.',
+              },
+              {
+                en: 'The minister is alleged to have accepted bribes.',
+                es: 'Se alega que el ministro aceptó sobornos.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Reporting transformations',
+            columns: ['Active claim', 'It-passive', 'Subject + to-infinitive'],
+            rows: [
+              ['People say he is rich.', 'It is said that he is rich.', 'He is said to be rich.'],
+              [
+                'They believe she left.',
+                'It is believed that she left.',
+                'She is believed to have left.',
+              ],
+              [
+                'Experts expect prices to rise.',
+                'It is expected that prices will rise.',
+                'Prices are expected to rise.',
+              ],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'The painting is thought to be a forgery.',
+            es: 'Se cree que el cuadro es una falsificación.',
+          },
+          {
+            en: 'Their house got burgled while they were away.',
+            es: 'Les entraron a robar en casa mientras estaban fuera.',
+          },
+          {
+            en: 'All applications must be submitted by Friday.',
+            es: 'Todas las solicitudes deben presentarse antes del viernes.',
+          },
+          {
+            en: 'We had the roof repaired after the storm.',
+            es: 'Hicimos reparar el tejado tras la tormenta.',
+          },
+          {
+            en: 'It was reported that the talks had broken down.',
+            es: 'Se informó de que las negociaciones se habían roto.',
+          },
+          {
+            en: 'He is known to have lived in Paris for years.',
+            es: 'Se sabe que vivió en París durante años.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'He is said that he is very rich.',
+            right: 'He is said to be very rich.',
+            why: 'With a personal subject, use the **to-infinitive** pattern; the *that*-clause goes only with *It is said that…*.',
+            esNote: 'Con sujeto personal usa *to be*; *that* solo va con *It is said that…*.',
+          },
+          {
+            wrong: 'I cut my hair yesterday at the salon.',
+            right: 'I had my hair cut yesterday at the salon.',
+            why: 'If someone else does it for you, use the **causative** *have something done*.',
+            esNote: 'Si te lo hacen, usa el causativo *have something done*.',
+          },
+          {
+            wrong: 'It is believed the company to be failing.',
+            right: 'It is believed that the company is failing.',
+            why: 'After *It is believed*, use a **that-clause**, not a to-infinitive.',
+            esNote: 'Tras *It is believed* va una cláusula con *that*.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-pass-ex1',
+            prompt: "Rewrite 'People say she is a genius' with a personal subject.",
+            options: [
+              'She is said to be a genius.',
+              'She is said that she is a genius.',
+              'It is said her to be a genius.',
+              'She says to be a genius.',
+            ],
+            answer: 0,
+            explain: 'Personal subject takes the to-infinitive: *She is said to be…*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-pass-ex2',
+            before: "We're ",
+            after: ' the house painted next week.',
+            answers: ['having', 'getting'],
+            explain: 'Causative *have/get something done* for work done by others.',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-pass-ex3',
+            wrong: 'He is believed to leaving the country last night.',
+            answers: [
+              'He is believed to have left the country last night.',
+              'It is believed that he left the country last night.',
+            ],
+            explain: 'An earlier event needs the perfect infinitive *to have left*.',
+          },
+          {
+            kind: 'order',
+            id: 'c1-pass-ex4',
+            tokens: ['It', 'is', 'thought', 'that', 'the', 'virus', 'originated', 'abroad'],
+            answer: 'It is thought that the virus originated abroad.',
+            explain: 'Impersonal reporting: *It is thought that…*.',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-pass-ex5',
+            es: 'A nadie le gusta que lo critiquen en público.',
+            answers: [
+              'Nobody likes being criticised in public.',
+              'No one likes being criticised in public.',
+              'Nobody likes being criticized in public.',
+            ],
+            explain: 'Passive -ing after *like*: *being criticised*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-pass-ex6',
+            before: 'The bridge ',
+            after: ' repaired before the festival.',
+            answers: ['must be', 'needs to be', 'has to be'],
+            explain: 'Modal passive: *must be + past participle*.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-pass-ex7',
+            text: 'The suspect is alleged to have forged several signatures.',
+            explain: 'Reporting passive with perfect infinitive: *is alleged to have forged*.',
+          },
+        ],
+      },
+      {
+        id: 'c1-nominalisation-noun-phrases',
+        level: 'C1',
+        title: 'Nominalisation and Complex Noun Phrases',
+        summary:
+          'Academic and formal English packs information into **noun phrases** rather than verbs. **Nominalisation** turns verbs and adjectives into nouns (*decide → decision*, *able → ability*), and complex noun phrases stack pre- and post-modifiers (*the recently announced government plan to cut spending*). This makes prose denser, more abstract and more objective.',
+        summaryEs:
+          'El inglés académico y formal concentra la información en **sintagmas nominales** en lugar de verbos. La **nominalización** convierte verbos y adjetivos en sustantivos (*decide → decision*, *able → ability*), y los sintagmas nominales complejos acumulan modificadores antes y después (*the recently announced government plan to cut spending*). Esto hace la prosa más densa, abstracta y objetiva.',
+        sections: [
+          {
+            heading: 'Nominalisation: turning verbs into nouns',
+            body: '**Nominalisation** replaces a verb or adjective with a related noun, shifting the action into a thing you can discuss. *Prices rose sharply* becomes *the sharp rise in prices*; *They decided quickly* becomes *their quick decision*. Common suffixes include **-tion, -ment, -ance, -ity, -ness, -al**: *introduce → introduction*, *develop → development*, *refuse → refusal*. Nominalisation lets you **compress** several clauses into one phrase and sound more formal, but overusing it makes writing heavy and impersonal, so balance nouns with strong verbs.',
+            bodyEs:
+              'La **nominalización** sustituye un verbo o adjetivo por un sustantivo relacionado, convirtiendo la acción en algo que se puede discutir. *Prices rose sharply* se convierte en *the sharp rise in prices*; *They decided quickly* en *their quick decision*. Sufijos comunes: **-tion, -ment, -ance, -ity, -ness, -al**: *introduce → introduction*, *develop → development*, *refuse → refusal*. La nominalización permite **comprimir** varias cláusulas en una frase y sonar más formal, pero abusar de ella hace la escritura pesada e impersonal, así que equilibra los sustantivos con verbos fuertes.',
+            examples: [
+              {
+                en: "The government's refusal to negotiate angered the unions.",
+                es: 'La negativa del gobierno a negociar enfureció a los sindicatos.',
+              },
+              {
+                en: 'There has been a marked improvement in safety.',
+                es: 'Ha habido una notable mejora en la seguridad.',
+              },
+            ],
+          },
+          {
+            heading: 'Building complex noun phrases',
+            body: 'A complex noun phrase has a **head noun** with modifiers before and after it. **Pre-modifiers** (determiners, adjectives, nouns) stack in a fixed order: *the two large wooden shipping crates*. **Post-modifiers** add prepositional phrases, relative clauses, *-ing*/*-ed* clauses, or *to*-infinitives: *the decision **to close the factory** **announced yesterday** **by the board**.* Nouns used as adjectives (**noun + noun**) are very productive: *a government spending review*, *a customer satisfaction survey*. Read complex phrases by finding the head noun first, then unpacking what surrounds it.',
+            bodyEs:
+              'Un sintagma nominal complejo tiene un **sustantivo núcleo** con modificadores antes y después. Los **premodificadores** (determinantes, adjetivos, sustantivos) se ordenan de forma fija: *the two large wooden shipping crates*. Los **posmodificadores** añaden frases preposicionales, cláusulas de relativo, cláusulas en *-ing*/*-ed* o infinitivos con *to*: *the decision **to close the factory** **announced yesterday** **by the board**.* Los sustantivos usados como adjetivos (**sustantivo + sustantivo**) son muy productivos: *a government spending review*, *a customer satisfaction survey*. Lee las frases complejas localizando primero el núcleo y luego desentrañando lo que lo rodea.',
+            examples: [
+              {
+                en: 'A long-awaited independent inquiry into the scandal',
+                es: 'Una largamente esperada investigación independiente sobre el escándalo',
+              },
+              {
+                en: 'The risk of further interest rate increases',
+                es: 'El riesgo de nuevas subidas de los tipos de interés',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Verb/adjective → noun',
+            columns: ['Base', 'Nominalisation', 'Example phrase'],
+            rows: [
+              ['analyse', 'analysis', 'a detailed analysis of the data'],
+              ['fail', 'failure', 'the failure of the talks'],
+              ['able', 'ability', 'her ability to adapt'],
+              ['arrive', 'arrival', 'on his arrival in Madrid'],
+              ['happy', 'happiness', 'the pursuit of happiness'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'The introduction of new rules caused confusion.',
+            es: 'La introducción de nuevas normas causó confusión.',
+          },
+          {
+            en: 'Her resignation came as a complete surprise.',
+            es: 'Su dimisión fue una sorpresa total.',
+          },
+          {
+            en: 'There is growing concern about air pollution levels.',
+            es: 'Hay una creciente preocupación por los niveles de contaminación del aire.',
+          },
+          {
+            en: "The committee's rejection of the proposal was unexpected.",
+            es: 'El rechazo de la propuesta por parte del comité fue inesperado.',
+          },
+          {
+            en: 'A significant reduction in waiting times was reported.',
+            es: 'Se informó de una reducción significativa en los tiempos de espera.',
+          },
+          {
+            en: "The company's long-term investment strategy paid off.",
+            es: 'La estrategia de inversión a largo plazo de la empresa dio sus frutos.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'The govern decided to make a reduce of taxes.',
+            right: 'The government decided on a reduction in taxes.',
+            why: 'Use the correct **noun forms** (*government*, *reduction*); do not use a verb form as a noun.',
+            esNote: 'Cada palabra tiene su forma nominal propia; no uses el verbo como sustantivo.',
+          },
+          {
+            wrong: 'the increase of the prices',
+            right: 'the increase in prices',
+            why: 'Many nominalisations take a fixed preposition: *increase/rise/reduction **in***, *refusal/failure **to***.',
+            esNote: 'Aprende la preposición fija: *increase in*, *refusal to*.',
+          },
+          {
+            wrong: 'a satisfaction customer survey',
+            right: 'a customer satisfaction survey',
+            why: 'In noun strings the modifying nouns come **before** the head noun in logical order.',
+            esNote: 'En cadenas de sustantivos, los modificadores van antes del núcleo.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-nom-ex1',
+            prompt: "Which is the noun form of 'decide'?",
+            options: ['decision', 'decisive', 'deciding', 'decided'],
+            answer: 0,
+            explain: '*Decision* is the nominalised form (verb → noun).',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-nom-ex2',
+            before: 'There has been a sharp increase ',
+            after: ' unemployment.',
+            answers: ['in'],
+            explain: '*Increase* takes the preposition *in*.',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-nom-ex3',
+            wrong: 'The fail of the project surprised everyone.',
+            answers: ['The failure of the project surprised everyone.'],
+            explain: 'Use the noun *failure*, not the verb *fail*, as the head noun.',
+          },
+          {
+            kind: 'order',
+            id: 'c1-nom-ex4',
+            tokens: ['a', 'long-awaited', 'government', 'report', 'on', 'climate', 'change'],
+            answer: 'a long-awaited government report on climate change',
+            explain:
+              'Pre-modifiers (long-awaited, government) + head noun (report) + post-modifier (on climate change).',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-nom-ex5',
+            es: 'Su negativa a disculparse empeoró las cosas.',
+            answers: [
+              'Her refusal to apologise made things worse.',
+              'His refusal to apologise made things worse.',
+              'Her refusal to apologize made things worse.',
+            ],
+            explain: 'Nominalisation *refusal to + infinitive*.',
+          },
+          {
+            kind: 'mcq',
+            id: 'c1-nom-ex6',
+            prompt: 'Choose the correctly ordered noun phrase.',
+            options: [
+              'a national road safety campaign',
+              'a safety road national campaign',
+              'a campaign safety road national',
+              'a road national safety campaign',
+            ],
+            answer: 0,
+            explain: 'Logical pre-modifier order: national > road safety > campaign.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-nom-ex7',
+            text: 'The sudden collapse of the housing market triggered a global recession.',
+            explain: 'Nominalised heads: *collapse* and *recession* carry the information.',
+          },
+        ],
+      },
+      {
+        id: 'c1-participle-clauses',
+        level: 'C1',
+        title: 'Participle Clauses',
+        summary:
+          '**Participle clauses** compress a full clause into a phrase using *-ing*, *-ed* or *being*. They show time, reason, result or condition more economically: *Realising the time, she ran*. C1 adds **negative** (*not knowing*), **perfect** (*having finished*), **passive** (*being watched*), **absolute** (*the meeting over*) and **concessive** uses.',
+        summaryEs:
+          'Las **cláusulas de participio** comprimen una cláusula completa en una frase usando *-ing*, *-ed* o *being*. Muestran tiempo, causa, resultado o condición de forma más económica: *Realising the time, she ran*. El C1 añade usos **negativos** (*not knowing*), **perfectos** (*having finished*), **pasivos** (*being watched*), **absolutos** (*the meeting over*) y **concesivos**.',
+        sections: [
+          {
+            heading: 'Core participle clauses',
+            body: "An **-ing clause** has an active meaning: *Feeling tired, I went to bed* (= because I felt tired). An **-ed clause** has a passive meaning: *Built in 1900, the house needs work* (= which was built). Use a **perfect participle** (*having + p.p.*) to show one action clearly before another: *Having locked the door, she left*. Crucially, the participle's subject must be the **same** as the main clause's subject; otherwise you create a 'dangling participle'. Negatives go first: **not knowing**, **never having seen**.",
+            bodyEs:
+              "Una **cláusula en -ing** tiene significado activo: *Feeling tired, I went to bed* (= porque me sentía cansado). Una **cláusula en -ed** tiene significado pasivo: *Built in 1900, the house needs work* (= que fue construida). Usa un **participio perfecto** (*having + p.p.*) para mostrar una acción claramente antes de otra: *Having locked the door, she left*. Es crucial que el sujeto del participio sea el **mismo** que el de la cláusula principal; si no, creas un 'participio colgante'. Los negativos van delante: **not knowing**, **never having seen**.",
+            examples: [
+              {
+                en: 'Not having eaten all day, he was starving.',
+                es: 'Al no haber comido en todo el día, estaba hambriento.',
+              },
+              {
+                en: 'Shocked by the news, she sat down.',
+                es: 'Conmocionada por la noticia, se sentó.',
+              },
+            ],
+          },
+          {
+            heading: 'Absolute and concessive clauses',
+            body: "An **absolute clause** has its **own subject**, so the rule about matching subjects does not apply: *The weather being fine, we walked*; *Their work finished, the team went home*; *He stood there, arms folded*. These add background detail elegantly. For **concessive** meaning ('although'), combine a participle with a conjunction: *While admitting the error, she defended the plan*; *Though exhausted, they carried on*. You can also front a participle after **when, after, before, since, on, in**: *On hearing the news, he called home*; *When dealing with complaints, stay calm*.",
+            bodyEs:
+              "Una **cláusula absoluta** tiene su **propio sujeto**, así que la regla de coincidencia de sujetos no aplica: *The weather being fine, we walked*; *Their work finished, the team went home*; *He stood there, arms folded*. Añaden detalle de fondo con elegancia. Para el sentido **concesivo** ('aunque'), combina un participio con una conjunción: *While admitting the error, she defended the plan*; *Though exhausted, they carried on*. También puedes anteponer un participio tras **when, after, before, since, on, in**: *On hearing the news, he called home*; *When dealing with complaints, stay calm*.",
+            examples: [
+              {
+                en: 'The meeting over, everyone hurried out.',
+                es: 'Terminada la reunión, todos salieron a toda prisa.',
+              },
+              {
+                en: 'Though warned, he ignored the danger.',
+                es: 'Aunque se le advirtió, ignoró el peligro.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Participle clause types',
+            columns: ['Type', 'Form', 'Example'],
+            rows: [
+              ['Active (-ing)', 'doing…', 'Hearing a noise, I stopped.'],
+              ['Passive (-ed)', 'done…', 'Damaged in transit, it was returned.'],
+              ['Perfect', 'having done…', 'Having read it, she replied.'],
+              ['Perfect passive', 'having been done…', 'Having been warned, he left.'],
+              ['Negative', 'not doing / not having done', 'Not knowing the way, we asked.'],
+              ['Absolute', '(own subject) + participle', 'The rain stopping, we set off.'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'Walking home, I bumped into an old friend.',
+            es: 'Caminando a casa, me encontré con un viejo amigo.',
+          },
+          {
+            en: 'Written in haste, the report contained errors.',
+            es: 'Escrito con prisa, el informe contenía errores.',
+          },
+          {
+            en: 'Having been delayed twice, the flight finally departed.',
+            es: 'Habiéndose retrasado dos veces, el vuelo por fin despegó.',
+          },
+          {
+            en: 'All things considered, it was a good year.',
+            es: 'Considerándolo todo, fue un buen año.',
+          },
+          {
+            en: 'Not wanting to seem rude, she stayed a little longer.',
+            es: 'No queriendo parecer maleducada, se quedó un poco más.',
+          },
+          {
+            en: 'The guests gone, the house felt empty.',
+            es: 'Una vez idos los invitados, la casa se sintió vacía.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'Walking down the street, a dog bit me.',
+            right: 'Walking down the street, I was bitten by a dog.',
+            why: "A **dangling participle**: the subject of *walking* must match the main subject. Here the dog wasn't walking.",
+            esNote: 'El sujeto del participio debe coincidir con el de la oración principal.',
+          },
+          {
+            wrong: 'Knowing not the answer, he stayed silent.',
+            right: 'Not knowing the answer, he stayed silent.',
+            why: 'Place **not** before the participle, not after it.',
+            esNote: '*Not* va delante del participio: *not knowing*.',
+          },
+          {
+            wrong: 'After to finish the task, she left.',
+            right: 'After finishing the task, she left.',
+            why: 'After a preposition/conjunction like *after*, use the **-ing** form, not a to-infinitive.',
+            esNote: 'Tras *after/before/on* usa la forma *-ing*, no *to + infinitivo*.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-part-ex1',
+            prompt: 'Choose the correct participle clause.',
+            options: [
+              'Having finished her work, she went home.',
+              'Having finish her work, she went home.',
+              'Have finished her work, she went home.',
+              'Finishing had her work, she went home.',
+            ],
+            answer: 0,
+            explain: 'Perfect participle: *Having + past participle*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-part-ex2',
+            before: '',
+            after: ' in 1850, the cathedral attracts many tourists.',
+            answers: ['Built'],
+            explain: 'Passive -ed participle: *Built* = which was built.',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-part-ex3',
+            wrong: 'Driving to work, my phone rang.',
+            answers: [
+              'Driving to work, I heard my phone ring.',
+              'While I was driving to work, my phone rang.',
+              'As I was driving to work, my phone rang.',
+            ],
+            explain: "Avoid the dangling participle: the phone wasn't driving.",
+          },
+          {
+            kind: 'order',
+            id: 'c1-part-ex4',
+            tokens: ['Not', 'having', 'received', 'a', 'reply', 'she', 'wrote', 'again'],
+            answer: 'Not having received a reply, she wrote again.',
+            explain: 'Negative perfect participle: *Not having + past participle*.',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-part-ex5',
+            es: 'Terminada la reunión, todos se fueron a casa.',
+            answers: [
+              'The meeting over, everyone went home.',
+              'The meeting finished, everyone went home.',
+              'With the meeting over, everyone went home.',
+            ],
+            explain: 'An absolute clause with its own subject (*the meeting*).',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-part-ex6',
+            before: 'On ',
+            after: ' the news, she burst into tears.',
+            answers: ['hearing'],
+            explain: 'After the preposition *on*, use the -ing form: *on hearing*.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-part-ex7',
+            text: 'Though exhausted after the climb, they pressed on to the summit.',
+            explain: 'Concessive participle clause: *Though exhausted…*.',
+          },
+        ],
+      },
+      {
+        id: 'c1-relatives-ellipsis-substitution',
+        level: 'C1',
+        title: 'Relative Clauses, Ellipsis and Substitution',
+        summary:
+          'Two cohesion tools mark advanced English. **Quantifier relative clauses** (*most of whom, some of which, the cost of which*) add precise non-defining detail. **Ellipsis** leaves out repeated words, and **substitution** replaces them with *so, not, do, one(s)* to avoid clumsy repetition.',
+        summaryEs:
+          'Dos herramientas de cohesión marcan el inglés avanzado. Las **cláusulas relativas con cuantificador** (*most of whom, some of which, the cost of which*) añaden detalle preciso no especificativo. La **elipsis** omite palabras repetidas, y la **sustitución** las reemplaza con *so, not, do, one(s)* para evitar repeticiones torpes.',
+        sections: [
+          {
+            heading: 'Relative clauses with quantifiers and prepositions',
+            body: 'In formal, **non-defining** relative clauses you can combine a quantifier or noun with **of whom / of which / whose**: *The staff, **many of whom** are new, need training*; *He made three points, **none of which** convinced me*; *a system **the cost of which** is enormous*. This pattern is much more elegant than splitting into two sentences. Prepositions can move to the front for formality: *the colleague **to whom** I spoke*, *the issue **about which** we argued*. Note the structure is **quantifier/noun + of + whom/which**, and *whom* is required after a preposition or *of*.',
+            bodyEs:
+              'En cláusulas relativas **no especificativas** formales puedes combinar un cuantificador o sustantivo con **of whom / of which / whose**: *The staff, **many of whom** are new, need training*; *He made three points, **none of which** convinced me*; *a system **the cost of which** is enormous*. Este patrón es mucho más elegante que dividir en dos oraciones. Las preposiciones pueden ir al principio para dar formalidad: *the colleague **to whom** I spoke*, *the issue **about which** we argued*. Nota que la estructura es **cuantificador/sustantivo + of + whom/which**, y *whom* es obligatorio tras preposición o *of*.',
+            examples: [
+              {
+                en: 'She has two brothers, both of whom live abroad.',
+                es: 'Tiene dos hermanos, ambos de los cuales viven en el extranjero.',
+              },
+              {
+                en: 'They offered several options, none of which appealed to me.',
+                es: 'Ofrecieron varias opciones, ninguna de las cuales me atrajo.',
+              },
+            ],
+          },
+          {
+            heading: 'Ellipsis and substitution',
+            body: "**Ellipsis** omits words recoverable from context: *She can speak French and (she can speak) Italian*; *I'd love to (come), but I can't*. **Substitution** replaces a phrase with a shorter word. Use **so** for positive *that*-clauses after *think, hope, believe, suppose, expect, guess*: *Is it raining? — I think so*. Use **not** or **don't think so** for the negative: *I hope not*; *I don't suppose so*. **Do/did** substitute a verb phrase: *She works harder than I do*. **One/ones** replace countable nouns: *the red one*, *the cheaper ones*. **Neither/so do I** echo and agree: *So do I*; *Neither have they*.",
+            bodyEs:
+              "La **elipsis** omite palabras recuperables del contexto: *She can speak French and (she can speak) Italian*; *I'd love to (come), but I can't*. La **sustitución** reemplaza una frase con una palabra más corta. Usa **so** para cláusulas afirmativas con *that* tras *think, hope, believe, suppose, expect, guess*: *Is it raining? — I think so*. Usa **not** o **don't think so** para el negativo: *I hope not*; *I don't suppose so*. **Do/did** sustituyen un sintagma verbal: *She works harder than I do*. **One/ones** reemplazan sustantivos contables: *the red one*, *the cheaper ones*. **Neither/so do I** repiten y concuerdan: *So do I*; *Neither have they*.",
+            examples: [
+              {
+                en: 'Will they accept? — I expect so.',
+                es: '¿Aceptarán? — Supongo que sí.',
+              },
+              {
+                en: 'She passed and so did her brother.',
+                es: 'Ella aprobó y su hermano también.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Substitution with so / not',
+            columns: ['Verb', 'Positive (so)', 'Negative'],
+            rows: [
+              ['think', 'I think so.', "I don't think so."],
+              ['hope', 'I hope so.', 'I hope not.'],
+              ['believe', 'I believe so.', "I don't believe so. / I believe not."],
+              ['suppose', 'I suppose so.', "I suppose not. / I don't suppose so."],
+              ['be afraid', "I'm afraid so.", "I'm afraid not."],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'The report listed ten risks, most of which were minor.',
+            es: 'El informe enumeraba diez riesgos, la mayoría de los cuales eran menores.',
+          },
+          {
+            en: 'We interviewed forty people, few of whom were suitable.',
+            es: 'Entrevistamos a cuarenta personas, pocas de las cuales eran adecuadas.',
+          },
+          {
+            en: "Are we late? — I'm afraid so.",
+            es: '¿Llegamos tarde? — Me temo que sí.',
+          },
+          {
+            en: "He says he'll help, but I doubt it.",
+            es: 'Dice que ayudará, pero lo dudo.',
+          },
+          {
+            en: 'I prefer the blue ones to the green ones.',
+            es: 'Prefiero los azules a los verdes.',
+          },
+          {
+            en: "She didn't enjoy it, and neither did I.",
+            es: 'No lo disfrutó, y yo tampoco.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'I have three cousins, all of them live in Italy.',
+            right: 'I have three cousins, all of whom live in Italy.',
+            why: 'In a relative clause use **all of whom**, not *all of them*; *them* cannot introduce the clause.',
+            esNote: 'En la cláusula de relativo usa *of whom/of which*, no *of them*.',
+          },
+          {
+            wrong: 'Do you think it will rain? — I think it.',
+            right: 'Do you think it will rain? — I think so.',
+            why: 'Substitute the whole clause with **so**, not *it*, after *think/hope/suppose*.',
+            esNote: 'Tras *think/hope* se sustituye con *so*, no con *it*.',
+          },
+          {
+            wrong: 'She likes coffee and I like too.',
+            right: 'She likes coffee and so do I.',
+            why: 'To echo agreement, use **so + auxiliary + subject** (*so do I*), not *I like too*.',
+            esNote: "Para 'yo también' usa *so do I* / *me too*, no *I like too*.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-rel-ex1',
+            prompt: "Complete: 'The company has 500 staff, ___ work remotely.'",
+            options: ['many of whom', 'many of them', 'many of which', 'many who of'],
+            answer: 0,
+            explain: 'People + quantifier in a relative clause = *many of whom*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-rel-ex2',
+            before: 'Will they win? — I hope ',
+            after: '.',
+            answers: ['so'],
+            explain: 'Positive substitution after *hope* is *so*.',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-rel-ex3',
+            wrong: 'He gave several reasons, none of them made sense.',
+            answers: ['He gave several reasons, none of which made sense.'],
+            explain: 'Use *none of which* to link the relative clause, not *none of them*.',
+          },
+          {
+            kind: 'order',
+            id: 'c1-rel-ex4',
+            tokens: [
+              'They',
+              'offered',
+              'two',
+              'jobs',
+              'both',
+              'of',
+              'which',
+              'I',
+              'turned',
+              'down',
+            ],
+            answer: 'They offered two jobs, both of which I turned down.',
+            explain: 'Quantifier relative clause: *both of which*.',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-rel-ex5',
+            es: 'Ella no fuma, y yo tampoco.',
+            answers: [
+              "She doesn't smoke, and neither do I.",
+              "She doesn't smoke, and nor do I.",
+              "She doesn't smoke, and I don't either.",
+            ],
+            explain: 'Negative agreement with *neither/nor + auxiliary + subject*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-rel-ex6',
+            before: "I haven't read it. — ",
+            after: ' have I.',
+            answers: ['Neither', 'Nor'],
+            explain: 'Echoing a negative: *Neither/Nor + auxiliary + subject*.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-rel-ex7',
+            text: 'We tested several designs, the best of which is shown here.',
+            explain: 'Superlative quantifier relative clause: *the best of which*.',
+          },
+        ],
+      },
+      {
+        id: 'c1-hedging-stance-linkers',
+        level: 'C1',
+        title: 'Hedging, Stance and Advanced Linkers',
+        summary:
+          'Skilled writers control **tone**. **Hedging** softens claims (*tend to, somewhat, it would seem*); **stance adverbials** signal your attitude (*admittedly, arguably, presumably*); **non-gradable adjectives** take *absolutely* not *very*; and **advanced linkers** (*and yet, whereas, in that, insofar as*) show subtle logical relations.',
+        summaryEs:
+          'Los buenos escritores controlan el **tono**. El **hedging** suaviza las afirmaciones (*tend to, somewhat, it would seem*); los **adverbios de postura** señalan tu actitud (*admittedly, arguably, presumably*); los **adjetivos no graduables** llevan *absolutely*, no *very*; y los **conectores avanzados** (*and yet, whereas, in that, insofar as*) muestran relaciones lógicas sutiles.',
+        sections: [
+          {
+            heading: 'Hedging and stance adverbials',
+            body: '**Hedging** makes claims cautious and academic, avoiding sounding arrogant. Tools include modal verbs (*may, might, could*), lexical verbs (*tend to, appear to, suggest, seem*), adverbs (*arguably, possibly, relatively, somewhat, to some extent*) and frames (*It would seem that…, There is some evidence that…*). **Stance adverbials** comment on the whole sentence and reveal your viewpoint: **admittedly** (conceding a point), **arguably** (a defensible claim), **presumably** (a reasonable assumption), **understandably, frankly, curiously, regrettably**. They usually sit at the **front**: *Admittedly, the plan has flaws*.',
+            bodyEs:
+              'El **hedging** hace que las afirmaciones sean cautas y académicas, evitando sonar arrogante. Las herramientas incluyen verbos modales (*may, might, could*), verbos léxicos (*tend to, appear to, suggest, seem*), adverbios (*arguably, possibly, relatively, somewhat, to some extent*) y estructuras (*It would seem that…, There is some evidence that…*). Los **adverbios de postura** comentan toda la oración y revelan tu punto de vista: **admittedly** (concediendo algo), **arguably** (una afirmación defendible), **presumably** (una suposición razonable), **understandably, frankly, curiously, regrettably**. Suelen ir al **principio**: *Admittedly, the plan has flaws*.',
+            examples: [
+              {
+                en: 'The results suggest that the drug may be effective.',
+                es: 'Los resultados sugieren que el fármaco podría ser eficaz.',
+              },
+              {
+                en: 'Arguably, this is her finest novel.',
+                es: 'Podría decirse que esta es su mejor novela.',
+              },
+            ],
+          },
+          {
+            heading: 'Non-gradable adjectives and advanced linkers',
+            body: "**Non-gradable (extreme/absolute) adjectives** already contain 'very' in their meaning (*terrified, exhausted, freezing, impossible, perfect, unique*), so they pair with **absolutely, utterly, completely, totally** — not *very*: *absolutely exhausted*, *utterly impossible*. (*Really* works with both types.) For cohesion, use precise **linkers**: **and yet** (surprising contrast: *simple and yet powerful*); **whereas** (direct comparison: *He's calm, whereas she's anxious*); **in that** (= because/in the sense that: *It's unusual in that it has no engine*); **insofar as / inasmuch as** (to the extent that); **albeit** (= although, + phrase: *a small, albeit important, change*).",
+            bodyEs:
+              "Los **adjetivos no graduables (extremos/absolutos)** ya contienen 'very' en su significado (*terrified, exhausted, freezing, impossible, perfect, unique*), así que se combinan con **absolutely, utterly, completely, totally**, no con *very*: *absolutely exhausted*, *utterly impossible*. (*Really* funciona con ambos tipos.) Para la cohesión, usa **conectores** precisos: **and yet** (contraste sorprendente: *simple and yet powerful*); **whereas** (comparación directa: *He's calm, whereas she's anxious*); **in that** (= porque/en el sentido de que: *It's unusual in that it has no engine*); **insofar as / inasmuch as** (en la medida en que); **albeit** (= aunque, + frase: *a small, albeit important, change*).",
+            examples: [
+              {
+                en: 'I was absolutely exhausted after the trip.',
+                es: 'Estaba absolutamente agotado tras el viaje.',
+              },
+              {
+                en: 'The theory is elegant, whereas the proof is messy.',
+                es: 'La teoría es elegante, mientras que la demostración es desordenada.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Gradable vs non-gradable intensifiers',
+            columns: ['Adjective type', 'Use with', 'Avoid', 'Example'],
+            rows: [
+              ['Gradable (tired, cold, good)', 'very, quite, rather', 'absolutely', 'very tired'],
+              [
+                'Non-gradable (exhausted, freezing)',
+                'absolutely, utterly, totally',
+                'very',
+                'absolutely exhausted',
+              ],
+              ['Either type', 'really', '—', 'really good / really perfect'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'Admittedly, I should have checked the figures.',
+            es: 'Hay que reconocer que debería haber comprobado las cifras.',
+          },
+          {
+            en: 'The plan is risky, and yet it might just work.',
+            es: 'El plan es arriesgado y, sin embargo, podría funcionar.',
+          },
+          {
+            en: "He's unusual in that he never uses email.",
+            es: 'Es inusual en el sentido de que nunca usa el correo electrónico.',
+          },
+          {
+            en: 'Sales rose, whereas profits fell.',
+            es: 'Las ventas subieron, mientras que los beneficios cayeron.',
+          },
+          {
+            en: 'It was a useful, albeit brief, meeting.',
+            es: 'Fue una reunión útil, aunque breve.',
+          },
+          {
+            en: 'The food was absolutely delicious.',
+            es: 'La comida estaba absolutamente deliciosa.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'I was very exhausted after the race.',
+            right: 'I was absolutely exhausted after the race.',
+            why: '*Exhausted* is **non-gradable**; intensify it with *absolutely/utterly*, not *very*.',
+            esNote: 'Con adjetivos extremos usa *absolutely*, no *very*.',
+          },
+          {
+            wrong: 'He is rich, in spite of his brother is poor.',
+            right: 'He is rich, whereas his brother is poor.',
+            why: 'For a direct contrast between two facts use **whereas** + clause, not *in spite of* (which takes a noun/-ing).',
+            esNote: 'Para contraste directo usa *whereas* + cláusula.',
+          },
+          {
+            wrong: 'Admittedly is true that we made mistakes.',
+            right: 'Admittedly, it is true that we made mistakes.',
+            why: '**Admittedly** is a stance adverb, not a verb; keep the dummy subject *it*.',
+            esNote: '*Admittedly* es un adverbio; necesitas el sujeto *it* después.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-hedge-ex1',
+            prompt: 'Choose the natural collocation.',
+            options: ['absolutely freezing', 'very freezing', 'quite freezing', 'rather freezing'],
+            answer: 0,
+            explain: '*Freezing* is non-gradable, so it pairs with *absolutely*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-hedge-ex2',
+            before: 'Sales grew steadily, ',
+            after: ' costs remained flat.',
+            answers: ['whereas'],
+            explain: '*Whereas* introduces a direct contrast between two clauses.',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-hedge-ex3',
+            wrong: 'The view was very stunning.',
+            answers: [
+              'The view was absolutely stunning.',
+              'The view was really stunning.',
+              'The view was stunning.',
+            ],
+            explain: '*Stunning* is non-gradable; use *absolutely/really*, not *very*.',
+          },
+          {
+            kind: 'order',
+            id: 'c1-hedge-ex4',
+            tokens: ['The', 'design', 'is', 'simple', 'and', 'yet', 'remarkably', 'effective'],
+            answer: 'The design is simple and yet remarkably effective.',
+            explain: '*And yet* signals a surprising contrast within one sentence.',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-hedge-ex5',
+            es: 'Hay que reconocer que la propuesta tiene algunos defectos.',
+            answers: [
+              'Admittedly, the proposal has some flaws.',
+              'Admittedly, the proposal has a few flaws.',
+              'Admittedly, the proposal has some weaknesses.',
+            ],
+            explain: '*Admittedly* (front position) concedes a point.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-hedge-ex6',
+            before: 'The car is special ',
+            after: ' it runs entirely on solar power.',
+            answers: ['in that'],
+            explain:
+              '*In that* = in the sense that / because, explaining how something is special.',
+          },
+          {
+            kind: 'mcq',
+            id: 'c1-hedge-ex7',
+            prompt: "Which word best hedges 'This is the best solution'?",
+            options: [
+              'Arguably, this is the best solution.',
+              'Absolutely, this is the best solution.',
+              'Definitely, this is the best solution.',
+              'Certainly, this is the best solution.',
+            ],
+            answer: 0,
+            explain:
+              '*Arguably* hedges the claim, presenting it as defensible rather than certain.',
+          },
+        ],
+      },
+      {
+        id: 'c1-advanced-multi-word-verbs',
+        level: 'C1',
+        title: 'Advanced Multi-Word Verbs',
+        summary:
+          'Phrasal and prepositional verbs become **idiomatic** and abstract at C1: *bring about, account for, do away with, put up with, come down to*. Mastering their meanings, **separability** and three-part forms makes speech sound native and avoids over-formal single-word verbs.',
+        summaryEs:
+          'Los verbos con partícula se vuelven **idiomáticos** y abstractos en C1: *bring about, account for, do away with, put up with, come down to*. Dominar sus significados, su **separabilidad** y las formas de tres partes hace que el habla suene nativa y evita verbos de una sola palabra demasiado formales.',
+        sections: [
+          {
+            heading: 'Types and separability',
+            body: '**Transitive separable** verbs let the object go in the middle or after (*turn the offer down / turn down the offer*), but a **pronoun** must go in the middle: *turn it down*, never *turn down it*. **Transitive inseparable** (prepositional) verbs keep the object after the particle: *look after the kids*, *go through the report*. **Three-part verbs** (verb + adverb + preposition) are always inseparable: *put up with, look forward to, come up with, get on with, do away with, catch up on*. Many have a one-word formal synonym (*bring about ≈ cause*, *find out ≈ discover*), and the phrasal version usually sounds more natural in speech.',
+            bodyEs:
+              'Los verbos **transitivos separables** permiten que el objeto vaya en medio o después (*turn the offer down / turn down the offer*), pero un **pronombre** debe ir en medio: *turn it down*, nunca *turn down it*. Los **transitivos inseparables** (preposicionales) mantienen el objeto tras la partícula: *look after the kids*, *go through the report*. Los **verbos de tres partes** (verbo + adverbio + preposición) son siempre inseparables: *put up with, look forward to, come up with, get on with, do away with, catch up on*. Muchos tienen un sinónimo formal de una palabra (*bring about ≈ cause*, *find out ≈ discover*), y la versión con partícula suele sonar más natural al hablar.',
+            examples: [
+              {
+                en: "I won't put up with this any longer.",
+                es: 'No voy a aguantar esto más tiempo.',
+              },
+              {
+                en: "Can you turn it down? It's too loud.",
+                es: '¿Puedes bajarlo? Está muy alto.',
+              },
+            ],
+          },
+          {
+            heading: 'High-value idiomatic verbs',
+            body: 'Build a stock of abstract multi-word verbs you can reuse in essays and discussion: **bring about** (cause), **account for** (explain/make up a proportion), **do away with** (abolish), **come down to** (be essentially a matter of), **carry out** (perform), **point out** (note), **rule out** (eliminate), **stand for** (represent/tolerate), **put forward** (propose), **boil down to** (reduce to essentials), **come up against** (encounter an obstacle), **draw on** (use as a resource). Notice that meaning is often **non-literal**: *do away with* has nothing to do with *do* or *away* individually.',
+            bodyEs:
+              'Crea un repertorio de verbos con partícula abstractos que puedas reutilizar en ensayos y debates: **bring about** (causar), **account for** (explicar/representar una proporción), **do away with** (abolir), **come down to** (reducirse esencialmente a), **carry out** (realizar), **point out** (señalar), **rule out** (descartar), **stand for** (representar/tolerar), **put forward** (proponer), **boil down to** (reducirse a lo esencial), **come up against** (encontrarse con un obstáculo), **draw on** (recurrir a). Observa que el significado suele ser **no literal**: *do away with* no tiene nada que ver con *do* ni *away* por separado.',
+            examples: [
+              {
+                en: 'The reforms brought about lasting change.',
+                es: 'Las reformas trajeron consigo un cambio duradero.',
+              },
+              {
+                en: 'It all comes down to money in the end.',
+                es: 'Al final, todo se reduce al dinero.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Phrasal verb and formal synonym',
+            columns: ['Multi-word verb', 'Meaning', 'Formal synonym'],
+            rows: [
+              ['bring about', 'to cause', 'cause / produce'],
+              ['do away with', 'to abolish', 'abolish / eliminate'],
+              ['account for', 'to explain / make up', 'explain / constitute'],
+              ['put up with', 'to tolerate', 'tolerate / endure'],
+              ['come up with', 'to think of', 'devise / propose'],
+              ['carry out', 'to perform', 'conduct / perform'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'Renewables now account for a third of our energy.',
+            es: 'Las renovables representan ahora un tercio de nuestra energía.',
+          },
+          {
+            en: 'We need to do away with these outdated rules.',
+            es: 'Tenemos que abolir estas normas anticuadas.',
+          },
+          {
+            en: 'She came up with a brilliant solution.',
+            es: 'Se le ocurrió una solución brillante.',
+          },
+          {
+            en: 'The committee carried out a thorough review.',
+            es: 'El comité llevó a cabo una revisión exhaustiva.',
+          },
+          {
+            en: 'I look forward to hearing from you.',
+            es: 'Espero tener noticias suyas.',
+          },
+          {
+            en: 'We came up against fierce opposition.',
+            es: 'Nos topamos con una feroz oposición.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: "I won't put with it up.",
+            right: "I won't put up with it.",
+            why: 'Three-part verbs are **inseparable**; keep *put up with* together with the object after it.',
+            esNote: 'Los verbos de tres partes no se separan: *put up with it*.',
+          },
+          {
+            wrong: 'Please turn down it.',
+            right: 'Please turn it down.',
+            why: 'With separable verbs a **pronoun object** must go between the verb and the particle.',
+            esNote: 'Con pronombre, el objeto va en medio: *turn it down*.',
+          },
+          {
+            wrong: 'I look forward to hear from you.',
+            right: 'I look forward to hearing from you.',
+            why: 'Here *to* is a preposition, so it is followed by the **-ing** form, not the infinitive.',
+            esNote: 'En *look forward to*, el *to* es preposición: va seguido de *-ing*.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c1-mwv-ex1',
+            prompt: 'Choose the correct pronoun placement.',
+            options: [
+              'Can you switch it off?',
+              'Can you switch off it?',
+              'Can you switch off it now?',
+              'Can you it switch off?',
+            ],
+            answer: 0,
+            explain: 'A pronoun object goes between the verb and particle: *switch it off*.',
+          },
+          {
+            kind: 'cloze',
+            id: 'c1-mwv-ex2',
+            before: 'I really look forward to ',
+            after: ' you again soon.',
+            answers: ['seeing'],
+            explain: '*Look forward to* + -ing (the *to* is a preposition).',
+          },
+          {
+            kind: 'correct',
+            id: 'c1-mwv-ex3',
+            wrong: "I can't put up it with any more.",
+            answers: ["I can't put up with it any more.", "I can't put up with it anymore."],
+            explain: '*Put up with* is inseparable; the pronoun follows the whole verb.',
+          },
+          {
+            kind: 'order',
+            id: 'c1-mwv-ex4',
+            tokens: ['The', 'new', 'policy', 'brought', 'about', 'major', 'changes'],
+            answer: 'The new policy brought about major changes.',
+            explain: '*Bring about* = cause; the noun object follows the particle here.',
+          },
+          {
+            kind: 'translate',
+            id: 'c1-mwv-ex5',
+            es: 'Al final, todo se reduce a la confianza.',
+            answers: [
+              'In the end, it all comes down to trust.',
+              'It all comes down to trust in the end.',
+              'In the end, it all boils down to trust.',
+            ],
+            explain: '*Come down to / boil down to* = be essentially a matter of.',
+          },
+          {
+            kind: 'mcq',
+            id: 'c1-mwv-ex6',
+            prompt: "Which verb means 'to abolish'?",
+            options: ['do away with', 'do up', 'do over', 'do without'],
+            answer: 0,
+            explain: '*Do away with* = abolish/eliminate.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c1-mwv-ex7',
+            text: 'The researchers carried out the experiment and came up with surprising results.',
+            explain: 'Two multi-word verbs: *carry out* (perform) and *come up with* (think of).',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    level: 'C2',
+    title: 'C2 · Mastery & Rhetoric',
+    blurb:
+      'Wield English with native-like precision: subtle register, stylistic inversion, clefts, nominalisation, advanced conditionals, distancing passives, rhetorical word order, idiom, hedging and self-repair.',
+    lessons: [
+      {
+        id: 'c2-tense-aspect-register',
+        level: 'C2',
+        title: 'Tense, Aspect & Register Control',
+        summary:
+          "At C2 you no longer choose a tense merely to mark time; you exploit aspect and tense to signal politeness, distance, emphasis and tone. This lesson sharpens the subtle contrasts between simple and progressive, the 'attitudinal' past, the present perfect for relevance, and the future forms that carry shades of inevitability, intention or formality.",
+        summaryEs:
+          "En C2 ya no eliges un tiempo verbal solo para marcar el tiempo; explotas el aspecto y el tiempo para señalar cortesía, distancia, énfasis y tono. Esta lección afina los contrastes sutiles entre simple y progresivo, el pasado 'actitudinal', el present perfect de relevancia y las formas de futuro que llevan matices de inevitabilidad, intención o formalidad.",
+        sections: [
+          {
+            heading: 'Progressive for stance and tentativeness',
+            body: "Beyond marking action in progress, the **progressive** softens statements and signals a temporary or emotional stance. 'I'm hoping you can help' is gentler than 'I hope you can help'; 'You're being difficult' frames behaviour as temporary rather than as a fixed trait. Use the **past progressive** ('I was wondering whether...') as a politeness device that distances the request in time.",
+            bodyEs:
+              "Más allá de marcar una acción en curso, el **progresivo** suaviza las afirmaciones y señala una postura temporal o emocional. 'I'm hoping you can help' es más amable que 'I hope you can help'; 'You're being difficult' presenta el comportamiento como algo temporal y no como un rasgo fijo. Usa el **pasado progresivo** ('I was wondering whether...') como recurso de cortesía que distancia la petición en el tiempo.",
+            examples: [
+              {
+                en: 'I was wondering if you might reconsider.',
+                es: 'Me preguntaba si quizá lo reconsiderarías.',
+              },
+              {
+                en: "You're being unusually generous today.",
+                es: 'Hoy estás siendo inusualmente generoso.',
+              },
+            ],
+          },
+          {
+            heading: 'Perfect aspect and current relevance',
+            body: "The **present perfect** ties a past event to present consequence ('The committee has reached a decision' implies it now stands). The **perfect progressive** foregrounds duration and its visible result ('You've been crying'). In formal narration, the **past perfect** is exploited not only for sequence but to background information that explains a later turn of events.",
+            bodyEs:
+              "El **present perfect** vincula un evento pasado con su consecuencia presente ('The committee has reached a decision' implica que ahora sigue vigente). El **perfecto progresivo** resalta la duración y su resultado visible ('You've been crying'). En la narración formal, el **past perfect** se explota no solo para la secuencia, sino para situar de fondo información que explica un giro posterior.",
+            examples: [
+              {
+                en: 'By the time the report surfaced, the firm had already restructured.',
+                es: 'Para cuando salió el informe, la empresa ya se había reestructurado.',
+              },
+              {
+                en: "She's been advising governments for decades.",
+                es: 'Lleva décadas asesorando a gobiernos.',
+              },
+            ],
+          },
+          {
+            heading: 'Future forms and their connotations',
+            body: "Each future carries register. **'Will'** states neutral prediction or promise; **'be going to'** stresses present evidence or intention; the **present progressive** schedules arrangements; **'shall'** survives in formal offers and legal text; and the **future perfect** projects completion ('By 2030, attitudes will have shifted'). The **future progressive** ('I'll be travelling next week') can also sound less imposing than 'I'll travel', presenting the action as a matter of course.",
+            bodyEs:
+              "Cada futuro tiene su registro. **'Will'** expresa predicción o promesa neutra; **'be going to'** subraya evidencia presente o intención; el **presente progresivo** programa planes; **'shall'** pervive en ofrecimientos formales y textos legales; y el **future perfect** proyecta la finalización ('By 2030, attitudes will have shifted'). El **future progressive** ('I'll be travelling next week') también puede sonar menos impositivo que 'I'll travel', presentando la acción como algo natural.",
+            examples: [
+              {
+                en: 'Shall we proceed to the next item?',
+                es: '¿Pasamos al siguiente punto?',
+              },
+              {
+                en: 'By next spring, the trial will have concluded.',
+                es: 'Para la próxima primavera, el juicio habrá concluido.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Register and connotation of future forms',
+            columns: ['Form', 'Typical use', 'Register / nuance'],
+            rows: [
+              [
+                'will',
+                'Neutral prediction, spontaneous decision, promise',
+                'Default, all registers',
+              ],
+              ['be going to', 'Intention, evidence-based prediction', 'Neutral to informal'],
+              ['present progressive', 'Fixed arrangement', 'Neutral, conversational'],
+              ['shall (I/we)', 'Offers, suggestions, legal obligation', 'Formal / archaic'],
+              [
+                'future progressive',
+                'Action as a matter of course; softened plan',
+                'Polite, less imposing',
+              ],
+              ['future perfect', 'Completion before a future point', 'Formal, projective'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: "I'm thinking we should hold off until the figures are confirmed.",
+            es: 'Estoy pensando que deberíamos esperar hasta que se confirmen las cifras.',
+          },
+          {
+            en: "You'll have noticed the discrepancy by now.",
+            es: 'Ya te habrás dado cuenta de la discrepancia.',
+          },
+          {
+            en: "He's forever interrupting — it's maddening.",
+            es: 'Siempre está interrumpiendo, es exasperante.',
+          },
+          {
+            en: 'The board shall convene quarterly.',
+            es: 'La junta se reunirá trimestralmente.',
+          },
+          {
+            en: "I'd been meaning to raise this for some time.",
+            es: 'Llevaba tiempo queriendo plantear esto.',
+          },
+          {
+            en: "She'll be presenting the findings at three.",
+            es: 'Presentará los hallazgos a las tres.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'I am thinking that you are right about this.',
+            right: "I think you're right about this.",
+            why: "Stative verbs like 'think' (meaning 'believe') normally stay simple. The progressive is only stance-marking when 'think' means 'consider/weigh up'.",
+            esNote: "Con 'think' = 'creer/opinar' usa el presente simple.",
+          },
+          {
+            wrong: 'When the report came out, the firm already restructured.',
+            right: 'When the report came out, the firm had already restructured.',
+            why: 'An event completed before another past event needs the past perfect to background it clearly.',
+            esNote: "El pasado anterior requiere 'had + participio'.",
+          },
+          {
+            wrong: 'I wonder if you could possibly to help me.',
+            right: 'I was wondering whether you could possibly help me.',
+            why: "The polite past progressive plus a bare infinitive after 'could' is the natural, more deferential pattern.",
+            esNote: "Tras 'could' va el infinitivo sin 'to'.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c2-ta-ex1',
+            prompt: 'Which is the most softened, polite request?',
+            options: [
+              'I want you to sign this.',
+              'I was wondering whether you might sign this.',
+              'Sign this.',
+              'You will sign this.',
+            ],
+            answer: 1,
+            explain:
+              "The past progressive 'was wondering' plus tentative 'might' maximises politeness and distance.",
+          },
+          {
+            kind: 'cloze',
+            id: 'c2-ta-ex2',
+            before: 'By the time we arrived, the negotiations ',
+            after: ' already collapsed.',
+            answers: ['had'],
+            explain:
+              "Past perfect 'had collapsed' backgrounds an event completed before another past point.",
+          },
+          {
+            kind: 'correct',
+            id: 'c2-ta-ex3',
+            wrong: 'She is knowing the answer since yesterday.',
+            answers: ['She has known the answer since yesterday.'],
+            explain:
+              "'Know' is stative, so no progressive; 'since yesterday' demands the present perfect.",
+          },
+          {
+            kind: 'translate',
+            id: 'c2-ta-ex4',
+            es: 'Para diciembre, el comité habrá tomado su decisión.',
+            answers: [
+              'By December, the committee will have made its decision.',
+              'By December, the committee will have reached its decision.',
+              'By December, the committee will have taken its decision.',
+            ],
+            explain: 'Future perfect projects completion before a stated future point.',
+          },
+          {
+            kind: 'order',
+            id: 'c2-ta-ex5',
+            tokens: ['I', 'been', 'meaning', 'to', 'had', 'call', 'you'],
+            answer: 'I had been meaning to call you',
+            explain:
+              'Past perfect progressive expresses an intention that had persisted up to a past moment.',
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-ta-ex6',
+            prompt: 'Choose the form that frames behaviour as temporary, not as a permanent trait.',
+            options: [
+              'You are rude.',
+              'You are being rude.',
+              'You were rude.',
+              'You will be rude.',
+            ],
+            answer: 1,
+            explain:
+              "The progressive 'are being' presents the rudeness as a present, temporary stance.",
+          },
+          {
+            kind: 'dictation',
+            id: 'c2-ta-ex7',
+            text: "I'm hoping we can resolve this before the figures go public.",
+            explain: "'I'm hoping' is a softened, tentative version of 'I hope'.",
+          },
+        ],
+      },
+      {
+        id: 'c2-stylistic-inversion',
+        level: 'C2',
+        title: 'Stylistic & Negative Inversion',
+        summary:
+          "Inversion reverses subject and auxiliary for emphasis, formality and dramatic effect. This lesson covers fronted negatives and restrictives (never, not only, no sooner, little), 'so/such' inversions, conditional inversion, and inversion after fronted adverbials of place — all hallmarks of polished, rhetorical English.",
+        summaryEs:
+          "La inversión invierte sujeto y auxiliar para dar énfasis, formalidad y efecto dramático. Esta lección abarca negativos y restrictivos antepuestos (never, not only, no sooner, little), las inversiones con 'so/such', la inversión condicional y la inversión tras adverbios de lugar antepuestos: todos sellos del inglés pulido y retórico.",
+        sections: [
+          {
+            heading: 'Negative and restrictive fronting',
+            body: "When a **negative or restrictive adverbial** is fronted for emphasis, the clause inverts like a question: auxiliary before subject. Triggers include **never, rarely, seldom, hardly, scarcely, no sooner, not only, not until, little, nowhere** and **only then/once/after**. 'Never have I seen such a thing' and 'Not only did she resign, but she also sued' are typical. Note 'no sooner... than' and 'hardly... when'.",
+            bodyEs:
+              "Cuando un **adverbial negativo o restrictivo** se antepone para enfatizar, la oración se invierte como una pregunta: auxiliar antes del sujeto. Los disparadores incluyen **never, rarely, seldom, hardly, scarcely, no sooner, not only, not until, little, nowhere** y **only then/once/after**. 'Never have I seen such a thing' y 'Not only did she resign, but she also sued' son típicos. Atención a 'no sooner... than' y 'hardly... when'.",
+            examples: [
+              {
+                en: 'Not until much later did I grasp the implications.',
+                es: 'Solo mucho después comprendí las implicaciones.',
+              },
+              {
+                en: 'No sooner had we sat down than the lights went out.',
+                es: 'Apenas nos sentamos, se fueron las luces.',
+              },
+            ],
+          },
+          {
+            heading: "So, such and 'so + adjective' inversions",
+            body: "Fronting **'so + adjective'** or **'such'** triggers inversion of 'be' or the auxiliary: 'So intense was the heat that...', 'Such was her influence that...'. This structure is emphatic and literary; the 'that'-clause states the consequence. Compare the neutral 'The heat was so intense that...' with the marked, front-loaded version that delays the subject for effect.",
+            bodyEs:
+              "Anteponer **'so + adjetivo'** o **'such'** provoca la inversión de 'be' o del auxiliar: 'So intense was the heat that...', 'Such was her influence that...'. Esta estructura es enfática y literaria; la cláusula con 'that' expresa la consecuencia. Compara el neutro 'The heat was so intense that...' con la versión marcada que retrasa el sujeto para lograr el efecto.",
+            examples: [
+              {
+                en: 'Such was the outcry that the law was repealed within weeks.',
+                es: 'Tal fue el clamor que la ley se derogó en semanas.',
+              },
+              {
+                en: 'So compelling was her testimony that the jury wept.',
+                es: 'Tan convincente fue su testimonio que el jurado lloró.',
+              },
+            ],
+          },
+          {
+            heading: 'Conditional and locative inversion',
+            body: "Formal conditionals drop 'if' and invert: **'Had I known', 'Were it not for', 'Should you require'**. After a fronted **adverbial of place or direction**, the subject and full verb invert (no auxiliary): 'Down the valley swept the floodwaters', 'On the table lay a single letter'. This locative inversion is descriptive and stylistic, common in narrative and reportage.",
+            bodyEs:
+              "Los condicionales formales omiten 'if' e invierten: **'Had I known', 'Were it not for', 'Should you require'**. Tras un **adverbial de lugar o dirección** antepuesto, el sujeto y el verbo pleno invierten (sin auxiliar): 'Down the valley swept the floodwaters', 'On the table lay a single letter'. Esta inversión locativa es descriptiva y estilística, frecuente en la narrativa y el reportaje.",
+            examples: [
+              {
+                en: 'Had she spoken sooner, the crisis might have been averted.',
+                es: 'Si hubiera hablado antes, la crisis podría haberse evitado.',
+              },
+              {
+                en: 'Beyond the ridge stretched an endless plain.',
+                es: 'Más allá de la cresta se extendía una llanura infinita.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Inversion triggers and patterns',
+            columns: ['Trigger', 'Inverted example', 'Type'],
+            rows: [
+              [
+                'Never / Rarely / Seldom',
+                'Never have I witnessed such courage.',
+                'Negative fronting',
+              ],
+              ['No sooner ... than', 'No sooner had he left than she called.', 'Sequence'],
+              ['Not only ... but also', 'Not only did it rain, but it also flooded.', 'Additive'],
+              ['Only when / after / then', 'Only then did the truth emerge.', 'Restrictive'],
+              ['So + adj ... that', 'So great was the loss that...', 'Degree/consequence'],
+              ['Such ... that', 'Such was the panic that...', 'Degree/consequence'],
+              ['Had / Were / Should', 'Should you need help, call us.', 'Conditional'],
+              ['Place adverbial', 'Here comes the train.', 'Locative'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'Little did they realise what awaited them.',
+            es: 'Poco se imaginaban lo que les esperaba.',
+          },
+          {
+            en: 'Rarely has a single speech changed so much.',
+            es: 'Rara vez un solo discurso ha cambiado tanto.',
+          },
+          {
+            en: 'Were it not for your support, we would have failed.',
+            es: 'De no ser por tu apoyo, habríamos fracasado.',
+          },
+          {
+            en: 'Not for one moment did I doubt her.',
+            es: 'Ni por un momento dudé de ella.',
+          },
+          {
+            en: 'Such was his charisma that crowds fell silent.',
+            es: 'Tal era su carisma que las multitudes enmudecían.',
+          },
+          {
+            en: 'Only after the war did the records come to light.',
+            es: 'Solo tras la guerra salieron a la luz los registros.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'Never I have seen such a mess.',
+            right: 'Never have I seen such a mess.',
+            why: "Fronted 'never' forces subject-auxiliary inversion: auxiliary before the subject.",
+            esNote: 'Tras un negativo antepuesto, el auxiliar va antes del sujeto.',
+          },
+          {
+            wrong: 'No sooner I had arrived when the phone rang.',
+            right: 'No sooner had I arrived than the phone rang.',
+            why: "'No sooner' needs inversion and pairs with 'than', not 'when'.",
+            esNote: "'No sooner... than', con inversión y 'than'.",
+          },
+          {
+            wrong: 'So the storm was fierce that ships sank.',
+            right: 'So fierce was the storm that ships sank.',
+            why: "The adjective must follow 'so' and precede the inverted verb: 'So fierce was the storm'.",
+            esNote: "El orden es 'So + adjetivo + verbo + sujeto'.",
+          },
+          {
+            wrong: 'Had not I known, I would have stayed.',
+            right: 'Had I not known, I would have stayed.',
+            why: "In inverted conditionals the negative 'not' follows the subject, not the auxiliary.",
+            esNote: "En 'Had I not known', el 'not' va tras el sujeto.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'order',
+            id: 'c2-si-ex1',
+            tokens: ['Never', 'such', 'have', 'I', 'encountered', 'resistance'],
+            answer: 'Never have I encountered such resistance',
+            explain: "Fronted 'never' triggers inversion: auxiliary 'have' before subject 'I'.",
+          },
+          {
+            kind: 'correct',
+            id: 'c2-si-ex2',
+            wrong: 'Not only she sang, but she also danced.',
+            answers: [
+              'Not only did she sing, but she also danced.',
+              'Not only did she sing but she also danced.',
+            ],
+            explain: "'Not only' fronted requires do-support and inversion: 'did she sing'.",
+          },
+          {
+            kind: 'cloze',
+            id: 'c2-si-ex3',
+            before: 'So ',
+            after: ' was the silence that we could hear our hearts.',
+            answers: ['deep', 'complete', 'total', 'profound'],
+            explain:
+              "Pattern 'So + adjective + was + subject + that...'; any fitting adjective works.",
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-si-ex4',
+            prompt: 'Which is the correctly inverted formal conditional?',
+            options: [
+              'If had I known, I would have come.',
+              'Had I known, I would have come.',
+              'Would I have known, I had come.',
+              'Had known I, I would come.',
+            ],
+            answer: 1,
+            explain: "Drop 'if' and front the auxiliary: 'Had I known...'.",
+          },
+          {
+            kind: 'translate',
+            id: 'c2-si-ex5',
+            es: 'Apenas habíamos salido cuando empezó a llover.',
+            answers: [
+              'No sooner had we left than it started to rain.',
+              'No sooner had we left than it began to rain.',
+              'Hardly had we left when it started to rain.',
+            ],
+            explain: "'No sooner... than' or 'Hardly... when' both require inversion.",
+          },
+          {
+            kind: 'cloze',
+            id: 'c2-si-ex6',
+            before: 'Only after the meeting ',
+            after: ' I understand the real agenda.',
+            answers: ['did'],
+            explain: "Fronted 'Only after...' triggers do-support inversion: 'did I understand'.",
+          },
+          {
+            kind: 'dictation',
+            id: 'c2-si-ex7',
+            text: 'Such was her determination that nothing could stop her.',
+            explain: "'Such was + noun phrase + that...' is an emphatic inverted structure.",
+          },
+        ],
+      },
+      {
+        id: 'c2-clefts-distance',
+        level: 'C2',
+        title: 'Clefts & Distance Clefts',
+        summary:
+          "Cleft sentences split one idea into two clauses to focus attention. This lesson covers it-clefts, wh-/pseudo-clefts, all-clefts, reversed pseudo-clefts and the 'it was not until...' distance cleft, giving you fine control over what information is foregrounded and what is presupposed.",
+        summaryEs:
+          "Las oraciones hendidas (clefts) dividen una idea en dos cláusulas para enfocar la atención. Esta lección abarca las it-clefts, las wh-/pseudo-clefts, las all-clefts, las pseudo-clefts invertidas y la distancia 'it was not until...', dándote un control fino sobre qué información se destaca y qué se presupone.",
+        sections: [
+          {
+            heading: 'It-clefts: focusing a single element',
+            body: "An **it-cleft** uses 'It + be + focus + that/who-clause' to spotlight one element while presupposing the rest. From 'María broke the vase', we can focus the subject ('It was María who broke the vase'), the object ('It was the vase that María broke'), or a time/place adverbial ('It was yesterday that she broke it'). The focused element carries the new, contrastive information; everything in the relative clause is treated as known.",
+            bodyEs:
+              "Una **it-cleft** usa 'It + be + foco + cláusula con that/who' para destacar un elemento mientras presupone el resto. De 'María broke the vase', podemos enfocar el sujeto ('It was María who broke the vase'), el objeto ('It was the vase that María broke') o un adverbio de tiempo/lugar ('It was yesterday that she broke it'). El elemento enfocado lleva la información nueva y contrastiva; todo lo de la cláusula relativa se trata como conocido.",
+            examples: [
+              {
+                en: 'It was the lack of funding, not the idea, that doomed the project.',
+                es: 'Fue la falta de financiación, no la idea, lo que condenó el proyecto.',
+              },
+              {
+                en: 'It is precisely here that the argument falls apart.',
+                es: 'Es precisamente aquí donde el argumento se desmorona.',
+              },
+            ],
+          },
+          {
+            heading: 'Wh-clefts and reversed pseudo-clefts',
+            body: "A **wh-cleft (pseudo-cleft)** fronts a 'what'-clause: 'What I need is time'. It can focus actions ('What she did was resign') or whole clauses. The **reversed pseudo-cleft** puts the focus first: 'Time is what I need'. Use **'all'-clefts** to convey 'only/just': 'All I want is the truth'. These structures sound deliberate and are excellent for building or summing up an argument.",
+            bodyEs:
+              "Una **wh-cleft (pseudo-cleft)** antepone una cláusula con 'what': 'What I need is time'. Puede enfocar acciones ('What she did was resign') o cláusulas enteras. La **pseudo-cleft invertida** pone el foco primero: 'Time is what I need'. Usa las **all-clefts** para transmitir 'solo/únicamente': 'All I want is the truth'. Estas estructuras suenan deliberadas y son excelentes para construir o resumir un argumento.",
+            examples: [
+              {
+                en: 'What strikes me most is the sheer scale of it.',
+                es: 'Lo que más me impacta es la magnitud absoluta de ello.',
+              },
+              {
+                en: 'All it takes is a single mistake.',
+                es: 'Basta con un solo error.',
+              },
+            ],
+          },
+          {
+            heading: "Distance clefts: 'It was not until...'",
+            body: "The **distance cleft** delays a key point for dramatic effect, typically with **'It was not until + time that...'**: 'It was not until 1989 that the wall fell'. The structure presupposes that something did not happen earlier and pinpoints exactly when it did. Variants include 'It was only when...' and 'It is only by/through... that...', stressing the sole condition under which something occurred.",
+            bodyEs:
+              "La **distance cleft** retrasa un punto clave para lograr un efecto dramático, normalmente con **'It was not until + tiempo that...'**: 'It was not until 1989 that the wall fell'. La estructura presupone que algo no ocurrió antes y precisa exactamente cuándo ocurrió. Hay variantes como 'It was only when...' e 'It is only by/through... that...', que recalcan la única condición bajo la cual algo sucedió.",
+            examples: [
+              {
+                en: 'It was not until she left that I understood her reasons.',
+                es: 'No fue hasta que se fue cuando comprendí sus razones.',
+              },
+              {
+                en: 'It is only through dialogue that lasting peace is achieved.',
+                es: 'Solo mediante el diálogo se logra una paz duradera.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Cleft types at a glance',
+            columns: ['Type', 'Frame', 'Example'],
+            rows: [
+              ['It-cleft', 'It + be + focus + that/who', 'It was John who called.'],
+              ['Wh-/pseudo-cleft', 'What... + be + focus', 'What I need is rest.'],
+              ['Reversed pseudo-cleft', 'Focus + be + what...', 'Rest is what I need.'],
+              ['All-cleft', 'All... + be + focus', 'All I did was ask.'],
+              [
+                'Distance cleft',
+                'It was not until... that...',
+                'It was not until dusk that they arrived.',
+              ],
+              [
+                'The thing/reason cleft',
+                'The reason... is that...',
+                'The reason I left is that I was tired.',
+              ],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'It was her silence, more than her words, that unsettled me.',
+            es: 'Fue su silencio, más que sus palabras, lo que me inquietó.',
+          },
+          {
+            en: 'What we should be debating is the principle, not the price.',
+            es: 'Lo que deberíamos debatir es el principio, no el precio.',
+          },
+          {
+            en: 'All that remained was a faint signature.',
+            es: 'Todo lo que quedaba era una firma tenue.',
+          },
+          {
+            en: 'It was not until the audit that the fraud surfaced.',
+            es: 'No fue hasta la auditoría cuando salió a la luz el fraude.',
+          },
+          {
+            en: 'The reason it failed is that nobody owned the decision.',
+            es: 'La razón por la que fracasó es que nadie asumió la decisión.',
+          },
+          {
+            en: 'Courage is what the moment demanded.',
+            es: 'Valor es lo que el momento exigía.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'It was John that he broke the window.',
+            right: 'It was John who broke the window.',
+            why: "Don't add a redundant subject pronoun in the cleft clause; the gap is filled by the focused element.",
+            esNote: "No repitas el sujeto ('he') dentro de la cláusula hendida.",
+          },
+          {
+            wrong: 'What I want it is more time.',
+            right: 'What I want is more time.',
+            why: "The wh-cleft already supplies the subject; no extra 'it' is needed before 'is'.",
+            esNote: "No añadas 'it' tras la cláusula con 'what'.",
+          },
+          {
+            wrong: "It wasn't until I left when I realised.",
+            right: "It wasn't until I left that I realised.",
+            why: "The distance cleft uses 'that', not 'when', to introduce the delayed clause.",
+            esNote: "La distance cleft usa 'that', no 'when'.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'order',
+            id: 'c2-cl-ex1',
+            tokens: ['It', 'was', 'the', 'climate', 'that', 'drove', 'them', 'out'],
+            answer: 'It was the climate that drove them out',
+            explain: "An it-cleft focusing the cause 'the climate'.",
+          },
+          {
+            kind: 'translate',
+            id: 'c2-cl-ex2',
+            es: 'Lo que necesitamos es una estrategia clara.',
+            answers: ['What we need is a clear strategy.', 'What we need is a clear strategy.'],
+            explain: "Wh-cleft fronting the 'what'-clause to focus the need.",
+          },
+          {
+            kind: 'correct',
+            id: 'c2-cl-ex3',
+            wrong: 'It was not until midnight when the results came.',
+            answers: [
+              'It was not until midnight that the results came.',
+              "It wasn't until midnight that the results came.",
+            ],
+            explain: "Distance cleft requires 'that', not 'when'.",
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-cl-ex4',
+            prompt: "Which sentence focuses the action 'resign'?",
+            options: [
+              'She resigned suddenly.',
+              'What she did was resign.',
+              'It was sudden that she resigned.',
+              'She is the one resigning.',
+            ],
+            answer: 1,
+            explain: "'What she did was resign' is a pseudo-cleft focusing the action.",
+          },
+          {
+            kind: 'cloze',
+            id: 'c2-cl-ex5',
+            before: 'It was not until the third attempt ',
+            after: ' the engine finally started.',
+            answers: ['that'],
+            explain: "'It was not until... that...' is the fixed distance-cleft frame.",
+          },
+          {
+            kind: 'translate',
+            id: 'c2-cl-ex6',
+            es: 'Todo lo que pido es un poco de paciencia.',
+            answers: [
+              'All I ask is a little patience.',
+              'All I ask for is a little patience.',
+              "All I'm asking for is a little patience.",
+            ],
+            explain: "An all-cleft conveying 'only/just'.",
+          },
+          {
+            kind: 'dictation',
+            id: 'c2-cl-ex7',
+            text: 'It was precisely her honesty that cost her the job.',
+            explain: "An it-cleft with the intensifier 'precisely' sharpening the focus.",
+          },
+        ],
+      },
+      {
+        id: 'c2-nominalisation-lexical-density',
+        level: 'C2',
+        title: 'Nominalisation & Lexical Density',
+        summary:
+          'Academic and formal English packs meaning into noun phrases rather than verbs, raising lexical density and objectivity. This lesson shows how to turn processes into nouns, build complex pre- and post-modified noun phrases, and balance density against clarity so prose stays readable.',
+        summaryEs:
+          'El inglés académico y formal condensa el significado en sintagmas nominales en lugar de verbos, elevando la densidad léxica y la objetividad. Esta lección muestra cómo convertir procesos en sustantivos, construir sintagmas nominales con modificación compleja antes y después del núcleo, y equilibrar la densidad con la claridad para que la prosa siga siendo legible.',
+        sections: [
+          {
+            heading: 'Turning processes into things',
+            body: "**Nominalisation** converts verbs and adjectives into nouns: 'decide' becomes 'the decision', 'fail' becomes 'the failure', 'analyse' becomes 'the analysis'. This lets you treat an action as an object you can describe, quantify and link: 'The rapid deterioration of conditions prompted intervention'. The effect is **objective and impersonal**, removing the human agent and foregrounding the process itself — the default voice of reports, science and law.",
+            bodyEs:
+              "La **nominalización** convierte verbos y adjetivos en sustantivos: 'decide' pasa a 'the decision', 'fail' a 'the failure', 'analyse' a 'the analysis'. Esto permite tratar una acción como un objeto que se puede describir, cuantificar y enlazar: 'The rapid deterioration of conditions prompted intervention'. El efecto es **objetivo e impersonal**, elimina al agente humano y destaca el proceso en sí: la voz por defecto de los informes, la ciencia y el derecho.",
+            examples: [
+              {
+                en: "The government's refusal to negotiate prolonged the strike.",
+                es: 'La negativa del gobierno a negociar prolongó la huelga.',
+              },
+              {
+                en: 'Implementation of the reforms requires careful coordination.',
+                es: 'La aplicación de las reformas requiere una coordinación cuidadosa.',
+              },
+            ],
+          },
+          {
+            heading: 'Building dense noun phrases',
+            body: "Lexical density rises when you stack **pre-modifiers** (adjectives, nouns as modifiers) and **post-modifiers** (prepositional phrases, relative clauses, '-ing'/'-ed' participles) around a head noun. 'A sharp, sustained rise in long-term unemployment among young graduates' packs an entire clause into one phrase. The skill lies in ordering modifiers correctly and not overloading the reader's working memory.",
+            bodyEs:
+              "La densidad léxica aumenta cuando apilas **premodificadores** (adjetivos, sustantivos en función de modificador) y **posmodificadores** (sintagmas preposicionales, cláusulas relativas, participios en '-ing'/'-ed') alrededor de un núcleo nominal. 'A sharp, sustained rise in long-term unemployment among young graduates' condensa toda una oración en un solo sintagma. La habilidad está en ordenar bien los modificadores y no sobrecargar la memoria de trabajo del lector.",
+            examples: [
+              {
+                en: 'A government-commissioned report into hospital waiting times',
+                es: 'Un informe encargado por el gobierno sobre los tiempos de espera hospitalarios',
+              },
+              {
+                en: 'Widespread public concern over data privacy',
+                es: 'Una preocupación pública generalizada por la privacidad de los datos',
+              },
+            ],
+          },
+          {
+            heading: 'Density versus clarity',
+            body: "High density is powerful but risky: chains of abstract nouns ('the optimisation of the utilisation of resources') become opaque and lifeless. Skilled writers **alternate** dense and verbal styles, unpacking a nominalisation into a clause when clarity matters: 'When resources are used well...' rather than 'Through optimal resource utilisation...'. Choose density for precision and economy, but return to verbs to keep the prose alive.",
+            bodyEs:
+              "La densidad alta es potente pero arriesgada: las cadenas de sustantivos abstractos ('the optimisation of the utilisation of resources') se vuelven opacas y sin vida. Los buenos escritores **alternan** estilos densos y verbales, desplegando una nominalización en una cláusula cuando importa la claridad: 'When resources are used well...' en lugar de 'Through optimal resource utilisation...'. Elige la densidad para la precisión y la economía, pero vuelve a los verbos para mantener viva la prosa.",
+            examples: [
+              {
+                en: 'Dense: The reduction in expenditure followed the cancellation of the programme.',
+                es: 'Denso: La reducción del gasto siguió a la cancelación del programa.',
+              },
+              {
+                en: 'Clearer: They spent less after they cancelled the programme.',
+                es: 'Más claro: Gastaron menos tras cancelar el programa.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Common verb-to-noun nominalisations',
+            columns: ['Verb / Adjective', 'Nominalisation', 'Example phrase'],
+            rows: [
+              ['decide', 'decision', 'the decision to withdraw'],
+              ['fail', 'failure', 'a failure of oversight'],
+              ['analyse', 'analysis', 'a thorough analysis of the data'],
+              ['expand', 'expansion', 'rapid expansion into new markets'],
+              ['refuse', 'refusal', 'their refusal of the offer'],
+              ['intense', 'intensity', 'the intensity of the debate'],
+              ['able', 'ability', 'the ability to adapt'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'The introduction of stricter controls met fierce resistance.',
+            es: 'La introducción de controles más estrictos topó con una resistencia feroz.',
+          },
+          {
+            en: 'A marked decline in biodiversity across the region',
+            es: 'Un marcado descenso de la biodiversidad en toda la región',
+          },
+          {
+            en: "The committee's reluctance to act drew criticism.",
+            es: 'La reticencia del comité a actuar atrajo críticas.',
+          },
+          {
+            en: 'Prolonged exposure to noise impairs concentration.',
+            es: 'La exposición prolongada al ruido afecta a la concentración.',
+          },
+          {
+            en: 'The sheer complexity of the regulations deters compliance.',
+            es: 'La enorme complejidad de la normativa disuade del cumplimiento.',
+          },
+          {
+            en: 'Our recommendation is the immediate suspension of trials.',
+            es: 'Nuestra recomendación es la suspensión inmediata de los ensayos.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'The decide of the board was final.',
+            right: 'The decision of the board was final.',
+            why: "You must use the noun form 'decision', not the verb, after the article.",
+            esNote: "Tras el artículo usa el sustantivo 'decision', no el verbo.",
+          },
+          {
+            wrong: 'After the cancel of the event, refunds were issued.',
+            right: 'After the cancellation of the event, refunds were issued.',
+            why: "The correct nominalisation of 'cancel' is 'cancellation'.",
+            esNote: "La nominalización de 'cancel' es 'cancellation'.",
+          },
+          {
+            wrong: 'The optimisation of the utilisation of the resources of the team was needed.',
+            right: 'The team needed to use its resources better.',
+            why: 'Over-nominalisation creates an opaque chain of abstract nouns; unpack it into a clause.',
+            esNote:
+              'Demasiadas nominalizaciones encadenadas oscurecen el sentido; vuelve a los verbos.',
+          },
+        ],
+        exercises: [
+          {
+            kind: 'cloze',
+            id: 'c2-nm-ex1',
+            before: 'The sudden ',
+            after: ' of the minister shocked the party. (resign)',
+            answers: ['resignation'],
+            explain: "Nominalise 'resign' to 'resignation'.",
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-nm-ex2',
+            prompt: "Which is the correct nominalisation of 'analyse'?",
+            options: ['analyse', 'analysation', 'analysis', 'analyst'],
+            answer: 2,
+            explain: "'Analysis' is the noun; 'analyst' is the person, not the process.",
+          },
+          {
+            kind: 'correct',
+            id: 'c2-nm-ex3',
+            wrong: 'The fail of the system caused delays.',
+            answers: [
+              'The failure of the system caused delays.',
+              'The failure of the system caused the delays.',
+            ],
+            explain: "Use the noun 'failure', not the verb 'fail', after the article.",
+          },
+          {
+            kind: 'translate',
+            id: 'c2-nm-ex4',
+            es: 'La introducción de la nueva política provocó protestas.',
+            answers: [
+              'The introduction of the new policy provoked protests.',
+              'The introduction of the new policy sparked protests.',
+              'The introduction of the new policy triggered protests.',
+            ],
+            explain: "'Introduction' nominalises 'introduce', producing dense, formal phrasing.",
+          },
+          {
+            kind: 'order',
+            id: 'c2-nm-ex5',
+            tokens: ['a', 'sharp', 'rise', 'in', 'youth', 'unemployment'],
+            answer: 'a sharp rise in youth unemployment',
+            explain:
+              "Pre-modifier 'sharp' plus post-modifying prepositional phrase build a dense noun phrase.",
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-nm-ex6',
+            prompt: 'Which version is clearer and less over-nominalised?',
+            options: [
+              'The achievement of the realisation of the goal occurred.',
+              'They achieved the goal.',
+              'The realisation of the achievement of the goal took place.',
+              'Goal achievement realisation happened.',
+            ],
+            answer: 1,
+            explain: 'Unpacking into a verb-based clause restores clarity.',
+          },
+          {
+            kind: 'dictation',
+            id: 'c2-nm-ex7',
+            text: "The government's reluctance to intervene worsened the crisis.",
+            explain: "'Reluctance' nominalises 'reluctant', giving an objective, formal tone.",
+          },
+        ],
+      },
+      {
+        id: 'c2-conditionals-advanced',
+        level: 'C2',
+        title: 'Advanced & Counterfactual Conditionals',
+        summary:
+          "Beyond the basic types, C2 conditionals mix time frames, invert to drop 'if', and express subtle counterfactual and hypothetical meanings. This lesson covers mixed conditionals, inverted conditionals, alternatives to 'if', and the modal layering that fine-tunes certainty and regret.",
+        summaryEs:
+          "Más allá de los tipos básicos, los condicionales de C2 mezclan marcos temporales, invierten para omitir 'if' y expresan significados contrafácticos e hipotéticos sutiles. Esta lección abarca los condicionales mixtos, los condicionales invertidos, las alternativas a 'if' y la superposición modal que afina la certeza y el arrepentimiento.",
+        sections: [
+          {
+            heading: 'Mixed and counterfactual conditionals',
+            body: "**Mixed conditionals** combine time frames: a past condition with a present result ('If I had studied medicine, I'd be a doctor now') or a present condition with a past result ('If she weren't so cautious, she would have invested'). **Counterfactuals** describe what is contrary to fact; the further the verb shifts into the past, the more remote and unreal the situation. This back-shifting is the engine of hypothetical English.",
+            bodyEs:
+              "Los **condicionales mixtos** combinan marcos temporales: una condición pasada con un resultado presente ('If I had studied medicine, I'd be a doctor now') o una condición presente con un resultado pasado ('If she weren't so cautious, she would have invested'). Los **contrafácticos** describen lo contrario a los hechos; cuanto más se desplaza el verbo hacia el pasado, más remota e irreal es la situación. Este desplazamiento temporal es el motor del inglés hipotético.",
+            examples: [
+              {
+                en: "If we had left earlier, we wouldn't be stuck in this jam.",
+                es: 'Si hubiéramos salido antes, no estaríamos atascados en este atasco.',
+              },
+              {
+                en: 'If he were more diplomatic, the deal would have closed.',
+                es: 'Si fuera más diplomático, el trato se habría cerrado.',
+              },
+            ],
+          },
+          {
+            heading: "Inverted conditionals and alternatives to 'if'",
+            body: "Formal conditionals drop 'if' and invert: **'Had we known', 'Were they to refuse', 'Should anything go wrong'**. Other connectors replace 'if' with nuance: **'unless'** (= if not), **'provided/providing that'** and **'as long as'** (strict condition), **'supposing/suppose'** (speculation), **'on condition that'**, **'but for'** (= if not for) and **'otherwise'**. Each shifts register and emphasis.",
+            bodyEs:
+              "Los condicionales formales omiten 'if' e invierten: **'Had we known', 'Were they to refuse', 'Should anything go wrong'**. Otros conectores sustituyen 'if' con matices: **'unless'** (= si no), **'provided/providing that'** y **'as long as'** (condición estricta), **'supposing/suppose'** (especulación), **'on condition that'**, **'but for'** (= de no ser por) y **'otherwise'**. Cada uno cambia el registro y el énfasis.",
+            examples: [
+              {
+                en: 'Should you change your mind, the offer stands.',
+                es: 'Si cambiaras de opinión, la oferta sigue en pie.',
+              },
+              {
+                en: 'But for your warning, we would have walked straight into the trap.',
+                es: 'De no ser por tu aviso, habríamos caído de lleno en la trampa.',
+              },
+            ],
+          },
+          {
+            heading: 'Modal layering and degrees of likelihood',
+            body: "Conditionals fine-tune probability through **modal choice** in the result clause: 'would' (likely consequence), 'might/could' (possible consequence), 'should' (expected). Adding 'were to' or 'happen to' to the condition makes it more remote or hypothetical: 'If you were to ask me...'. 'If it hadn't been for...' and 'Had it not been for...' are set counterfactual frames for attributing an outcome to a single decisive cause.",
+            bodyEs:
+              "Los condicionales afinan la probabilidad mediante la **elección del modal** en la cláusula de resultado: 'would' (consecuencia probable), 'might/could' (consecuencia posible), 'should' (esperada). Añadir 'were to' o 'happen to' a la condición la hace más remota o hipotética: 'If you were to ask me...'. 'If it hadn't been for...' y 'Had it not been for...' son fórmulas contrafácticas fijas para atribuir un resultado a una única causa decisiva.",
+            examples: [
+              {
+                en: 'If the talks were to break down, markets might panic.',
+                es: 'Si las negociaciones se rompieran, los mercados podrían entrar en pánico.',
+              },
+              {
+                en: 'Had it not been for the strike, profits would have risen.',
+                es: 'De no haber sido por la huelga, los beneficios habrían subido.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Conditional patterns and meanings',
+            columns: ['Pattern', 'Example', 'Meaning'],
+            rows: [
+              [
+                'Mixed (past → present)',
+                "If I'd saved, I'd be rich now.",
+                'Past cause, present result',
+              ],
+              [
+                'Mixed (present → past)',
+                "If I were braver, I'd have asked.",
+                'Present state, past result',
+              ],
+              [
+                'Inverted (Had)',
+                'Had we acted, this would not have happened.',
+                'Formal third conditional',
+              ],
+              [
+                'Inverted (Were ... to)',
+                'Were she to resign, chaos would follow.',
+                'Remote hypothesis',
+              ],
+              ['Inverted (Should)', 'Should you need help, call.', 'Open, polite condition'],
+              [
+                'But for / Had it not been for',
+                "But for the rain, we'd have finished.",
+                'Single decisive cause',
+              ],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: "If I hadn't taken that job, I'd never have met you.",
+            es: 'Si no hubiera aceptado ese trabajo, nunca te habría conocido.',
+          },
+          {
+            en: "Were it not for the deadline, I'd rewrite the whole thing.",
+            es: 'De no ser por la fecha límite, lo reescribiría todo.',
+          },
+          {
+            en: 'Provided that funding holds, the trial will continue.',
+            es: 'Siempre que se mantenga la financiación, el ensayo continuará.',
+          },
+          {
+            en: 'Suppose the witness had lied — how would we ever know?',
+            es: 'Supongamos que el testigo hubiera mentido: ¿cómo lo sabríamos?',
+          },
+          {
+            en: "I'd be lying if I said I wasn't tempted.",
+            es: 'Mentiría si dijera que no estoy tentado.',
+          },
+          {
+            en: 'Unless attitudes shift, the policy is doomed.',
+            es: 'A menos que cambien las actitudes, la política está condenada.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'If I would have known, I would have helped.',
+            right: 'If I had known, I would have helped.',
+            why: "Don't put 'would' in the 'if'-clause; use the past perfect for the condition.",
+            esNote: "El 'would' no va en la cláusula con 'if'; usa el pluscuamperfecto.",
+          },
+          {
+            wrong: "Unless you don't hurry, we'll miss it.",
+            right: "Unless you hurry, we'll miss it.",
+            why: "'Unless' already means 'if not', so adding a negative creates a double negative.",
+            esNote: "'Unless' ya significa 'si no'; no añadas otra negación.",
+          },
+          {
+            wrong: 'If I had studied harder, I would be passed the exam.',
+            right: 'If I had studied harder, I would have passed the exam.',
+            why: "A past unreal result needs 'would have + past participle', not 'would be + participle'.",
+            esNote: "Resultado pasado irreal: 'would have + participio'.",
+          },
+          {
+            wrong: 'Had not we left, we would have been caught.',
+            right: 'Had we not left, we would have been caught.',
+            why: "In inversion the negative follows the subject: 'Had we not left'.",
+            esNote: "En la inversión, 'not' va tras el sujeto.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'correct',
+            id: 'c2-cn-ex1',
+            wrong: 'If I would have seen it, I would have told you.',
+            answers: [
+              'If I had seen it, I would have told you.',
+              'Had I seen it, I would have told you.',
+            ],
+            explain: "The condition takes the past perfect, never 'would have'.",
+          },
+          {
+            kind: 'cloze',
+            id: 'c2-cn-ex2',
+            before: "If we'd booked earlier, we ",
+            after: ' sitting together now.',
+            answers: ['would be', "'d be"],
+            explain: "Mixed conditional: past condition, present result with 'would be'.",
+          },
+          {
+            kind: 'order',
+            id: 'c2-cn-ex3',
+            tokens: ['Had', 'we', 'not', 'intervened', 'the', 'fire', 'would', 'have', 'spread'],
+            answer: 'Had we not intervened the fire would have spread',
+            explain: "Inverted third conditional with 'not' after the subject.",
+          },
+          {
+            kind: 'translate',
+            id: 'c2-cn-ex4',
+            es: 'De no haber sido por tu ayuda, habríamos fracasado.',
+            answers: [
+              'Had it not been for your help, we would have failed.',
+              'But for your help, we would have failed.',
+              "If it hadn't been for your help, we would have failed.",
+            ],
+            explain: 'Set counterfactual frames attributing the outcome to one cause.',
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-cn-ex5',
+            prompt: 'Choose the most remote, hypothetical phrasing.',
+            options: [
+              'If you ask me to leave, I will.',
+              'If you asked me to leave, I would.',
+              'If you were to ask me to leave, I would.',
+              'If you have asked me to leave, I have.',
+            ],
+            answer: 2,
+            explain: "'Were to ask' adds extra distance and hypotheticality.",
+          },
+          {
+            kind: 'cloze',
+            id: 'c2-cn-ex6',
+            before: '',
+            after: ' you require assistance, our team is available around the clock.',
+            answers: ['Should'],
+            explain: "'Should you require...' is an inverted, formal open condition.",
+          },
+          {
+            kind: 'dictation',
+            id: 'c2-cn-ex7',
+            text: 'Were it not for one stubborn juror, the verdict would have been unanimous.',
+            explain:
+              "Inverted 'Were it not for' introduces a single decisive counterfactual cause.",
+          },
+        ],
+      },
+      {
+        id: 'c2-impersonal-passive',
+        level: 'C2',
+        title: 'Impersonal & Distancing Passives',
+        summary:
+          "Formal English distances the writer from claims using impersonal passives, reporting passives and 'it'-structures. This lesson covers the 'It is said that...' / 'He is said to...' patterns, 'there'-passives, get-passives and how agentless passives manage responsibility, objectivity and tact.",
+        summaryEs:
+          "El inglés formal distancia al autor de las afirmaciones mediante pasivas impersonales, pasivas de reporte y estructuras con 'it'. Esta lección abarca los patrones 'It is said that...' / 'He is said to...', las pasivas con 'there', las get-passives y cómo las pasivas sin agente gestionan la responsabilidad, la objetividad y el tacto.",
+        sections: [
+          {
+            heading: 'Reporting passives: distancing a claim',
+            body: "To report opinions without committing to them, English uses two parallel **reporting passive** patterns. The **impersonal 'it'-passive**: 'It is said/believed/thought/alleged that he resigned'. The **personal subject-raising passive**: 'He is said/believed to have resigned'. Both attribute the claim to an unnamed source, signalling caution and objectivity — indispensable in journalism, academia and diplomacy.",
+            bodyEs:
+              "Para reportar opiniones sin comprometerse con ellas, el inglés usa dos patrones paralelos de **pasiva de reporte**. La **pasiva impersonal con 'it'**: 'It is said/believed/thought/alleged that he resigned'. La **pasiva personal con elevación del sujeto**: 'He is said/believed to have resigned'. Ambas atribuyen la afirmación a una fuente anónima, señalando cautela y objetividad: imprescindibles en el periodismo, la academia y la diplomacia.",
+            examples: [
+              {
+                en: 'It is widely believed that the figures were inflated.',
+                es: 'Se cree ampliamente que las cifras fueron infladas.',
+              },
+              {
+                en: 'The minister is alleged to have misled parliament.',
+                es: 'Se alega que el ministro engañó al parlamento.',
+              },
+            ],
+          },
+          {
+            heading: "Agentless and 'there'-passives for objectivity",
+            body: "The **agentless passive** omits the doer when it is unknown, obvious or tactfully suppressed: 'Mistakes were made', 'The samples were contaminated'. This is a classic device for **avoiding blame** or keeping focus on the process. The **'there'-passive** ('There is thought to be a link', 'There appears to have been a breach') combines existential 'there' with reporting verbs for maximum impersonality.",
+            bodyEs:
+              "La **pasiva sin agente** omite al ejecutor cuando es desconocido, obvio o se suprime con tacto: 'Mistakes were made', 'The samples were contaminated'. Es un recurso clásico para **evitar la culpa** o mantener el foco en el proceso. La **pasiva con 'there'** ('There is thought to be a link', 'There appears to have been a breach') combina el 'there' existencial con verbos de reporte para una impersonalidad máxima.",
+            examples: [
+              {
+                en: 'There is said to be growing unease among investors.',
+                es: 'Se dice que hay un creciente malestar entre los inversores.',
+              },
+              {
+                en: 'Errors were overlooked during the review.',
+                es: 'Se pasaron por alto errores durante la revisión.',
+              },
+            ],
+          },
+          {
+            heading: 'Get-passives and tactful framing',
+            body: "The **get-passive** ('She got promoted', 'He got caught') is informal and often implies that the subject was affected, sometimes adversely or by their own involvement. Compare neutral 'be'-passives with the more dynamic, conversational 'get'. For tact, the passive lets you raise a sensitive point without naming an agent: 'It has been suggested that the report be revised' softens criticism into an impersonal proposal.",
+            bodyEs:
+              "La **get-passive** ('She got promoted', 'He got caught') es informal y suele implicar que el sujeto se vio afectado, a veces de forma adversa o por su propia implicación. Compara las pasivas con 'be', neutras, con el 'get' más dinámico y coloquial. Por tacto, la pasiva permite plantear un asunto delicado sin nombrar a un agente: 'It has been suggested that the report be revised' suaviza la crítica convirtiéndola en una propuesta impersonal.",
+            examples: [
+              {
+                en: "He got fired for something he didn't do.",
+                es: 'Lo despidieron por algo que no hizo.',
+              },
+              {
+                en: 'It has been suggested that standards be tightened.',
+                es: 'Se ha sugerido que se endurezcan los estándares.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Reporting passive transformations',
+            columns: ['Active claim', 'Impersonal it-passive', 'Personal passive'],
+            rows: [
+              ['People say he is rich.', 'It is said that he is rich.', 'He is said to be rich.'],
+              [
+                'They believe she left.',
+                'It is believed that she left.',
+                'She is believed to have left.',
+              ],
+              [
+                'Experts expect prices to fall.',
+                'It is expected that prices will fall.',
+                'Prices are expected to fall.',
+              ],
+              [
+                'Sources allege fraud occurred.',
+                'It is alleged that fraud occurred.',
+                'Fraud is alleged to have occurred.',
+              ],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'It is understood that talks will resume next week.',
+            es: 'Se entiende que las conversaciones se reanudarán la próxima semana.',
+          },
+          {
+            en: 'The painting is thought to date from the 1600s.',
+            es: 'Se cree que el cuadro data del siglo XVII.',
+          },
+          {
+            en: 'There are reported to be hundreds still missing.',
+            es: 'Se informa de que sigue habiendo cientos de desaparecidos.',
+          },
+          {
+            en: 'Concerns have been raised about the methodology.',
+            es: 'Se han planteado preocupaciones sobre la metodología.',
+          },
+          {
+            en: 'She is rumoured to be stepping down.',
+            es: 'Se rumorea que va a dimitir.',
+          },
+          {
+            en: 'Nothing was decided at the meeting.',
+            es: 'No se decidió nada en la reunión.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'It is said he to be very wealthy.',
+            right: 'He is said to be very wealthy.',
+            why: "Mixing the two patterns is wrong; choose either 'It is said that he is...' or 'He is said to be...'.",
+            esNote: "No mezcles 'It is said' con la estructura personal con infinitivo.",
+          },
+          {
+            wrong: 'He is believed to has left the country.',
+            right: 'He is believed to have left the country.',
+            why: "After 'to' use the bare infinitive 'have', and for a past action use the perfect infinitive 'to have left'.",
+            esNote: "Tras 'to' va 'have' (infinitivo); para acción pasada, 'to have + participio'.",
+          },
+          {
+            wrong: 'It was suggested that the report is revised.',
+            right: 'It was suggested that the report be revised.',
+            why: "After 'suggest that' in formal English, use the subjunctive base form 'be revised'.",
+            esNote: "Tras 'suggest that' usa la forma base (subjuntivo): 'be revised'.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c2-ip-ex1',
+            prompt: "Rewrite 'People believe the company is insolvent' as a personal passive.",
+            options: [
+              'It believes the company to be insolvent.',
+              'The company is believed to be insolvent.',
+              'The company believes to be insolvent.',
+              'It is believed the company to be insolvent.',
+            ],
+            answer: 1,
+            explain: "Subject-raising passive: 'The company is believed to be insolvent.'",
+          },
+          {
+            kind: 'correct',
+            id: 'c2-ip-ex2',
+            wrong: 'The suspect is said to has fled abroad.',
+            answers: ['The suspect is said to have fled abroad.'],
+            explain: "Use the perfect infinitive 'to have fled' for a past action.",
+          },
+          {
+            kind: 'cloze',
+            id: 'c2-ip-ex3',
+            before: 'It is widely ',
+            after: ' that interest rates will rise again.',
+            answers: ['expected', 'believed', 'thought', 'anticipated', 'assumed'],
+            explain: "An impersonal reporting passive with 'it' plus a reporting verb.",
+          },
+          {
+            kind: 'translate',
+            id: 'c2-ip-ex4',
+            es: 'Se cree que el manuscrito se perdió en el incendio.',
+            answers: [
+              'The manuscript is believed to have been lost in the fire.',
+              'It is believed that the manuscript was lost in the fire.',
+            ],
+            explain: 'Either the personal or the impersonal reporting passive is acceptable.',
+          },
+          {
+            kind: 'order',
+            id: 'c2-ip-ex5',
+            tokens: ['There', 'is', 'thought', 'to', 'be', 'a', 'connection'],
+            answer: 'There is thought to be a connection',
+            explain: "Existential 'there' combines with a reporting passive for impersonality.",
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-ip-ex6',
+            prompt: 'Which sentence most clearly avoids assigning blame?',
+            options: [
+              'The technician broke the machine.',
+              'Mistakes were made.',
+              'You broke the machine.',
+              'I blame the technician.',
+            ],
+            answer: 1,
+            explain: "The agentless passive 'Mistakes were made' suppresses the responsible party.",
+          },
+          {
+            kind: 'dictation',
+            id: 'c2-ip-ex7',
+            text: 'The chief executive is alleged to have approved the payments personally.',
+            explain:
+              'A personal reporting passive with the perfect infinitive distances the claim.',
+          },
+        ],
+      },
+      {
+        id: 'c2-discourse-ellipsis-word-order',
+        level: 'C2',
+        title: 'Discourse Markers, Ellipsis & Marked Word Order',
+        summary:
+          'Cohesive, rhetorically effective English depends on signposting, leaving out the recoverable, and rearranging elements for emphasis. This lesson covers the full range of discourse markers, ellipsis and substitution, and marked word order such as fronting and right-dislocation.',
+        summaryEs:
+          'El inglés cohesivo y retóricamente eficaz depende de las señales, de omitir lo recuperable y de reordenar elementos para enfatizar. Esta lección abarca toda la gama de marcadores del discurso, la elipsis y la sustitución, y el orden marcado de palabras como el fronting y la dislocación a la derecha.',
+        sections: [
+          {
+            heading: 'Discourse markers and signposting',
+            body: "**Discourse markers** organise text and signal the speaker's stance. Beyond 'however' and 'therefore', master **contrastive** ('then again', 'that said', 'mind you'), **reinforcing** ('what is more', 'indeed', 'not least'), **conceding** ('admittedly', 'granted', 'to be fair'), **reformulating** ('that is to say', 'in other words', 'or rather') and **focusing** ('as for', 'with regard to', 'incidentally'). Their position and intonation carry as much meaning as their literal sense.",
+            bodyEs:
+              "Los **marcadores del discurso** organizan el texto y señalan la postura del hablante. Más allá de 'however' y 'therefore', domina los **contrastivos** ('then again', 'that said', 'mind you'), los **reforzadores** ('what is more', 'indeed', 'not least'), los **concesivos** ('admittedly', 'granted', 'to be fair'), los **reformuladores** ('that is to say', 'in other words', 'or rather') y los **focalizadores** ('as for', 'with regard to', 'incidentally'). Su posición y entonación llevan tanto significado como su sentido literal.",
+            examples: [
+              {
+                en: 'The plan is bold; that said, it is far from foolproof.',
+                es: 'El plan es audaz; dicho esto, dista de ser infalible.',
+              },
+              {
+                en: 'She was late — not that anyone minded.',
+                es: 'Llegó tarde, no es que a nadie le importara.',
+              },
+            ],
+          },
+          {
+            heading: 'Ellipsis and substitution',
+            body: "**Ellipsis** omits words recoverable from context, avoiding repetition: 'She can sing and (she can) dance'; 'I haven't finished, but I will (finish) soon'. **Substitution** replaces a repeated element with 'so', 'do', 'one' or 'not': 'Is it raining? — I think so / I hope not'; 'I need a pen — take this one'. Used well, these create lean, cohesive, natural-sounding discourse; overused or misjudged, they obscure meaning.",
+            bodyEs:
+              "La **elipsis** omite palabras recuperables del contexto, evitando la repetición: 'She can sing and (she can) dance'; 'I haven't finished, but I will (finish) soon'. La **sustitución** reemplaza un elemento repetido con 'so', 'do', 'one' o 'not': 'Is it raining? — I think so / I hope not'; 'I need a pen — take this one'. Bien usadas, crean un discurso ágil, cohesivo y natural; abusadas o mal calibradas, oscurecen el sentido.",
+            examples: [
+              {
+                en: "Some agreed, others didn't.",
+                es: 'Algunos estuvieron de acuerdo, otros no.',
+              },
+              {
+                en: 'You could apologise — I would, if I were you.',
+                es: 'Podrías disculparte; yo lo haría, si fuera tú.',
+              },
+            ],
+          },
+          {
+            heading: 'Marked word order: fronting and dislocation',
+            body: "Shifting elements out of canonical order signals emphasis or contrast. **Fronting** moves an object or complement to the start: 'That I can't accept', 'Brilliant, the whole thing was'. **Left-dislocation** announces a topic then resumes it with a pronoun: 'My neighbour, she never stops complaining'. **Right-dislocation** adds an afterthought tag: 'They're hopeless, those two'. These are stylistic and largely spoken or informal, prized for their rhetorical punch.",
+            bodyEs:
+              "Desplazar elementos fuera del orden canónico señala énfasis o contraste. El **fronting** mueve un objeto o complemento al inicio: 'That I can't accept', 'Brilliant, the whole thing was'. La **dislocación a la izquierda** anuncia un tema y luego lo retoma con un pronombre: 'My neighbour, she never stops complaining'. La **dislocación a la derecha** añade una coletilla a posteriori: 'They're hopeless, those two'. Son estilísticas y mayormente orales o informales, valoradas por su fuerza retórica.",
+            examples: [
+              {
+                en: 'His arrogance, I simply cannot stomach.',
+                es: 'Su arrogancia, sencillamente no la soporto.',
+              },
+              {
+                en: "It's a clever idea, that.",
+                es: 'Es una idea ingeniosa, esa.',
+              },
+            ],
+          },
+        ],
+        tables: [
+          {
+            caption: 'Discourse markers by function',
+            columns: ['Function', 'Markers', 'Example'],
+            rows: [
+              [
+                'Contrast / concession',
+                'that said, then again, mind you, admittedly',
+                'Admittedly, the costs are high.',
+              ],
+              ['Reinforcement', 'what is more, indeed, not least', "What is more, it's cheaper."],
+              [
+                'Reformulation',
+                'that is to say, in other words, or rather',
+                "He's frugal, or rather, mean.",
+              ],
+              [
+                'Topic shift / focus',
+                'as for, with regard to, incidentally',
+                'As for the budget, that can wait.',
+              ],
+              ['Summing up', 'all in all, on balance, in short', 'All in all, a fair result.'],
+            ],
+          },
+        ],
+        examples: [
+          {
+            en: 'On balance, the benefits outweigh the risks.',
+            es: 'En conjunto, los beneficios superan a los riesgos.',
+          },
+          {
+            en: 'I asked her to help, and help she did.',
+            es: 'Le pedí que ayudara, y vaya si ayudó.',
+          },
+          {
+            en: 'Will it work? Frankly, I doubt it.',
+            es: '¿Funcionará? Francamente, lo dudo.',
+          },
+          {
+            en: "He said he'd call, but he hasn't.",
+            es: 'Dijo que llamaría, pero no lo ha hecho.',
+          },
+          {
+            en: 'As for the others, they can wait their turn.',
+            es: 'En cuanto a los demás, pueden esperar su turno.',
+          },
+          {
+            en: 'A genius, that man.',
+            es: 'Un genio, ese hombre.',
+          },
+        ],
+        pitfalls: [
+          {
+            wrong: 'Is she coming? — I think yes.',
+            right: 'Is she coming? — I think so.',
+            why: "English substitutes a positive clause with 'so' after verbs like think/hope/believe, not with 'yes'.",
+            esNote: "Usa 'I think so', no 'I think yes'.",
+          },
+          {
+            wrong: 'I hope no, the meeting is cancelled.',
+            right: 'I hope not. — or — I hope so, the meeting is cancelled.',
+            why: "The negative substitute is 'not' ('I hope not'), and the clause should match the intended meaning.",
+            esNote: "El sustituto negativo es 'not': 'I hope not'.",
+          },
+          {
+            wrong: 'She can sing and she can to dance.',
+            right: 'She can sing and dance.',
+            why: "After the shared modal 'can', ellipsis removes the repeated subject and modal; no 'to' appears.",
+            esNote: "Tras 'can' compartido se elide el sujeto y el modal; sin 'to'.",
+          },
+        ],
+        exercises: [
+          {
+            kind: 'mcq',
+            id: 'c2-de-ex1',
+            prompt: "Complete: 'Will they accept? — I doubt ___.'",
+            options: ['it', 'so', 'that', 'yes'],
+            answer: 0,
+            explain: "'Doubt' takes 'it' as the substitute object: 'I doubt it.'",
+          },
+          {
+            kind: 'cloze',
+            id: 'c2-de-ex2',
+            before: 'The proposal is risky; that ',
+            after: ', it may be our only option.',
+            answers: ['said'],
+            explain: "'That said' is a concessive discourse marker introducing a counterpoint.",
+          },
+          {
+            kind: 'correct',
+            id: 'c2-de-ex3',
+            wrong: 'Do you think it will rain? — I think yes.',
+            answers: ['Do you think it will rain? — I think so.', 'I think so.'],
+            explain: "Use 'so' to substitute a positive clause after 'think'.",
+          },
+          {
+            kind: 'order',
+            id: 'c2-de-ex4',
+            tokens: ['His', 'behaviour', 'I', 'cannot', 'condone'],
+            answer: 'His behaviour I cannot condone',
+            explain: "Fronting the object 'his behaviour' for emphasis.",
+          },
+          {
+            kind: 'translate',
+            id: 'c2-de-ex5',
+            es: 'Algunos terminaron a tiempo; otros no.',
+            answers: [
+              "Some finished on time; others didn't.",
+              "Some finished on time, others didn't.",
+            ],
+            explain: "Ellipsis after 'didn't' omits the recoverable 'finish on time'.",
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-de-ex6',
+            prompt: 'Which marker best signals a reformulation?',
+            options: ['what is more', 'in other words', 'as for', 'all in all'],
+            answer: 1,
+            explain: "'In other words' reformulates a previous statement.",
+          },
+          {
+            kind: 'dictation',
+            id: 'c2-de-ex7',
+            text: 'Admittedly, the evidence is thin, but the conclusion still holds.',
+            explain: "'Admittedly' concedes a point before the main contrast with 'but'.",
           },
         ],
       },
       {
         id: 'c2-idiom-collocation-register',
         level: 'C2',
-        title: 'Idiom, collocation and connotation: controlling register',
+        title: 'Idiom, Collocation & Register Control',
         summary:
-          'Choosing words that collocate naturally, carry the right connotation, and match the formality of the context is the hallmark of near-native command.',
+          'Sounding native means choosing the word that naturally co-occurs, judging connotation, and matching register to context. This lesson sharpens collocation, idiomatic phrasing, the formal-informal scale and the control of positive, negative and neutral connotation.',
+        summaryEs:
+          'Sonar nativo significa elegir la palabra que coaparece de forma natural, juzgar la connotación y ajustar el registro al contexto. Esta lección afina la colocación, la fraseología idiomática, la escala formal-informal y el control de la connotación positiva, negativa y neutra.',
         sections: [
           {
             heading: 'Collocation: words that travel together',
-            body: 'English prefers fixed partnerships: you make a decision but take a photo; you have a strong preference but a deep regret. Wrong collocations (*do a decision*) are grammatical yet unnatural. Build **collocational accuracy** with verbs+nouns, adjective+noun and adverb+adjective pairs.',
+            body: "**Collocations** are conventional word partnerships that native speakers expect: you 'make a decision' but 'do your homework'; rain is 'heavy', not 'strong'; an argument is 'compelling', a need 'pressing', a resemblance 'striking'. Strong **verb + noun**, **adjective + noun** and **adverb + adjective** pairings ('bitterly disappointed', 'highly unlikely') are the fingerprint of fluency. Knowing the dictionary meaning is not enough; you must know the company a word keeps.",
+            bodyEs:
+              "Las **colocaciones** son asociaciones convencionales de palabras que los nativos esperan: 'make a decision' pero 'do your homework'; la lluvia es 'heavy', no 'strong'; un argumento es 'compelling', una necesidad 'pressing', un parecido 'striking'. Las combinaciones fuertes de **verbo + sustantivo**, **adjetivo + sustantivo** y **adverbio + adjetivo** ('bitterly disappointed', 'highly unlikely') son la huella de la fluidez. Saber el significado de diccionario no basta; hay que saber la compañía que mantiene una palabra.",
             examples: [
               {
-                en: 'They reached a unanimous decision.',
-                es: 'Llegaron a una decisión unánime.',
+                en: 'The proposal met with strong opposition.',
+                es: 'La propuesta se topó con una fuerte oposición.',
               },
               {
-                en: 'The findings raise serious concerns.',
-                es: 'Los hallazgos plantean serias preocupaciones.',
+                en: "I'm bitterly disappointed by the outcome.",
+                es: 'Estoy profundamente decepcionado con el resultado.',
               },
             ],
           },
           {
-            heading: 'Connotation: same meaning, different colour',
-            body: 'Near-synonyms differ in **connotation**: *thrifty* (positive) vs *stingy* (negative); *slim* vs *skinny*; *determined* vs *stubborn*; *childlike* vs *childish*. Picking the right shade signals attitude and tone with precision.',
+            heading: 'Idiom and figurative phrasing',
+            body: "**Idioms** carry meaning that cannot be read off their parts: 'to bite the bullet', 'a blessing in disguise', 'the elephant in the room'. At C2 the skill is not just understanding them but deploying them aptly and sparingly, and recognising their register — many idioms are informal or even slangy, and a misjudged one in a formal report jars. Beware of translating Spanish idioms literally; the imagery rarely transfers.",
+            bodyEs:
+              "Los **idioms** llevan un significado que no se deduce de sus partes: 'to bite the bullet', 'a blessing in disguise', 'the elephant in the room'. En C2 la habilidad no es solo entenderlos, sino emplearlos con acierto y mesura, y reconocer su registro: muchos idioms son informales o incluso jergales, y uno mal calibrado en un informe formal desentona. Cuidado con traducir literalmente los modismos españoles; las imágenes rara vez se trasladan.",
             examples: [
               {
-                en: "I'd call him determined rather than stubborn.",
-                es: 'Yo lo llamaría decidido más que terco.',
+                en: 'Cutting the budget now would be a false economy.',
+                es: 'Recortar el presupuesto ahora sería un ahorro ilusorio.',
               },
               {
-                en: 'She is assertive, not aggressive.',
-                es: 'Ella es firme, no agresiva.',
+                en: "Let's not beat around the bush.",
+                es: 'No nos andemos con rodeos.',
               },
             ],
           },
           {
-            heading: 'Register: matching formality',
-            body: 'Match vocabulary to context. Informal **phrasal verbs** (*put off, find out*) suit speech; their **Latinate equivalents** (*postpone, ascertain*) suit formal writing. Idioms (*a blessing in disguise*) enliven prose but jar in technical reports.',
+            heading: 'Register and connotation',
+            body: "**Register** is the formality scale: 'kids' (informal) / 'children' (neutral) / 'offspring' (formal/technical); 'buy' / 'purchase' / 'procure'. **Connotation** is the emotional colour: 'thrifty' (positive), 'frugal' (neutral), 'stingy' (negative) all describe carefulness with money. Mastery means selecting the term whose register and connotation fit your audience and intent — and noticing when a near-synonym would insult, flatter or sound out of place.",
+            bodyEs:
+              "El **registro** es la escala de formalidad: 'kids' (informal) / 'children' (neutro) / 'offspring' (formal/técnico); 'buy' / 'purchase' / 'procure'. La **connotación** es el color emocional: 'thrifty' (positivo), 'frugal' (neutro), 'stingy' (negativo) describen el cuidado con el dinero. El dominio consiste en elegir el término cuyo registro y connotación encajen con tu público e intención, y en notar cuándo un casi-sinónimo insultaría, halagaría o sonaría fuera de lugar.",
             examples: [
               {
-                en: 'We had to postpone the launch. (formal)',
-                es: 'Tuvimos que aplazar el lanzamiento. (formal)',
+                en: "He's not assertive, he's downright aggressive.",
+                es: 'No es firme, es directamente agresivo.',
               },
               {
-                en: 'We had to put off the launch. (informal)',
-                es: 'Tuvimos que posponer el lanzamiento. (informal)',
+                en: 'We would be grateful if you could expedite the matter.',
+                es: 'Le agradeceríamos que agilizara el asunto.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Register pairs: informal vs formal',
-            columns: ['Informal (phrasal)', 'Formal (Latinate)'],
+            caption: 'Connotation across near-synonyms',
+            columns: ['Negative', 'Neutral', 'Positive'],
             rows: [
-              ['find out', 'ascertain / discover'],
-              ['put off', 'postpone'],
-              ['go up', 'increase / rise'],
-              ['look into', 'investigate'],
-              ['get rid of', 'eliminate / remove'],
+              ['stingy', 'frugal', 'thrifty'],
+              ['pushy', 'assertive', 'confident'],
+              ['stubborn', 'firm', 'determined'],
+              ['nosy', 'curious', 'inquisitive'],
+              ['childish', 'youthful', 'young at heart'],
+              ['cunning', 'clever', 'shrewd'],
+            ],
+          },
+          {
+            caption: 'Register scale of common words',
+            columns: ['Informal', 'Neutral', 'Formal'],
+            rows: [
+              ['kids', 'children', 'offspring'],
+              ['buy', 'buy', 'purchase / procure'],
+              ['get', 'receive', 'obtain'],
+              ['ask for', 'request', 'solicit'],
+              ['put off', 'postpone', 'defer'],
+              ['a lot of', 'many / much', 'a great deal of'],
             ],
           },
         ],
         examples: [
           {
-            en: 'The report shed light on a long-standing problem.',
-            es: 'El informe arrojó luz sobre un problema de larga data.',
+            en: 'The talks reached a deadlock.',
+            es: 'Las conversaciones llegaron a un punto muerto.',
           },
           {
-            en: 'His comments struck a nerve with the audience.',
-            es: 'Sus comentarios tocaron una fibra sensible en el público.',
+            en: 'She paid a heavy price for her honesty.',
+            es: 'Pagó un alto precio por su honestidad.',
           },
           {
-            en: 'We must ascertain the cause before drawing conclusions.',
-            es: 'Debemos determinar la causa antes de sacar conclusiones.',
+            en: 'Kindly refrain from smoking on the premises.',
+            es: 'Le rogamos que se abstenga de fumar en las instalaciones.',
           },
           {
-            en: 'Calling her frugal is kinder than calling her tight-fisted.',
-            es: 'Llamarla ahorradora es más amable que llamarla tacaña.',
+            en: "That's a wild guess at best.",
+            es: 'Eso es, como mucho, una suposición temeraria.',
           },
           {
-            en: 'The deal fell through at the eleventh hour.',
-            es: 'El acuerdo se vino abajo en el último momento.',
+            en: 'We must address the elephant in the room.',
+            es: 'Debemos abordar el tema que todos evitan.',
+          },
+          {
+            en: 'His remarks were utterly tactless.',
+            es: 'Sus comentarios fueron del todo faltos de tacto.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'I made a photo of the sunset.',
-            right: 'I took a photo of the sunset.',
-            why: "The collocation is **take a photo**, not 'make'.",
-            esNote: "En español 'hacer una foto', pero en inglés es 'take a photo'.",
+            wrong: 'It was raining strongly all day.',
+            right: 'It was raining heavily all day.',
+            why: "Rain collocates with 'heavily/hard', not 'strongly'.",
+            esNote: "Se dice 'rain heavily', no 'rain strongly'.",
           },
           {
-            wrong: 'He is very stubborn, always finishing his work on time.',
-            right: 'He is very determined, always finishing his work on time.',
-            why: "In a praising context use the positive connotation **determined**, not the negative 'stubborn'.",
-            esNote: "'Stubborn' (terco) es negativo; para elogiar se usa 'determined'.",
+            wrong: 'I made my homework before dinner.',
+            right: 'I did my homework before dinner.',
+            why: "'Homework' collocates with 'do', not 'make'; Spanish 'hacer' covers both English verbs.",
+            esNote: "'Homework' va con 'do'; el español 'hacer' confunde.",
           },
           {
-            wrong: 'In the report, we found out the cause and got rid of it.',
-            right: 'In the report, we ascertained the cause and eliminated it.',
-            why: 'Formal writing prefers **Latinate verbs** over casual phrasal verbs.',
-            esNote:
-              'En registro formal se prefieren verbos latinos a los phrasal verbs coloquiales.',
+            wrong: 'The manager is very stubborn about quality, which we admire.',
+            right: 'The manager is very determined about quality, which we admire.',
+            why: "'Stubborn' carries a negative connotation that clashes with the praise; 'determined' fits.",
+            esNote: "'Stubborn' es negativo; para elogiar usa 'determined'.",
           },
         ],
         exercises: [
           {
             kind: 'mcq',
-            id: 'c2-ic-1',
-            prompt:
-              "Which verb collocates correctly: 'The new evidence ___ serious doubts about the verdict.'",
-            options: ['does', 'makes', 'raises', 'puts'],
-            answer: 2,
-            explain: "The collocation is 'raise doubts'.",
+            id: 'c2-ic-ex1',
+            prompt: "Which adverb collocates best: '___ disappointed'?",
+            options: ['strongly', 'bitterly', 'highly', 'deeply'],
+            answer: 1,
+            explain: "'Bitterly disappointed' is the established collocation.",
           },
           {
             kind: 'cloze',
-            id: 'c2-ic-2',
-            before: 'After months of delay, the committee finally ',
-            after: ' a decision.',
-            answers: ['reached', 'made', 'took'],
-            explain: "'Reach/make/take a decision' are all natural collocations.",
+            id: 'c2-ic-ex2',
+            before: 'The new evidence is highly ',
+            after: ', so the case may collapse.',
+            answers: ['unlikely', 'questionable', 'significant', 'relevant'],
+            explain: "'Highly + adjective' is a strong adverb-adjective collocation.",
           },
           {
             kind: 'correct',
-            id: 'c2-ic-3',
-            wrong: 'Please make me a favour and close the window.',
-            answers: ['Please do me a favour and close the window.'],
-            explain: "The collocation is 'do a favour', not 'make'.",
-          },
-          {
-            kind: 'order',
-            id: 'c2-ic-4',
-            tokens: ['The', 'scandal', 'came', 'to', 'light', 'last', 'year'],
-            answer: 'The scandal came to light last year',
-            explain: "Idiomatic collocation 'come to light' = become known.",
+            id: 'c2-ic-ex3',
+            wrong: 'We must make a decision and do an effort.',
+            answers: [
+              'We must make a decision and make an effort.',
+              'We must make a decision and put in an effort.',
+            ],
+            explain: "'Effort' collocates with 'make' (or 'put in'), not 'do'.",
           },
           {
             kind: 'translate',
-            id: 'c2-ic-5',
-            es: 'Resultó ser una bendición disfrazada.',
+            id: 'c2-ic-ex4',
+            es: 'Le agradeceríamos que tramitara el asunto con rapidez.',
             answers: [
-              'It turned out to be a blessing in disguise.',
-              'It proved to be a blessing in disguise.',
+              'We would be grateful if you could expedite the matter.',
+              'We would be grateful if you could deal with the matter promptly.',
+              'We would appreciate it if you could expedite the matter.',
             ],
-            explain: "Fixed idiom 'a blessing in disguise'.",
+            explain: "Formal register: 'we would be grateful', 'expedite the matter'.",
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-ic-ex5',
+            prompt: 'Which word has a positive connotation?',
+            options: ['stingy', 'nosy', 'thrifty', 'pushy'],
+            answer: 2,
+            explain: "'Thrifty' praises careful spending; the others are negative.",
+          },
+          {
+            kind: 'order',
+            id: 'c2-ic-ex6',
+            tokens: ["let's", 'not', 'beat', 'around', 'the', 'bush'],
+            answer: "let's not beat around the bush",
+            explain: "The idiom means 'get straight to the point'.",
           },
           {
             kind: 'dictation',
-            id: 'c2-ic-6',
-            text: 'We must ascertain the facts before we go public.',
-            explain: "Formal 'ascertain' contrasted with informal 'find out'.",
+            id: 'c2-ic-ex7',
+            text: 'Cutting corners now would prove a false economy in the long run.',
+            explain:
+              "'Cut corners' and 'false economy' are idiomatic collocations about saving badly.",
           },
         ],
       },
       {
         id: 'c2-modality-hedging-irony',
         level: 'C2',
-        title: 'Nuanced modality, hedging, irony and figurative language',
+        title: 'Modality, Hedging, Irony & Figurative Language',
         summary:
-          'Fine control of certainty, diplomatic hedging, and the layered meaning of irony, understatement and metaphor.',
+          'Sophisticated English signals exactly how committed you are to a claim and layers tone beneath the literal words. This lesson covers nuanced epistemic and deontic modality, hedging and boosting, understatement and overstatement, and irony, metaphor and other figurative devices.',
+        summaryEs:
+          'El inglés sofisticado señala con exactitud cuán comprometido estás con una afirmación y superpone tono bajo las palabras literales. Esta lección abarca la modalidad epistémica y deóntica matizada, la atenuación (hedging) y el refuerzo, la atenuación retórica y la exageración, y la ironía, la metáfora y otros recursos figurados.',
         sections: [
           {
-            heading: 'Graded modality and epistemic certainty',
-            body: "Modals encode **degrees of likelihood**: *must* (confident deduction), *should/ought to* (reasonable expectation), *may/might/could* (open possibility), *can't/couldn't* (negative certainty). Layer them with adverbs (*conceivably, presumably, arguably*) for precise calibration.",
+            heading: 'Nuanced modality and hedging',
+            body: "**Epistemic modality** grades certainty: 'must' (confident deduction) > 'should/ought to' (expectation) > 'may/might/could' (open possibility). **Hedging** softens claims to sound cautious and academic: 'it would appear that', 'this may suggest', 'arguably', 'to some extent', 'tend to', 'somewhat'. **Boosting** does the opposite ('clearly', 'undoubtedly', 'it is evident that'). Calibrating these protects your credibility — over-claiming invites rebuttal, over-hedging sounds evasive.",
+            bodyEs:
+              "La **modalidad epistémica** gradúa la certeza: 'must' (deducción segura) > 'should/ought to' (expectativa) > 'may/might/could' (posibilidad abierta). El **hedging** suaviza las afirmaciones para sonar cauto y académico: 'it would appear that', 'this may suggest', 'arguably', 'to some extent', 'tend to', 'somewhat'. El **boosting** hace lo contrario ('clearly', 'undoubtedly', 'it is evident that'). Calibrarlos protege tu credibilidad: afirmar de más invita a la réplica, atenuar de más suena evasivo.",
             examples: [
               {
-                en: 'The results must surely be flawed.',
-                es: 'Los resultados sin duda deben de estar viciados.',
+                en: 'The data would seem to suggest a modest correlation.',
+                es: 'Los datos parecerían sugerir una correlación modesta.',
               },
               {
-                en: "That may well be the case, but I'd want proof.",
-                es: 'Bien puede ser así, pero querría pruebas.',
+                en: 'This must be the single most important factor.',
+                es: 'Este debe de ser, con diferencia, el factor más importante.',
               },
             ],
           },
           {
-            heading: 'Hedging for diplomacy and academic caution',
-            body: '**Hedges** soften claims and protect you from overstatement: *it would seem, to some extent, tends to, arguably, not entirely unreasonable*. Academic and diplomatic English relies on them to sound measured rather than dogmatic.',
+            heading: 'Understatement, overstatement and irony',
+            body: "Tone often diverges from literal meaning. **Understatement (litotes)** says less than is meant for effect, frequently with double negatives: 'not bad at all' (= excellent), 'it's not exactly cheap' (= very expensive). **Overstatement (hyperbole)** exaggerates ('I've told you a thousand times'). **Irony** states the opposite of what is meant, signalled by context or intonation: 'Lovely weather!' in a downpour. These devices are deeply cultural; reading the cue, not just the words, is the C2 challenge.",
+            bodyEs:
+              "El tono a menudo diverge del significado literal. La **atenuación (litotes)** dice menos de lo que se quiere decir para lograr un efecto, con frecuencia mediante dobles negaciones: 'not bad at all' (= excelente), 'it's not exactly cheap' (= carísimo). La **exageración (hipérbole)** exagera ('I've told you a thousand times'). La **ironía** afirma lo contrario de lo que se quiere decir, señalada por el contexto o la entonación: '¡Qué tiempo más bonito!' bajo un aguacero. Estos recursos son profundamente culturales; leer la señal, no solo las palabras, es el reto de C2.",
             examples: [
               {
-                en: 'The data would seem to support this interpretation.',
-                es: 'Los datos parecerían respaldar esta interpretación.',
+                en: 'The exam was not exactly a walk in the park.',
+                es: 'El examen no fue precisamente un paseo.',
               },
               {
-                en: 'Her approach is, to some extent, justified.',
-                es: 'Su enfoque está, hasta cierto punto, justificado.',
+                en: 'Oh, brilliant — another delay.',
+                es: 'Ah, genial, otro retraso más.',
               },
             ],
           },
           {
-            heading: 'Irony, understatement and figurative language',
-            body: '**Understatement** (litotes) says less to mean more: *not bad* = very good; *no small achievement* = a great one. **Irony** means the opposite of the literal words. **Metaphor and metonymy** compress meaning: *the White House denied it* (= the administration).',
+            heading: 'Metaphor and figurative language',
+            body: "**Figurative language** maps one domain onto another. **Metaphor** asserts an identity ('the economy is overheating'); **simile** uses 'like/as' ('spread like wildfire'); **metonymy** names by association ('Downing Street denied it'); **personification** gives human traits to ideas ('the report claims...'). Much everyday English is quietly metaphorical, especially 'time is money', 'argument is war' and journeys-as-life. Recognising and extending these patterns lets you write vividly and read between the lines.",
+            bodyEs:
+              "El **lenguaje figurado** proyecta un dominio sobre otro. La **metáfora** afirma una identidad ('the economy is overheating'); el **símil** usa 'like/as' ('spread like wildfire'); la **metonimia** nombra por asociación ('Downing Street denied it'); la **personificación** da rasgos humanos a las ideas ('the report claims...'). Gran parte del inglés cotidiano es discretamente metafórico, sobre todo 'time is money', 'argument is war' y la vida como un viaje. Reconocer y extender estos patrones te permite escribir con viveza y leer entre líneas.",
             examples: [
               {
-                en: 'That was no small feat.',
-                es: 'Eso no fue una hazaña menor (= fue una gran hazaña).',
+                en: 'Criticism rained down on the proposal.',
+                es: 'Llovieron las críticas sobre la propuesta.',
               },
               {
-                en: "Well, this is a fine mess we're in. (ironic)",
-                es: 'Vaya, en buen lío estamos metidos. (irónico)',
+                en: 'The White House issued a statement.',
+                es: 'La Casa Blanca emitió un comunicado.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Modal certainty scale',
-            columns: ['Modal', 'Degree of certainty'],
+            caption: 'Hedging and boosting devices',
+            columns: ['Function', 'Devices', 'Effect'],
             rows: [
-              ["must / can't", 'near-certain (positive / negative)'],
-              ['should / ought to', 'expected, probable'],
-              ['may / might / could', 'possible, uncertain'],
-              ['may well / might well', 'likely possibility'],
+              ['Strong hedge', 'it would appear, arguably, conceivably', 'Very tentative'],
+              ['Mild hedge', 'tend to, somewhat, to some extent, fairly', 'Cautious'],
+              ['Neutral', 'is, shows, indicates', 'Plain claim'],
+              ['Mild boost', 'indeed, in fact, certainly', 'Reinforced'],
+              ['Strong boost', 'clearly, undoubtedly, it is evident that', 'Highly assertive'],
             ],
           },
         ],
         examples: [
           {
-            en: "He can't possibly have finished already.",
-            es: 'No es posible que ya haya terminado.',
+            en: 'One could argue that the policy was, at best, short-sighted.',
+            es: 'Se podría argumentar que la política fue, en el mejor de los casos, miope.',
           },
           {
-            en: 'It would seem, on balance, that the policy has failed.',
-            es: 'Parecería, en conjunto, que la política ha fracasado.',
+            en: "She's not unintelligent — quite the opposite.",
+            es: 'No es poco inteligente, todo lo contrario.',
           },
           {
-            en: 'The proposal is, shall we say, less than perfect.',
-            es: 'La propuesta es, digamos, menos que perfecta.',
+            en: "Well, that went brilliantly, didn't it?",
+            es: 'Bueno, eso salió de maravilla, ¿verdad?',
           },
           {
-            en: 'Losing the contract was something of a setback.',
-            es: 'Perder el contrato fue algo así como un revés (eufemismo por uno grande).',
+            en: 'Support for the bill is evaporating fast.',
+            es: 'El apoyo al proyecto de ley se está evaporando rápido.',
           },
           {
-            en: 'Brussels has yet to respond to the criticism.',
-            es: 'Bruselas (= la UE) aún no ha respondido a las críticas.',
+            en: 'It might be argued, somewhat tentatively, that the trend is reversing.',
+            es: 'Se podría argumentar, con cierta cautela, que la tendencia se está invirtiendo.',
+          },
+          {
+            en: 'Brussels has yet to comment.',
+            es: 'Bruselas aún no se ha pronunciado.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'He must to be very tired after the trip.',
-            right: 'He must be very tired after the trip.',
-            why: "Modal verbs are followed by the **bare infinitive**, never 'to'.",
-            esNote: "Los modales van con infinitivo sin 'to': 'must be', no 'must to be'.",
+            wrong: "It must be raining, but I'm not sure.",
+            right: "It might be raining, but I'm not sure.",
+            why: "'Must' expresses confident deduction, which clashes with 'I'm not sure'; use 'might/could'.",
+            esNote: "'Must' es deducción segura; con duda usa 'might/could'.",
           },
           {
-            wrong: "It can't be true, maybe he lied.",
-            right: "It can't be true; he must have lied.",
-            why: 'For a confident deduction about the past use **must have + past participle**.',
-            esNote: "Para deducir algo del pasado con seguridad se usa 'must have + participio'.",
+            wrong: 'The results are not bad, they are very good. (meant as litotes)',
+            right: 'The results are not bad at all.',
+            why: 'Litotes works by leaving the positive implied; spelling it out destroys the understatement.',
+            esNote: 'La litotes deja lo positivo implícito; no lo expliques.',
           },
           {
-            wrong: 'The plan is not bad, it is terrible.',
-            right: 'The plan is, frankly, terrible.',
-            why: "'Not bad' is litotes meaning 'quite good', so it contradicts 'terrible'; understatement must point the same way as your meaning.",
-            esNote: "'Not bad' significa 'bastante bueno' por lítotes; no equivale a 'terrible'.",
+            wrong: 'I have told you thousand times.',
+            right: "I've told you a thousand times.",
+            why: "The hyperbolic 'a thousand times' needs the article 'a'.",
+            esNote: "La hipérbole lleva artículo: 'a thousand times'.",
           },
         ],
         exercises: [
           {
             kind: 'mcq',
-            id: 'c2-mo-1',
-            prompt: 'Which expresses the strongest confidence that something is false?',
+            id: 'c2-mh-ex1',
+            prompt: 'Which expresses the strongest certainty?',
             options: [
-              'It might not be true.',
-              'It may not be true.',
-              "It can't be true.",
-              "It shouldn't be true.",
+              'It might be the cause.',
+              'It could be the cause.',
+              'It must be the cause.',
+              'It may be the cause.',
             ],
             answer: 2,
-            explain: "'Can't' expresses near-certain negative deduction.",
+            explain: "'Must' signals confident deduction; the others are open possibility.",
           },
           {
             kind: 'cloze',
-            id: 'c2-mo-2',
-            before: 'She left an hour ago, so she ',
-            after: ' have arrived by now.',
-            answers: ['must', 'should'],
-            explain:
-              "'Must have arrived' = confident deduction; 'should have arrived' = reasonable expectation.",
-          },
-          {
-            kind: 'order',
-            id: 'c2-mo-3',
-            tokens: ['The', 'evidence', 'would', 'seem', 'to', 'support', 'this', 'claim'],
-            answer: 'The evidence would seem to support this claim',
-            explain: "Hedged assertion using 'would seem to'.",
+            id: 'c2-mh-ex2',
+            before: 'The findings would ',
+            after: ' to support the hypothesis, though more data is needed.',
+            answers: ['appear', 'seem'],
+            explain: "'Would appear/seem to' is a classic hedge softening the claim.",
           },
           {
             kind: 'correct',
-            id: 'c2-mo-4',
-            wrong: 'You must to see a doctor about that cough.',
-            answers: ['You must see a doctor about that cough.'],
-            explain: "Modals take the bare infinitive, no 'to'.",
+            id: 'c2-mh-ex3',
+            wrong: 'It must be true, although I have no idea really.',
+            answers: [
+              'It might be true, although I have no idea really.',
+              'It could be true, although I have no idea really.',
+            ],
+            explain: "Confident 'must' contradicts the admitted uncertainty; use 'might/could'.",
           },
           {
             kind: 'translate',
-            id: 'c2-mo-5',
-            es: 'Bien podría tener razón, pero todavía tengo dudas.',
-            answers: [
-              'He may well be right, but I still have doubts.',
-              'She may well be right, but I still have doubts.',
-              'You may well be right, but I still have doubts.',
-            ],
-            explain: "'May well' raises the likelihood; hedged with 'but'.",
+            id: 'c2-mh-ex4',
+            es: 'El examen no fue precisamente fácil.',
+            answers: ["The exam wasn't exactly easy.", 'The exam was not exactly easy.'],
+            explain: "Litotes 'not exactly easy' understates that it was hard.",
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-mh-ex5',
+            prompt: "'Downing Street refused to comment.' This is an example of:",
+            options: ['simile', 'metonymy', 'litotes', 'hyperbole'],
+            answer: 1,
+            explain: 'Metonymy names the UK government by its associated location.',
+          },
+          {
+            kind: 'order',
+            id: 'c2-mh-ex6',
+            tokens: ['one', 'could', 'arguably', 'say', 'the', 'plan', 'backfired'],
+            answer: 'one could arguably say the plan backfired',
+            explain: "Stacked hedges 'could' and 'arguably' make the claim cautious.",
           },
           {
             kind: 'dictation',
-            id: 'c2-mo-6',
-            text: 'Winning all three awards was, to put it mildly, no small achievement.',
-            explain: "Understatement (litotes): 'no small achievement' means a very great one.",
+            id: 'c2-mh-ex7',
+            text: "Well, that's just what we needed today, isn't it?",
+            explain:
+              'An ironic remark: the literal praise conveys the opposite, reinforced by the tag question.',
           },
         ],
       },
       {
         id: 'c2-self-repair-restructuring',
         level: 'C2',
-        title: 'Self-repair and restructuring strategies',
+        title: 'Self-Repair & Restructuring Strategies',
         summary:
-          'Fluent speakers correct, qualify and reframe mid-utterance gracefully, using set phrases to buy time, retract and clarify without losing the thread.',
+          'Fluent speakers do not produce flawless first drafts; they monitor, repair and restructure their speech in real time without losing the listener. This lesson covers reformulation, false starts, repair markers, hesitation and filler management, and elegant ways to recover and reframe mid-sentence.',
+        summaryEs:
+          'Los hablantes fluidos no producen primeros intentos impecables; supervisan, reparan y reestructuran su habla en tiempo real sin perder al oyente. Esta lección abarca la reformulación, los falsos comienzos, los marcadores de reparación, la gestión de la vacilación y las muletillas, y formas elegantes de recuperar y reencuadrar a mitad de oración.',
         sections: [
           {
-            heading: 'Repairing and reformulating',
-            body: 'Signal a correction smoothly with **or rather, or should I say, that is, what I mean is, let me rephrase that**. These let you replace a word or recast a whole clause while keeping the listener with you.',
+            heading: 'Reformulation and self-correction',
+            body: "When the first wording misfires, fluent speakers **reformulate** with a marker rather than starting over: 'or rather', 'or should I say', 'what I mean is', 'let me rephrase that', 'to put it another way'. To correct a factual slip mid-flow, use 'sorry, I meant...', 'that is to say...', or 'or, more precisely...'. The repair is signalled clearly so the listener updates smoothly, and the flow is preserved rather than broken.",
+            bodyEs:
+              "Cuando la primera formulación falla, los hablantes fluidos **reformulan** con un marcador en lugar de empezar de cero: 'or rather', 'or should I say', 'what I mean is', 'let me rephrase that', 'to put it another way'. Para corregir un desliz factual sobre la marcha, usa 'sorry, I meant...', 'that is to say...' o 'or, more precisely...'. La reparación se señala con claridad para que el oyente se actualice sin problemas, y se preserva el flujo en vez de romperlo.",
             examples: [
               {
-                en: "It's expensive — or rather, it's beyond our budget.",
-                es: 'Es caro — o más bien, está fuera de nuestro presupuesto.',
+                en: 'It costs around fifty — or rather, fifty-five — euros.',
+                es: 'Cuesta unos cincuenta, o mejor dicho, cincuenta y cinco euros.',
               },
               {
-                en: "He's confident, or should I say overconfident.",
-                es: 'Es seguro de sí mismo, o debería decir demasiado confiado.',
+                en: "He's the director — well, the acting director, to be precise.",
+                es: 'Es el director, bueno, el director en funciones, para ser exactos.',
               },
             ],
           },
           {
-            heading: 'Retracting and qualifying',
-            body: 'Soften or walk back a claim with **actually, then again, on second thoughts, having said that, to be fair**. They show you are reconsidering in real time, which sounds thoughtful rather than indecisive.',
+            heading: 'Managing hesitation and buying time',
+            body: "To think without surrendering the floor, deploy **fillers and hedges** strategically: 'well', 'I mean', 'you know', 'sort of', 'kind of', 'how shall I put it', 'the thing is'. Longer **time-buying phrases** ('that's a good question', 'let me think for a moment', 'where do I begin') hold the turn during planning. Used sparingly these sound natural and thoughtful; overused they sound vague, so vary them and keep them short.",
+            bodyEs:
+              "Para pensar sin ceder el turno, despliega **muletillas y atenuadores** de forma estratégica: 'well', 'I mean', 'you know', 'sort of', 'kind of', 'how shall I put it', 'the thing is'. Las **frases para ganar tiempo** más largas ('that's a good question', 'let me think for a moment', 'where do I begin') retienen el turno mientras planificas. Usadas con moderación suenan naturales y reflexivas; abusadas suenan vagas, así que varíalas y mantenlas breves.",
             examples: [
               {
-                en: "I'll take the train — actually, on second thoughts, I'll drive.",
-                es: 'Tomaré el tren — bueno, pensándolo mejor, conduciré.',
+                en: "That's, how shall I put it, an unconventional approach.",
+                es: 'Eso es, cómo decirlo, un enfoque poco convencional.',
               },
               {
-                en: 'It was a failure; to be fair, though, the timing was awful.',
-                es: 'Fue un fracaso; siendo justos, eso sí, el momento fue pésimo.',
+                en: 'The thing is, we simply ran out of time.',
+                es: 'La cosa es que sencillamente nos quedamos sin tiempo.',
               },
             ],
           },
           {
-            heading: 'Buying time and holding the floor',
-            body: 'Use **fillers and stallers** to plan without yielding your turn: *well, I mean, the thing is, how shall I put it, let me think.* Combined with vague language (*sort of, kind of, more or less*) they keep speech natural while you organise your thoughts.',
+            heading: 'Restructuring a sentence in flight',
+            body: "Sometimes a sentence heads into a grammatical dead end; the elegant fix is to **abandon and restart the structure** smoothly. Use an **anacoluthon repair** ('The reason we failed — well, what really happened was...') or recast a clause: 'If they had — no, let me start again — the decision was never theirs to make.' Skilled speakers also **embed** an afterthought ('the report, and this is crucial, was never finished') rather than tacking on a clumsy correction.",
+            bodyEs:
+              "A veces una oración se mete en un callejón sin salida gramatical; la solución elegante es **abandonar y reiniciar la estructura** con suavidad. Usa una **reparación de anacoluto** ('The reason we failed — well, what really happened was...') o reformula una cláusula: 'If they had — no, let me start again — the decision was never theirs to make.' Los hablantes hábiles también **incrustan** una idea posterior ('the report, and this is crucial, was never finished') en lugar de añadir una corrección torpe.",
             examples: [
               {
-                en: "The thing is, how shall I put it, we simply can't afford it.",
-                es: 'La cosa es, cómo lo diría, sencillamente no podemos permitírnoslo.',
+                en: 'We need to — actually, let me back up a second.',
+                es: 'Necesitamos... en realidad, déjame retroceder un momento.',
               },
               {
-                en: "It's, well, more or less what we expected.",
-                es: 'Es, bueno, más o menos lo que esperábamos.',
+                en: "The plan, and I can't stress this enough, depends on funding.",
+                es: 'El plan, y no puedo insistir lo suficiente, depende de la financiación.',
               },
             ],
           },
         ],
         tables: [
           {
-            caption: 'Self-repair toolkit',
-            columns: ['Function', 'Phrases'],
+            caption: 'Repair and restructuring markers',
+            columns: ['Function', 'Markers', 'Example'],
             rows: [
-              ['Reformulate', 'or rather, that is to say, what I mean is'],
-              ['Retract/reconsider', 'on second thoughts, actually, then again'],
-              ['Concede then qualify', 'to be fair, having said that, mind you'],
-              ['Stall / hold floor', 'the thing is, how shall I put it, let me see'],
+              [
+                'Reformulate',
+                'or rather, what I mean is, that is to say',
+                "It's cheap — or rather, affordable.",
+              ],
+              [
+                'Correct a slip',
+                'sorry, I meant; more precisely',
+                'On Monday — sorry, I meant Tuesday.',
+              ],
+              ['Buy time', 'well, the thing is, let me think', 'Let me think for a moment.'],
+              [
+                'Restart / recast',
+                'let me start again, let me back up',
+                'Let me back up a second.',
+              ],
+              [
+                'Embed emphasis',
+                'and this is crucial, mind you',
+                'It failed, and this is key, quietly.',
+              ],
             ],
           },
         ],
         examples: [
           {
-            en: "She's reliable — well, usually reliable, let's say.",
-            es: 'Es fiable — bueno, normalmente fiable, digamos.',
+            en: 'She arrived on the tenth — no, sorry, the twelfth.',
+            es: 'Llegó el día diez... no, perdón, el doce.',
           },
           {
-            en: 'We should sell now. Then again, prices might recover.',
-            es: 'Deberíamos vender ahora. Aunque, pensándolo bien, los precios podrían recuperarse.',
+            en: "What I'm trying to say is that timing is everything.",
+            es: 'Lo que intento decir es que el momento lo es todo.',
           },
           {
-            en: "What I'm trying to say is that the plan needs more time.",
-            es: 'Lo que intento decir es que el plan necesita más tiempo.',
+            en: "It's a bold move — or foolhardy, depending on your view.",
+            es: 'Es una jugada audaz, o temeraria, según se mire.',
           },
           {
-            en: 'It went badly — or, to put it more diplomatically, it could have gone better.',
-            es: 'Salió mal — o, para decirlo con más diplomacia, pudo haber salido mejor.',
+            en: "Let me rephrase that so it's clearer.",
+            es: 'Déjame reformular eso para que quede más claro.',
           },
           {
-            en: 'I disagree. Having said that, you do raise a fair point.',
-            es: 'No estoy de acuerdo. Dicho esto, planteas un buen punto.',
+            en: "The issue, and I'll come back to this, is trust.",
+            es: 'El problema, y volveré sobre esto, es la confianza.',
+          },
+          {
+            en: "Where do I begin? Well, it's complicated.",
+            es: '¿Por dónde empiezo? Bueno, es complicado.',
           },
         ],
         pitfalls: [
           {
-            wrong: 'On second thought I will to change my answer.',
-            right: "On second thoughts, I'll change my answer.",
-            why: "British English says **on second thoughts** (plural) and the modal 'will' takes a bare infinitive.",
-            esNote: "La expresión fija es 'on second thoughts'; y 'will' va sin 'to'.",
+            wrong: 'I want to say, eh, that, eh, the plan, eh, is good.',
+            right: 'What I want to say is that the plan is good.',
+            why: 'Strings of meaningless fillers signal a stall; a single clear reformulation marker is far more fluent.',
+            esNote: 'Evita amontonar muletillas; un solo marcador claro es más fluido.',
           },
           {
-            wrong: "What I mean to say is that, what I mean is, it's complicated.",
-            right: "What I mean is, it's complicated.",
-            why: 'Pick one reformulation phrase; stacking several sounds disorganised, not fluent.',
-            esNote: 'No conviene encadenar varias muletillas de reformulación; basta una.',
+            wrong: 'It is cheap, I mean it, the price is low.',
+            right: "It's cheap — or rather, it's good value for the price.",
+            why: "'I mean it' asserts sincerity; to reformulate, use 'I mean' or 'or rather' to introduce the corrected wording.",
+            esNote: "'I mean it' = 'lo digo en serio'; para reformular usa 'I mean' / 'or rather'.",
           },
           {
-            wrong: 'He is, how to say, a little difficult.',
-            right: 'He is, how shall I put it, a little difficult.',
-            why: "The idiomatic staller is **how shall I put it**, not a literal 'how to say'.",
-            esNote: "El equivalente de 'cómo decirlo' es 'how shall I put it', no 'how to say'.",
+            wrong: 'Let me say it again from the start the whole sentence.',
+            right: 'Let me start again.',
+            why: 'A short, idiomatic restart marker is clearer than a literal, overloaded one.',
+            esNote: "'Let me start again' es la fórmula natural para reiniciar.",
           },
         ],
         exercises: [
           {
             kind: 'mcq',
-            id: 'c2-sr-1',
-            prompt:
-              "Choose the natural reformulation marker: 'He's thrifty — ___ , some would call him mean.'",
-            options: ['by the way', 'or rather', 'in case', 'as long as'],
+            id: 'c2-sr-ex1',
+            prompt: 'Which best introduces a reformulation of what you just said?',
+            options: ['I mean it.', 'Or rather,', 'Full stop.', 'As usual,'],
             answer: 1,
-            explain: "'Or rather' introduces a self-correction or sharper rephrasing.",
+            explain:
+              "'Or rather' signals you are replacing the previous wording with a better one.",
           },
           {
             kind: 'cloze',
-            id: 'c2-sr-2',
-            before: "I'll fly there. On second ",
-            after: ", I'll take the train instead.",
-            answers: ['thoughts', 'thought'],
-            explain:
-              "'On second thoughts' (BrE) / 'on second thought' (AmE) signals reconsideration.",
-          },
-          {
-            kind: 'order',
-            id: 'c2-sr-3',
-            tokens: ['What', "I'm", 'trying', 'to', 'say', 'is', 'that', "it's", 'risky'],
-            answer: "What I'm trying to say is that it's risky",
-            explain: 'A reformulation frame that restructures the message clearly.',
+            id: 'c2-sr-ex2',
+            before: "He's the manager — well, the ",
+            after: ' manager, to be precise.',
+            answers: ['acting', 'deputy', 'assistant', 'interim'],
+            explain: 'An embedded self-correction refines the first, looser label.',
           },
           {
             kind: 'correct',
-            id: 'c2-sr-4',
-            wrong: 'He is, how to say it, a bit unreliable.',
+            id: 'c2-sr-ex3',
+            wrong: 'The meeting is on Monday, sorry I want to say Tuesday.',
             answers: [
-              'He is, how shall I put it, a bit unreliable.',
-              'He is, how can I put it, a bit unreliable.',
+              'The meeting is on Monday — sorry, I mean Tuesday.',
+              'The meeting is on Monday, sorry, I mean Tuesday.',
             ],
-            explain: "The idiomatic staller is 'how shall I put it', not a literal translation.",
+            explain: "Use 'I mean', not 'I want to say', to correct a factual slip.",
           },
           {
             kind: 'translate',
-            id: 'c2-sr-5',
-            es: 'No estoy de acuerdo. Dicho esto, tienes razón en una cosa.',
+            id: 'c2-sr-ex4',
+            es: 'Lo que intento decir es que necesitamos más tiempo.',
             answers: [
-              "I disagree. Having said that, you're right about one thing.",
-              "I disagree. That said, you're right about one thing.",
+              "What I'm trying to say is that we need more time.",
+              'What I am trying to say is that we need more time.',
+              "What I'm trying to say is we need more time.",
             ],
-            explain: "Concede-then-qualify with 'having said that' / 'that said'.",
+            explain: "'What I'm trying to say is...' reframes and clarifies the message.",
+          },
+          {
+            kind: 'order',
+            id: 'c2-sr-ex5',
+            tokens: ['let', 'me', 'rephrase', 'that', 'for', 'clarity'],
+            answer: 'let me rephrase that for clarity',
+            explain: 'A clear restart marker that keeps the listener on track.',
+          },
+          {
+            kind: 'mcq',
+            id: 'c2-sr-ex6',
+            prompt: 'Which phrase elegantly buys thinking time?',
+            options: [
+              "That's a good question — let me think for a moment.",
+              'Eh, eh, eh.',
+              "I don't know anything.",
+              'Stop asking me.',
+            ],
+            answer: 0,
+            explain: "'That's a good question, let me think' holds the turn while you plan.",
           },
           {
             kind: 'dictation',
-            id: 'c2-sr-6',
-            text: 'It went well — or, to be fair, better than we had any right to expect.',
-            explain: "Reformulation with 'to be fair' qualifying the initial claim.",
+            id: 'c2-sr-ex7',
+            text: "The proposal is cheap — or rather, it's remarkably good value.",
+            explain: "A dash plus 'or rather' introduces a smoother, upgraded reformulation.",
           },
         ],
       },

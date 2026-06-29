@@ -106,36 +106,31 @@ pnpm dev        # http://localhost:5173
 ## Deploying
 
 The app is a **static site** (`pnpm build` → `dist/`) hosted on **Cloudflare Pages** (free,
-commercial-friendly, _unlimited_ bandwidth — ideal for the audio files). Publishing is wired into
-GitHub Actions (`deploy.yml`): every push to `main` builds and deploys.
+commercial-friendly, _unlimited_ bandwidth — ideal for the audio files) via Cloudflare's
+**Connect to Git** integration: it builds and deploys on every push to `main`, with preview URLs for
+branches/PRs. No deploy secrets in GitHub.
 
-**One-time setup** — add these in GitHub → **Settings → Secrets and variables → Actions**:
+Setup (Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → pick this repo):
 
-| Secret                   | Required? | Where to get it                                                         |
-| ------------------------ | --------- | ----------------------------------------------------------------------- |
-| `CLOUDFLARE_API_TOKEN`   | yes       | Cloudflare → My Profile → API Tokens → _Edit Cloudflare Pages_ template |
-| `CLOUDFLARE_ACCOUNT_ID`  | yes       | Cloudflare → Workers & Pages → right sidebar **Account ID**             |
-| `VITE_SUPABASE_URL`      | optional  | Supabase → Project Settings → API → Project URL (enables sync)          |
-| `VITE_SUPABASE_ANON_KEY` | optional  | Supabase → Project Settings → API → anon `public` key                   |
+- **Build command:** `pnpm build`
+- **Build output directory:** `dist`
+- **Environment variables** (optional — enables cross-device sync): add `VITE_SUPABASE_URL` and
+  `VITE_SUPABASE_ANON_KEY` from Supabase → Project Settings → API.
 
-The first deploy auto-creates a Pages project named `english` (change `--project-name` in
-`deploy.yml` if you prefer). SPA routing is handled by `public/_redirects`. No backend or rewrite to
-Next.js is needed — the app is fully static and talks to Supabase from the browser.
-
-> Prefer Cloudflare's dashboard **"Connect to Git"** instead? You can — then delete `deploy.yml` (so
-> it doesn't double-deploy) and set the build command `pnpm build`, output `dist`, and the env vars
-> in the Cloudflare dashboard. `vercel.json` is also included if you'd rather use Vercel (note its
-> free Hobby tier is non-commercial and bandwidth-capped).
+Node is pinned by `.node-version`, and SPA routing by `public/_redirects`. No backend or rewrite to
+Next.js is needed — the app is fully static and talks to Supabase from the browser. (`vercel.json` is
+also included if you'd ever prefer Vercel.)
 
 ## CI/CD
 
-Three GitHub Actions are included (`.github/workflows/`):
+GitHub Actions (`.github/workflows/`):
 
 - **`ci.yml`** — `pnpm lint` + `pnpm build` (type-check) on every pull request.
-- **`deploy.yml`** — builds and publishes to Cloudflare Pages on push to `main`.
 - **`generate-audio.yml`** — when spoken content changes (or via manual “Run workflow”), regenerates
   any missing audio clips and commits them back. Audio is normally generated locally with
   `pnpm generate:audio`; this is a safety net.
+
+Deployment itself is handled by Cloudflare Pages' Git integration (above).
 
 ## Project structure
 

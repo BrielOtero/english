@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { speechSupported } from '../lib/speech';
 import { playPhrase } from '../lib/audio';
 import { useStore } from '../store';
 
@@ -28,8 +27,6 @@ export function Speaker({
 
   // Make sure we stop pulsing if the component unmounts mid-utterance.
   useEffect(() => () => setPlaying(false), []);
-
-  if (!speechSupported()) return null;
 
   return (
     <button

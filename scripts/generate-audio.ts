@@ -9,6 +9,7 @@
 //
 import { mkdirSync, existsSync, createWriteStream, writeFileSync } from 'node:fs';
 import { MsEdgeTTS, OUTPUT_FORMAT } from 'msedge-tts';
+import type { Exercise } from '../src/types.ts';
 import { hashText } from '../src/lib/audio-hash.ts';
 import {
   GRAMMAR,
@@ -21,11 +22,28 @@ import {
   WRITING,
 } from '../src/content/index.ts';
 
-const VOICE = 'en-US-AvaMultilingualNeural';
+const VOICE = 'en-US-AndrewMultilingualNeural';
 const FORMAT = OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3;
 const OUT_DIR = 'public/audio';
 const MANIFEST = 'src/content/audio-manifest.ts';
 const POOL = 8;
+
+/** The spoken "correct answer" of an exercise — must match exercise.tsx exactly. */
+function modelAnswer(ex: Exercise): string {
+  switch (ex.kind) {
+    case 'mcq':
+      return ex.options[ex.answer];
+    case 'cloze':
+      return `${ex.before} ${ex.answers[0]} ${ex.after}`.replace(/\s+/g, ' ').trim();
+    case 'correct':
+    case 'translate':
+      return ex.answers[0];
+    case 'order':
+      return ex.answer;
+    case 'dictation':
+      return ex.text;
+  }
+}
 
 /** Collect every English string that a Listen button anywhere in the app can speak. */
 function collectPhrases(): string[] {
@@ -38,7 +56,8 @@ function collectPhrases(): string[] {
     for (const lesson of unit.lessons) {
       for (const ex of lesson.examples) add(ex.en);
       for (const sec of lesson.sections) for (const ex of sec.examples ?? []) add(ex.en);
-      for (const ex of lesson.exercises) if (ex.kind === 'dictation') add(ex.text);
+      // The spoken "Answer: …" reveal (and dictation text) for every exercise.
+      for (const ex of lesson.exercises) add(modelAnswer(ex));
     }
   }
   for (const s of VOCAB_SETS) for (const item of s.items) add(item.word);
@@ -52,7 +71,10 @@ function collectPhrases(): string[] {
   for (const p of PITFALLS) add(p.right);
   for (const pv of PHRASAL) add(pv.verb);
   for (const idiom of IDIOMS) add(idiom.phrase);
-  for (const r of READINGS) for (const para of r.paragraphs) add(para);
+  for (const r of READINGS) {
+    for (const para of r.paragraphs) add(para);
+    for (const q of r.questions) add(modelAnswer(q));
+  }
   for (const w of WRITING) for (const ph of w.usefulPhrases) add(ph.en);
 
   return [...set];

@@ -1,9 +1,5 @@
-import { useEffect, useState } from 'react';
 import { useStore } from '../store';
-import { englishVoices, onVoicesChanged, speak, speechSupported } from '../lib/speech';
 import { Icon } from './icons';
-
-const PREVIEW = 'Hello! This is how your English sentences will sound.';
 
 const SPEEDS: { label: string; rate: number }[] = [
   { label: 'Slow', rate: 0.7 },
@@ -12,22 +8,12 @@ const SPEEDS: { label: string; rate: number }[] = [
 ];
 
 /**
- * An "Audio" dropdown to choose the TTS voice (the biggest lever on quality),
- * preview it, and set the speaking speed. Voice quality varies a lot between the
- * voices a system ships, so we list them best-first and let the learner pick.
+ * The "Audio" dropdown. Course audio plays from pre-generated natural-voice clips, so
+ * the only thing worth tuning is playback speed (which also applies to the clips).
  */
 export function VoiceSettings() {
-  const voiceURI = useStore((s) => s.voiceURI);
-  const setVoiceURI = useStore((s) => s.setVoiceURI);
   const rate = useStore((s) => s.voiceRate);
   const setVoiceRate = useStore((s) => s.setVoiceRate);
-
-  // Seeded from whatever is loaded at first render; the subscription fills in
-  // voices that the browser loads asynchronously afterwards.
-  const [voices, setVoices] = useState(englishVoices);
-  useEffect(() => onVoicesChanged(() => setVoices(englishVoices())), []);
-
-  if (!speechSupported()) return null;
 
   return (
     <details className="relative">
@@ -36,29 +22,8 @@ export function VoiceSettings() {
         Audio
       </summary>
 
-      <div className="absolute right-0 z-30 mt-2 w-72 rounded-xl border border-rule-soft bg-paper p-4 shadow-xl">
-        <p className="mb-3 text-[11px] leading-snug text-ink-soft">
-          Lessons, words and readings use a built-in natural voice (pre-recorded), so they sound the
-          same in every browser. The voice below is the <span className="text-ink">fallback</span>{' '}
-          used for text you type (e.g. dictation answers).
-        </p>
+      <div className="absolute right-0 z-30 mt-2 w-56 rounded-xl border border-rule-soft bg-paper p-4 shadow-xl">
         <label className="mb-1.5 block font-mono text-[10px] tracking-[0.15em] text-ink-mute uppercase">
-          Fallback voice
-        </label>
-        <select
-          value={voiceURI ?? ''}
-          onChange={(e) => setVoiceURI(e.target.value || null)}
-          className="w-full rounded-lg border border-rule-soft bg-bg px-2.5 py-2 text-[13px] text-ink focus:border-accent focus:outline-none"
-        >
-          <option value="">Auto — best available</option>
-          {voices.map((v) => (
-            <option key={v.voiceURI} value={v.voiceURI}>
-              {v.name} ({v.lang})
-            </option>
-          ))}
-        </select>
-
-        <label className="mt-4 mb-1.5 block font-mono text-[10px] tracking-[0.15em] text-ink-mute uppercase">
           Speed
         </label>
         <div className="flex gap-2">
@@ -79,31 +44,8 @@ export function VoiceSettings() {
             );
           })}
         </div>
-
-        <button
-          onClick={() => speak(PREVIEW, { rate, voiceURI })}
-          className="mt-4 flex w-full items-center justify-center gap-1.5 rounded-lg bg-accent px-3 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
-        >
-          <Icon name="play" className="h-3 w-3" />
-          Preview voice
-        </button>
-
         <p className="mt-3 text-[11px] leading-snug text-ink-mute">
-          {voices.length <= 1
-            ? 'Only one English voice is installed. Add more for better quality (see below).'
-            : 'Try a few — quality varies. In Chrome, “Google US English” usually sounds best.'}
-        </p>
-        <p className="mt-1.5 text-[11px] leading-snug text-ink-mute">
-          Best macOS voices: System Settings → Accessibility →{' '}
-          <span className="text-ink-soft">Read &amp; Speak</span> (older macOS: “Spoken Content”) →
-          System Voice → Manage Voices → download an <span className="text-ink-soft">Enhanced</span>{' '}
-          or <span className="text-ink-soft">Premium</span> English voice (e.g. “Ava (Premium)”).
-          Then reload this page.
-        </p>
-        <p className="mt-1.5 text-[11px] leading-snug text-ink-mute">
-          In Chrome, downloaded Apple voices may not all show — use “Google US English”, or open
-          this page in <span className="text-ink-soft">Safari</span> to see the Premium voices. Siri
-          voices aren’t available to browsers.
+          Sentences use a built-in natural voice, so they sound the same in every browser.
         </p>
       </div>
     </details>

@@ -1,0 +1,11 @@
+{
+  // Deploys the built static site (dist/) to Cloudflare as a static-assets Worker.
+  // `npx wrangler deploy` (Cloudflare's build command) reads this. SPA routing is
+  // handled by not_found_handling so client routes / deep links serve index.html.
+  "name": "english",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

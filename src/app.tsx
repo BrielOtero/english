@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { TRACKS, TOTAL_LESSONS } from './content';
 import { Icon, type IconName } from './components/icons';
+import { VoiceSettings } from './components/voice-settings';
+import { setPreferredVoice } from './lib/speech';
 import { useStore } from './store';
 import { Sidebar } from './components/sidebar';
 import { Roadmap } from './components/roadmap';
@@ -41,8 +43,7 @@ export default function App() {
   const toggleTheme = useStore((s) => s.toggleTheme);
   const showSpanish = useStore((s) => s.showSpanish);
   const toggleSpanish = useStore((s) => s.toggleSpanish);
-  const voiceRate = useStore((s) => s.voiceRate);
-  const setVoiceRate = useStore((s) => s.setVoiceRate);
+  const voiceURI = useStore((s) => s.voiceURI);
   const completed = useStore((s) => s.completed);
 
   const [activeId, setActiveId] = useState(getInitialTab);
@@ -50,6 +51,11 @@ export default function App() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
+
+  // Keep the speech module's preferred voice in sync with the saved choice.
+  useEffect(() => {
+    setPreferredVoice(voiceURI);
+  }, [voiceURI]);
 
   const selectTab = (id: string) => {
     setActiveId(id);
@@ -62,7 +68,6 @@ export default function App() {
 
   const track = TRACKS.find((t) => t.id === activeId) ?? TRACKS[0];
   const completedCount = Object.keys(completed).length;
-  const slow = voiceRate < 0.85;
 
   return (
     <div className="min-h-screen bg-bg text-ink">
@@ -102,18 +107,7 @@ export default function App() {
             >
               ES {showSpanish ? 'on' : 'off'}
             </button>
-            <button
-              onClick={() => setVoiceRate(slow ? 0.95 : 0.7)}
-              aria-pressed={slow}
-              title="Audio speed"
-              className={`rounded-full border px-3 py-2 font-mono text-[11px] tracking-wide uppercase transition-colors ${
-                slow
-                  ? 'border-accent bg-accent text-paper'
-                  : 'border-rule-soft bg-paper text-ink-soft hover:text-ink'
-              }`}
-            >
-              {slow ? 'slow' : 'normal'}
-            </button>
+            <VoiceSettings />
             <button
               onClick={toggleTheme}
               title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}

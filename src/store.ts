@@ -40,6 +40,8 @@ interface FluentState {
   showSpanish: boolean;
   /** TTS playback rate (0.6 slow .. 1 normal). */
   voiceRate: number;
+  /** Chosen TTS voice (voiceURI), or null to auto-pick the best available. */
+  voiceURI: string | null;
   /** Transient clock used to compute due-ness; not persisted. */
   now: number;
 
@@ -50,6 +52,7 @@ interface FluentState {
   toggleTheme: () => void;
   toggleSpanish: () => void;
   setVoiceRate: (rate: number) => void;
+  setVoiceURI: (voiceURI: string | null) => void;
   refreshNow: () => void;
 }
 
@@ -61,6 +64,7 @@ export const useStore = create<FluentState>()(
       theme: 'light',
       showSpanish: true,
       voiceRate: 0.95,
+      voiceURI: null,
       now: Date.now(),
 
       grade: (cardId, grade) =>
@@ -89,6 +93,7 @@ export const useStore = create<FluentState>()(
       toggleTheme: () => set((s) => ({ theme: s.theme === 'light' ? 'dark' : 'light' })),
       toggleSpanish: () => set((s) => ({ showSpanish: !s.showSpanish })),
       setVoiceRate: (rate) => set({ voiceRate: rate }),
+      setVoiceURI: (voiceURI) => set({ voiceURI }),
       refreshNow: () => set({ now: Date.now() }),
     }),
     {
@@ -101,6 +106,7 @@ export const useStore = create<FluentState>()(
         theme: s.theme,
         showSpanish: s.showSpanish,
         voiceRate: s.voiceRate,
+        voiceURI: s.voiceURI,
       }),
     },
   ),

@@ -15,15 +15,14 @@ const SIZES = {
 export function Speaker({
   text,
   size = 'md',
-  lang = 'en-US',
   label,
 }: {
   text: string;
   size?: keyof typeof SIZES;
-  lang?: string;
   label?: string;
 }) {
   const rate = useStore((s) => s.voiceRate);
+  const voiceURI = useStore((s) => s.voiceURI);
   const [playing, setPlaying] = useState(false);
 
   // Make sure we stop pulsing if the component unmounts mid-utterance.
@@ -37,7 +36,7 @@ export function Speaker({
       onClick={(e) => {
         e.stopPropagation();
         setPlaying(true);
-        speak(text, { rate, lang, onEnd: () => setPlaying(false) });
+        speak(text, { rate, voiceURI, onEnd: () => setPlaying(false) });
       }}
       aria-label={label ?? `Listen: ${text}`}
       title="Listen"

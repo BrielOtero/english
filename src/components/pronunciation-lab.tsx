@@ -10,6 +10,7 @@ import { Icon, EsTag } from './icons';
 /** A 2-alternative forced-choice drill: hear a word, decide which one it was. */
 function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
   const rate = useStore((s) => s.voiceRate);
+  const voiceURI = useStore((s) => s.voiceURI);
   const [target, setTarget] = useState<'a' | 'b' | null>(null);
   const [result, setResult] = useState<'right' | 'wrong' | null>(null);
 
@@ -17,7 +18,7 @@ function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
     const pick = Math.random() < 0.5 ? 'a' : 'b';
     setTarget(pick);
     setResult(null);
-    speak(pick === 'a' ? pair.a : pair.b, { rate });
+    speak(pick === 'a' ? pair.a : pair.b, { rate, voiceURI });
   }
 
   function guess(choice: 'a' | 'b') {

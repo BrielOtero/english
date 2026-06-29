@@ -9,6 +9,7 @@ import { Icon } from './icons';
 
 export function ReadingView() {
   const rate = useStore((s) => s.voiceRate);
+  const voiceURI = useStore((s) => s.voiceURI);
   const showSpanish = useStore((s) => s.showSpanish);
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -27,7 +28,7 @@ export function ReadingView() {
         <div className="mb-4 flex items-center gap-3">
           <LevelBadge level={open.level} />
           <button
-            onClick={() => speak(open.paragraphs.join(' '), { rate })}
+            onClick={() => speak(open.paragraphs.join(' '), { rate, voiceURI })}
             className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
           >
             <Icon name="play" className="h-2.5 w-2.5" /> Listen to all

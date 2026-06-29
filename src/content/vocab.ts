@@ -1,0 +1,103 @@
+import type { VocabSet } from '../types';
+
+// Frequency-ordered, theme-organized vocabulary taught as words + collocations in
+// context. Seeded here; expanded by the content pipeline. Each item has a Spanish
+// gloss, IPA, an example sentence, and common word partners.
+
+export const VOCAB_SETS: VocabSet[] = [
+  {
+    id: 'vocab-family',
+    title: 'Family & relationships',
+    theme: 'Family & relationships',
+    level: 'A1',
+    blurb: 'The people closest to you — and how to talk about them.',
+    items: [
+      {
+        id: 'v-mother',
+        word: 'mother',
+        pos: 'noun',
+        ipa: '/ˈmʌðər/',
+        meaning: 'a female parent',
+        es: 'madre',
+        example: 'My mother cooks dinner every night.',
+        level: 'A1',
+        collocations: ['single mother', 'mother tongue'],
+      },
+      {
+        id: 'v-brother',
+        word: 'brother',
+        pos: 'noun',
+        ipa: '/ˈbrʌðər/',
+        meaning: 'a male sibling',
+        es: 'hermano',
+        example: 'I have one brother and two sisters.',
+        level: 'A1',
+        collocations: ['older brother', 'little brother'],
+      },
+      {
+        id: 'v-couple',
+        word: 'couple',
+        pos: 'noun',
+        ipa: '/ˈkʌpəl/',
+        meaning: 'two people in a romantic relationship',
+        es: 'pareja',
+        example: 'They are a lovely couple.',
+        level: 'A2',
+        collocations: ['a married couple', 'a couple of'],
+      },
+      {
+        id: 'v-raise',
+        word: 'raise',
+        pos: 'verb',
+        ipa: '/reɪz/',
+        meaning: 'to care for a child until they are grown',
+        es: 'criar',
+        example: 'She raised three children on her own.',
+        level: 'B1',
+        collocations: ['raise a family', 'raise children'],
+      },
+    ],
+  },
+  {
+    id: 'vocab-emotions',
+    title: 'Emotions & feelings',
+    theme: 'Emotions & feelings',
+    level: 'A2',
+    blurb: 'Words to say how you really feel — beyond "good" and "bad".',
+    items: [
+      {
+        id: 'v-excited',
+        word: 'excited',
+        pos: 'adjective',
+        ipa: '/ɪkˈsaɪtɪd/',
+        meaning: 'very happy and enthusiastic about something',
+        es: 'emocionado / ilusionado',
+        example: "I'm so excited about the trip!",
+        level: 'A2',
+        collocations: ['excited about', 'really excited'],
+      },
+      {
+        id: 'v-worried',
+        word: 'worried',
+        pos: 'adjective',
+        ipa: '/ˈwʌrid/',
+        meaning: 'anxious or troubled about something',
+        es: 'preocupado',
+        example: "She's worried about the exam results.",
+        level: 'A2',
+        collocations: ['worried about', 'deeply worried'],
+      },
+      {
+        id: 'v-overwhelmed',
+        word: 'overwhelmed',
+        pos: 'adjective',
+        ipa: '/ˌəʊvərˈwelmd/',
+        meaning: 'feeling unable to cope because there is too much to deal with',
+        es: 'abrumado',
+        example: 'I felt overwhelmed by all the work.',
+        level: 'B2',
+        collocations: ['overwhelmed by', 'completely overwhelmed'],
+      },
+    ],
+  },
+];

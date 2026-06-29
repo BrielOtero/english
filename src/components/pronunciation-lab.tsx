@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { MinimalPair, SoundLesson } from '../types';
 import { SOUNDS } from '../content';
-import { speak } from '../lib/speech';
+import { playPhrase } from '../lib/audio';
 import { useStore } from '../store';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
@@ -18,7 +18,7 @@ function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
     const pick = Math.random() < 0.5 ? 'a' : 'b';
     setTarget(pick);
     setResult(null);
-    speak(pick === 'a' ? pair.a : pair.b, { rate, voiceURI });
+    playPhrase(pick === 'a' ? pair.a : pair.b, { rate, voiceURI });
   }
 
   function guess(choice: 'a' | 'b') {

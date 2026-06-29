@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { speak, speechSupported } from '../lib/speech';
+import { speechSupported } from '../lib/speech';
+import { playPhrase } from '../lib/audio';
 import { useStore } from '../store';
 
 const SIZES = {
@@ -36,7 +37,7 @@ export function Speaker({
       onClick={(e) => {
         e.stopPropagation();
         setPlaying(true);
-        speak(text, { rate, voiceURI, onEnd: () => setPlaying(false) });
+        playPhrase(text, { rate, voiceURI, onEnd: () => setPlaying(false) });
       }}
       aria-label={label ?? `Listen: ${text}`}
       title="Listen"

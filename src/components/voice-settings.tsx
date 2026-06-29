@@ -37,8 +37,13 @@ export function VoiceSettings() {
       </summary>
 
       <div className="absolute right-0 z-30 mt-2 w-72 rounded-xl border border-rule-soft bg-paper p-4 shadow-xl">
+        <p className="mb-3 text-[11px] leading-snug text-ink-soft">
+          Lessons, words and readings use a built-in natural voice (pre-recorded), so they sound the
+          same in every browser. The voice below is the <span className="text-ink">fallback</span>{' '}
+          used for text you type (e.g. dictation answers).
+        </p>
         <label className="mb-1.5 block font-mono text-[10px] tracking-[0.15em] text-ink-mute uppercase">
-          Voice
+          Fallback voice
         </label>
         <select
           value={voiceURI ?? ''}
@@ -96,9 +101,9 @@ export function VoiceSettings() {
           Then reload this page.
         </p>
         <p className="mt-1.5 text-[11px] leading-snug text-ink-mute">
-          In Chrome, downloaded Apple voices may not all show — use “Google US English”, or open this
-          page in <span className="text-ink-soft">Safari</span> to see the Premium voices. Siri voices
-          aren’t available to browsers.
+          In Chrome, downloaded Apple voices may not all show — use “Google US English”, or open
+          this page in <span className="text-ink-soft">Safari</span> to see the Premium voices. Siri
+          voices aren’t available to browsers.
         </p>
       </div>
     </details>

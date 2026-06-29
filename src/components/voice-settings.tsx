@@ -85,14 +85,18 @@ export function VoiceSettings() {
 
         <p className="mt-3 text-[11px] leading-snug text-ink-mute">
           {voices.length <= 1
-            ? 'Only one English voice is installed. Install more for better quality (see below).'
-            : 'Try a few — quality varies. Network voices (e.g. “Google US English”) usually sound best.'}
+            ? 'Only one English voice is installed. Add more for better quality (see below).'
+            : 'Try a few — quality varies. In Chrome, “Google US English” usually sounds best.'}
         </p>
         <p className="mt-1.5 text-[11px] leading-snug text-ink-mute">
-          Tip: in Chrome, pick a “Google” voice. On macOS, download an{' '}
-          <span className="text-ink-soft">Enhanced</span> or{' '}
-          <span className="text-ink-soft">Premium</span> English voice in System Settings →
-          Accessibility → Spoken Content → System Voice.
+          Best macOS voices: download an <span className="text-ink-soft">Enhanced</span> or{' '}
+          <span className="text-ink-soft">Premium</span> English voice (e.g. “Ava (Premium)”,
+          “Samantha (Enhanced)”) in System Settings → Accessibility → Spoken Content → System Voice →
+          Manage Voices, then reload this page.
+        </p>
+        <p className="mt-1.5 text-[11px] leading-snug text-ink-mute">
+          Note: Apple blocks <span className="text-ink-soft">Siri</span> voices from web browsers, so
+          they can’t appear here — use a Premium/Enhanced voice instead.
         </p>
       </div>
     </details>

@@ -36,7 +36,14 @@ pnpm build          # type-check (tsc -b) + production build to dist/
 pnpm preview        # serve the production build locally
 pnpm lint           # ESLint over the project
 pnpm format         # Prettier --write over the project
+pnpm generate:audio # (re)generate neural-voice audio clips for course content
 ```
+
+**Audio.** Listen buttons play pre-generated `.mp3` clips (Microsoft Edge TTS, `en-US-Ava­MultilingualNeural`,
+free, no key) keyed by a hash of the phrase (`lib/audio-hash.ts`), with the browser's speech
+synthesis as the fallback for dynamic text. After editing spoken content, run `pnpm generate:audio`
+to create the new clips and refresh `src/content/audio-manifest.ts`. The app stays a pure static
+site — no backend.
 
 `pnpm build` runs `tsc -b` first, so a green build means types are clean. Always run `pnpm lint` and
 `pnpm build` before considering a change done.
@@ -51,9 +58,14 @@ src/
   store.ts            # zustand store (SRS reviews, completed, theme, settings), persisted
   index.css           # Tailwind import + theme tokens (light/dark CSS variables)
   lib/
-    speech.ts         # Web Speech API wrapper (Listen buttons, dictation, minimal pairs)
+    audio.ts          # file-first playback: pre-generated clip if present, else speech.ts
+    speech.ts         # Web Speech API wrapper + voice ranking (fallback for dynamic text)
+    audio-hash.ts     # deterministic phrase→filename hash (shared with the generator)
     check.ts          # tolerant answer-checking for free-text exercises
     shuffle.ts        # Fisher-Yates shuffle
+scripts/
+  generate-audio.ts   # build-time: synthesize public/audio/<hash>.mp3 via Edge TTS + manifest
+public/audio/         # pre-generated neural-voice clips (committed; regenerate with pnpm generate:audio)
   content/
     index.ts          # nav catalog (TRACKS), derived stats, SRS deck builder
     grammar.ts        # GrammarUnit[]  (A1-C2 lessons)

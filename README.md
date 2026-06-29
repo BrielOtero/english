@@ -5,8 +5,8 @@ near-native **C1** — built especially for **Spanish speakers**. It pairs expli
 grammar lessons with the things that actually make a language stick: lots of audio input,
 self-checking practice, targeted correction of Spanish-speaker mistakes, and daily spaced repetition.
 
-It is a **client-only** app — no backend, no accounts. All speech is generated in the browser with
-the Web Speech API, and your progress is saved in `localStorage`.
+It is a **client-only** app — no backend, no accounts. Audio plays from pre-generated neural-voice
+clips (with a browser speech-synthesis fallback), and your progress is saved in `localStorage`.
 
 ## What's inside
 
@@ -27,8 +27,25 @@ the Web Speech API, and your progress is saved in `localStorage`.
 - **Review** — a spaced-repetition (Leitner) flashcard system that pulls from everything you learn
   and resurfaces each item right before you'd forget it.
 
-Every English sentence and word has a **Listen** button (🔊), and you can toggle Spanish glosses and
-slow audio from the header.
+Every English sentence and word has a **Listen** button, and you can toggle Spanish glosses and
+audio speed from the header.
+
+### Voice / audio
+
+To make pronunciation sound great and identical in every browser, the audio for all (static) course
+content is **pre-generated** into `public/audio/` with a high-quality free neural voice
+(Microsoft Edge TTS — `en-US-AvaMultilingualNeural`, no API key) and played as static `.mp3` files.
+Anything dynamic (text you type for a dictation answer, the voice preview) falls back to the
+browser's built-in speech synthesis, whose voice you can pick under **Audio** in the header.
+
+Regenerate the clips after editing content with:
+
+```bash
+pnpm generate:audio        # creates any missing clips + updates the manifest
+```
+
+This keeps the app a **pure static site** — no backend, no API keys — so it stays free and trivial to
+self-host.
 
 ## Why it's built this way
 
@@ -52,14 +69,15 @@ pnpm dev        # http://localhost:5173
 
 ## Scripts
 
-| Command             | What it does                                   |
-| ------------------- | ---------------------------------------------- |
-| `pnpm dev`          | Start the Vite dev server                      |
-| `pnpm build`        | Type-check (`tsc -b`) and build to `dist/`     |
-| `pnpm preview`      | Serve the production build locally             |
-| `pnpm lint`         | Run ESLint                                     |
-| `pnpm format`       | Format the project with Prettier               |
-| `pnpm format:check` | Check formatting without writing (CI-friendly) |
+| Command               | What it does                                             |
+| --------------------- | -------------------------------------------------------- |
+| `pnpm dev`            | Start the Vite dev server                                |
+| `pnpm build`          | Type-check (`tsc -b`) and build to `dist/`               |
+| `pnpm preview`        | Serve the production build locally                       |
+| `pnpm lint`           | Run ESLint                                               |
+| `pnpm format`         | Format the project with Prettier                         |
+| `pnpm format:check`   | Check formatting without writing (CI-friendly)           |
+| `pnpm generate:audio` | Pre-generate neural-voice audio clips for course content |
 
 ## Project structure
 

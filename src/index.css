@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+/* Theme tokens mapped to switchable CSS variables, so Tailwind utilities
+   (bg-bg, text-ink, ...) follow the data-theme attribute on <html>. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg-2);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-mute: var(--ink-mute);
+  --color-rule: var(--rule);
+  --color-rule-soft: var(--rule-soft);
+  --color-accent: var(--accent);
+  --color-accent2: var(--accent-2);
+  --color-gold: var(--gold);
+  --color-sage: var(--sage);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-code-bg: var(--code-bg);
+  --color-code-fg: var(--code-fg);
+  --color-code-mute: var(--code-mute);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Light theme (default) — warm ivory "language journal" with teal + coral. */
+:root {
+  --bg: #f1ede4;
+  --bg-2: #e8e2d5;
+  --paper: #fbf8f1;
+  --ink: #18272a;
+  --ink-soft: #45544f;
+  --ink-mute: #8a8f86;
+  --rule: #24332f;
+  --rule-soft: #d8d0bf;
+  --accent: #0f7d6b;
+  --accent-2: #d9663f;
+  --gold: #b88a2a;
+  --sage: #5a7d52;
+  --success: #2f7d4f;
+  --danger: #c0392b;
+  --code-bg: #14211f;
+  --code-fg: #e8ece6;
+  --code-mute: #8a9a90;
+}
+
+/* Dark theme */
+:root[data-theme='dark'] {
+  --bg: #0f1513;
+  --bg-2: #161d19;
+  --paper: #1d2521;
+  --ink: #e7ece6;
+  --ink-soft: #aeb8b0;
+  --ink-mute: #6f786f;
+  --rule: #5d6a62;
+  --rule-soft: #2c352f;
+  --accent: #2bb39a;
+  --accent-2: #e8845e;
+  --gold: #d6a644;
+  --sage: #7ba978;
+  --success: #4caf7a;
+  --danger: #e57368;
+  --code-bg: #0b110f;
+  --code-fg: #e7ece6;
+  --code-mute: #6a766e;
+}
+
+html,
+body {
+  background: var(--bg);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.005em;
+}
+
+/* Display / serif-italic helpers used for headings */
+.font-display {
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  font-variation-settings:
+    'SOFT' 50,
+    'WONK' 0;
+}
+.serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings: 'SOFT' 100;
+}
+
+/* Paper grain / ambient glow overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(circle at 18% 8%, rgba(15, 125, 107, 0.16), transparent 42%),
+    radial-gradient(circle at 82% 92%, rgba(217, 102, 63, 0.16), transparent 50%);
+}
+:root[data-theme='dark'] .grain {
+  opacity: 0.2;
+  mix-blend-mode: screen;
+  background-image:
+    radial-gradient(circle at 18% 8%, rgba(43, 179, 154, 0.2), transparent 42%),
+    radial-gradient(circle at 82% 92%, rgba(232, 132, 94, 0.16), transparent 50%);
+}
+
+/* Entrance animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fade-in 0.4s ease both;
+}
+
+/* Subtle pulse used by the speaker button while audio plays */
+@keyframes speaking {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+.speaking {
+  animation: speaking 0.8s ease-in-out infinite;
+}
+
+/* Custom scrollbar for horizontally scrolling rows */
+.soft-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.soft-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--ink) 18%, transparent);
+  border-radius: 999px;
+}

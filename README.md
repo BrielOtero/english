@@ -105,30 +105,34 @@ pnpm dev        # http://localhost:5173
 
 ## Deploying
 
-The app is a **static site** (`pnpm build` → `dist/`), so it deploys to any static host. Adding the
-optional Supabase env vars in the host's dashboard enables cross-device sync.
+The app is a **static site** (`pnpm build` → `dist/`) hosted on **Cloudflare Pages** (free,
+commercial-friendly, _unlimited_ bandwidth — ideal for the audio files). Publishing is wired into
+GitHub Actions (`deploy.yml`): every push to `main` builds and deploys.
 
-**Recommended — Cloudflare Pages** (free, commercial-friendly, _unlimited_ bandwidth — ideal for the
-audio files):
+**One-time setup** — add these in GitHub → **Settings → Secrets and variables → Actions**:
 
-1. Cloudflare dashboard → **Pages** → connect the repo.
-2. Build command `pnpm build`, output directory `dist`.
-3. (Optional) add `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` under the project's environment
-   variables. SPA routing is handled by `public/_redirects`.
+| Secret                   | Required? | Where to get it                                                         |
+| ------------------------ | --------- | ----------------------------------------------------------------------- |
+| `CLOUDFLARE_API_TOKEN`   | yes       | Cloudflare → My Profile → API Tokens → _Edit Cloudflare Pages_ template |
+| `CLOUDFLARE_ACCOUNT_ID`  | yes       | Cloudflare → Workers & Pages → right sidebar **Account ID**             |
+| `VITE_SUPABASE_URL`      | optional  | Supabase → Project Settings → API → Project URL (enables sync)          |
+| `VITE_SUPABASE_ANON_KEY` | optional  | Supabase → Project Settings → API → anon `public` key                   |
 
-**Vercel** also works — it auto-detects the Vite preset, and `vercel.json` handles SPA routing + long
-cache headers for `/audio`. Note Vercel's free **Hobby** tier is **non-commercial only** and caps
-bandwidth at 100 GB/month; use Pro for commercial use.
+The first deploy auto-creates a Pages project named `english` (change `--project-name` in
+`deploy.yml` if you prefer). SPA routing is handled by `public/_redirects`. No backend or rewrite to
+Next.js is needed — the app is fully static and talks to Supabase from the browser.
 
-Either host's **Git integration auto-deploys on push to `main`** — that's the continuous deployment,
-with no secrets to manage. No backend or rewrite to Next.js is needed: the app is fully static and
-talks to Supabase from the browser.
+> Prefer Cloudflare's dashboard **"Connect to Git"** instead? You can — then delete `deploy.yml` (so
+> it doesn't double-deploy) and set the build command `pnpm build`, output `dist`, and the env vars
+> in the Cloudflare dashboard. `vercel.json` is also included if you'd rather use Vercel (note its
+> free Hobby tier is non-commercial and bandwidth-capped).
 
 ## CI/CD
 
-Two GitHub Actions are included (`.github/workflows/`):
+Three GitHub Actions are included (`.github/workflows/`):
 
-- **`ci.yml`** — `pnpm lint` + `pnpm build` (type-check) on every push/PR to `main`.
+- **`ci.yml`** — `pnpm lint` + `pnpm build` (type-check) on every pull request.
+- **`deploy.yml`** — builds and publishes to Cloudflare Pages on push to `main`.
 - **`generate-audio.yml`** — when spoken content changes (or via manual “Run workflow”), regenerates
   any missing audio clips and commits them back. Audio is normally generated locally with
   `pnpm generate:audio`; this is a safety net.

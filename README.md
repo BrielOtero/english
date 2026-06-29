@@ -5,8 +5,9 @@ near-native **C1** — built especially for **Spanish speakers**. It pairs expli
 grammar lessons with the things that actually make a language stick: lots of audio input,
 self-checking practice, targeted correction of Spanish-speaker mistakes, and daily spaced repetition.
 
-It is a **client-only** app — no backend, no accounts. Audio plays from pre-generated neural-voice
-clips (with a browser speech-synthesis fallback), and your progress is saved in `localStorage`.
+It is a **client-only** app — no required backend or account. Audio plays from pre-generated
+neural-voice clips (with a browser speech-synthesis fallback), and your progress is saved in
+`localStorage`, with **optional** passwordless sign-in to sync it across devices.
 
 ## What's inside
 
@@ -46,6 +47,29 @@ pnpm generate:audio        # creates any missing clips + updates the manifest
 
 This keeps the app a **pure static site** — no backend, no API keys — so it stays free and trivial to
 self-host.
+
+### Sync across devices (optional)
+
+By default, progress lives in `localStorage` on each device. To sync it across devices, the app
+supports **optional, passwordless** sign-in (email one-time code — "like a 2FA code") backed by
+[Supabase](https://supabase.com)'s free tier. It's entirely opt-in — the app works exactly the same
+without it, and the sign-in UI only appears once Supabase is configured.
+
+To enable it:
+
+1. Create a free project at [supabase.com](https://supabase.com).
+2. In the SQL Editor, run [`supabase/schema.sql`](./supabase/schema.sql) (creates a `progress` table
+   with Row-Level Security — each user can only access their own data).
+3. Copy your **Project URL** and **anon public key** (Project Settings → API) into a `.env.local`:
+
+   ```bash
+   VITE_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+   VITE_SUPABASE_ANON_KEY=your-anon-public-key
+   ```
+
+Then a **Sync** button appears in the header: enter your email, type the 6-digit code you receive,
+and your progress is pulled, **merged** (it never overwrites more-advanced progress), and auto-saved
+from then on.
 
 ## Why it's built this way
 

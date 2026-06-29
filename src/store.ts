@@ -53,6 +53,8 @@ interface FluentState {
   toggleSpanish: () => void;
   setVoiceRate: (rate: number) => void;
   setVoiceURI: (voiceURI: string | null) => void;
+  /** Merge progress from the cloud (or a backup) into this device — never loses progress. */
+  importProgress: (data: unknown) => void;
   refreshNow: () => void;
 }
 
@@ -94,6 +96,36 @@ export const useStore = create<FluentState>()(
       toggleSpanish: () => set((s) => ({ showSpanish: !s.showSpanish })),
       setVoiceRate: (rate) => set({ voiceRate: rate }),
       setVoiceURI: (voiceURI) => set({ voiceURI }),
+      importProgress: (data) =>
+        set((state) => {
+          if (!data || typeof data !== 'object') return {};
+          const d = data as {
+            reviews?: Record<string, ReviewItem>;
+            completed?: Record<string, true>;
+            theme?: Theme;
+            showSpanish?: boolean;
+            voiceRate?: number;
+            voiceURI?: string | null;
+          };
+          const reviews = { ...state.reviews };
+          for (const [id, item] of Object.entries(d.reviews ?? {})) {
+            if (!item || typeof item.box !== 'number' || typeof item.due !== 'number') continue;
+            const ex = reviews[id];
+            // Keep the more-advanced / most-recently-scheduled card so a merge never loses progress.
+            if (!ex || item.box > ex.box || (item.box === ex.box && item.due > ex.due)) {
+              reviews[id] = item;
+            }
+          }
+          return {
+            reviews,
+            completed: { ...state.completed, ...(d.completed ?? {}) },
+            theme: d.theme === 'dark' || d.theme === 'light' ? d.theme : state.theme,
+            showSpanish: typeof d.showSpanish === 'boolean' ? d.showSpanish : state.showSpanish,
+            voiceRate: typeof d.voiceRate === 'number' ? d.voiceRate : state.voiceRate,
+            voiceURI:
+              typeof d.voiceURI === 'string' || d.voiceURI === null ? d.voiceURI : state.voiceURI,
+          };
+        }),
       refreshNow: () => set({ now: Date.now() }),
     }),
     {

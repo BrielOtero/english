@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { TRACKS, TOTAL_LESSONS } from './content';
 import { Icon, type IconName } from './components/icons';
 import { VoiceSettings } from './components/voice-settings';
+import { Account } from './components/account';
 import { setPreferredVoice } from './lib/speech';
 import { useStore } from './store';
 import { Sidebar } from './components/sidebar';
@@ -107,6 +108,7 @@ export default function App() {
             >
               ES {showSpanish ? 'on' : 'off'}
             </button>
+            <Account />
             <VoiceSettings />
             <button
               onClick={toggleTheme}

@@ -1,4 +1,5 @@
 import type { Level } from '../types';
+import type { IconName } from '../components/icons';
 import { LEVELS } from '../types';
 import { GRAMMAR } from './grammar';
 import { VOCAB_SETS } from './vocab';
@@ -15,7 +16,7 @@ export { GRAMMAR, VOCAB_SETS, SOUNDS, PITFALLS, PHRASAL, IDIOMS, READINGS, WRITI
 export interface Track {
   id: string;
   title: string;
-  icon: string;
+  icon: IconName;
   blurb: string;
   section: 'core' | 'practice';
 }
@@ -24,70 +25,70 @@ export const TRACKS: Track[] = [
   {
     id: 'roadmap',
     title: 'Roadmap',
-    icon: '🧭',
+    icon: 'route',
     blurb: 'Your path from A1 to native',
     section: 'core',
   },
   {
     id: 'grammar',
     title: 'Grammar',
-    icon: '📐',
+    icon: 'book',
     blurb: 'The CEFR grammar spine, A1–C2',
     section: 'core',
   },
   {
     id: 'vocabulary',
     title: 'Vocabulary',
-    icon: '📚',
+    icon: 'layers',
     blurb: 'Words in themes, with audio',
     section: 'core',
   },
   {
     id: 'pronunciation',
     title: 'Pronunciation',
-    icon: '🎧',
+    icon: 'volume',
     blurb: 'Sounds & minimal pairs',
     section: 'core',
   },
   {
     id: 'reading',
     title: 'Reading',
-    icon: '📖',
+    icon: 'book-open',
     blurb: 'Graded texts you can listen to',
     section: 'core',
   },
   {
     id: 'writing',
     title: 'Writing',
-    icon: '✍️',
+    icon: 'pencil',
     blurb: 'Write, then compare to a model',
     section: 'core',
   },
   {
     id: 'review',
     title: 'Review',
-    icon: '♻️',
+    icon: 'refresh',
     blurb: 'Spaced-repetition flashcards',
     section: 'practice',
   },
   {
     id: 'pitfalls',
     title: 'Spanish Pitfalls',
-    icon: '🇪🇸',
+    icon: 'alert',
     blurb: 'False friends & L1 traps',
     section: 'practice',
   },
   {
     id: 'phrasal',
     title: 'Phrasal Verbs',
-    icon: '🧩',
+    icon: 'link',
     blurb: 'High-frequency multi-word verbs',
     section: 'practice',
   },
   {
     id: 'idioms',
     title: 'Idioms',
-    icon: '💬',
+    icon: 'chat',
     blurb: 'Idioms & strong collocations',
     section: 'practice',
   },

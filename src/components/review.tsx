@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { buildReviewDeck } from '../content';
 import { useStore, isDue, isLearned } from '../store';
 import { FlashcardSession } from './flashcard-session';
+import { Icon } from './icons';
 
 const NEW_PER_SESSION = 12;
 
@@ -77,7 +78,10 @@ export function Review() {
           </>
         ) : (
           <>
-            <p className="text-[15px] text-ink">✅ You're all caught up — nothing due right now.</p>
+            <p className="flex items-center gap-2 text-[15px] text-ink">
+              <Icon name="check" className="h-4 w-4 text-success" />
+              You're all caught up — nothing due right now.
+            </p>
             <p className="mt-1 text-[13px] text-ink-soft">
               Learn some new words to fill tomorrow's review.
             </p>

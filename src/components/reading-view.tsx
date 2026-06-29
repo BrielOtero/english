@@ -5,6 +5,7 @@ import { speak } from '../lib/speech';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
 import { ExerciseDeck } from './exercise';
+import { Icon } from './icons';
 
 export function ReadingView() {
   const rate = useStore((s) => s.voiceRate);
@@ -27,9 +28,9 @@ export function ReadingView() {
           <LevelBadge level={open.level} />
           <button
             onClick={() => speak(open.paragraphs.join(' '), { rate })}
-            className="rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
+            className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
           >
-            ▶ Listen to all
+            <Icon name="play" className="h-2.5 w-2.5" /> Listen to all
           </button>
         </div>
         <h2 className="font-display text-[28px] leading-tight text-ink">{open.title}</h2>

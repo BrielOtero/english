@@ -4,6 +4,7 @@ import type { Grade } from '../store';
 import { useStore } from '../store';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
+import { Icon } from './icons';
 
 const GRADES: { grade: Grade; label: string; cls: string }[] = [
   { grade: 'again', label: 'Again', cls: 'border-danger text-danger hover:bg-danger/10' },
@@ -37,7 +38,7 @@ export function FlashcardSession({ cards, onDone }: { cards: ReviewCard[]; onDon
   if (done) {
     return (
       <div className="fade-in rounded-xl border border-rule-soft bg-paper p-8 text-center">
-        <p className="text-[28px]">🎉</p>
+        <Icon name="check" className="mx-auto h-9 w-9 text-success" />
         <p className="font-display mt-2 text-[24px] text-ink">Session complete</p>
         <p className="mt-1 text-[13px] text-ink-soft">
           You reviewed {deck.length} card{deck.length === 1 ? '' : 's'}. Come back tomorrow to keep

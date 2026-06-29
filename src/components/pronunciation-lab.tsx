@@ -5,6 +5,7 @@ import { speak } from '../lib/speech';
 import { useStore } from '../store';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
+import { Icon, EsTag } from './icons';
 
 /** A 2-alternative forced-choice drill: hear a word, decide which one it was. */
 function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
@@ -28,9 +29,9 @@ function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
     <div className="flex flex-wrap items-center gap-2 rounded-lg border border-rule-soft bg-bg p-2.5">
       <button
         onClick={play}
-        className="rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
+        className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
       >
-        ▶ Hear one
+        <Icon name="play" className="h-2.5 w-2.5" /> Hear one
       </button>
       {(['a', 'b'] as const).map((side) => {
         const word = side === 'a' ? pair.a : pair.b;
@@ -73,7 +74,7 @@ function SoundCard({ sound }: { sound: SoundLesson }) {
 
       <p className="mt-3 text-[14px] leading-relaxed text-ink-soft">{sound.howTo}</p>
       <p className="mt-2 rounded-lg bg-bg p-3 text-[13px] text-ink">
-        <span className="mr-1">🇪🇸</span>
+        <EsTag />
         {sound.spanishNote}
       </p>
 

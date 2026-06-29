@@ -3,6 +3,25 @@ import { LEVELS, LEVEL_BLURB } from '../types';
 import { GRAMMAR, TOTAL_LESSONS, buildReviewDeck } from '../content';
 import { useStore, isLearned } from '../store';
 import { LevelBadge } from './level-badge';
+import { Icon, type IconName } from './icons';
+
+const METHOD: { icon: IconName; t: string; d: string }[] = [
+  {
+    icon: 'download',
+    t: 'Get input',
+    d: 'Read & listen to graded texts a little above your level. Tap any sentence to hear it.',
+  },
+  {
+    icon: 'pencil',
+    t: 'Practice & produce',
+    d: 'Do the lesson drills and write. Errors are where the learning happens.',
+  },
+  {
+    icon: 'refresh',
+    t: 'Review daily',
+    d: 'Five minutes of spaced repetition makes vocabulary permanent.',
+  },
+];
 
 export function Roadmap({ onSelect }: { onSelect: (trackId: string) => void }) {
   const completed = useStore((s) => s.completed);
@@ -44,26 +63,10 @@ export function Roadmap({ onSelect }: { onSelect: (trackId: string) => void }) {
 
       {/* How to use it — the method */}
       <div className="mb-8 grid gap-3 sm:grid-cols-3">
-        {[
-          {
-            icon: '📥',
-            t: 'Get input',
-            d: 'Read & listen to graded texts a little above your level. Tap any sentence to hear it.',
-          },
-          {
-            icon: '✏️',
-            t: 'Practice & produce',
-            d: 'Do the lesson drills and write. Errors are where the learning happens.',
-          },
-          {
-            icon: '♻️',
-            t: 'Review daily',
-            d: 'Five minutes of spaced repetition makes vocabulary permanent.',
-          },
-        ].map((s) => (
+        {METHOD.map((s) => (
           <div key={s.t} className="rounded-xl border border-rule-soft bg-bg p-4">
-            <p className="text-[18px]">{s.icon}</p>
-            <p className="mt-1 text-[14px] font-medium text-ink">{s.t}</p>
+            <Icon name={s.icon} className="h-5 w-5 text-accent" />
+            <p className="mt-2 text-[14px] font-medium text-ink">{s.t}</p>
             <p className="mt-1 text-[12.5px] leading-snug text-ink-soft">{s.d}</p>
           </div>
         ))}

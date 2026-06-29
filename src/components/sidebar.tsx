@@ -1,4 +1,5 @@
 import type { Track } from '../content';
+import { Icon } from './icons';
 
 function Group({
   label,
@@ -28,9 +29,10 @@ function Group({
                   active ? 'bg-accent/12 text-ink' : 'text-ink-soft hover:bg-bg2 hover:text-ink'
                 }`}
               >
-                <span aria-hidden="true" className="text-[15px]">
-                  {t.icon}
-                </span>
+                <Icon
+                  name={t.icon}
+                  className={`h-[18px] w-[18px] ${active ? 'text-accent' : ''}`}
+                />
                 <span className={`text-[13.5px] ${active ? 'font-medium' : ''}`}>{t.title}</span>
                 {active && <span className="ml-auto h-1.5 w-1.5 rounded-full bg-accent" />}
               </button>

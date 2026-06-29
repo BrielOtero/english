@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { TRACKS, TOTAL_LESSONS } from './content';
+import { Icon, type IconName } from './components/icons';
 import { useStore } from './store';
 import { Sidebar } from './components/sidebar';
 import { Roadmap } from './components/roadmap';
@@ -20,11 +21,11 @@ function getInitialTab(): string {
   return t && TRACK_IDS.has(t) ? t : 'roadmap';
 }
 
-function TrackHead({ icon, title, blurb }: { icon: string; title: string; blurb: string }) {
+function TrackHead({ icon, title, blurb }: { icon: IconName; title: string; blurb: string }) {
   return (
     <div className="fade-in mb-7">
       <div className="mb-2 flex items-center gap-2 font-mono text-[11px] tracking-[0.15em] text-ink-mute uppercase">
-        <span aria-hidden="true">{icon}</span>
+        <Icon name={icon} className="h-3.5 w-3.5 text-accent" />
         <span>Section</span>
       </div>
       <h1 className="font-display text-[clamp(28px,4vw,40px)] leading-none font-medium tracking-tight text-ink">
@@ -119,7 +120,7 @@ export default function App() {
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
               className="grid h-9 w-9 place-items-center rounded-full border border-rule-soft bg-paper text-ink-soft transition-colors hover:text-ink"
             >
-              {theme === 'light' ? '☾' : '☼'}
+              <Icon name={theme === 'light' ? 'moon' : 'sun'} className="h-4 w-4" />
             </button>
           </div>
         </header>

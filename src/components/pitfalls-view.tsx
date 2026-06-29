@@ -4,6 +4,7 @@ import { PITFALLS } from '../content';
 import { Markup } from './markup';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
+import { EsTag } from './icons';
 
 const CATEGORIES: { id: PitfallCategory | 'all'; label: string }[] = [
   { id: 'all', label: 'All' },
@@ -66,7 +67,12 @@ export function PitfallsView() {
             <p className="mt-2 text-[12.5px] text-ink-soft">
               <Markup text={p.explain} />
             </p>
-            {p.esNote && <p className="mt-1 text-[12.5px] text-accent">🇪🇸 {p.esNote}</p>}
+            {p.esNote && (
+              <p className="mt-1 text-[12.5px] text-accent">
+                <EsTag />
+                <Markup text={p.esNote} />
+              </p>
+            )}
           </div>
         ))}
       </div>

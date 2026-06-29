@@ -4,6 +4,7 @@ import { Markup } from './markup';
 import { PhraseLine } from './phrase-line';
 import { ExerciseDeck } from './exercise';
 import { LevelBadge } from './level-badge';
+import { EsTag } from './icons';
 
 function SubHead({ children }: { children: React.ReactNode }) {
   return (
@@ -65,7 +66,12 @@ function PitfallCard({ pitfall }: { pitfall: Pitfall }) {
       <p className="mt-2 text-[12px] text-ink-soft">
         <Markup text={pitfall.why} />
       </p>
-      {pitfall.esNote && <p className="mt-1 text-[12px] text-accent">🇪🇸 {pitfall.esNote}</p>}
+      {pitfall.esNote && (
+        <p className="mt-1 text-[12px] text-accent">
+          <EsTag />
+          <Markup text={pitfall.esNote} />
+        </p>
+      )}
     </div>
   );
 }

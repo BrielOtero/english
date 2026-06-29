@@ -35,7 +35,7 @@ audio speed from the header.
 
 To make pronunciation sound great and identical in every browser, the audio for all (static) course
 content is **pre-generated** into `public/audio/` with a high-quality free neural voice
-(Microsoft Edge TTS — `en-US-AvaMultilingualNeural`, no API key) and played as static `.mp3` files.
+(Microsoft Edge TTS — `en-US-AndrewMultilingualNeural`, no API key) and played as static `.mp3` files.
 Anything dynamic (text you type for a dictation answer, the voice preview) falls back to the
 browser's built-in speech synthesis, whose voice you can pick under **Audio** in the header.
 

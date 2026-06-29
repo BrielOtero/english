@@ -1,0 +1,49 @@
+name: Generate audio
+
+# Regenerates the pre-recorded neural-voice clips when spoken content changes, and
+# commits the new clips back. Audio is normally committed locally (pnpm generate:audio),
+# so this is a safety net + a one-click "rebuild the audio" you can trigger by hand.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/**'
+      - 'scripts/generate-audio.ts'
+      - 'src/lib/audio-hash.ts'
+  workflow_dispatch:
+
+permissions:
+  contents: write # needed to push the generated clips back
+
+concurrency:
+  group: tts-${{ github.ref }}
+  cancel-in-progress: false # never interrupt a generation mid-way
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Generate any missing clips (Microsoft Edge TTS, no API key)
+        run: ./node_modules/.bin/tsx scripts/generate-audio.ts
+
+      - name: Commit new clips
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # The default GITHUB_TOKEN does not re-trigger workflows, and [skip ci]
+          # is a second guard — so this never loops.
+          commit_message: 'chore(audio): regenerate clips [skip ci]'
+          file_pattern: 'public/audio/** src/content/audio-manifest.ts'

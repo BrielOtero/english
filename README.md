@@ -103,6 +103,36 @@ pnpm dev        # http://localhost:5173
 | `pnpm format:check`   | Check formatting without writing (CI-friendly)           |
 | `pnpm generate:audio` | Pre-generate neural-voice audio clips for course content |
 
+## Deploying
+
+The app is a **static site** (`pnpm build` → `dist/`), so it deploys to any static host. Adding the
+optional Supabase env vars in the host's dashboard enables cross-device sync.
+
+**Recommended — Cloudflare Pages** (free, commercial-friendly, _unlimited_ bandwidth — ideal for the
+audio files):
+
+1. Cloudflare dashboard → **Pages** → connect the repo.
+2. Build command `pnpm build`, output directory `dist`.
+3. (Optional) add `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` under the project's environment
+   variables. SPA routing is handled by `public/_redirects`.
+
+**Vercel** also works — it auto-detects the Vite preset, and `vercel.json` handles SPA routing + long
+cache headers for `/audio`. Note Vercel's free **Hobby** tier is **non-commercial only** and caps
+bandwidth at 100 GB/month; use Pro for commercial use.
+
+Either host's **Git integration auto-deploys on push to `main`** — that's the continuous deployment,
+with no secrets to manage. No backend or rewrite to Next.js is needed: the app is fully static and
+talks to Supabase from the browser.
+
+## CI/CD
+
+Two GitHub Actions are included (`.github/workflows/`):
+
+- **`ci.yml`** — `pnpm lint` + `pnpm build` (type-check) on every push/PR to `main`.
+- **`generate-audio.yml`** — when spoken content changes (or via manual “Run workflow”), regenerates
+  any missing audio clips and commits them back. Audio is normally generated locally with
+  `pnpm generate:audio`; this is a safety net.
+
 ## Project structure
 
 ```

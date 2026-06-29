@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { PitfallCategory } from '../types';
 import { PITFALLS } from '../content';
+import { useStore } from '../store';
 import { Markup } from './markup';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
@@ -18,6 +19,7 @@ const CATEGORIES: { id: PitfallCategory | 'all'; label: string }[] = [
 
 export function PitfallsView() {
   const [cat, setCat] = useState<PitfallCategory | 'all'>('all');
+  const showSpanish = useStore((s) => s.showSpanish);
 
   const list = useMemo(
     () => (cat === 'all' ? PITFALLS : PITFALLS.filter((p) => p.category === cat)),
@@ -67,7 +69,7 @@ export function PitfallsView() {
             <p className="mt-2 text-[12.5px] text-ink-soft">
               <Markup text={p.explain} />
             </p>
-            {p.esNote && (
+            {showSpanish && p.esNote && (
               <p className="mt-1 text-[12.5px] text-accent">
                 <EsTag />
                 <Markup text={p.esNote} />

@@ -114,8 +114,10 @@ export type Exercise =
 /** A block of teaching prose, optionally followed by its own examples. */
 export interface LessonSection {
   heading?: string;
-  /** Plain prose. Use **double asterisks** to mark key terms (rendered bold). */
+  /** The explanation, in English. Use **double asterisks** to mark key terms. */
   body: string;
+  /** Optional Spanish translation of `body`, shown only when Spanish help is on. */
+  bodyEs?: string;
   examples?: Phrase[];
 }
 
@@ -139,8 +141,10 @@ export interface Lesson {
   id: string;
   level: Level;
   title: string;
-  /** One-line summary shown in lists and the roadmap. */
+  /** One-line summary shown in lists and the roadmap (English). */
   summary: string;
+  /** Optional Spanish translation of `summary`, shown only when Spanish help is on. */
+  summaryEs?: string;
   /** Ordered teaching sections. */
   sections: LessonSection[];
   /** Optional reference table(s). */

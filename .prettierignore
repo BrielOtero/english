@@ -1,3 +1,5 @@
 dist
 node_modules
 pnpm-lock.yaml
+public/audio
+src/content/audio-manifest.ts

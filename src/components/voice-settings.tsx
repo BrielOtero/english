@@ -89,14 +89,16 @@ export function VoiceSettings() {
             : 'Try a few — quality varies. In Chrome, “Google US English” usually sounds best.'}
         </p>
         <p className="mt-1.5 text-[11px] leading-snug text-ink-mute">
-          Best macOS voices: download an <span className="text-ink-soft">Enhanced</span> or{' '}
-          <span className="text-ink-soft">Premium</span> English voice (e.g. “Ava (Premium)”,
-          “Samantha (Enhanced)”) in System Settings → Accessibility → Spoken Content → System Voice →
-          Manage Voices, then reload this page.
+          Best macOS voices: System Settings → Accessibility →{' '}
+          <span className="text-ink-soft">Read &amp; Speak</span> (older macOS: “Spoken Content”) →
+          System Voice → Manage Voices → download an <span className="text-ink-soft">Enhanced</span>{' '}
+          or <span className="text-ink-soft">Premium</span> English voice (e.g. “Ava (Premium)”).
+          Then reload this page.
         </p>
         <p className="mt-1.5 text-[11px] leading-snug text-ink-mute">
-          Note: Apple blocks <span className="text-ink-soft">Siri</span> voices from web browsers, so
-          they can’t appear here — use a Premium/Enhanced voice instead.
+          In Chrome, downloaded Apple voices may not all show — use “Google US English”, or open this
+          page in <span className="text-ink-soft">Safari</span> to see the Premium voices. Siri voices
+          aren’t available to browsers.
         </p>
       </div>
     </details>

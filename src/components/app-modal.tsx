@@ -1,6 +1,12 @@
 import { useEffect, type ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 
-/** Centered modal on desktop, bottom sheet on mobile. Backdrop blur, ESC to close. */
+/**
+ * Centered modal on desktop, bottom sheet on mobile. Backdrop blur, ESC to close.
+ * Rendered through a portal to <body> so it escapes any ancestor that creates a
+ * containing block for fixed positioning (e.g. the header's `backdrop-blur`),
+ * which would otherwise push the dialog off-screen.
+ */
 export function AppModal({
   open,
   onClose,
@@ -26,7 +32,7 @@ export function AppModal({
 
   if (!open) return null;
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-end justify-center sm:items-center"
       role="dialog"
@@ -42,6 +48,7 @@ export function AppModal({
         <div className="mx-auto mt-3 mb-0.5 h-1 w-9 rounded-full bg-rule-soft sm:hidden" />
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

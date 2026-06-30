@@ -25,4 +25,5 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
+      - run: pnpm format:check
       - run: pnpm build # tsc -b (type-check) + vite build

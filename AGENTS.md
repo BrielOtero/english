@@ -10,20 +10,23 @@ self-checking drills), themed vocabulary with flashcards, a pronunciation lab wi
 drills, graded reading, writing prompts with model answers, a Spanish-speaker pitfalls reference, and
 a spaced-repetition review that pulls from all of it.
 
-It is a **client-only** app — no backend, no data fetching. All content lives as typed data in
-`src/content/`. Audio is produced by the browser's Web Speech API. Progress (SRS schedule, completed
-lessons, theme, settings) persists to `localStorage`.
+It is a **static** app — all content lives as typed data in `src/content/`. Audio plays from
+pre-generated neural-voice clips with a browser Web Speech fallback. Progress (SRS schedule, completed
+lessons, settings) persists to `localStorage`, with **optional** passwordless Supabase sign-in to
+sync it across devices.
 
 ## Tech stack
 
-| Concern    | Choice                                |
-| ---------- | ------------------------------------- |
-| Framework  | React 19                              |
-| Language   | TypeScript 6 (strict)                 |
-| Build tool | Vite 8                                |
-| Styling    | Tailwind CSS v4 (`@tailwindcss/vite`) |
-| State      | Zustand 5 (`persist` → localStorage)  |
-| Speech     | Web Speech API (`speechSynthesis`)    |
+| Concern    | Choice                                             |
+| ---------- | -------------------------------------------------- |
+| Framework  | React 19                                           |
+| Language   | TypeScript 6 (strict)                              |
+| Build tool | Vite 8                                             |
+| Styling    | Tailwind CSS v4 (`@tailwindcss/vite`)              |
+| State      | Zustand 5 (`persist` → localStorage)               |
+| Audio      | Pre-generated Edge-TTS clips (Web Speech fallback) |
+| Sync       | Supabase (optional, passwordless)                  |
+| Speech     | Web Speech API (`speechSynthesis`)                 |
 
 ## Commands
 
@@ -39,7 +42,7 @@ pnpm format         # Prettier --write over the project
 pnpm generate:audio # (re)generate neural-voice audio clips for course content
 ```
 
-**Audio.** Listen buttons play pre-generated `.mp3` clips (Microsoft Edge TTS, `en-US-Ava­MultilingualNeural`,
+**Audio.** Listen buttons play pre-generated `.mp3` clips (Microsoft Edge TTS, `en-US-AndrewMultilingualNeural`,
 free, no key) keyed by a hash of the phrase (`lib/audio-hash.ts`), with the browser's speech
 synthesis as the fallback for dynamic text. After editing spoken content, run `pnpm generate:audio`
 to create the new clips and refresh `src/content/audio-manifest.ts`. The app stays a pure static

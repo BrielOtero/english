@@ -79,11 +79,11 @@ correction, and review are designed to work together rather than in isolation.
 
 ## Tech stack
 
-React 19 · TypeScript 6 (strict) · Vite 8 · Tailwind CSS v4 · Zustand 5 · Web Speech API
+React 19 · TypeScript 6 (strict) · Vite 8 · Tailwind CSS v4 · Zustand 5 · Supabase (optional sync) · Web Speech API
 
 ## Getting started
 
-Requires **Node 20+** and **pnpm**.
+Requires **Node ^20.19 / 22.12** (see `.node-version`) and **pnpm** (enable with `corepack enable`).
 
 ```bash
 pnpm install

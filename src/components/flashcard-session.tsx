@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ReviewCard } from '../content';
 import type { Grade } from '../store';
 import { useStore } from '../store';
@@ -19,8 +19,10 @@ const GRADES: { grade: Grade; label: string; cls: string }[] = [
  */
 export function FlashcardSession({ cards, onDone }: { cards: ReviewCard[]; onDone?: () => void }) {
   const grade = useStore((s) => s.grade);
-  // Freeze the deck order for the session so grading doesn't reshuffle mid-run.
-  const deck = useMemo(() => cards, [cards]);
+  // Snapshot the deck once at mount. Grading mutates the live source array (the
+  // graded card drops out of the due/new query), so deriving from it each render
+  // would skip cards and miscount — freeze a copy for the session's lifetime.
+  const [deck] = useState(() => cards);
   const [i, setI] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [reveal, setReveal] = useState(false);

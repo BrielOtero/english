@@ -46,7 +46,6 @@ interface FluentState {
   now: number;
 
   grade: (cardId: string, grade: Grade) => void;
-  resetCard: (cardId: string) => void;
   markComplete: (lessonId: string) => void;
   unmarkComplete: (lessonId: string) => void;
   toggleTheme: () => void;
@@ -77,12 +76,6 @@ export const useStore = create<FluentState>()(
           // "again" resurfaces almost immediately; otherwise schedule by box interval.
           const due = grade === 'again' ? now + 60_000 : now + INTERVAL_DAYS[box] * MS_DAY;
           return { reviews: { ...state.reviews, [cardId]: { box, due } } };
-        }),
-      resetCard: (cardId) =>
-        set((state) => {
-          const next = { ...state.reviews };
-          delete next[cardId];
-          return { reviews: next };
         }),
       markComplete: (lessonId) =>
         set((state) => ({ completed: { ...state.completed, [lessonId]: true } })),

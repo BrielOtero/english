@@ -10,11 +10,6 @@ import { speak, stopSpeaking, type SpeakOptions } from './speech';
 const available = new Set(AUDIO_HASHES);
 let current: HTMLAudioElement | null = null;
 
-/** True if `text` has a pre-generated clip. */
-export function hasClip(text: string): boolean {
-  return available.has(hashText(text));
-}
-
 /** Play `text`: the pre-generated clip if we have one, else browser TTS. */
 export function playPhrase(text: string, opts: SpeakOptions = {}): void {
   if (!text.trim()) {

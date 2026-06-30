@@ -1,6 +1,5 @@
 import type { Level } from '../types';
 import type { IconName } from '../components/icons';
-import { LEVELS } from '../types';
 import { GRAMMAR } from './grammar';
 import { VOCAB_SETS } from './vocab';
 import { SOUNDS } from './phonetics';
@@ -97,16 +96,9 @@ export const TRACKS: Track[] = [
 /* ---- derived stats ---- */
 
 export const TOTAL_LESSONS = GRAMMAR.reduce((n, u) => n + u.lessons.length, 0);
-export const TOTAL_VOCAB = VOCAB_SETS.reduce((n, s) => n + s.items.length, 0);
 
 export function grammarUnit(level: Level) {
   return GRAMMAR.find((u) => u.level === level);
-}
-
-export function lessonCountByLevel(): Record<Level, number> {
-  const out = {} as Record<Level, number>;
-  for (const lvl of LEVELS) out[lvl] = grammarUnit(lvl)?.lessons.length ?? 0;
-  return out;
 }
 
 /* ---- spaced-repetition deck ---- */

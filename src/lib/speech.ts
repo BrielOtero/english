@@ -9,26 +9,18 @@ export function speechSupported(): boolean {
 }
 
 let cachedVoices: SpeechSynthesisVoice[] = [];
-const listeners = new Set<() => void>();
 /** The learner's chosen voice (voiceURI), or null to auto-pick the best. */
 let preferredVoiceURI: string | null = null;
 
 function refreshVoices() {
   if (!speechSupported()) return;
   cachedVoices = window.speechSynthesis.getVoices();
-  listeners.forEach((l) => l());
 }
 
 if (speechSupported()) {
   refreshVoices();
   // Voices usually load asynchronously; repopulate when they arrive.
   window.speechSynthesis.onvoiceschanged = refreshVoices;
-}
-
-/** Subscribe to voice-list changes (returns an unsubscribe fn). */
-export function onVoicesChanged(cb: () => void): () => void {
-  listeners.add(cb);
-  return () => listeners.delete(cb);
 }
 
 // Substrings that signal a high-quality / natural voice, and novelty/robotic ones.
@@ -116,11 +108,6 @@ export function englishVoices(): SpeechSynthesisVoice[] {
   return cachedVoices
     .filter((v) => v.lang.toLowerCase().startsWith('en'))
     .sort((a, b) => score(b) - score(a));
-}
-
-/** The auto-selected best voice's URI, if any. */
-export function bestVoiceURI(): string | undefined {
-  return englishVoices()[0]?.voiceURI;
 }
 
 /** Set (or clear) the learner's preferred voice. */

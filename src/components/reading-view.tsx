@@ -29,7 +29,7 @@ export function ReadingView() {
           <LevelBadge level={open.level} />
           <button
             onClick={() => playSequence(open.paragraphs, { rate, voiceURI })}
-            className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
+            className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
           >
             <Icon name="play" className="h-2.5 w-2.5" /> Listen to all
           </button>
@@ -57,7 +57,7 @@ export function ReadingView() {
 
         {open.questions.length > 0 && (
           <div className="mt-8">
-            <p className="mb-3 font-mono text-[11px] tracking-[0.15em] text-ink-mute uppercase">
+            <p className="mb-3 kicker text-[13.5px] text-ink-soft">
               Comprehension check
             </p>
             <ExerciseDeck exercises={open.questions} />
@@ -73,7 +73,7 @@ export function ReadingView() {
         <button
           key={r.id}
           onClick={() => setOpenId(r.id)}
-          className="group rounded-xl border border-rule-soft bg-paper p-5 text-left transition-colors hover:border-accent/50"
+          className="group rounded-xl border border-rule-soft bg-paper p-5 text-left transition duration-150 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[var(--shadow-md)] active:scale-[0.99]"
         >
           <div className="mb-2 flex items-center gap-2">
             <LevelBadge level={r.level} />

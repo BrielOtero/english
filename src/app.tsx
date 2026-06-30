@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { TRACKS, TOTAL_LESSONS } from './content';
 import { Icon, type IconName } from './components/icons';
 import { VoiceSettings } from './components/voice-settings';
@@ -6,6 +7,7 @@ import { Account } from './components/account';
 import { setPreferredVoice } from './lib/speech';
 import { useStore } from './store';
 import { Sidebar } from './components/sidebar';
+import { BottomNav } from './components/bottom-nav';
 import { Roadmap } from './components/roadmap';
 import { GrammarBrowser } from './components/grammar-browser';
 import { VocabBrowser } from './components/vocab-browser';
@@ -24,17 +26,28 @@ function getInitialTab(): string {
   return t && TRACK_IDS.has(t) ? t : 'roadmap';
 }
 
+function Wordmark({ onClick }: { onClick?: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      className="font-display text-[19px] leading-none text-ink italic"
+      aria-label="Fluent — home"
+    >
+      <span className="text-accent">/</span>ˈfluː.ənt<span className="text-accent">/</span>
+    </button>
+  );
+}
+
 function TrackHead({ icon, title, blurb }: { icon: IconName; title: string; blurb: string }) {
   return (
-    <div className="fade-in mb-7">
-      <div className="mb-2 flex items-center gap-2 font-mono text-[11px] tracking-[0.15em] text-ink-mute uppercase">
-        <Icon name={icon} className="h-3.5 w-3.5 text-accent" />
-        <span>Section</span>
+    <div className="mb-7">
+      <div className="flex items-center gap-3">
+        <span className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--accent-tint)] text-accent">
+          <Icon name={icon} className="h-[18px] w-[18px]" />
+        </span>
+        <h1 className="font-display text-[clamp(26px,4vw,38px)] leading-none text-ink">{title}</h1>
       </div>
-      <h1 className="font-display text-[clamp(28px,4vw,40px)] leading-none font-medium tracking-tight text-ink">
-        {title}
-      </h1>
-      <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-ink-soft">{blurb}</p>
+      <p className="mt-3 max-w-2xl text-[14.5px] leading-relaxed text-ink-soft">{blurb}</p>
     </div>
   );
 }
@@ -51,9 +64,11 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', theme === 'dark' ? '#121119' : '#edeae3');
   }, [theme]);
 
-  // Keep the speech module's preferred voice in sync with the saved choice.
   useEffect(() => {
     setPreferredVoice(voiceURI);
   }, [voiceURI]);
@@ -63,6 +78,7 @@ export default function App() {
     const url = new URL(window.location.href);
     if (id === 'roadmap') url.searchParams.delete('tab');
     else url.searchParams.set('tab', id);
+    url.searchParams.delete('lesson');
     window.history.replaceState(null, '', url);
     window.scrollTo({ top: 0 });
   };
@@ -73,79 +89,84 @@ export default function App() {
   return (
     <div className="min-h-screen bg-bg text-ink">
       <div className="grain" />
-      <div className="relative z-[1] mx-auto max-w-[1280px] px-4 pt-8 pb-20 sm:px-10">
-        {/* Header */}
-        <header className="mb-8 flex flex-wrap items-end justify-between gap-6 border-b border-rule pb-6">
-          <div>
-            <span className="rounded-sm border border-rule-soft px-2 py-1 font-mono text-[11px] tracking-[0.15em] text-ink-mute uppercase">
-              Zero → Native
-            </span>
-            <h1 className="font-display mt-3 text-[clamp(30px,4vw,46px)] leading-none font-normal tracking-tight">
-              <em className="serif-italic text-accent">Fluent</em>
-            </h1>
-            <p className="mt-2 max-w-md text-[13px] leading-relaxed text-ink-soft">
-              A self-study path from your first words of English to a confident, near-native C1 —
-              built for Spanish speakers. Grammar, vocabulary, pronunciation, and daily review in
-              one place.
-            </p>
-          </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="rounded-full border border-rule-soft bg-paper px-3.5 py-2 text-center">
-              <span className="font-mono text-[11px] text-ink-mute">
-                {completedCount}/{TOTAL_LESSONS} lessons
+      {/* Masthead */}
+      <header className="sticky top-0 z-30 border-b border-rule-soft bg-paper/70 backdrop-blur-md">
+        <div className="mx-auto flex h-14 max-w-[1280px] items-center gap-3 px-4 sm:px-8">
+          <Wordmark onClick={() => selectTab('roadmap')} />
+          <span className="kicker hidden text-[15px] text-ink-soft md:inline">
+            <span className="mr-2 text-ink-mute">/</span>
+            {track.title}
+          </span>
+
+          <div className="ml-auto flex items-center gap-2">
+            <span className="hidden items-center gap-2 rounded-full border border-rule-soft bg-bg px-3 py-1.5 sm:flex">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+              <span className="font-mono text-[11px] text-ink-soft tabular-nums">
+                {completedCount}/{TOTAL_LESSONS}
               </span>
-            </div>
+            </span>
             <button
               onClick={toggleSpanish}
               aria-pressed={showSpanish}
-              title="Show or hide Spanish translations"
-              className={`rounded-full border px-3 py-2 font-mono text-[11px] tracking-wide uppercase transition-colors ${
+              title="Show or hide Spanish help"
+              className={`press rounded-full border px-2.5 py-2 font-mono text-[11px] tracking-wide ${
                 showSpanish
-                  ? 'border-accent bg-accent text-paper'
+                  ? 'border-accent bg-accent text-on-accent'
                   : 'border-rule-soft bg-paper text-ink-soft hover:text-ink'
               }`}
             >
-              ES {showSpanish ? 'on' : 'off'}
+              ES
             </button>
-            <Account />
-            <VoiceSettings />
+            <div className="hidden sm:block">
+              <VoiceSettings />
+            </div>
             <button
               onClick={toggleTheme}
               title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-              className="grid h-9 w-9 place-items-center rounded-full border border-rule-soft bg-paper text-ink-soft transition-colors hover:text-ink"
+              className="press grid h-9 w-9 place-items-center rounded-full border border-rule-soft bg-paper text-ink-soft hover:text-ink"
             >
               <Icon name={theme === 'light' ? 'moon' : 'sun'} className="h-4 w-4" />
             </button>
+            <Account />
           </div>
-        </header>
+        </div>
+      </header>
 
-        {/* Layout */}
-        <div className="grid gap-8 lg:grid-cols-[210px_minmax(0,1fr)]">
+      {/* Body */}
+      <div className="relative z-[1] mx-auto max-w-[1280px] px-4 pb-28 sm:px-8 lg:pb-16">
+        <div className="grid gap-8 pt-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10">
           <Sidebar tracks={TRACKS} activeId={activeId} onSelect={selectTab} />
 
           <main className="min-w-0">
-            <TrackHead icon={track.icon} title={track.title} blurb={track.blurb} />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeId}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <TrackHead icon={track.icon} title={track.title} blurb={track.blurb} />
 
-            {activeId === 'roadmap' && <Roadmap onSelect={selectTab} />}
-            {activeId === 'grammar' && <GrammarBrowser />}
-            {activeId === 'vocabulary' && <VocabBrowser />}
-            {activeId === 'pronunciation' && <PronunciationLab />}
-            {activeId === 'reading' && <ReadingView />}
-            {activeId === 'writing' && <WritingView />}
-            {activeId === 'review' && <Review />}
-            {activeId === 'pitfalls' && <PitfallsView />}
-            {activeId === 'phrasal' && <PhrasalVerbs />}
-            {activeId === 'idioms' && <Idioms />}
+                {activeId === 'roadmap' && <Roadmap onSelect={selectTab} />}
+                {activeId === 'grammar' && <GrammarBrowser />}
+                {activeId === 'vocabulary' && <VocabBrowser />}
+                {activeId === 'pronunciation' && <PronunciationLab />}
+                {activeId === 'reading' && <ReadingView />}
+                {activeId === 'writing' && <WritingView />}
+                {activeId === 'review' && <Review />}
+                {activeId === 'pitfalls' && <PitfallsView />}
+                {activeId === 'phrasal' && <PhrasalVerbs />}
+                {activeId === 'idioms' && <Idioms />}
+              </motion.div>
+            </AnimatePresence>
           </main>
         </div>
-
-        <footer className="mt-12 flex flex-wrap items-center justify-between gap-2 border-t border-rule pt-5 font-mono text-[11px] text-ink-mute">
-          <span>CEFR A1–C2 · grammar · vocabulary · pronunciation · spaced repetition</span>
-          <span className="serif-italic text-[12px]">Built to take you from zero to native.</span>
-        </footer>
       </div>
+
+      <BottomNav activeId={activeId} onSelect={selectTab} />
     </div>
   );
 }

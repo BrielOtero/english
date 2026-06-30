@@ -67,7 +67,7 @@ export function FlashcardSession({ cards, onDone }: { cards: ReviewCard[]; onDon
       </div>
       <div className="mb-4 h-1 w-full overflow-hidden rounded-full bg-bg2">
         <div
-          className="h-full rounded-full bg-accent transition-all"
+          className="h-full rounded-full bg-accent transition-[width] duration-500 ease-out"
           style={{ width: `${(i / deck.length) * 100}%` }}
         />
       </div>
@@ -77,7 +77,7 @@ export function FlashcardSession({ cards, onDone }: { cards: ReviewCard[]; onDon
           setFlipped(true);
           setReveal(true);
         }}
-        className="block w-full rounded-2xl border border-rule-soft bg-paper p-8 text-center transition-colors hover:border-accent/50"
+        className="block w-full rounded-2xl border border-rule-soft bg-paper p-8 text-center transition duration-150 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[var(--shadow-md)] active:scale-[0.99]"
       >
         <div className="mb-3 flex justify-center">
           <LevelBadge level={card.level} />

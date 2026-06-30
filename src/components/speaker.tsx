@@ -38,18 +38,26 @@ export function Speaker({
       }}
       aria-label={label ?? `Listen: ${text}`}
       title="Listen"
-      className={`inline-grid shrink-0 place-items-center rounded-full border border-rule-soft bg-paper text-accent transition-colors hover:border-accent hover:text-accent ${SIZES[size]} ${playing ? 'speaking' : ''}`}
+      className={`inline-grid shrink-0 place-items-center rounded-full border border-rule-soft bg-paper text-accent transition hover:border-accent hover:text-accent active:scale-[0.92] ${SIZES[size]}`}
     >
-      <svg viewBox="0 0 24 24" className="h-[55%] w-[55%]" fill="currentColor" aria-hidden="true">
-        <path d="M3 9v6h4l5 5V4L7 9H3z" />
-        <path
-          d="M16 8.5a4 4 0 010 7"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
+      {playing ? (
+        <span className="flex h-[42%] items-center gap-[2px]" aria-hidden="true">
+          <span className="eq-bar h-full w-[2px] rounded-full bg-current" />
+          <span className="eq-bar h-full w-[2px] rounded-full bg-current" />
+          <span className="eq-bar h-full w-[2px] rounded-full bg-current" />
+        </span>
+      ) : (
+        <svg viewBox="0 0 24 24" className="h-[55%] w-[55%]" fill="currentColor" aria-hidden="true">
+          <path d="M3 9v6h4l5 5V4L7 9H3z" />
+          <path
+            d="M16 8.5a4 4 0 010 7"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      )}
     </button>
   );
 }

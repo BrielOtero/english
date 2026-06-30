@@ -6,22 +6,45 @@ import { useStore } from '../store';
 import { LevelBadge } from './level-badge';
 import { LessonView } from './lesson-view';
 
+const ALL_LESSONS = GRAMMAR.flatMap((u) => u.lessons);
+
+/** Restore the open lesson + its level from the ?lesson= URL param (so refresh keeps your place). */
+function lessonFromUrl(): { id: string; level: Level } | null {
+  const id = new URLSearchParams(window.location.search).get('lesson');
+  const lesson = id ? ALL_LESSONS.find((l) => l.id === id) : undefined;
+  return lesson ? { id: lesson.id, level: lesson.level } : null;
+}
+
 export function GrammarBrowser() {
   const completed = useStore((s) => s.completed);
-  const [level, setLevel] = useState<Level>('A1');
-  const [openId, setOpenId] = useState<string | null>(null);
+  const fromUrl = lessonFromUrl();
+  const [level, setLevel] = useState<Level>(fromUrl?.level ?? 'A1');
+  const [openId, setOpenId] = useState<string | null>(fromUrl?.id ?? null);
 
   const unit = grammarUnit(level);
-  const openLesson = openId
-    ? GRAMMAR.flatMap((u) => u.lessons).find((l) => l.id === openId)
-    : undefined;
+  const openLesson = openId ? ALL_LESSONS.find((l) => l.id === openId) : undefined;
+
+  function openLessonById(id: string) {
+    setOpenId(id);
+    const url = new URL(window.location.href);
+    url.searchParams.set('lesson', id);
+    window.history.replaceState(null, '', url);
+    window.scrollTo({ top: 0 });
+  }
+  function closeLesson() {
+    setOpenId(null);
+    const url = new URL(window.location.href);
+    url.searchParams.delete('lesson');
+    window.history.replaceState(null, '', url);
+    window.scrollTo({ top: 0 });
+  }
 
   if (openLesson) {
     return (
       <div className="fade-in">
         <button
-          onClick={() => setOpenId(null)}
-          className="mb-5 font-mono text-[11px] tracking-wide text-ink-mute uppercase transition-colors hover:text-ink"
+          onClick={closeLesson}
+          className="press mb-5 flex items-center gap-1.5 text-[13px] font-medium text-ink-mute transition-colors hover:text-ink"
         >
           ← All {openLesson.level} lessons
         </button>
@@ -63,8 +86,8 @@ export function GrammarBrowser() {
               return (
                 <button
                   key={lesson.id}
-                  onClick={() => setOpenId(lesson.id)}
-                  className="group rounded-xl border border-rule-soft bg-paper p-4 text-left transition-colors hover:border-accent/50"
+                  onClick={() => openLessonById(lesson.id)}
+                  className="group rounded-xl border border-rule-soft bg-paper p-4 text-left transition duration-150 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[var(--shadow-md)] active:scale-[0.99]"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>

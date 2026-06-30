@@ -30,7 +30,7 @@ function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
     <div className="flex flex-wrap items-center gap-2 rounded-lg border border-rule-soft bg-bg p-2.5">
       <button
         onClick={play}
-        className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
+        className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
       >
         <Icon name="play" className="h-2.5 w-2.5" /> Hear one
       </button>
@@ -80,7 +80,7 @@ function SoundCard({ sound }: { sound: SoundLesson }) {
       </p>
 
       <div className="mt-4">
-        <p className="mb-2 font-mono text-[10px] tracking-[0.15em] text-ink-mute uppercase">
+        <p className="mb-2 kicker text-[13.5px] text-ink-soft">
           Example words
         </p>
         <div className="flex flex-wrap gap-2">
@@ -97,7 +97,7 @@ function SoundCard({ sound }: { sound: SoundLesson }) {
       </div>
 
       <div className="mt-4">
-        <p className="mb-2 font-mono text-[10px] tracking-[0.15em] text-ink-mute uppercase">
+        <p className="mb-2 kicker text-[13.5px] text-ink-soft">
           Minimal pairs · train your ear
         </p>
         <div className="space-y-2">

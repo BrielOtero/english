@@ -1,14 +1,16 @@
+import { useState } from 'react';
 import type { FormTable, Lesson, Pitfall } from '../types';
 import { useStore } from '../store';
 import { Markup } from './markup';
 import { PhraseLine } from './phrase-line';
 import { ExerciseDeck } from './exercise';
 import { LevelBadge } from './level-badge';
+import { ConfettiBurst } from './confetti';
 import { EsTag } from './icons';
 
 function SubHead({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="mb-3 font-mono text-[11px] tracking-[0.15em] text-ink-mute uppercase">
+    <h3 className="mb-3 kicker text-[13.5px] text-ink-soft">
       {children}
     </h3>
   );
@@ -81,21 +83,34 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
   const markComplete = useStore((s) => s.markComplete);
   const unmarkComplete = useStore((s) => s.unmarkComplete);
   const showSpanish = useStore((s) => s.showSpanish);
+  const [burstKey, setBurstKey] = useState(0);
+
+  function toggleComplete() {
+    if (completed) {
+      unmarkComplete(lesson.id);
+    } else {
+      markComplete(lesson.id);
+      setBurstKey((k) => k + 1); // fire the celebration
+    }
+  }
 
   return (
     <article className="fade-in" id={`lesson-${lesson.id}`}>
       <div className="mb-5 flex items-center gap-3">
         <LevelBadge level={lesson.level} />
-        <button
-          onClick={() => (completed ? unmarkComplete(lesson.id) : markComplete(lesson.id))}
-          className={`rounded-full border px-3 py-1 font-mono text-[10px] tracking-wide uppercase transition-colors ${
-            completed
-              ? 'border-success bg-success/10 text-success'
-              : 'border-rule-soft bg-paper text-ink-mute hover:text-ink'
-          }`}
-        >
-          {completed ? '✓ Completed' : 'Mark complete'}
-        </button>
+        <span className="relative">
+          <button
+            onClick={toggleComplete}
+            className={`rounded-full border px-3 py-1 font-mono text-[10px] tracking-wide uppercase transition-colors ${
+              completed
+                ? 'border-success bg-success/10 text-success'
+                : 'border-rule-soft bg-paper text-ink-mute hover:text-ink'
+            }`}
+          >
+            {completed ? '✓ Completed' : 'Mark complete'}
+          </button>
+          {burstKey > 0 && <ConfettiBurst key={burstKey} />}
+        </span>
       </div>
 
       <h2 className="font-display text-[clamp(24px,3.4vw,34px)] leading-tight text-ink">

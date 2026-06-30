@@ -38,7 +38,7 @@ export function Roadmap({ onSelect }: { onSelect: (trackId: string) => void }) {
     <div className="fade-in">
       {/* Overall progress */}
       <div className="mb-8 rounded-2xl border border-rule-soft bg-paper p-6">
-        <p className="font-mono text-[11px] tracking-[0.15em] text-ink-mute uppercase">
+        <p className="kicker text-[13.5px] text-ink-soft">
           Your journey to native
         </p>
         <div className="mt-3 flex flex-wrap items-end gap-6">
@@ -55,7 +55,7 @@ export function Roadmap({ onSelect }: { onSelect: (trackId: string) => void }) {
         </div>
         <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-bg2">
           <div
-            className="h-full rounded-full bg-accent transition-all"
+            className="h-full rounded-full bg-accent transition-[width] duration-500 ease-out"
             style={{ width: `${pct}%` }}
           />
         </div>
@@ -73,7 +73,7 @@ export function Roadmap({ onSelect }: { onSelect: (trackId: string) => void }) {
       </div>
 
       {/* Level ladder */}
-      <p className="mb-3 font-mono text-[11px] tracking-[0.15em] text-ink-mute uppercase">
+      <p className="mb-3 kicker text-[13.5px] text-ink-soft">
         The path · A1 → C2
       </p>
       <div className="space-y-2.5">
@@ -86,7 +86,7 @@ export function Roadmap({ onSelect }: { onSelect: (trackId: string) => void }) {
             <button
               key={lvl}
               onClick={() => onSelect('grammar')}
-              className="group flex w-full items-center gap-4 rounded-xl border border-rule-soft bg-paper p-4 text-left transition-colors hover:border-accent/50"
+              className="group flex w-full items-center gap-4 rounded-xl border border-rule-soft bg-paper p-4 text-left transition duration-150 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[var(--shadow-md)] active:scale-[0.99]"
             >
               <LevelBadge level={lvl} />
               <div className="min-w-0 flex-1">

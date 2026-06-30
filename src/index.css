@@ -1,18 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap');
 @import 'tailwindcss';
 
-/* Theme tokens mapped to switchable CSS variables, so Tailwind utilities
-   (bg-bg, text-ink, ...) follow the data-theme attribute on <html>. */
+/* "Lexicon" — a living dictionary you study inside. Warm manuscript palette, an
+   ownable ink-violet accent, an amber warm-spark for progress. Tokens are CSS
+   variables switched by data-theme on <html>; Tailwind utilities map to them. */
 @theme inline {
   --color-bg: var(--bg);
   --color-bg2: var(--bg-2);
   --color-paper: var(--paper);
+  --color-raised: var(--raised);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-ink-mute: var(--ink-mute);
   --color-rule: var(--rule);
   --color-rule-soft: var(--rule-soft);
   --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-on-accent: var(--on-accent);
   --color-accent2: var(--accent-2);
   --color-gold: var(--gold);
   --color-sage: var(--sage);
@@ -22,51 +26,81 @@
   --color-code-fg: var(--code-fg);
   --color-code-mute: var(--code-mute);
 
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-sans: 'Geist', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Newsreader', Georgia, serif;
+  --font-sans: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
 }
 
-/* Light theme (default) — warm ivory "language journal" with teal + coral. */
+/* Light — "warm manuscript" */
 :root {
-  --bg: #f1ede4;
-  --bg-2: #e8e2d5;
-  --paper: #fbf8f1;
-  --ink: #18272a;
-  --ink-soft: #45544f;
-  --ink-mute: #8a8f86;
-  --rule: #24332f;
-  --rule-soft: #d8d0bf;
-  --accent: #0f7d6b;
-  --accent-2: #d9663f;
-  --gold: #b88a2a;
-  --sage: #5a7d52;
-  --success: #2f7d4f;
-  --danger: #c0392b;
-  --code-bg: #14211f;
-  --code-fg: #e8ece6;
-  --code-mute: #8a9a90;
+  --bg: #edeae3;
+  --bg-2: #e3dfd5;
+  --paper: #faf8f3;
+  --raised: #ffffff;
+  --ink: #1b1a17;
+  --ink-soft: #565249;
+  --ink-mute: #8a857a;
+  --rule: #201d17;
+  --rule-soft: #ded8cb;
+  --accent: #4b3ddb;
+  --accent-strong: #3b2ebe;
+  --on-accent: #ffffff;
+  --accent-2: #e0922a;
+  --gold: #c8881c;
+  --sage: #6e8b61;
+  --success: #1a7e52;
+  --danger: #c5402a;
+  --code-bg: #1c1a22;
+  --code-fg: #ece9e3;
+  --code-mute: #8a8597;
+
+  --accent-tint: color-mix(in oklab, var(--accent) 12%, var(--paper));
+  --ring: color-mix(in oklab, var(--accent) 40%, transparent);
+  --marker: color-mix(in oklab, var(--accent-2) 42%, transparent);
+
+  --shadow-sm: 0 1px 2px rgb(27 26 23 / 0.05);
+  --shadow-md: 0 2px 4px rgb(27 26 23 / 0.05), 0 8px 20px -6px rgb(27 26 23 / 0.1);
+  --shadow-pop: 0 1px 2px rgb(27 26 23 / 0.05), 0 14px 34px -10px rgb(27 26 23 / 0.16);
+
+  --t-fast: 130ms;
+  --t: 220ms;
+  --t-slow: 320ms;
+  --t-sheet: 420ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.5, 1);
 }
 
-/* Dark theme */
+/* Dark — "midnight manuscript" (warm aubergine-charcoal, never pure black) */
 :root[data-theme='dark'] {
-  --bg: #0f1513;
-  --bg-2: #161d19;
-  --paper: #1d2521;
-  --ink: #e7ece6;
-  --ink-soft: #aeb8b0;
-  --ink-mute: #6f786f;
-  --rule: #5d6a62;
-  --rule-soft: #2c352f;
-  --accent: #2bb39a;
-  --accent-2: #e8845e;
-  --gold: #d6a644;
-  --sage: #7ba978;
-  --success: #4caf7a;
-  --danger: #e57368;
-  --code-bg: #0b110f;
-  --code-fg: #e7ece6;
-  --code-mute: #6a766e;
+  --bg: #121119;
+  --bg-2: #1b1a24;
+  --paper: #1e1c27;
+  --raised: #2a2738;
+  --ink: #f1eee7;
+  --ink-soft: #b0aba1;
+  --ink-mute: #807b8c;
+  --rule: #4a4660;
+  --rule-soft: #2c2a38;
+  --accent: #9a8dff;
+  --accent-strong: #b0a6ff;
+  --on-accent: #14121c;
+  --accent-2: #f0b450;
+  --gold: #e4ae48;
+  --sage: #8aae7c;
+  --success: #46c489;
+  --danger: #f1715a;
+  --code-bg: #0e0d14;
+  --code-fg: #ece9f2;
+  --code-mute: #7c7790;
+
+  --accent-tint: color-mix(in oklab, var(--accent) 16%, var(--paper));
+  --ring: color-mix(in oklab, var(--accent) 50%, transparent);
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 8px 28px rgb(0 0 0 / 0.5), inset 0 1px 0 rgb(255 255 255 / 0.05);
+  --shadow-pop:
+    0 1px 2px rgb(0 0 0 / 0.5), 0 18px 44px -12px rgb(0 0 0 / 0.65), inset 0 1px 0 rgb(255 255 255 / 0.05);
 }
 
 html,
@@ -77,51 +111,53 @@ body {
 body {
   font-family: var(--font-sans);
   color: var(--ink);
-  font-feature-settings: 'ss01', 'cv11';
+  font-feature-settings: 'ss01';
   -webkit-font-smoothing: antialiased;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.006em;
 }
 
-/* Display / serif-italic helpers used for headings */
+/* Literary serif — wordmark, hero numerals, kickers. */
 .font-display {
+  font-family: var(--font-display);
   font-optical-sizing: auto;
-  letter-spacing: -0.02em;
-  font-variation-settings:
-    'SOFT' 50,
-    'WONK' 0;
+  letter-spacing: -0.015em;
 }
 .serif-italic {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 400;
-  font-variation-settings: 'SOFT' 100;
+  font-weight: 450;
+}
+/* Editorial italic kicker that replaces the old mono-uppercase eyebrows. */
+.kicker {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 450;
+  letter-spacing: 0;
+}
+.tnum {
+  font-variant-numeric: tabular-nums;
 }
 
-/* Paper grain / ambient glow overlay */
+/* Faint warm aurora behind everything (replaces the old grain). */
 .grain {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.08;
-  mix-blend-mode: multiply;
+  opacity: 0.05;
   background-image:
-    radial-gradient(circle at 18% 8%, rgba(15, 125, 107, 0.16), transparent 42%),
-    radial-gradient(circle at 82% 92%, rgba(217, 102, 63, 0.16), transparent 50%);
+    radial-gradient(60% 50% at 12% 0%, var(--accent), transparent 70%),
+    radial-gradient(50% 50% at 95% 100%, var(--accent-2), transparent 70%);
 }
 :root[data-theme='dark'] .grain {
-  opacity: 0.2;
-  mix-blend-mode: screen;
-  background-image:
-    radial-gradient(circle at 18% 8%, rgba(43, 179, 154, 0.2), transparent 42%),
-    radial-gradient(circle at 82% 92%, rgba(232, 132, 94, 0.16), transparent 50%);
+  opacity: 0.14;
 }
 
-/* Entrance animation */
+/* Content mount: fade + rise. */
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -129,11 +165,59 @@ body {
   }
 }
 .fade-in {
-  animation: fade-in 0.4s ease both;
+  animation: fade-in var(--t-slow) var(--ease-out) both;
 }
 
-/* Subtle pulse used by the speaker button while audio plays */
-@keyframes speaking {
+/* Staggered entrance for list/grid children (entrance is occasional, so it's safe
+   to delight here). Capped so long lists don't feel slow. */
+.stagger > * {
+  animation: fade-in var(--t-slow) var(--ease-out) both;
+}
+.stagger > *:nth-child(1) {
+  animation-delay: 20ms;
+}
+.stagger > *:nth-child(2) {
+  animation-delay: 60ms;
+}
+.stagger > *:nth-child(3) {
+  animation-delay: 100ms;
+}
+.stagger > *:nth-child(4) {
+  animation-delay: 140ms;
+}
+.stagger > *:nth-child(5) {
+  animation-delay: 180ms;
+}
+.stagger > *:nth-child(6) {
+  animation-delay: 220ms;
+}
+.stagger > *:nth-child(n + 7) {
+  animation-delay: 260ms;
+}
+
+/* Listen equalizer (replaces the opacity pulse on the speaker). */
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+.eq-bar {
+  transform-origin: bottom;
+  animation: eq 0.85s var(--ease-io) infinite;
+}
+.eq-bar:nth-child(2) {
+  animation-delay: 0.14s;
+}
+.eq-bar:nth-child(3) {
+  animation-delay: 0.28s;
+}
+/* Playing indicator on the round Listen button — gentle opacity pulse only,
+   never a transform that would distort the circle. */
+@keyframes pulse-soft {
   0%,
   100% {
     opacity: 1;
@@ -143,14 +227,128 @@ body {
   }
 }
 .speaking {
-  animation: speaking 0.8s ease-in-out infinite;
+  animation: pulse-soft 0.85s var(--ease-io) infinite;
 }
 
-/* Custom scrollbar for horizontally scrolling rows */
-.soft-scroll::-webkit-scrollbar {
-  height: 8px;
+/* Highlighter swipe on key terms. */
+@keyframes mark {
+  from {
+    background-size: 0 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
 }
-.soft-scroll::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--ink) 18%, transparent);
-  border-radius: 999px;
+.mark {
+  background: linear-gradient(var(--marker), var(--marker)) left / 0 100% no-repeat;
+  padding: 0 0.12em;
+  box-decoration-break: clone;
+  animation: mark 0.5s var(--ease-out) both;
+}
+
+/* Wax-stamp for the magic-link "sent" delight. */
+@keyframes stamp {
+  0% {
+    transform: scale(1.6) rotate(-8deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.92) rotate(-8deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(-8deg);
+    opacity: 1;
+  }
+}
+.stamp {
+  animation: stamp 0.5s var(--ease-spring) both;
+}
+
+/* Sheet rise + modal pop + backdrop. */
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.sheet-up {
+  animation: sheet-up var(--t-sheet) var(--ease-out) both;
+}
+.pop-in {
+  animation: pop-in var(--t) var(--ease-out) both;
+}
+.backdrop-in {
+  animation: backdrop-in var(--t) ease both;
+}
+
+/* "Listening for sign-in" shimmer. */
+@keyframes shimmer {
+  to {
+    background-position: 200% 0;
+  }
+}
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--accent-tint) 0%,
+    color-mix(in oklab, var(--accent) 28%, var(--paper)) 50%,
+    var(--accent-tint) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.3s linear infinite;
+}
+
+/* Pressable affordance + focus ring. */
+.press {
+  transition:
+    transform var(--t-fast) var(--ease-spring),
+    background-color var(--t-fast),
+    border-color var(--t-fast),
+    color var(--t-fast),
+    box-shadow var(--t-fast);
+}
+.press:active {
+  transform: scale(0.97);
+}
+:where(button, a, input, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+/* Soft scrollbar for horizontal rails. */
+.soft-scroll {
+  scrollbar-width: none;
+}
+.soft-scroll::-webkit-scrollbar {
+  height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }

@@ -69,7 +69,7 @@ export function WritingView() {
 
           <aside className="space-y-5">
             <div>
-              <p className="mb-2 font-mono text-[10px] tracking-[0.15em] text-ink-mute uppercase">
+              <p className="mb-2 kicker text-[13.5px] text-ink-soft">
                 Tips
               </p>
               <ul className="space-y-1.5">
@@ -82,7 +82,7 @@ export function WritingView() {
               </ul>
             </div>
             <div>
-              <p className="mb-2 font-mono text-[10px] tracking-[0.15em] text-ink-mute uppercase">
+              <p className="mb-2 kicker text-[13.5px] text-ink-soft">
                 Useful phrases
               </p>
               <div className="space-y-2 rounded-lg border border-rule-soft bg-paper p-3">
@@ -107,7 +107,7 @@ export function WritingView() {
             setText('');
             setShowModel(false);
           }}
-          className="group rounded-xl border border-rule-soft bg-paper p-5 text-left transition-colors hover:border-accent/50"
+          className="group rounded-xl border border-rule-soft bg-paper p-5 text-left transition duration-150 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[var(--shadow-md)] active:scale-[0.99]"
         >
           <div className="mb-2">
             <LevelBadge level={w.level} />

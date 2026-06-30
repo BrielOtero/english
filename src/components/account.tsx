@@ -2,23 +2,27 @@ import { useEffect, useState } from 'react';
 import { cloudEnabled, supabase } from '../lib/supabase';
 import { pullAndMerge, startSync, stopSync } from '../lib/sync';
 import { Icon } from './icons';
+import { AppModal } from './app-modal';
+
+function initialOf(email: string): string {
+  return (email.trim()[0] || '?').toUpperCase();
+}
 
 /**
- * Optional cross-device sync. Passwordless magic-link sign-in: enter your email, get
- * a one-tap sign-in link, click it, and you're in — no password, no code to type.
- * Signing in is entirely optional; the app works the same without it (progress is
- * saved locally either way). Renders nothing unless Supabase is configured.
+ * Optional cross-device sync via passwordless magic link. A compact avatar/sign-in
+ * trigger in the header opens a modal (bottom sheet on mobile): enter email → we mail
+ * a one-tap link → it returns here and signs you in. Renders nothing unless Supabase
+ * is configured.
  */
 export function Account() {
   const [userId, setUserId] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState('');
+  const [open, setOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
-  // Track the auth session (the magic link returns here and is picked up
-  // automatically by supabase-js, firing onAuthStateChange).
   useEffect(() => {
     if (!supabase) return;
     let active = true;
@@ -37,7 +41,6 @@ export function Account() {
     };
   }, []);
 
-  // Pull + start syncing while signed in.
   useEffect(() => {
     if (!userId) {
       stopSync();
@@ -49,6 +52,8 @@ export function Account() {
   }, [userId]);
 
   if (!cloudEnabled) return null;
+
+  const signedIn = !!userId;
 
   async function sendLink() {
     if (!supabase || !email.trim()) return;
@@ -68,88 +73,121 @@ export function Account() {
     setEmail('');
     setSent(false);
     setMsg(null);
+    setOpen(false);
   }
 
-  const signedIn = !!userId;
-
   return (
-    <details className="relative">
-      <summary
-        className={`flex cursor-pointer list-none items-center gap-1.5 rounded-full border px-3 py-2 font-mono text-[11px] tracking-wide uppercase transition-colors [&::-webkit-details-marker]:hidden ${
-          signedIn
-            ? 'border-accent bg-accent/10 text-ink'
-            : 'border-rule-soft bg-paper text-ink-soft hover:text-ink'
-        }`}
-      >
-        <Icon name="user" className="h-3.5 w-3.5" />
-        {signedIn ? (
-          <span className="max-w-[120px] truncate normal-case">{userEmail}</span>
-        ) : (
-          'Sign in'
-        )}
-      </summary>
+    <>
+      {signedIn ? (
+        <button
+          onClick={() => setOpen(true)}
+          aria-label="Account"
+          title={`Signed in as ${userEmail}`}
+          className="press grid h-9 w-9 place-items-center rounded-full bg-accent font-mono text-[13px] font-medium text-on-accent ring-2 ring-accent/25"
+        >
+          {initialOf(userEmail)}
+        </button>
+      ) : (
+        <button
+          onClick={() => setOpen(true)}
+          className="press flex items-center gap-1.5 rounded-full border border-rule-soft bg-paper px-3 py-2 text-[12px] font-medium text-ink-soft hover:text-ink"
+        >
+          <Icon name="user" className="h-3.5 w-3.5" />
+          Sign in
+        </button>
+      )}
 
-      <div className="absolute right-0 z-30 mt-2 w-72 rounded-xl border border-rule-soft bg-paper p-4 shadow-xl">
-        {signedIn ? (
-          <>
-            <p className="text-[13px] text-ink">
-              Signed in as <span className="font-medium">{userEmail}</span>
-            </p>
-            <p className="mt-1 text-[12px] leading-snug text-ink-soft">
-              Your progress syncs automatically across your devices.
-            </p>
-            <button
-              onClick={signOut}
-              className="mt-3 w-full rounded-lg border border-rule-soft bg-bg px-3 py-2 font-mono text-[11px] tracking-wide text-ink-soft uppercase transition-colors hover:text-ink"
-            >
-              Sign out
-            </button>
-          </>
-        ) : sent ? (
-          <>
-            <p className="flex items-center gap-2 text-[13px] text-ink">
-              <Icon name="check" className="h-4 w-4 text-success" />
-              Check your email
-            </p>
-            <p className="mt-1 text-[12px] leading-snug text-ink-soft">
-              We sent a sign-in link to <span className="font-medium">{email}</span>. Click it to
-              finish — you can do it on any device.
-            </p>
-            <button
-              onClick={() => {
-                setSent(false);
-                setMsg(null);
-              }}
-              className="mt-3 w-full text-center font-mono text-[10px] tracking-wide text-ink-mute uppercase hover:text-ink"
-            >
-              ← use a different email
-            </button>
-          </>
-        ) : (
-          <>
-            <p className="mb-3 text-[12px] leading-snug text-ink-soft">
-              Sign in to sync your progress across devices — phone, laptop, anywhere. Optional: the
-              app works the same without it.
-            </p>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && sendLink()}
-              placeholder="you@email.com"
-              className="w-full rounded-lg border border-rule-soft bg-bg px-3 py-2 text-[13px] text-ink focus:border-accent focus:outline-none"
-            />
-            <button
-              onClick={sendLink}
-              disabled={busy || !email.trim()}
-              className="mt-2 w-full rounded-lg bg-accent px-3 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90 disabled:opacity-50"
-            >
-              {busy ? 'Sending…' : 'Email me a sign-in link'}
-            </button>
-            {msg && <p className="mt-2 text-[11px] leading-snug text-danger">{msg}</p>}
-          </>
-        )}
-      </div>
-    </details>
+      <AppModal open={open} onClose={() => setOpen(false)} label="Sign in to sync">
+        <div className="px-6 pt-6 pb-7 sm:px-7">
+          {/* monogram */}
+          <div className="mb-5 flex items-center gap-2">
+            <span className="font-display text-[20px] text-accent italic">/ˈfluː.ənt/</span>
+          </div>
+
+          {signedIn ? (
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="grid h-11 w-11 place-items-center rounded-full bg-accent font-mono text-[16px] text-on-accent ring-2 ring-accent/25">
+                  {initialOf(userEmail)}
+                </span>
+                <div className="min-w-0">
+                  <p className="truncate text-[14px] font-medium text-ink">{userEmail}</p>
+                  <p className="flex items-center gap-1.5 text-[12px] text-success">
+                    <Icon name="check" className="h-3.5 w-3.5" />
+                    Synced across your devices
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={signOut}
+                className="press mt-5 w-full rounded-xl border border-rule-soft bg-bg2 py-2.5 text-[13px] font-medium text-ink-soft hover:text-ink"
+              >
+                Sign out
+              </button>
+            </div>
+          ) : sent ? (
+            <div className="text-center">
+              <div className="stamp mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-accent text-on-accent">
+                <Icon name="check" className="h-7 w-7" />
+              </div>
+              <h2 className="font-display mt-4 text-[24px] text-ink">Check your inbox</h2>
+              <p className="mx-auto mt-1.5 max-w-[20rem] text-[13.5px] leading-relaxed text-ink-soft">
+                We sent a magic link to <span className="font-medium text-ink">{email}</span>. Tap it
+                on any device to finish — you'll land back here, signed in.
+              </p>
+              <div className="shimmer mx-auto mt-5 h-1.5 w-40 rounded-full" />
+              <p className="mt-2 text-[11px] text-ink-mute">Listening for your sign-in…</p>
+              <button
+                onClick={() => {
+                  setSent(false);
+                  setMsg(null);
+                }}
+                className="press mt-4 text-[12px] font-medium text-ink-mute hover:text-ink"
+              >
+                Use a different email
+              </button>
+            </div>
+          ) : (
+            <div>
+              <h2 className="font-display text-[26px] leading-tight text-ink">
+                Pick up where you left off.
+              </h2>
+              <p className="mt-2 text-[13.5px] leading-relaxed text-ink-soft">
+                Sign in with just your email — no password, ever. Your progress syncs across every
+                device. It's optional; the app works fine without it.
+              </p>
+              <div className="mt-5">
+                <div className="flex items-center gap-2.5 rounded-xl border border-rule-soft bg-bg px-3.5 focus-within:border-accent">
+                  <Icon name="user" className="h-4 w-4 text-ink-mute" />
+                  <input
+                    type="email"
+                    inputMode="email"
+                    autoComplete="email"
+                    autoFocus
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && sendLink()}
+                    placeholder="you@email.com"
+                    className="w-full bg-transparent py-3.5 text-[15px] text-ink placeholder:text-ink-mute focus:outline-none"
+                  />
+                </div>
+                <button
+                  onClick={sendLink}
+                  disabled={busy || !email.trim()}
+                  className="press mt-3 w-full rounded-xl bg-accent py-3.5 text-[14px] font-semibold text-on-accent hover:bg-accent-strong disabled:opacity-50"
+                >
+                  {busy ? 'Sending…' : 'Email me a magic link'}
+                </button>
+                {msg && <p className="mt-2.5 text-[12px] text-danger">{msg}</p>}
+                <p className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-ink-mute">
+                  <Icon name="check" className="h-3 w-3" />
+                  Passwordless — we email you a one-tap link.
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </AppModal>
+    </>
   );
 }

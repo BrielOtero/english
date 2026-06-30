@@ -72,9 +72,12 @@ export function ExerciseDeck({
     }
   }, [done, onComplete]);
 
-  // Focus the text field when a typing exercise appears.
+  // Focus the text field when a typing exercise appears — but never scroll the page
+  // to it (otherwise opening a lesson jumps straight down to the practice input).
   useEffect(() => {
-    if (ex && ex.kind !== 'mcq' && ex.kind !== 'order') inputRef.current?.focus();
+    if (ex && ex.kind !== 'mcq' && ex.kind !== 'order') {
+      inputRef.current?.focus({ preventScroll: true });
+    }
   }, [ex]);
 
   if (!exercises.length) return null;
@@ -83,7 +86,7 @@ export function ExerciseDeck({
     const pct = Math.round((score / exercises.length) * 100);
     return (
       <div className="fade-in rounded-xl border border-rule-soft bg-paper p-6 text-center">
-        <p className="font-mono text-[11px] tracking-[0.15em] text-ink-mute uppercase">
+        <p className="kicker text-[13.5px] text-ink-soft">
           Practice complete
         </p>
         <p className="font-display mt-2 text-[32px] leading-none text-ink">
@@ -166,7 +169,7 @@ export function ExerciseDeck({
     <div className="rounded-xl border border-rule-soft bg-paper p-5">
       {/* progress */}
       <div className="mb-4 flex items-center justify-between">
-        <span className="font-mono text-[10px] tracking-[0.15em] text-ink-mute uppercase">
+        <span className="kicker text-[13.5px] text-ink-soft">
           {prompt}
         </span>
         <span className="font-mono text-[11px] text-ink-mute">
@@ -175,7 +178,7 @@ export function ExerciseDeck({
       </div>
       <div className="mb-5 h-1 w-full overflow-hidden rounded-full bg-bg2">
         <div
-          className="h-full rounded-full bg-accent transition-all"
+          className="h-full rounded-full bg-accent transition-[width] duration-500 ease-out"
           style={{ width: `${(i / exercises.length) * 100}%` }}
         />
       </div>
@@ -347,14 +350,14 @@ export function ExerciseDeck({
         {!checked ? (
           <button
             onClick={check}
-            className="rounded-full bg-accent px-5 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
+            className="rounded-full bg-accent px-5 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
           >
             Check
           </button>
         ) : (
           <button
             onClick={next}
-            className="rounded-full bg-ink px-5 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
+            className="rounded-full bg-ink px-5 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
           >
             {i + 1 < exercises.length ? 'Next' : 'Finish'}
           </button>

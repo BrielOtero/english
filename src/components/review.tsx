@@ -71,7 +71,7 @@ export function Review() {
             </p>
             <button
               onClick={() => setSession('due')}
-              className="mt-4 rounded-full bg-accent px-5 py-2.5 font-mono text-[12px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
+              className="mt-4 rounded-full bg-accent px-5 py-2.5 font-mono text-[12px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
             >
               Start review →
             </button>

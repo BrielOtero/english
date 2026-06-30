@@ -53,7 +53,7 @@ export function VocabBrowser() {
           <div>
             <div className="mb-2 flex items-center gap-2">
               <LevelBadge level={openSet.level} />
-              <span className="font-mono text-[11px] tracking-[0.15em] text-ink-mute uppercase">
+              <span className="kicker text-[13.5px] text-ink-soft">
                 {openSet.items.length} words
               </span>
             </div>
@@ -62,7 +62,7 @@ export function VocabBrowser() {
           </div>
           <button
             onClick={() => setStudying(true)}
-            className="shrink-0 rounded-full bg-accent px-4 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition-opacity hover:opacity-90"
+            className="shrink-0 rounded-full bg-accent px-4 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
           >
             Study set →
           </button>
@@ -101,7 +101,7 @@ export function VocabBrowser() {
             setOpenId(set.id);
             setStudying(false);
           }}
-          className="group rounded-xl border border-rule-soft bg-paper p-5 text-left transition-colors hover:border-accent/50"
+          className="group rounded-xl border border-rule-soft bg-paper p-5 text-left transition duration-150 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[var(--shadow-md)] active:scale-[0.99]"
         >
           <div className="mb-2 flex items-center gap-2">
             <LevelBadge level={set.level} />

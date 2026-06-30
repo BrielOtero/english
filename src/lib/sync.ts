@@ -15,17 +15,11 @@ let onVisible: (() => void) | null = null;
 let timer: ReturnType<typeof setTimeout> | null = null;
 let lastJson = '';
 
-/** The persistable slice of state (mirrors the store's `partialize`). */
+/** The synced slice: ONLY learning progress. Settings (theme, audio speed, ES
+ *  toggle) are per-device preferences and intentionally stay local. */
 function snapshot() {
   const s = useStore.getState();
-  return {
-    reviews: s.reviews,
-    completed: s.completed,
-    theme: s.theme,
-    showSpanish: s.showSpanish,
-    voiceRate: s.voiceRate,
-    voiceURI: s.voiceURI,
-  };
+  return { reviews: s.reviews, completed: s.completed };
 }
 
 async function readCloud(userId: string): Promise<unknown | null> {

@@ -96,16 +96,14 @@ export const useStore = create<FluentState>()(
       toggleSpanish: () => set((s) => ({ showSpanish: !s.showSpanish })),
       setVoiceRate: (rate) => set({ voiceRate: rate }),
       setVoiceURI: (voiceURI) => set({ voiceURI }),
+      // Merge ONLY learning progress (reviews + completed). Settings like theme and
+      // audio speed are per-device preferences and are deliberately NOT synced.
       importProgress: (data) =>
         set((state) => {
           if (!data || typeof data !== 'object') return {};
           const d = data as {
             reviews?: Record<string, ReviewItem>;
             completed?: Record<string, true>;
-            theme?: Theme;
-            showSpanish?: boolean;
-            voiceRate?: number;
-            voiceURI?: string | null;
           };
           const reviews = { ...state.reviews };
           for (const [id, item] of Object.entries(d.reviews ?? {})) {
@@ -116,15 +114,7 @@ export const useStore = create<FluentState>()(
               reviews[id] = item;
             }
           }
-          return {
-            reviews,
-            completed: { ...state.completed, ...(d.completed ?? {}) },
-            theme: d.theme === 'dark' || d.theme === 'light' ? d.theme : state.theme,
-            showSpanish: typeof d.showSpanish === 'boolean' ? d.showSpanish : state.showSpanish,
-            voiceRate: typeof d.voiceRate === 'number' ? d.voiceRate : state.voiceRate,
-            voiceURI:
-              typeof d.voiceURI === 'string' || d.voiceURI === null ? d.voiceURI : state.voiceURI,
-          };
+          return { reviews, completed: { ...state.completed, ...(d.completed ?? {}) } };
         }),
       refreshNow: () => set({ now: Date.now() }),
     }),

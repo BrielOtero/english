@@ -6,14 +6,9 @@ import { PhraseLine } from './phrase-line';
 import { ExerciseDeck } from './exercise';
 import { LevelBadge } from './level-badge';
 import { ConfettiBurst } from './confetti';
-import { EsTag } from './icons';
 
 function SubHead({ children }: { children: React.ReactNode }) {
-  return (
-    <h3 className="mb-3 kicker text-[13.5px] text-ink-soft">
-      {children}
-    </h3>
-  );
+  return <h3 className="mb-3 kicker text-[13.5px] text-ink-soft">{children}</h3>;
 }
 
 function Table({ table }: { table: FormTable }) {
@@ -54,7 +49,7 @@ function Table({ table }: { table: FormTable }) {
   );
 }
 
-function PitfallCard({ pitfall, showSpanish }: { pitfall: Pitfall; showSpanish: boolean }) {
+function PitfallCard({ pitfall }: { pitfall: Pitfall }) {
   return (
     <div className="rounded-lg border border-rule-soft bg-bg p-3.5">
       <p className="text-[14px] text-ink-soft">
@@ -68,12 +63,6 @@ function PitfallCard({ pitfall, showSpanish }: { pitfall: Pitfall; showSpanish: 
       <p className="mt-2 text-[12px] text-ink-soft">
         <Markup text={pitfall.why} />
       </p>
-      {showSpanish && pitfall.esNote && (
-        <p className="mt-1 text-[12px] text-accent">
-          <EsTag />
-          <Markup text={pitfall.esNote} />
-        </p>
-      )}
     </div>
   );
 }
@@ -82,7 +71,6 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
   const completed = useStore((s) => !!s.completed[lesson.id]);
   const markComplete = useStore((s) => s.markComplete);
   const unmarkComplete = useStore((s) => s.unmarkComplete);
-  const showSpanish = useStore((s) => s.showSpanish);
   const [burstKey, setBurstKey] = useState(0);
 
   function toggleComplete() {
@@ -117,11 +105,6 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
         {lesson.title}
       </h2>
       <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-ink-soft">{lesson.summary}</p>
-      {showSpanish && lesson.summaryEs && (
-        <p className="mt-1 max-w-2xl text-[14px] leading-relaxed text-ink-mute italic">
-          {lesson.summaryEs}
-        </p>
-      )}
 
       {/* Teaching sections */}
       <div className="mt-7 space-y-6">
@@ -131,11 +114,6 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
             <p className="max-w-2xl text-[15px] leading-relaxed text-ink-soft">
               <Markup text={sec.body} />
             </p>
-            {showSpanish && sec.bodyEs && (
-              <p className="mt-1.5 max-w-2xl text-[13.5px] leading-relaxed text-ink-mute italic">
-                <Markup text={sec.bodyEs} />
-              </p>
-            )}
             {sec.examples && (
               <div className="mt-3 space-y-2.5 rounded-lg border border-rule-soft bg-paper p-4">
                 {sec.examples.map((ph, k) => (
@@ -170,7 +148,7 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
           <SubHead>Watch out</SubHead>
           <div className="grid gap-3 sm:grid-cols-2">
             {lesson.pitfalls.map((p, i) => (
-              <PitfallCard key={i} pitfall={p} showSpanish={showSpanish} />
+              <PitfallCard key={i} pitfall={p} />
             ))}
           </div>
         </section>

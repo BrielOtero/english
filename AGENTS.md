@@ -4,10 +4,10 @@ Guidance for AI agents and engineers working in this repository. Read this befor
 
 ## Project
 
-**Fluent** — an interactive, single-page app that takes a Spanish speaker from zero English to a
+**Fluent** — an interactive, single-page app that takes a learner from zero English to a
 near-native **C1**. It renders a CEFR roadmap, per-level grammar lessons (rule → examples → pitfalls →
 self-checking drills), themed vocabulary with flashcards, a pronunciation lab with minimal-pair
-drills, graded reading, writing prompts with model answers, a Spanish-speaker pitfalls reference, and
+drills, graded reading, writing prompts with model answers, phrasal-verb and idiom references, and
 a spaced-repetition review that pulls from all of it.
 
 It is a **static** app — all content lives as typed data in `src/content/`. Audio plays from
@@ -74,7 +74,6 @@ public/audio/         # pre-generated neural-voice clips (committed; regenerate 
     grammar.ts        # GrammarUnit[]  (A1-C2 lessons)
     vocab.ts          # VocabSet[]
     phonetics.ts      # SoundLesson[]
-    pitfalls.ts       # SpanishPitfall[]
     phrasal.ts        # PhrasalVerb[]
     idioms.ts         # Idiom[]
     reading.ts        # Reading[]
@@ -85,9 +84,9 @@ public/audio/         # pre-generated neural-voice clips (committed; regenerate 
 ## Content model
 
 All learning material is **typed data**, defined by the interfaces in `src/types.ts` (`Lesson`,
-`Exercise`, `VocabItem`, `SoundLesson`, `SpanishPitfall`, `Reading`, `WritingPrompt`, …). Adding
+`Exercise`, `VocabItem`, `SoundLesson`, `PhrasalVerb`, `Idiom`, `Reading`, `WritingPrompt`, …). Adding
 content is a data edit, not a code change. The exercise engine renders a discriminated union of
-exercise kinds (`mcq`, `cloze`, `correct`, `order`, `translate`, `dictation`); to add a new kind,
+exercise kinds (`mcq`, `cloze`, `correct`, `order`, `dictation`); to add a new kind,
 extend the union in `types.ts` and handle it in `components/exercise.tsx`.
 
 ## Styling conventions

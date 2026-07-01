@@ -138,14 +138,3 @@ export function Icon({ name, className = 'h-4 w-4' }: { name: IconName; classNam
     </svg>
   );
 }
-
-/** A small "ES" tag used to flag a Spanish-language note (replaces the flag emoji). */
-export function EsTag({ className = '' }: { className?: string }) {
-  return (
-    <span
-      className={`mr-1.5 inline-block rounded-sm bg-accent/15 px-1 py-0.5 align-middle font-mono text-[9px] leading-none font-medium tracking-wide text-accent ${className}`}
-    >
-      ES
-    </span>
-  );
-}

@@ -13,8 +13,8 @@ const GRADES: { grade: Grade; label: string; cls: string }[] = [
 ];
 
 /**
- * Runs a deck of flashcards: show the Spanish prompt, flip to reveal the English
- * answer + audio, then grade recall (Again/Good/Easy). Grading updates the shared
+ * Runs a deck of flashcards: show the definition prompt, flip to reveal the word
+ * + audio, then grade recall (Again/Good/Easy). Grading updates the shared
  * spaced-repetition schedule in the store.
  */
 export function FlashcardSession({ cards, onDone }: { cards: ReviewCard[]; onDone?: () => void }) {

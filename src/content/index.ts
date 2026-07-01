@@ -3,13 +3,12 @@ import type { IconName } from '../components/icons';
 import { GRAMMAR } from './grammar';
 import { VOCAB_SETS } from './vocab';
 import { SOUNDS } from './phonetics';
-import { PITFALLS } from './pitfalls';
 import { PHRASAL } from './phrasal';
 import { IDIOMS } from './idioms';
 import { READINGS } from './reading';
 import { WRITING } from './writing';
 
-export { GRAMMAR, VOCAB_SETS, SOUNDS, PITFALLS, PHRASAL, IDIOMS, READINGS, WRITING };
+export { GRAMMAR, VOCAB_SETS, SOUNDS, PHRASAL, IDIOMS, READINGS, WRITING };
 
 /** A top-level navigation destination. */
 export interface Track {
@@ -71,13 +70,6 @@ export const TRACKS: Track[] = [
     section: 'practice',
   },
   {
-    id: 'pitfalls',
-    title: 'Spanish Pitfalls',
-    icon: 'alert',
-    blurb: 'False friends & L1 traps',
-    section: 'practice',
-  },
-  {
     id: 'phrasal',
     title: 'Phrasal Verbs',
     icon: 'link',
@@ -107,13 +99,13 @@ export function grammarUnit(level: Level) {
 export interface ReviewCard {
   /** Unique key the store uses to schedule this card. */
   id: string;
-  /** Prompt side — Spanish, for productive recall toward English. */
+  /** Prompt side — the English definition/meaning, for productive recall. */
   front: string;
   /** Answer side — the English word/phrase. */
   back: string;
   /** What the Listen button speaks. */
   audio: string;
-  /** Extra context shown after flipping (definition, example). */
+  /** Extra context shown after flipping (an example sentence). */
   note?: string;
   /** Source label, e.g. "Vocabulary". */
   tag: string;
@@ -128,10 +120,10 @@ export function buildReviewDeck(): ReviewCard[] {
     for (const item of set.items) {
       cards.push({
         id: `vocab:${item.id}`,
-        front: item.es,
+        front: item.meaning,
         back: item.word,
         audio: item.word,
-        note: `${item.meaning} — “${item.example}”`,
+        note: `“${item.example}”`,
         tag: 'Vocabulary',
         level: item.level,
       });
@@ -141,10 +133,10 @@ export function buildReviewDeck(): ReviewCard[] {
   for (const pv of PHRASAL) {
     cards.push({
       id: `phrasal:${pv.id}`,
-      front: pv.es,
+      front: pv.meaning,
       back: pv.verb,
       audio: pv.verb,
-      note: `${pv.meaning} — “${pv.example}”`,
+      note: `“${pv.example}”`,
       tag: 'Phrasal verb',
       level: pv.level,
     });
@@ -153,10 +145,10 @@ export function buildReviewDeck(): ReviewCard[] {
   for (const idiom of IDIOMS) {
     cards.push({
       id: `idiom:${idiom.id}`,
-      front: idiom.es,
+      front: idiom.meaning,
       back: idiom.phrase,
       audio: idiom.phrase,
-      note: `${idiom.meaning} — “${idiom.example}”`,
+      note: `“${idiom.example}”`,
       tag: idiom.kind === 'idiom' ? 'Idiom' : 'Collocation',
       level: idiom.level,
     });

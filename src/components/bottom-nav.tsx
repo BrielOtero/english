@@ -99,7 +99,10 @@ function Tab({
       aria-current={active ? 'page' : undefined}
       className="press flex w-14 flex-col items-center gap-1 py-1"
     >
-      <Icon name={icon} className={`h-[22px] w-[22px] ${active ? 'text-accent' : 'text-ink-mute'}`} />
+      <Icon
+        name={icon}
+        className={`h-[22px] w-[22px] ${active ? 'text-accent' : 'text-ink-mute'}`}
+      />
       <span className={`text-[10px] font-medium ${active ? 'text-accent' : 'text-ink-mute'}`}>
         {label}
       </span>

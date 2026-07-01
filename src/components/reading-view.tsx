@@ -10,7 +10,6 @@ import { Icon } from './icons';
 export function ReadingView() {
   const rate = useStore((s) => s.voiceRate);
   const voiceURI = useStore((s) => s.voiceURI);
-  const showSpanish = useStore((s) => s.showSpanish);
   const [openId, setOpenId] = useState<string | null>(null);
 
   const open = READINGS.find((r) => r.id === openId);
@@ -36,16 +35,6 @@ export function ReadingView() {
         </div>
         <h2 className="font-display text-[28px] leading-tight text-ink">{open.title}</h2>
 
-        {open.glossary && open.glossary.length > 0 && showSpanish && (
-          <div className="mt-4 flex flex-wrap gap-2 rounded-lg border border-rule-soft bg-bg p-3">
-            {open.glossary.map((g) => (
-              <span key={g.word} className="text-[12px] text-ink-soft">
-                <span className="font-medium text-ink">{g.word}</span> = {g.es}
-              </span>
-            ))}
-          </div>
-        )}
-
         <div className="mt-5 space-y-3">
           {open.paragraphs.map((p, i) => (
             <div key={i} className="flex items-start gap-2.5">
@@ -57,9 +46,7 @@ export function ReadingView() {
 
         {open.questions.length > 0 && (
           <div className="mt-8">
-            <p className="mb-3 kicker text-[13.5px] text-ink-soft">
-              Comprehension check
-            </p>
+            <p className="mb-3 kicker text-[13.5px] text-ink-soft">Comprehension check</p>
             <ExerciseDeck exercises={open.questions} />
           </div>
         )}

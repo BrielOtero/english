@@ -18,9 +18,7 @@ function Row({
         onClick={() => onSelect(track.id)}
         aria-current={active ? 'page' : undefined}
         className={`group relative flex w-full items-center gap-3 rounded-lg py-2 pr-2.5 pl-3 text-left transition-colors ${
-          active
-            ? 'bg-[var(--accent-tint)] text-ink'
-            : 'text-ink-soft hover:bg-bg2 hover:text-ink'
+          active ? 'bg-[var(--accent-tint)] text-ink' : 'text-ink-soft hover:bg-bg2 hover:text-ink'
         }`}
       >
         {active && (

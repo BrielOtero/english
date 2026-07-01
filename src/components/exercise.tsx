@@ -10,7 +10,6 @@ const KIND_LABEL: Record<Exercise['kind'], string> = {
   cloze: 'Fill in the blank',
   correct: 'Fix the mistake',
   order: 'Put the words in order',
-  translate: 'Translate to English',
   dictation: 'Listen and type what you hear',
 };
 
@@ -22,7 +21,6 @@ function modelAnswer(ex: Exercise): string {
     case 'cloze':
       return `${ex.before} ${ex.answers[0]} ${ex.after}`.replace(/\s+/g, ' ').trim();
     case 'correct':
-    case 'translate':
       return ex.answers[0];
     case 'order':
       return ex.answer;
@@ -86,9 +84,7 @@ export function ExerciseDeck({
     const pct = Math.round((score / exercises.length) * 100);
     return (
       <div className="fade-in rounded-xl border border-rule-soft bg-paper p-6 text-center">
-        <p className="kicker text-[13.5px] text-ink-soft">
-          Practice complete
-        </p>
+        <p className="kicker text-[13.5px] text-ink-soft">Practice complete</p>
         <p className="font-display mt-2 text-[32px] leading-none text-ink">
           {score} / {exercises.length}
         </p>
@@ -129,8 +125,6 @@ export function ExerciseDeck({
         return matches(text, ex.answers);
       case 'correct':
         return matches(text, ex.answers);
-      case 'translate':
-        return matches(text, ex.answers);
       case 'order':
         return normalize(picked.map((p) => ex.tokens[p]).join(' ')) === normalize(ex.answer);
       case 'dictation':
@@ -143,13 +137,7 @@ export function ExerciseDeck({
     // Don't let the learner check an empty answer.
     if (ex.kind === 'mcq' && choice === null) return;
     if (ex.kind === 'order' && picked.length === 0) return;
-    if (
-      (ex.kind === 'cloze' ||
-        ex.kind === 'correct' ||
-        ex.kind === 'translate' ||
-        ex.kind === 'dictation') &&
-      !text.trim()
-    )
+    if ((ex.kind === 'cloze' || ex.kind === 'correct' || ex.kind === 'dictation') && !text.trim())
       return;
     const ok = evaluate();
     setWasCorrect(ok);
@@ -169,9 +157,7 @@ export function ExerciseDeck({
     <div className="rounded-xl border border-rule-soft bg-paper p-5">
       {/* progress */}
       <div className="mb-4 flex items-center justify-between">
-        <span className="kicker text-[13.5px] text-ink-soft">
-          {prompt}
-        </span>
+        <span className="kicker text-[13.5px] text-ink-soft">{prompt}</span>
         <span className="font-mono text-[11px] text-ink-mute">
           {i + 1} / {exercises.length}
         </span>
@@ -247,21 +233,6 @@ export function ExerciseDeck({
             onChange={(e) => setText(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && (checked ? next() : check())}
             placeholder="Type the correct sentence…"
-            className="w-full rounded-lg border border-rule-soft bg-bg px-3 py-2.5 text-[15px] text-ink focus:border-accent focus:outline-none"
-          />
-        </div>
-      )}
-
-      {ex.kind === 'translate' && (
-        <div>
-          <p className="mb-3 text-[15px] text-ink-soft italic">{ex.es}</p>
-          <input
-            ref={inputRef}
-            value={text}
-            disabled={checked}
-            onChange={(e) => setText(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && (checked ? next() : check())}
-            placeholder="Write it in English…"
             className="w-full rounded-lg border border-rule-soft bg-bg px-3 py-2.5 text-[15px] text-ink focus:border-accent focus:outline-none"
           />
         </div>

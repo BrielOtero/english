@@ -5,22 +5,20 @@ import { VOCAB_SETS } from '../content';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
 import { FlashcardSession } from './flashcard-session';
-import { useStore } from '../store';
 
 function setToCards(set: VocabSet): ReviewCard[] {
   return set.items.map((item) => ({
     id: `vocab:${item.id}`,
-    front: item.es,
+    front: item.meaning,
     back: item.word,
     audio: item.word,
-    note: `${item.meaning} — “${item.example}”`,
+    note: `“${item.example}”`,
     tag: set.theme,
     level: item.level,
   }));
 }
 
 export function VocabBrowser() {
-  const showSpanish = useStore((s) => s.showSpanish);
   const [openId, setOpenId] = useState<string | null>(null);
   const [studying, setStudying] = useState(false);
 
@@ -78,7 +76,6 @@ export function VocabBrowser() {
               </div>
               {item.ipa && <p className="mt-0.5 font-mono text-[11px] text-ink-mute">{item.ipa}</p>}
               <p className="mt-1 text-[13px] text-ink-soft">{item.meaning}</p>
-              {showSpanish && <p className="text-[13px] text-accent italic">{item.es}</p>}
               <p className="mt-2 text-[13px] text-ink">“{item.example}”</p>
               {item.collocations && item.collocations.length > 0 && (
                 <p className="mt-2 font-mono text-[11px] text-ink-mute">

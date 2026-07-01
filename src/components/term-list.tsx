@@ -10,7 +10,6 @@ interface TermEntry {
   id: string;
   term: string;
   meaning: string;
-  es: string;
   example: string;
   level: Level;
   badge?: string;
@@ -19,17 +18,13 @@ interface TermEntry {
 function TermList({ entries }: { entries: TermEntry[] }) {
   const reviews = useStore((s) => s.reviews);
   const grade = useStore((s) => s.grade);
-  const showSpanish = useStore((s) => s.showSpanish);
   const [q, setQ] = useState('');
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
     if (!needle) return entries;
     return entries.filter(
-      (e) =>
-        e.term.toLowerCase().includes(needle) ||
-        e.meaning.toLowerCase().includes(needle) ||
-        e.es.toLowerCase().includes(needle),
+      (e) => e.term.toLowerCase().includes(needle) || e.meaning.toLowerCase().includes(needle),
     );
   }, [entries, q]);
 
@@ -54,7 +49,6 @@ function TermList({ entries }: { entries: TermEntry[] }) {
                 <LevelBadge level={e.level} className="ml-auto" />
               </div>
               <p className="mt-1 text-[13px] text-ink-soft">{e.meaning}</p>
-              {showSpanish && <p className="text-[13px] text-accent italic">{e.es}</p>}
               <p className="mt-2 text-[13px] text-ink">“{e.example}”</p>
               <div className="mt-3 flex items-center gap-2">
                 {e.badge && (
@@ -87,7 +81,6 @@ export function PhrasalVerbs() {
     id: `phrasal:${pv.id}`,
     term: pv.verb,
     meaning: pv.meaning,
-    es: pv.es,
     example: pv.example,
     level: pv.level,
     badge: pv.separable ? 'separable' : 'inseparable',
@@ -100,7 +93,6 @@ export function Idioms() {
     id: `idiom:${idiom.id}`,
     term: idiom.phrase,
     meaning: idiom.meaning,
-    es: idiom.es,
     example: idiom.example,
     level: idiom.level,
     badge: idiom.kind,

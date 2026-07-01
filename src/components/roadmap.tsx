@@ -38,9 +38,7 @@ export function Roadmap({ onSelect }: { onSelect: (trackId: string) => void }) {
     <div className="fade-in">
       {/* Overall progress */}
       <div className="mb-8 rounded-2xl border border-rule-soft bg-paper p-6">
-        <p className="kicker text-[13.5px] text-ink-soft">
-          Your journey to native
-        </p>
+        <p className="kicker text-[13.5px] text-ink-soft">Your journey to native</p>
         <div className="mt-3 flex flex-wrap items-end gap-6">
           <div>
             <p className="font-display text-[40px] leading-none text-ink">{pct}%</p>
@@ -73,9 +71,7 @@ export function Roadmap({ onSelect }: { onSelect: (trackId: string) => void }) {
       </div>
 
       {/* Level ladder */}
-      <p className="mb-3 kicker text-[13.5px] text-ink-soft">
-        The path · A1 → C2
-      </p>
+      <p className="mb-3 kicker text-[13.5px] text-ink-soft">The path · A1 → C2</p>
       <div className="space-y-2.5">
         {LEVELS.map((lvl) => {
           const unit = GRAMMAR.find((u) => u.level === lvl);

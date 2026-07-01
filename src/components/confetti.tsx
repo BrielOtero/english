@@ -30,10 +30,7 @@ export function ConfettiBurst({ count = 16 }: { count?: number }) {
   });
 
   return (
-    <span
-      className="pointer-events-none absolute top-1/2 left-1/2 z-50 h-0 w-0"
-      aria-hidden="true"
-    >
+    <span className="pointer-events-none absolute top-1/2 left-1/2 z-50 h-0 w-0" aria-hidden="true">
       {pieces.map((p, i) => (
         <motion.span
           key={i}

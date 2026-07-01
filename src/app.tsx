@@ -15,7 +15,6 @@ import { PronunciationLab } from './components/pronunciation-lab';
 import { ReadingView } from './components/reading-view';
 import { WritingView } from './components/writing-view';
 import { Review } from './components/review';
-import { PitfallsView } from './components/pitfalls-view';
 import { PhrasalVerbs, Idioms } from './components/term-list';
 
 const TRACK_IDS = new Set(TRACKS.map((t) => t.id));
@@ -55,8 +54,6 @@ function TrackHead({ icon, title, blurb }: { icon: IconName; title: string; blur
 export default function App() {
   const theme = useStore((s) => s.theme);
   const toggleTheme = useStore((s) => s.toggleTheme);
-  const showSpanish = useStore((s) => s.showSpanish);
-  const toggleSpanish = useStore((s) => s.toggleSpanish);
   const voiceURI = useStore((s) => s.voiceURI);
   const completed = useStore((s) => s.completed);
 
@@ -106,18 +103,6 @@ export default function App() {
                 {completedCount}/{TOTAL_LESSONS}
               </span>
             </span>
-            <button
-              onClick={toggleSpanish}
-              aria-pressed={showSpanish}
-              title="Show or hide Spanish help"
-              className={`press rounded-full border px-2.5 py-2 font-mono text-[11px] tracking-wide ${
-                showSpanish
-                  ? 'border-accent bg-accent text-on-accent'
-                  : 'border-rule-soft bg-paper text-ink-soft hover:text-ink'
-              }`}
-            >
-              ES
-            </button>
             <div className="hidden sm:block">
               <VoiceSettings />
             </div>
@@ -157,7 +142,6 @@ export default function App() {
                 {activeId === 'reading' && <ReadingView />}
                 {activeId === 'writing' && <WritingView />}
                 {activeId === 'review' && <Review />}
-                {activeId === 'pitfalls' && <PitfallsView />}
                 {activeId === 'phrasal' && <PhrasalVerbs />}
                 {activeId === 'idioms' && <Idioms />}
               </motion.div>

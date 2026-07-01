@@ -8,7 +8,6 @@ export const WRITING: WritingPrompt[] = [
     title: 'Describe your family',
     prompt:
       'Write 4-6 sentences about your family. Say how many people there are, who they are, and one thing each person likes.',
-    es: 'Escribe 4-6 frases sobre tu familia. Di cuántas personas hay, quiénes son y una cosa que le gusta a cada persona.',
     minWords: 30,
     tips: [
       'Use "There is" for one person and "There are" for more than one.',
@@ -18,23 +17,18 @@ export const WRITING: WritingPrompt[] = [
     usefulPhrases: [
       {
         en: 'There are four people in my family.',
-        es: 'Hay cuatro personas en mi familia.',
       },
       {
         en: 'This is my...',
-        es: 'Este/Esta es mi...',
       },
       {
         en: 'He/She is...',
-        es: 'Él/Ella es...',
       },
       {
         en: 'My mother likes...',
-        es: 'A mi madre le gusta...',
       },
       {
         en: 'We live in...',
-        es: 'Vivimos en...',
       },
     ],
     model:
@@ -46,7 +40,6 @@ export const WRITING: WritingPrompt[] = [
     title: 'My daily routine',
     prompt:
       'Write 5-6 sentences about a normal day. Say what time you get up, what you do in the morning, afternoon, and evening.',
-    es: 'Escribe 5-6 frases sobre un día normal. Di a qué hora te levantas y qué haces por la mañana, por la tarde y por la noche.',
     minWords: 35,
     tips: [
       'Use the present simple: I get up, I eat, I go.',
@@ -56,23 +49,18 @@ export const WRITING: WritingPrompt[] = [
     usefulPhrases: [
       {
         en: 'I get up at...',
-        es: 'Me levanto a las...',
       },
       {
         en: 'In the morning / afternoon / evening',
-        es: 'Por la mañana / tarde / noche',
       },
       {
         en: 'Then I...',
-        es: 'Luego...',
       },
       {
         en: 'After that, I...',
-        es: 'Después de eso...',
       },
       {
         en: 'I go to bed at...',
-        es: 'Me voy a la cama a las...',
       },
     ],
     model:
@@ -84,7 +72,6 @@ export const WRITING: WritingPrompt[] = [
     title: 'A postcard from your holiday',
     prompt:
       'Write a short postcard to a friend from your holiday. Say where you are, what the weather is like, what you are doing, and what you did yesterday.',
-    es: 'Escribe una postal corta a un amigo desde tus vacaciones. Di dónde estás, qué tiempo hace, qué estás haciendo y qué hiciste ayer.',
     minWords: 50,
     tips: [
       'Start with "Hi" or "Dear..." and end with "See you soon" and your name.',
@@ -95,27 +82,21 @@ export const WRITING: WritingPrompt[] = [
     usefulPhrases: [
       {
         en: 'Greetings from...',
-        es: 'Saludos desde...',
       },
       {
         en: 'The weather is...',
-        es: 'El tiempo está...',
       },
       {
         en: 'I am having a great time.',
-        es: 'Lo estoy pasando muy bien.',
       },
       {
         en: 'Yesterday I went to...',
-        es: 'Ayer fui a...',
       },
       {
         en: 'Wish you were here!',
-        es: '¡Ojalá estuvieras aquí!',
       },
       {
         en: 'See you soon!',
-        es: '¡Hasta pronto!',
       },
     ],
     model:
@@ -127,7 +108,6 @@ export const WRITING: WritingPrompt[] = [
     title: 'Invite a friend (informal email)',
     prompt:
       'Write an informal email inviting a friend to your birthday party. Say when and where it is, what you will do, and ask them to reply.',
-    es: 'Escribe un correo informal invitando a un amigo a tu fiesta de cumpleaños. Di cuándo y dónde es, qué vais a hacer y pídele que conteste.',
     minWords: 50,
     tips: [
       'Start with "Hi [name]," and finish with "Bye for now" or "Love".',
@@ -138,27 +118,21 @@ export const WRITING: WritingPrompt[] = [
     usefulPhrases: [
       {
         en: "I'm having a party.",
-        es: 'Voy a hacer una fiesta.',
       },
       {
         en: 'Would you like to come?',
-        es: '¿Te gustaría venir?',
       },
       {
         en: "It's on Saturday at 8 p.m.",
-        es: 'Es el sábado a las 8 de la tarde.',
       },
       {
         en: "We're going to...",
-        es: 'Vamos a...',
       },
       {
         en: 'Let me know if you can come.',
-        es: 'Avísame si puedes venir.',
       },
       {
         en: 'Hope to see you there!',
-        es: '¡Espero verte allí!',
       },
     ],
     model:
@@ -170,7 +144,6 @@ export const WRITING: WritingPrompt[] = [
     title: 'Write a review',
     prompt:
       "Write a review of a restaurant, film, or place you visited recently. Describe it, say what you liked and didn't like, and recommend it (or not).",
-    es: 'Escribe una reseña de un restaurante, una película o un lugar que visitaste hace poco. Descríbelo, di qué te gustó y qué no, y recomiéndalo (o no).',
     minWords: 90,
     tips: [
       'Give your review a clear structure: introduction, details, recommendation.',
@@ -181,27 +154,21 @@ export const WRITING: WritingPrompt[] = [
     usefulPhrases: [
       {
         en: 'I recently visited...',
-        es: 'Hace poco visité...',
       },
       {
         en: 'What I liked most was...',
-        es: 'Lo que más me gustó fue...',
       },
       {
         en: 'The only downside was...',
-        es: 'El único inconveniente fue...',
       },
       {
         en: "It's well worth a visit.",
-        es: 'Merece mucho la pena visitarlo.',
       },
       {
         en: 'I would highly recommend it.',
-        es: 'Lo recomendaría encarecidamente.',
       },
       {
         en: "It's perfect for...",
-        es: 'Es perfecto para...',
       },
     ],
     model:
@@ -213,7 +180,6 @@ export const WRITING: WritingPrompt[] = [
     title: 'Tell a story',
     prompt:
       'Write a short story that begins with the sentence: "It was raining hard when the phone rang." Describe what happened next.',
-    es: 'Escribe una historia corta que empiece con la frase: "Llovía con fuerza cuando sonó el teléfono." Describe qué pasó después.',
     minWords: 90,
     tips: [
       'Use the past continuous for background (was raining) and past simple for events (rang).',
@@ -224,27 +190,21 @@ export const WRITING: WritingPrompt[] = [
     usefulPhrases: [
       {
         en: 'Suddenly,...',
-        es: 'De repente,...',
       },
       {
         en: 'At first... but then...',
-        es: 'Al principio... pero luego...',
       },
       {
         en: 'A few minutes later',
-        es: 'Unos minutos después',
       },
       {
         en: "I couldn't believe it.",
-        es: 'No podía creerlo.',
       },
       {
         en: 'In the end,...',
-        es: 'Al final,...',
       },
       {
         en: 'To my surprise,...',
-        es: 'Para mi sorpresa,...',
       },
     ],
     model:
@@ -256,7 +216,6 @@ export const WRITING: WritingPrompt[] = [
     title: 'A formal complaint email',
     prompt:
       'You bought a product online that arrived damaged and the company has not replied to you. Write a formal email of complaint asking for a refund or replacement.',
-    es: 'Compraste un producto por internet que llegó dañado y la empresa no te ha respondido. Escribe un correo formal de reclamación pidiendo un reembolso o un reemplazo.',
     minWords: 100,
     tips: [
       'Use a formal greeting ("Dear Sir or Madam,") and sign-off ("Yours faithfully,").',
@@ -267,27 +226,21 @@ export const WRITING: WritingPrompt[] = [
     usefulPhrases: [
       {
         en: 'I am writing to complain about...',
-        es: 'Le escribo para presentar una queja sobre...',
       },
       {
         en: 'Unfortunately, the item arrived damaged.',
-        es: 'Lamentablemente, el artículo llegó dañado.',
       },
       {
         en: 'Despite several attempts to contact you...',
-        es: 'A pesar de varios intentos de contactarlos...',
       },
       {
         en: 'I would therefore request a full refund.',
-        es: 'Por lo tanto, solicitaría un reembolso completo.',
       },
       {
         en: 'I look forward to your prompt reply.',
-        es: 'Quedo a la espera de su pronta respuesta.',
       },
       {
         en: 'Yours faithfully,',
-        es: 'Atentamente,',
       },
     ],
     model:
@@ -299,7 +252,6 @@ export const WRITING: WritingPrompt[] = [
     title: 'A for-and-against essay',
     prompt:
       'Write a balanced essay on the following statement: "Social media does more harm than good." Present arguments for and against, then give your own conclusion.',
-    es: 'Escribe un ensayo equilibrado sobre la siguiente afirmación: "Las redes sociales hacen más mal que bien." Presenta argumentos a favor y en contra, y luego da tu propia conclusión.',
     minWords: 120,
     tips: [
       'Organise it in four paragraphs: introduction, arguments for, arguments against, conclusion.',
@@ -310,27 +262,21 @@ export const WRITING: WritingPrompt[] = [
     usefulPhrases: [
       {
         en: 'There are strong arguments on both sides.',
-        es: 'Hay argumentos sólidos en ambos lados.',
       },
       {
         en: 'It is often argued that...',
-        es: 'Se suele argumentar que...',
       },
       {
         en: 'Whereas / While',
-        es: 'Mientras que',
       },
       {
         en: 'Nevertheless,...',
-        es: 'Sin embargo,...',
       },
       {
         en: 'Taking everything into account,...',
-        es: 'Teniéndolo todo en cuenta,...',
       },
       {
         en: 'In conclusion,...',
-        es: 'En conclusión,...',
       },
     ],
     model:
@@ -342,7 +288,6 @@ export const WRITING: WritingPrompt[] = [
     title: 'A proposal with recommendations',
     prompt:
       'Your company wants to improve employee wellbeing. Write a formal proposal to management outlining the current situation, suggesting two or three concrete measures, and explaining the expected benefits.',
-    es: 'Tu empresa quiere mejorar el bienestar de los empleados. Escribe una propuesta formal a la dirección que describa la situación actual, sugiera dos o tres medidas concretas y explique los beneficios esperados.',
     minWords: 160,
     tips: [
       'Use clear headings (Introduction, Current situation, Recommendations, Conclusion).',
@@ -353,27 +298,21 @@ export const WRITING: WritingPrompt[] = [
     usefulPhrases: [
       {
         en: 'The purpose of this proposal is to...',
-        es: 'El propósito de esta propuesta es...',
       },
       {
         en: 'At present,...',
-        es: 'Actualmente,...',
       },
       {
         en: 'It would be advisable to...',
-        es: 'Sería aconsejable...',
       },
       {
         en: 'This would not only... but also...',
-        es: 'Esto no solo... sino que también...',
       },
       {
         en: 'In light of the above,...',
-        es: 'A la luz de lo anterior,...',
       },
       {
         en: 'I am confident that these measures would...',
-        es: 'Estoy seguro de que estas medidas...',
       },
     ],
     model:

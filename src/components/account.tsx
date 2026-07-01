@@ -132,8 +132,8 @@ export function Account() {
               </div>
               <h2 className="font-display mt-4 text-[24px] text-ink">Check your inbox</h2>
               <p className="mx-auto mt-1.5 max-w-[20rem] text-[13.5px] leading-relaxed text-ink-soft">
-                We sent a magic link to <span className="font-medium text-ink">{email}</span>. Tap it
-                on any device to finish — you'll land back here, signed in.
+                We sent a magic link to <span className="font-medium text-ink">{email}</span>. Tap
+                it on any device to finish — you'll land back here, signed in.
               </p>
               <div className="shimmer mx-auto mt-5 h-1.5 w-40 rounded-full" />
               <p className="mt-2 text-[11px] text-ink-mute">Listening for your sign-in…</p>

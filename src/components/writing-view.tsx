@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { WRITING } from '../content';
-import { useStore } from '../store';
 import { PhraseLine } from './phrase-line';
 import { LevelBadge } from './level-badge';
 
 export function WritingView() {
-  const showSpanish = useStore((s) => s.showSpanish);
   const [openId, setOpenId] = useState<string | null>(null);
   const [text, setText] = useState('');
   const [showModel, setShowModel] = useState(false);
@@ -35,9 +33,6 @@ export function WritingView() {
         </div>
         <h2 className="font-display text-[26px] leading-tight text-ink">{open.title}</h2>
         <p className="mt-2 max-w-2xl text-[15px] text-ink">{open.prompt}</p>
-        {showSpanish && open.es && (
-          <p className="mt-1 text-[13px] text-ink-soft italic">{open.es}</p>
-        )}
 
         <div className="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_280px]">
           <div>
@@ -69,9 +64,7 @@ export function WritingView() {
 
           <aside className="space-y-5">
             <div>
-              <p className="mb-2 kicker text-[13.5px] text-ink-soft">
-                Tips
-              </p>
+              <p className="mb-2 kicker text-[13.5px] text-ink-soft">Tips</p>
               <ul className="space-y-1.5">
                 {open.tips.map((t, i) => (
                   <li key={i} className="flex gap-2 text-[13px] text-ink-soft">
@@ -82,9 +75,7 @@ export function WritingView() {
               </ul>
             </div>
             <div>
-              <p className="mb-2 kicker text-[13.5px] text-ink-soft">
-                Useful phrases
-              </p>
+              <p className="mb-2 kicker text-[13.5px] text-ink-soft">Useful phrases</p>
               <div className="space-y-2 rounded-lg border border-rule-soft bg-paper p-3">
                 {open.usefulPhrases.map((p, i) => (
                   <PhraseLine key={i} phrase={p} size="sm" />

@@ -23,9 +23,7 @@ export function VoiceSettings() {
       </summary>
 
       <div className="absolute right-0 z-30 mt-2 w-56 rounded-xl border border-rule-soft bg-paper p-4 shadow-xl">
-        <label className="mb-1.5 block kicker text-[13.5px] text-ink-soft">
-          Speed
-        </label>
+        <label className="mb-1.5 block kicker text-[13.5px] text-ink-soft">Speed</label>
         <div className="flex gap-2">
           {SPEEDS.map((s) => {
             const active = Math.abs(rate - s.rate) < 0.06;

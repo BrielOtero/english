@@ -1,13 +1,13 @@
 # Fluent — Zero to Native English
 
-A self-study English course for Spanish speakers, from first words to a near-native C1.
+A self-study English course, from first words to a near-native C1.
 Single-page app, no backend required.
 
 ## Why it's built this way
 
 **Pedagogy drives the architecture.** The curriculum follows second-language-acquisition
 research — comprehensible input (Krashen's _i+1_), high-variability phonetic training for the
-sounds Spanish speakers can't yet hear, spaced retrieval, and pushed output. Because input,
+sounds learners can't yet hear, spaced retrieval, and pushed output. Because input,
 practice, correction, and review only work when they reinforce each other, the app is split into
 tracks (grammar, vocabulary, pronunciation, reading, writing) that all feed one spaced-repetition
 review queue.

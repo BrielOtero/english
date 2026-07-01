@@ -13,32 +13,6 @@ export const READINGS: Reading[] = [
       'I eat bread and an egg for breakfast. My cat sits next to me. She wants food too.',
       "At eight o'clock I put on my shoes. I take my bag and go to work. I walk because the office is near.",
     ],
-    glossary: [
-      {
-        word: 'get up',
-        es: 'levantarse',
-      },
-      {
-        word: 'window',
-        es: 'ventana',
-      },
-      {
-        word: 'breakfast',
-        es: 'desayuno',
-      },
-      {
-        word: 'shoes',
-        es: 'zapatos',
-      },
-      {
-        word: 'bag',
-        es: 'bolso / mochila',
-      },
-      {
-        word: 'near',
-        es: 'cerca',
-      },
-    ],
     questions: [
       {
         kind: 'mcq',
@@ -77,32 +51,6 @@ export const READINGS: Reading[] = [
       'I have one brother and one sister. My brother is ten years old. My sister is a baby.',
       'We have a dog. His name is Max. He is big and brown. I love my family very much.',
     ],
-    glossary: [
-      {
-        word: 'house',
-        es: 'casa',
-      },
-      {
-        word: 'father',
-        es: 'padre',
-      },
-      {
-        word: 'mother',
-        es: 'madre',
-      },
-      {
-        word: 'brother',
-        es: 'hermano',
-      },
-      {
-        word: 'sister',
-        es: 'hermana',
-      },
-      {
-        word: 'dog',
-        es: 'perro',
-      },
-    ],
     questions: [
       {
         kind: 'mcq',
@@ -140,32 +88,6 @@ export const READINGS: Reading[] = [
       'When we arrived, we put our towels on the sand. My little sister wanted to swim, but the water was cold at first. My father played football with me near the sea.',
       'At lunchtime, we ate sandwiches and fruit. A big seagull tried to take my sandwich! Everybody laughed.',
       'In the afternoon, we built a sandcastle and looked for shells. We went home tired but happy. It was a wonderful day.',
-    ],
-    glossary: [
-      {
-        word: 'beach',
-        es: 'playa',
-      },
-      {
-        word: 'towel',
-        es: 'toalla',
-      },
-      {
-        word: 'sand',
-        es: 'arena',
-      },
-      {
-        word: 'seagull',
-        es: 'gaviota',
-      },
-      {
-        word: 'sandcastle',
-        es: 'castillo de arena',
-      },
-      {
-        word: 'shells',
-        es: 'conchas',
-      },
     ],
     questions: [
       {
@@ -210,32 +132,6 @@ export const READINGS: Reading[] = [
       'My job is interesting, but I am still learning a lot. My colleagues are friendly and they help me every day.',
       "Why don't you visit me next month? There is a free room for you. We can walk in the parks and try the local food. Please write back soon!\n\nYour friend,\nMiguel",
     ],
-    glossary: [
-      {
-        word: 'moved',
-        es: 'se mudó / me mudé',
-      },
-      {
-        word: 'apartment',
-        es: 'apartamento / piso',
-      },
-      {
-        word: 'comfortable',
-        es: 'cómodo',
-      },
-      {
-        word: 'colleagues',
-        es: 'compañeros de trabajo',
-      },
-      {
-        word: 'visit',
-        es: 'visitar',
-      },
-      {
-        word: 'write back',
-        es: 'responder (por escrito)',
-      },
-    ],
     questions: [
       {
         kind: 'mcq',
@@ -279,32 +175,6 @@ export const READINGS: Reading[] = [
       'More than three thousand years ago, ancient peoples in Central America were already using cacao. The Maya and the Aztecs made a bitter drink from the seeds. They mixed it with water and spices, and they believed it gave them energy and strength.',
       'When Spanish explorers arrived in the Americas, they took cacao back to Europe. At first, the drink was only for rich people because it was expensive. Later, cooks added sugar and milk, and chocolate became sweeter and more popular.',
       'In the nineteenth century, new machines made it possible to produce solid chocolate bars. Today, factories around the world turn cacao into thousands of different products. However, the cacao tree still grows mostly in the same warm countries as before.',
-    ],
-    glossary: [
-      {
-        word: 'seeds',
-        es: 'semillas',
-      },
-      {
-        word: 'ancient',
-        es: 'antiguo',
-      },
-      {
-        word: 'bitter',
-        es: 'amargo',
-      },
-      {
-        word: 'explorers',
-        es: 'exploradores',
-      },
-      {
-        word: 'expensive',
-        es: 'caro',
-      },
-      {
-        word: 'factories',
-        es: 'fábricas',
-      },
     ],
     questions: [
       {
@@ -354,32 +224,6 @@ export const READINGS: Reading[] = [
       'Research suggests that speaking more than one language can improve your memory and help you focus. Some studies even show that bilingual people are better at solving certain kinds of problems.',
       'Perhaps the best reward, though, is human connection. When you speak to someone in their own language, you show respect and you build trust. A simple conversation can become the start of a real friendship.',
     ],
-    glossary: [
-      {
-        word: 'grammar',
-        es: 'gramática',
-      },
-      {
-        word: 'give up',
-        es: 'rendirse / darse por vencido',
-      },
-      {
-        word: 'embarrassed',
-        es: 'avergonzado',
-      },
-      {
-        word: 'mistakes',
-        es: 'errores',
-      },
-      {
-        word: 'memory',
-        es: 'memoria',
-      },
-      {
-        word: 'trust',
-        es: 'confianza',
-      },
-    ],
     questions: [
       {
         kind: 'mcq',
@@ -428,32 +272,6 @@ export const READINGS: Reading[] = [
       'Supporters argue that the benefits are clear. Without a daily commute, people save both time and money, and many report a better balance between their professional and personal lives. Companies, in turn, can recruit talented staff regardless of where they live, and some have even reduced costs by closing expensive offices.',
       'Critics, however, point to subtler problems. Collaboration can suffer when colleagues rarely meet face to face, and spontaneous conversations, which often spark new ideas, become much harder to replicate online. Younger employees, in particular, may miss out on the informal mentoring that happens naturally in an office.',
       'Perhaps the most likely outcome is a compromise. So-called hybrid models, in which staff split their week between home and the office, attempt to capture the advantages of both worlds. Whether they truly succeed will depend less on technology and more on how thoughtfully organisations manage the change.',
-    ],
-    glossary: [
-      {
-        word: 'commute',
-        es: 'trayecto al trabajo',
-      },
-      {
-        word: 'recruit',
-        es: 'reclutar / contratar',
-      },
-      {
-        word: 'collaboration',
-        es: 'colaboración',
-      },
-      {
-        word: 'spontaneous',
-        es: 'espontáneo',
-      },
-      {
-        word: 'mentoring',
-        es: 'tutoría / mentoría',
-      },
-      {
-        word: 'compromise',
-        es: 'compromiso / acuerdo intermedio',
-      },
     ],
     questions: [
       {
@@ -510,32 +328,6 @@ export const READINGS: Reading[] = [
       'The mechanics are deceptively simple. Platforms offer their services free of charge, then monetise the engagement they generate by selling advertisers access to our eyes and minds. Because attention is finite, the competition is necessarily zero-sum: every minute spent on one application is a minute unavailable to another. To win, designers exploit well-documented psychological vulnerabilities, from our craving for social approval to our reluctance to leave a task unfinished.',
       'The consequences extend well beyond individual productivity. When outrage and novelty reliably generate engagement, platforms have a structural incentive to amplify precisely the content most likely to inflame rather than inform. Nuance, which rarely goes viral, is quietly disadvantaged, and public discourse grows coarser as a result.',
       'None of this implies that users are merely passive victims. Awareness of these dynamics, combined with deliberate habits and, where necessary, sensible regulation, can restore a measure of agency. The first step, however, is to recognise that our attention is not an inexhaustible commodity to be spent thoughtlessly, but a finite and valuable resource worth defending.',
-    ],
-    glossary: [
-      {
-        word: 'scarce',
-        es: 'escaso',
-      },
-      {
-        word: 'monetise',
-        es: 'monetizar',
-      },
-      {
-        word: 'zero-sum',
-        es: 'de suma cero',
-      },
-      {
-        word: 'vulnerabilities',
-        es: 'vulnerabilidades',
-      },
-      {
-        word: 'incentive',
-        es: 'incentivo',
-      },
-      {
-        word: 'agency',
-        es: 'capacidad de actuar / autonomía',
-      },
     ],
     questions: [
       {

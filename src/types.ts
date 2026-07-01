@@ -16,12 +16,10 @@ export const LEVEL_BLURB: Record<Level, string> = {
   C2: 'Mastery — understand virtually everything and express yourself precisely.',
 };
 
-/** A bilingual example sentence or phrase, optionally with IPA and a note. */
+/** An example sentence or phrase, optionally with IPA and a note. */
 export interface Phrase {
   /** The English text (this is what the "Listen" button speaks). */
   en: string;
-  /** Optional Spanish translation, shown when the learner enables Spanish glosses. */
-  es?: string;
   /** Optional IPA transcription. */
   ipa?: string;
   /** Optional teaching note (register, nuance, when to use it). */
@@ -57,7 +55,7 @@ export interface ClozeExercise {
   explain?: string;
 }
 
-/** Fix the mistake — typically a typical Spanish-speaker error. */
+/** Fix the mistake in a sentence. */
 export interface CorrectExercise {
   kind: 'correct';
   id: string;
@@ -79,17 +77,6 @@ export interface OrderExercise {
   explain?: string;
 }
 
-/** Translate a Spanish prompt into English. */
-export interface TranslateExercise {
-  kind: 'translate';
-  id: string;
-  /** The Spanish sentence to translate. */
-  es: string;
-  /** Accepted English translations. The first is the model answer. */
-  answers: string[];
-  explain?: string;
-}
-
 /** Listen (via TTS) and type what you hear. */
 export interface DictationExercise {
   kind: 'dictation';
@@ -100,12 +87,7 @@ export interface DictationExercise {
 }
 
 export type Exercise =
-  | McqExercise
-  | ClozeExercise
-  | CorrectExercise
-  | OrderExercise
-  | TranslateExercise
-  | DictationExercise;
+  McqExercise | ClozeExercise | CorrectExercise | OrderExercise | DictationExercise;
 
 /* ------------------------------------------------------------------ */
 /* Lessons (grammar & skills)                                          */
@@ -116,8 +98,6 @@ export interface LessonSection {
   heading?: string;
   /** The explanation, in English. Use **double asterisks** to mark key terms. */
   body: string;
-  /** Optional Spanish translation of `body`, shown only when Spanish help is on. */
-  bodyEs?: string;
   examples?: Phrase[];
 }
 
@@ -126,8 +106,6 @@ export interface Pitfall {
   wrong: string;
   right: string;
   why: string;
-  /** Optional note aimed at Spanish speakers specifically. */
-  esNote?: string;
 }
 
 /** A small reference table (conjugations, forms, structures). */
@@ -143,8 +121,6 @@ export interface Lesson {
   title: string;
   /** One-line summary shown in lists and the roadmap (English). */
   summary: string;
-  /** Optional Spanish translation of `summary`, shown only when Spanish help is on. */
-  summaryEs?: string;
   /** Ordered teaching sections. */
   sections: LessonSection[];
   /** Optional reference table(s). */
@@ -188,8 +164,6 @@ export interface VocabItem {
   ipa?: string;
   /** A simple English definition. */
   meaning: string;
-  /** Spanish translation. */
-  es: string;
   /** An example sentence using the word. */
   example: string;
   level: Level;
@@ -228,34 +202,10 @@ export interface SoundLesson {
   level: Level;
   /** How to physically make the sound. */
   howTo: string;
-  /** Why it's hard for Spanish speakers and how to fix it. */
-  spanishNote: string;
   /** Words that feature the sound (with audio). */
   examples: string[];
   /** Contrast pairs to drill discrimination. */
   pairs: MinimalPair[];
-}
-
-/* ------------------------------------------------------------------ */
-/* Spanish-speaker pitfalls (false friends, interference)              */
-/* ------------------------------------------------------------------ */
-
-export type PitfallCategory =
-  'false-friend' | 'grammar' | 'pronunciation' | 'preposition' | 'word-order' | 'vocabulary';
-
-export interface SpanishPitfall {
-  id: string;
-  category: PitfallCategory;
-  title: string;
-  /** A sentence or word as Spanish speakers often get it wrong. */
-  wrong: string;
-  /** The correct version. */
-  right: string;
-  /** Why — the rule or the real meaning. */
-  explain: string;
-  /** For false friends: what the English word actually means in Spanish. */
-  esNote?: string;
-  level: Level;
 }
 
 /* ------------------------------------------------------------------ */
@@ -267,7 +217,6 @@ export interface PhrasalVerb {
   /** The phrasal verb, e.g. "give up". */
   verb: string;
   meaning: string;
-  es: string;
   example: string;
   level: Level;
   /** Whether the object can split the verb (turn it off / turn off the light). */
@@ -278,7 +227,6 @@ export interface Idiom {
   id: string;
   phrase: string;
   meaning: string;
-  es: string;
   example: string;
   level: Level;
   kind: 'idiom' | 'collocation';
@@ -296,8 +244,6 @@ export interface Reading {
   blurb: string;
   /** Paragraphs of graded text; each can be played via TTS. */
   paragraphs: string[];
-  /** Words worth pre-teaching, with Spanish glosses. */
-  glossary?: { word: string; es: string }[];
   /** Comprehension questions checked after reading. */
   questions: McqExercise[];
 }
@@ -312,8 +258,6 @@ export interface WritingPrompt {
   title: string;
   /** The task in English. */
   prompt: string;
-  /** The task in Spanish (so beginners understand it). */
-  es?: string;
   /** A suggested minimum length. */
   minWords?: number;
   /** Concrete tips for a good answer. */

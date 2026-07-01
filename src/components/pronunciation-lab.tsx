@@ -5,7 +5,7 @@ import { playPhrase } from '../lib/audio';
 import { useStore } from '../store';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
-import { Icon, EsTag } from './icons';
+import { Icon } from './icons';
 
 /** A 2-alternative forced-choice drill: hear a word, decide which one it was. */
 function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
@@ -74,15 +74,9 @@ function SoundCard({ sound }: { sound: SoundLesson }) {
       </div>
 
       <p className="mt-3 text-[14px] leading-relaxed text-ink-soft">{sound.howTo}</p>
-      <p className="mt-2 rounded-lg bg-bg p-3 text-[13px] text-ink">
-        <EsTag />
-        {sound.spanishNote}
-      </p>
 
       <div className="mt-4">
-        <p className="mb-2 kicker text-[13.5px] text-ink-soft">
-          Example words
-        </p>
+        <p className="mb-2 kicker text-[13.5px] text-ink-soft">Example words</p>
         <div className="flex flex-wrap gap-2">
           {sound.examples.map((w) => (
             <span
@@ -97,9 +91,7 @@ function SoundCard({ sound }: { sound: SoundLesson }) {
       </div>
 
       <div className="mt-4">
-        <p className="mb-2 kicker text-[13.5px] text-ink-soft">
-          Minimal pairs · train your ear
-        </p>
+        <p className="mb-2 kicker text-[13.5px] text-ink-soft">Minimal pairs · train your ear</p>
         <div className="space-y-2">
           {sound.pairs.map((p, i) => (
             <MinimalPairDrill key={i} pair={p} />

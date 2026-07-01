@@ -31,13 +31,11 @@ function nextBox(prev: number, grade: Grade): number {
 }
 
 interface FluentState {
-  /** SRS state per flashcard id (vocab, phrasal verbs, idioms, pitfalls...). */
+  /** SRS state per flashcard id (vocab, phrasal verbs, idioms...). */
   reviews: Record<string, ReviewItem>;
   /** Completed lesson ids. */
   completed: Record<string, true>;
   theme: Theme;
-  /** Show Spanish translations/glosses inline. */
-  showSpanish: boolean;
   /** TTS playback rate (0.6 slow .. 1 normal). */
   voiceRate: number;
   /** Chosen TTS voice (voiceURI), or null to auto-pick the best available. */
@@ -49,7 +47,6 @@ interface FluentState {
   markComplete: (lessonId: string) => void;
   unmarkComplete: (lessonId: string) => void;
   toggleTheme: () => void;
-  toggleSpanish: () => void;
   setVoiceRate: (rate: number) => void;
   setVoiceURI: (voiceURI: string | null) => void;
   /** Merge progress from the cloud (or a backup) into this device — never loses progress. */
@@ -63,7 +60,6 @@ export const useStore = create<FluentState>()(
       reviews: {},
       completed: {},
       theme: 'light',
-      showSpanish: true,
       voiceRate: 0.95,
       voiceURI: null,
       now: Date.now(),
@@ -86,7 +82,6 @@ export const useStore = create<FluentState>()(
           return { completed: next };
         }),
       toggleTheme: () => set((s) => ({ theme: s.theme === 'light' ? 'dark' : 'light' })),
-      toggleSpanish: () => set((s) => ({ showSpanish: !s.showSpanish })),
       setVoiceRate: (rate) => set({ voiceRate: rate }),
       setVoiceURI: (voiceURI) => set({ voiceURI }),
       // Merge ONLY learning progress (reviews + completed). Settings like theme and
@@ -119,7 +114,6 @@ export const useStore = create<FluentState>()(
         reviews: s.reviews,
         completed: s.completed,
         theme: s.theme,
-        showSpanish: s.showSpanish,
         voiceRate: s.voiceRate,
         voiceURI: s.voiceURI,
       }),

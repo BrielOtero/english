@@ -172,6 +172,14 @@ export function ExerciseDeck({
       {/* --- prompt body, per kind --- */}
       {ex.kind === 'mcq' && (
         <div>
+          {ex.audio && (
+            <div className="mb-4 flex items-center gap-3">
+              <Speaker text={ex.audio} size="lg" label="Play the sentence" />
+              <span className="text-[13px] text-ink-soft">
+                Press play, then choose what you hear.
+              </span>
+            </div>
+          )}
           <p className="mb-4 text-[16px] text-ink">{ex.prompt}</p>
           <div className="grid gap-2">
             {ex.options.map((opt, idx) => {

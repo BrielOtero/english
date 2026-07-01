@@ -39,6 +39,8 @@ export interface McqExercise {
   options: string[];
   /** Index into `options` of the correct answer. */
   answer: number;
+  /** Optional sentence spoken by a Listen button (used by listen-and-choose questions). */
+  audio?: string;
   /** Shown after answering, explaining why. */
   explain?: string;
 }

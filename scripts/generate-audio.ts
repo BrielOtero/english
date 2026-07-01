@@ -15,7 +15,6 @@ import {
   GRAMMAR,
   VOCAB_SETS,
   SOUNDS,
-  PITFALLS,
   PHRASAL,
   IDIOMS,
   READINGS,
@@ -36,7 +35,6 @@ function modelAnswer(ex: Exercise): string {
     case 'cloze':
       return `${ex.before} ${ex.answers[0]} ${ex.after}`.replace(/\s+/g, ' ').trim();
     case 'correct':
-    case 'translate':
       return ex.answers[0];
     case 'order':
       return ex.answer;
@@ -68,7 +66,6 @@ function collectPhrases(): string[] {
       add(p.b);
     }
   }
-  for (const p of PITFALLS) add(p.right);
   for (const pv of PHRASAL) add(pv.verb);
   for (const idiom of IDIOMS) add(idiom.phrase);
   for (const r of READINGS) {

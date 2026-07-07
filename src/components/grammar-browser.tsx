@@ -15,10 +15,16 @@ function lessonFromUrl(): { id: string; level: Level } | null {
   return lesson ? { id: lesson.id, level: lesson.level } : null;
 }
 
+/** Read a starting level from the ?level= param (used to deep-link from the level test). */
+function levelFromUrl(): Level | null {
+  const raw = new URLSearchParams(window.location.search).get('level');
+  return raw && (LEVELS as string[]).includes(raw) ? (raw as Level) : null;
+}
+
 export function GrammarBrowser() {
   const completed = useStore((s) => s.completed);
   const fromUrl = lessonFromUrl();
-  const [level, setLevel] = useState<Level>(fromUrl?.level ?? 'A1');
+  const [level, setLevel] = useState<Level>(fromUrl?.level ?? levelFromUrl() ?? 'A1');
   const [openId, setOpenId] = useState<string | null>(fromUrl?.id ?? null);
 
   const unit = grammarUnit(level);

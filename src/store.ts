@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import type { Level } from './types';
 
 export type Theme = 'light' | 'dark';
 export type Grade = 'again' | 'good' | 'easy';
@@ -40,6 +41,10 @@ interface FluentState {
   voiceRate: number;
   /** Chosen TTS voice (voiceURI), or null to auto-pick the best available. */
   voiceURI: string | null;
+  /** Level estimated by the placement test, or null if never taken. */
+  placementLevel: Level | null;
+  /** Epoch ms when the placement test was last completed. */
+  placementTakenAt: number | null;
   /** Transient clock used to compute due-ness; not persisted. */
   now: number;
 
@@ -49,6 +54,8 @@ interface FluentState {
   toggleTheme: () => void;
   setVoiceRate: (rate: number) => void;
   setVoiceURI: (voiceURI: string | null) => void;
+  /** Record the result of a placement test (level + when it was taken). */
+  setPlacementResult: (level: Level) => void;
   /** Merge progress from the cloud (or a backup) into this device — never loses progress. */
   importProgress: (data: unknown) => void;
   refreshNow: () => void;
@@ -62,6 +69,8 @@ export const useStore = create<FluentState>()(
       theme: 'light',
       voiceRate: 0.95,
       voiceURI: null,
+      placementLevel: null,
+      placementTakenAt: null,
       now: Date.now(),
 
       grade: (cardId, grade) =>
@@ -84,6 +93,7 @@ export const useStore = create<FluentState>()(
       toggleTheme: () => set((s) => ({ theme: s.theme === 'light' ? 'dark' : 'light' })),
       setVoiceRate: (rate) => set({ voiceRate: rate }),
       setVoiceURI: (voiceURI) => set({ voiceURI }),
+      setPlacementResult: (level) => set({ placementLevel: level, placementTakenAt: Date.now() }),
       // Merge ONLY learning progress (reviews + completed). Settings like theme and
       // audio speed are per-device preferences and are deliberately NOT synced.
       importProgress: (data) =>
@@ -116,6 +126,8 @@ export const useStore = create<FluentState>()(
         theme: s.theme,
         voiceRate: s.voiceRate,
         voiceURI: s.voiceURI,
+        placementLevel: s.placementLevel,
+        placementTakenAt: s.placementTakenAt,
       }),
     },
   ),

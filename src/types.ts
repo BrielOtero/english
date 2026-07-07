@@ -92,6 +92,23 @@ export type Exercise =
   McqExercise | ClozeExercise | CorrectExercise | OrderExercise | DictationExercise;
 
 /* ------------------------------------------------------------------ */
+/* Placement test — an adaptive check that estimates the learner's level */
+/* ------------------------------------------------------------------ */
+
+/** One graded question in the placement test. Each is tagged with the CEFR
+ *  band it probes; the adaptive engine walks these bands up and down. */
+export interface PlacementQuestion {
+  id: string;
+  /** The band this question tests. Answering it right suggests you handle this level. */
+  level: Level;
+  /** The question stem; may contain a ___ blank. */
+  prompt: string;
+  options: string[];
+  /** Index into `options` of the correct answer. */
+  answer: number;
+}
+
+/* ------------------------------------------------------------------ */
 /* Lessons (grammar & skills)                                          */
 /* ------------------------------------------------------------------ */
 

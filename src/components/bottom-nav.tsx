@@ -9,7 +9,7 @@ const HUBS: { id: string; icon: IconName; label: string }[] = [
   { id: 'grammar', icon: 'book', label: 'Learn' },
   { id: 'vocabulary', icon: 'layers', label: 'Words' },
 ];
-const MORE_IDS = ['pronunciation', 'reading', 'writing', 'pitfalls', 'phrasal', 'idioms'];
+const MORE_IDS = ['placement', 'pronunciation', 'reading', 'writing', 'phrasal', 'idioms'];
 
 /** Mobile-only native-app bottom bar: 5 thumb-reachable hubs with a raised Review. */
 export function BottomNav({

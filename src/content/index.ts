@@ -7,8 +7,9 @@ import { PHRASAL } from './phrasal';
 import { IDIOMS } from './idioms';
 import { READINGS } from './reading';
 import { WRITING } from './writing';
+import { PLACEMENT } from './placement';
 
-export { GRAMMAR, VOCAB_SETS, SOUNDS, PHRASAL, IDIOMS, READINGS, WRITING };
+export { GRAMMAR, VOCAB_SETS, SOUNDS, PHRASAL, IDIOMS, READINGS, WRITING, PLACEMENT };
 
 /** A top-level navigation destination. */
 export interface Track {
@@ -25,6 +26,13 @@ export const TRACKS: Track[] = [
     title: 'Roadmap',
     icon: 'route',
     blurb: 'Your path from A1 to native',
+    section: 'core',
+  },
+  {
+    id: 'placement',
+    title: 'Level Test',
+    icon: 'target',
+    blurb: 'A short adaptive test to find your level',
     section: 'core',
   },
   {

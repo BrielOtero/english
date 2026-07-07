@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import type { Level } from './types';
 import { TRACKS, TOTAL_LESSONS } from './content';
 import { Icon, type IconName } from './components/icons';
 import { VoiceSettings } from './components/voice-settings';
@@ -9,6 +10,7 @@ import { useStore } from './store';
 import { Sidebar } from './components/sidebar';
 import { BottomNav } from './components/bottom-nav';
 import { Roadmap } from './components/roadmap';
+import { Placement } from './components/placement';
 import { GrammarBrowser } from './components/grammar-browser';
 import { VocabBrowser } from './components/vocab-browser';
 import { PronunciationLab } from './components/pronunciation-lab';
@@ -76,6 +78,18 @@ export default function App() {
     if (id === 'roadmap') url.searchParams.delete('tab');
     else url.searchParams.set('tab', id);
     url.searchParams.delete('lesson');
+    url.searchParams.delete('level');
+    window.history.replaceState(null, '', url);
+    window.scrollTo({ top: 0 });
+  };
+
+  // Jump into the Grammar track at a specific level (used by the level test's result).
+  const goToLevel = (level: Level) => {
+    setActiveId('grammar');
+    const url = new URL(window.location.href);
+    url.searchParams.set('tab', 'grammar');
+    url.searchParams.set('level', level);
+    url.searchParams.delete('lesson');
     window.history.replaceState(null, '', url);
     window.scrollTo({ top: 0 });
   };
@@ -135,7 +149,10 @@ export default function App() {
               >
                 <TrackHead icon={track.icon} title={track.title} blurb={track.blurb} />
 
-                {activeId === 'roadmap' && <Roadmap onSelect={selectTab} />}
+                {activeId === 'roadmap' && (
+                  <Roadmap onSelect={selectTab} onStartLevel={goToLevel} />
+                )}
+                {activeId === 'placement' && <Placement onStartLevel={goToLevel} />}
                 {activeId === 'grammar' && <GrammarBrowser />}
                 {activeId === 'vocabulary' && <VocabBrowser />}
                 {activeId === 'pronunciation' && <PronunciationLab />}

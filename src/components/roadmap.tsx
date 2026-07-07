@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import type { Level } from '../types';
 import { LEVELS, LEVEL_BLURB } from '../types';
 import { GRAMMAR, TOTAL_LESSONS, buildReviewDeck } from '../content';
 import { useStore, isLearned } from '../store';
@@ -23,9 +24,16 @@ const METHOD: { icon: IconName; t: string; d: string }[] = [
   },
 ];
 
-export function Roadmap({ onSelect }: { onSelect: (trackId: string) => void }) {
+export function Roadmap({
+  onSelect,
+  onStartLevel,
+}: {
+  onSelect: (trackId: string) => void;
+  onStartLevel: (level: Level) => void;
+}) {
   const completed = useStore((s) => s.completed);
   const reviews = useStore((s) => s.reviews);
+  const placementLevel = useStore((s) => s.placementLevel);
 
   const completedCount = Object.keys(completed).length;
   const learnedCards = useMemo(
@@ -36,6 +44,49 @@ export function Roadmap({ onSelect }: { onSelect: (trackId: string) => void }) {
 
   return (
     <div className="fade-in">
+      {/* Placement — find your starting point (or jump back to it) */}
+      {placementLevel ? (
+        <div className="mb-8 flex flex-wrap items-center gap-3 rounded-2xl border border-rule-soft bg-paper p-4">
+          <LevelBadge level={placementLevel} />
+          <span className="text-[13.5px] text-ink-soft">
+            You tested at <span className="font-medium text-ink">{placementLevel}</span> — your
+            recommended starting point.
+          </span>
+          <div className="ml-auto flex gap-2">
+            <button
+              onClick={() => onStartLevel(placementLevel)}
+              className="press rounded-full bg-accent px-4 py-1.5 font-mono text-[11px] tracking-wide text-on-accent uppercase transition hover:opacity-90"
+            >
+              Go to {placementLevel}
+            </button>
+            <button
+              onClick={() => onSelect('placement')}
+              className="rounded-full border border-rule-soft bg-bg px-4 py-1.5 font-mono text-[11px] tracking-wide text-ink-soft uppercase transition-colors hover:text-ink"
+            >
+              Retake
+            </button>
+          </div>
+        </div>
+      ) : (
+        <button
+          onClick={() => onSelect('placement')}
+          className="group mb-8 flex w-full items-center gap-4 rounded-2xl border border-accent/40 bg-[var(--accent-tint)] p-5 text-left transition hover:border-accent"
+        >
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent text-on-accent">
+            <Icon name="target" className="h-5 w-5" />
+          </span>
+          <div className="min-w-0">
+            <p className="text-[15px] font-medium text-ink">New here? Find your level first.</p>
+            <p className="mt-0.5 text-[13px] text-ink-soft">
+              A quick adaptive test points you at the right starting line.
+            </p>
+          </div>
+          <span className="ml-auto hidden font-mono text-[11px] tracking-wide text-accent uppercase sm:block">
+            Start →
+          </span>
+        </button>
+      )}
+
       {/* Overall progress */}
       <div className="mb-8 rounded-2xl border border-rule-soft bg-paper p-6">
         <p className="kicker text-[13.5px] text-ink-soft">Your journey to native</p>

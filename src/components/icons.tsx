@@ -5,6 +5,7 @@ import type { ReactNode } from 'react';
 
 export type IconName =
   | 'route'
+  | 'target'
   | 'book'
   | 'layers'
   | 'volume'
@@ -28,6 +29,13 @@ const PATHS: Record<IconName, ReactNode> = {
       <circle cx="6" cy="19" r="2.5" />
       <circle cx="18" cy="5" r="2.5" />
       <path d="M8.5 19H16a3 3 0 0 0 0-6H8a3 3 0 0 1 0-6h3.5" />
+    </>
+  ),
+  target: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1.5" />
     </>
   ),
   book: (

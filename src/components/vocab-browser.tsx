@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { ReviewCard } from '../content';
 import type { VocabSet } from '../types';
 import { VOCAB_SETS } from '../content';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
+import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
 import { FlashcardSession } from './flashcard-session';
 
 function setToCards(set: VocabSet): ReviewCard[] {
@@ -21,6 +22,10 @@ function setToCards(set: VocabSet): ReviewCard[] {
 export function VocabBrowser() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [studying, setStudying] = useState(false);
+  const [level, setLevel] = useState<LevelChoice>('all');
+
+  const counts = useMemo(() => levelCounts(VOCAB_SETS, (s) => s.level), []);
+  const visible = level === 'all' ? VOCAB_SETS : VOCAB_SETS.filter((s) => s.level === level);
 
   const openSet = VOCAB_SETS.find((s) => s.id === openId);
 
@@ -90,24 +95,29 @@ export function VocabBrowser() {
   }
 
   return (
-    <div className="fade-in grid gap-3 sm:grid-cols-2">
-      {VOCAB_SETS.map((set) => (
-        <button
-          key={set.id}
-          onClick={() => {
-            setOpenId(set.id);
-            setStudying(false);
-          }}
-          className="group rounded-xl border border-rule-soft bg-paper p-5 text-left transition duration-150 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[var(--shadow-md)] active:scale-[0.99]"
-        >
-          <div className="mb-2 flex items-center gap-2">
-            <LevelBadge level={set.level} />
-            <span className="font-mono text-[11px] text-ink-mute">{set.items.length} words</span>
-          </div>
-          <h3 className="text-[17px] font-medium text-ink group-hover:text-accent">{set.title}</h3>
-          <p className="mt-1 text-[13px] text-ink-soft">{set.blurb}</p>
-        </button>
-      ))}
+    <div className="fade-in">
+      <LevelFilter value={level} counts={counts} onChange={setLevel} />
+      <div className="grid gap-3 sm:grid-cols-2">
+        {visible.map((set) => (
+          <button
+            key={set.id}
+            onClick={() => {
+              setOpenId(set.id);
+              setStudying(false);
+            }}
+            className="group rounded-xl border border-rule-soft bg-paper p-5 text-left transition duration-150 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[var(--shadow-md)] active:scale-[0.99]"
+          >
+            <div className="mb-2 flex items-center gap-2">
+              <LevelBadge level={set.level} />
+              <span className="font-mono text-[11px] text-ink-mute">{set.items.length} words</span>
+            </div>
+            <h3 className="text-[17px] font-medium text-ink group-hover:text-accent">
+              {set.title}
+            </h3>
+            <p className="mt-1 text-[13px] text-ink-soft">{set.blurb}</p>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

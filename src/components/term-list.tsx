@@ -4,6 +4,7 @@ import { IDIOMS, PHRASAL } from '../content';
 import { useStore } from '../store';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
+import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
 
 interface TermEntry {
   /** SRS id, e.g. "phrasal:ph-get-up". */
@@ -19,17 +20,21 @@ function TermList({ entries }: { entries: TermEntry[] }) {
   const reviews = useStore((s) => s.reviews);
   const grade = useStore((s) => s.grade);
   const [q, setQ] = useState('');
+  const [level, setLevel] = useState<LevelChoice>('all');
 
+  const counts = useMemo(() => levelCounts(entries, (e) => e.level), [entries]);
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
-    if (!needle) return entries;
-    return entries.filter(
-      (e) => e.term.toLowerCase().includes(needle) || e.meaning.toLowerCase().includes(needle),
-    );
-  }, [entries, q]);
+    return entries.filter((e) => {
+      if (level !== 'all' && e.level !== level) return false;
+      if (!needle) return true;
+      return e.term.toLowerCase().includes(needle) || e.meaning.toLowerCase().includes(needle);
+    });
+  }, [entries, q, level]);
 
   return (
     <div className="fade-in">
+      <LevelFilter value={level} counts={counts} onChange={setLevel} />
       <input
         type="search"
         value={q}
@@ -72,6 +77,11 @@ function TermList({ entries }: { entries: TermEntry[] }) {
           );
         })}
       </div>
+      {filtered.length === 0 && (
+        <p className="rounded-xl border border-dashed border-rule-soft bg-paper p-6 text-center text-[13px] text-ink-mute">
+          Nothing matches this level and search.
+        </p>
+      )}
     </div>
   );
 }

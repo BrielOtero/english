@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { WRITING } from '../content';
 import { PhraseLine } from './phrase-line';
 import { LevelBadge } from './level-badge';
+import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
 
 export function WritingView() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [text, setText] = useState('');
   const [showModel, setShowModel] = useState(false);
+  const [level, setLevel] = useState<LevelChoice>('all');
+
+  const counts = useMemo(() => levelCounts(WRITING, (w) => w.level), []);
+  const visible = level === 'all' ? WRITING : WRITING.filter((w) => w.level === level);
 
   const open = WRITING.find((w) => w.id === openId);
   const words = text.trim() ? text.trim().split(/\s+/).length : 0;
@@ -89,24 +94,27 @@ export function WritingView() {
   }
 
   return (
-    <div className="fade-in grid gap-3 sm:grid-cols-2">
-      {WRITING.map((w) => (
-        <button
-          key={w.id}
-          onClick={() => {
-            setOpenId(w.id);
-            setText('');
-            setShowModel(false);
-          }}
-          className="group rounded-xl border border-rule-soft bg-paper p-5 text-left transition duration-150 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[var(--shadow-md)] active:scale-[0.99]"
-        >
-          <div className="mb-2">
-            <LevelBadge level={w.level} />
-          </div>
-          <h3 className="text-[17px] font-medium text-ink group-hover:text-accent">{w.title}</h3>
-          <p className="mt-1 text-[13px] text-ink-soft">{w.prompt}</p>
-        </button>
-      ))}
+    <div className="fade-in">
+      <LevelFilter value={level} counts={counts} onChange={setLevel} />
+      <div className="grid gap-3 sm:grid-cols-2">
+        {visible.map((w) => (
+          <button
+            key={w.id}
+            onClick={() => {
+              setOpenId(w.id);
+              setText('');
+              setShowModel(false);
+            }}
+            className="group rounded-xl border border-rule-soft bg-paper p-5 text-left transition duration-150 hover:-translate-y-0.5 hover:border-accent/60 hover:shadow-[var(--shadow-md)] active:scale-[0.99]"
+          >
+            <div className="mb-2">
+              <LevelBadge level={w.level} />
+            </div>
+            <h3 className="text-[17px] font-medium text-ink group-hover:text-accent">{w.title}</h3>
+            <p className="mt-1 text-[13px] text-ink-soft">{w.prompt}</p>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

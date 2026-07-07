@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { MinimalPair, SoundLesson } from '../types';
 import { SOUNDS } from '../content';
 import { playPhrase } from '../lib/audio';
 import { useStore } from '../store';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
+import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
 import { Icon } from './icons';
 
 /** A 2-alternative forced-choice drill: hear a word, decide which one it was. */
@@ -103,11 +104,18 @@ function SoundCard({ sound }: { sound: SoundLesson }) {
 }
 
 export function PronunciationLab() {
+  const [level, setLevel] = useState<LevelChoice>('all');
+  const counts = useMemo(() => levelCounts(SOUNDS, (s) => s.level), []);
+  const visible = level === 'all' ? SOUNDS : SOUNDS.filter((s) => s.level === level);
+
   return (
-    <div className="fade-in space-y-4">
-      {SOUNDS.map((s) => (
-        <SoundCard key={s.id} sound={s} />
-      ))}
+    <div className="fade-in">
+      <LevelFilter value={level} counts={counts} onChange={setLevel} />
+      <div className="space-y-4">
+        {visible.map((s) => (
+          <SoundCard key={s.id} sound={s} />
+        ))}
+      </div>
     </div>
   );
 }

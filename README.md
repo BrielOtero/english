@@ -1,6 +1,6 @@
 # Fluent — Zero to Native English
 
-A self-study English course, from first words to a near-native C1.
+A self-study English course, from your first words to native-level fluency.
 Single-page app, no backend required.
 
 ## Why it's built this way

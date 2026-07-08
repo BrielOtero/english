@@ -14,6 +14,10 @@ const SPEEDS: { label: string; rate: number }[] = [
 export function VoiceSettings() {
   const rate = useStore((s) => s.voiceRate);
   const setVoiceRate = useStore((s) => s.setVoiceRate);
+  const musicOn = useStore((s) => s.musicOn);
+  const setMusicOn = useStore((s) => s.setMusicOn);
+  const fxOn = useStore((s) => s.fxOn);
+  const setFxOn = useStore((s) => s.setFxOn);
 
   return (
     <details className="relative">
@@ -42,10 +46,45 @@ export function VoiceSettings() {
             );
           })}
         </div>
+        <div className="mt-4 space-y-2">
+          <ToggleRow label="Music" on={musicOn} onChange={setMusicOn} />
+          <ToggleRow label="Sound effects" on={fxOn} onChange={setFxOn} />
+        </div>
+
         <p className="mt-3 text-[11px] leading-snug text-ink-mute">
           Sentences use a built-in natural voice, so they sound the same in every browser.
         </p>
       </div>
     </details>
+  );
+}
+
+function ToggleRow({
+  label,
+  on,
+  onChange,
+}: {
+  label: string;
+  on: boolean;
+  onChange: (v: boolean) => void;
+}) {
+  return (
+    <button
+      onClick={() => onChange(!on)}
+      role="switch"
+      aria-checked={on}
+      className="flex w-full items-center justify-between rounded-lg border border-rule-soft bg-bg px-3 py-2 text-[12.5px] text-ink transition-colors hover:border-accent/50"
+    >
+      <span>{label}</span>
+      <span
+        className={`relative h-5 w-9 rounded-full transition-colors ${on ? 'bg-accent' : 'bg-rule-soft'}`}
+      >
+        <span
+          className={`absolute top-0.5 left-0.5 h-4 w-4 rounded-full bg-paper transition-transform ${
+            on ? 'translate-x-4' : ''
+          }`}
+        />
+      </span>
+    </button>
   );
 }

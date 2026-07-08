@@ -22,10 +22,17 @@ export interface Track {
 
 export const TRACKS: Track[] = [
   {
+    id: 'home',
+    title: 'Home',
+    icon: 'home',
+    blurb: 'Your front door — jump into anything',
+    section: 'core',
+  },
+  {
     id: 'roadmap',
     title: 'Roadmap',
     icon: 'route',
-    blurb: 'Your path from A1 to native',
+    blurb: 'Your climb from A1 to native — as an interactive world map',
     section: 'core',
   },
   {
@@ -69,6 +76,13 @@ export const TRACKS: Track[] = [
     icon: 'pencil',
     blurb: 'Write, then compare to a model',
     section: 'core',
+  },
+  {
+    id: 'drill',
+    title: 'Daily Drill',
+    icon: 'bolt',
+    blurb: 'A fast, arcade-style brain-training minigame',
+    section: 'practice',
   },
   {
     id: 'review',

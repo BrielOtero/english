@@ -41,10 +41,16 @@ interface FluentState {
   voiceRate: number;
   /** Chosen TTS voice (voiceURI), or null to auto-pick the best available. */
   voiceURI: string | null;
+  /** Whether the per-world ambient music plays. */
+  musicOn: boolean;
+  /** Whether interaction sound effects play. */
+  fxOn: boolean;
   /** Level estimated by the placement test, or null if never taken. */
   placementLevel: Level | null;
   /** Epoch ms when the placement test was last completed. */
   placementTakenAt: number | null;
+  /** Worlds whose boss has been defeated (keyed by level) — gates the next world. */
+  bossCleared: Record<string, true>;
   /** Transient clock used to compute due-ness; not persisted. */
   now: number;
 
@@ -54,8 +60,12 @@ interface FluentState {
   toggleTheme: () => void;
   setVoiceRate: (rate: number) => void;
   setVoiceURI: (voiceURI: string | null) => void;
+  setMusicOn: (v: boolean) => void;
+  setFxOn: (v: boolean) => void;
   /** Record the result of a placement test (level + when it was taken). */
   setPlacementResult: (level: Level) => void;
+  /** Mark a world's boss as defeated, unlocking the next world. */
+  clearBoss: (level: Level) => void;
   /** Merge progress from the cloud (or a backup) into this device — never loses progress. */
   importProgress: (data: unknown) => void;
   refreshNow: () => void;
@@ -69,8 +79,11 @@ export const useStore = create<FluentState>()(
       theme: 'light',
       voiceRate: 0.95,
       voiceURI: null,
+      musicOn: true,
+      fxOn: true,
       placementLevel: null,
       placementTakenAt: null,
+      bossCleared: {},
       now: Date.now(),
 
       grade: (cardId, grade) =>
@@ -93,7 +106,11 @@ export const useStore = create<FluentState>()(
       toggleTheme: () => set((s) => ({ theme: s.theme === 'light' ? 'dark' : 'light' })),
       setVoiceRate: (rate) => set({ voiceRate: rate }),
       setVoiceURI: (voiceURI) => set({ voiceURI }),
+      setMusicOn: (v) => set({ musicOn: v }),
+      setFxOn: (v) => set({ fxOn: v }),
       setPlacementResult: (level) => set({ placementLevel: level, placementTakenAt: Date.now() }),
+      clearBoss: (level) =>
+        set((state) => ({ bossCleared: { ...state.bossCleared, [level]: true } })),
       // Merge ONLY learning progress (reviews + completed). Settings like theme and
       // audio speed are per-device preferences and are deliberately NOT synced.
       importProgress: (data) =>
@@ -126,8 +143,11 @@ export const useStore = create<FluentState>()(
         theme: s.theme,
         voiceRate: s.voiceRate,
         voiceURI: s.voiceURI,
+        musicOn: s.musicOn,
+        fxOn: s.fxOn,
         placementLevel: s.placementLevel,
         placementTakenAt: s.placementTakenAt,
+        bossCleared: s.bossCleared,
       }),
     },
   ),

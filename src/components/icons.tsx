@@ -6,6 +6,9 @@ import type { ReactNode } from 'react';
 export type IconName =
   | 'route'
   | 'target'
+  | 'bolt'
+  | 'home'
+  | 'search'
   | 'book'
   | 'layers'
   | 'volume'
@@ -36,6 +39,19 @@ const PATHS: Record<IconName, ReactNode> = {
       <circle cx="12" cy="12" r="9" />
       <circle cx="12" cy="12" r="5" />
       <circle cx="12" cy="12" r="1.5" />
+    </>
+  ),
+  bolt: <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" />,
+  home: (
+    <>
+      <path d="M3 11.5 12 4l9 7.5" />
+      <path d="M5 10v10h14V10" />
+    </>
+  ),
+  search: (
+    <>
+      <circle cx="11" cy="11" r="7" />
+      <path d="m21 21-4.35-4.35" />
     </>
   ),
   book: (

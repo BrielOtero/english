@@ -5,11 +5,20 @@ import { Icon, type IconName } from './icons';
 import { AppModal } from './app-modal';
 
 const HUBS: { id: string; icon: IconName; label: string }[] = [
-  { id: 'roadmap', icon: 'route', label: 'Home' },
+  { id: 'home', icon: 'home', label: 'Home' },
   { id: 'grammar', icon: 'book', label: 'Learn' },
   { id: 'vocabulary', icon: 'layers', label: 'Words' },
 ];
-const MORE_IDS = ['placement', 'pronunciation', 'reading', 'writing', 'phrasal', 'idioms'];
+const MORE_IDS = [
+  'roadmap',
+  'placement',
+  'drill',
+  'pronunciation',
+  'reading',
+  'writing',
+  'phrasal',
+  'idioms',
+];
 
 /** Mobile-only native-app bottom bar: 5 thumb-reachable hubs with a raised Review. */
 export function BottomNav({

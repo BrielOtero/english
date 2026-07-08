@@ -4,6 +4,7 @@ import { LEVELS, LEVEL_BLURB } from '../types';
 import { GRAMMAR, grammarUnit } from '../content';
 import { useStore } from '../store';
 import { LevelBadge } from './level-badge';
+import { Markup } from './markup';
 import { LessonView } from './lesson-view';
 
 const ALL_LESSONS = GRAMMAR.flatMap((u) => u.lessons);
@@ -100,7 +101,9 @@ export function GrammarBrowser() {
                       <h3 className="text-[16px] font-medium text-ink group-hover:text-accent">
                         {lesson.title}
                       </h3>
-                      <p className="mt-1 max-w-xl text-[13px] text-ink-soft">{lesson.summary}</p>
+                      <p className="mt-1 max-w-xl text-[13px] text-ink-soft">
+                        <Markup text={lesson.summary} />
+                      </p>
                     </div>
                     <span
                       className={`mt-0.5 shrink-0 font-mono text-[11px] ${isDone ? 'text-success' : 'text-ink-mute'}`}

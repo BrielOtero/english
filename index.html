@@ -13,15 +13,15 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#edeae3" />
+    <meta name="theme-color" content="#eae6da" />
 
     <!-- Paint the themed background immediately, before CSS or React load. -->
     <style>
       html {
-        background: #edeae3;
+        background: #eae6da;
       }
       html[data-theme='dark'] {
-        background: #121119;
+        background: #10140e;
       }
     </style>
     <!-- Apply the saved theme synchronously so a refresh never flashes the wrong mode. -->
@@ -33,7 +33,7 @@
           var theme = s && s.theme === 'dark' ? 'dark' : 'light';
           document.documentElement.setAttribute('data-theme', theme);
           var m = document.querySelector('meta[name="theme-color"]');
-          if (m) m.setAttribute('content', theme === 'dark' ? '#121119' : '#edeae3');
+          if (m) m.setAttribute('content', theme === 'dark' ? '#10140e' : '#eae6da');
         } catch (e) {}
       })();
     </script>

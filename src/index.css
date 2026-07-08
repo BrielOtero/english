@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap');
 @import 'tailwindcss';
 
-/* "Lexicon" — a living dictionary you study inside. Warm manuscript palette, an
-   ownable ink-violet accent, an amber warm-spark for progress. Tokens are CSS
-   variables switched by data-theme on <html>; Tailwind utilities map to them. */
+/* "Botanical Study" — a warm, plant-filled reading room you learn inside. Warm-cream
+   paper, an ownable forest-green accent, moss & honey supports, a gentle green→honey
+   aurora. Tuned for long, unhurried reading: generous measure, calm motion. Tokens are
+   CSS variables switched by data-theme on <html>; Tailwind utilities map to them. */
 @theme inline {
   --color-bg: var(--bg);
   --color-bg2: var(--bg-2);
@@ -26,33 +27,49 @@
   --color-code-fg: var(--code-fg);
   --color-code-mute: var(--code-mute);
 
+  /* Level ramp — a botanical "growth" progression (seedling → heartwood). */
+  --color-lvl-a1: var(--lvl-a1);
+  --color-lvl-a2: var(--lvl-a2);
+  --color-lvl-b1: var(--lvl-b1);
+  --color-lvl-b2: var(--lvl-b2);
+  --color-lvl-c1: var(--lvl-c1);
+  --color-lvl-c2: var(--lvl-c2);
+
   --font-display: 'Newsreader', Georgia, serif;
   --font-sans: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, monospace;
 }
 
-/* Light — "warm manuscript" */
+/* Light — "botanical study": warm-cream paper, forest-green ink accents. */
 :root {
-  --bg: #edeae3;
-  --bg-2: #e3dfd5;
-  --paper: #faf8f3;
-  --raised: #ffffff;
-  --ink: #1b1a17;
-  --ink-soft: #565249;
-  --ink-mute: #8a857a;
-  --rule: #201d17;
-  --rule-soft: #ded8cb;
-  --accent: #4b3ddb;
-  --accent-strong: #3b2ebe;
+  --bg: #eae6da;
+  --bg-2: #e2ddcd;
+  --paper: #f7f4ec;
+  --raised: #fffdf7;
+  --ink: #20241d;
+  --ink-soft: #55594a;
+  --ink-mute: #8a8b78;
+  --rule: #24271b;
+  --rule-soft: #dcd7c5;
+  --accent: #2f6b46;
+  --accent-strong: #245638;
   --on-accent: #ffffff;
-  --accent-2: #e0922a;
-  --gold: #c8881c;
-  --sage: #6e8b61;
-  --success: #1a7e52;
-  --danger: #c5402a;
-  --code-bg: #1c1a22;
-  --code-fg: #ece9e3;
-  --code-mute: #8a8597;
+  --accent-2: #c98a2e;
+  --gold: #bf8a24;
+  --sage: #6f9163;
+  --success: #2b7d4a;
+  --danger: #bf4a30;
+  --code-bg: #1c2019;
+  --code-fg: #eae7dc;
+  --code-mute: #8f9079;
+
+  /* Level ramp (white text sits on each): seedling → heartwood. */
+  --lvl-a1: #6f9163;
+  --lvl-a2: #4f8a4a;
+  --lvl-b1: #2f6b46;
+  --lvl-b2: #b3812a;
+  --lvl-c1: #a95a34;
+  --lvl-c2: #3a352b;
 
   --accent-tint: color-mix(in oklab, var(--accent) 12%, var(--paper));
   --ring: color-mix(in oklab, var(--accent) 40%, transparent);
@@ -71,28 +88,36 @@
   --ease-spring: cubic-bezier(0.34, 1.4, 0.5, 1);
 }
 
-/* Dark — "midnight manuscript" (warm aubergine-charcoal, never pure black) */
+/* Dark — "forest night" (deep green-charcoal, never pure black) */
 :root[data-theme='dark'] {
-  --bg: #121119;
-  --bg-2: #1b1a24;
-  --paper: #1e1c27;
-  --raised: #2a2738;
-  --ink: #f1eee7;
-  --ink-soft: #b0aba1;
-  --ink-mute: #807b8c;
-  --rule: #4a4660;
-  --rule-soft: #2c2a38;
-  --accent: #9a8dff;
-  --accent-strong: #b0a6ff;
-  --on-accent: #14121c;
-  --accent-2: #f0b450;
-  --gold: #e4ae48;
-  --sage: #8aae7c;
-  --success: #46c489;
-  --danger: #f1715a;
-  --code-bg: #0e0d14;
-  --code-fg: #ece9f2;
-  --code-mute: #7c7790;
+  --bg: #10140e;
+  --bg-2: #171c14;
+  --paper: #1a2016;
+  --raised: #232b1d;
+  --ink: #eceadd;
+  --ink-soft: #aab19b;
+  --ink-mute: #7d846f;
+  --rule: #434d38;
+  --rule-soft: #2a3120;
+  --accent: #86cf90;
+  --accent-strong: #9edaa6;
+  --on-accent: #11170e;
+  --accent-2: #e8c25a;
+  --gold: #e0b64c;
+  --sage: #8bae7c;
+  --success: #58c98a;
+  --danger: #f0715a;
+  --code-bg: #0c0f0a;
+  --code-fg: #e9ecdf;
+  --code-mute: #7d846f;
+
+  /* Level ramp for dark surfaces (dark text sits on each). */
+  --lvl-a1: #7fa072;
+  --lvl-a2: #61a557;
+  --lvl-b1: #4f9e6c;
+  --lvl-b2: #cb9c40;
+  --lvl-c1: #c8734a;
+  --lvl-c2: #cbc4b2;
 
   --accent-tint: color-mix(in oklab, var(--accent) 16%, var(--paper));
   --ring: color-mix(in oklab, var(--accent) 50%, transparent);
@@ -139,19 +164,37 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* Faint warm aurora behind everything (replaces the old grain). */
+/* Long-form reading comfort — a calm, generous measure so lessons and texts feel
+   like a book you can sink into for an hour, not a dense dashboard. */
+.reading {
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.78;
+  letter-spacing: 0.002em;
+}
+.reading-lg {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.8;
+  letter-spacing: 0.002em;
+}
+.measure {
+  max-width: 64ch;
+}
+
+/* Faint botanical aurora behind everything — a soft green→honey light, like sun
+   through leaves. Subtle in light, a touch deeper in the forest-night theme. */
 .grain {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.05;
+  opacity: 0.07;
   background-image:
-    radial-gradient(60% 50% at 12% 0%, var(--accent), transparent 70%),
-    radial-gradient(50% 50% at 95% 100%, var(--accent-2), transparent 70%);
+    radial-gradient(55% 45% at 8% -5%, var(--accent), transparent 68%),
+    radial-gradient(45% 45% at 100% 8%, var(--sage), transparent 70%),
+    radial-gradient(50% 50% at 92% 104%, var(--accent-2), transparent 70%);
 }
 :root[data-theme='dark'] .grain {
-  opacity: 0.14;
+  opacity: 0.16;
 }
 
 /* Content mount: fade + rise. */
@@ -343,6 +386,47 @@ body {
 }
 .soft-scroll::-webkit-scrollbar {
   height: 0;
+}
+
+/* Arcade juice for the minigames. */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-7px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+.shake {
+  animation: shake 0.38s var(--ease-io) both;
+}
+
+@keyframes pop-score {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.12);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(1);
+  }
+}
+.pop-score {
+  animation: pop-score 0.9s var(--ease-out) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

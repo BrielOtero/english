@@ -104,18 +104,20 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
       <h2 className="font-display text-[clamp(24px,3.4vw,34px)] leading-tight text-ink">
         {lesson.title}
       </h2>
-      <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-ink-soft">{lesson.summary}</p>
+      <p className="mt-3 measure reading text-ink-soft">
+        <Markup text={lesson.summary} />
+      </p>
 
       {/* Teaching sections */}
-      <div className="mt-7 space-y-6">
+      <div className="mt-8 space-y-8">
         {lesson.sections.map((sec, i) => (
           <section key={i}>
             {sec.heading && <SubHead>{sec.heading}</SubHead>}
-            <p className="max-w-2xl text-[15px] leading-relaxed text-ink-soft">
+            <p className="measure reading text-ink-soft">
               <Markup text={sec.body} />
             </p>
             {sec.examples && (
-              <div className="mt-3 space-y-2.5 rounded-lg border border-rule-soft bg-paper p-4">
+              <div className="mt-4 space-y-2.5 rounded-xl border border-rule-soft bg-paper p-5">
                 {sec.examples.map((ph, k) => (
                   <PhraseLine key={k} phrase={ph} />
                 ))}

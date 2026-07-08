@@ -38,13 +38,15 @@ export function ReadingView() {
             <Icon name="play" className="h-2.5 w-2.5" /> Listen to all
           </button>
         </div>
-        <h2 className="font-display text-[28px] leading-tight text-ink">{open.title}</h2>
+        <h2 className="font-display text-[clamp(26px,3.4vw,34px)] leading-tight text-ink">
+          {open.title}
+        </h2>
 
-        <div className="mt-5 space-y-3">
+        <div className="mt-6 space-y-4">
           {open.paragraphs.map((p, i) => (
-            <div key={i} className="flex items-start gap-2.5">
+            <div key={i} className="flex items-start gap-3">
               <Speaker text={p} size="sm" />
-              <p className="text-[15.5px] leading-relaxed text-ink">{p}</p>
+              <p className="reading measure text-ink">{p}</p>
             </div>
           ))}
         </div>

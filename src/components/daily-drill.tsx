@@ -57,7 +57,6 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
 
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Countdown while playing.
   useEffect(() => {
     if (phase !== 'play') return;
     const id = setInterval(() => {
@@ -127,7 +126,6 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
 
   const RING = 2 * Math.PI * 26;
 
-  /* ---------------- intro ---------------- */
   if (phase === 'intro') {
     return (
       <div className="fade-in mx-auto max-w-md text-center">
@@ -161,7 +159,6 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
     );
   }
 
-  /* ---------------- results ---------------- */
   if (phase === 'over') {
     const rank = rankOf(score);
     const acc = answered ? Math.round((correct / answered) * 100) : 0;
@@ -213,7 +210,6 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
     );
   }
 
-  /* ---------------- play ---------------- */
   const q = pool[idx];
   return (
     <div className="fade-in mx-auto max-w-md">
@@ -222,7 +218,6 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
           flash === 'bad' ? 'shake' : ''
         }`}
       >
-        {/* flash overlay */}
         <AnimatePresence>
           {flash && (
             <motion.div
@@ -238,9 +233,7 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
           )}
         </AnimatePresence>
 
-        {/* HUD */}
         <div className="relative z-[3] mb-5 flex items-center justify-between">
-          {/* timer ring */}
           <div className="relative grid h-16 w-16 place-items-center">
             <svg viewBox="0 0 64 64" className="h-16 w-16 -rotate-90">
               <circle
@@ -272,7 +265,6 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
             <p className="text-[10.5px] text-ink-mute">score</p>
           </div>
 
-          {/* combo */}
           <motion.div
             key={combo}
             initial={{ scale: combo > 1 ? 1.4 : 1 }}
@@ -287,19 +279,15 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
           </motion.div>
         </div>
 
-        {/* floating score popup */}
-        <AnimatePresence>
-          {pop && flash === 'good' && (
-            <div
-              key={pop.key}
-              className="pop-score pointer-events-none absolute top-16 left-1/2 z-[4] -translate-x-1/2 font-display text-[26px] font-semibold text-success"
-            >
-              {pop.text}
-            </div>
-          )}
-        </AnimatePresence>
+        {pop && flash === 'good' && (
+          <div
+            key={pop.key}
+            className="pop-score pointer-events-none absolute top-16 left-1/2 z-[4] -translate-x-1/2 font-display text-[26px] font-semibold text-success"
+          >
+            {pop.text}
+          </div>
+        )}
 
-        {/* question */}
         <div className="relative z-[3]">
           <AnimatePresence mode="wait">
             <motion.p
@@ -340,7 +328,6 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
           </div>
         </div>
 
-        {/* footer */}
         <div className="relative z-[3] mt-5 flex items-center justify-between text-[11px] text-ink-mute">
           <span className="flex items-center gap-1">
             <StarIcon className="h-3.5 w-3.5 text-gold" /> best ×{best}

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { TRACKS, TOTAL_LESSONS, buildReviewDeck } from '../content';
+import { TRACKS, TOTAL_LESSONS, buildReviewDeck, type Track } from '../content';
 import { useStore, isLearned, isDue } from '../store';
 import { Icon } from './icons';
 import { LevelBadge } from './level-badge';
@@ -21,7 +21,6 @@ export function Home({ onSelect }: { onSelect: (id: string) => void }) {
   const learned = deck.filter((c) => isLearned(reviews[c.id])).length;
   const due = deck.filter((c) => isDue(reviews[c.id], now)).length;
 
-  // Everything except Home itself, grouped the way the sidebar groups them.
   const sections = TRACKS.filter((t) => t.id !== 'home');
   const core = sections.filter((t) => t.section === 'core');
   const practice = sections.filter((t) => t.section === 'practice');
@@ -34,7 +33,6 @@ export function Home({ onSelect }: { onSelect: (id: string) => void }) {
 
   return (
     <div className="fade-in">
-      {/* Hero */}
       <div className="rounded-3xl border border-rule-soft bg-paper p-7 sm:p-9">
         <div>
           <p className="kicker text-[15px] text-ink-soft">Zero to native</p>
@@ -69,7 +67,6 @@ export function Home({ onSelect }: { onSelect: (id: string) => void }) {
         </div>
       </div>
 
-      {/* Progress snapshot */}
       <div className="mt-5 grid grid-cols-3 gap-3">
         {stats.map((s) => (
           <div key={s.k} className="rounded-2xl border border-rule-soft bg-bg p-4 text-center">
@@ -79,7 +76,6 @@ export function Home({ onSelect }: { onSelect: (id: string) => void }) {
         ))}
       </div>
 
-      {/* Section launcher */}
       <SectionGrid label="Learn" tracks={core} due={due} onSelect={onSelect} />
       <SectionGrid label="Practice" tracks={practice} due={due} onSelect={onSelect} />
     </div>
@@ -93,7 +89,7 @@ function SectionGrid({
   onSelect,
 }: {
   label: string;
-  tracks: typeof TRACKS;
+  tracks: Track[];
   due: number;
   onSelect: (id: string) => void;
 }) {

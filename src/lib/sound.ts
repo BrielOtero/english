@@ -1,6 +1,6 @@
 // Procedural sound effects via the Web Audio API — no audio files, a few hundred
 // bytes of code, and it gives the minigames real arcade "juice". Every sound is
-// synthesised from oscillators on demand. Respects a global mute and only starts an
+// synthesised from oscillators on demand. Respects the music and effects toggles and only starts an
 // AudioContext after a user gesture (browsers require that), so it's safe to call.
 
 let ctx: AudioContext | null = null;
@@ -87,11 +87,8 @@ export function sFinish() {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Ambient per-world soundtrack — a calm, procedurally-looped melody.   */
-/* Each world has its own pentatonic scale so it feels like its own     */
-/* place. Gentle sine pads, low gain — background, never distracting.    */
-/* ------------------------------------------------------------------ */
+// Ambient per-world soundtrack: a calm, procedurally-looped melody. Each world has its
+// own pentatonic scale so it feels like its own place; gentle sine pads at low gain.
 const WORLD_SCALE: Record<string, number[]> = {
   A1: [261.63, 293.66, 329.63, 392.0, 440.0], // C major pentatonic — bright, hopeful
   A2: [293.66, 329.63, 392.0, 440.0, 523.25], // D — sunny prairie

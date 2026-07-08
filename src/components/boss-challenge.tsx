@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react';
-import type { Level } from '../types';
 import type { WorldInfo } from '../content/worlds';
 import { grammarUnit } from '../content';
 import { shuffle } from '../lib/shuffle';
@@ -11,6 +10,7 @@ import { Slime, StarIcon } from './map-art';
 
 /** How many questions a boss throws at you. */
 const BOSS_QUESTIONS = 8;
+const MINI_QUESTIONS = 4;
 
 /**
  * A world's boss fight. It assembles a challenge quiz from that level's lessons and
@@ -19,12 +19,10 @@ const BOSS_QUESTIONS = 8;
  * an exam. Renders in the responsive AppModal (bottom sheet on mobile, dialog on desktop).
  */
 export function BossChallenge({
-  level,
   world,
   mini = false,
   onClose,
 }: {
-  level: Level;
   world: WorldInfo;
   /** A mid-world skirmish: sharpens up but doesn't clear/unlock the world. */
   mini?: boolean;
@@ -37,12 +35,12 @@ export function BossChallenge({
 
   // A fresh sample of the world's drills each fight, so re-runs aren't identical.
   const questions = useMemo(() => {
-    const all = (grammarUnit(level)?.lessons ?? []).flatMap((l) => l.exercises);
-    return shuffle(all).slice(0, mini ? 4 : BOSS_QUESTIONS);
-  }, [level, mini]);
+    const all = (grammarUnit(world.level)?.lessons ?? []).flatMap((l) => l.exercises);
+    return shuffle(all).slice(0, mini ? MINI_QUESTIONS : BOSS_QUESTIONS);
+  }, [world.level, mini]);
 
   function win() {
-    if (!mini) clearBoss(level);
+    if (!mini) clearBoss(world.level);
     setPhase('win');
   }
 

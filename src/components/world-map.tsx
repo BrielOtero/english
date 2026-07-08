@@ -132,9 +132,6 @@ function TrailNode({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Screen 1 — the universe: worlds as nodes on a path to the summit    */
-/* ------------------------------------------------------------------ */
 function WorldGalaxy({
   unlockedThrough,
   currentIdx,
@@ -179,7 +176,6 @@ function WorldGalaxy({
         />
       </svg>
 
-      {/* summit */}
       <div
         style={{ left: `${summit.x}%`, top: `${summit.y}%` }}
         className="absolute z-[1] flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"
@@ -247,9 +243,6 @@ function WorldGalaxy({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Screen 2 — inside a world: the level trail (with a branching fork)  */
-/* ------------------------------------------------------------------ */
 function WorldDetail({
   world,
   stars,
@@ -271,7 +264,6 @@ function WorldDetail({
 }) {
   const tone = TONE[world.level];
 
-  // Play this world's ambient theme while its map is on screen.
   useEffect(() => {
     startWorldTheme(world.level);
     return () => stopWorldTheme();
@@ -280,7 +272,6 @@ function WorldDetail({
   const lessons = useMemo(() => grammarUnit(world.level)?.lessons ?? [], [world.level]);
   const doneCount = lessons.filter((l) => completed[l.id]).length;
 
-  // Nodes for the illustrated map: every lesson, then a mini-boss, a bonus, and the boss.
   const nodes = [
     ...lessons.map((l, i) => ({
       kind: 'lesson' as NodeKind,
@@ -339,7 +330,6 @@ function WorldDetail({
         ← All worlds
       </button>
 
-      {/* world banner */}
       <div className={`rounded-3xl border ${tone.band} px-5 py-5`}>
         <div className="flex items-center gap-3">
           <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-paper shadow-[var(--shadow-sm)]">
@@ -371,7 +361,6 @@ function WorldDetail({
         </p>
       </div>
 
-      {/* the illustrated level map */}
       <div
         className="relative mx-auto mt-5 w-full overflow-hidden rounded-3xl border border-rule-soft"
         style={{ height: `${mapH}px` }}
@@ -396,7 +385,7 @@ function WorldDetail({
           const p = pos(i);
           return (
             <div
-              key={i}
+              key={nd.label}
               style={{ left: `${p.x}%`, top: `${p.y}%` }}
               className="absolute z-[1] flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"
             >
@@ -431,9 +420,6 @@ function WorldDetail({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Screen 3 — playing a level (the lesson, in-place, never leaving)    */
-/* ------------------------------------------------------------------ */
 function LevelView({
   lessonId,
   world,
@@ -466,9 +452,6 @@ function LevelView({
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Container                                                           */
-/* ------------------------------------------------------------------ */
 export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => void }) {
   const completed = useStore((s) => s.completed);
   const placementLevel = useStore((s) => s.placementLevel);
@@ -521,7 +504,6 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            {/* Clean header */}
             <div className="mb-7 flex items-end justify-between gap-3">
               <div>
                 <p className="kicker text-[13px] text-ink-soft">The climb to native</p>
@@ -566,12 +548,7 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
       </AnimatePresence>
 
       {battle && (
-        <BossChallenge
-          level={battle.world.level}
-          world={battle.world}
-          mini={battle.mini}
-          onClose={() => setBattle(null)}
-        />
+        <BossChallenge world={battle.world} mini={battle.mini} onClose={() => setBattle(null)} />
       )}
     </div>
   );

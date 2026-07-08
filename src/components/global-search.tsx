@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { GRAMMAR, VOCAB_SETS, SOUNDS, PHRASAL, IDIOMS, READINGS, WRITING } from '../content';
 import { Icon } from './icons';
@@ -114,7 +114,8 @@ export function GlobalSearch({
   const [active, setActive] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const results = useMemo(() => search(index, q), [index, q]);
+  const deferredQ = useDeferredValue(q);
+  const results = useMemo(() => search(index, deferredQ), [index, deferredQ]);
 
   // Focus the field on mount (the parent mounts this only while search is open).
   useEffect(() => {

@@ -148,7 +148,7 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
       {lesson.pitfalls && lesson.pitfalls.length > 0 && (
         <section className="mt-8">
           <SubHead>Watch out</SubHead>
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {lesson.pitfalls.map((p, i) => (
               <PitfallCard key={i} pitfall={p} />
             ))}

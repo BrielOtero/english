@@ -189,7 +189,7 @@ export function Placement({ onStartLevel }: { onStartLevel: (level: Level) => vo
 
         <p className="mb-5 text-[17px] leading-relaxed text-ink">{current.prompt}</p>
 
-        <div className="grid gap-2">
+        <div className="grid grid-cols-1 gap-2">
           {current.options.map((opt, idx) => {
             const selected = idx === choice;
             return (

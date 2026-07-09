@@ -181,7 +181,7 @@ export function ExerciseDeck({
             </div>
           )}
           <p className="mb-4 text-[16px] text-ink">{ex.prompt}</p>
-          <div className="grid gap-2">
+          <div className="grid grid-cols-1 gap-2">
             {ex.options.map((opt, idx) => {
               const isAnswer = idx === ex.answer;
               const isChosen = idx === choice;

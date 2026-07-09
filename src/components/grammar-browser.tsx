@@ -87,7 +87,7 @@ export function GrammarBrowser() {
       {unit && (
         <>
           <p className="mb-5 max-w-2xl text-[14px] text-ink-soft">{LEVEL_BLURB[level]}</p>
-          <div className="grid gap-3">
+          <div className="grid grid-cols-1 gap-3">
             {unit.lessons.map((lesson) => {
               const isDone = !!completed[lesson.id];
               return (

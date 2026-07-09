@@ -96,7 +96,7 @@ function SectionGrid({
   return (
     <>
       <p className="kicker mt-8 mb-3 text-[14px] text-ink-soft">{label}</p>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {tracks.map((t) => (
           <motion.button
             key={t.id}

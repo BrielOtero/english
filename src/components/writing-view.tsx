@@ -96,7 +96,7 @@ export function WritingView() {
   return (
     <div className="fade-in">
       <LevelFilter value={level} counts={counts} onChange={setLevel} />
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {visible.map((w) => (
           <button
             key={w.id}

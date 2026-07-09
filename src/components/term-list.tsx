@@ -43,7 +43,7 @@ function TermList({ entries }: { entries: TermEntry[] }) {
         aria-label="Search"
         className="mb-4 w-full max-w-xs rounded-full border border-rule-soft bg-paper px-4 py-2 text-[13px] text-ink placeholder:text-ink-mute focus:border-accent focus:outline-none"
       />
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {filtered.map((e) => {
           const added = !!reviews[e.id];
           return (

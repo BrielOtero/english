@@ -4,6 +4,7 @@ import { matches, normalize } from '../lib/check';
 import { shuffle } from '../lib/shuffle';
 import { Speaker } from './speaker';
 import { Markup } from './markup';
+import { sCorrect, sWrong } from '../lib/sound';
 
 const KIND_LABEL: Record<Exercise['kind'], string> = {
   mcq: 'Choose the right answer',
@@ -53,6 +54,8 @@ export function ExerciseDeck({
 
   const completedRef = useRef(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const deckRef = useRef<HTMLDivElement>(null);
+  const controlsRef = useRef<HTMLDivElement>(null);
 
   const ex = exercises[i];
   const done = i >= exercises.length;
@@ -77,6 +80,15 @@ export function ExerciseDeck({
       inputRef.current?.focus({ preventScroll: true });
     }
   }, [ex]);
+
+  // On mobile the deck sits low; bring the next question — and the feedback/controls
+  // after a check — into view so nothing important lands below the fold.
+  useEffect(() => {
+    if (i > 0) deckRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }, [i]);
+  useEffect(() => {
+    if (checked) controlsRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [checked]);
 
   if (!exercises.length) return null;
 
@@ -142,7 +154,12 @@ export function ExerciseDeck({
     const ok = evaluate();
     setWasCorrect(ok);
     setChecked(true);
-    if (ok) setScore((s) => s + 1);
+    if (ok) {
+      setScore((s) => s + 1);
+      sCorrect(1);
+    } else {
+      sWrong();
+    }
   }
 
   function next() {
@@ -154,7 +171,12 @@ export function ExerciseDeck({
   const prompt = KIND_LABEL[ex.kind];
 
   return (
-    <div className="rounded-xl border border-rule-soft bg-paper p-5">
+    <div
+      ref={deckRef}
+      className={`scroll-mt-20 rounded-xl border border-rule-soft bg-paper p-5 ${
+        checked && !wasCorrect ? 'shake' : ''
+      }`}
+    >
       {/* progress */}
       <div className="mb-4 flex items-center justify-between">
         <span className="kicker text-[13.5px] text-ink-soft">{prompt}</span>
@@ -325,20 +347,20 @@ export function ExerciseDeck({
       )}
 
       {/* --- controls --- */}
-      <div className="mt-5 flex justify-end">
+      <div ref={controlsRef} className="mt-5 flex justify-end">
         {!checked ? (
           <button
             onClick={check}
-            className="rounded-full bg-accent px-5 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
+            className="w-full rounded-full bg-accent px-5 py-2.5 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90 sm:w-auto"
           >
             Check
           </button>
         ) : (
           <button
             onClick={next}
-            className="rounded-full bg-ink px-5 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
+            className="w-full rounded-full bg-ink px-5 py-2.5 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90 sm:w-auto"
           >
-            {i + 1 < exercises.length ? 'Next' : 'Finish'}
+            {i + 1 < exercises.length ? 'Next →' : 'Finish'}
           </button>
         )}
       </div>

@@ -429,6 +429,11 @@ function LevelView({
   world: WorldInfo;
   onBack: () => void;
 }) {
+  // Opening a level from a node deep in the map would otherwise keep the map's scroll.
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [lessonId]);
+
   const lesson = ALL_LESSONS.find((l) => l.id === lessonId);
   if (!lesson) return null;
   const levelNo = (grammarUnit(world.level)?.lessons ?? []).findIndex((l) => l.id === lessonId) + 1;

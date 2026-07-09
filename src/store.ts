@@ -111,14 +111,17 @@ export const useStore = create<FluentState>()(
       setPlacementResult: (level) => set({ placementLevel: level, placementTakenAt: Date.now() }),
       clearBoss: (level) =>
         set((state) => ({ bossCleared: { ...state.bossCleared, [level]: true } })),
-      // Merge ONLY learning progress (reviews + completed). Settings like theme and
-      // audio speed are per-device preferences and are deliberately NOT synced.
+      // Merge learning progress — reviews, completed lessons, defeated bosses, and the
+      // placement result. Per-device settings (theme, audio) are deliberately NOT synced.
       importProgress: (data) =>
         set((state) => {
           if (!data || typeof data !== 'object') return {};
           const d = data as {
             reviews?: Record<string, ReviewItem>;
             completed?: Record<string, true>;
+            bossCleared?: Record<string, true>;
+            placementLevel?: Level | null;
+            placementTakenAt?: number | null;
           };
           const reviews = { ...state.reviews };
           for (const [id, item] of Object.entries(d.reviews ?? {})) {
@@ -129,7 +132,17 @@ export const useStore = create<FluentState>()(
               reviews[id] = item;
             }
           }
-          return { reviews, completed: { ...state.completed, ...(d.completed ?? {}) } };
+          // Take whichever placement result was taken most recently.
+          const placement =
+            (d.placementTakenAt ?? 0) > (state.placementTakenAt ?? 0) && d.placementLevel
+              ? { placementLevel: d.placementLevel, placementTakenAt: d.placementTakenAt ?? null }
+              : {};
+          return {
+            reviews,
+            completed: { ...state.completed, ...(d.completed ?? {}) },
+            bossCleared: { ...state.bossCleared, ...(d.bossCleared ?? {}) },
+            ...placement,
+          };
         }),
       refreshNow: () => set({ now: Date.now() }),
     }),

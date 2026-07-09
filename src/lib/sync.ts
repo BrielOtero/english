@@ -15,11 +15,17 @@ let onVisible: (() => void) | null = null;
 let timer: ReturnType<typeof setTimeout> | null = null;
 let lastJson = '';
 
-/** The synced slice: ONLY learning progress. Settings (theme, audio speed, ES
- *  toggle) are per-device preferences and intentionally stay local. */
+/** The synced slice: learning progress only (reviews, completed lessons, defeated
+ *  bosses, placement result). Settings (theme, audio) stay per-device. */
 function snapshot() {
   const s = useStore.getState();
-  return { reviews: s.reviews, completed: s.completed };
+  return {
+    reviews: s.reviews,
+    completed: s.completed,
+    bossCleared: s.bossCleared,
+    placementLevel: s.placementLevel,
+    placementTakenAt: s.placementTakenAt,
+  };
 }
 
 async function readCloud(userId: string): Promise<unknown | null> {

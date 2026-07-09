@@ -135,7 +135,7 @@ export default function App() {
   const completedCount = Object.keys(completed).length;
 
   return (
-    <div className="min-h-screen bg-bg text-ink">
+    <div className="min-h-screen overflow-x-clip bg-bg text-ink">
       <div className="grain" />
 
       {/* Masthead */}
@@ -156,15 +156,13 @@ export default function App() {
             >
               <Icon name="search" className="h-4 w-4" />
             </button>
-            <span className="hidden items-center gap-2 rounded-full border border-rule-soft bg-bg px-3 py-1.5 sm:flex">
+            <span className="flex items-center gap-1.5 rounded-full border border-rule-soft bg-bg px-2 py-1 sm:gap-2 sm:px-3 sm:py-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               <span className="font-mono text-[11px] text-ink-soft tabular-nums">
                 {completedCount}/{TOTAL_LESSONS}
               </span>
             </span>
-            <div className="hidden sm:block">
-              <VoiceSettings />
-            </div>
+            <VoiceSettings />
             <button
               onClick={toggleTheme}
               title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
@@ -180,7 +178,7 @@ export default function App() {
 
       {/* Body */}
       <div className="relative z-[1] mx-auto max-w-[1280px] px-4 pb-28 sm:px-8 lg:pb-16">
-        <div className="grid gap-8 pt-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10">
+        <div className="grid grid-cols-1 gap-8 pt-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10">
           <Sidebar tracks={TRACKS} activeId={activeId} onSelect={selectTab} />
 
           <main className="min-w-0">

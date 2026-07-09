@@ -23,7 +23,7 @@ export function VoiceSettings() {
     <details className="relative">
       <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-full border border-rule-soft bg-paper px-3 py-2 font-mono text-[11px] tracking-wide text-ink-soft uppercase transition-colors hover:text-ink [&::-webkit-details-marker]:hidden">
         <Icon name="volume" className="h-3.5 w-3.5" />
-        Audio
+        <span className="hidden sm:inline">Audio</span>
       </summary>
 
       <div className="absolute right-0 z-30 mt-2 w-56 rounded-xl border border-rule-soft bg-paper p-4 shadow-xl">

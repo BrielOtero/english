@@ -27,6 +27,7 @@ function buildPool(): Q[] {
   const fromGrammar: Q[] = GRAMMAR.flatMap((u) => u.lessons)
     .flatMap((l) => l.exercises)
     .filter((e) => e.kind === 'mcq')
+    .filter((e) => !e.audio) // listen-and-choose needs a play button the drill lacks
     .map((e) => ({ prompt: e.prompt, options: e.options, answer: e.answer }));
   return shuffle([...fromPlacement, ...fromGrammar]);
 }
@@ -302,7 +303,7 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
             </motion.p>
           </AnimatePresence>
 
-          <div className="grid gap-2.5 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
             {q.options.map((opt, i) => {
               const isAnswer = i === q.answer;
               const isChosen = i === choice;

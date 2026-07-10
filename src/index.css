@@ -429,6 +429,84 @@ body {
   animation: pop-score 0.9s var(--ease-out) both;
 }
 
+/* Flashcard — a real 3D flip: definition on the front, answer on the back. Both faces
+   stack in one grid cell so the card sizes to the taller face and never jumps. */
+.flip {
+  perspective: 1400px;
+}
+.flip-inner {
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 0.5s var(--ease-io);
+}
+.flip[data-flipped='true'] .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  grid-area: 1 / 1;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* A fresh card rises in; the graded one is thrown aside in the grade's direction. */
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.card-in {
+  animation: card-in var(--t-slow) var(--ease-out) both;
+}
+@keyframes card-out-left {
+  to {
+    opacity: 0;
+    transform: translateX(-64px) rotate(-7deg);
+  }
+}
+@keyframes card-out-right {
+  to {
+    opacity: 0;
+    transform: translateX(64px) rotate(7deg);
+  }
+}
+@keyframes card-out-up {
+  to {
+    opacity: 0;
+    transform: translateY(-44px) scale(0.96);
+  }
+}
+.card-out-left {
+  animation: card-out-left 0.18s var(--ease-io) both;
+}
+.card-out-right {
+  animation: card-out-right 0.18s var(--ease-io) both;
+}
+.card-out-up {
+  animation: card-out-up 0.18s var(--ease-io) both;
+}
+
+/* The revealed word breathes while it is being pronounced. */
+@keyframes speak-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.045);
+  }
+}
+.speak-pulse {
+  animation: speak-pulse 0.9s var(--ease-io) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

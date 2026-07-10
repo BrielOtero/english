@@ -178,3 +178,24 @@ export function buildReviewDeck(): ReviewCard[] {
 
   return cards;
 }
+
+/** A Review deck built ONLY from vocabulary, limited to the groups the learner opted into.
+ *  Reuses the same VOCAB_SETS shown in the Vocabulary section, so groups stay in sync. */
+export function buildVocabDeck(isIncluded: (setId: string) => boolean): ReviewCard[] {
+  const cards: ReviewCard[] = [];
+  for (const set of VOCAB_SETS) {
+    if (!isIncluded(set.id)) continue;
+    for (const item of set.items) {
+      cards.push({
+        id: `vocab:${item.id}`,
+        front: item.meaning,
+        back: item.word,
+        audio: item.word,
+        note: `“${item.example}”`,
+        tag: 'Vocabulary',
+        level: item.level,
+      });
+    }
+  }
+  return cards;
+}

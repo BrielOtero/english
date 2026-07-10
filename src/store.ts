@@ -51,6 +51,10 @@ interface FluentState {
   placementTakenAt: number | null;
   /** Worlds whose boss has been defeated (keyed by level) — gates the next world. */
   bossCleared: Record<string, true>;
+  /** Worlds whose optional bonus round has been cleared (keyed by level). */
+  bonusCleared: Record<string, true>;
+  /** Exercise ids answered correctly at least once — battles avoid repeating these. */
+  answeredCorrect: Record<string, true>;
   /** Transient clock used to compute due-ness; not persisted. */
   now: number;
 
@@ -66,6 +70,10 @@ interface FluentState {
   setPlacementResult: (level: Level) => void;
   /** Mark a world's boss as defeated, unlocking the next world. */
   clearBoss: (level: Level) => void;
+  /** Mark a world's bonus round as cleared. */
+  clearBonus: (level: Level) => void;
+  /** Record an exercise the learner answered correctly. */
+  markAnsweredCorrect: (id: string) => void;
   /** Merge progress from the cloud (or a backup) into this device — never loses progress. */
   importProgress: (data: unknown) => void;
   refreshNow: () => void;
@@ -84,6 +92,8 @@ export const useStore = create<FluentState>()(
       placementLevel: null,
       placementTakenAt: null,
       bossCleared: {},
+      bonusCleared: {},
+      answeredCorrect: {},
       now: Date.now(),
 
       grade: (cardId, grade) =>
@@ -111,6 +121,10 @@ export const useStore = create<FluentState>()(
       setPlacementResult: (level) => set({ placementLevel: level, placementTakenAt: Date.now() }),
       clearBoss: (level) =>
         set((state) => ({ bossCleared: { ...state.bossCleared, [level]: true } })),
+      clearBonus: (level) =>
+        set((state) => ({ bonusCleared: { ...state.bonusCleared, [level]: true } })),
+      markAnsweredCorrect: (id) =>
+        set((state) => ({ answeredCorrect: { ...state.answeredCorrect, [id]: true } })),
       // Merge learning progress — reviews, completed lessons, defeated bosses, and the
       // placement result. Per-device settings (theme, audio) are deliberately NOT synced.
       importProgress: (data) =>
@@ -120,6 +134,8 @@ export const useStore = create<FluentState>()(
             reviews?: Record<string, ReviewItem>;
             completed?: Record<string, true>;
             bossCleared?: Record<string, true>;
+            bonusCleared?: Record<string, true>;
+            answeredCorrect?: Record<string, true>;
             placementLevel?: Level | null;
             placementTakenAt?: number | null;
           };
@@ -141,6 +157,8 @@ export const useStore = create<FluentState>()(
             reviews,
             completed: { ...state.completed, ...(d.completed ?? {}) },
             bossCleared: { ...state.bossCleared, ...(d.bossCleared ?? {}) },
+            bonusCleared: { ...state.bonusCleared, ...(d.bonusCleared ?? {}) },
+            answeredCorrect: { ...state.answeredCorrect, ...(d.answeredCorrect ?? {}) },
             ...placement,
           };
         }),
@@ -161,6 +179,8 @@ export const useStore = create<FluentState>()(
         placementLevel: s.placementLevel,
         placementTakenAt: s.placementTakenAt,
         bossCleared: s.bossCleared,
+        bonusCleared: s.bonusCleared,
+        answeredCorrect: s.answeredCorrect,
       }),
     },
   ),

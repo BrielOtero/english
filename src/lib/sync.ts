@@ -23,6 +23,8 @@ function snapshot() {
     reviews: s.reviews,
     completed: s.completed,
     bossCleared: s.bossCleared,
+    bonusCleared: s.bonusCleared,
+    answeredCorrect: s.answeredCorrect,
     placementLevel: s.placementLevel,
     placementTakenAt: s.placementTakenAt,
   };

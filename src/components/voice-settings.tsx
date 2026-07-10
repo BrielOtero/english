@@ -18,6 +18,11 @@ export function VoiceSettings() {
   const setMusicOn = useStore((s) => s.setMusicOn);
   const fxOn = useStore((s) => s.fxOn);
   const setFxOn = useStore((s) => s.setFxOn);
+  const musicVol = useStore((s) => s.musicVol);
+  const setMusicVol = useStore((s) => s.setMusicVol);
+  const fxVol = useStore((s) => s.fxVol);
+  const setFxVol = useStore((s) => s.setFxVol);
+  const resetAudio = useStore((s) => s.resetAudio);
 
   return (
     <details className="relative">
@@ -50,6 +55,23 @@ export function VoiceSettings() {
           <ToggleRow label="Music" on={musicOn} onChange={setMusicOn} />
           <ToggleRow label="Sound effects" on={fxOn} onChange={setFxOn} />
         </div>
+
+        <div className="mt-4 space-y-3">
+          <VolumeRow
+            label="Music volume"
+            value={musicVol}
+            onChange={setMusicVol}
+            muted={!musicOn}
+          />
+          <VolumeRow label="Effects volume" value={fxVol} onChange={setFxVol} muted={!fxOn} />
+        </div>
+
+        <button
+          onClick={resetAudio}
+          className="mt-4 w-full rounded-lg border border-rule-soft bg-bg px-3 py-2 text-[12px] text-ink-soft transition-colors hover:border-accent/50 hover:text-ink"
+        >
+          Restore defaults
+        </button>
 
         <p className="mt-3 text-[11px] leading-snug text-ink-mute">
           Sentences use a built-in natural voice, so they sound the same in every browser.
@@ -86,5 +108,39 @@ function ToggleRow({
         />
       </span>
     </button>
+  );
+}
+
+function VolumeRow({
+  label,
+  value,
+  onChange,
+  muted,
+}: {
+  label: string;
+  value: number;
+  onChange: (v: number) => void;
+  muted?: boolean;
+}) {
+  return (
+    <label className={`block ${muted ? 'opacity-40' : ''}`}>
+      <div className="mb-1 flex items-center justify-between text-[12px] text-ink-soft">
+        <span>{label}</span>
+        <span className="font-mono text-[11px] text-ink-mute tabular-nums">
+          {Math.round(value * 100)}%
+        </span>
+      </div>
+      <input
+        type="range"
+        min={0}
+        max={1}
+        step={0.05}
+        value={value}
+        disabled={muted}
+        onChange={(e) => onChange(Number(e.target.value))}
+        aria-label={label}
+        className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-rule-soft accent-accent"
+      />
+    </label>
   );
 }

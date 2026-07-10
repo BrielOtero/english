@@ -6,6 +6,8 @@ import { PhraseLine } from './phrase-line';
 import { ExerciseDeck } from './exercise';
 import { LevelBadge } from './level-badge';
 import { ConfettiBurst } from './confetti';
+import { StarRewardOverlay } from './star-reward';
+import { totalStars } from '../lib/stars';
 
 function SubHead({ children }: { children: React.ReactNode }) {
   return <h3 className="mb-3 kicker text-[13.5px] text-ink-soft">{children}</h3>;
@@ -72,14 +74,21 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
   const markComplete = useStore((s) => s.markComplete);
   const unmarkComplete = useStore((s) => s.unmarkComplete);
   const [burstKey, setBurstKey] = useState(0);
+  const [reward, setReward] = useState<{ earned: number; total: number } | null>(null);
+
+  // Mark done and celebrate: a full star reward when this crosses a milestone (mastering
+  // the world's lessons bumps the grand total), otherwise a small confetti pop.
+  function complete() {
+    const before = totalStars(useStore.getState());
+    markComplete(lesson.id);
+    const after = totalStars(useStore.getState());
+    if (after > before) setReward({ earned: after - before, total: after });
+    else setBurstKey((k) => k + 1);
+  }
 
   function toggleComplete() {
-    if (completed) {
-      unmarkComplete(lesson.id);
-    } else {
-      markComplete(lesson.id);
-      setBurstKey((k) => k + 1); // fire the celebration
-    }
+    if (completed) unmarkComplete(lesson.id);
+    else complete();
   }
 
   return (
@@ -160,8 +169,16 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
       {lesson.exercises.length > 0 && (
         <section className="mt-8">
           <SubHead>Practice</SubHead>
-          <ExerciseDeck exercises={lesson.exercises} onComplete={() => markComplete(lesson.id)} />
+          <ExerciseDeck exercises={lesson.exercises} onComplete={complete} />
         </section>
+      )}
+
+      {reward && (
+        <StarRewardOverlay
+          earned={reward.earned}
+          total={reward.total}
+          onDone={() => setReward(null)}
+        />
       )}
     </article>
   );

@@ -5,6 +5,7 @@ import { shuffle } from '../lib/shuffle';
 import { Speaker } from './speaker';
 import { Markup } from './markup';
 import { sCorrect, sWrong } from '../lib/sound';
+import { useStore } from '../store';
 
 const KIND_LABEL: Record<Exercise['kind'], string> = {
   mcq: 'Choose the right answer',
@@ -56,6 +57,7 @@ export function ExerciseDeck({
   const inputRef = useRef<HTMLInputElement>(null);
   const deckRef = useRef<HTMLDivElement>(null);
   const controlsRef = useRef<HTMLDivElement>(null);
+  const markAnsweredCorrect = useStore((s) => s.markAnsweredCorrect);
 
   const ex = exercises[i];
   const done = i >= exercises.length;
@@ -87,7 +89,8 @@ export function ExerciseDeck({
     if (i > 0) deckRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }, [i]);
   useEffect(() => {
-    if (checked) controlsRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    // 'center' keeps the expanded card's controls clear of the fixed mobile dock.
+    if (checked) controlsRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
   }, [checked]);
 
   if (!exercises.length) return null;
@@ -156,6 +159,7 @@ export function ExerciseDeck({
     setChecked(true);
     if (ok) {
       setScore((s) => s + 1);
+      markAnsweredCorrect(ex.id);
       sCorrect(1);
     } else {
       sWrong();

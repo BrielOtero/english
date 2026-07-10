@@ -1,34 +1,30 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import type { Level } from './types';
-import { TRACKS, TOTAL_LESSONS } from './content';
+import { Outlet, useNavigate, useRouterState } from '@tanstack/react-router';
+import { TRACKS } from './content';
+import { totalStars, MAX_STARS } from './lib/stars';
+import { StarIcon } from './components/map-art';
 import { Icon, type IconName } from './components/icons';
 import { VoiceSettings } from './components/voice-settings';
 import { Account } from './components/account';
 import { GlobalSearch } from './components/global-search';
 import { setPreferredVoice } from './lib/speech';
-import { setMusicEnabled, setFxEnabled } from './lib/sound';
+import { setMusicEnabled, setFxEnabled, setMusicVolume, setFxVolume } from './lib/sound';
 import { useStore } from './store';
 import { Sidebar } from './components/sidebar';
 import { BottomNav } from './components/bottom-nav';
-import { Home } from './components/home';
-import { WorldMap } from './components/world-map';
-import { DailyDrill } from './components/daily-drill';
-import { Placement } from './components/placement';
-import { GrammarBrowser } from './components/grammar-browser';
-import { VocabBrowser } from './components/vocab-browser';
-import { PronunciationLab } from './components/pronunciation-lab';
-import { ReadingView } from './components/reading-view';
-import { WritingView } from './components/writing-view';
-import { Review } from './components/review';
-import { PhrasalVerbs, Idioms } from './components/term-list';
 
 const TRACK_IDS = new Set(TRACKS.map((t) => t.id));
 
-function getInitialTab(): string {
-  if (typeof window === 'undefined') return 'home';
-  const t = new URLSearchParams(window.location.search).get('tab');
-  return t && TRACK_IDS.has(t) ? t : 'home';
+/** Route path for a tab id — home lives at "/", everything else at "/<id>". */
+export function tabPath(id: string): string {
+  return id === 'home' ? '/' : `/${id}`;
+}
+
+/** Which tab the current path belongs to (first segment; defaults to home). */
+function pathToTab(pathname: string): string {
+  const seg = pathname.replace(/^\/+/, '').split('/')[0];
+  return seg && TRACK_IDS.has(seg) ? seg : 'home';
 }
 
 function Wordmark({ onClick }: { onClick?: () => void }) {
@@ -40,6 +36,14 @@ function Wordmark({ onClick }: { onClick?: () => void }) {
     >
       <span className="text-accent">/</span>ˈfluː.ənt<span className="text-accent">/</span>
     </button>
+  );
+}
+
+function GitHubMark({ className = 'h-4 w-4' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 16 16" className={className} fill="currentColor" aria-hidden>
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 012-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z" />
+    </svg>
   );
 }
 
@@ -57,15 +61,26 @@ function TrackHead({ icon, title, blurb }: { icon: IconName; title: string; blur
   );
 }
 
-export default function App() {
+/** The app shell: masthead, sidebar, bottom nav, and the routed page in the main column.
+ *  Navigation goes through the router now, so browser back/forward and deep links work. */
+export function Layout() {
+  const navigate = useNavigate();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const activeId = pathToTab(pathname);
+  const track = TRACKS.find((t) => t.id === activeId) ?? TRACKS[0];
+
   const theme = useStore((s) => s.theme);
   const toggleTheme = useStore((s) => s.toggleTheme);
   const voiceURI = useStore((s) => s.voiceURI);
   const musicOn = useStore((s) => s.musicOn);
   const fxOn = useStore((s) => s.fxOn);
+  const musicVol = useStore((s) => s.musicVol);
+  const fxVol = useStore((s) => s.fxVol);
   const completed = useStore((s) => s.completed);
+  const bossCleared = useStore((s) => s.bossCleared);
+  const bonusCleared = useStore((s) => s.bonusCleared);
+  const miniCleared = useStore((s) => s.miniCleared);
 
-  const [activeId, setActiveId] = useState(getInitialTab);
   const [searchOpen, setSearchOpen] = useState(false);
 
   // ⌘K / Ctrl+K opens global search.
@@ -94,48 +109,25 @@ export default function App() {
   useEffect(() => {
     setMusicEnabled(musicOn);
     setFxEnabled(fxOn);
-  }, [musicOn, fxOn]);
+    setMusicVolume(musicVol);
+    setFxVolume(fxVol);
+  }, [musicOn, fxOn, musicVol, fxVol]);
 
+  // `to` is a dynamic tab path; cast to a known literal to satisfy the router's strict
+  // typing — the actual string is validated at runtime.
   const selectTab = (id: string) => {
-    setActiveId(id);
-    const url = new URL(window.location.href);
-    if (id === 'home') url.searchParams.delete('tab');
-    else url.searchParams.set('tab', id);
-    url.searchParams.delete('lesson');
-    url.searchParams.delete('level');
-    window.history.replaceState(null, '', url);
+    void navigate({ to: tabPath(id) as '/' });
     window.scrollTo({ top: 0 });
   };
-
-  // Jump into the Grammar track at a specific level (used by the level test's result).
-  const goToLevel = (level: Level) => {
-    setActiveId('grammar');
-    const url = new URL(window.location.href);
-    url.searchParams.set('tab', 'grammar');
-    url.searchParams.set('level', level);
-    url.searchParams.delete('lesson');
-    window.history.replaceState(null, '', url);
-    window.scrollTo({ top: 0 });
-  };
-
-  // Navigate from global search to any section (optionally opening a grammar lesson).
   const goTo = (tab: string, lessonId?: string) => {
-    setActiveId(tab);
-    const url = new URL(window.location.href);
-    if (tab === 'home') url.searchParams.delete('tab');
-    else url.searchParams.set('tab', tab);
-    if (lessonId) url.searchParams.set('lesson', lessonId);
-    else url.searchParams.delete('lesson');
-    url.searchParams.delete('level');
-    window.history.replaceState(null, '', url);
+    void navigate({ to: tabPath(tab) as '/', search: lessonId ? { lesson: lessonId } : {} });
     window.scrollTo({ top: 0 });
   };
 
-  const track = TRACKS.find((t) => t.id === activeId) ?? TRACKS[0];
-  const completedCount = Object.keys(completed).length;
+  const stars = totalStars({ completed, miniCleared, bonusCleared, bossCleared });
 
   return (
-    <div className="min-h-screen overflow-x-clip bg-bg text-ink">
+    <div className="flex min-h-screen flex-col overflow-x-clip bg-bg text-ink">
       <div className="grain" />
 
       {/* Masthead */}
@@ -156,10 +148,13 @@ export default function App() {
             >
               <Icon name="search" className="h-4 w-4" />
             </button>
-            <span className="flex items-center gap-1.5 rounded-full border border-rule-soft bg-bg px-2 py-1 sm:gap-2 sm:px-3 sm:py-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            <span
+              className="flex items-center gap-1 rounded-full border border-rule-soft bg-bg px-2 py-1 sm:gap-1.5 sm:px-3 sm:py-1.5"
+              title="Stars earned"
+            >
+              <StarIcon className="h-3.5 w-3.5 text-gold" />
               <span className="font-mono text-[11px] text-ink-soft tabular-nums">
-                {completedCount}/{TOTAL_LESSONS}
+                {stars}/{MAX_STARS}
               </span>
             </span>
             <VoiceSettings />
@@ -177,8 +172,8 @@ export default function App() {
       </header>
 
       {/* Body */}
-      <div className="relative z-[1] mx-auto max-w-[1280px] px-4 pb-28 sm:px-8 lg:pb-16">
-        <div className="grid grid-cols-1 gap-8 pt-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10">
+      <div className="relative z-[1] mx-auto flex w-full max-w-[1280px] flex-1 flex-col px-4 pb-28 sm:px-8 lg:pb-16">
+        <div className="grid flex-1 grid-cols-1 gap-8 pt-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10">
           <Sidebar tracks={TRACKS} activeId={activeId} onSelect={selectTab} />
 
           <main className="min-w-0">
@@ -191,23 +186,24 @@ export default function App() {
                 transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
               >
                 <TrackHead icon={track.icon} title={track.title} blurb={track.blurb} />
-
-                {activeId === 'home' && <Home onSelect={selectTab} />}
-                {activeId === 'roadmap' && <WorldMap onOpenTrack={selectTab} />}
-                {activeId === 'placement' && <Placement onStartLevel={goToLevel} />}
-                {activeId === 'drill' && <DailyDrill onClose={() => selectTab('home')} />}
-                {activeId === 'grammar' && <GrammarBrowser />}
-                {activeId === 'vocabulary' && <VocabBrowser />}
-                {activeId === 'pronunciation' && <PronunciationLab />}
-                {activeId === 'reading' && <ReadingView />}
-                {activeId === 'writing' && <WritingView />}
-                {activeId === 'review' && <Review />}
-                {activeId === 'phrasal' && <PhrasalVerbs />}
-                {activeId === 'idioms' && <Idioms />}
+                <Outlet />
               </motion.div>
             </AnimatePresence>
           </main>
         </div>
+
+        <footer className="mt-12 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-rule-soft pt-6 text-[13px] text-ink-mute">
+          <span>Built by</span>
+          <a
+            href="https://github.com/BrielOtero/english"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="press inline-flex items-center gap-1.5 font-medium text-ink-soft transition-colors hover:text-ink"
+          >
+            <GitHubMark className="h-4 w-4" />
+            BrielOtero
+          </a>
+        </footer>
       </div>
 
       <BottomNav activeId={activeId} onSelect={selectTab} />

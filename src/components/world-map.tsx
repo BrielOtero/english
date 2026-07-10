@@ -1,17 +1,46 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useNavigate } from '@tanstack/react-router';
 import type { Level, Lesson } from '../types';
 import { LEVELS } from '../types';
 import { GRAMMAR, grammarUnit } from '../content';
 import { WORLDS, type WorldInfo } from '../content/worlds';
 import { useStore } from '../store';
 import { startWorldTheme, stopWorldTheme, startRoadmapTheme } from '../lib/sound';
-import { starsForLevel, unlockedThroughFor, totalStars, MAX_STARS } from '../lib/stars';
+import {
+  worldStars,
+  worldMaxStars,
+  unlockedThroughFor,
+  totalStars,
+  MAX_STARS,
+  BLOCK,
+} from '../lib/stars';
 import { BossChallenge, type BattleMode } from './boss-challenge';
+import { BackButton } from './back-button';
 import { LessonView } from './lesson-view';
 import { Mascot, Crest, Castle, Chest, Slime, Leaf, Check, StarIcon, Padlock } from './map-art';
 
 const ALL_LESSONS = GRAMMAR.flatMap((u) => u.lessons);
+
+/** Rebuild a fight's config from its URL descriptor (`boss` | `bonus` | `mini-<n>`) and
+ *  the world it belongs to, so battles are deep-linkable and closable via browser back. */
+function fightConfig(
+  world: WorldInfo,
+  fight: string | undefined,
+): { mode: BattleMode; lessons: Lesson[]; seed: number; miniId?: string } | null {
+  if (!fight) return null;
+  const all = grammarUnit(world.level)?.lessons ?? [];
+  if (fight === 'boss') return { mode: 'boss', lessons: all, seed: world.n - 1 };
+  if (fight === 'bonus') return { mode: 'bonus', lessons: all, seed: world.n + 2 };
+  const m = /^mini-(\d+)$/.exec(fight);
+  if (m) {
+    const bi = Number(m[1]);
+    const block = all.slice(bi * BLOCK, (bi + 1) * BLOCK);
+    if (!block.length) return null;
+    return { mode: 'mini', lessons: block, seed: world.n + bi, miniId: `${world.level}:${bi}` };
+  }
+  return null;
+}
 
 /* Per-world tint (literal classes so Tailwind generates them). */
 const TONE: Record<Level, { band: string; ring: string; fill: string; text: string }> = {
@@ -53,38 +82,19 @@ const TONE: Record<Level, { band: string; ring: string; fill: string; text: stri
   },
 };
 
-function Stars({ n, className = 'h-4 w-4' }: { n: number; className?: string }) {
+/** A compact "⭐ n" (or "⭐ n/max") badge — stars are now granular, so a count beats dots. */
+function StarCount({ n, max, className = '' }: { n: number; max?: number; className?: string }) {
   return (
-    <span className="inline-flex gap-0.5" aria-label={`${n} of 3 stars`}>
-      {[0, 1, 2].map((i) => (
-        <StarIcon key={i} className={`${className} ${i < n ? 'text-gold' : 'text-ink-mute/25'}`} />
-      ))}
-    </span>
-  );
-}
-
-/** A clearly-affordanced back button — a bordered pill with a chevron, so it reads as
- *  a button rather than a faint text link. */
-function BackButton({ onClick, children }: { onClick: () => void; children: React.ReactNode }) {
-  return (
-    <button
-      onClick={onClick}
-      className="press mb-4 inline-flex items-center gap-1.5 rounded-full border border-rule-soft bg-paper py-1.5 pr-4 pl-3 text-[13px] font-medium text-ink-soft shadow-[var(--shadow-sm)] transition-colors hover:border-accent/50 hover:text-ink"
+    <span
+      className={`inline-flex items-center gap-1 ${className}`}
+      aria-label={max ? `${n} of ${max} stars` : `${n} stars`}
     >
-      <svg
-        viewBox="0 0 24 24"
-        className="h-4 w-4"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden
-      >
-        <path d="M15 18l-6-6 6-6" />
-      </svg>
-      {children}
-    </button>
+      <StarIcon className="h-3.5 w-3.5 text-gold" />
+      <span className="font-mono text-[11px] text-ink-soft tabular-nums">
+        {n}
+        {max ? `/${max}` : ''}
+      </span>
+    </span>
   );
 }
 
@@ -159,12 +169,16 @@ function WorldGalaxy({
   currentIdx,
   completed,
   bossCleared,
+  miniCleared,
+  bonusCleared,
   onEnter,
 }: {
   unlockedThrough: number;
   currentIdx: number;
   completed: Record<string, true>;
   bossCleared: Record<string, true>;
+  miniCleared: Record<string, true>;
+  bonusCleared: Record<string, true>;
   onEnter: (i: number) => void;
 }) {
   useEffect(() => {
@@ -218,7 +232,7 @@ function WorldGalaxy({
         const unlocked = i <= unlockedThrough;
         const current = i === currentIdx;
         const tone = TONE[w.level];
-        const stars = starsForLevel(w.level, i, unlockedThrough, completed, bossCleared);
+        const stars = worldStars(w.level, completed, miniCleared, bonusCleared, bossCleared);
         return (
           <div
             key={w.level}
@@ -261,7 +275,7 @@ function WorldGalaxy({
               {w.name}
             </span>
             <span className="mt-0.5">
-              <Stars n={stars} className="h-3.5 w-3.5" />
+              <StarCount n={stars} />
             </span>
           </div>
         );
@@ -289,7 +303,8 @@ function WorldDetail({
   miniCleared: Record<string, true>;
   onBack: () => void;
   onOpenLesson: (id: string) => void;
-  onBattle: (cfg: { mode: BattleMode; lessons: Lesson[]; seed: number; miniId?: string }) => void;
+  /** Open a fight by its URL descriptor: `boss` | `bonus` | `mini-<blockIndex>`. */
+  onBattle: (fight: string) => void;
 }) {
   const tone = TONE[world.level];
 
@@ -314,7 +329,6 @@ function WorldDetail({
     locked?: boolean;
     onClick: () => void;
   }
-  const BLOCK = 4;
   const nodes: Node[] = [];
   lessons.forEach((l, i) => {
     nodes.push({
@@ -327,14 +341,12 @@ function WorldDetail({
     });
     if ((i + 1) % BLOCK === 0 && i + 1 < lessons.length) {
       const bi = Math.floor(i / BLOCK);
-      const block = lessons.slice(i + 1 - BLOCK, i + 1);
-      const miniId = `${world.level}:${bi}`;
       nodes.push({
         kind: 'mini',
-        done: !!miniCleared[miniId],
+        done: !!miniCleared[`${world.level}:${bi}`],
         title: `Mini-boss ${bi + 1}`,
         label: `Mini-boss ${bi + 1}`,
-        onClick: () => onBattle({ mode: 'mini', lessons: block, seed: world.n + bi, miniId }),
+        onClick: () => onBattle(`mini-${bi}`),
       });
     }
   });
@@ -343,7 +355,7 @@ function WorldDetail({
     done: bonusDone,
     title: 'Bonus round',
     label: 'Bonus round',
-    onClick: () => onBattle({ mode: 'bonus', lessons, seed: world.n + 2 }),
+    onClick: () => onBattle('bonus'),
   });
   nodes.push({
     kind: 'boss',
@@ -351,7 +363,7 @@ function WorldDetail({
     title: world.boss,
     label: `Boss: ${world.boss}`,
     locked: !allDone,
-    onClick: () => onBattle({ mode: 'boss', lessons, seed: world.n - 1 }),
+    onClick: () => onBattle('boss'),
   });
   const n = nodes.length;
   const mapH = Math.max(620, n * 88);
@@ -385,7 +397,7 @@ function WorldDetail({
                 World {world.n} · {world.level}
               </span>
               <span className="ml-auto">
-                <Stars n={stars} />
+                <StarCount n={stars} max={worldMaxStars(world.level)} />
               </span>
             </div>
             <h2 className="font-display text-[26px] leading-tight text-ink">{world.name}</h2>
@@ -499,31 +511,48 @@ function LevelView({
   );
 }
 
-export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => void }) {
+/**
+ * The roadmap screen, fully URL-driven so browser back/forward works everywhere:
+ *   /roadmap                     → the world map (galaxy select)
+ *   /roadmap/:level              → a world's level trail
+ *   /roadmap/:level/:lessonId    → a lesson
+ *   /roadmap/:level?fight=…       → a fight overlay (boss | bonus | mini-<n>)
+ * The route reads these as typed params/search and passes them in as props.
+ */
+export function WorldMap({
+  level,
+  lessonId,
+  fight,
+}: {
+  level?: string;
+  lessonId?: string;
+  fight?: string;
+}) {
+  const navigate = useNavigate();
   const completed = useStore((s) => s.completed);
   const placementLevel = useStore((s) => s.placementLevel);
   const bossCleared = useStore((s) => s.bossCleared);
   const bonusCleared = useStore((s) => s.bonusCleared);
   const miniCleared = useStore((s) => s.miniCleared);
 
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
-  const [openLessonId, setOpenLessonId] = useState<string | null>(null);
-  const [battle, setBattle] = useState<{
-    world: WorldInfo;
-    mode: BattleMode;
-    lessons: Lesson[];
-    seed: number;
-    miniId?: string;
-  } | null>(null);
+  // URLs use the lowercase level slug (e.g. /roadmap/c1); map it back to its world.
+  const openIdx = level
+    ? WORLDS.findIndex((w) => w.level.toLowerCase() === level.toLowerCase())
+    : -1;
+  const openWorld = openIdx >= 0 ? WORLDS[openIdx] : null;
+  const openLessonId = openWorld ? (lessonId ?? null) : null;
+  const battle = openWorld ? fightConfig(openWorld, fight) : null;
 
   const unlockedThrough = unlockedThroughFor(placementLevel, bossCleared);
   const currentIdx = (() => {
     const i = LEVELS.findIndex((lv, idx) => idx <= unlockedThrough && !bossCleared[lv]);
     return i === -1 ? unlockedThrough : i;
   })();
-  const starTotal = totalStars({ placementLevel, completed, bossCleared });
+  const starTotal = totalStars({ completed, miniCleared, bonusCleared, bossCleared });
 
-  const openWorld = openIdx !== null ? WORLDS[openIdx] : null;
+  const goRoadmap = () => void navigate({ to: '/roadmap' });
+  const goWorld = (lv: string) =>
+    void navigate({ to: '/roadmap/$level', params: { level: lv.toLowerCase() } });
 
   return (
     <div className="fade-in">
@@ -533,26 +562,31 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
             key={`l-${openLessonId}`}
             lessonId={openLessonId}
             world={openWorld}
-            onBack={() => setOpenLessonId(null)}
+            onBack={() => goWorld(openWorld.level)}
           />
         ) : openWorld ? (
           <WorldDetail
             key={`w-${openWorld.level}`}
             world={openWorld}
-            stars={starsForLevel(
-              openWorld.level,
-              openIdx!,
-              unlockedThrough,
-              completed,
-              bossCleared,
-            )}
+            stars={worldStars(openWorld.level, completed, miniCleared, bonusCleared, bossCleared)}
             completed={completed}
             bossDone={!!bossCleared[openWorld.level]}
             bonusDone={!!bonusCleared[openWorld.level]}
             miniCleared={miniCleared}
-            onBack={() => setOpenIdx(null)}
-            onOpenLesson={(id) => setOpenLessonId(id)}
-            onBattle={(cfg) => setBattle({ world: openWorld, ...cfg })}
+            onBack={goRoadmap}
+            onOpenLesson={(id) =>
+              void navigate({
+                to: '/roadmap/$level/$lessonId',
+                params: { level: openWorld.level.toLowerCase(), lessonId: id },
+              })
+            }
+            onBattle={(f) =>
+              void navigate({
+                to: '/roadmap/$level',
+                params: { level: openWorld.level.toLowerCase() },
+                search: { fight: f },
+              })
+            }
           />
         ) : (
           <motion.div
@@ -578,7 +612,7 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
 
             {!placementLevel && (
               <button
-                onClick={() => onOpenTrack('placement')}
+                onClick={() => void navigate({ to: '/placement' })}
                 className="group mb-7 flex w-full items-center gap-4 rounded-3xl border border-accent/40 bg-[var(--accent-tint)] p-5 text-left transition hover:border-accent"
               >
                 <Mascot className="h-14 w-14 shrink-0" />
@@ -598,20 +632,29 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
               currentIdx={currentIdx}
               completed={completed}
               bossCleared={bossCleared}
-              onEnter={(i) => setOpenIdx(i)}
+              miniCleared={miniCleared}
+              bonusCleared={bonusCleared}
+              onEnter={(i) => goWorld(WORLDS[i].level)}
             />
           </motion.div>
         )}
       </AnimatePresence>
 
-      {battle && (
+      {battle && openWorld && (
         <BossChallenge
-          world={battle.world}
+          world={openWorld}
           mode={battle.mode}
           lessons={battle.lessons}
           seed={battle.seed}
           miniId={battle.miniId}
-          onClose={() => setBattle(null)}
+          onClose={() =>
+            void navigate({
+              to: '/roadmap/$level',
+              params: { level: openWorld.level.toLowerCase() },
+              search: {},
+              replace: true,
+            })
+          }
         />
       )}
     </div>

@@ -24,6 +24,7 @@ function snapshot() {
     completed: s.completed,
     bossCleared: s.bossCleared,
     bonusCleared: s.bonusCleared,
+    miniCleared: s.miniCleared,
     answeredCorrect: s.answeredCorrect,
     placementLevel: s.placementLevel,
     placementTakenAt: s.placementTakenAt,

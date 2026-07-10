@@ -161,6 +161,15 @@ export function StarIcon({ className = 'h-4 w-4' }: Art) {
   );
 }
 
+/** A heart for the battle life meter (uses `currentColor` so it can be tinted). */
+export function Heart({ className = 'h-5 w-5' }: Art) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+      <path d="M12 21s-7.5-4.9-10-9.5C.4 8.3 1.9 4.7 5.3 4.1 7.6 3.7 9.9 4.9 12 7.6c2.1-2.7 4.4-3.9 6.7-3.5 3.4.6 4.9 4.2 3.3 7.4C19.5 16.1 12 21 12 21z" />
+    </svg>
+  );
+}
+
 /** Padlock for locked worlds. */
 export function Padlock({ className = 'h-6 w-6' }: Art) {
   return (

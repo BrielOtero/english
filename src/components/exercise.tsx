@@ -39,9 +39,16 @@ function modelAnswer(ex: Exercise): string {
 export function ExerciseDeck({
   exercises,
   onComplete,
+  onResult,
+  stable = false,
 }: {
   exercises: Exercise[];
   onComplete?: () => void;
+  /** Fires once per checked answer — the battle system uses it to deal damage. */
+  onResult?: (correct: boolean) => void;
+  /** Fixed-height layout with controls pinned to the bottom, for the battle modal — the
+   *  question region flexes while the Check/Next button stays put, so nothing dances. */
+  stable?: boolean;
 }) {
   const [i, setI] = useState(0);
   const [score, setScore] = useState(0);
@@ -164,6 +171,7 @@ export function ExerciseDeck({
     } else {
       sWrong();
     }
+    onResult?.(ok);
   }
 
   function next() {
@@ -174,13 +182,8 @@ export function ExerciseDeck({
 
   const prompt = KIND_LABEL[ex.kind];
 
-  return (
-    <div
-      ref={deckRef}
-      className={`scroll-mt-20 rounded-xl border border-rule-soft bg-paper p-5 ${
-        checked && !wasCorrect ? 'shake' : ''
-      }`}
-    >
+  const header = (
+    <>
       {/* progress */}
       <div className="mb-4 flex items-center justify-between">
         <span className="kicker text-[13.5px] text-ink-soft">{prompt}</span>
@@ -194,7 +197,11 @@ export function ExerciseDeck({
           style={{ width: `${(i / exercises.length) * 100}%` }}
         />
       </div>
+    </>
+  );
 
+  const body = (
+    <>
       {/* --- prompt body, per kind --- */}
       {ex.kind === 'mcq' && (
         <div>
@@ -325,48 +332,81 @@ export function ExerciseDeck({
           </div>
         </div>
       )}
+    </>
+  );
 
-      {/* --- feedback --- */}
-      {checked && (
-        <div
-          className={`mt-4 rounded-lg border p-3 text-[13px] ${
-            wasCorrect ? 'border-success/40 bg-success/10' : 'border-danger/40 bg-danger/10'
-          }`}
-        >
-          <p className={`font-semibold ${wasCorrect ? 'text-success' : 'text-danger'}`}>
-            {wasCorrect ? '✓ Correct' : '✗ Not quite'}
-          </p>
-          {!wasCorrect && (
-            <p className="mt-1 flex items-center gap-2 text-ink">
-              Answer: <span className="font-medium">{modelAnswer(ex)}</span>
-              <Speaker text={modelAnswer(ex)} size="sm" />
-            </p>
-          )}
-          {ex.explain && (
-            <p className="mt-1 text-ink-soft">
-              <Markup text={ex.explain} />
-            </p>
-          )}
-        </div>
+  const feedback = checked ? (
+    <div
+      className={`mt-4 rounded-lg border p-3 text-[13px] ${
+        wasCorrect ? 'border-success/40 bg-success/10' : 'border-danger/40 bg-danger/10'
+      }`}
+    >
+      <p className={`font-semibold ${wasCorrect ? 'text-success' : 'text-danger'}`}>
+        {wasCorrect ? '✓ Correct' : '✗ Not quite'}
+      </p>
+      {!wasCorrect && (
+        <p className="mt-1 flex items-center gap-2 text-ink">
+          Answer: <span className="font-medium">{modelAnswer(ex)}</span>
+          <Speaker text={modelAnswer(ex)} size="sm" />
+        </p>
       )}
+      {ex.explain && (
+        <p className="mt-1 text-ink-soft">
+          <Markup text={ex.explain} />
+        </p>
+      )}
+    </div>
+  ) : null;
 
-      {/* --- controls --- */}
+  const controlsInner = !checked ? (
+    <button
+      onClick={check}
+      className="w-full rounded-full bg-accent px-5 py-2.5 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90 sm:w-auto"
+    >
+      Check
+    </button>
+  ) : (
+    <button
+      onClick={next}
+      className="w-full rounded-full bg-ink px-5 py-2.5 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90 sm:w-auto"
+    >
+      {i + 1 < exercises.length ? 'Next →' : 'Finish'}
+    </button>
+  );
+
+  // Battle mode: a fixed-height card with the controls pinned to the bottom, so the
+  // Check/Next button never moves and only the question region flexes underneath the HUD.
+  if (stable) {
+    return (
+      <div
+        className={`flex h-full flex-col rounded-xl border border-rule-soft bg-paper p-5 ${
+          checked && !wasCorrect ? 'shake' : ''
+        }`}
+      >
+        <div className="shrink-0">{header}</div>
+        <div className="soft-scroll min-h-0 flex-1 overflow-y-auto">
+          {body}
+          {feedback}
+        </div>
+        <div className="mt-3 flex shrink-0 justify-end border-t border-rule-soft/60 pt-3">
+          {controlsInner}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      ref={deckRef}
+      className={`scroll-mt-20 rounded-xl border border-rule-soft bg-paper p-5 ${
+        checked && !wasCorrect ? 'shake' : ''
+      }`}
+    >
+      {header}
+      {body}
+      {feedback}
       <div ref={controlsRef} className="mt-5 flex justify-end">
-        {!checked ? (
-          <button
-            onClick={check}
-            className="w-full rounded-full bg-accent px-5 py-2.5 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90 sm:w-auto"
-          >
-            Check
-          </button>
-        ) : (
-          <button
-            onClick={next}
-            className="w-full rounded-full bg-ink px-5 py-2.5 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90 sm:w-auto"
-          >
-            {i + 1 < exercises.length ? 'Next →' : 'Finish'}
-          </button>
-        )}
+        {controlsInner}
       </div>
     </div>
   );

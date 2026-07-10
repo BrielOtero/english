@@ -10,16 +10,25 @@ import { MAX_STARS } from '../lib/stars';
  * the little reward beat you get at the end of a level in a game. `total` is the new
  * running total (it already includes `earned`).
  */
-export function StarReward({ earned, total }: { earned: number; total: number }) {
+export function StarReward({
+  earned,
+  total,
+  mute = false,
+}: {
+  earned: number;
+  total: number;
+  /** Skip the chime when the caller already plays its own win sound. */
+  mute?: boolean;
+}) {
   const from = Math.max(0, total - earned);
   const [shown, setShown] = useState(from);
 
   useEffect(() => {
-    sFinish();
+    if (!mute) sFinish();
     // Let the stars land before the counter climbs to the new total.
     const t = setTimeout(() => setShown(total), 700);
     return () => clearTimeout(t);
-  }, [total]);
+  }, [total, mute]);
 
   const count = Math.max(1, earned);
 

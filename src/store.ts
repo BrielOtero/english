@@ -53,6 +53,8 @@ interface FluentState {
   bossCleared: Record<string, true>;
   /** Worlds whose optional bonus round has been cleared (keyed by level). */
   bonusCleared: Record<string, true>;
+  /** Mini-bosses defeated, keyed by `${level}:${blockIndex}`. */
+  miniCleared: Record<string, true>;
   /** Exercise ids answered correctly at least once — battles avoid repeating these. */
   answeredCorrect: Record<string, true>;
   /** Transient clock used to compute due-ness; not persisted. */
@@ -72,6 +74,8 @@ interface FluentState {
   clearBoss: (level: Level) => void;
   /** Mark a world's bonus round as cleared. */
   clearBonus: (level: Level) => void;
+  /** Mark a mini-boss as defeated (`${level}:${blockIndex}`). */
+  clearMini: (id: string) => void;
   /** Record an exercise the learner answered correctly. */
   markAnsweredCorrect: (id: string) => void;
   /** Merge progress from the cloud (or a backup) into this device — never loses progress. */
@@ -93,6 +97,7 @@ export const useStore = create<FluentState>()(
       placementTakenAt: null,
       bossCleared: {},
       bonusCleared: {},
+      miniCleared: {},
       answeredCorrect: {},
       now: Date.now(),
 
@@ -123,6 +128,7 @@ export const useStore = create<FluentState>()(
         set((state) => ({ bossCleared: { ...state.bossCleared, [level]: true } })),
       clearBonus: (level) =>
         set((state) => ({ bonusCleared: { ...state.bonusCleared, [level]: true } })),
+      clearMini: (id) => set((state) => ({ miniCleared: { ...state.miniCleared, [id]: true } })),
       markAnsweredCorrect: (id) =>
         set((state) => ({ answeredCorrect: { ...state.answeredCorrect, [id]: true } })),
       // Merge learning progress — reviews, completed lessons, defeated bosses, and the
@@ -135,6 +141,7 @@ export const useStore = create<FluentState>()(
             completed?: Record<string, true>;
             bossCleared?: Record<string, true>;
             bonusCleared?: Record<string, true>;
+            miniCleared?: Record<string, true>;
             answeredCorrect?: Record<string, true>;
             placementLevel?: Level | null;
             placementTakenAt?: number | null;
@@ -158,6 +165,7 @@ export const useStore = create<FluentState>()(
             completed: { ...state.completed, ...(d.completed ?? {}) },
             bossCleared: { ...state.bossCleared, ...(d.bossCleared ?? {}) },
             bonusCleared: { ...state.bonusCleared, ...(d.bonusCleared ?? {}) },
+            miniCleared: { ...state.miniCleared, ...(d.miniCleared ?? {}) },
             answeredCorrect: { ...state.answeredCorrect, ...(d.answeredCorrect ?? {}) },
             ...placement,
           };
@@ -180,6 +188,7 @@ export const useStore = create<FluentState>()(
         placementTakenAt: s.placementTakenAt,
         bossCleared: s.bossCleared,
         bonusCleared: s.bonusCleared,
+        miniCleared: s.miniCleared,
         answeredCorrect: s.answeredCorrect,
       }),
     },

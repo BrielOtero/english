@@ -1383,7 +1383,7 @@ export const GRAMMAR: GrammarUnit[] = [
           {
             kind: 'mcq',
             id: 'a1-pron-ex1',
-            prompt: 'This is ___ house. (de nosotros)',
+            prompt: 'This is ___ house. (belonging to we — the family)',
             options: ['your', 'our', 'their', 'us'],
             answer: 1,
             explain: 'our is the possessive adjective for we.',

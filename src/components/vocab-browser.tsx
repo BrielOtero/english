@@ -5,6 +5,7 @@ import { VOCAB_SETS } from '../content';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
 import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
+import { BackButton } from './back-button';
 import { FlashcardSession } from './flashcard-session';
 
 function setToCards(set: VocabSet): ReviewCard[] {
@@ -32,12 +33,7 @@ export function VocabBrowser() {
   if (openSet && studying) {
     return (
       <div className="fade-in">
-        <button
-          onClick={() => setStudying(false)}
-          className="mb-4 font-mono text-[11px] tracking-wide text-ink-mute uppercase transition-colors hover:text-ink"
-        >
-          ← {openSet.title}
-        </button>
+        <BackButton onClick={() => setStudying(false)}>{openSet.title}</BackButton>
         <FlashcardSession cards={setToCards(openSet)} />
       </div>
     );
@@ -46,12 +42,7 @@ export function VocabBrowser() {
   if (openSet) {
     return (
       <div className="fade-in">
-        <button
-          onClick={() => setOpenId(null)}
-          className="mb-4 font-mono text-[11px] tracking-wide text-ink-mute uppercase transition-colors hover:text-ink"
-        >
-          ← All vocabulary
-        </button>
+        <BackButton onClick={() => setOpenId(null)}>All vocabulary</BackButton>
         <div className="mb-5 flex items-end justify-between gap-4">
           <div>
             <div className="mb-2 flex items-center gap-2">

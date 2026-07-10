@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { WRITING } from '../content';
 import { PhraseLine } from './phrase-line';
 import { LevelBadge } from './level-badge';
+import { BackButton } from './back-button';
 import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
 
 export function WritingView() {
@@ -19,16 +20,15 @@ export function WritingView() {
   if (open) {
     return (
       <div className="fade-in">
-        <button
+        <BackButton
           onClick={() => {
             setOpenId(null);
             setText('');
             setShowModel(false);
           }}
-          className="mb-4 font-mono text-[11px] tracking-wide text-ink-mute uppercase transition-colors hover:text-ink"
         >
-          ← All prompts
-        </button>
+          All prompts
+        </BackButton>
 
         <div className="mb-2 flex items-center gap-2">
           <LevelBadge level={open.level} />

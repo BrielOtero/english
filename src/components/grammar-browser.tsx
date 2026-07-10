@@ -5,6 +5,7 @@ import { GRAMMAR, grammarUnit } from '../content';
 import { useStore } from '../store';
 import { LevelBadge } from './level-badge';
 import { Markup } from './markup';
+import { BackButton } from './back-button';
 import { LessonView } from './lesson-view';
 
 const ALL_LESSONS = GRAMMAR.flatMap((u) => u.lessons);
@@ -49,12 +50,7 @@ export function GrammarBrowser() {
   if (openLesson) {
     return (
       <div className="fade-in">
-        <button
-          onClick={closeLesson}
-          className="press mb-5 flex items-center gap-1.5 text-[13px] font-medium text-ink-mute transition-colors hover:text-ink"
-        >
-          ← All {openLesson.level} lessons
-        </button>
+        <BackButton onClick={closeLesson}>All {openLesson.level} lessons</BackButton>
         <LessonView lesson={openLesson} />
       </div>
     );

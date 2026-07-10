@@ -6,6 +6,7 @@ import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
 import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
 import { ExerciseDeck } from './exercise';
+import { BackButton } from './back-button';
 import { Icon } from './icons';
 
 export function ReadingView() {
@@ -22,12 +23,7 @@ export function ReadingView() {
   if (open) {
     return (
       <div className="fade-in">
-        <button
-          onClick={() => setOpenId(null)}
-          className="mb-4 font-mono text-[11px] tracking-wide text-ink-mute uppercase transition-colors hover:text-ink"
-        >
-          ← All texts
-        </button>
+        <BackButton onClick={() => setOpenId(null)}>All texts</BackButton>
 
         <div className="mb-4 flex items-center gap-3">
           <LevelBadge level={open.level} />

@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import type { Level } from '../types';
+import type { Level, Lesson } from '../types';
 import { LEVELS } from '../types';
 import { GRAMMAR, grammarUnit } from '../content';
 import { WORLDS, type WorldInfo } from '../content/worlds';
 import { useStore } from '../store';
 import { startWorldTheme, stopWorldTheme } from '../lib/sound';
-import { BossChallenge } from './boss-challenge';
+import { starsForLevel, unlockedThroughFor, totalStars, MAX_STARS } from '../lib/stars';
+import { BossChallenge, type BattleMode } from './boss-challenge';
 import { LessonView } from './lesson-view';
 import { Mascot, Crest, Castle, Chest, Slime, Leaf, Check, StarIcon, Padlock } from './map-art';
 
@@ -52,19 +53,6 @@ const TONE: Record<Level, { band: string; ring: string; fill: string; text: stri
   },
 };
 
-function starsFor(
-  level: Level,
-  idx: number,
-  unlockedThrough: number,
-  completed: Record<string, true>,
-  bossCleared: Record<string, true>,
-): number {
-  if (idx > unlockedThrough) return 0;
-  const lessons = grammarUnit(level)?.lessons ?? [];
-  const allDone = lessons.length > 0 && lessons.every((l) => completed[l.id]);
-  return 1 + (allDone ? 1 : 0) + (bossCleared[level] ? 1 : 0);
-}
-
 function Stars({ n, className = 'h-4 w-4' }: { n: number; className?: string }) {
   return (
     <span className="inline-flex gap-0.5" aria-label={`${n} of 3 stars`}>
@@ -96,6 +84,7 @@ function TrailNode({
   tone,
   onClick,
   label,
+  locked = false,
 }: {
   kind: NodeKind;
   done: boolean;
@@ -103,6 +92,7 @@ function TrailNode({
   tone: (typeof TONE)[Level];
   onClick: () => void;
   label: string;
+  locked?: boolean;
 }) {
   const size = kind === 'boss' ? 'h-14 w-14' : 'h-12 w-12';
   const base = done
@@ -118,16 +108,23 @@ function TrailNode({
     <motion.button
       type="button"
       onClick={onClick}
+      disabled={locked}
       initial={{ opacity: 0, scale: 0.6 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: '-20px' }}
       transition={{ type: 'spring', stiffness: 320, damping: 20 }}
-      whileHover={{ scale: 1.14, y: -3 }}
-      whileTap={{ scale: 0.9 }}
-      className={`grid ${size} place-items-center rounded-full border-2 shadow-[var(--shadow-md)] ${base}`}
-      aria-label={label}
+      whileHover={locked ? undefined : { scale: 1.14, y: -3 }}
+      whileTap={locked ? undefined : { scale: 0.9 }}
+      className={`grid ${size} place-items-center rounded-full border-2 shadow-[var(--shadow-md)] ${base} ${
+        locked ? 'opacity-45' : ''
+      }`}
+      aria-label={locked ? `${label} (locked)` : label}
     >
-      <NodeGlyph kind={kind} done={done} num={num} />
+      {locked ? (
+        <Padlock className="h-6 w-6 text-ink-mute" />
+      ) : (
+        <NodeGlyph kind={kind} done={done} num={num} />
+      )}
     </motion.button>
   );
 }
@@ -191,7 +188,7 @@ function WorldGalaxy({
         const unlocked = i <= unlockedThrough;
         const current = i === currentIdx;
         const tone = TONE[w.level];
-        const stars = starsFor(w.level, i, unlockedThrough, completed, bossCleared);
+        const stars = starsForLevel(w.level, i, unlockedThrough, completed, bossCleared);
         return (
           <div
             key={w.level}
@@ -248,19 +245,19 @@ function WorldDetail({
   stars,
   completed,
   bossDone,
+  bonusDone,
   onBack,
   onOpenLesson,
-  onSpecial,
   onBattle,
 }: {
   world: WorldInfo;
   stars: number;
   completed: Record<string, true>;
   bossDone: boolean;
+  bonusDone: boolean;
   onBack: () => void;
   onOpenLesson: (id: string) => void;
-  onSpecial: () => void;
-  onBattle: (mini: boolean) => void;
+  onBattle: (cfg: { mode: BattleMode; lessons: Lesson[]; seed: number }) => void;
 }) {
   const tone = TONE[world.level];
 
@@ -272,40 +269,57 @@ function WorldDetail({
   const lessons = useMemo(() => grammarUnit(world.level)?.lessons ?? [], [world.level]);
   const doneCount = lessons.filter((l) => completed[l.id]).length;
 
-  const nodes = [
-    ...lessons.map((l, i) => ({
-      kind: 'lesson' as NodeKind,
+  const allDone = lessons.length > 0 && lessons.every((l) => completed[l.id]);
+
+  // Break the world into blocks: a mini-boss (this block's topics) caps each block;
+  // the world boss at the top draws from every lesson and is star-gated behind them all.
+  interface Node {
+    kind: NodeKind;
+    done: boolean;
+    num?: number;
+    title: string;
+    label: string;
+    locked?: boolean;
+    onClick: () => void;
+  }
+  const BLOCK = 4;
+  const nodes: Node[] = [];
+  lessons.forEach((l, i) => {
+    nodes.push({
+      kind: 'lesson',
       done: !!completed[l.id],
-      num: (i + 1) as number | undefined,
+      num: i + 1,
       title: l.title,
       label: `Level ${i + 1}: ${l.title}`,
       onClick: () => onOpenLesson(l.id),
-    })),
-    {
-      kind: 'mini' as NodeKind,
-      done: false,
-      num: undefined,
-      title: 'Mini-boss',
-      label: 'Mini-boss skirmish',
-      onClick: () => onBattle(true),
-    },
-    {
-      kind: 'special' as NodeKind,
-      done: false,
-      num: undefined,
-      title: 'Bonus',
-      label: 'Bonus stage',
-      onClick: onSpecial,
-    },
-    {
-      kind: 'boss' as NodeKind,
-      done: bossDone,
-      num: undefined,
-      title: world.boss,
-      label: `Boss: ${world.boss}`,
-      onClick: () => onBattle(false),
-    },
-  ];
+    });
+    if ((i + 1) % BLOCK === 0 && i + 1 < lessons.length) {
+      const bi = Math.floor(i / BLOCK);
+      const block = lessons.slice(i + 1 - BLOCK, i + 1);
+      nodes.push({
+        kind: 'mini',
+        done: false,
+        title: `Mini-boss ${bi + 1}`,
+        label: `Mini-boss ${bi + 1}`,
+        onClick: () => onBattle({ mode: 'mini', lessons: block, seed: bi }),
+      });
+    }
+  });
+  nodes.push({
+    kind: 'special',
+    done: bonusDone,
+    title: 'Bonus round',
+    label: 'Bonus round',
+    onClick: () => onBattle({ mode: 'bonus', lessons, seed: 3 }),
+  });
+  nodes.push({
+    kind: 'boss',
+    done: bossDone,
+    title: world.boss,
+    label: `Boss: ${world.boss}`,
+    locked: !allDone,
+    onClick: () => onBattle({ mode: 'boss', lessons, seed: 7 }),
+  });
   const n = nodes.length;
   const mapH = Math.max(620, n * 88);
   // Winding climb: level 1 at the bottom, boss at the top, x oscillating across the map.
@@ -404,6 +418,7 @@ function WorldDetail({
                 num={nd.num}
                 tone={tone}
                 label={nd.label}
+                locked={nd.locked}
                 onClick={nd.onClick}
               />
               <span className="mt-1 line-clamp-2 max-w-[112px] text-center text-[10.5px] leading-tight font-medium text-ink-soft">
@@ -414,7 +429,9 @@ function WorldDetail({
         })}
       </div>
       <p className="mt-3 text-center text-[11px] text-ink-mute">
-        Tap a node to play the level · climb to {world.boss} at the top
+        {allDone
+          ? `Mastery star earned — challenge ${world.boss} at the top!`
+          : `Clear all ${lessons.length} levels to earn the ⭐ that unlocks ${world.boss} (${doneCount}/${lessons.length})`}
       </p>
     </motion.div>
   );
@@ -461,22 +478,23 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
   const completed = useStore((s) => s.completed);
   const placementLevel = useStore((s) => s.placementLevel);
   const bossCleared = useStore((s) => s.bossCleared);
+  const bonusCleared = useStore((s) => s.bonusCleared);
 
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const [openLessonId, setOpenLessonId] = useState<string | null>(null);
-  const [battle, setBattle] = useState<{ world: WorldInfo; mini: boolean } | null>(null);
+  const [battle, setBattle] = useState<{
+    world: WorldInfo;
+    mode: BattleMode;
+    lessons: Lesson[];
+    seed: number;
+  } | null>(null);
 
-  const startIdx = placementLevel ? LEVELS.indexOf(placementLevel) : 0;
-  const maxBossIdx = LEVELS.reduce((m, lv, i) => (bossCleared[lv] ? i : m), -1);
-  const unlockedThrough = Math.max(startIdx, maxBossIdx + 1);
+  const unlockedThrough = unlockedThroughFor(placementLevel, bossCleared);
   const currentIdx = (() => {
     const i = LEVELS.findIndex((lv, idx) => idx <= unlockedThrough && !bossCleared[lv]);
     return i === -1 ? unlockedThrough : i;
   })();
-  const totalStars = LEVELS.reduce(
-    (n, lv, i) => n + starsFor(lv, i, unlockedThrough, completed, bossCleared),
-    0,
-  );
+  const starTotal = totalStars({ placementLevel, completed, bossCleared });
 
   const openWorld = openIdx !== null ? WORLDS[openIdx] : null;
 
@@ -494,13 +512,19 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
           <WorldDetail
             key={`w-${openWorld.level}`}
             world={openWorld}
-            stars={starsFor(openWorld.level, openIdx!, unlockedThrough, completed, bossCleared)}
+            stars={starsForLevel(
+              openWorld.level,
+              openIdx!,
+              unlockedThrough,
+              completed,
+              bossCleared,
+            )}
             completed={completed}
             bossDone={!!bossCleared[openWorld.level]}
+            bonusDone={!!bonusCleared[openWorld.level]}
             onBack={() => setOpenIdx(null)}
             onOpenLesson={(id) => setOpenLessonId(id)}
-            onSpecial={() => onOpenTrack('reading')}
-            onBattle={(mini) => setBattle({ world: openWorld, mini })}
+            onBattle={(cfg) => setBattle({ world: openWorld, ...cfg })}
           />
         ) : (
           <motion.div
@@ -519,7 +543,7 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
               <span className="flex shrink-0 items-center gap-1.5 rounded-full border border-rule-soft bg-paper px-3 py-1.5">
                 <StarIcon className="h-4 w-4 text-gold" />
                 <span className="font-mono text-[12px] text-ink-soft tabular-nums">
-                  {totalStars}/18
+                  {starTotal}/{MAX_STARS}
                 </span>
               </span>
             </div>
@@ -553,7 +577,13 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
       </AnimatePresence>
 
       {battle && (
-        <BossChallenge world={battle.world} mini={battle.mini} onClose={() => setBattle(null)} />
+        <BossChallenge
+          world={battle.world}
+          mode={battle.mode}
+          lessons={battle.lessons}
+          seed={battle.seed}
+          onClose={() => setBattle(null)}
+        />
       )}
     </div>
   );

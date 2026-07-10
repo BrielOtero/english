@@ -36,6 +36,9 @@ interface FluentState {
   reviews: Record<string, ReviewItem>;
   /** Completed lesson ids. */
   completed: Record<string, true>;
+  /** Vocabulary groups the learner has EXCLUDED from Review (id → false). Absent = included,
+   *  so new groups are opted in by default. */
+  reviewGroups: Record<string, boolean>;
   theme: Theme;
   /** TTS playback rate (0.6 slow .. 1 normal). */
   voiceRate: number;
@@ -45,6 +48,10 @@ interface FluentState {
   musicOn: boolean;
   /** Whether interaction sound effects play. */
   fxOn: boolean;
+  /** Music volume (0..1). */
+  musicVol: number;
+  /** Sound-effects volume (0..1). */
+  fxVol: number;
   /** Level estimated by the placement test, or null if never taken. */
   placementLevel: Level | null;
   /** Epoch ms when the placement test was last completed. */
@@ -63,11 +70,19 @@ interface FluentState {
   grade: (cardId: string, grade: Grade) => void;
   markComplete: (lessonId: string) => void;
   unmarkComplete: (lessonId: string) => void;
+  /** Include/exclude a vocabulary group from Review. */
+  toggleReviewGroup: (id: string) => void;
+  /** Replace the whole review-group selection (used by select all / none). */
+  setReviewGroups: (v: Record<string, boolean>) => void;
   toggleTheme: () => void;
   setVoiceRate: (rate: number) => void;
   setVoiceURI: (voiceURI: string | null) => void;
   setMusicOn: (v: boolean) => void;
   setFxOn: (v: boolean) => void;
+  setMusicVol: (v: number) => void;
+  setFxVol: (v: number) => void;
+  /** Reset every audio setting (speed, toggles, volumes) to its default. */
+  resetAudio: () => void;
   /** Record the result of a placement test (level + when it was taken). */
   setPlacementResult: (level: Level) => void;
   /** Mark a world's boss as defeated, unlocking the next world. */
@@ -88,11 +103,14 @@ export const useStore = create<FluentState>()(
     (set) => ({
       reviews: {},
       completed: {},
+      reviewGroups: {},
       theme: 'light',
       voiceRate: 0.95,
       voiceURI: null,
       musicOn: true,
       fxOn: true,
+      musicVol: 0.7,
+      fxVol: 0.9,
       placementLevel: null,
       placementTakenAt: null,
       bossCleared: {},
@@ -112,6 +130,11 @@ export const useStore = create<FluentState>()(
         }),
       markComplete: (lessonId) =>
         set((state) => ({ completed: { ...state.completed, [lessonId]: true } })),
+      toggleReviewGroup: (id) =>
+        set((state) => ({
+          reviewGroups: { ...state.reviewGroups, [id]: state.reviewGroups[id] === false },
+        })),
+      setReviewGroups: (v) => set({ reviewGroups: v }),
       unmarkComplete: (lessonId) =>
         set((state) => {
           const next = { ...state.completed };
@@ -123,6 +146,10 @@ export const useStore = create<FluentState>()(
       setVoiceURI: (voiceURI) => set({ voiceURI }),
       setMusicOn: (v) => set({ musicOn: v }),
       setFxOn: (v) => set({ fxOn: v }),
+      setMusicVol: (v) => set({ musicVol: Math.max(0, Math.min(1, v)) }),
+      setFxVol: (v) => set({ fxVol: Math.max(0, Math.min(1, v)) }),
+      resetAudio: () =>
+        set({ voiceRate: 0.95, musicOn: true, fxOn: true, musicVol: 0.7, fxVol: 0.9 }),
       setPlacementResult: (level) => set({ placementLevel: level, placementTakenAt: Date.now() }),
       clearBoss: (level) =>
         set((state) => ({ bossCleared: { ...state.bossCleared, [level]: true } })),
@@ -174,16 +201,30 @@ export const useStore = create<FluentState>()(
     }),
     {
       name: 'fluent',
-      version: 1,
+      version: 2,
+      // Migrate old saves (v1) to the granular-stars era: stars are derived from progress,
+      // so nothing is lost — we just guarantee the newer tracking maps exist.
+      migrate: (persisted) => {
+        const s = (persisted ?? {}) as Record<string, unknown>;
+        return {
+          ...s,
+          bonusCleared: s.bonusCleared ?? {},
+          miniCleared: s.miniCleared ?? {},
+          answeredCorrect: s.answeredCorrect ?? {},
+        };
+      },
       // Only persist durable state — `now` is transient.
       partialize: (s) => ({
         reviews: s.reviews,
         completed: s.completed,
+        reviewGroups: s.reviewGroups,
         theme: s.theme,
         voiceRate: s.voiceRate,
         voiceURI: s.voiceURI,
         musicOn: s.musicOn,
         fxOn: s.fxOn,
+        musicVol: s.musicVol,
+        fxVol: s.fxVol,
         placementLevel: s.placementLevel,
         placementTakenAt: s.placementTakenAt,
         bossCleared: s.bossCleared,

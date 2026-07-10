@@ -5,7 +5,7 @@ import { LEVELS } from '../types';
 import { GRAMMAR, grammarUnit } from '../content';
 import { WORLDS, type WorldInfo } from '../content/worlds';
 import { useStore } from '../store';
-import { startWorldTheme, stopWorldTheme } from '../lib/sound';
+import { startWorldTheme, stopWorldTheme, startRoadmapTheme } from '../lib/sound';
 import { starsForLevel, unlockedThroughFor, totalStars, MAX_STARS } from '../lib/stars';
 import { BossChallenge, type BattleMode } from './boss-challenge';
 import { LessonView } from './lesson-view';
@@ -60,6 +60,31 @@ function Stars({ n, className = 'h-4 w-4' }: { n: number; className?: string }) 
         <StarIcon key={i} className={`${className} ${i < n ? 'text-gold' : 'text-ink-mute/25'}`} />
       ))}
     </span>
+  );
+}
+
+/** A clearly-affordanced back button — a bordered pill with a chevron, so it reads as
+ *  a button rather than a faint text link. */
+function BackButton({ onClick, children }: { onClick: () => void; children: React.ReactNode }) {
+  return (
+    <button
+      onClick={onClick}
+      className="press mb-4 inline-flex items-center gap-1.5 rounded-full border border-rule-soft bg-paper py-1.5 pr-4 pl-3 text-[13px] font-medium text-ink-soft shadow-[var(--shadow-sm)] transition-colors hover:border-accent/50 hover:text-ink"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+      >
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+      {children}
+    </button>
   );
 }
 
@@ -142,11 +167,16 @@ function WorldGalaxy({
   bossCleared: Record<string, true>;
   onEnter: (i: number) => void;
 }) {
+  useEffect(() => {
+    startRoadmapTheme();
+    return () => stopWorldTheme();
+  }, []);
+
   const n = WORLDS.length + 1; // worlds + the summit
   const mapH = Math.max(660, n * 124);
   const pos = (i: number) => ({
     x: Math.max(17, Math.min(83, 50 + Math.sin(i * 0.9 + 0.5) * 30)),
-    y: 91 - (i / (n - 1)) * 82,
+    y: 9 + (i / (n - 1)) * 82, // world 1 at the top, native goal at the bottom
   });
   const pts = Array.from({ length: n }, (_, i) => `${pos(i).x},${pos(i).y}`).join(' ');
   const summit = pos(n - 1);
@@ -180,7 +210,7 @@ function WorldGalaxy({
         <span className="grid h-16 w-16 place-items-center rounded-full border-2 border-rule-soft bg-paper shadow-[var(--shadow-md)]">
           <StarIcon className="h-8 w-8 text-gold" />
         </span>
-        <span className="mt-1 font-display text-[13px] text-ink">Native · Summit</span>
+        <span className="mt-1 font-display text-[13px] text-ink">Native · Fluent</span>
       </div>
 
       {WORLDS.map((w, i) => {
@@ -246,6 +276,7 @@ function WorldDetail({
   completed,
   bossDone,
   bonusDone,
+  miniCleared,
   onBack,
   onOpenLesson,
   onBattle,
@@ -255,9 +286,10 @@ function WorldDetail({
   completed: Record<string, true>;
   bossDone: boolean;
   bonusDone: boolean;
+  miniCleared: Record<string, true>;
   onBack: () => void;
   onOpenLesson: (id: string) => void;
-  onBattle: (cfg: { mode: BattleMode; lessons: Lesson[]; seed: number }) => void;
+  onBattle: (cfg: { mode: BattleMode; lessons: Lesson[]; seed: number; miniId?: string }) => void;
 }) {
   const tone = TONE[world.level];
 
@@ -272,7 +304,7 @@ function WorldDetail({
   const allDone = lessons.length > 0 && lessons.every((l) => completed[l.id]);
 
   // Break the world into blocks: a mini-boss (this block's topics) caps each block;
-  // the world boss at the top draws from every lesson and is star-gated behind them all.
+  // the world boss at the bottom draws from every lesson and is star-gated behind them all.
   interface Node {
     kind: NodeKind;
     done: boolean;
@@ -296,12 +328,13 @@ function WorldDetail({
     if ((i + 1) % BLOCK === 0 && i + 1 < lessons.length) {
       const bi = Math.floor(i / BLOCK);
       const block = lessons.slice(i + 1 - BLOCK, i + 1);
+      const miniId = `${world.level}:${bi}`;
       nodes.push({
         kind: 'mini',
-        done: false,
+        done: !!miniCleared[miniId],
         title: `Mini-boss ${bi + 1}`,
         label: `Mini-boss ${bi + 1}`,
-        onClick: () => onBattle({ mode: 'mini', lessons: block, seed: bi }),
+        onClick: () => onBattle({ mode: 'mini', lessons: block, seed: world.n + bi, miniId }),
       });
     }
   });
@@ -310,7 +343,7 @@ function WorldDetail({
     done: bonusDone,
     title: 'Bonus round',
     label: 'Bonus round',
-    onClick: () => onBattle({ mode: 'bonus', lessons, seed: 3 }),
+    onClick: () => onBattle({ mode: 'bonus', lessons, seed: world.n + 2 }),
   });
   nodes.push({
     kind: 'boss',
@@ -318,14 +351,14 @@ function WorldDetail({
     title: world.boss,
     label: `Boss: ${world.boss}`,
     locked: !allDone,
-    onClick: () => onBattle({ mode: 'boss', lessons, seed: 7 }),
+    onClick: () => onBattle({ mode: 'boss', lessons, seed: world.n - 1 }),
   });
   const n = nodes.length;
   const mapH = Math.max(620, n * 88);
-  // Winding climb: level 1 at the bottom, boss at the top, x oscillating across the map.
+  // Winding descent: level 1 at the top, boss at the bottom, x oscillating across the map.
   const pos = (i: number) => ({
     x: Math.max(16, Math.min(84, 50 + Math.sin(i * 0.85 + 0.6) * 30)),
-    y: 92 - (i / (n - 1)) * 84,
+    y: 8 + (i / (n - 1)) * 84,
   });
   const pts = nodes.map((_, i) => `${pos(i).x},${pos(i).y}`).join(' ');
   const firstUncleared = lessons.findIndex((l) => !completed[l.id]);
@@ -337,12 +370,7 @@ function WorldDetail({
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ type: 'spring', stiffness: 220, damping: 24 }}
     >
-      <button
-        onClick={onBack}
-        className="press mb-4 flex items-center gap-1.5 text-[13px] font-medium text-ink-mute transition-colors hover:text-ink"
-      >
-        ← All worlds
-      </button>
+      <BackButton onClick={onBack}>All worlds</BackButton>
 
       <div className={`rounded-3xl border ${tone.band} px-5 py-5`}>
         <div className="flex items-center gap-3">
@@ -430,7 +458,7 @@ function WorldDetail({
       </div>
       <p className="mt-3 text-center text-[11px] text-ink-mute">
         {allDone
-          ? `Mastery star earned — challenge ${world.boss} at the top!`
+          ? `Mastery star earned — challenge ${world.boss} at the end of the trail!`
           : `Clear all ${lessons.length} levels to earn the ⭐ that unlocks ${world.boss} (${doneCount}/${lessons.length})`}
       </p>
     </motion.div>
@@ -460,12 +488,9 @@ function LevelView({
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ type: 'spring', stiffness: 220, damping: 24 }}
     >
-      <button
-        onClick={onBack}
-        className="press mb-4 flex items-center gap-1.5 text-[13px] font-medium text-ink-mute transition-colors hover:text-ink"
-      >
-        ← World {world.n}: {world.name}
-      </button>
+      <BackButton onClick={onBack}>
+        World {world.n}: {world.name}
+      </BackButton>
       <p className="kicker mb-3 text-[13px] text-ink-soft">
         Level {levelNo} · {world.level}
       </p>
@@ -479,6 +504,7 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
   const placementLevel = useStore((s) => s.placementLevel);
   const bossCleared = useStore((s) => s.bossCleared);
   const bonusCleared = useStore((s) => s.bonusCleared);
+  const miniCleared = useStore((s) => s.miniCleared);
 
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const [openLessonId, setOpenLessonId] = useState<string | null>(null);
@@ -487,6 +513,7 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
     mode: BattleMode;
     lessons: Lesson[];
     seed: number;
+    miniId?: string;
   } | null>(null);
 
   const unlockedThrough = unlockedThroughFor(placementLevel, bossCleared);
@@ -522,6 +549,7 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
             completed={completed}
             bossDone={!!bossCleared[openWorld.level]}
             bonusDone={!!bonusCleared[openWorld.level]}
+            miniCleared={miniCleared}
             onBack={() => setOpenIdx(null)}
             onOpenLesson={(id) => setOpenLessonId(id)}
             onBattle={(cfg) => setBattle({ world: openWorld, ...cfg })}
@@ -535,7 +563,7 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
           >
             <div className="mb-7 flex items-end justify-between gap-3">
               <div>
-                <p className="kicker text-[13px] text-ink-soft">The climb to native</p>
+                <p className="kicker text-[13px] text-ink-soft">The road to native</p>
                 <h1 className="font-display text-[clamp(24px,5vw,38px)] leading-none text-ink">
                   Choose your world
                 </h1>
@@ -582,6 +610,7 @@ export function WorldMap({ onOpenTrack }: { onOpenTrack: (trackId: string) => vo
           mode={battle.mode}
           lessons={battle.lessons}
           seed={battle.seed}
+          miniId={battle.miniId}
           onClose={() => setBattle(null)}
         />
       )}

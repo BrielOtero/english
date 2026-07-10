@@ -6,6 +6,7 @@
 let ctx: AudioContext | null = null;
 let musicOn = true; // per-world ambient theme
 let fxOn = true; // interaction sound effects
+let ducked = false; // music silenced while a listen clip is in the foreground
 
 function context(): AudioContext | null {
   if (typeof window === 'undefined') return null;
@@ -34,6 +35,22 @@ export function setFxEnabled(v: boolean) {
 }
 export function fxEnabled() {
   return fxOn;
+}
+
+/** Silence the ambient/battle music while a spoken/played clip is in the foreground. */
+export function duckMusic() {
+  if (ducked) return;
+  ducked = true;
+  // Suspend the Web Audio clock so any sustained note tails go quiet at once. Spoken
+  // clips (TTS) and pre-generated .mp3s play on a separate output, so they're unaffected.
+  if (ctx && ctx.state === 'running') void ctx.suspend();
+}
+
+/** Restore the music once the clip finishes. */
+export function unduckMusic() {
+  if (!ducked) return;
+  ducked = false;
+  if (ctx && ctx.state === 'suspended') void ctx.resume();
 }
 
 /** One synthesised tone with a quick attack/decay envelope. */
@@ -103,10 +120,11 @@ let themeTimer: ReturnType<typeof setInterval> | null = null;
 /** Start looping a world's ambient theme (stops any current one). */
 export function startWorldTheme(level: string) {
   stopWorldTheme();
+  ducked = false; // starting a theme means music should be audible again
   const scale = WORLD_SCALE[level] ?? WORLD_SCALE.A1;
   let step = 0;
   const tick = () => {
-    if (!musicOn) return;
+    if (!musicOn || ducked) return;
     const note = scale[step % scale.length];
     blip(note, 1.7, { type: 'sine', gain: 0.03 });
     if (step % 4 === 0) blip(note / 2, 2.4, { type: 'sine', gain: 0.022 }); // soft bass root
@@ -120,5 +138,39 @@ export function stopWorldTheme() {
   if (themeTimer) {
     clearInterval(themeTimer);
     themeTimer = null;
+  }
+}
+
+// A driving battle loop for mini-boss / boss fights. `seed` picks the key so each
+// fight sounds different; `boss` drops it an octave and speeds it up for more menace.
+const BATTLE_SCALES: number[][] = [
+  [329.63, 392.0, 440.0, 493.88, 587.33],
+  [293.66, 349.23, 392.0, 440.0, 523.25],
+  [261.63, 311.13, 349.23, 392.0, 466.16],
+  [349.23, 415.3, 466.16, 523.25, 622.25],
+];
+let battleTimer: ReturnType<typeof setInterval> | null = null;
+
+export function startBattleTheme(seed = 0, boss = false) {
+  stopBattleTheme();
+  ducked = false;
+  const scale = BATTLE_SCALES[seed % BATTLE_SCALES.length];
+  const oct = boss ? 0.5 : 1;
+  let step = 0;
+  const tick = () => {
+    if (!musicOn || ducked) return;
+    const note = scale[step % scale.length] * oct;
+    blip(note, 0.22, { type: boss ? 'sawtooth' : 'triangle', gain: 0.035 });
+    if (step % 2 === 0) blip(note / 2, 0.34, { type: 'sine', gain: 0.03 });
+    step++;
+  };
+  tick();
+  battleTimer = setInterval(tick, boss ? 300 : 340);
+}
+
+export function stopBattleTheme() {
+  if (battleTimer) {
+    clearInterval(battleTimer);
+    battleTimer = null;
   }
 }

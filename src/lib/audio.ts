@@ -6,38 +6,46 @@
 import { AUDIO_HASHES } from '../content/audio-manifest';
 import { hashText } from './audio-hash';
 import { speak, stopSpeaking, type SpeakOptions } from './speech';
+import { duckMusic, unduckMusic } from './sound';
 
 const available = new Set(AUDIO_HASHES);
 let current: HTMLAudioElement | null = null;
 
-/** Play `text`: the pre-generated clip if we have one, else browser TTS. */
+/** Play `text`: the pre-generated clip if we have one, else browser TTS. Ducks the
+ *  background music for the duration so the voice is never fighting the soundtrack. */
 export function playPhrase(text: string, opts: SpeakOptions = {}): void {
+  stopPhrase(); // stop anything already playing (and un-duck it) before starting
   if (!text.trim()) {
     opts.onEnd?.();
     return;
   }
   const hash = hashText(text);
+  const done = () => {
+    unduckMusic();
+    opts.onEnd?.();
+  };
+  duckMusic();
   if (available.has(hash)) {
-    stopPhrase();
     const audio = new Audio(`${import.meta.env.BASE_URL}audio/${hash}.mp3`);
     audio.playbackRate = opts.rate ?? 1;
     audio.onended = () => {
       current = null;
-      opts.onEnd?.();
+      done();
     };
-    // If the file is somehow missing (e.g. clips weren't generated), fall back.
+    // If the file is somehow missing (e.g. clips weren't generated), fall back to TTS —
+    // which keeps the music ducked until it finishes via the shared `done`.
     audio.onerror = () => {
       current = null;
-      speak(text, opts);
+      speak(text, { ...opts, onEnd: done });
     };
     current = audio;
     audio.play().catch(() => {
       current = null;
-      speak(text, opts);
+      speak(text, { ...opts, onEnd: done });
     });
     return;
   }
-  speak(text, opts);
+  speak(text, { ...opts, onEnd: done });
 }
 
 /** Play several phrases back-to-back (used by "Listen to all" on a reading). */
@@ -53,7 +61,7 @@ export function playSequence(texts: string[], opts: SpeakOptions = {}): void {
   next();
 }
 
-/** Stop any audio (file or speech). */
+/** Stop any audio (file or speech) and restore the music. */
 export function stopPhrase(): void {
   if (current) {
     current.pause();
@@ -61,4 +69,5 @@ export function stopPhrase(): void {
     current = null;
   }
   stopSpeaking();
+  unduckMusic();
 }

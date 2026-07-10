@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { TRACKS, TOTAL_LESSONS, buildReviewDeck, type Track } from '../content';
+import { TRACKS, buildReviewDeck, type Track } from '../content';
 import { useStore, isLearned, isDue } from '../store';
+import { totalStars, MAX_STARS } from '../lib/stars';
 import { Icon } from './icons';
 import { LevelBadge } from './level-badge';
 
@@ -14,9 +15,11 @@ export function Home({ onSelect }: { onSelect: (id: string) => void }) {
   const reviews = useStore((s) => s.reviews);
   const now = useStore((s) => s.now);
   const placementLevel = useStore((s) => s.placementLevel);
+  const bossCleared = useStore((s) => s.bossCleared);
+  const bonusCleared = useStore((s) => s.bonusCleared);
+  const miniCleared = useStore((s) => s.miniCleared);
 
-  const doneCount = Object.keys(completed).length;
-  const pct = TOTAL_LESSONS ? Math.round((doneCount / TOTAL_LESSONS) * 100) : 0;
+  const stars = totalStars({ completed, miniCleared, bonusCleared, bossCleared });
   const deck = useMemo(() => buildReviewDeck(), []);
   const learned = deck.filter((c) => isLearned(reviews[c.id])).length;
   const due = deck.filter((c) => isDue(reviews[c.id], now)).length;
@@ -26,7 +29,7 @@ export function Home({ onSelect }: { onSelect: (id: string) => void }) {
   const practice = sections.filter((t) => t.section === 'practice');
 
   const stats = [
-    { v: `${pct}%`, k: 'course complete' },
+    { v: `${stars}/${MAX_STARS}`, k: 'stars earned' },
     { v: `${learned}`, k: 'words learned' },
     { v: placementLevel ?? '—', k: 'your level' },
   ];

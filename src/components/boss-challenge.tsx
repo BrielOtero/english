@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import type { Lesson } from '../types';
 import type { WorldInfo } from '../content/worlds';
@@ -99,16 +99,21 @@ export function BossChallenge({
   // Literal classes (not interpolated) so Tailwind's JIT emits them.
   const accentText = isBonus ? 'text-accent2' : 'text-danger';
 
-  // Draw from this challenge's lessons, skipping questions already answered correctly so
-  // repeats are rare; fall back to the full set when too few fresh ones remain. `round`
-  // re-shuffles on a retry so a rematch isn't the exact same questions.
-  const questions = useMemo(() => {
-    void round;
+  const buildQuestions = () => {
     const correct = useStore.getState().answeredCorrect;
     const all = lessons.flatMap((l) => l.exercises);
+    // Prefer unseen questions, but fall back to the full pool if too few are left.
     const fresh = all.filter((e) => !correct[e.id]);
     return shuffle(fresh.length >= count ? fresh : all).slice(0, count);
-  }, [lessons, count, round]);
+  };
+  // Snapshot per fight, reshuffled only on retry: shuffle() is impure, so a useMemo could
+  // swap the questions on any re-render.
+  const [questions, setQuestions] = useState(buildQuestions);
+  const [builtRound, setBuiltRound] = useState(round);
+  if (builtRound !== round) {
+    setBuiltRound(round);
+    setQuestions(buildQuestions());
+  }
 
   useEffect(() => {
     stopWorldTheme();

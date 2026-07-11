@@ -3,3 +3,4 @@ node_modules
 pnpm-lock.yaml
 public/audio
 src/content/audio-manifest.ts
+src/routeTree.gen.ts

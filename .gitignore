@@ -7,6 +7,5 @@ dist
 .DS_Store
 *.tsbuildinfo
 
-# TanStack Router — generated route tree + plugin cache
-src/routeTree.gen.ts
+# TanStack Router — plugin cache (the route tree is committed so a clean checkout can type-check)
 .tanstack

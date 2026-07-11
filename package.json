@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "generate:audio": "tsx scripts/generate-audio.ts",
+    "generate:audio": "tsx --tsconfig ./tsconfig.app.json scripts/generate-audio.ts",
     "prepare": "husky"
   },
   "lint-staged": {

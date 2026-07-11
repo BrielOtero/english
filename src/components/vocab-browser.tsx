@@ -1,24 +1,13 @@
 import { useMemo, useState } from 'react';
-import type { ReviewCard } from '../content';
-import type { VocabSet } from '../types';
-import { VOCAB_SETS } from '../content';
+import { VOCAB_SETS, setToCards } from '../content';
 import { Speaker } from './speaker';
+import { Icon } from './icons';
 import { LevelBadge } from './level-badge';
 import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
 import { BackButton } from './back-button';
 import { FlashcardSession } from './flashcard-session';
-
-function setToCards(set: VocabSet): ReviewCard[] {
-  return set.items.map((item) => ({
-    id: `vocab:${item.id}`,
-    front: item.meaning,
-    back: item.word,
-    audio: item.word,
-    note: `“${item.example}”`,
-    tag: set.theme,
-    level: item.level,
-  }));
-}
+import { Button } from './ui/button';
+import { Card } from './ui/card';
 
 export function VocabBrowser() {
   const [openId, setOpenId] = useState<string | null>(null);
@@ -54,17 +43,14 @@ export function VocabBrowser() {
             <h2 className="font-display text-[28px] leading-tight text-ink">{openSet.title}</h2>
             <p className="mt-1 max-w-xl text-[14px] text-ink-soft">{openSet.blurb}</p>
           </div>
-          <button
-            onClick={() => setStudying(true)}
-            className="shrink-0 rounded-full bg-accent px-4 py-2 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
-          >
-            Study set →
-          </button>
+          <Button size="xs" className="shrink-0" onClick={() => setStudying(true)}>
+            Study set <Icon name="arrow-right" className="h-3 w-3" />
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {openSet.items.map((item) => (
-            <div key={item.id} className="rounded-xl border border-rule-soft bg-paper p-4">
+            <Card key={item.id} className="p-4">
               <div className="flex items-center gap-2">
                 <Speaker text={item.word} size="sm" />
                 <span className="text-[16px] font-medium text-ink">{item.word}</span>
@@ -78,7 +64,7 @@ export function VocabBrowser() {
                   + {item.collocations.join(' · ')}
                 </p>
               )}
-            </div>
+            </Card>
           ))}
         </div>
       </div>

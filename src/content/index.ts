@@ -1,4 +1,4 @@
-import type { Level } from '../types';
+import type { Level, VocabSet } from '../types';
 import type { IconName } from '../components/icons';
 import { GRAMMAR } from './grammar';
 import { VOCAB_SETS } from './vocab';
@@ -134,23 +134,23 @@ export interface ReviewCard {
   level: Level;
 }
 
+/** Flashcards for one vocabulary set. `tag` defaults to the set's theme (shown when studying a
+ *  single set); Review passes 'Vocabulary' so mixed decks share one label. */
+export function setToCards(set: VocabSet, tag: string = set.theme): ReviewCard[] {
+  return set.items.map((item) => ({
+    id: `vocab:${item.id}`,
+    front: item.meaning,
+    back: item.word,
+    audio: item.word,
+    note: `“${item.example}”`,
+    tag,
+    level: item.level,
+  }));
+}
+
 /** Build the full flashcard deck from vocabulary, phrasal verbs, and idioms. */
 export function buildReviewDeck(): ReviewCard[] {
-  const cards: ReviewCard[] = [];
-
-  for (const set of VOCAB_SETS) {
-    for (const item of set.items) {
-      cards.push({
-        id: `vocab:${item.id}`,
-        front: item.meaning,
-        back: item.word,
-        audio: item.word,
-        note: `“${item.example}”`,
-        tag: 'Vocabulary',
-        level: item.level,
-      });
-    }
-  }
+  const cards: ReviewCard[] = VOCAB_SETS.flatMap((set) => setToCards(set, 'Vocabulary'));
 
   for (const pv of PHRASAL) {
     cards.push({
@@ -182,20 +182,7 @@ export function buildReviewDeck(): ReviewCard[] {
 /** A Review deck built ONLY from vocabulary, limited to the groups the learner opted into.
  *  Reuses the same VOCAB_SETS shown in the Vocabulary section, so groups stay in sync. */
 export function buildVocabDeck(isIncluded: (setId: string) => boolean): ReviewCard[] {
-  const cards: ReviewCard[] = [];
-  for (const set of VOCAB_SETS) {
-    if (!isIncluded(set.id)) continue;
-    for (const item of set.items) {
-      cards.push({
-        id: `vocab:${item.id}`,
-        front: item.meaning,
-        back: item.word,
-        audio: item.word,
-        note: `“${item.example}”`,
-        tag: 'Vocabulary',
-        level: item.level,
-      });
-    }
-  }
-  return cards;
+  return VOCAB_SETS.filter((set) => isIncluded(set.id)).flatMap((set) =>
+    setToCards(set, 'Vocabulary'),
+  );
 }

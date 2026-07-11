@@ -1,4 +1,4 @@
-import { cn } from './cn';
+import { cn } from '@/components/ui/cn';
 
 export function ProgressBar({ value, className }: { value: number; className?: string }) {
   return (

@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import { cn } from './cn';
+import { cn } from '@/components/ui/cn';
 
 export function EmptyState({ className, children }: { className?: string; children: ReactNode }) {
   return (

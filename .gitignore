@@ -6,3 +6,7 @@ dist
 !.env.example
 .DS_Store
 *.tsbuildinfo
+
+# TanStack Router — generated route tree + plugin cache
+src/routeTree.gen.ts
+.tanstack

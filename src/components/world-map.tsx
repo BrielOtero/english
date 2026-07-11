@@ -1,12 +1,12 @@
 import { useEffect, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useNavigate } from '@tanstack/react-router';
-import type { Level, Lesson } from '../types';
-import { LEVELS } from '../types';
-import { GRAMMAR, grammarUnit } from '../content';
-import { WORLDS, type WorldInfo } from '../content/worlds';
-import { useStore } from '../store';
-import { startWorldTheme, stopWorldTheme, startRoadmapTheme } from '../lib/sound';
+import type { Level, Lesson } from '@/types';
+import { LEVELS } from '@/types';
+import { GRAMMAR, grammarUnit } from '@/content';
+import { WORLDS, type WorldInfo } from '@/content/worlds';
+import { useStore } from '@/store';
+import { startWorldTheme, stopWorldTheme, startRoadmapTheme } from '@/lib/sound';
 import {
   worldStars,
   worldMaxStars,
@@ -14,11 +14,21 @@ import {
   totalStars,
   MAX_STARS,
   BLOCK,
-} from '../lib/stars';
-import { BossChallenge, type BattleMode } from './boss-challenge';
-import { BackButton } from './back-button';
-import { LessonView } from './lesson-view';
-import { Mascot, Crest, Castle, Chest, Slime, Leaf, Check, StarIcon, Padlock } from './map-art';
+} from '@/lib/stars';
+import { BossChallenge, type BattleMode } from '@/components/boss-challenge';
+import { BackButton } from '@/components/back-button';
+import { LessonView } from '@/components/lesson-view';
+import {
+  Mascot,
+  Crest,
+  Castle,
+  Chest,
+  Slime,
+  Leaf,
+  Check,
+  StarIcon,
+  Padlock,
+} from '@/components/map-art';
 
 const ALL_LESSONS = GRAMMAR.flatMap((u) => u.lessons);
 
@@ -552,7 +562,11 @@ export function WorldMap({
 
   const goRoadmap = () => void navigate({ to: '/roadmap' });
   const goWorld = (lv: string) =>
-    void navigate({ to: '/roadmap/$level', params: { level: lv.toLowerCase() } });
+    void navigate({
+      to: '/roadmap/$level',
+      params: { level: lv.toLowerCase() },
+      search: { fight: undefined },
+    });
 
   return (
     <div className="fade-in">
@@ -578,6 +592,7 @@ export function WorldMap({
               void navigate({
                 to: '/roadmap/$level/$lessonId',
                 params: { level: openWorld.level.toLowerCase(), lessonId: id },
+                search: { fight: undefined },
               })
             }
             onBattle={(f) =>
@@ -651,7 +666,7 @@ export function WorldMap({
             void navigate({
               to: '/roadmap/$level',
               params: { level: openWorld.level.toLowerCase() },
-              search: {},
+              search: { fight: undefined },
               replace: true,
             })
           }

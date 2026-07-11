@@ -1,30 +1,18 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Outlet, useNavigate, useRouterState } from '@tanstack/react-router';
-import { TRACKS } from './content';
-import { totalStars } from './lib/stars';
-import { Icon, type IconName } from './components/icons';
-import { GlobalSearch } from './components/global-search';
-import { setPreferredVoice } from './lib/speech';
-import { setMusicEnabled, setFxEnabled, setMusicVolume, setFxVolume } from './lib/sound';
-import { useStore } from './store';
-import { Header } from './components/header';
-import { Footer } from './components/footer';
-import { Sidebar } from './components/sidebar';
-import { BottomNav } from './components/bottom-nav';
-
-const TRACK_IDS = new Set(TRACKS.map((t) => t.id));
-
-/** Route path for a tab id — home lives at "/", everything else at "/<id>". */
-export function tabPath(id: string): string {
-  return id === 'home' ? '/' : `/${id}`;
-}
-
-/** Which tab the current path belongs to (first segment; defaults to home). */
-function pathToTab(pathname: string): string {
-  const seg = pathname.replace(/^\/+/, '').split('/')[0];
-  return seg && TRACK_IDS.has(seg) ? seg : 'home';
-}
+import { createRootRoute, Outlet, useNavigate, useRouterState } from '@tanstack/react-router';
+import { TRACKS } from '@/content';
+import { totalStars } from '@/lib/stars';
+import { tabPath, pathToTab } from '@/lib/nav';
+import { setPreferredVoice } from '@/lib/speech';
+import { setMusicEnabled, setFxEnabled, setMusicVolume, setFxVolume } from '@/lib/sound';
+import { useStore } from '@/store';
+import { Icon, type IconName } from '@/components/icons';
+import { GlobalSearch } from '@/components/global-search';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+import { Sidebar } from '@/components/sidebar';
+import { BottomNav } from '@/components/bottom-nav';
 
 function TrackHead({ icon, title, blurb }: { icon: IconName; title: string; blurb: string }) {
   return (
@@ -40,7 +28,7 @@ function TrackHead({ icon, title, blurb }: { icon: IconName; title: string; blur
   );
 }
 
-export function Layout() {
+function RootLayout() {
   const navigate = useNavigate();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const activeId = pathToTab(pathname);
@@ -89,8 +77,6 @@ export function Layout() {
     setFxVolume(fxVol);
   }, [musicOn, fxOn, musicVol, fxVol]);
 
-  // `to` is a dynamic tab path; cast to a known literal to satisfy the router's strict
-  // typing — the actual string is validated at runtime.
   const selectTab = (id: string) => {
     void navigate({ to: tabPath(id) as '/' });
     window.scrollTo({ top: 0 });
@@ -143,3 +129,5 @@ export function Layout() {
     </div>
   );
 }
+
+export const Route = createRootRoute({ component: RootLayout });

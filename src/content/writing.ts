@@ -1,4 +1,4 @@
-import type { WritingPrompt } from '../types';
+import type { WritingPrompt } from '@/types';
 
 // Pushed-output writing prompts with model answers. Generated content.
 export const WRITING: WritingPrompt[] = [

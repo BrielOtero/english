@@ -1,4 +1,4 @@
-import type { Reading } from '../types';
+import type { Reading } from '@/types';
 
 // Graded comprehensible-input texts. Generated content.
 export const READINGS: Reading[] = [

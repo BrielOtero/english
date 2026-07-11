@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { cn } from './ui/cn';
+import { cn } from '@/components/ui/cn';
 
 // A small set of line icons (Lucide-style), drawn with currentColor so they follow
 // the theme tokens. Used for navigation and UI affordances instead of emoji.

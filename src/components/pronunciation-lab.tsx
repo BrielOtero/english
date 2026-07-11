@@ -1,14 +1,14 @@
 import { useMemo, useState } from 'react';
-import type { MinimalPair, SoundLesson } from '../types';
-import { SOUNDS } from '../content';
-import { playPhrase } from '../lib/audio';
-import { useStore } from '../store';
-import { Speaker } from './speaker';
-import { LevelBadge } from './level-badge';
-import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
-import { Icon } from './icons';
-import { Button } from './ui/button';
-import { Card } from './ui/card';
+import type { MinimalPair, SoundLesson } from '@/types';
+import { SOUNDS } from '@/content';
+import { playPhrase } from '@/lib/audio';
+import { useStore } from '@/store';
+import { Speaker } from '@/components/speaker';
+import { LevelBadge } from '@/components/level-badge';
+import { LevelFilter, levelCounts, type LevelChoice } from '@/components/level-filter';
+import { Icon } from '@/components/icons';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 
 /** A 2-alternative forced-choice drill: hear a word, decide which one it was. */
 function MinimalPairDrill({ pair }: { pair: MinimalPair }) {

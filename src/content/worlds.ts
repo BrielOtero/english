@@ -1,4 +1,4 @@
-import type { Level } from '../types';
+import type { Level } from '@/types';
 
 // The overworld map is a game: each CEFR level is a "world" you climb, with a boss
 // (a challenge quiz) guarding the way to the next. Names and taglines are deliberately

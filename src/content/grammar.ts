@@ -1,4 +1,4 @@
-import type { GrammarUnit } from '../types';
+import type { GrammarUnit } from '@/types';
 
 // CEFR grammar spine A1-C2. Generated content; edit src/types.ts for the shape.
 export const GRAMMAR: GrammarUnit[] = [

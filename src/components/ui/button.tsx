@@ -1,6 +1,6 @@
 import { forwardRef, type ButtonHTMLAttributes } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from './cn';
+import { cn } from '@/components/ui/cn';
 
 export const buttonVariants = cva(
   'inline-flex items-center justify-center gap-2 rounded-full font-mono tracking-wide whitespace-nowrap uppercase transition-[color,background-color,border-color,opacity,box-shadow,transform] duration-150 ease-out active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50',

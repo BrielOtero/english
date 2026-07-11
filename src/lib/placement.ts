@@ -1,5 +1,5 @@
-import type { Level, PlacementQuestion } from '../types';
-import { LEVELS } from '../types';
+import type { Level, PlacementQuestion } from '@/types';
+import { LEVELS } from '@/types';
 
 // The adaptive placement engine. It works a "bracket staircase": the learner is
 // probed at a band, and each result narrows the range of plausible levels until

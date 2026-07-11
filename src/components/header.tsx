@@ -1,10 +1,10 @@
-import { MAX_STARS } from '../lib/stars';
-import type { Theme } from '../store';
-import { Button } from './ui/button';
-import { Icon, Wordmark } from './icons';
-import { StarIcon } from './map-art';
-import { VoiceSettings } from './voice-settings';
-import { Account } from './account';
+import { MAX_STARS } from '@/lib/stars';
+import type { Theme } from '@/store';
+import { Button } from '@/components/ui/button';
+import { Icon, Wordmark } from '@/components/icons';
+import { StarIcon } from '@/components/map-art';
+import { VoiceSettings } from '@/components/voice-settings';
+import { Account } from '@/components/account';
 
 export function Header({
   trackTitle,

@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
-import { cn } from './cn';
-import { Card } from './card';
+import { cn } from '@/components/ui/cn';
+import { Card } from '@/components/ui/card';
 
 export function Stat({
   value,

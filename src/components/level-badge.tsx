@@ -1,4 +1,4 @@
-import type { Level } from '../types';
+import type { Level } from '@/types';
 
 // A botanical "growth" ramp — seedling green through to dark heartwood — so the six
 // CEFR bands stay distinguishable even though the whole palette leans green.

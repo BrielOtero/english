@@ -1,4 +1,4 @@
-import type { VocabSet } from '../types';
+import type { VocabSet } from '@/types';
 
 // Frequency- and theme-based vocabulary. Generated content.
 export const VOCAB_SETS: VocabSet[] = [

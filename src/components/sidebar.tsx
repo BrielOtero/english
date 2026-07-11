@@ -1,5 +1,5 @@
-import type { Track } from '../content';
-import { Icon } from './icons';
+import type { Track } from '@/content';
+import { Icon } from '@/components/icons';
 
 function Row({
   track,

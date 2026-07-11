@@ -1,4 +1,4 @@
-import type { SoundLesson } from '../types';
+import type { SoundLesson } from '@/types';
 
 // Pronunciation lab: phonemes & minimal pairs. Generated content.
 export const SOUNDS: SoundLesson[] = [

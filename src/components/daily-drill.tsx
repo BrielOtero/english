@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PLACEMENT, GRAMMAR } from '../content';
-import { shuffle } from '../lib/shuffle';
-import { useStore } from '../store';
-import { sCorrect, sWrong, sStart, sFinish, sTick } from '../lib/sound';
-import { Mascot, StarIcon } from './map-art';
-import { ConfettiBurst } from './confetti';
-import { Icon } from './icons';
-import { Button } from './ui/button';
+import { PLACEMENT, GRAMMAR } from '@/content';
+import { shuffle } from '@/lib/shuffle';
+import { useStore } from '@/store';
+import { sCorrect, sWrong, sStart, sFinish, sTick } from '@/lib/sound';
+import { Mascot, StarIcon } from '@/components/map-art';
+import { ConfettiBurst } from '@/components/confetti';
+import { Icon } from '@/components/icons';
+import { Button } from '@/components/ui/button';
 
 const DURATION = 60; // seconds per round
 const FEEDBACK_MS = 430; // how long the right/wrong flash lingers before the next question

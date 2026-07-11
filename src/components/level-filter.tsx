@@ -1,8 +1,8 @@
-import type { Level } from '../types';
-import { LEVELS } from '../types';
-import { LevelBadge } from './level-badge';
-import { badgeVariants } from './ui/badge';
-import { cn } from './ui/cn';
+import type { Level } from '@/types';
+import { LEVELS } from '@/types';
+import { LevelBadge } from '@/components/level-badge';
+import { badgeVariants } from '@/components/ui/badge';
+import { cn } from '@/components/ui/cn';
 
 // A shared level selector used across the browse-able tracks (vocabulary,
 // pronunciation, reading, writing, phrasal verbs, idioms) so filtering by CEFR

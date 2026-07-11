@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from './cn';
+import { cn } from '@/components/ui/cn';
 
 export const badgeVariants = cva(
   'inline-flex items-center gap-1 rounded-full border transition-colors',

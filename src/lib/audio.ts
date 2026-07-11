@@ -3,10 +3,10 @@
 // identical in every browser. Anything not pre-generated (text the learner types,
 // dictation answers, the voice preview) falls back to the browser's speech synthesis.
 
-import { AUDIO_HASHES } from '../content/audio-manifest';
-import { hashText } from './audio-hash';
-import { speak, stopSpeaking, type SpeakOptions } from './speech';
-import { duckMusic, unduckMusic } from './sound';
+import { AUDIO_HASHES } from '@/content/audio-manifest';
+import { hashText } from '@/lib/audio-hash';
+import { speak, stopSpeaking, type SpeakOptions } from '@/lib/speech';
+import { duckMusic, unduckMusic } from '@/lib/sound';
 
 const available = new Set(AUDIO_HASHES);
 let current: HTMLAudioElement | null = null;

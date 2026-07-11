@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { playPhrase } from '../lib/audio';
-import { useStore } from '../store';
+import { playPhrase } from '@/lib/audio';
+import { useStore } from '@/store';
 
 const SIZES = {
   sm: 'h-6 w-6 text-[11px]',

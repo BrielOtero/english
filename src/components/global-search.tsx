@@ -1,7 +1,7 @@
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { GRAMMAR, VOCAB_SETS, SOUNDS, PHRASAL, IDIOMS, READINGS, WRITING } from '../content';
-import { Icon } from './icons';
+import { GRAMMAR, VOCAB_SETS, SOUNDS, PHRASAL, IDIOMS, READINGS, WRITING } from '@/content';
+import { Icon } from '@/components/icons';
 
 /** One searchable thing, with where to go when picked. */
 interface Hit {

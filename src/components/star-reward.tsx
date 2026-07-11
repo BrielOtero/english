@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { StarIcon } from './map-art';
-import { ConfettiBurst } from './confetti';
-import { sFinish } from '../lib/sound';
-import { MAX_STARS } from '../lib/stars';
+import { StarIcon } from '@/components/map-art';
+import { ConfettiBurst } from '@/components/confetti';
+import { sFinish } from '@/lib/sound';
+import { MAX_STARS } from '@/lib/stars';
 
 /**
  * The stars just won springing in, then the grand total ticking up to its new value —

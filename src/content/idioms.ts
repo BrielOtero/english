@@ -1,4 +1,4 @@
-import type { Idiom } from '../types';
+import type { Idiom } from '@/types';
 
 // Idioms & strong collocations. Generated content.
 export const IDIOMS: Idiom[] = [

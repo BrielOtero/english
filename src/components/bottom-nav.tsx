@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
-import { TRACKS, buildReviewDeck, type Track } from '../content';
-import { useStore, isDue } from '../store';
-import { Icon, type IconName } from './icons';
-import { AppModal } from './app-modal';
+import { TRACKS, buildReviewDeck, type Track } from '@/content';
+import { useStore, isDue } from '@/store';
+import { Icon, type IconName } from '@/components/icons';
+import { AppModal } from '@/components/app-modal';
 
 const HUBS: { id: string; icon: IconName; label: string }[] = [
   { id: 'home', icon: 'home', label: 'Home' },

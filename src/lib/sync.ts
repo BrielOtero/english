@@ -5,8 +5,8 @@
 //   - feel live: pull-and-merge on sign-in AND whenever the tab regains focus, so
 //     switching back to another device picks up its latest progress.
 
-import { supabase } from './supabase';
-import { useStore } from '../store';
+import { supabase } from '@/lib/supabase';
+import { useStore } from '@/store';
 
 const TABLE = 'progress';
 

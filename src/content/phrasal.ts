@@ -1,4 +1,4 @@
-import type { PhrasalVerb } from '../types';
+import type { PhrasalVerb } from '@/types';
 
 // High-frequency phrasal verbs. Generated content.
 export const PHRASAL: PhrasalVerb[] = [

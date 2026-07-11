@@ -1,4 +1,4 @@
-import type { PlacementQuestion } from '../types';
+import type { PlacementQuestion } from '@/types';
 
 // The placement test's question bank: a handful of graded questions per CEFR
 // band, ordered easy → hard. The adaptive engine (src/lib/placement.ts) draws

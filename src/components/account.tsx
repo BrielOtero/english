@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { cloudEnabled, supabase } from '../lib/supabase';
-import { pullAndMerge, startSync, stopSync } from '../lib/sync';
-import { useStore } from '../store';
-import { Icon, Wordmark } from './icons';
-import { AppModal } from './app-modal';
-import { Button } from './ui/button';
+import { cloudEnabled, supabase } from '@/lib/supabase';
+import { pullAndMerge, startSync, stopSync } from '@/lib/sync';
+import { useStore } from '@/store';
+import { Icon, Wordmark } from '@/components/icons';
+import { AppModal } from '@/components/app-modal';
+import { Button } from '@/components/ui/button';
 
 function initialOf(email: string): string {
   return (email.trim()[0] || '?').toUpperCase();

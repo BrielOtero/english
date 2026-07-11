@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { useStore } from '../store';
-import { Icon } from './icons';
-import { Button } from './ui/button';
+import { useStore } from '@/store';
+import { Icon } from '@/components/icons';
+import { Button } from '@/components/ui/button';
 
 const SPEEDS: { label: string; rate: number }[] = [
   { label: 'Slow', rate: 0.7 },

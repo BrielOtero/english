@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react';
-import { WRITING } from '../content';
-import { PhraseLine } from './phrase-line';
-import { LevelBadge } from './level-badge';
-import { BackButton } from './back-button';
-import { Button } from './ui/button';
-import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
+import { WRITING } from '@/content';
+import { PhraseLine } from '@/components/phrase-line';
+import { LevelBadge } from '@/components/level-badge';
+import { BackButton } from '@/components/back-button';
+import { Button } from '@/components/ui/button';
+import { LevelFilter, levelCounts, type LevelChoice } from '@/components/level-filter';
 
 export function WritingView() {
   const [openId, setOpenId] = useState<string | null>(null);

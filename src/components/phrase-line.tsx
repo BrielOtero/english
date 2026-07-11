@@ -1,5 +1,5 @@
-import type { Phrase } from '../types';
-import { Speaker } from './speaker';
+import type { Phrase } from '@/types';
+import { Speaker } from '@/components/speaker';
 
 /**
  * Renders one example sentence: the English text with a Listen button, its IPA,

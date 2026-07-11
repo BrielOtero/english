@@ -1,14 +1,14 @@
 import { useMemo, useState } from 'react';
-import { READINGS } from '../content';
-import { useStore } from '../store';
-import { playSequence } from '../lib/audio';
-import { Speaker } from './speaker';
-import { LevelBadge } from './level-badge';
-import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
-import { ExerciseDeck } from './exercise';
-import { BackButton } from './back-button';
-import { Button } from './ui/button';
-import { Icon } from './icons';
+import { READINGS } from '@/content';
+import { useStore } from '@/store';
+import { playSequence } from '@/lib/audio';
+import { Speaker } from '@/components/speaker';
+import { LevelBadge } from '@/components/level-badge';
+import { LevelFilter, levelCounts, type LevelChoice } from '@/components/level-filter';
+import { ExerciseDeck } from '@/components/exercise';
+import { BackButton } from '@/components/back-button';
+import { Button } from '@/components/ui/button';
+import { Icon } from '@/components/icons';
 
 export function ReadingView() {
   const rate = useStore((s) => s.voiceRate);

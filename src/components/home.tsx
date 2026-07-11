@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { TRACKS, buildReviewDeck, type Track } from '../content';
-import { useStore, isLearned, isDue } from '../store';
-import { totalStars, MAX_STARS } from '../lib/stars';
-import { Button } from './ui/button';
-import { Icon } from './icons';
-import { LevelBadge } from './level-badge';
+import { TRACKS, buildReviewDeck, type Track } from '@/content';
+import { useStore, isLearned, isDue } from '@/store';
+import { totalStars, MAX_STARS } from '@/lib/stars';
+import { Button } from '@/components/ui/button';
+import { Icon } from '@/components/icons';
+import { LevelBadge } from '@/components/level-badge';
 
 /**
  * The front door. Two ways in — the game Roadmap or the classic sections — plus a

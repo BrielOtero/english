@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { Level } from './types';
+import type { Level } from '@/types';
 
 export type Theme = 'light' | 'dark';
 export type Grade = 'again' | 'good' | 'easy';

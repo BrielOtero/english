@@ -4,8 +4,8 @@
 // bosses), so old saves migrate automatically — their existing progress just re-scores.
 // Kept in one place so the map, the world screen, and the reward animation all agree.
 
-import { LEVELS, type Level } from '../types';
-import { grammarUnit } from '../content';
+import { LEVELS, type Level } from '@/types';
+import { grammarUnit } from '@/content';
 
 /** Lessons per block — a mini-boss caps each full block except the world's last. */
 export const BLOCK = 4;

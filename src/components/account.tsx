@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { cloudEnabled, supabase } from '../lib/supabase';
 import { pullAndMerge, startSync, stopSync } from '../lib/sync';
-import { Icon } from './icons';
+import { useStore } from '../store';
+import { Icon, Wordmark } from './icons';
 import { AppModal } from './app-modal';
+import { Button } from './ui/button';
 
 function initialOf(email: string): string {
   return (email.trim()[0] || '?').toUpperCase();
@@ -70,10 +72,8 @@ export function Account() {
 
   async function signOut() {
     await supabase?.auth.signOut();
-    setEmail('');
-    setSent(false);
-    setMsg(null);
-    setOpen(false);
+    useStore.persist.clearStorage();
+    window.location.reload();
   }
 
   return (
@@ -99,9 +99,8 @@ export function Account() {
 
       <AppModal open={open} onClose={() => setOpen(false)} label="Sign in to sync">
         <div className="px-6 pt-6 pb-7 sm:px-7">
-          {/* monogram */}
           <div className="mb-5 flex items-center gap-2">
-            <span className="font-display text-[20px] text-accent italic">/ˈfluː.ənt/</span>
+            <Wordmark className="text-[20px] text-accent" />
           </div>
 
           {signedIn ? (
@@ -118,12 +117,15 @@ export function Account() {
                   </p>
                 </div>
               </div>
-              <button
+              <Button
+                variant="outline"
+                shape="plain"
+                size="sm"
+                className="mt-5 w-full bg-bg2"
                 onClick={signOut}
-                className="press mt-5 w-full rounded-xl border border-rule-soft bg-bg2 py-2.5 text-[13px] font-medium text-ink-soft hover:text-ink"
               >
                 Sign out
-              </button>
+              </Button>
             </div>
           ) : sent ? (
             <div className="text-center">
@@ -163,7 +165,6 @@ export function Account() {
                     type="email"
                     inputMode="email"
                     autoComplete="email"
-                    autoFocus
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && sendLink()}
@@ -171,13 +172,14 @@ export function Account() {
                     className="w-full bg-transparent py-3.5 text-[15px] text-ink placeholder:text-ink-mute focus:outline-none"
                   />
                 </div>
-                <button
+                <Button
+                  shape="plain"
+                  className="mt-3 w-full font-semibold"
                   onClick={sendLink}
                   disabled={busy || !email.trim()}
-                  className="press mt-3 w-full rounded-xl bg-accent py-3.5 text-[14px] font-semibold text-on-accent hover:bg-accent-strong disabled:opacity-50"
                 >
                   {busy ? 'Sending…' : 'Email me a magic link'}
-                </button>
+                </Button>
                 {msg && <p className="mt-2.5 text-[12px] text-danger">{msg}</p>}
                 <p className="mt-3 flex items-center justify-center gap-1.5 text-[11px] text-ink-mute">
                   <Icon name="check" className="h-3 w-3" />

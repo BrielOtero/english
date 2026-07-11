@@ -44,7 +44,7 @@ export function AppModal({
         onClick={onClose}
         className="backdrop-in absolute inset-0 bg-black/50 backdrop-blur-[6px]"
       />
-      <div className="sheet-up sm:pop-in relative z-10 w-full rounded-t-[24px] border-rule-soft bg-raised pb-[max(20px,env(safe-area-inset-bottom))] shadow-[var(--shadow-pop)] sm:w-[440px] sm:rounded-[24px] sm:border sm:pb-0">
+      <div className="sheet-up sm:pop-in relative z-10 max-h-[92dvh] w-full overflow-y-auto overscroll-contain rounded-t-[24px] border-rule-soft bg-raised pb-[max(20px,env(safe-area-inset-bottom))] shadow-[var(--shadow-pop)] sm:max-h-[88dvh] sm:w-[440px] sm:rounded-[24px] sm:border sm:pb-0">
         <div className="mx-auto mt-3 mb-0.5 h-1 w-9 rounded-full bg-rule-soft sm:hidden" />
         {children}
       </div>

@@ -1,5 +1,7 @@
+import { useEffect, useRef } from 'react';
 import { useStore } from '../store';
 import { Icon } from './icons';
+import { Button } from './ui/button';
 
 const SPEEDS: { label: string; rate: number }[] = [
   { label: 'Slow', rate: 0.7 },
@@ -23,9 +25,26 @@ export function VoiceSettings() {
   const fxVol = useStore((s) => s.fxVol);
   const setFxVol = useStore((s) => s.setFxVol);
   const resetAudio = useStore((s) => s.resetAudio);
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+
+  // Native <details> stays open on outside clicks — close it like a real dropdown.
+  useEffect(() => {
+    const el = detailsRef.current;
+    if (!el) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (el.open && !el.contains(e.target as Node)) el.open = false;
+    };
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && (el.open = false);
+    document.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, []);
 
   return (
-    <details className="relative">
+    <details ref={detailsRef} className="relative">
       <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-full border border-rule-soft bg-paper px-3 py-2 font-mono text-[11px] tracking-wide text-ink-soft uppercase transition-colors hover:text-ink [&::-webkit-details-marker]:hidden">
         <Icon name="volume" className="h-3.5 w-3.5" />
         <span className="hidden sm:inline">Audio</span>
@@ -66,12 +85,15 @@ export function VoiceSettings() {
           <VolumeRow label="Effects volume" value={fxVol} onChange={setFxVol} muted={!fxOn} />
         </div>
 
-        <button
+        <Button
+          variant="outline"
+          shape="plain"
+          size="xs"
+          className="mt-4 w-full font-normal"
           onClick={resetAudio}
-          className="mt-4 w-full rounded-lg border border-rule-soft bg-bg px-3 py-2 text-[12px] text-ink-soft transition-colors hover:border-accent/50 hover:text-ink"
         >
           Restore defaults
-        </button>
+        </Button>
 
         <p className="mt-3 text-[11px] leading-snug text-ink-mute">
           Sentences use a built-in natural voice, so they sound the same in every browser.

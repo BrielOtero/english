@@ -4,6 +4,11 @@ import { matches, normalize } from '../lib/check';
 import { shuffle } from '../lib/shuffle';
 import { Speaker } from './speaker';
 import { Markup } from './markup';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { ProgressBar } from './ui/progress';
+import { OptionButton, type OptionState } from './ui/option-button';
+import { Icon } from './icons';
 import { sCorrect, sWrong } from '../lib/sound';
 import { useStore } from '../store';
 
@@ -117,7 +122,10 @@ export function ExerciseDeck({
               ? 'Good progress. Review the misses and try again.'
               : 'Keep going — repetition is how it sticks.'}
         </p>
-        <button
+        <Button
+          variant="outline"
+          size="sm"
+          className="mt-4"
           onClick={() => {
             setI(0);
             setScore(0);
@@ -125,10 +133,9 @@ export function ExerciseDeck({
             setChecked(false);
             completedRef.current = false;
           }}
-          className="mt-4 rounded-full border border-rule-soft bg-bg px-4 py-2 font-mono text-[11px] tracking-wide text-ink-soft uppercase transition-colors hover:text-ink"
         >
           Practice again
-        </button>
+        </Button>
       </div>
     );
   }
@@ -184,25 +191,18 @@ export function ExerciseDeck({
 
   const header = (
     <>
-      {/* progress */}
       <div className="mb-4 flex items-center justify-between">
         <span className="kicker text-[13.5px] text-ink-soft">{prompt}</span>
         <span className="font-mono text-[11px] text-ink-mute">
           {i + 1} / {exercises.length}
         </span>
       </div>
-      <div className="mb-5 h-1 w-full overflow-hidden rounded-full bg-bg2">
-        <div
-          className="h-full rounded-full bg-accent transition-[width] duration-500 ease-out"
-          style={{ width: `${(i / exercises.length) * 100}%` }}
-        />
-      </div>
+      <ProgressBar value={(i / exercises.length) * 100} className="mb-5" />
     </>
   );
 
   const body = (
     <>
-      {/* --- prompt body, per kind --- */}
       {ex.kind === 'mcq' && (
         <div>
           {ex.audio && (
@@ -218,24 +218,24 @@ export function ExerciseDeck({
             {ex.options.map((opt, idx) => {
               const isAnswer = idx === ex.answer;
               const isChosen = idx === choice;
-              const cls = !checked
+              const state: OptionState = !checked
                 ? isChosen
-                  ? 'border-accent bg-accent/10 text-ink'
-                  : 'border-rule-soft bg-bg hover:border-accent/60 text-ink-soft'
+                  ? 'selected'
+                  : 'idle'
                 : isAnswer
-                  ? 'border-success bg-success/10 text-ink'
+                  ? 'correct'
                   : isChosen
-                    ? 'border-danger bg-danger/10 text-ink'
-                    : 'border-rule-soft bg-bg text-ink-mute';
+                    ? 'wrong'
+                    : 'muted';
               return (
-                <button
+                <OptionButton
                   key={idx}
+                  state={state}
                   disabled={checked}
                   onClick={() => setChoice(idx)}
-                  className={`rounded-lg border px-4 py-2.5 text-left text-[14px] transition-colors ${cls}`}
                 >
                   {opt}
-                </button>
+                </OptionButton>
               );
             })}
           </div>
@@ -267,14 +267,13 @@ export function ExerciseDeck({
           <p className="mb-3 text-[15px] text-ink-soft line-through decoration-danger/50">
             {ex.wrong}
           </p>
-          <input
+          <Input
             ref={inputRef}
             value={text}
             disabled={checked}
             onChange={(e) => setText(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && (checked ? next() : check())}
             placeholder="Type the correct sentence…"
-            className="w-full rounded-lg border border-rule-soft bg-bg px-3 py-2.5 text-[15px] text-ink focus:border-accent focus:outline-none"
           />
         </div>
       )}
@@ -285,21 +284,19 @@ export function ExerciseDeck({
             <Speaker text={ex.text} size="lg" label="Play the sentence" />
             <span className="text-[13px] text-ink-soft">Press play, then type what you hear.</span>
           </div>
-          <input
+          <Input
             ref={inputRef}
             value={text}
             disabled={checked}
             onChange={(e) => setText(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && (checked ? next() : check())}
             placeholder="Type what you hear…"
-            className="w-full rounded-lg border border-rule-soft bg-bg px-3 py-2.5 text-[15px] text-ink focus:border-accent focus:outline-none"
           />
         </div>
       )}
 
       {ex.kind === 'order' && (
         <div>
-          {/* answer line */}
           <div className="mb-3 flex min-h-12 flex-wrap items-center gap-2 rounded-lg border border-dashed border-rule-soft bg-bg p-3">
             {picked.length === 0 && (
               <span className="text-[13px] text-ink-mute">Tap the words in order…</span>
@@ -315,7 +312,6 @@ export function ExerciseDeck({
               </button>
             ))}
           </div>
-          {/* word bank */}
           <div className="flex flex-wrap gap-2">
             {shuffledIdx
               .filter((idx) => !picked.includes(idx))
@@ -341,8 +337,11 @@ export function ExerciseDeck({
         wasCorrect ? 'border-success/40 bg-success/10' : 'border-danger/40 bg-danger/10'
       }`}
     >
-      <p className={`font-semibold ${wasCorrect ? 'text-success' : 'text-danger'}`}>
-        {wasCorrect ? '✓ Correct' : '✗ Not quite'}
+      <p
+        className={`flex items-center gap-1.5 font-semibold ${wasCorrect ? 'text-success' : 'text-danger'}`}
+      >
+        <Icon name={wasCorrect ? 'check' : 'x'} className="h-3.5 w-3.5" />
+        {wasCorrect ? 'Correct' : 'Not quite'}
       </p>
       {!wasCorrect && (
         <p className="mt-1 flex items-center gap-2 text-ink">
@@ -359,19 +358,19 @@ export function ExerciseDeck({
   ) : null;
 
   const controlsInner = !checked ? (
-    <button
-      onClick={check}
-      className="w-full rounded-full bg-accent px-5 py-2.5 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90 sm:w-auto"
-    >
+    <Button size="sm" onClick={check} className="w-full sm:w-auto">
       Check
-    </button>
+    </Button>
   ) : (
-    <button
-      onClick={next}
-      className="w-full rounded-full bg-ink px-5 py-2.5 font-mono text-[11px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90 sm:w-auto"
-    >
-      {i + 1 < exercises.length ? 'Next →' : 'Finish'}
-    </button>
+    <Button variant="dark" size="sm" onClick={next} className="w-full sm:w-auto">
+      {i + 1 < exercises.length ? (
+        <>
+          Next <Icon name="arrow-right" className="h-3.5 w-3.5" />
+        </>
+      ) : (
+        'Finish'
+      )}
+    </Button>
   );
 
   // Battle mode: a fixed-height card with the controls pinned to the bottom, so the

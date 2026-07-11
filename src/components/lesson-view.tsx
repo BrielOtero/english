@@ -5,8 +5,11 @@ import { Markup } from './markup';
 import { PhraseLine } from './phrase-line';
 import { ExerciseDeck } from './exercise';
 import { LevelBadge } from './level-badge';
+import { Icon } from './icons';
 import { ConfettiBurst } from './confetti';
 import { StarRewardOverlay } from './star-reward';
+import { Card } from './ui/card';
+import { Toggle } from './ui/toggle';
 import { totalStars } from '../lib/stars';
 
 function SubHead({ children }: { children: React.ReactNode }) {
@@ -54,12 +57,12 @@ function Table({ table }: { table: FormTable }) {
 function PitfallCard({ pitfall }: { pitfall: Pitfall }) {
   return (
     <div className="rounded-lg border border-rule-soft bg-bg p-3.5">
-      <p className="text-[14px] text-ink-soft">
-        <span className="mr-1.5 font-mono text-[11px] text-danger">✗</span>
+      <p className="flex items-start gap-1.5 text-[14px] text-ink-soft">
+        <Icon name="x" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-danger" />
         <span className="line-through decoration-danger/50">{pitfall.wrong}</span>
       </p>
-      <p className="mt-1 text-[14px] text-ink">
-        <span className="mr-1.5 font-mono text-[11px] text-success">✓</span>
+      <p className="mt-1 flex items-start gap-1.5 text-[14px] text-ink">
+        <Icon name="check" className="mt-0.5 h-3.5 w-3.5 shrink-0 text-success" />
         {pitfall.right}
       </p>
       <p className="mt-2 text-[12px] text-ink-soft">
@@ -96,16 +99,15 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
       <div className="mb-5 flex items-center gap-3">
         <LevelBadge level={lesson.level} />
         <span className="relative">
-          <button
-            onClick={toggleComplete}
-            className={`rounded-full border px-3 py-1 font-mono text-[10px] tracking-wide uppercase transition-colors ${
-              completed
-                ? 'border-success bg-success/10 text-success'
-                : 'border-rule-soft bg-paper text-ink-mute hover:text-ink'
-            }`}
-          >
-            {completed ? '✓ Completed' : 'Mark complete'}
-          </button>
+          <Toggle pressed={completed} onClick={toggleComplete}>
+            {completed ? (
+              <>
+                <Icon name="check" className="h-3 w-3" /> Completed
+              </>
+            ) : (
+              'Mark complete'
+            )}
+          </Toggle>
           {burstKey > 0 && <ConfettiBurst key={burstKey} />}
         </span>
       </div>
@@ -117,7 +119,6 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
         <Markup text={lesson.summary} />
       </p>
 
-      {/* Teaching sections */}
       <div className="mt-8 space-y-8">
         {lesson.sections.map((sec, i) => (
           <section key={i}>
@@ -126,34 +127,31 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
               <Markup text={sec.body} />
             </p>
             {sec.examples && (
-              <div className="mt-4 space-y-2.5 rounded-xl border border-rule-soft bg-paper p-5">
+              <Card className="mt-4 space-y-2.5 p-5">
                 {sec.examples.map((ph, k) => (
                   <PhraseLine key={k} phrase={ph} />
                 ))}
-              </div>
+              </Card>
             )}
           </section>
         ))}
       </div>
 
-      {/* Reference tables */}
       {lesson.tables?.map((t, i) => (
         <Table key={i} table={t} />
       ))}
 
-      {/* Examples */}
       {lesson.examples.length > 0 && (
         <section className="mt-8">
           <SubHead>Examples · tap to listen</SubHead>
-          <div className="space-y-3 rounded-xl border border-rule-soft bg-paper p-5">
+          <Card className="space-y-3 p-5">
             {lesson.examples.map((ph, i) => (
               <PhraseLine key={i} phrase={ph} />
             ))}
-          </div>
+          </Card>
         </section>
       )}
 
-      {/* Pitfalls */}
       {lesson.pitfalls && lesson.pitfalls.length > 0 && (
         <section className="mt-8">
           <SubHead>Watch out</SubHead>
@@ -165,7 +163,6 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
         </section>
       )}
 
-      {/* Practice */}
       {lesson.exercises.length > 0 && (
         <section className="mt-8">
           <SubHead>Practice</SubHead>

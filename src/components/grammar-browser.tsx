@@ -5,7 +5,9 @@ import { GRAMMAR, grammarUnit } from '../content';
 import { useStore } from '../store';
 import { LevelBadge } from './level-badge';
 import { Markup } from './markup';
+import { Icon } from './icons';
 import { BackButton } from './back-button';
+import { EmptyState } from './ui/empty-state';
 import { LessonView } from './lesson-view';
 
 const ALL_LESSONS = GRAMMAR.flatMap((u) => u.lessons);
@@ -58,7 +60,6 @@ export function GrammarBrowser() {
 
   return (
     <div className="fade-in">
-      {/* Level selector */}
       <div className="mb-6 flex flex-wrap gap-2">
         {LEVELS.map((lvl) => {
           const active = lvl === level;
@@ -102,18 +103,17 @@ export function GrammarBrowser() {
                       </p>
                     </div>
                     <span
-                      className={`mt-0.5 shrink-0 font-mono text-[11px] ${isDone ? 'text-success' : 'text-ink-mute'}`}
+                      className={`mt-0.5 flex shrink-0 items-center gap-1 font-mono text-[11px] ${isDone ? 'text-success' : 'text-ink-mute'}`}
                     >
-                      {isDone ? '✓ done' : `${lesson.exercises.length} drills`}
+                      {isDone && <Icon name="check" className="h-3 w-3" />}
+                      {isDone ? 'done' : `${lesson.exercises.length} drills`}
                     </span>
                   </div>
                 </button>
               );
             })}
             {unit.lessons.length === 0 && (
-              <p className="rounded-xl border border-dashed border-rule-soft bg-paper p-6 text-center text-[13px] text-ink-mute">
-                More {level} lessons are on the way.
-              </p>
+              <EmptyState>More {level} lessons are on the way.</EmptyState>
             )}
           </div>
         </>

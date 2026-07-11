@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { TRACKS, buildReviewDeck, type Track } from '../content';
 import { useStore, isLearned, isDue } from '../store';
 import { totalStars, MAX_STARS } from '../lib/stars';
+import { Button } from './ui/button';
 import { Icon } from './icons';
 import { LevelBadge } from './level-badge';
 
@@ -54,18 +55,15 @@ export function Home({ onSelect }: { onSelect: (id: string) => void }) {
             )}
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <button
-              onClick={() => onSelect('roadmap')}
-              className="press rounded-full bg-accent px-6 py-3 font-mono text-[12px] tracking-wide text-on-accent uppercase transition hover:opacity-90"
-            >
-              Open the Roadmap →
-            </button>
-            <button
+            <Button onClick={() => onSelect('roadmap')}>
+              Open the Roadmap <Icon name="arrow-right" className="h-3.5 w-3.5" />
+            </Button>
+            <Button
+              variant="outline"
               onClick={() => onSelect(placementLevel ? 'grammar' : 'placement')}
-              className="rounded-full border border-rule-soft bg-bg px-6 py-3 font-mono text-[12px] tracking-wide text-ink-soft uppercase transition-colors hover:text-ink"
             >
               {placementLevel ? 'Browse lessons' : 'Take the Trial'}
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -124,9 +122,10 @@ function SectionGrid({
               </span>
               <span className="mt-0.5 block truncate text-[12.5px] text-ink-soft">{t.blurb}</span>
             </span>
-            <span className="font-mono text-[15px] text-ink-mute transition-transform group-hover:translate-x-0.5 group-hover:text-accent">
-              →
-            </span>
+            <Icon
+              name="arrow-right"
+              className="h-4 w-4 text-ink-mute transition-transform group-hover:translate-x-0.5 group-hover:text-accent"
+            />
           </motion.button>
         ))}
       </div>

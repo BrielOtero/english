@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { buildVocabDeck, VOCAB_SETS } from '../content';
 import { useStore, isDue, isLearned } from '../store';
-import type { Level } from '../types';
+import { LEVELS } from '../types';
 import { sStart } from '../lib/sound';
 import { AppModal } from './app-modal';
 import { BackButton } from './back-button';
@@ -9,9 +9,12 @@ import { FlashcardSession } from './flashcard-session';
 import { Icon } from './icons';
 import { LevelBadge } from './level-badge';
 import { Leaf } from './map-art';
+import { Button } from './ui/button';
+import { Badge, badgeVariants } from './ui/badge';
+import { Stat } from './ui/stat';
+import { cn } from './ui/cn';
 
 const NEW_PER_SESSION = 12;
-const LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
 /** The one adaptive call-to-action that leads the Review overview. Whatever the state,
  *  it resolves to a single inviting next step so the page always pulls you forward. */
@@ -141,12 +144,11 @@ export function Review() {
       <ReviewHero {...hero} />
 
       <div className="mt-4 grid grid-cols-3 gap-3">
-        <Stat n={dueCards.length} label="Due now" accent />
-        <Stat n={newCards.length} label="New available" />
-        <Stat n={knownCount} label="Learned" />
+        <Stat value={dueCards.length} label="Due now" accent />
+        <Stat value={newCards.length} label="New available" />
+        <Stat value={knownCount} label="Learned" />
       </div>
 
-      {/* One entry point to a settings dialog — keeps the overview clean as categories grow. */}
       <button
         onClick={() => setSettingsOpen(true)}
         className="press mt-4 flex w-full items-center gap-3 rounded-xl border border-rule-soft bg-paper p-4 text-left transition-colors hover:border-accent/60"
@@ -216,13 +218,12 @@ export function Review() {
                               key={s.id}
                               onClick={() => toggleReviewGroup(s.id)}
                               aria-pressed={on}
-                              className={`rounded-full border px-3 py-1.5 text-[12.5px] transition-colors ${
-                                on
-                                  ? 'border-accent bg-accent/10 text-ink'
-                                  : 'border-rule-soft bg-bg text-ink-mute hover:text-ink'
-                              }`}
+                              className={cn(
+                                badgeVariants({ variant: on ? 'active' : 'default' }),
+                                !on && 'hover:text-ink',
+                              )}
                             >
-                              {on && <span className="text-accent">✓ </span>}
+                              {on && <Icon name="check" className="h-3 w-3 text-accent" />}
                               {s.title}
                               <span className="ml-1 text-ink-mute">({s.items.length})</span>
                             </button>
@@ -243,7 +244,7 @@ export function Review() {
                   aria-label="Close"
                   className="press grid h-8 w-8 place-items-center rounded-full text-ink-mute transition-colors hover:text-ink"
                 >
-                  ✕
+                  <Icon name="x" className="h-4 w-4" />
                 </button>
               </div>
               <p className="mb-2 shrink-0 text-[13px] text-ink-soft">Choose what to practice.</p>
@@ -307,9 +308,9 @@ function CategoryRow({
         <span className="block text-[12px] text-ink-mute">{subtitle}</span>
       </span>
       {soon ? (
-        <span className="shrink-0 rounded-full border border-rule-soft px-2 py-0.5 font-mono text-[9px] tracking-wide text-ink-mute uppercase">
+        <Badge variant="outline" size="sm" className="shrink-0">
           Soon
-        </span>
+        </Badge>
       ) : (
         <Chevron className="h-4 w-4 shrink-0 text-ink-mute" />
       )}
@@ -339,7 +340,6 @@ function Chevron({ className }: { className?: string }) {
 function ReviewHero({ kicker, title, sub, cta, onCta, secondary, note, caughtUp }: HeroConfig) {
   return (
     <div className="relative overflow-hidden rounded-3xl border border-rule-soft bg-paper p-7 sm:p-9">
-      {/* A soft accent wash + a single leaf keep the panel alive without shouting. */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--accent-tint)] to-transparent opacity-70" />
       <Leaf className="pointer-events-none absolute -top-5 -right-3 h-40 w-40 rotate-12 text-accent/10" />
 
@@ -354,13 +354,13 @@ function ReviewHero({ kicker, title, sub, cta, onCta, secondary, note, caughtUp 
         <p className="reading mt-3 max-w-lg text-[14.5px] text-ink-soft">{sub}</p>
 
         <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
-          <button
-            onClick={onCta}
-            className="press group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-mono text-[12px] tracking-wide text-on-accent uppercase shadow-[var(--shadow-md)] transition hover:opacity-95"
-          >
+          <Button onClick={onCta} className="group shadow-[var(--shadow-md)]">
             {cta}
-            <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
-          </button>
+            <Icon
+              name="arrow-right"
+              className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-1"
+            />
+          </Button>
           {secondary && (
             <button
               onClick={secondary.onClick}
@@ -378,17 +378,6 @@ function ReviewHero({ kicker, title, sub, cta, onCta, secondary, note, caughtUp 
           </p>
         )}
       </div>
-    </div>
-  );
-}
-
-function Stat({ n, label, accent }: { n: number; label: string; accent?: boolean }) {
-  return (
-    <div className="rounded-xl border border-rule-soft bg-paper p-4 text-center">
-      <p className={`font-display text-[30px] leading-none ${accent ? 'text-accent' : 'text-ink'}`}>
-        {n}
-      </p>
-      <p className="mt-1 font-mono text-[10px] tracking-wide text-ink-mute uppercase">{label}</p>
     </div>
   );
 }

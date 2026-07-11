@@ -7,6 +7,8 @@ import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
 import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
 import { Icon } from './icons';
+import { Button } from './ui/button';
+import { Card } from './ui/card';
 
 /** A 2-alternative forced-choice drill: hear a word, decide which one it was. */
 function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
@@ -29,12 +31,9 @@ function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
 
   return (
     <div className="flex flex-wrap items-center gap-2 rounded-lg border border-rule-soft bg-bg p-2.5">
-      <button
-        onClick={play}
-        className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
-      >
+      <Button size="xxs" className="gap-1.5" onClick={play}>
         <Icon name="play" className="h-2.5 w-2.5" /> Hear one
-      </button>
+      </Button>
       {(['a', 'b'] as const).map((side) => {
         const word = side === 'a' ? pair.a : pair.b;
         const ipa = side === 'a' ? pair.ipaA : pair.ipaB;
@@ -56,9 +55,10 @@ function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
       })}
       {result && (
         <span
-          className={`font-mono text-[11px] ${result === 'right' ? 'text-success' : 'text-danger'}`}
+          className={`inline-flex items-center gap-1 font-mono text-[11px] ${result === 'right' ? 'text-success' : 'text-danger'}`}
         >
-          {result === 'right' ? '✓ correct' : `✗ it was “${target === 'a' ? pair.a : pair.b}”`}
+          <Icon name={result === 'right' ? 'check' : 'x'} className="h-3 w-3" />
+          {result === 'right' ? 'correct' : `it was “${target === 'a' ? pair.a : pair.b}”`}
         </span>
       )}
     </div>
@@ -67,7 +67,7 @@ function MinimalPairDrill({ pair }: { pair: MinimalPair }) {
 
 function SoundCard({ sound }: { sound: SoundLesson }) {
   return (
-    <div className="rounded-xl border border-rule-soft bg-paper p-5">
+    <Card className="p-5">
       <div className="flex items-center gap-3">
         <LevelBadge level={sound.level} />
         <span className="font-mono text-[18px] text-accent">{sound.symbol}</span>
@@ -99,7 +99,7 @@ function SoundCard({ sound }: { sound: SoundLesson }) {
           ))}
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
 

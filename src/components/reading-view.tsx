@@ -7,6 +7,7 @@ import { LevelBadge } from './level-badge';
 import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
 import { ExerciseDeck } from './exercise';
 import { BackButton } from './back-button';
+import { Button } from './ui/button';
 import { Icon } from './icons';
 
 export function ReadingView() {
@@ -27,12 +28,13 @@ export function ReadingView() {
 
         <div className="mb-4 flex items-center gap-3">
           <LevelBadge level={open.level} />
-          <button
+          <Button
+            size="xxs"
+            className="gap-1.5"
             onClick={() => playSequence(open.paragraphs, { rate, voiceURI })}
-            className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 font-mono text-[10px] tracking-wide text-paper uppercase transition active:scale-[0.97] hover:opacity-90"
           >
             <Icon name="play" className="h-2.5 w-2.5" /> Listen to all
-          </button>
+          </Button>
         </div>
         <h2 className="font-display text-[clamp(26px,3.4vw,34px)] leading-tight text-ink">
           {open.title}

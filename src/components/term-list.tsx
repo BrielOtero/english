@@ -5,6 +5,11 @@ import { useStore } from '../store';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
 import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
+import { Badge } from './ui/badge';
+import { Card } from './ui/card';
+import { Toggle } from './ui/toggle';
+import { EmptyState } from './ui/empty-state';
+import { Icon } from './icons';
 
 interface TermEntry {
   /** SRS id, e.g. "phrasal:ph-get-up". */
@@ -47,7 +52,7 @@ function TermList({ entries }: { entries: TermEntry[] }) {
         {filtered.map((e) => {
           const added = !!reviews[e.id];
           return (
-            <div key={e.id} className="rounded-xl border border-rule-soft bg-paper p-4">
+            <Card key={e.id} className="p-4">
               <div className="flex items-center gap-2">
                 <Speaker text={e.term} size="sm" />
                 <span className="text-[16px] font-medium text-ink">{e.term}</span>
@@ -57,31 +62,30 @@ function TermList({ entries }: { entries: TermEntry[] }) {
               <p className="mt-2 text-[13px] text-ink">“{e.example}”</p>
               <div className="mt-3 flex items-center gap-2">
                 {e.badge && (
-                  <span className="rounded-full border border-rule-soft px-2 py-0.5 font-mono text-[10px] text-ink-mute uppercase">
+                  <Badge variant="outline" size="sm">
                     {e.badge}
-                  </span>
+                  </Badge>
                 )}
-                <button
-                  onClick={() => grade(e.id, 'good')}
+                <Toggle
+                  pressed={added}
                   disabled={added}
-                  className={`ml-auto rounded-full border px-3 py-1 font-mono text-[10px] tracking-wide uppercase transition-colors ${
-                    added
-                      ? 'border-success bg-success/10 text-success'
-                      : 'border-rule-soft text-ink-soft hover:border-accent hover:text-accent'
-                  }`}
+                  className="ml-auto"
+                  onClick={() => grade(e.id, 'good')}
                 >
-                  {added ? '✓ in review' : '+ review'}
-                </button>
+                  {added ? (
+                    <>
+                      <Icon name="check" className="h-3 w-3" /> in review
+                    </>
+                  ) : (
+                    '+ review'
+                  )}
+                </Toggle>
               </div>
-            </div>
+            </Card>
           );
         })}
       </div>
-      {filtered.length === 0 && (
-        <p className="rounded-xl border border-dashed border-rule-soft bg-paper p-6 text-center text-[13px] text-ink-mute">
-          Nothing matches this level and search.
-        </p>
-      )}
+      {filtered.length === 0 && <EmptyState>Nothing matches this level and search.</EmptyState>}
     </div>
   );
 }

@@ -14,6 +14,9 @@ import {
 } from '../lib/sound';
 import { totalStars } from '../lib/stars';
 import { AppModal } from './app-modal';
+import { Button } from './ui/button';
+import { EmptyState } from './ui/empty-state';
+import { Icon } from './icons';
 import { ExerciseDeck } from './exercise';
 import { ConfettiBurst } from './confetti';
 import { StarReward } from './star-reward';
@@ -211,27 +214,23 @@ export function BossChallenge({
                   : `Land ${hp} clean hits to clear this mini-boss. ${LIVES} lives — a wrong answer costs one.`}
             </p>
             {questions.length === 0 ? (
-              <p className="mt-5 rounded-xl border border-dashed border-rule-soft p-4 text-[13px] text-ink-mute">
+              <EmptyState className="mt-5 bg-transparent p-4">
                 {isBonus
                   ? 'No bonus questions here yet.'
                   : 'This foe is still asleep — no challenges here yet.'}
-              </p>
+              </EmptyState>
             ) : (
-              <button
+              <Button
+                variant={isBonus ? 'bonus' : 'destructive'}
+                className="mt-5 w-full"
                 onClick={startFight}
-                className={`press mt-5 w-full rounded-full px-6 py-3 font-mono text-[12px] tracking-wide text-paper uppercase transition hover:opacity-90 ${
-                  isBonus ? 'bg-accent2' : 'bg-danger'
-                }`}
               >
                 {isBonus ? 'Open the chest' : 'Fight!'}
-              </button>
+              </Button>
             )}
-            <button
-              onClick={onClose}
-              className="mt-2 w-full rounded-full px-6 py-2 font-mono text-[11px] tracking-wide text-ink-mute uppercase transition-colors hover:text-ink"
-            >
+            <Button variant="ghost" size="sm" className="mt-2 w-full" onClick={onClose}>
               {isBonus ? 'Back' : 'Retreat'}
-            </button>
+            </Button>
           </div>
         )}
 
@@ -298,18 +297,12 @@ export function BossChallenge({
             <p className="mx-auto mt-2 max-w-xs text-[14px] leading-relaxed text-ink-soft">
               {isBoss ? world.boss : 'The mini-boss'} still stands. Regroup and try again.
             </p>
-            <button
-              onClick={startFight}
-              className="press mt-5 w-full rounded-full bg-danger px-6 py-3 font-mono text-[12px] tracking-wide text-paper uppercase transition hover:opacity-90"
-            >
+            <Button variant="destructive" className="mt-5 w-full" onClick={startFight}>
               Try again
-            </button>
-            <button
-              onClick={onClose}
-              className="mt-2 w-full rounded-full px-6 py-2 font-mono text-[11px] tracking-wide text-ink-mute uppercase transition-colors hover:text-ink"
-            >
+            </Button>
+            <Button variant="ghost" size="sm" className="mt-2 w-full" onClick={onClose}>
               Retreat
-            </button>
+            </Button>
           </div>
         )}
 
@@ -347,12 +340,9 @@ export function BossChallenge({
             {isBoss && (
               <p className="mt-3 text-[13px] font-medium text-accent">The next world is open!</p>
             )}
-            <button
-              onClick={onClose}
-              className="press mt-5 w-full rounded-full bg-accent px-6 py-3 font-mono text-[12px] tracking-wide text-on-accent uppercase transition hover:opacity-90"
-            >
-              Onward →
-            </button>
+            <Button className="mt-5 w-full" onClick={onClose}>
+              Onward <Icon name="arrow-right" className="h-3.5 w-3.5" />
+            </Button>
           </div>
         )}
       </div>

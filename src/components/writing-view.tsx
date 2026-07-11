@@ -3,6 +3,7 @@ import { WRITING } from '../content';
 import { PhraseLine } from './phrase-line';
 import { LevelBadge } from './level-badge';
 import { BackButton } from './back-button';
+import { Button } from './ui/button';
 import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
 
 export function WritingView() {
@@ -50,12 +51,9 @@ export function WritingView() {
             />
             <div className="mt-2 flex items-center justify-between">
               <span className="font-mono text-[11px] text-ink-mute">{words} words</span>
-              <button
-                onClick={() => setShowModel((v) => !v)}
-                className="rounded-full border border-rule-soft bg-bg px-4 py-1.5 font-mono text-[11px] tracking-wide text-ink-soft uppercase transition-colors hover:text-ink"
-              >
+              <Button variant="outline" size="xs" onClick={() => setShowModel((v) => !v)}>
                 {showModel ? 'Hide model answer' : 'Show model answer'}
-              </button>
+              </Button>
             </div>
             {showModel && (
               <div className="mt-3 rounded-xl border border-accent/40 bg-accent/5 p-4">

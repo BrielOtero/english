@@ -7,6 +7,7 @@ import { sCorrect, sWrong, sStart, sFinish, sTick } from '../lib/sound';
 import { Mascot, StarIcon } from './map-art';
 import { ConfettiBurst } from './confetti';
 import { Icon } from './icons';
+import { Button } from './ui/button';
 
 const DURATION = 60; // seconds per round
 const FEEDBACK_MS = 430; // how long the right/wrong flash lingers before the next question
@@ -144,12 +145,9 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
             {DURATION} seconds. Answer as fast as you can. Chain correct answers to build a combo —
             miss one and it resets. How high can you score?
           </p>
-          <button
-            onClick={start}
-            className="press mt-6 w-full rounded-full bg-accent px-6 py-3 font-mono text-[12px] tracking-wide text-on-accent uppercase transition hover:opacity-90"
-          >
+          <Button onClick={start} className="mt-6 w-full">
             Start drill
-          </button>
+          </Button>
           <div className="mt-3 flex items-center justify-center gap-4 text-[12px] text-ink-mute">
             <button onClick={() => setFxOn(!fxOn)} className="transition-colors hover:text-ink">
               {fxOn ? 'Sound on' : 'Sound off'}
@@ -193,18 +191,12 @@ export function DailyDrill({ onClose }: { onClose: () => void }) {
           </div>
 
           <div className="mt-6 flex gap-2">
-            <button
-              onClick={start}
-              className="press flex-1 rounded-full bg-accent px-5 py-3 font-mono text-[12px] tracking-wide text-on-accent uppercase transition hover:opacity-90"
-            >
+            <Button className="flex-1" onClick={start}>
               Play again
-            </button>
-            <button
-              onClick={onClose}
-              className="rounded-full border border-rule-soft bg-bg px-5 py-3 font-mono text-[12px] tracking-wide text-ink-soft uppercase transition-colors hover:text-ink"
-            >
+            </Button>
+            <Button variant="outline" onClick={onClose}>
               Done
-            </button>
+            </Button>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import { sFlip, sCorrect, sTick, sFinish } from '../lib/sound';
 import { Speaker } from './speaker';
 import { LevelBadge } from './level-badge';
 import { Icon } from './icons';
+import { ProgressBar } from './ui/progress';
 
 const GRADES: { grade: Grade; label: string; cls: string; out: string }[] = [
   {
@@ -120,12 +121,7 @@ export function FlashcardSession({ cards, onDone }: { cards: ReviewCard[]; onDon
           {i + 1} / {deck.length}
         </span>
       </div>
-      <div className="mb-4 h-1 w-full overflow-hidden rounded-full bg-bg2">
-        <div
-          className="h-full rounded-full bg-accent transition-[width] duration-500 ease-out"
-          style={{ width: `${(i / deck.length) * 100}%` }}
-        />
-      </div>
+      <ProgressBar value={(i / deck.length) * 100} className="mb-4" />
 
       <div key={card.id} className={out ?? 'card-in'}>
         <button
@@ -134,14 +130,12 @@ export function FlashcardSession({ cards, onDone }: { cards: ReviewCard[]; onDon
           className="flip group block w-full rounded-2xl transition-transform duration-150 hover:-translate-y-0.5 active:scale-[0.99]"
         >
           <div className="flip-inner">
-            {/* Front — the definition prompt. */}
             <div className="flip-face flex min-h-[196px] flex-col items-center justify-center rounded-2xl border border-rule-soft bg-paper p-8 text-center transition-[border-color,box-shadow] duration-150 group-hover:border-accent/60 group-hover:shadow-[var(--shadow-md)]">
               <LevelBadge level={card.level} />
               <p className="mt-3 text-[13px] text-ink-mute italic">{card.front}</p>
               <p className="font-display mt-5 text-[14px] text-ink-mute">Tap to reveal</p>
             </div>
 
-            {/* Back — the answer, pronounced on reveal. */}
             <div className="flip-back flip-face flex min-h-[196px] flex-col items-center justify-center rounded-2xl border border-rule-soft bg-paper p-8 text-center transition-[border-color,box-shadow] duration-150 group-hover:border-accent/60 group-hover:shadow-[var(--shadow-md)]">
               <LevelBadge level={card.level} />
               <p

@@ -1,6 +1,8 @@
 import type { Level } from '../types';
 import { LEVELS } from '../types';
 import { LevelBadge } from './level-badge';
+import { badgeVariants } from './ui/badge';
+import { cn } from './ui/cn';
 
 // A shared level selector used across the browse-able tracks (vocabulary,
 // pronunciation, reading, writing, phrasal verbs, idioms) so filtering by CEFR
@@ -20,10 +22,15 @@ export function levelCounts<T>(
   return counts;
 }
 
+// Level tabs are toggle chips. The active/inactive colours come from the design-system
+// badge variants; the extra classes restore this filter's own geometry (rounded-lg,
+// gap-2, bg-paper) and hover so the appearance is preserved exactly.
 const chip = (active: boolean) =>
-  `flex items-center gap-2 rounded-lg border px-3 py-1.5 transition-colors ${
-    active ? 'border-accent bg-accent/10' : 'border-rule-soft bg-paper hover:border-accent/50'
-  }`;
+  cn(
+    badgeVariants({ variant: active ? 'active' : 'default' }),
+    'gap-2 rounded-lg',
+    !active && 'bg-paper hover:border-accent/50',
+  );
 
 export function LevelFilter({
   value,

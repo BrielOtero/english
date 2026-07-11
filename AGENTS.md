@@ -79,6 +79,7 @@ public/audio/         # pre-generated neural-voice clips (committed; regenerate 
     reading.ts        # Reading[]
     writing.ts        # WritingPrompt[]
   components/         # one component per file, kebab-case names
+    ui/               # design system — shadcn-style primitives (Button, Card, Badge, Input, Stat)
 ```
 
 ## Content model
@@ -98,12 +99,23 @@ extend the union in `types.ts` and handle it in `components/exercise.tsx`.
   and switched by the `data-theme` attribute on `<html>`. **Never hard-code hex colors in
   components** — add or reuse a token.
 
+## Design system
+
+Reusable UI primitives live in `src/components/ui/`, built shadcn-style (`cva` variants, a
+`cn()` helper over `clsx` + `tailwind-merge`, `forwardRef`, `data-slot`). **Prefer a `ui/`
+primitive over ad-hoc markup wherever one fits** — it keeps the UI consistent and kills
+copy-pasted `className` strings. Browse `src/components/ui/` for what's available; if nothing
+fits, add a primitive there rather than one-off styling. Extend a primitive by passing
+`className` (tailwind-merge resolves conflicts) or by adding a `cva` variant — never fork its
+styles inline.
+
 ## Engineering rules
 
 1. **TypeScript strict, no escape hatches.** No `any`, no `@ts-ignore`, no non-null `!` to silence the
    compiler. Model content with real types and let inference flow.
 2. **One component per file** in `src/components/`, kebab-case filenames, PascalCase exports. Keep
-   components presentational; derive state in the store or the parent and pass it down.
+   components presentational; derive state in the store or the parent and pass it down. Reach for a
+   `ui/` design-system primitive before hand-rolling UI elements (see **Design system**).
 3. **State discipline.** Persistent/shared state (SRS schedule, completed lessons, theme, settings)
    lives in the Zustand store; transient view state (open lesson, current exercise) stays local.
 4. **Data is content, not code.** New lessons/words/drills go in `src/content/*` and must satisfy the

@@ -1,18 +1,18 @@
 import { useEffect, useMemo, useState } from 'react';
-import { buildVocabDeck, VOCAB_SETS } from '../content';
-import { useStore, isDue, isLearned } from '../store';
-import { LEVELS } from '../types';
-import { sStart } from '../lib/sound';
-import { AppModal } from './app-modal';
-import { BackButton } from './back-button';
-import { FlashcardSession } from './flashcard-session';
-import { Icon } from './icons';
-import { LevelBadge } from './level-badge';
-import { Leaf } from './map-art';
-import { Button } from './ui/button';
-import { Badge, badgeVariants } from './ui/badge';
-import { Stat } from './ui/stat';
-import { cn } from './ui/cn';
+import { buildVocabDeck, VOCAB_SETS } from '@/content';
+import { useStore, isDue, isLearned } from '@/store';
+import { LEVELS } from '@/types';
+import { sStart } from '@/lib/sound';
+import { AppModal } from '@/components/app-modal';
+import { BackButton } from '@/components/back-button';
+import { FlashcardSession } from '@/components/flashcard-session';
+import { Icon } from '@/components/icons';
+import { LevelBadge } from '@/components/level-badge';
+import { Leaf } from '@/components/map-art';
+import { Button } from '@/components/ui/button';
+import { Badge, badgeVariants } from '@/components/ui/badge';
+import { Stat } from '@/components/ui/stat';
+import { cn } from '@/components/ui/cn';
 
 const NEW_PER_SESSION = 12;
 

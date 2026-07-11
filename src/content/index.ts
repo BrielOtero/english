@@ -1,13 +1,13 @@
-import type { Level, VocabSet } from '../types';
-import type { IconName } from '../components/icons';
-import { GRAMMAR } from './grammar';
-import { VOCAB_SETS } from './vocab';
-import { SOUNDS } from './phonetics';
-import { PHRASAL } from './phrasal';
-import { IDIOMS } from './idioms';
-import { READINGS } from './reading';
-import { WRITING } from './writing';
-import { PLACEMENT } from './placement';
+import type { Level, VocabSet } from '@/types';
+import type { IconName } from '@/components/icons';
+import { GRAMMAR } from '@/content/grammar';
+import { VOCAB_SETS } from '@/content/vocab';
+import { SOUNDS } from '@/content/phonetics';
+import { PHRASAL } from '@/content/phrasal';
+import { IDIOMS } from '@/content/idioms';
+import { READINGS } from '@/content/reading';
+import { WRITING } from '@/content/writing';
+import { PLACEMENT } from '@/content/placement';
 
 export { GRAMMAR, VOCAB_SETS, SOUNDS, PHRASAL, IDIOMS, READINGS, WRITING, PLACEMENT };
 

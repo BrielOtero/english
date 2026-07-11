@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import type { FormTable, Lesson, Pitfall } from '../types';
-import { useStore } from '../store';
-import { Markup } from './markup';
-import { PhraseLine } from './phrase-line';
-import { ExerciseDeck } from './exercise';
-import { LevelBadge } from './level-badge';
-import { Icon } from './icons';
-import { ConfettiBurst } from './confetti';
-import { StarRewardOverlay } from './star-reward';
-import { Card } from './ui/card';
-import { Toggle } from './ui/toggle';
-import { totalStars } from '../lib/stars';
+import type { FormTable, Lesson, Pitfall } from '@/types';
+import { useStore } from '@/store';
+import { Markup } from '@/components/markup';
+import { PhraseLine } from '@/components/phrase-line';
+import { ExerciseDeck } from '@/components/exercise';
+import { LevelBadge } from '@/components/level-badge';
+import { Icon } from '@/components/icons';
+import { ConfettiBurst } from '@/components/confetti';
+import { StarRewardOverlay } from '@/components/star-reward';
+import { Card } from '@/components/ui/card';
+import { Toggle } from '@/components/ui/toggle';
+import { totalStars } from '@/lib/stars';
 
 function SubHead({ children }: { children: React.ReactNode }) {
   return <h3 className="mb-3 kicker text-[13.5px] text-ink-soft">{children}</h3>;

@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import type { Lesson } from '../types';
-import type { WorldInfo } from '../content/worlds';
-import { shuffle } from '../lib/shuffle';
-import { useStore } from '../store';
+import type { Lesson } from '@/types';
+import type { WorldInfo } from '@/content/worlds';
+import { shuffle } from '@/lib/shuffle';
+import { useStore } from '@/store';
 import {
   startBattleTheme,
   stopBattleTheme,
@@ -11,16 +11,16 @@ import {
   stopWorldTheme,
   sVictory,
   sDefeat,
-} from '../lib/sound';
-import { totalStars } from '../lib/stars';
-import { AppModal } from './app-modal';
-import { Button } from './ui/button';
-import { EmptyState } from './ui/empty-state';
-import { Icon } from './icons';
-import { ExerciseDeck } from './exercise';
-import { ConfettiBurst } from './confetti';
-import { StarReward } from './star-reward';
-import { Slime, StarIcon, Chest, Castle, Heart } from './map-art';
+} from '@/lib/sound';
+import { totalStars } from '@/lib/stars';
+import { AppModal } from '@/components/app-modal';
+import { Button } from '@/components/ui/button';
+import { EmptyState } from '@/components/ui/empty-state';
+import { Icon } from '@/components/icons';
+import { ExerciseDeck } from '@/components/exercise';
+import { ConfettiBurst } from '@/components/confetti';
+import { StarReward } from '@/components/star-reward';
+import { Slime, StarIcon, Chest, Castle, Heart } from '@/components/map-art';
 
 export type BattleMode = 'mini' | 'bonus' | 'boss';
 

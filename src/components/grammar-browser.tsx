@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import type { Level } from '../types';
-import { LEVELS, LEVEL_BLURB } from '../types';
-import { GRAMMAR, grammarUnit } from '../content';
-import { useStore } from '../store';
-import { LevelBadge } from './level-badge';
-import { Markup } from './markup';
-import { Icon } from './icons';
-import { BackButton } from './back-button';
-import { EmptyState } from './ui/empty-state';
-import { LessonView } from './lesson-view';
+import type { Level } from '@/types';
+import { LEVELS, LEVEL_BLURB } from '@/types';
+import { GRAMMAR, grammarUnit } from '@/content';
+import { useStore } from '@/store';
+import { LevelBadge } from '@/components/level-badge';
+import { Markup } from '@/components/markup';
+import { Icon } from '@/components/icons';
+import { BackButton } from '@/components/back-button';
+import { EmptyState } from '@/components/ui/empty-state';
+import { LessonView } from '@/components/lesson-view';
 
 const ALL_LESSONS = GRAMMAR.flatMap((u) => u.lessons);
 

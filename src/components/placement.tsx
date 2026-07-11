@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import type { Level, PlacementQuestion } from '../types';
-import { LEVELS, LEVEL_BLURB } from '../types';
-import { PLACEMENT } from '../content';
-import { shuffle } from '../lib/shuffle';
+import type { Level, PlacementQuestion } from '@/types';
+import { LEVELS, LEVEL_BLURB } from '@/types';
+import { PLACEMENT } from '@/content';
+import { shuffle } from '@/lib/shuffle';
 import {
   startPlacement,
   nextQuestion,
@@ -11,13 +11,13 @@ import {
   estimatedLevel,
   certainty,
   type PlacementProgress,
-} from '../lib/placement';
-import { useStore } from '../store';
-import { LevelBadge } from './level-badge';
-import { Icon } from './icons';
-import { Button } from './ui/button';
-import { ProgressBar } from './ui/progress';
-import { OptionButton } from './ui/option-button';
+} from '@/lib/placement';
+import { useStore } from '@/store';
+import { LevelBadge } from '@/components/level-badge';
+import { Icon } from '@/components/icons';
+import { Button } from '@/components/ui/button';
+import { ProgressBar } from '@/components/ui/progress';
+import { OptionButton } from '@/components/ui/option-button';
 
 type Phase = 'intro' | 'testing' | 'result';
 

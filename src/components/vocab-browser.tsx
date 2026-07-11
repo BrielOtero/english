@@ -1,13 +1,13 @@
 import { useMemo, useState } from 'react';
-import { VOCAB_SETS, setToCards } from '../content';
-import { Speaker } from './speaker';
-import { Icon } from './icons';
-import { LevelBadge } from './level-badge';
-import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
-import { BackButton } from './back-button';
-import { FlashcardSession } from './flashcard-session';
-import { Button } from './ui/button';
-import { Card } from './ui/card';
+import { VOCAB_SETS, setToCards } from '@/content';
+import { Speaker } from '@/components/speaker';
+import { Icon } from '@/components/icons';
+import { LevelBadge } from '@/components/level-badge';
+import { LevelFilter, levelCounts, type LevelChoice } from '@/components/level-filter';
+import { BackButton } from '@/components/back-button';
+import { FlashcardSession } from '@/components/flashcard-session';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 
 export function VocabBrowser() {
   const [openId, setOpenId] = useState<string | null>(null);

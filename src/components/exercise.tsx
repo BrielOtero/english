@@ -1,16 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { Exercise } from '../types';
-import { matches, normalize } from '../lib/check';
-import { shuffle } from '../lib/shuffle';
-import { Speaker } from './speaker';
-import { Markup } from './markup';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { ProgressBar } from './ui/progress';
-import { OptionButton, type OptionState } from './ui/option-button';
-import { Icon } from './icons';
-import { sCorrect, sWrong } from '../lib/sound';
-import { useStore } from '../store';
+import type { Exercise } from '@/types';
+import { matches, normalize } from '@/lib/check';
+import { shuffle } from '@/lib/shuffle';
+import { Speaker } from '@/components/speaker';
+import { Markup } from '@/components/markup';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { ProgressBar } from '@/components/ui/progress';
+import { OptionButton, type OptionState } from '@/components/ui/option-button';
+import { Icon } from '@/components/icons';
+import { sCorrect, sWrong } from '@/lib/sound';
+import { useStore } from '@/store';
 
 const KIND_LABEL: Record<Exercise['kind'], string> = {
   mcq: 'Choose the right answer',

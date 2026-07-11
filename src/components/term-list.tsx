@@ -1,15 +1,15 @@
 import { useMemo, useState } from 'react';
-import type { Level } from '../types';
-import { IDIOMS, PHRASAL } from '../content';
-import { useStore } from '../store';
-import { Speaker } from './speaker';
-import { LevelBadge } from './level-badge';
-import { LevelFilter, levelCounts, type LevelChoice } from './level-filter';
-import { Badge } from './ui/badge';
-import { Card } from './ui/card';
-import { Toggle } from './ui/toggle';
-import { EmptyState } from './ui/empty-state';
-import { Icon } from './icons';
+import type { Level } from '@/types';
+import { IDIOMS, PHRASAL } from '@/content';
+import { useStore } from '@/store';
+import { Speaker } from '@/components/speaker';
+import { LevelBadge } from '@/components/level-badge';
+import { LevelFilter, levelCounts, type LevelChoice } from '@/components/level-filter';
+import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
+import { Toggle } from '@/components/ui/toggle';
+import { EmptyState } from '@/components/ui/empty-state';
+import { Icon } from '@/components/icons';
 
 interface TermEntry {
   /** SRS id, e.g. "phrasal:ph-get-up". */

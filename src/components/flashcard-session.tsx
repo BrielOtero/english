@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
-import type { ReviewCard } from '../content';
-import type { Grade } from '../store';
-import { useStore } from '../store';
-import { playPhrase } from '../lib/audio';
-import { sFlip, sCorrect, sTick, sFinish } from '../lib/sound';
-import { Speaker } from './speaker';
-import { LevelBadge } from './level-badge';
-import { Icon } from './icons';
-import { ProgressBar } from './ui/progress';
+import type { ReviewCard } from '@/content';
+import type { Grade } from '@/store';
+import { useStore } from '@/store';
+import { playPhrase } from '@/lib/audio';
+import { sFlip, sCorrect, sTick, sFinish } from '@/lib/sound';
+import { Speaker } from '@/components/speaker';
+import { LevelBadge } from '@/components/level-badge';
+import { Icon } from '@/components/icons';
+import { ProgressBar } from '@/components/ui/progress';
 
 const GRADES: { grade: Grade; label: string; cls: string; out: string }[] = [
   {

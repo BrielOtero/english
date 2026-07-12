@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import type { Exercise } from '@/types';
 import { matches, normalize } from '@/lib/check';
 import { shuffle } from '@/lib/shuffle';
@@ -46,6 +47,7 @@ export function ExerciseDeck({
   onComplete,
   onResult,
   stable = false,
+  requeueWrong = false,
 }: {
   exercises: Exercise[];
   onComplete?: () => void;
@@ -54,11 +56,18 @@ export function ExerciseDeck({
   /** Fixed-height layout with controls pinned to the bottom, for the battle modal — the
    *  question region flexes while the Check/Next button stays put, so nothing dances. */
   stable?: boolean;
+  /** Practice/mastery mode: a wrong answer sends the card to the back of the deck, so the
+   *  learner keeps meeting it until it's answered right — you can't finish by failing. */
+  requeueWrong?: boolean;
 }) {
   const [i, setI] = useState(0);
   const [score, setScore] = useState(0);
   const [checked, setChecked] = useState(false);
   const [wasCorrect, setWasCorrect] = useState(false);
+  const [streak, setStreak] = useState(0);
+  const [bestStreak, setBestStreak] = useState(0);
+  // Cards requeued after a wrong answer (mastery mode) — appended to the live deck.
+  const [extra, setExtra] = useState<Exercise[]>([]);
 
   // Per-question input state.
   const [text, setText] = useState('');
@@ -71,8 +80,10 @@ export function ExerciseDeck({
   const controlsRef = useRef<HTMLDivElement>(null);
   const markAnsweredCorrect = useStore((s) => s.markAnsweredCorrect);
 
-  const ex = exercises[i];
-  const done = i >= exercises.length;
+  const deck = requeueWrong ? exercises.concat(extra) : exercises;
+  const ex = deck[i];
+  const done = i >= deck.length;
+  const total = exercises.length;
 
   // A stable shuffle of token indices for the current ordering exercise.
   const shuffledIdx = useMemo(
@@ -108,32 +119,36 @@ export function ExerciseDeck({
   if (!exercises.length) return null;
 
   if (done) {
-    const pct = Math.round((score / exercises.length) * 100);
+    const pct = Math.round((score / total) * 100);
     return (
       <div className="fade-in rounded-xl border border-rule-soft bg-paper p-6 text-center">
         <p className="kicker text-[13.5px] text-ink-soft">Practice complete</p>
-        <p className="font-display mt-2 text-[32px] leading-none text-ink">
-          {score} / {exercises.length}
-        </p>
-        <p className="mt-1 text-[13px] text-ink-soft">
-          {pct >= 80
-            ? 'Excellent — you have got this.'
-            : pct >= 50
-              ? 'Good progress. Review the misses and try again.'
-              : 'Keep going — repetition is how it sticks.'}
-        </p>
-        <Button
-          variant="outline"
-          size="sm"
-          className="mt-4"
-          onClick={() => {
-            setI(0);
-            setScore(0);
-            resetInputs();
-            setChecked(false);
-            completedRef.current = false;
-          }}
-        >
+        {requeueWrong ? (
+          <>
+            <p className="font-display mt-2 text-[32px] leading-none text-ink">
+              All {total} mastered
+            </p>
+            <p className="mt-1 text-[13px] text-ink-soft">
+              {bestStreak >= 3
+                ? `On fire — best streak ×${bestStreak}. Ready for the challenge?`
+                : 'Every card cleared. Ready to take on the challenge?'}
+            </p>
+          </>
+        ) : (
+          <>
+            <p className="font-display mt-2 text-[32px] leading-none text-ink">
+              {score} / {total}
+            </p>
+            <p className="mt-1 text-[13px] text-ink-soft">
+              {pct >= 80
+                ? 'Excellent — you have got this.'
+                : pct >= 50
+                  ? 'Good progress. Review the misses and try again.'
+                  : 'Keep going — repetition is how it sticks.'}
+            </p>
+          </>
+        )}
+        <Button variant="outline" size="sm" className="mt-4" onClick={restart}>
           Practice again
         </Button>
       </div>
@@ -144,6 +159,17 @@ export function ExerciseDeck({
     setText('');
     setChoice(null);
     setPicked([]);
+  }
+
+  function restart() {
+    setI(0);
+    setScore(0);
+    setStreak(0);
+    setBestStreak(0);
+    setExtra([]);
+    resetInputs();
+    setChecked(false);
+    completedRef.current = false;
   }
 
   function evaluate(): boolean {
@@ -174,14 +200,20 @@ export function ExerciseDeck({
     if (ok) {
       setScore((s) => s + 1);
       markAnsweredCorrect(ex.id);
-      sCorrect(1);
+      const s = streak + 1;
+      setStreak(s);
+      setBestStreak((b) => Math.max(b, s));
+      sCorrect(s); // pitch rises with the combo
     } else {
+      setStreak(0);
       sWrong();
     }
     onResult?.(ok);
   }
 
   function next() {
+    // Mastery mode: a missed card goes to the back of the deck to be met again.
+    if (requeueWrong && !wasCorrect) setExtra((x) => [...x, ex]);
     setChecked(false);
     resetInputs();
     setI((n) => n + 1);
@@ -191,13 +223,29 @@ export function ExerciseDeck({
 
   const header = (
     <>
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-4 flex items-center justify-between gap-2">
         <span className="kicker text-[13.5px] text-ink-soft">{prompt}</span>
-        <span className="font-mono text-[11px] text-ink-mute">
-          {i + 1} / {exercises.length}
-        </span>
+        <div className="flex items-center gap-2">
+          {streak >= 2 && (
+            <motion.span
+              key={streak}
+              initial={{ scale: 0.6, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: 'spring', stiffness: 500, damping: 18 }}
+              className="rounded-full bg-accent/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-accent tabular-nums"
+            >
+              ×{streak}
+            </motion.span>
+          )}
+          <span className="font-mono text-[11px] text-ink-mute tabular-nums">
+            {requeueWrong ? score : i + 1} / {total}
+          </span>
+        </div>
       </div>
-      <ProgressBar value={(i / exercises.length) * 100} className="mb-5" />
+      <ProgressBar
+        value={requeueWrong ? (score / total) * 100 : (i / total) * 100}
+        className="mb-5"
+      />
     </>
   );
 
@@ -363,7 +411,7 @@ export function ExerciseDeck({
     </Button>
   ) : (
     <Button variant="dark" size="sm" onClick={next} className="w-full sm:w-auto">
-      {i + 1 < exercises.length ? (
+      {i + 1 < deck.length || (requeueWrong && !wasCorrect) ? (
         <>
           Next <Icon name="arrow-right" className="h-3.5 w-3.5" />
         </>

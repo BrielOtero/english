@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import type { Lesson } from '@/types';
+import type { Exercise, Lesson } from '@/types';
 import type { WorldInfo } from '@/content/worlds';
 import { shuffle } from '@/lib/shuffle';
+import { useDuel } from '@/lib/use-duel';
 import { useStore } from '@/store';
 import {
   startBattleTheme,
@@ -18,38 +18,52 @@ import { Button } from '@/components/ui/button';
 import { EmptyState } from '@/components/ui/empty-state';
 import { Icon } from '@/components/icons';
 import { ExerciseDeck } from '@/components/exercise';
+import { DuelHud } from '@/components/duel';
 import { ConfettiBurst } from '@/components/confetti';
 import { StarReward } from '@/components/star-reward';
-import { Slime, StarIcon, Chest, Castle, Heart } from '@/components/map-art';
+import { Slime, StarIcon, Chest, Castle } from '@/components/map-art';
 
 export type BattleMode = 'mini' | 'bonus' | 'boss';
 
-// Combat is a duel: the boss has HP (correct answers chip it down), you have lives
-// (a wrong answer costs one). Run out of lives and you're defeated. The question pool
-// is HP + LIVES so the fight always resolves before running out of questions.
-const MINI_HP = 5;
-const BOSS_HP = 8;
+// The question pool is HP + LIVES so the fight always resolves before running out of questions.
+// HP scales with scope so bigger fights test more: a boss must land ~one hit per lesson in the
+// whole world, a mini ~two per lesson in its block. Floors keep small scopes from being trivial.
 const LIVES = 3;
 const BONUS_QUESTIONS = 6;
+const MIN_MINI_HP = 5;
+const MIN_BOSS_HP = 8;
 
-function Hearts({ total, left, hitKey }: { total: number; left: number; hitKey: number }) {
-  return (
-    <motion.div
-      key={hitKey}
-      animate={hitKey ? { x: [0, -4, 4, -2, 0] } : {}}
-      className="flex gap-0.5"
-    >
-      {Array.from({ length: total }).map((_, i) => (
-        <motion.span
-          key={i}
-          animate={{ scale: i < left ? 1 : 0.5, opacity: i < left ? 1 : 0.2 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 15 }}
-        >
-          <Heart className={`h-5 w-5 ${i < left ? 'text-danger' : 'text-ink-mute/40'}`} />
-        </motion.span>
-      ))}
-    </motion.div>
-  );
+/**
+ * Sample `count` questions that cover every lesson in scope. A round-robin (one per lesson,
+ * then two, then three…) guarantees a boss/mini can't skip a whole topic by luck — the flaw
+ * of a plain random slice. Unseen questions are drawn first; tiny pools cycle-fill; the final
+ * order is shuffled so concepts are interleaved rather than grouped by lesson.
+ */
+function coverageSample(
+  lessons: Lesson[],
+  count: number,
+  correct: Record<string, true>,
+): Exercise[] {
+  const buckets = lessons
+    .map((l) => {
+      const ex = shuffle(l.exercises);
+      return [...ex.filter((e) => !correct[e.id]), ...ex.filter((e) => correct[e.id])];
+    })
+    .filter((b) => b.length);
+  const picked: Exercise[] = [];
+  let progressed = true;
+  while (picked.length < count && progressed) {
+    progressed = false;
+    for (const b of buckets) {
+      if (b.length && picked.length < count) {
+        picked.push(b.shift()!);
+        progressed = true;
+      }
+    }
+  }
+  for (let k = 0; picked.length && picked.length < count; k++)
+    picked.push(picked[k % picked.length]);
+  return shuffle(picked).slice(0, count);
 }
 
 /**
@@ -89,14 +103,13 @@ export function BossChallenge({
   const isMini = mode === 'mini';
   const combat = isBoss || isMini;
 
-  const hp = isBoss ? BOSS_HP : MINI_HP;
+  const hp = isBoss
+    ? Math.max(MIN_BOSS_HP, lessons.length) // ~one hit per lesson in the world
+    : Math.max(MIN_MINI_HP, lessons.length * 2); // ~two per lesson in the block
   const count = combat ? hp + LIVES : BONUS_QUESTIONS;
 
-  const [bossHP, setBossHP] = useState(hp);
-  const [userLives, setUserLives] = useState(LIVES);
-  const [bossHitKey, setBossHitKey] = useState(0);
-  const [userHitKey, setUserHitKey] = useState(0);
-  const [round, setRound] = useState(0);
+  const duel = useDuel(hp, LIVES);
+  const { round } = duel;
 
   const title = isBoss ? world.boss : isBonus ? 'Bonus round' : `Mini-boss · World ${world.n}`;
   // Literal classes (not interpolated) so Tailwind's JIT emits them.
@@ -104,8 +117,9 @@ export function BossChallenge({
 
   const buildQuestions = () => {
     const correct = useStore.getState().answeredCorrect;
+    if (combat) return coverageSample(lessons, count, correct);
+    // Bonus is a no-stakes mixed round — a simple unseen-first sample is enough.
     const all = lessons.flatMap((l) => l.exercises);
-    // Prefer unseen questions, but fall back to the full pool if too few are left.
     const fresh = all.filter((e) => !correct[e.id]);
     return shuffle(fresh.length >= count ? fresh : all).slice(0, count);
   };
@@ -149,34 +163,16 @@ export function BossChallenge({
     [isBoss, isMini, isBonus, miniId, world.level, clearBoss, clearMini, clearBonus],
   );
 
-  // Resolve a duel once the boss is down or the player is out of lives — after a short
-  // beat so the final hit animation lands first.
+  // Resolve a duel once the foe is down or the player is out of lives — after a short beat
+  // so the final hit animation lands first.
   useEffect(() => {
-    if (phase !== 'battle' || !combat) return;
-    if (bossHP > 0 && userLives > 0) return;
-    const won = bossHP <= 0;
-    const t = setTimeout(() => finish(won), 800);
+    if (phase !== 'battle' || !combat || !duel.over) return;
+    const t = setTimeout(() => finish(duel.won), 800);
     return () => clearTimeout(t);
-  }, [phase, combat, bossHP, userLives, finish]);
-
-  function onResult(correct: boolean) {
-    // Ignore answers landed during the brief resolve delay — the duel is already decided.
-    if (bossHP <= 0 || userLives <= 0) return;
-    if (correct) {
-      setBossHP((h) => Math.max(0, h - 1));
-      setBossHitKey((k) => k + 1);
-    } else {
-      setUserLives((l) => Math.max(0, l - 1));
-      setUserHitKey((k) => k + 1);
-    }
-  }
+  }, [phase, combat, duel.over, duel.won, finish]);
 
   function startFight() {
-    setBossHP(hp);
-    setUserLives(LIVES);
-    setBossHitKey(0);
-    setUserHitKey(0);
-    setRound((r) => r + 1);
+    duel.start();
     setPhase('battle');
   }
 
@@ -237,40 +233,16 @@ export function BossChallenge({
         {phase === 'battle' && (
           <div>
             {combat ? (
-              <div className="mb-4 rounded-2xl border border-rule-soft bg-bg/60 p-3">
-                <div className="flex items-center gap-3">
-                  <motion.div
-                    key={bossHitKey}
-                    animate={bossHitKey ? { x: [0, -6, 6, -4, 4, 0], scale: [1, 1.12, 1] } : {}}
-                    className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-danger/10 text-danger"
-                  >
-                    {isBoss ? <Castle className="h-8 w-8" /> : <Slime className="h-8 w-8" />}
-                  </motion.div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="truncate text-[13px] font-medium text-ink">
-                        {isBoss ? world.boss : 'Mini-boss'}
-                      </span>
-                      <span className="font-mono text-[11px] text-ink-mute tabular-nums">
-                        {bossHP}/{hp}
-                      </span>
-                    </div>
-                    <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-danger/15">
-                      <motion.div
-                        className="h-full rounded-full bg-danger"
-                        animate={{ width: `${(bossHP / hp) * 100}%` }}
-                        transition={{ type: 'spring', stiffness: 200, damping: 26 }}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-2.5 flex items-center justify-between">
-                  <span className="font-mono text-[10px] tracking-wide text-ink-mute uppercase">
-                    Your lives
-                  </span>
-                  <Hearts total={LIVES} left={userLives} hitKey={userHitKey} />
-                </div>
-              </div>
+              <DuelHud
+                name={isBoss ? world.boss : 'Mini-boss'}
+                icon={isBoss ? <Castle className="h-8 w-8" /> : <Slime className="h-8 w-8" />}
+                hp={duel.foeHP}
+                maxHp={hp}
+                hpHitKey={duel.foeHitKey}
+                lives={duel.userLives}
+                maxLives={LIVES}
+                livesHitKey={duel.userHitKey}
+              />
             ) : (
               <p className={`kicker mb-3 text-center text-[14px] ${accentText}`}>Bonus round</p>
             )}
@@ -280,7 +252,7 @@ export function BossChallenge({
               <ExerciseDeck
                 exercises={questions}
                 stable
-                onResult={combat ? onResult : undefined}
+                onResult={combat ? duel.onResult : undefined}
                 onComplete={combat ? undefined : () => finish(true)}
               />
             </div>

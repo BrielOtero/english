@@ -5,7 +5,7 @@ import type { Level, Lesson } from '@/types';
 import { LEVELS } from '@/types';
 import { GRAMMAR, grammarUnit } from '@/content';
 import { WORLDS, type WorldInfo } from '@/content/worlds';
-import { useStore } from '@/store';
+import { useStore, isDue, type ReviewItem } from '@/store';
 import { startWorldTheme, stopWorldTheme, startRoadmapTheme } from '@/lib/sound';
 import {
   worldStars,
@@ -125,6 +125,7 @@ function NodeGlyph({ kind, done, num }: { kind: NodeKind; done: boolean; num?: n
 function TrailNode({
   kind,
   done,
+  due = false,
   num,
   tone,
   onClick,
@@ -133,6 +134,8 @@ function TrailNode({
 }: {
   kind: NodeKind;
   done: boolean;
+  /** A cleared lesson whose spaced-repetition refresh has come due. */
+  due?: boolean;
   num?: number;
   tone: (typeof TONE)[Level];
   onClick: () => void;
@@ -141,7 +144,9 @@ function TrailNode({
 }) {
   const size = kind === 'boss' ? 'h-14 w-14' : 'h-12 w-12';
   const base = done
-    ? `${tone.fill} text-paper border-transparent`
+    ? due
+      ? 'bg-gold/15 border-gold text-ink'
+      : `${tone.fill} text-paper border-transparent`
     : kind === 'boss'
       ? 'bg-danger/10 border-danger/50'
       : kind === 'mini'
@@ -298,6 +303,8 @@ function WorldDetail({
   world,
   stars,
   completed,
+  lessonReviews,
+  now,
   bossDone,
   bonusDone,
   miniCleared,
@@ -308,6 +315,8 @@ function WorldDetail({
   world: WorldInfo;
   stars: number;
   completed: Record<string, true>;
+  lessonReviews: Record<string, ReviewItem>;
+  now: number;
   bossDone: boolean;
   bonusDone: boolean;
   miniCleared: Record<string, true>;
@@ -333,6 +342,7 @@ function WorldDetail({
   interface Node {
     kind: NodeKind;
     done: boolean;
+    due?: boolean;
     num?: number;
     title: string;
     label: string;
@@ -344,6 +354,7 @@ function WorldDetail({
     nodes.push({
       kind: 'lesson',
       done: !!completed[l.id],
+      due: !!completed[l.id] && isDue(lessonReviews[l.id], now),
       num: i + 1,
       title: l.title,
       label: `Level ${i + 1}: ${l.title}`,
@@ -465,6 +476,7 @@ function WorldDetail({
               <TrailNode
                 kind={nd.kind}
                 done={nd.done}
+                due={nd.due}
                 num={nd.num}
                 tone={tone}
                 label={nd.label}
@@ -540,6 +552,8 @@ export function WorldMap({
 }) {
   const navigate = useNavigate();
   const completed = useStore((s) => s.completed);
+  const lessonReviews = useStore((s) => s.lessonReviews);
+  const now = useStore((s) => s.now);
   const placementLevel = useStore((s) => s.placementLevel);
   const bossCleared = useStore((s) => s.bossCleared);
   const bonusCleared = useStore((s) => s.bonusCleared);
@@ -584,6 +598,8 @@ export function WorldMap({
             world={openWorld}
             stars={worldStars(openWorld.level, completed, miniCleared, bonusCleared, bossCleared)}
             completed={completed}
+            lessonReviews={lessonReviews}
+            now={now}
             bossDone={!!bossCleared[openWorld.level]}
             bonusDone={!!bonusCleared[openWorld.level]}
             miniCleared={miniCleared}

@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import type { FormTable, Lesson, Pitfall } from '@/types';
-import { useStore } from '@/store';
+import { useStore, isDue } from '@/store';
 import { Markup } from '@/components/markup';
 import { PhraseLine } from '@/components/phrase-line';
 import { ExerciseDeck } from '@/components/exercise';
+import { LevelChallenge } from '@/components/level-challenge';
 import { LevelBadge } from '@/components/level-badge';
 import { Icon } from '@/components/icons';
-import { ConfettiBurst } from '@/components/confetti';
-import { StarRewardOverlay } from '@/components/star-reward';
+import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Toggle } from '@/components/ui/toggle';
-import { totalStars } from '@/lib/stars';
+import { Slime } from '@/components/map-art';
 
 function SubHead({ children }: { children: React.ReactNode }) {
   return <h3 className="mb-3 kicker text-[13.5px] text-ink-soft">{children}</h3>;
@@ -72,44 +71,82 @@ function PitfallCard({ pitfall }: { pitfall: Pitfall }) {
   );
 }
 
+/** The bottom-of-lesson gate: read → practice → face the Guardian. Beating it is the only
+ *  way to clear the level, so "completed" always means "proven", never "scrolled past". */
+function TrialCta({
+  cleared,
+  due,
+  hasExercises,
+  onStart,
+}: {
+  cleared: boolean;
+  due: boolean;
+  hasExercises: boolean;
+  onStart: () => void;
+}) {
+  if (!hasExercises) return null;
+  const tone = cleared && !due ? 'border-success/40 bg-success/5' : 'border-danger/40 bg-danger/5';
+  return (
+    <Card className={`mt-10 flex items-center gap-4 border ${tone} p-5`}>
+      <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-paper shadow-[var(--shadow-sm)]">
+        <Slime className="h-9 w-9" />
+      </span>
+      <div className="min-w-0 flex-1">
+        <p className="text-[15px] font-medium text-ink">
+          {cleared && due
+            ? 'Time to refresh this level'
+            : cleared
+              ? 'Level cleared'
+              : 'Ready to prove it?'}
+        </p>
+        <p className="mt-0.5 text-[13px] text-ink-soft">
+          {cleared && due
+            ? "The Guardian's stirring — beat it again to keep your mastery."
+            : cleared
+              ? 'You own this one. Retake the trial anytime for a tune-up.'
+              : 'Beat the Guardian to clear the level and earn its star.'}
+        </p>
+      </div>
+      <Button
+        variant={cleared && !due ? 'outline' : 'destructive'}
+        size="sm"
+        className="shrink-0"
+        onClick={onStart}
+      >
+        {cleared && due ? 'Refresh' : cleared ? 'Retake' : 'Face the Guardian'}
+      </Button>
+    </Card>
+  );
+}
+
 export function LessonView({ lesson }: { lesson: Lesson }) {
-  const completed = useStore((s) => !!s.completed[lesson.id]);
-  const markComplete = useStore((s) => s.markComplete);
-  const unmarkComplete = useStore((s) => s.unmarkComplete);
-  const [burstKey, setBurstKey] = useState(0);
-  const [reward, setReward] = useState<{ earned: number; total: number } | null>(null);
+  const cleared = useStore((s) => !!s.completed[lesson.id]);
+  const review = useStore((s) => s.lessonReviews[lesson.id]);
+  const now = useStore((s) => s.now);
+  const [trialOpen, setTrialOpen] = useState(false);
 
-  // Mark done and celebrate: a full star reward when this crosses a milestone (mastering
-  // the world's lessons bumps the grand total), otherwise a small confetti pop.
-  function complete() {
-    const before = totalStars(useStore.getState());
-    markComplete(lesson.id);
-    const after = totalStars(useStore.getState());
-    if (after > before) setReward({ earned: after - before, total: after });
-    else setBurstKey((k) => k + 1);
-  }
-
-  function toggleComplete() {
-    if (completed) unmarkComplete(lesson.id);
-    else complete();
-  }
+  const due = cleared && isDue(review, now);
 
   return (
     <article className="fade-in" id={`lesson-${lesson.id}`}>
       <div className="mb-5 flex items-center gap-3">
         <LevelBadge level={lesson.level} />
-        <span className="relative">
-          <Toggle pressed={completed} onClick={toggleComplete}>
-            {completed ? (
-              <>
-                <Icon name="check" className="h-3 w-3" /> Completed
-              </>
-            ) : (
-              'Mark complete'
-            )}
-          </Toggle>
-          {burstKey > 0 && <ConfettiBurst key={burstKey} />}
-        </span>
+        {cleared ? (
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[12px] font-medium ${
+              due
+                ? 'border-gold/50 bg-gold/10 text-ink'
+                : 'border-success/40 bg-success/10 text-success'
+            }`}
+          >
+            <Icon name="check" className="h-3 w-3" />
+            {due ? 'Refresh due' : 'Cleared'}
+          </span>
+        ) : (
+          <span className="inline-flex items-center rounded-full border border-rule-soft px-2.5 py-1 text-[12px] text-ink-mute">
+            Not cleared yet
+          </span>
+        )}
       </div>
 
       <h2 className="font-display text-[clamp(24px,3.4vw,34px)] leading-tight text-ink">
@@ -165,16 +202,23 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
 
       {lesson.exercises.length > 0 && (
         <section className="mt-8">
-          <SubHead>Practice</SubHead>
-          <ExerciseDeck exercises={lesson.exercises} onComplete={complete} />
+          <SubHead>Practice · master every card</SubHead>
+          <ExerciseDeck exercises={lesson.exercises} requeueWrong />
         </section>
       )}
 
-      {reward && (
-        <StarRewardOverlay
-          earned={reward.earned}
-          total={reward.total}
-          onDone={() => setReward(null)}
+      <TrialCta
+        cleared={cleared}
+        due={due}
+        hasExercises={lesson.exercises.length > 0}
+        onStart={() => setTrialOpen(true)}
+      />
+
+      {trialOpen && (
+        <LevelChallenge
+          lesson={lesson}
+          alreadyCleared={cleared}
+          onClose={() => setTrialOpen(false)}
         />
       )}
     </article>

@@ -34,6 +34,9 @@ function nextBox(prev: number, grade: Grade): number {
 interface FluentState {
   /** SRS state per flashcard id (vocab, phrasal verbs, idioms...). */
   reviews: Record<string, ReviewItem>;
+  /** SRS state per grammar lesson id — a cleared level fades and resurfaces for a refresh,
+   *  so "passed" means "still mastered", not "cleared once and forgotten". */
+  lessonReviews: Record<string, ReviewItem>;
   /** Completed lesson ids. */
   completed: Record<string, true>;
   /** Vocabulary groups the learner has EXCLUDED from Review (id → false). Absent = included,
@@ -70,6 +73,9 @@ interface FluentState {
   grade: (cardId: string, grade: Grade) => void;
   markComplete: (lessonId: string) => void;
   unmarkComplete: (lessonId: string) => void;
+  /** Clear a level by beating its challenge: mark it done and (re)schedule its refresh.
+   *  A first clear starts the SRS clock; re-clearing a due level bumps its interval. */
+  passLesson: (lessonId: string) => void;
   /** Include/exclude a vocabulary group from Review. */
   toggleReviewGroup: (id: string) => void;
   /** Replace the whole review-group selection (used by select all / none). */
@@ -102,6 +108,7 @@ export const useStore = create<FluentState>()(
   persist(
     (set) => ({
       reviews: {},
+      lessonReviews: {},
       completed: {},
       reviewGroups: {},
       theme: 'light',
@@ -130,6 +137,16 @@ export const useStore = create<FluentState>()(
         }),
       markComplete: (lessonId) =>
         set((state) => ({ completed: { ...state.completed, [lessonId]: true } })),
+      passLesson: (lessonId) =>
+        set((state) => {
+          const prev = state.lessonReviews[lessonId]?.box ?? 0;
+          const box = Math.min(prev + 1, MAX_BOX);
+          const due = Date.now() + INTERVAL_DAYS[box] * MS_DAY;
+          return {
+            completed: { ...state.completed, [lessonId]: true },
+            lessonReviews: { ...state.lessonReviews, [lessonId]: { box, due } },
+          };
+        }),
       toggleReviewGroup: (id) =>
         set((state) => ({
           reviewGroups: { ...state.reviewGroups, [id]: state.reviewGroups[id] === false },
@@ -165,6 +182,7 @@ export const useStore = create<FluentState>()(
           if (!data || typeof data !== 'object') return {};
           const d = data as {
             reviews?: Record<string, ReviewItem>;
+            lessonReviews?: Record<string, ReviewItem>;
             completed?: Record<string, true>;
             bossCleared?: Record<string, true>;
             bonusCleared?: Record<string, true>;
@@ -173,15 +191,23 @@ export const useStore = create<FluentState>()(
             placementLevel?: Level | null;
             placementTakenAt?: number | null;
           };
-          const reviews = { ...state.reviews };
-          for (const [id, item] of Object.entries(d.reviews ?? {})) {
-            if (!item || typeof item.box !== 'number' || typeof item.due !== 'number') continue;
-            const ex = reviews[id];
-            // Keep the more-advanced / most-recently-scheduled card so a merge never loses progress.
-            if (!ex || item.box > ex.box || (item.box === ex.box && item.due > ex.due)) {
-              reviews[id] = item;
+          // Keep the more-advanced / most-recently-scheduled entry so a merge never loses progress.
+          const mergeSrs = (
+            into: Record<string, ReviewItem>,
+            from: Record<string, ReviewItem> | undefined,
+          ) => {
+            const out = { ...into };
+            for (const [id, item] of Object.entries(from ?? {})) {
+              if (!item || typeof item.box !== 'number' || typeof item.due !== 'number') continue;
+              const ex = out[id];
+              if (!ex || item.box > ex.box || (item.box === ex.box && item.due > ex.due)) {
+                out[id] = item;
+              }
             }
-          }
+            return out;
+          };
+          const reviews = mergeSrs(state.reviews, d.reviews);
+          const lessonReviews = mergeSrs(state.lessonReviews, d.lessonReviews);
           // Take whichever placement result was taken most recently.
           const placement =
             (d.placementTakenAt ?? 0) > (state.placementTakenAt ?? 0) && d.placementLevel
@@ -189,6 +215,7 @@ export const useStore = create<FluentState>()(
               : {};
           return {
             reviews,
+            lessonReviews,
             completed: { ...state.completed, ...(d.completed ?? {}) },
             bossCleared: { ...state.bossCleared, ...(d.bossCleared ?? {}) },
             bonusCleared: { ...state.bonusCleared, ...(d.bonusCleared ?? {}) },
@@ -201,9 +228,10 @@ export const useStore = create<FluentState>()(
     }),
     {
       name: 'fluent',
-      version: 2,
-      // Migrate old saves (v1) to the granular-stars era: stars are derived from progress,
-      // so nothing is lost — we just guarantee the newer tracking maps exist.
+      version: 3,
+      // Migrate old saves forward: everything is derived from progress, so nothing is lost —
+      // we just guarantee the newer tracking maps exist. v3 adds per-lesson SRS scheduling;
+      // already-completed lessons stay completed and simply aren't scheduled for a refresh yet.
       migrate: (persisted) => {
         const s = (persisted ?? {}) as Record<string, unknown>;
         return {
@@ -211,11 +239,13 @@ export const useStore = create<FluentState>()(
           bonusCleared: s.bonusCleared ?? {},
           miniCleared: s.miniCleared ?? {},
           answeredCorrect: s.answeredCorrect ?? {},
+          lessonReviews: s.lessonReviews ?? {},
         };
       },
       // Only persist durable state — `now` is transient.
       partialize: (s) => ({
         reviews: s.reviews,
+        lessonReviews: s.lessonReviews,
         completed: s.completed,
         reviewGroups: s.reviewGroups,
         theme: s.theme,

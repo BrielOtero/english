@@ -24,6 +24,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'a2-comparatives-superlatives': () => import('./a2-comparatives-superlatives'),
   'a2-conditionals': () => import('./a2-conditionals'),
   'a2-future-forms': () => import('./a2-future-forms'),
+  'a2-gerunds-infinitives': () => import('./a2-gerunds-infinitives'),
   'a2-modals': () => import('./a2-modals'),
   'a2-past-continuous': () => import('./a2-past-continuous'),
   'a2-present-perfect': () => import('./a2-present-perfect'),

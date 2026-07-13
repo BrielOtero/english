@@ -30,6 +30,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'a2-present-perfect': () => import('./a2-present-perfect'),
   'a2-pronouns': () => import('./a2-pronouns'),
   'a2-quantifiers': () => import('./a2-quantifiers'),
+  'a2-questions-and-agreeing': () => import('./a2-questions-and-agreeing'),
 };
 
 const cache = new Map<string, GeneratedLesson>();

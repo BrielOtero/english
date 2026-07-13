@@ -5,6 +5,7 @@ import type { Level, Lesson } from '@/types';
 import { LEVELS } from '@/types';
 import { GRAMMAR, grammarUnit } from '@/content';
 import { WORLDS, type WorldInfo } from '@/content/worlds';
+import { cn } from '@/components/ui/cn';
 import { useStore, isDue, type ReviewItem } from '@/store';
 import { startWorldTheme, stopWorldTheme, startRoadmapTheme } from '@/lib/sound';
 import {
@@ -287,7 +288,10 @@ function WorldGalaxy({
               )}
             </motion.button>
             <span className="mt-1.5 text-center font-display text-[14px] leading-tight text-ink">
-              {w.name}
+              {w.name}{' '}
+              <span className={cn('text-[12px] font-bold tracking-wide', tone.text)}>
+                ({w.level})
+              </span>
             </span>
             <span className="mt-0.5">
               <StarCount n={stars} />

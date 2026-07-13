@@ -28,6 +28,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'a2-modals': () => import('./a2-modals'),
   'a2-past-continuous': () => import('./a2-past-continuous'),
   'a2-present-perfect': () => import('./a2-present-perfect'),
+  'a2-pronouns': () => import('./a2-pronouns'),
   'a2-quantifiers': () => import('./a2-quantifiers'),
 };
 

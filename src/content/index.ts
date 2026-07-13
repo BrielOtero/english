@@ -9,7 +9,18 @@ import { READINGS } from '@/content/reading';
 import { WRITING } from '@/content/writing';
 import { PLACEMENT } from '@/content/placement';
 
-export { GRAMMAR, VOCAB_SETS, SOUNDS, PHRASAL, IDIOMS, READINGS, WRITING, PLACEMENT };
+/** The grammar spine (metadata + hand-written exercises). A lesson's large practice bank is not
+ *  overlaid here — it loads lazily per lesson via `@/content/generated` when its practice opens,
+ *  so the initial bundle and cross-lesson features (drill/boss) stay light. */
+export { GRAMMAR };
+
+export { VOCAB_SETS, SOUNDS, PHRASAL, IDIOMS, READINGS, WRITING, PLACEMENT };
+export {
+  hasGenerated,
+  peekGenerated,
+  loadGenerated,
+  type GeneratedLesson,
+} from '@/content/generated';
 
 /** A top-level navigation destination. */
 export interface Track {

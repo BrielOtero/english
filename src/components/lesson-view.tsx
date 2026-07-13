@@ -4,6 +4,8 @@ import { useStore, isDue } from '@/store';
 import { Markup } from '@/components/markup';
 import { PhraseLine } from '@/components/phrase-line';
 import { ExerciseDeck } from '@/components/exercise';
+import { PracticeStages } from '@/components/practice-stages';
+import { useLessonBank } from '@/lib/lesson-bank';
 import { LevelChallenge } from '@/components/level-challenge';
 import { LevelBadge } from '@/components/level-badge';
 import { Icon } from '@/components/icons';
@@ -124,6 +126,8 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
   const review = useStore((s) => s.lessonReviews[lesson.id]);
   const now = useStore((s) => s.now);
   const [trialOpen, setTrialOpen] = useState(false);
+  // Swap in the lesson's large generated bank once its chunk lands (fetched on open).
+  const { lesson: played, loading: bankLoading } = useLessonBank(lesson);
 
   const due = cleared && isDue(review, now);
 
@@ -200,23 +204,33 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
         </section>
       )}
 
-      {lesson.exercises.length > 0 && (
+      {played.exercises.length > 0 && (
         <section className="mt-8">
           <SubHead>Practice · master every card</SubHead>
-          <ExerciseDeck exercises={lesson.exercises} requeueWrong />
+          {bankLoading ? (
+            <div className="space-y-2.5">
+              {[0, 1, 2].map((k) => (
+                <div key={k} className="h-[68px] animate-pulse rounded-2xl bg-rule-soft/40" />
+              ))}
+            </div>
+          ) : played.practice?.length ? (
+            <PracticeStages lesson={played} />
+          ) : (
+            <ExerciseDeck exercises={played.exercises} requeueWrong />
+          )}
         </section>
       )}
 
       <TrialCta
         cleared={cleared}
         due={due}
-        hasExercises={lesson.exercises.length > 0}
+        hasExercises={played.exercises.length > 0}
         onStart={() => setTrialOpen(true)}
       />
 
       {trialOpen && (
         <LevelChallenge
-          lesson={lesson}
+          lesson={played}
           alreadyCleared={cleared}
           onClose={() => setTrialOpen(false)}
         />

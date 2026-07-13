@@ -4,8 +4,8 @@ import { cn } from '@/components/ui/cn';
 export type OptionState = 'idle' | 'selected' | 'correct' | 'wrong' | 'muted';
 
 const STATE: Record<OptionState, string> = {
-  idle: 'border-rule-soft bg-bg text-ink-soft hover:border-accent/60',
-  selected: 'border-accent bg-accent/10 text-ink',
+  idle: 'border-rule-soft bg-paper text-ink shadow-[var(--shadow-sm)] hover:border-accent/70',
+  selected: 'border-accent bg-accent/10 text-ink shadow-[var(--shadow-sm)]',
   correct: 'border-success bg-success/10 text-ink',
   wrong: 'border-danger bg-danger/10 text-ink',
   muted: 'border-rule-soft bg-bg text-ink-mute',
@@ -24,7 +24,7 @@ export const OptionButton = forwardRef<HTMLButtonElement, OptionButtonProps>(fun
       ref={ref}
       type={type}
       className={cn(
-        'rounded-lg border px-4 py-2.5 text-left text-[14px] transition-colors',
+        'rounded-lg border px-4 py-3 text-left text-[14px] transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out active:scale-[0.98] disabled:active:scale-100',
         STATE[state],
         className,
       )}

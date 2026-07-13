@@ -88,8 +88,90 @@ export interface DictationExercise {
   explain?: string;
 }
 
+/* ---- Tap-only kinds (no keyboard): usable one-handed, on any device ---- */
+
+/** Judge whether a statement is correct — tap (or swipe) True / False. */
+export interface TrueFalseExercise {
+  kind: 'truefalse';
+  id: string;
+  /** The sentence to judge. */
+  statement: string;
+  /** true = the statement is correct/natural English. */
+  answer: boolean;
+  /** Optional sentence spoken by a Listen button. */
+  audio?: string;
+  explain?: string;
+}
+
+/** Fill the blank by tapping a word chip — a typing-free cloze. */
+export interface TapClozeExercise {
+  kind: 'tapCloze';
+  id: string;
+  before: string;
+  after: string;
+  /** Word chips to choose from. */
+  options: string[];
+  /** Index into `options` of the correct word. */
+  answer: number;
+  explain?: string;
+}
+
+/** Tap every item that fits the rule, e.g. "tap the questions". */
+export interface PickAllExercise {
+  kind: 'pickAll';
+  id: string;
+  /** The instruction / rule. */
+  prompt: string;
+  options: string[];
+  /** Indices of the items that match. */
+  correct: number[];
+  explain?: string;
+}
+
+/** Build the sentence by tapping word tiles from a bank that includes distractors. */
+export interface BuildExercise {
+  kind: 'build';
+  id: string;
+  /** Every tile offered, including distractor words that are NOT in the answer. */
+  words: string[];
+  /** The correct full sentence (its words joined with single spaces). */
+  answer: string;
+  explain?: string;
+}
+
+/** Tap the extra / wrong words to trim the sentence down to correct English. */
+export interface TrimExercise {
+  kind: 'trim';
+  id: string;
+  /** The sentence as individual words (each is tappable). */
+  words: string[];
+  /** Indices of the words that must be removed. */
+  remove: number[];
+  explain?: string;
+}
+
+/** Tap a term, then its match, until every pair is connected. Self-completing (no Check).
+ *  Right-hand values must be distinct (matching is resolved by pair, not by text). */
+export interface MatchExercise {
+  kind: 'match';
+  id: string;
+  /** Pairs to connect: [left, right] — e.g. contraction ↔ full form, word ↔ meaning. */
+  pairs: [string, string][];
+  explain?: string;
+}
+
 export type Exercise =
-  McqExercise | ClozeExercise | CorrectExercise | OrderExercise | DictationExercise;
+  | McqExercise
+  | ClozeExercise
+  | CorrectExercise
+  | OrderExercise
+  | DictationExercise
+  | TrueFalseExercise
+  | TapClozeExercise
+  | PickAllExercise
+  | BuildExercise
+  | TrimExercise
+  | MatchExercise;
 
 /* ------------------------------------------------------------------ */
 /* Placement test — an adaptive check that estimates the learner's level */
@@ -134,6 +216,15 @@ export interface FormTable {
   rows: string[][];
 }
 
+/** One stage of a lesson's practice climb — a sub-topic to drill, ordered easy → hard.
+ *  Exercises are referenced by id; they live in the lesson's flat `exercises` pool. */
+export interface PracticeStage {
+  /** What this stage drills, e.g. "Am / is / are". */
+  focus: string;
+  /** Exercise ids for this stage, in easy → hard order. */
+  ids: string[];
+}
+
 export interface Lesson {
   id: string;
   level: Level;
@@ -148,8 +239,11 @@ export interface Lesson {
   examples: Phrase[];
   /** Common mistakes to avoid. */
   pitfalls?: Pitfall[];
-  /** Interactive practice; finishing them all marks the lesson complete. */
+  /** The flat pool the practice deck, guardian, and bosses all draw from. */
   exercises: Exercise[];
+  /** Optional concept-grouped practice: splits the pool into a sub-topic climb (easy→hard,
+   *  then a Mix finale). When absent, practice is one flat deck. */
+  practice?: PracticeStage[];
 }
 
 /** A CEFR level's worth of grammar lessons. */

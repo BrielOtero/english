@@ -27,7 +27,8 @@ export type IconName =
   | 'sun'
   | 'moon'
   | 'x'
-  | 'arrow-right';
+  | 'arrow-right'
+  | 'chevron-down';
 
 const PATHS: Record<IconName, ReactNode> = {
   route: (
@@ -149,6 +150,7 @@ const PATHS: Record<IconName, ReactNode> = {
   moon: <path d="M12 3a6.5 6.5 0 0 0 9 9 9 9 0 1 1-9-9Z" />,
   x: <path d="M6 6l12 12M18 6 6 18" />,
   'arrow-right': <path d="M5 12h14M13 6l6 6-6 6" />,
+  'chevron-down': <path d="m6 9 6 6 6-6" />,
 };
 
 export function Icon({ name, className = 'h-4 w-4' }: { name: IconName; className?: string }) {

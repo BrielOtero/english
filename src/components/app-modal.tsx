@@ -1,5 +1,6 @@
 import { useEffect, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
+import { cn } from '@/components/ui/cn';
 
 /**
  * Centered modal on desktop, bottom sheet on mobile. Backdrop blur, ESC to close.
@@ -12,11 +13,14 @@ export function AppModal({
   onClose,
   children,
   label,
+  wide = false,
 }: {
   open: boolean;
   onClose: () => void;
   children: ReactNode;
   label?: string;
+  /** A roomier desktop width — for immersive surfaces like the exercise player. */
+  wide?: boolean;
 }) {
   useEffect(() => {
     if (!open) return;
@@ -44,7 +48,12 @@ export function AppModal({
         onClick={onClose}
         className="backdrop-in absolute inset-0 bg-black/50 backdrop-blur-[6px]"
       />
-      <div className="sheet-up sm:pop-in relative z-10 max-h-[92dvh] w-full overflow-y-auto overscroll-contain rounded-t-[24px] border-rule-soft bg-raised pb-[max(20px,env(safe-area-inset-bottom))] shadow-[var(--shadow-pop)] sm:max-h-[88dvh] sm:w-[440px] sm:rounded-[24px] sm:border sm:pb-0">
+      <div
+        className={cn(
+          'sheet-up sm:pop-in relative z-10 max-h-[92dvh] w-full overflow-y-auto overscroll-contain rounded-t-[24px] border-rule-soft bg-raised pb-[max(20px,env(safe-area-inset-bottom))] shadow-[var(--shadow-pop)] sm:max-h-[88dvh] sm:rounded-[24px] sm:border sm:pb-0',
+          wide ? 'sm:w-[540px]' : 'sm:w-[440px]',
+        )}
+      >
         <div className="mx-auto mt-3 mb-0.5 h-1 w-9 rounded-full bg-rule-soft sm:hidden" />
         {children}
       </div>

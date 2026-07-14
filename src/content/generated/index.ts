@@ -61,6 +61,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'c1-nominalisation-noun-phrases': () => import('./c1-nominalisation-noun-phrases'),
   'c1-participle-clauses': () => import('./c1-participle-clauses'),
   'c1-passive-reporting': () => import('./c1-passive-reporting'),
+  'c1-relatives-ellipsis-substitution': () => import('./c1-relatives-ellipsis-substitution'),
   'c1-subjunctive': () => import('./c1-subjunctive'),
 };
 

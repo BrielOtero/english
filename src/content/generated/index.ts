@@ -42,6 +42,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'b1-present-perfect-continuous': () => import('./b1-present-perfect-continuous'),
   'b1-relative-clauses': () => import('./b1-relative-clauses'),
   'b1-reported-speech': () => import('./b1-reported-speech'),
+  'b2-future-perfect-and-future-in-the-past': () => import('./b2-future-perfect-and-future-in-the-past'),
   'b2-narrative-tenses': () => import('./b2-narrative-tenses'),
 };
 

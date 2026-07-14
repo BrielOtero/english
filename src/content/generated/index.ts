@@ -36,6 +36,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'b1-passive-voice': () => import('./b1-passive-voice'),
   'b1-past-perfect-used-to': () => import('./b1-past-perfect-used-to'),
   'b1-present-perfect-continuous': () => import('./b1-present-perfect-continuous'),
+  'b1-relative-clauses': () => import('./b1-relative-clauses'),
   'b1-reported-speech': () => import('./b1-reported-speech'),
 };
 

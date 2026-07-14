@@ -58,6 +58,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'c1-inversion-conditionals': () => import('./c1-inversion-conditionals'),
   'c1-inversion-negative-adverbials': () => import('./c1-inversion-negative-adverbials'),
   'c1-mixed-reduced-conditionals': () => import('./c1-mixed-reduced-conditionals'),
+  'c1-passive-reporting': () => import('./c1-passive-reporting'),
   'c1-subjunctive': () => import('./c1-subjunctive'),
 };
 

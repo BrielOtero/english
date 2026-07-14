@@ -54,6 +54,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'b2-reported-speech': () => import('./b2-reported-speech'),
   'b2-subjunctive-and-discourse-markers': () => import('./b2-subjunctive-and-discourse-markers'),
   'c1-cleft-sentences': () => import('./c1-cleft-sentences'),
+  'c1-inversion-negative-adverbials': () => import('./c1-inversion-negative-adverbials'),
 };
 
 const cache = new Map<string, GeneratedLesson>();

@@ -45,6 +45,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'b2-future-perfect-and-future-in-the-past': () => import('./b2-future-perfect-and-future-in-the-past'),
   'b2-mixed-conditionals-and-alternatives': () => import('./b2-mixed-conditionals-and-alternatives'),
   'b2-narrative-tenses': () => import('./b2-narrative-tenses'),
+  'b2-passive-voice': () => import('./b2-passive-voice'),
 };
 
 const cache = new Map<string, GeneratedLesson>();

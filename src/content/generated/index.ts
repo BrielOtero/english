@@ -43,6 +43,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'b1-relative-clauses': () => import('./b1-relative-clauses'),
   'b1-reported-speech': () => import('./b1-reported-speech'),
   'b2-causatives-and-sense-verbs': () => import('./b2-causatives-and-sense-verbs'),
+  'b2-comparatives-and-quantifiers': () => import('./b2-comparatives-and-quantifiers'),
   'b2-emphasis-and-cleft-sentences': () => import('./b2-emphasis-and-cleft-sentences'),
   'b2-future-perfect-and-future-in-the-past': () => import('./b2-future-perfect-and-future-in-the-past'),
   'b2-mixed-conditionals-and-alternatives': () => import('./b2-mixed-conditionals-and-alternatives'),

@@ -47,6 +47,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'b2-narrative-tenses': () => import('./b2-narrative-tenses'),
   'b2-passive-voice': () => import('./b2-passive-voice'),
   'b2-past-modals-of-deduction': () => import('./b2-past-modals-of-deduction'),
+  'b2-relative-and-participle-clauses': () => import('./b2-relative-and-participle-clauses'),
   'b2-reported-speech': () => import('./b2-reported-speech'),
 };
 

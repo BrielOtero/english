@@ -32,6 +32,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'a2-quantifiers': () => import('./a2-quantifiers'),
   'a2-questions-and-agreeing': () => import('./a2-questions-and-agreeing'),
   'b1-conditionals-wish': () => import('./b1-conditionals-wish'),
+  'b1-connectors': () => import('./b1-connectors'),
   'b1-future-continuous-predictions': () => import('./b1-future-continuous-predictions'),
   'b1-modals-deduction': () => import('./b1-modals-deduction'),
   'b1-passive-voice': () => import('./b1-passive-voice'),

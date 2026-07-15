@@ -72,6 +72,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'c2-impersonal-passive': () => import('./c2-impersonal-passive'),
   'c2-modality-hedging-irony': () => import('./c2-modality-hedging-irony'),
   'c2-nominalisation-lexical-density': () => import('./c2-nominalisation-lexical-density'),
+  'c2-self-repair-restructuring': () => import('./c2-self-repair-restructuring'),
   'c2-stylistic-inversion': () => import('./c2-stylistic-inversion'),
   'c2-tense-aspect-register': () => import('./c2-tense-aspect-register'),
 };

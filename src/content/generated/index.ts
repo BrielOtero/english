@@ -55,6 +55,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'b2-subjunctive-and-discourse-markers': () => import('./b2-subjunctive-and-discourse-markers'),
   'c1-advanced-past-modals': () => import('./c1-advanced-past-modals'),
   'c1-cleft-sentences': () => import('./c1-cleft-sentences'),
+  'c1-hedging-stance-linkers': () => import('./c1-hedging-stance-linkers'),
   'c1-inversion-conditionals': () => import('./c1-inversion-conditionals'),
   'c1-inversion-negative-adverbials': () => import('./c1-inversion-negative-adverbials'),
   'c1-mixed-reduced-conditionals': () => import('./c1-mixed-reduced-conditionals'),

@@ -65,6 +65,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'c1-passive-reporting': () => import('./c1-passive-reporting'),
   'c1-relatives-ellipsis-substitution': () => import('./c1-relatives-ellipsis-substitution'),
   'c1-subjunctive': () => import('./c1-subjunctive'),
+  'c2-tense-aspect-register': () => import('./c2-tense-aspect-register'),
 };
 
 const cache = new Map<string, GeneratedLesson>();

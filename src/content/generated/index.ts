@@ -53,6 +53,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'b2-relative-and-participle-clauses': () => import('./b2-relative-and-participle-clauses'),
   'b2-reported-speech': () => import('./b2-reported-speech'),
   'b2-subjunctive-and-discourse-markers': () => import('./b2-subjunctive-and-discourse-markers'),
+  'c1-advanced-multi-word-verbs': () => import('./c1-advanced-multi-word-verbs'),
   'c1-advanced-past-modals': () => import('./c1-advanced-past-modals'),
   'c1-cleft-sentences': () => import('./c1-cleft-sentences'),
   'c1-hedging-stance-linkers': () => import('./c1-hedging-stance-linkers'),

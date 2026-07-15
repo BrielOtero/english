@@ -68,6 +68,7 @@ const loaders: Record<string, () => Promise<GeneratedLesson>> = {
   'c2-clefts-distance': () => import('./c2-clefts-distance'),
   'c2-conditionals-advanced': () => import('./c2-conditionals-advanced'),
   'c2-discourse-ellipsis-word-order': () => import('./c2-discourse-ellipsis-word-order'),
+  'c2-idiom-collocation-register': () => import('./c2-idiom-collocation-register'),
   'c2-impersonal-passive': () => import('./c2-impersonal-passive'),
   'c2-nominalisation-lexical-density': () => import('./c2-nominalisation-lexical-density'),
   'c2-stylistic-inversion': () => import('./c2-stylistic-inversion'),

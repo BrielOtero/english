@@ -399,7 +399,10 @@ function WorldDetail({
   });
   const pts = nodes.map((_, i) => `${pos(i).x},${pos(i).y}`).join(' ');
   const firstUncleared = lessons.findIndex((l) => !completed[l.id]);
-  const currentNode = firstUncleared === -1 ? lessons.length : firstUncleared;
+  const currentNode =
+    firstUncleared === -1
+      ? nodes.length - 1
+      : nodes.findIndex((nd) => nd.kind === 'lesson' && nd.num === firstUncleared + 1);
 
   return (
     <motion.div
